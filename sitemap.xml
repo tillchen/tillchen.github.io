@@ -9,18 +9,33 @@
 
 <url>
   <loc>https://tillchen.com/</loc>
-  <lastmod>2019-04-29T14:38:30+00:00</lastmod>
+  <lastmod>2019-05-05T20:07:22+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf</loc>
-  <lastmod>2019-04-29T14:38:30+00:00</lastmod>
+  <lastmod>2019-05-05T20:07:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/</loc>
+  <lastmod>2019-05-05T21:39:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/pdfs/cs_curriculum.pdf</loc>
-  <lastmod>2019-04-29T14:38:30+00:00</lastmod>
+  <lastmod>2019-05-05T20:07:22+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/05/Some-useful-tips-for-Vim.html</loc>
+  <lastmod>2019-05-05T21:39:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/05/Some-useful-tips-for-C-and-C++.html</loc>
+  <lastmod>2019-05-05T21:39:12+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
