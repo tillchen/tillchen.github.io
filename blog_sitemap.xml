@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://tillchen.com/blog/</loc>
+  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/25/Python-project-alien-invasion.html</loc>
+  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/25/Git-tips.html</loc>
+  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/12/Python-tips.html</loc>
+  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/05/Vim-tips.html</loc>
+  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://tillchen.com/blog/2019/05/05/C-and-C++-tips.html</loc>
+  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
