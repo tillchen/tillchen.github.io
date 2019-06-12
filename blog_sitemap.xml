@@ -9,32 +9,37 @@
 
 <url>
   <loc>https://tillchen.com/blog/</loc>
-  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://tillchen.com/blog/2019/06/05/Java-tips.html</loc>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://tillchen.com/blog/2019/05/25/Python-project-alien-invasion.html</loc>
-  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/25/Git-tips.html</loc>
-  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/12/Python-tips.html</loc>
-  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/05/Vim-tips.html</loc>
-  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/05/C-and-C++-tips.html</loc>
-  <lastmod>2019-05-27T14:39:01+00:00</lastmod>
+  <lastmod>2019-06-08T18:32:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
