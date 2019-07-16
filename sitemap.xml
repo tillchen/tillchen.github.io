@@ -9,62 +9,67 @@
 
 <url>
   <loc>https://tillchen.com/</loc>
-  <lastmod>2019-07-08T11:03:49+00:00</lastmod>
+  <lastmod>2019-07-15T15:30:55+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf</loc>
-  <lastmod>2019-07-08T11:03:49+00:00</lastmod>
+  <lastmod>2019-07-15T15:30:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tillchen.com/pdfs/cs_curriculum.pdf</loc>
-  <lastmod>2019-07-08T11:03:49+00:00</lastmod>
+  <lastmod>2019-07-15T15:30:55+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://tillchen.com/blog/2019/07/15/JavaScript-tips.html</loc>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://tillchen.com/blog/2019/07/10/Android-development-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/06/09/Django-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/06/05/Java-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/25/Python-project-alien-invasion.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/25/Git-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/12/Python-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/05/Vim-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://tillchen.com/blog/2019/05/05/C-and-C++-tips.html</loc>
-  <lastmod>2019-07-09T16:06:48+00:00</lastmod>
+  <lastmod>2019-07-15T15:14:25+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
