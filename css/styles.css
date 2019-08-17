@@ -669,8 +669,24 @@ footer {
 }
 
 /*
+    -------------------------------
+    ----- 11. Testimonials Styles -----
+    -------------------------------
+*/
+
+#testimonials {
+  padding: 50px 15px;
+  text-align: center;
+}
+
+.testimonial_name {
+  text-align: right;
+  font-style: italic;
+}
+
+/*
     ---------------------------------------
-    ----- 11. Optional Section Styles -----
+    ----- 12. Optional Section Styles -----
     ---------------------------------------
 */
 .optional-section {
