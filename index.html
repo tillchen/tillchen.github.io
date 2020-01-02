@@ -64,7 +64,7 @@
     <div id="lead">
         <div id="lead-content">
             <h1>Tianyao Chen</h1>
-            <h2><em>Passionate about Software Development, AI, and Machine Learning. Specialized in Android Development.</em></h2>
+            <h2><em>Mobile (Android &#38; iOS) Engineer. Passionate to Explore Web back-end, ML, and Data Science.</em></h2>
             <a href="pdfs/Tianyao_Chen_resume.pdf" download="Tianyao_Chen_resume.pdf" class="btn-rounded-white">Download Resume</a> &nbsp; &nbsp; &nbsp;
             <a href="https://tillchen.com/blog/" class = "btn-rounded-white">Check Out My Blog</a>
         </div>
@@ -118,13 +118,9 @@
             <h3><a href="https://www.jacobs-university.de">Jacobs University Bremen</a>, Bremen, Germany</h3>
             <span class="education-date">Aug 2018 - Present</span>
             <h4><em><a href = "pdfs/cs_curriculum.pdf">B.S. Computer Science, Class of 2021</a></em></h4>
-            <!--
             <ul>
-                <li><b>Finished course: </b> Algorithms &#38; Data Structures; Intro to CS; Programming in C &#38; C++..</li>
-                <li><b>Ongoing courses: </b> DB &#38; Web Services; Computer Graphics; OS; Computer Arch &#38; Programming Languages; Formal Languages &#38; Logic.</li>
-                <li><b>Future courses: </b>Databases and Web Services; Computer Graphics; Software Engineering; Operating Systems; Computer Architecture and Programming Languages; Computer Networks; Machine Learning; Artificial Intelligence; Computer Vision; Robotics; Theoretical Computer Science.</li>
+                <li><b>Featured courses: </b> Algorithms &#38; Data Structures; C &#38; C++, OS, DB, Software Engineering, ML, R.</li>
             <ul>
-            -->
         </div>
         <!-- End .education-block -->
     </div>
@@ -134,12 +130,21 @@
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
 
-            <div data-date="June 2019 – Present">
+            <div data-date="January 2020 – Present">
+                <h3><small>Jacobs University Bremen, Bremen, Germany</small></h3>
+                <h4><em>Software Engineer (Part-time) for Rasdaman GmbH</em></h4>
+                <ul>
+                    <li>Working on data cube development for Rasdaman - an Array DBMS - GmbH.</li>
+                    <li><u>Leveraged knowledge:</u> C++, Java, Linux, Git, Array DBMS.</li>
+                </ul>
+            </div>
+
+            <div data-date="June 2019 – December 2019">
                 <h3><small>Jacobs University Bremen, Bremen, Germany</small></h3>
                 <h4><em>Teaching Assistant</em></h4>
                 <ul>
-                    <li>Grading homework and giving tutorials for two courses: Intro to CS, Data Management (from Data Engineering).</li>
-                    <li><u>Leveraged knowledge:</u> Haskell, MySQL, Google Cloud Platform, General Computer Science.</li>
+                    <li>Graded homework, exams, and gave tutorials for: Intro to CS, Data Management (from Data Engineering).</li>
+                    <li><u>Leveraged knowledge:</u> Haskell, MySQL, Python, GCP, General Computer Science.</li>
                 </ul>
             </div>
 
@@ -147,21 +152,12 @@
                 <h3><small>TD Tech, Beijing, China</small></h3>
                 <h4><em>Software Engineer Intern</em></h4>
                 <ul>
+                    <li>Continuously and efficiently delivered significant new features to enterprise Android apps on top of the AOSP.</li>
                     <li>Wrote comprehensive Python and Batch scripts, which automated the Android custom ROM upgrading process for enterprise Android devices and reduced the upgrade time by at least 67%.</li>
-                    <li>Continuously and efficiently delivered significant new features to enterprise Android apps.</li>
-                    <li><u>Leveraged knowledge:</u> Android Development (Java), Version Control (Git), Scripting, Debugging, SQLite.</li>
+                    <li><u>Leveraged knowledge:</u> Android Development (Java), Git, Scripting, Debugging, SQLite, Linux.</li>
                 </ul>
             </div>
 
-            <div data-date="Nov 2018 – Present">
-                <h3><small>Undergraduate Student Government(USG), Jacobs University Bremen</small></h3>
-                <h4><em>Head of IT Department</em></h4>
-                <ul>
-                    <li>Deployed, modified, and maintaining the open source web app <a href="https://minitz.jacobs.university">4minitz</a> on the university Debian server.</li>
-                    <li>Maintaining the university Debian and Ubuntu servers and websites in Django hosted on the servers.</li>
-                    <li><u>Leveraged knowledge:</u> System Administration (Linux), Web Hosting (Nginx), Docker, Git, LaTeX</li>
-                </ul>
-            </div>
         </div>
     </div>
     <!-- End #experience -->
@@ -170,25 +166,44 @@
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
-                    <div class="project shadow-large">
-                            <div class="project-image">
-                                <img src="images/JStore.jpg" alt="Screenshot for the project Alien Invasion" width="300" height="300" />
-                            </div>
-                            <!-- End .project-image -->
-                            <div class="project-info">
-                                <h3>JStore: A Marketplace for Jacobs University Bremen (Android App)</h3>
-                                <div align="left">
-                                <ul>
-                                    <li><small> Single-handedly built the Android app that enables students on campus to sell and buy items with ease.</small></li>
-                                    <li><small> 100+ hours of development time. 100+ commits. 9000+ lines of code editing.</small><a href="https://play.google.com/store/apps/details?id=com.tillchen.jstore"><img src="images/google-play-badge.png" alt="Google play Badge" width="150"></a></li>
-                                    <li><small><u>Utilized</u>: Java, Android Jetpack, Firebase (Auth, Cloud Firestore (NoSQL), Storage (GCP))</small></li>
-                                </ul>
-                                </div>
-                                <a href="https://github.com/tillchen/JStore_Android">View Project</a>
-                            </div>
-                            <!-- End .project-info -->
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/JStore.jpg" alt="Screenshot JStore " width="300" height="300" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>JStore (Android): A Marketplace for Jacobs University Bremen</h3>
+                        <div align="left">
+                        <ul>
+                            <li><small> Single-handedly built the Android app that enables students on campus to sell and buy items with ease.</small></li>
+                            <li><small> 100+ commits. 5000+ LOC (Java + XML). 400+ registered users.</small><a href="https://play.google.com/store/apps/details?id=com.tillchen.jstore"><img src="images/google-play-badge.png" alt="Google play Badge" width="150"></a></li>
+                            <li><small><u>Utilized</u>: Java, Android Jetpack, Firebase (Auth, Cloud Firestore (NoSQL), Storage (GCP))</small></li>
+                        </ul>
                         </div>
-                        <!-- End .project -->
+                        <a href="https://github.com/tillchen/JStore_Android">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/JStore.jpg" alt="Screenshot JStore " width="300" height="300" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>JStore (iOS): A Marketplace for Jacobs University Bremen</h3>
+                        <div align="left">
+                        <ul>
+                            <li><small> Single-handedly building the iOS app that enables students on campus to sell and buy items with ease.</small></li>
+                            <li><small> 40+ commits. 1000+ LOC (Swift). 400+ registered users. Coming soon on App Store.</small><!--<a href="https://play.google.com/store/apps/details?id=com.tillchen.jstore"><img src="images/google-play-badge.png" alt="Google play Badge" width="150"></a>--></li>
+                            <li><small><u>Utilized</u>: Swift, iOS SDK, Firebase (Auth, Cloud Firestore (NoSQL), Storage (GCP))</small></li>
+                        </ul>
+                        </div>
+                        <a href="https://github.com/tillchen/JStore_iOS">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/4minitz.png" alt= "Screenshot for the project 4minitz" width="300" height="300" />
@@ -207,24 +222,6 @@
                     <!-- End .project-info -->
                 </div>
                 <!-- End .project -->
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/alien_invasion.png" alt="Screenshot for the project Alien Invasion" width="300" height="300" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Alien Invasion: Python Game</h3>
-                        <div align="left">
-                        <ul>
-                            <li><small> Created a Python video game as my first big project.</small></li>
-                            <li><small><u>Utilized</u>: Python, Pygame, Git.</small></li>
-                        </ul>
-                        </div>
-                        <a href="https://github.com/tillchen/Alien_Invasion">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
             </div>
         </div>
     </div>
@@ -234,22 +231,21 @@
         <h2 class="heading">Skills</h2>
         <ul>
             <li><b>Java</b></li>
-            <li><b>Python</b></li>
             <li><b>C++</b></li>
+            <li><b>Swift</b></li>
+            <li><b>Python</b></li>
             <li><b>C</b></li>
             <li><b>JavaScript</b></li>
-            <li><b>Swift</b></li>
             <li><b>Android SDK (Android Jetpack)</b></li>
+            <li><b>iOS SDK</b></li>
             <li><b>Git</b></li>
             <li><b>SQL</b></li>
-            <li><b>MySQL</b></li>
             <li><b>Firebase (NoSQL)</b></li>
             <li><b>Bash</b></li>
             <li><b>Batch</b></li>
             <li>Kotlin</li>
             <li>HTML/CSS</li>
-            <li>iOS SDK</li>
-            <li>React</li>
+            <li><GCP/li>
             <li>Docker</li>
             <li>Haskell</li>
         </ul>
