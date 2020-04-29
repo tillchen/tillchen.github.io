@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for Go">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Notes"/>
+<meta name="twitter:description" content="Some notes for Go"/>
+
+    <meta property="og:title" content="Go Notes" />
+<meta property="og:description" content="Some notes for Go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2020-02-17-Go-Notes/" />
+<meta property="article:published_time" content="2020-02-17T00:00:00+01:00" />
+<meta property="article:modified_time" content="2020-02-17T00:00:00+01:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2020-02-17-Go-Notes/">
+    
+    <title>
+  Go Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2020-02-17-Go-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Go Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-02-17T00:00:00&#43;01:00'>
+                February 17, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#structs">Structs</a></li>
+<li><a href="#errors-and-failures">Errors and Failures</a></li>
+<li><a href="#goroutines-and-channels">Goroutines and Channels</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Hello World:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#719e07">package</span> main
+
+<span style="color:#719e07">import</span> (
+    <span style="color:#2aa198">&#34;fmt&#34;</span>
+    <span style="color:#2aa198">&#34;strings&#34;</span>
+    <span style="color:#2aa198">&#34;math/rand&#34;</span>
+    <span style="color:#2aa198">&#34;time&#34;</span>
+    <span style="color:#2aa198">&#34;github.com/headfirstgo/keyboard&#34;</span> <span style="color:#586e75">// use go get to download the package
+</span><span style="color:#586e75"></span>)
+
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
+    fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;Hello Go!&#34;</span>)
+    fmt.<span style="color:#268bd2">Println</span>(strings.<span style="color:#268bd2">Title</span>(<span style="color:#2aa198">&#34;head first go&#34;</span>))
+    rand.<span style="color:#268bd2">Seed</span>(time.<span style="color:#268bd2">Now</span>().<span style="color:#268bd2">Unix</span>())
+    fmt.<span style="color:#268bd2">Println</span>(rand.<span style="color:#268bd2">Intn</span>(<span style="color:#2aa198">100</span>)) <span style="color:#586e75">// 0 - 99
+</span><span style="color:#586e75"></span>}
+</code></pre></div></li>
+<li>
+<p>Use <code>go fmt</code> to format the code. (Go uses tabs instead of spaces.)</p>
+</li>
+<li>
+<p>Use <code>go run</code> to compile and run. Or <code>go build</code> and <code>./foo</code>. <code>go install</code> generates the binary in the bin directory.</p>
+</li>
+<li>
+<p>Rune literals are surrounded by single quotes. (Just like C chars.)</p>
+</li>
+<li>
+<p>Initialization:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">var</span> foobar <span style="color:#dc322f">bool</span> <span style="color:#586e75">// the zero (default) value is false
+</span><span style="color:#586e75">// The zero values: 0 for int and float; false for bool
+</span><span style="color:#586e75"></span>foo <span style="color:#719e07">:=</span> <span style="color:#2aa198">42</span> <span style="color:#586e75">// short variable declaration
+</span><span style="color:#586e75">// ONLY ONE variable in the short variable declaration has to be new
+</span><span style="color:#586e75">// This allows multiple err for definitions
+</span></code></pre></div></li>
+<li>
+<p>Go prefers the camelCase and no semicolons.</p>
+</li>
+<li>
+<p>Type conversions:</p>
+<ul>
+<li>Go uses the C-like style type conversion: <code>length = float64(width)</code></li>
+<li>And similarly for string to int: <code>foo, err := strconv.Atoi(&quot;123&quot;)</code> (ASCII to Int)</li>
+</ul>
+</li>
+<li>
+<p>Go doesn&rsquo;t allow variable declarations unless we use these variables.</p>
+</li>
+<li>
+<p>We can use the blank identifier just like in Swift:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">reader <span style="color:#719e07">:=</span> bufio.<span style="color:#268bd2">NewReader</span>(os.Stdin)
+input, _ <span style="color:#719e07">:=</span> reader.<span style="color:#268bd2">ReadString</span>(<span style="color:#2aa198">&#39;\n&#39;</span>) <span style="color:#586e75">// if we don&#39;t handle the err
+</span><span style="color:#586e75">// or we handle it:
+</span><span style="color:#586e75">// if err != nil {
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// log.Fatal(err)
+</span><span style="color:#586e75">//}
+</span></code></pre></div></li>
+<li>
+<p>Like in Swift/Python, there&rsquo;s no need to add parentheses for <code>if</code> and <code>for</code>.</p>
+</li>
+<li>
+<p>Since Go is syntactically similar to C, it also uses the formatting verbs: <code>%f</code>, <code>%d</code>, <code>%s</code>, <code>%t</code> (Boolean), <code>%v</code> (Any.) (<code>%2d</code> and <code>%.2f</code> are also used to round the numbers.)</p>
+</li>
+<li>
+<p>Like in Swift and Kotlin, the types are after the parameter names in a function:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">foo</span>(bar <span style="color:#dc322f">string</span>, foobar <span style="color:#dc322f">int</span>) <span style="color:#dc322f">string</span> {
+    <span style="color:#719e07">return</span> <span style="color:#2aa198">&#34;Hello Go!&#34;</span>
+}
+
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">foofoo</span>() (<span style="color:#dc322f">string</span>, <span style="color:#dc322f">string</span>) {
+    <span style="color:#719e07">return</span> <span style="color:#2aa198">&#34;Hello&#34;</span>, <span style="color:#2aa198">&#34;Go!&#34;</span>
+}
+</code></pre></div></li>
+<li>
+<p>Go is a &ldquo;pass-by-value&rdquo; language by default.</p>
+<ul>
+<li>
+<p>And we have the C-style pointers and addresses. A shorter form: <code>fooPointer := &amp;foo</code> <code>*fooPointer = 42</code> <code>fmt.Println(*fooPointer)</code>.</p>
+</li>
+<li>
+<p>Use pointers to change the value for functions:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">myFunc</span>(foo <span style="color:#719e07">*</span>bar) {
+    foo.foofoo <span style="color:#719e07">++</span>
+}
+
+<span style="color:#268bd2">myFunc</span>(foofoofoo<span style="color:#719e07">&amp;</span>)
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>const fooBar = 42</code> or <code>const fooBar int = 42</code></p>
+</li>
+<li>
+<p>Documentations:</p>
+<ul>
+<li><code>go doc strconv</code> to see the documentation of strconv.</li>
+<li><code>go doc strconv Atoi</code> to see the specific function.</li>
+<li><code>godoc -http=:6060</code> starts the local server at port 6060.</li>
+</ul>
+</li>
+<li>
+<p>Add ordinary comments before the package line and before functions to make them doc comments. A few conventions:</p>
+<ul>
+<li>Comments should be complete sentences.</li>
+<li>Package comments should begin with &ldquo;Package + name&rdquo;: <code>// Package myPackage does nothing.</code>.</li>
+<li>Function comments should begin with the function name: <code>// MyFunction does nothing.</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>import (&quot;os&quot;)</code> and <code>os.Args[1:]</code> gives the command-line arguments (except the file name).</p>
+</li>
+<li>
+<p>Variadic functions: <code>func myFunc (param1 int, param2 ...string) {}</code> (unlimited string parameters stored as a alice in param2)</p>
+</li>
+<li>
+<p>Functions are first-class in go as well.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">twice</span>(theFunction <span style="color:#268bd2">func</span>()) {
+    <span style="color:#268bd2">theFunction</span>()
+    <span style="color:#268bd2">theFunction</span>()
+}
+</code></pre></div></li>
+</ol>
+<h2 id="data-structures">Data Structures</h2>
+<ol>
+<li>
+<p>Arrays:</p>
+<ul>
+<li><code>var myArray [4]string</code></li>
+<li><code>myArray := [2]int{3, 4}</code></li>
+<li><code>fmt.Println(myArray)</code> (can be printed directly).</li>
+<li>Like in Python, use <code>len(meArray)</code> to check the length.</li>
+</ul>
+</li>
+<li>
+<p>For loops: <code>for index, value := range myArray</code></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#719e07">for</span> index, note <span style="color:#719e07">:=</span> <span style="color:#719e07">range</span> notes {
+    fmt.<span style="color:#268bd2">Println</span>(index, note)
+}
+<span style="color:#586e75">// or
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> _, note <span style="color:#719e07">:=</span> <span style="color:#719e07">range</span> notes {
+    fmt.<span style="color:#268bd2">Println</span>(note)
+}
+<span style="color:#586e75">// or
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> index, _ <span style="color:#719e07">:=</span> <span style="color:#719e07">range</span> notes {
+    fmt.<span style="color:#268bd2">Println</span>(index)
+}
+</code></pre></div></li>
+<li>
+<p>Slices: (similar to Python)</p>
+<ul>
+<li><code>var notes []string</code> then <code>notes = make([]string, 7)</code></li>
+<li>Or <code>notes := []string{&quot;foo&quot;, &quot;bar&quot;}</code></li>
+<li><code>myArray := [5]string{&quot;a&quot;, &quot;b, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;}</code> <code>mySlice := myArray[1:3]</code> gives b, c.</li>
+<li>We can also do <code>[1:]</code> or <code>[:3]</code>.</li>
+<li>The modifications for the original array or the slice will affect each other.</li>
+<li><code>slice = append(slice, &quot;foo&quot;, &quot;bar&quot;, &quot;foobar&quot;)</code></li>
+</ul>
+</li>
+<li>
+<p>Maps:</p>
+<ul>
+<li>
+<p><code>var myMap map[string]int</code> then <code>myMap = make(map[string]int)</code>.</p>
+</li>
+<li>
+<p>Or <code>myMap := make(map[string]int)</code>.</p>
+</li>
+<li>
+<p><code>myMap[&quot;newKey&quot;] = 1</code> to insert and <code>myMap[&quot;newKey&quot;]</code> to access.</p>
+</li>
+<li>
+<p>Map literals:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ranks <span style="color:#719e07">:=</span> <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>{<span style="color:#2aa198">&#34;bronze&#34;</span>: <span style="color:#2aa198">3</span>, <span style="color:#2aa198">&#34;silver&#34;</span>: <span style="color:#2aa198">2</span>, <span style="color:#2aa198">&#34;gold&#34;</span>: <span style="color:#2aa198">1</span>}
+<span style="color:#586e75">// or multiline
+</span><span style="color:#586e75"></span>elements <span style="color:#719e07">:=</span> <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">string</span>{
+    <span style="color:#2aa198">&#34;H&#34;</span>: <span style="color:#2aa198">&#34;Hydrogen&#34;</span>,
+    <span style="color:#2aa198">&#34;Li&#34;</span>: <span style="color:#2aa198">&#34;Lithium&#34;</span>,
+}
+emptyMap <span style="color:#719e07">:=</span> <span style="color:#268bd2">map</span>[<span style="color:#dc322f">string</span>]<span style="color:#dc322f">int</span>{} <span style="color:#586e75">// empty
+</span></code></pre></div></li>
+<li>
+<p>Use <code>ok</code> (a boolean value) to tell if it&rsquo;s a zero value: <code>grade, ok := grades[name]</code> then <code>if !go {}</code>.</p>
+</li>
+<li>
+<p>Use <code>delete(myMap, &quot;myKey&quot;)</code> to delete the pair.</p>
+</li>
+<li>
+<p>for loops:</p>
+<ul>
+<li><code>for key, value := range myMap {}</code></li>
+<li><code>for key := range myMap {}</code></li>
+<li><code>for _, value := myMap {}</code></li>
+</ul>
+</li>
+<li>
+<p><code>sort.Strings(names)</code> and then loop to have the sorted map.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="structs">Structs</h2>
+<ol>
+<li>
+<p>Example: (<code>go fmt</code> will format the spaces)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#586e75">// Capitalize if we want to export the package
+</span><span style="color:#586e75">// Lowercase if we want to make it private in its own package
+</span><span style="color:#586e75"></span><span style="color:#268bd2">var</span> MyStruct <span style="color:#268bd2">struct</span> {
+    Number <span style="color:#dc322f">float64</span>
+    Word <span style="color:#dc322f">string</span>
+    Toggle <span style="color:#dc322f">bool</span>
+}
+MyStruct.number = <span style="color:#2aa198">3.14</span>
+<span style="color:#586e75">// or define a type
+</span><span style="color:#586e75"></span><span style="color:#268bd2">type</span> Car <span style="color:#268bd2">struct</span> {
+    Name <span style="color:#dc322f">string</span>
+    TopSpeed <span style="color:#dc322f">float64</span>
+}
+<span style="color:#268bd2">var</span> myCar Car
+<span style="color:#586e75">// or struct literal
+</span><span style="color:#586e75"></span>myCar <span style="color:#719e07">:=</span> Car{Name: <span style="color:#2aa198">&#34;Tesla&#34;</span>, TopSpeed: <span style="color:#2aa198">337</span>}
+<span style="color:#586e75">// Anonymous fields with just the type name is also allowed
+</span><span style="color:#586e75"></span><span style="color:#268bd2">func</span> (m <span style="color:#719e07">*</span>Car) <span style="color:#268bd2">myMethod</span>() {
+    fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;This is a method from Car %s&#34;</span>, m)
+    <span style="color:#719e07">*</span>m.TopSpeed = <span style="color:#2aa198">1</span>
+}
+<span style="color:#268bd2">func</span> (m <span style="color:#719e07">*</span>Car) <span style="color:#268bd2">SetTopSpeed</span>(speed <span style="color:#dc322f">float64</span>) <span style="color:#dc322f">error</span> { <span style="color:#586e75">// must pass by reference
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">if</span> speed &lt; <span style="color:#2aa198">0</span> {
+        <span style="color:#719e07">return</span> errors.<span style="color:#268bd2">New</span>(<span style="color:#2aa198">&#34;Invalid speed&#34;</span>)
+    }
+    m.TopSpeed = speed
+    <span style="color:#719e07">return</span> <span style="color:#cb4b16">nil</span>
+}
+<span style="color:#268bd2">func</span> (m <span style="color:#719e07">*</span>Car) <span style="color:#268bd2">TopSpeed</span>() <span style="color:#dc322f">float64</span> { <span style="color:#586e75">// Don&#39;t add Get to the name in the Getter
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">return</span> m.TopSpeed
+}
+</code></pre></div></li>
+<li>
+<p>Interfaces:</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">type</span> MyInterface <span style="color:#268bd2">interface</span> {
+    <span style="color:#268bd2">Foo</span>()
+    <span style="color:#268bd2">Bar</span>(<span style="color:#dc322f">float64</span>)
+    <span style="color:#268bd2">FooBar</span>() <span style="color:#dc322f">string</span>
+ }
+<span style="color:#268bd2">func</span> (m MyType) <span style="color:#268bd2">Foo</span>() {}
+<span style="color:#268bd2">func</span> (m MyType) <span style="color:#268bd2">Bar</span>(f <span style="color:#dc322f">float64</span>) {}
+<span style="color:#268bd2">func</span> (m MyType) <span style="color:#268bd2">FooBar</span>() <span style="color:#dc322f">string</span> {
+<span style="color:#719e07">return</span> <span style="color:#2aa198">&#34;Now I&#39;m complete&#34;</span>
+}
+<span style="color:#586e75">// No further stuff needed. MyType automatically matches the interface now,
+</span><span style="color:#586e75">// if it has defined all the methods.
+</span></code></pre></div></li>
+<li>
+<p>Type assertion: <code>robot, ok := noiseMaker.(Robot)</code> (noiseMaker is the interface var).</p>
+</li>
+<li>
+<p>The empty interface can accept any type. <code>func AcceptAnything(thing interface{})</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="errors-and-failures">Errors and Failures</h2>
+<ol>
+<li>
+<p>Add <code>defer</code> to make sure a function call takes place, even if the calling function exist early (returned or panicking). <code>defer fmt.Println(&quot;I'm deferred to the end.&quot;)</code>.</p>
+</li>
+<li>
+<p><code>panic(&quot;I'm panicking&quot;)</code> to create a panic (crashing the program).</p>
+</li>
+<li>
+<p><code>recover</code> takes the return value of <code>panic</code> and exits the program normally.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">calmDown</span>() {
+    <span style="color:#b58900">recover</span>()
+}
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">freakOut</span>() {
+    <span style="color:#719e07">defer</span> <span style="color:#268bd2">calmDown</span>()
+    <span style="color:#b58900">panic</span>(<span style="color:#2aa198">&#34;Oh no&#34;</span>)
+    fmt.<span style="color:#268bd2">Println</span>(<span style="color:#2aa198">&#34;I won&#39;t be run!&#34;</span>)
+}
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
+    <span style="color:#268bd2">freakout</span>()
+}
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">calmDown</span>() {
+    p <span style="color:#719e07">:=</span> <span style="color:#b58900">recover</span>()
+    err, ok <span style="color:#719e07">:=</span> p.(<span style="color:#dc322f">error</span>) <span style="color:#586e75">// assert that it&#39;s an error
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">if</span> ok {
+        fmt.<span style="color:#268bd2">Println</span>(err.<span style="color:#268bd2">Error</span>())
+    }
+}
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
+    <span style="color:#719e07">defer</span> <span style="color:#268bd2">calmDown</span>()
+    err <span style="color:#719e07">:=</span> fmt.<span style="color:#268bd2">Errorf</span>(<span style="color:#2aa198">&#34;There&#39;s an error&#34;</span>)
+    <span style="color:#b58900">panic</span>(err)
+}
+</code></pre></div></li>
+<li>
+<p>This is intentionally designed in Go to be clumsy, which discourages its usage. Normally, we just need to do <code>log.Fatal(err)</code> and return in the functions.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#719e07">if</span> err <span style="color:#719e07">!=</span> <span style="color:#cb4b16">nil</span> {
+    log.<span style="color:#268bd2">Fatal</span>(err)
+}
+</code></pre></div></li>
+</ol>
+<h2 id="goroutines-and-channels">Goroutines and Channels</h2>
+<ol>
+<li>
+<p>Goroutines (<code>go</code> in front of function calls) enable parallelism (lightweight threads):</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
+    <span style="color:#719e07">go</span> <span style="color:#268bd2">a</span>()
+    <span style="color:#719e07">go</span> <span style="color:#268bd2">b</span>() <span style="color:#586e75">// can&#39;t deal with the return value
+</span><span style="color:#586e75"></span>    time.<span style="color:#268bd2">Sleep</span>(time.Second) <span style="color:#586e75">// sleep for 1 second to let the routines finish
+</span><span style="color:#586e75"></span>}
+</code></pre></div></li>
+<li>
+<p>Channels to enable the communication between goroutines.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">greeting</span>(myChannel <span style="color:#268bd2">chan</span> <span style="color:#dc322f">string</span>) {
+    myChannel <span style="color:#719e07">&lt;-</span> <span style="color:#2aa198">&#34;hi&#34;</span>
+    <span style="color:#586e75">// time.Sleep(time.Second) to synchronize
+</span><span style="color:#586e75"></span>}
+<span style="color:#268bd2">func</span> <span style="color:#268bd2">main</span>() {
+    myChannel <span style="color:#719e07">:=</span> <span style="color:#b58900">make</span>(<span style="color:#268bd2">chan</span> <span style="color:#dc322f">string</span>)
+    <span style="color:#719e07">go</span> <span style="color:#268bd2">greeting</span>(myChannel)
+    fmt.<span style="color:#268bd2">Println</span>(<span style="color:#719e07">&lt;-</span>myChannel) <span style="color:#586e75">// receives &#34;hi&#34;
+</span><span style="color:#586e75"></span>}
+</code></pre></div></li>
+</ol>
+<h2 id="testing">Testing</h2>
+<ol>
+<li>
+<p>Run <code>go test</code></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#268bd2">func</span> <span style="color:#268bd2">TestFoo</span>(t <span style="color:#719e07">*</span>testing.T) {
+    t.<span style="color:#268bd2">Error</span>(<span style="color:#2aa198">&#34;test failed&#34;</span>)
+}
+</code></pre></div></li>
+</ol>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

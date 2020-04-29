@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for Android Development">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android Development Notes"/>
+<meta name="twitter:description" content="Some notes for Android Development"/>
+
+    <meta property="og:title" content="Android Development Notes" />
+<meta property="og:description" content="Some notes for Android Development" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" />
+<meta property="article:published_time" content="2019-07-10T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-07-10T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/">
+    
+    <title>
+  Android Development Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Android Development Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-07-10T00:00:00&#43;02:00'>
+                July 10, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Mobile-Development/">Mobile Development</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#app-resources">App Resources</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#androidmanifestxml">AndroidManifest.xml</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#activities">Activities</a></li>
+<li><a href="#fragments">Fragments</a></li>
+<li><a href="#notifications">Notifications</a></li>
+<li><a href="#android-studio-tips">Android Studio Tips</a></li>
+<li><a href="#miscellaneous">Miscellaneous</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p><strong>Layout</strong> is typically defined in XML, whereas <strong>activities</strong> are in Java class.</p>
+</li>
+<li>
+<p>The Android operating system is a multi-user Linux system in which each app is a different user.</p>
+</li>
+</ol>
+<h2 id="app-resources">App Resources</h2>
+<ol>
+<li>
+<p>String array: <code>android:entries=&quot;@array/foo&quot;</code>.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#268bd2">&lt;string-array</span> name=<span style="color:#2aa198">&#34;foo&#34;</span><span style="color:#268bd2">&gt;</span>
+    <span style="color:#268bd2">&lt;item&gt;</span>bar1<span style="color:#268bd2">&lt;/item&gt;</span>
+    <span style="color:#268bd2">&lt;item&gt;</span>bar2<span style="color:#268bd2">&lt;/item&gt;</span>
+<span style="color:#268bd2">&lt;/string-array&gt;</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/resources/providing-resources#AliasResources">Creating alias resources</a>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#719e07">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#268bd2">&lt;resources&gt;</span>
+    <span style="color:#268bd2">&lt;drawable</span> name=<span style="color:#2aa198">&#34;icon&#34;</span><span style="color:#268bd2">&gt;</span>@drawable/icon_ca<span style="color:#268bd2">&lt;/drawable&gt;</span>
+<span style="color:#268bd2">&lt;/resources&gt;</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/look-and-feel/themes">Styles and Themes</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/resources/providing-resources#ReferencesToThemeAttributes">Referencing style attributes</a>: <code>android:textColor=&quot;?android:textColorSecondary</code></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/multiscreen/screendensities">Support different pixel densities</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/practices/screens-distribution">Declare restricted screen support</a></p>
+</li>
+</ol>
+<h2 id="permissions">Permissions</h2>
+<ol>
+<li>
+<p><a href="https://developer.android.com/training/permissions/requesting#explain">Request App Permissions</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/permissions/usage-notes#perms_vs_intents">Use an intent instead</a></p>
+</li>
+</ol>
+<h2 id="androidmanifestxml">AndroidManifest.xml</h2>
+<ol>
+<li>The <code>minSdkVersion</code> attribute declares the minimum version with which your app is compatible and the <code>targetSdkVersion</code> attribute declares the highest version on which you&rsquo;ve optimized your app: <code>&lt;uses-sdk android:minSdkVersion=&quot;4&quot; android:targetSdkVersion=&quot;15&quot; /&gt;</code></li>
+</ol>
+<h2 id="layout">Layout</h2>
+<ol>
+<li>
+<p><code>&lt;EditText&gt;</code> is an editable text field:</p>
+<ul>
+<li><code>android:hint=&quot;@string/hint&quot;</code>: normally &ldquo;Enter a message&rdquo;, telling the user what to type;</li>
+<li><code>android:ems=&quot;10&quot;</code>: 10-M space.</li>
+</ul>
+</li>
+<li>
+<p><code>android:layout_weight=&quot;number&quot;</code> makes a view stretch.</p>
+<ul>
+<li>If a has the weight of 1 and b has 2, a&rsquo;ll have 1/3 and b&rsquo;ll have 2/3 of the screen.</li>
+<li>We usually have <code>android:layout_height=&quot;0dp&quot;</code> (for vertical layout) above layout_weight.</li>
+</ul>
+</li>
+<li>
+<p><code>android:gravity=&quot;top&quot;</code> moves the CONTENT of a view to the top of the view, whereas <code>android:layout_gravity=&quot;end&quot;</code> moves the placement of the VIEW itself to the end.</p>
+</li>
+<li>
+<p><code>&lt;FrameLayout&gt;&lt;/FrameLayout&gt;</code> allows views to overlap. Ues it when we need to replace the fragments and add the changes to the back stack.</p>
+</li>
+<li>
+<p>Surround LinearLayout/FrameLayout with <code>&lt;ScrollView&gt;&lt;/ScrollView&gt;</code> to get a vertical scrollbar. (<code>HorizontalScrollView</code> for the horizontal scrollbar.)</p>
+</li>
+<li>
+<p>A CoordinatorLayout allows the behavior of one view to affect the behavior of another.</p>
+</li>
+<li>
+<p>AdapterView:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ArrayAdapter<span style="color:#719e07">&lt;</span>String<span style="color:#719e07">&gt;</span> adapter <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> ArrayAdapter<span style="color:#719e07">&lt;</span>String<span style="color:#719e07">&gt;(</span><span style="color:#719e07">this</span><span style="color:#719e07">,</span>
+    android<span style="color:#719e07">.</span>R<span style="color:#719e07">.</span>layout<span style="color:#719e07">.</span>simple_list_item_1<span style="color:#719e07">,</span> myStringArray<span style="color:#719e07">);</span>
+ListView listView <span style="color:#719e07">=</span> <span style="color:#719e07">(</span>ListView<span style="color:#719e07">)</span> findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>listview<span style="color:#719e07">);</span>
+listView<span style="color:#719e07">.</span>setAdapter<span style="color:#719e07">(</span>adapter<span style="color:#719e07">)</span>
+<span style="color:#586e75">// Create a message handling object as an anonymous class.
+</span><span style="color:#586e75"></span><span style="color:#268bd2">private</span> OnItemClickListener messageClickedHandler <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> OnItemClickListener<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onItemClick</span><span style="color:#719e07">(</span>AdapterView parent<span style="color:#719e07">,</span> View v<span style="color:#719e07">,</span> <span style="color:#dc322f">int</span> position<span style="color:#719e07">,</span> <span style="color:#dc322f">long</span> id<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    <span style="color:#586e75">// Do something in response to the click
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">};</span>
+
+listView<span style="color:#719e07">.</span>setOnItemClickListener<span style="color:#719e07">(</span>messageClickedHandler<span style="color:#719e07">);</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/layout/recyclerview">Create a List with RecyclerView</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/improving-layouts/reusing-layouts">Re-using layouts with include</a>: <code>&lt;merge&gt;&lt;/merge&gt;</code> <code>&lt;include layout=&quot;@layout/foo&quot;/&gt;</code></p>
+</li>
+<li>
+<p>Spinners:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Spinner s1 <span style="color:#719e07">=</span> <span style="color:#719e07">(</span>Spinner<span style="color:#719e07">)</span> findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>spinner1<span style="color:#719e07">);</span>
+ArrayAdapter adapter <span style="color:#719e07">=</span> ArrayAdapter<span style="color:#719e07">.</span>createFromResource<span style="color:#719e07">(</span>
+<span style="color:#719e07">this</span><span style="color:#719e07">,</span> R<span style="color:#719e07">.</span>array<span style="color:#719e07">.</span>colors<span style="color:#719e07">,</span> android<span style="color:#719e07">.</span>R<span style="color:#719e07">.</span>layout<span style="color:#719e07">.</span>simple_spinner_item<span style="color:#719e07">);</span>
+adapter<span style="color:#719e07">.</span>setDropDownViewResource<span style="color:#719e07">(</span>android<span style="color:#719e07">.</span>R<span style="color:#719e07">.</span>layout<span style="color:#719e07">.</span>simple_spinner_dropdown_item<span style="color:#719e07">);</span>
+s1<span style="color:#719e07">.</span>setAdapter<span style="color:#719e07">(</span>adapter<span style="color:#719e07">);</span>
+s1<span style="color:#719e07">.</span>setOnItemSelectedListener<span style="color:#719e07">(</span><span style="color:#719e07">new</span> AdapterView<span style="color:#719e07">.</span>OnItemSelectedListener<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">@Override</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onItemSelected</span><span style="color:#719e07">(</span>AdapterView<span style="color:#719e07">&lt;?&gt;</span> parent<span style="color:#719e07">,</span> View view<span style="color:#719e07">,</span> <span style="color:#dc322f">int</span> position<span style="color:#719e07">,</span> <span style="color:#dc322f">long</span> id<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#586e75">// TODO
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+
+    <span style="color:#268bd2">@Override</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onNothingSelected</span><span style="color:#719e07">(</span>AdapterView<span style="color:#719e07">&lt;?&gt;</span> parent<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+       <span style="color:#586e75">// sometimes you need nothing here
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">});</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/button">Buttons</a> Set onClick programmatically:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Button button <span style="color:#719e07">=</span> <span style="color:#719e07">(</span>Button<span style="color:#719e07">)</span> findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>button_send<span style="color:#719e07">);</span>
+button<span style="color:#719e07">.</span>setOnClickListener<span style="color:#719e07">(</span><span style="color:#719e07">new</span> View<span style="color:#719e07">.</span>OnClickListener<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onClick</span><span style="color:#719e07">(</span>View v<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#586e75">// Do something in response to button click
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">});</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/checkbox">Checkboxes</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/radiobutton">Radio Buttons</a></p>
+</li>
+<li>
+<p><a href="https://www.tutlane.com/tutorial/android/android-switch-on-off-button-with-examples">Switch Buttons</a></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">android:checked=&#34;true&#34;
+android:textOff=&#34;OFF&#34;
+android:textOn=&#34;ON
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Switch sw <span style="color:#719e07">=</span> <span style="color:#719e07">(</span>Switch<span style="color:#719e07">)</span> findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>switch1<span style="color:#719e07">);</span>
+sw<span style="color:#719e07">.</span>setOnCheckedChangeListener<span style="color:#719e07">(</span><span style="color:#719e07">new</span> CompoundButton<span style="color:#719e07">.</span>OnCheckedChangeListener<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onCheckedChanged</span><span style="color:#719e07">(</span>CompoundButton buttonView<span style="color:#719e07">,</span> <span style="color:#dc322f">boolean</span> isChecked<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">if</span> <span style="color:#719e07">(</span>isChecked<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+            <span style="color:#586e75">// The toggle is enabled
+</span><span style="color:#586e75"></span>        <span style="color:#719e07">}</span> <span style="color:#719e07">else</span> <span style="color:#719e07">{</span>
+            <span style="color:#586e75">// The toggle is disabled
+</span><span style="color:#586e75"></span>        <span style="color:#719e07">}</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">});</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/pickers">Pickers</a> (Time/Date Pickers)</p>
+</li>
+<li>
+<p>Centralized onClick events:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">ActivityA</span> <span style="color:#268bd2">extends</span> Activity <span style="color:#268bd2">implements</span> View<span style="color:#719e07">.</span>OnClickListener <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">@Override</span>
+    <span style="color:#268bd2">protected</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onCreate</span><span style="color:#719e07">(</span><span style="color:#268bd2">@Nullable</span> Bundle savedInstanceState<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#268bd2">super</span><span style="color:#719e07">.</span>onCreate<span style="color:#719e07">(</span>savedInstanceState<span style="color:#719e07">);</span>
+
+        findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>first<span style="color:#719e07">).</span>setOnClickListener<span style="color:#719e07">(</span><span style="color:#719e07">this</span><span style="color:#719e07">);</span>
+        findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>second<span style="color:#719e07">).</span>setOnClickListener<span style="color:#719e07">(</span><span style="color:#719e07">this</span><span style="color:#719e07">);</span>
+        findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>third<span style="color:#719e07">).</span>setOnClickListener<span style="color:#719e07">(</span><span style="color:#719e07">this</span><span style="color:#719e07">);</span>
+    <span style="color:#719e07">}</span>
+
+    <span style="color:#268bd2">@Override</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onClick</span><span style="color:#719e07">(</span>View v<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">switch</span> <span style="color:#719e07">(</span>v<span style="color:#719e07">.</span>getId<span style="color:#719e07">())</span> <span style="color:#719e07">{</span>
+            <span style="color:#719e07">case</span> R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>first<span style="color:#719e07">:</span>
+                <span style="color:#586e75">// Manage click.
+</span><span style="color:#586e75"></span>                <span style="color:#719e07">break</span><span style="color:#719e07">;</span>
+
+            <span style="color:#719e07">case</span> R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>second<span style="color:#719e07">:</span>
+                <span style="color:#586e75">// Manage click.
+</span><span style="color:#586e75"></span>                <span style="color:#719e07">break</span><span style="color:#719e07">;</span>
+
+            <span style="color:#719e07">case</span> R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>third<span style="color:#719e07">:</span>
+                <span style="color:#586e75">// Manage click.
+</span><span style="color:#586e75"></span>                <span style="color:#719e07">break</span><span style="color:#719e07">;</span>
+        <span style="color:#719e07">}</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p>App bar:</p>
+<ul>
+<li>
+<p><a href="https://developer.android.com/training/appbar/setting-up">Set up the app bar</a> (Use <code>Toolbar</code> instead of the native <code>ActionBar</code>) and <a href="https://developer.android.com/training/appbar/up-action">Add an up action</a></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">android:theme=&#34;@style/Theme.AppCompat.Light.NoActionBar&#34;
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#268bd2">&lt;android.support.v7.widget.Toolbar</span>
+    android:id=<span style="color:#2aa198">&#34;@+id/my_toolbar&#34;</span>
+    android:layout_width=<span style="color:#2aa198">&#34;match_parent&#34;</span>
+    android:layout_height=<span style="color:#2aa198">&#34;?attr/actionBarSize&#34;</span>
+    android:background=<span style="color:#2aa198">&#34;?attr/colorPrimary&#34;</span>
+    android:elevation=<span style="color:#2aa198">&#34;4dp&#34;</span>
+    android:theme=<span style="color:#2aa198">&#34;@style/ThemeOverlay.AppCompat.ActionBar&#34;</span>
+    app:popupTheme=<span style="color:#2aa198">&#34;@style/ThemeOverlay.AppCompat.Light&#34;</span><span style="color:#268bd2">/&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#586e75">&lt;!-- A child of the main activity --&gt;</span>
+<span style="color:#268bd2">&lt;activity</span>
+   android:name=<span style="color:#2aa198">&#34;com.example.myfirstapp.MyChildActivity&#34;</span>
+   android:label=<span style="color:#2aa198">&#34;@string/title_activity_child&#34;</span>
+   android:parentActivityName=<span style="color:#2aa198">&#34;com.example.myfirstapp.MainActivity&#34;</span> <span style="color:#268bd2">&gt;</span>
+
+<span style="color:#586e75">&lt;!-- Parent activity meta-data to support 4.0 and lower --&gt;</span>
+    <span style="color:#268bd2">&lt;meta-data</span>
+        android:name=<span style="color:#2aa198">&#34;android.support.PARENT_ACTIVITY&#34;</span>
+        android:value=<span style="color:#2aa198">&#34;com.example.myfirstapp.MainActivity&#34;</span> <span style="color:#268bd2">/&gt;</span>
+<span style="color:#268bd2">&lt;/activity&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#586e75">// OnCreate
+</span><span style="color:#586e75"></span>Toolbar myToolbar <span style="color:#719e07">=</span> <span style="color:#719e07">(</span>Toolbar<span style="color:#719e07">)</span> findViewById<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>my_toolbar<span style="color:#719e07">);</span>
+setSupportActionBar<span style="color:#719e07">(</span>myToolbar<span style="color:#719e07">);</span>
+    <span style="color:#586e75">// Get a support ActionBar corresponding to this toolbar
+</span><span style="color:#586e75"></span>ActionBar ab <span style="color:#719e07">=</span> getSupportActionBar<span style="color:#719e07">();</span>
+
+<span style="color:#586e75">// Enable the Up button
+</span><span style="color:#586e75"></span>ab<span style="color:#719e07">.</span>setDisplayHomeAsUpEnabled<span style="color:#719e07">(</span><span style="color:#cb4b16">true</span><span style="color:#719e07">);</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/training/appbar/actions">Add and handle actions</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Toasts: <code>Toast toast = Toast.makeText(this, &quot;hello world&quot;, Toast.LENGTH_SHORT); toast.show();</code></p>
+</li>
+</ol>
+<h2 id="activities">Activities</h2>
+<ol>
+<li>
+<p>All activities have to extend the Activity class or its subclass.</p>
+</li>
+<li>
+<p>R is a special Java class that enables you to retrieve references to resources. <code>TextView foo = findViewById(R.id.foo)</code></p>
+</li>
+<li>
+<p>Use Intent to call another activity (can be from other apps):</p>
+<ul>
+<li>
+<p>Explicit intent:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onSendMessage</span><span style="color:#719e07">(</span>View view<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    Intent intent <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Intent<span style="color:#719e07">(</span><span style="color:#719e07">this</span><span style="color:#719e07">,</span> FooActivity<span style="color:#719e07">.</span>class<span style="color:#719e07">);</span> <span style="color:#586e75">// explicit intent
+</span><span style="color:#586e75"></span>    intent<span style="color:#719e07">.</span>putExtra<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;message&#34;</span><span style="color:#719e07">,</span> value<span style="color:#719e07">);</span> <span style="color:#586e75">// message is the name of the extra
+</span><span style="color:#586e75"></span>    startActivity<span style="color:#719e07">(</span>intent<span style="color:#719e07">);</span>
+<span style="color:#719e07">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#719e07">...</span>
+Intent intent <span style="color:#719e07">=</span> getIntent<span style="color:#719e07">();</span>
+String string <span style="color:#719e07">=</span> intent<span style="color:#719e07">.</span>getStringExtra<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;message&#34;</span><span style="color:#719e07">);</span>
+</code></pre></div></li>
+<li>
+<p>Implicit intent: (with actions to allow users to choose which app to run)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Intent<span style="color:#719e07">(</span>Intent<span style="color:#719e07">.</span>ACTION_SEND<span style="color:#719e07">);</span> <span style="color:#586e75">// ACTION_DIAL/ACTION_WEB_SEARCH
+</span><span style="color:#586e75"></span>intent<span style="color:#719e07">.</span>setType<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;text/plain&#34;</span><span style="color:#719e07">);</span>
+intent<span style="color:#719e07">.</span>putExtra<span style="color:#719e07">(</span>Intent<span style="color:#719e07">.</span>EXTRA_TEXT<span style="color:#719e07">,</span> messageText<span style="color:#719e07">);</span>
+String chooserTitle <span style="color:#719e07">=</span> getString<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>string<span style="color:#719e07">.</span>chooser<span style="color:#719e07">);</span>
+<span style="color:#586e75">// Ensure that the user always get the chance to choose an activity
+</span><span style="color:#586e75"></span>Intent chosenIntent <span style="color:#719e07">=</span> Intent<span style="color:#719e07">.</span>createChooser<span style="color:#719e07">(</span>intent<span style="color:#719e07">,</span> chooserTitle<span style="color:#719e07">);</span>
+
+<span style="color:#586e75">// Start an activity if it&#39;s safe
+</span><span style="color:#586e75"></span><span style="color:#719e07">if</span> <span style="color:#719e07">(</span>intent<span style="color:#719e07">.</span>resolveActivity<span style="color:#719e07">(</span>getPackageManager<span style="color:#719e07">())</span> <span style="color:#719e07">!=</span> <span style="color:#cb4b16">null</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    startActivity<span style="color:#719e07">(</span>chosenIntent<span style="color:#719e07">);</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/guide/components/intents-common">Common Intents</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Save the instance state:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#586e75">// Either in onCreate savedInstanceState != null or use the method below
+</span><span style="color:#586e75"></span><span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onRestoreInstanceState</span><span style="color:#719e07">(</span>Bundle savedInstanceState<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">super</span><span style="color:#719e07">.</span>onRestoreInstanceState<span style="color:#719e07">(</span>savedInstanceState<span style="color:#719e07">);</span>
+    seconds <span style="color:#719e07">=</span> savedInstanceState<span style="color:#719e07">.</span>getInt<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;seconds&#34;</span><span style="color:#719e07">);</span>
+    running <span style="color:#719e07">=</span> savedInstanceState<span style="color:#719e07">.</span>getBoolean<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;running&#34;</span><span style="color:#719e07">);</span>
+<span style="color:#719e07">}</span>
+
+<span style="color:#268bd2">@Override</span>
+<span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onSaveInstanceState</span><span style="color:#719e07">(</span>Bundle savedInstanceState<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">super</span><span style="color:#719e07">.</span>onSaveInstanceState<span style="color:#719e07">(</span>savedInstanceState<span style="color:#719e07">);</span>
+    savedInstanceState<span style="color:#719e07">.</span>putInt<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;seconds&#34;</span><span style="color:#719e07">,</span> seconds<span style="color:#719e07">);</span>
+    savedInstanceState<span style="color:#719e07">.</span>putBoolean<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;running&#34;</span><span style="color:#719e07">,</span> running<span style="color:#719e07">);</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p>Activity lifecycle:</p>
+<ul>
+<li>When we implement them (<code>onCreate()</code>, <code>onStart()</code>, <code>onResume()</code>, <code>onPause()</code>, <code>onStop()</code>, <code>onRestart()</code>, <code>onDestroy()</code>), we must call the super class methods.</li>
+<li><code>onResume()</code> is called when the activity is started OR resumed; <code>onPause()</code> is called when the activity is paused OR stopped.</li>
+<li><img src="%7B%7Bhttps://tillchen.com%7D%7D/images/activity_lifecycle.png" alt="Activity lifecycle"></li>
+</ul>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/components/activities/tasks-and-back-stack#TaskLaunchModes">Defining launch modes</a> (singleTop, singleTask, etc.)</p>
+</li>
+</ol>
+<h2 id="fragments">Fragments</h2>
+<ol>
+<li>
+<p>Fragment lifecycle:</p>
+<p><img src="%7B%7Bhttps://tillchen.com%7D%7D/images/fragment_lifecycle.png" alt="Fragment lifecycle"></p>
+</li>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">ExampleFragment</span> <span style="color:#268bd2">extends</span> Fragment <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">@Override</span>
+    <span style="color:#268bd2">public</span> View <span style="color:#268bd2">onCreateView</span><span style="color:#719e07">(</span>LayoutInflater inflater<span style="color:#719e07">,</span> ViewGroup container<span style="color:#719e07">,</span> Bundle savedInstanceState<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#586e75">// Inflate the layout for this fragment
+</span><span style="color:#586e75"></span>        <span style="color:#719e07">return</span> inflater<span style="color:#719e07">.</span>inflate<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>layout<span style="color:#719e07">.</span>example_fragment<span style="color:#719e07">,</span> container<span style="color:#719e07">,</span> <span style="color:#cb4b16">false</span><span style="color:#719e07">);</span>
+        <span style="color:#586e75">// In this case, this is false because the system is already inserting the inflated layout into the container
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p>Add the fragment programmatically:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">FragmentManager fragmentManager <span style="color:#719e07">=</span> getSupportFragmentManager<span style="color:#719e07">();</span>
+FragmentTransaction fragmentTransaction <span style="color:#719e07">=</span> fragmentManager<span style="color:#719e07">.</span>beginTransaction<span style="color:#719e07">();</span>
+ExampleFragment fragment <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> ExampleFragment<span style="color:#719e07">();</span>
+fragmentTransaction<span style="color:#719e07">.</span>add<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>fragment_container<span style="color:#719e07">,</span> fragment<span style="color:#719e07">);</span>
+fragmentTransaction<span style="color:#719e07">.</span>commit<span style="color:#719e07">();</span>
+</code></pre></div></li>
+<li>
+<p>Fragment transactions:</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#586e75">// Create new fragment and transaction
+</span><span style="color:#586e75"></span>Fragment newFragment <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> ExampleFragment<span style="color:#719e07">();</span>
+FragmentTransaction transaction <span style="color:#719e07">=</span> getSupportFragmentManager<span style="color:#719e07">().</span>beginTransaction<span style="color:#719e07">();</span>
+
+<span style="color:#586e75">// Replace whatever is in the fragment_container view with this fragment,
+</span><span style="color:#586e75">// and add the transaction to the back stack
+</span><span style="color:#586e75"></span>transaction<span style="color:#719e07">.</span>replace<span style="color:#719e07">(</span>R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>fragment_container<span style="color:#719e07">,</span> newFragment<span style="color:#719e07">);</span>
+transaction<span style="color:#719e07">.</span>addToBackStack<span style="color:#719e07">(</span><span style="color:#cb4b16">null</span><span style="color:#719e07">);</span>
+
+<span style="color:#586e75">// Commit the transaction
+</span><span style="color:#586e75"></span>transaction<span style="color:#719e07">.</span>commit<span style="color:#719e07">();</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>For dynamic fragments, use FrameLayout instead of Fragment and use FragmentTransaction.</p>
+</li>
+</ol>
+<h2 id="notifications">Notifications</h2>
+<ol>
+<li><a href="https://developer.android.com/training/notify-user/build-notification">Create a Notification</a></li>
+</ol>
+<h2 id="android-studio-tips">Android Studio Tips</h2>
+<ol>
+<li>
+<p><a href="https://developer.android.com/studio/write/annotations.html#java">Improve code inspection with annotations</a> (<code>@Nullable</code>, <code>@NonNull</code>&hellip;)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/sample-code">Find sample code</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/tool-attributes">Tools attributes reference</a> (<code>tools:text=&quot;foo&quot;</code>, <code>tools:itemCount=&quot;3&quot;...</code>)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/debug">Debug your app</a> (<code> private static final String TAG = &quot;MyActivity&quot;; Log.d(TAG, &quot;foo&quot;);</code>)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/debug/am-logcat">Write and View Logs with Logcat</a> (e (error), w (warning), i (information), d (debug), v (verbose))</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/debug/layout-inspector">Debug Your layout with Layout Inspector</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/resource-manager">Manage your app&rsquo;s UI resources with Resource Manager</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/image-asset-studio#java">Create app icons with Image Asset Studio</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/draw9patch">Create resizable bitmaps (9-Patch files)</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/app-link-indexing#java">Add Android App Links</a></p>
+</li>
+</ol>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<ol>
+<li>
+<p>Android builds the back stack to keep track of the activity/fragment transactions.</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/app-links/deep-linking">Create Deep Links to App Content</a>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#268bd2">&lt;intent-filter&gt;</span>
+  ...
+  <span style="color:#268bd2">&lt;data</span> android:scheme=<span style="color:#2aa198">&#34;https&#34;</span> android:host=<span style="color:#2aa198">&#34;www.example.com&#34;</span> <span style="color:#268bd2">/&gt;</span>
+  <span style="color:#268bd2">&lt;data</span> android:scheme=<span style="color:#2aa198">&#34;app&#34;</span> android:host=<span style="color:#2aa198">&#34;open.my.app&#34;</span> <span style="color:#268bd2">/&gt;</span>
+<span style="color:#268bd2">&lt;/intent-filter&gt;</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://developer.android.com/training/app-links/verify-site-associations">Verify Android App Links</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/swipe/add-swipe-interface">Adding Swipe-to-Refresh To Your App</a> (Add <code>SwipeRefreshLayout</code> as the parent of a single <code>ListView</code> or <code>GridView</code>.) (<code>android.support.v4.widget.SwipeRefreshLayout</code>)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/swipe/respond-refresh-request">Responding to Refresh Request</a></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">mySwipeRefreshLayout<span style="color:#719e07">.</span>setOnRefreshListener<span style="color:#719e07">(</span>
+    <span style="color:#719e07">new</span> SwipeRefreshLayout<span style="color:#719e07">.</span>OnRefreshListener<span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+        <span style="color:#268bd2">@Override</span>
+        <span style="color:#268bd2">public</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">onRefresh</span><span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+            Log<span style="color:#719e07">.</span>i<span style="color:#719e07">(</span>LOG_TAG<span style="color:#719e07">,</span> <span style="color:#2aa198">&#34;onRefresh called from SwipeRefreshLayout&#34;</span><span style="color:#719e07">);</span>
+
+            <span style="color:#586e75">// This method performs the actual data-refresh operation.
+</span><span style="color:#586e75"></span>            <span style="color:#586e75">// The method calls setRefreshing(false) when it&#39;s finished.
+</span><span style="color:#586e75"></span>            myUpdateOperation<span style="color:#719e07">();</span>
+        <span style="color:#719e07">}</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">);</span>
+</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#586e75">// For refreshing in the app bar
+</span><span style="color:#586e75"></span><span style="color:#268bd2">@Override</span>
+<span style="color:#268bd2">public</span> <span style="color:#dc322f">boolean</span> <span style="color:#268bd2">onOptionsItemSelected</span><span style="color:#719e07">(</span>MenuItem item<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    <span style="color:#719e07">switch</span> <span style="color:#719e07">(</span>item<span style="color:#719e07">.</span>getItemId<span style="color:#719e07">())</span> <span style="color:#719e07">{</span>
+
+        <span style="color:#586e75">// Check if user triggered a refresh:
+</span><span style="color:#586e75"></span>        <span style="color:#719e07">case</span> R<span style="color:#719e07">.</span>id<span style="color:#719e07">.</span>menu_refresh<span style="color:#719e07">:</span>
+            Log<span style="color:#719e07">.</span>i<span style="color:#719e07">(</span>LOG_TAG<span style="color:#719e07">,</span> <span style="color:#2aa198">&#34;Refresh menu item selected&#34;</span><span style="color:#719e07">);</span>
+
+            <span style="color:#586e75">// Signal SwipeRefreshLayout to start the progress indicator
+</span><span style="color:#586e75"></span>            mySwipeRefreshLayout<span style="color:#719e07">.</span>setRefreshing<span style="color:#719e07">(</span><span style="color:#cb4b16">true</span><span style="color:#719e07">);</span>
+
+            <span style="color:#586e75">// Start the refresh background task.
+</span><span style="color:#586e75"></span>            <span style="color:#586e75">// This method calls setRefreshing(false) when it&#39;s finished.
+</span><span style="color:#586e75"></span>            myUpdateOperation<span style="color:#719e07">();</span>
+
+            <span style="color:#719e07">return</span> <span style="color:#cb4b16">true</span><span style="color:#719e07">;</span>
+    <span style="color:#719e07">}</span>
+
+    <span style="color:#586e75">// User didn&#39;t trigger a refresh, let the superclass handle this action
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">return</span> <span style="color:#268bd2">super</span><span style="color:#719e07">.</span>onOptionsItemSelected<span style="color:#719e07">(</span>item<span style="color:#719e07">);</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>
+<p><a href="https://www.amazon.com/Head-First-Android-Development-Brain-Friendly/dp/1491974052/ref=sr_1_1?keywords=head+first+android&amp;qid=1560338899&amp;s=gateway&amp;sr=8-1">Head First Android Development: A Brain-Friendly Guide 2nd Edition</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com">https://developer.android.com</a></p>
+</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

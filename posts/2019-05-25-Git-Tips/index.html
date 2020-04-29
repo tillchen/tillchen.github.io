@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some handy tips for Git">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git Tips"/>
+<meta name="twitter:description" content="Some handy tips for Git"/>
+
+    <meta property="og:title" content="Git Tips" />
+<meta property="og:description" content="Some handy tips for Git" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-05-25-Git-Tips/" />
+<meta property="article:published_time" content="2019-05-25T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-05-25T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-05-25-Git-Tips/">
+    
+    <title>
+  Git Tips · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-05-25-Git-Tips/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Git Tips</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-05-25T00:00:00&#43;02:00'>
+                May 25, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Tools/">Tools</a>
+      <span class="separator">•</span>
+    <a href="https://tillchen.com/tags/Version-Control/">Version Control</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#gitignore">.gitignore</a></li>
+<li><a href="#log">Log</a></li>
+<li><a href="#reverting">Reverting</a></li>
+<li><a href="#remotes">Remotes</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#branching">Branching</a></li>
+<li><a href="#deleting-a-repository">Deleting a repository</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Git - more like a mini filesystem - thinks about its data more like a stream of snapshots, unlike other delta-based version control systems (Subversion.)</p>
+</li>
+<li>
+<p>Unlike CVCS, nearly every operation in Git is local.</p>
+</li>
+<li>
+<p>Git has integrity. Everything is checksummed. It uses SHA-1 to store everything in it&rsquo;s DB.</p>
+</li>
+<li>
+<p>Git generally only adds data.</p>
+</li>
+<li>
+<p>Git has three stages: <em>modified</em>, <em>staged</em>, and <em>committed</em>. And it has three main sections:</p>
+<ul>
+<li><em>The working tree</em>: a single checkout of one version of the project. Files are pulled out of the compressed DB in the Git directory and placed on the disk for modifications.</li>
+<li><em>The staging area</em>: - aka index - a file that stores info about what will go into the next commit.</li>
+<li><em>The Git directory</em>: - .git - stores the metadata and object DB.</li>
+</ul>
+</li>
+<li>
+<p><code>git commit --amend</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git commit -m <span style="color:#2aa198">&#34;Initial commit&#34;</span>
+git add forgotten_file
+git commit --amend
+</code></pre></div><p>Then we&rsquo;ll have one single commit.</p>
+</li>
+</ol>
+<h2 id="gitignore">.gitignore</h2>
+<ol>
+<li>
+<p>When we want to ignore certain files or folders, create a .gitignore file and add the file/folder name inside:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">file.txt # a single file
+folder/ # a folder named `folder`
+*.txt # all txt files
+</code></pre></div></li>
+<li>
+<p>If a file is already tracked, use <code>git rm --cached foo.txt</code> to remove it first from the git repo.</p>
+</li>
+</ol>
+<h2 id="log">Log</h2>
+<ol>
+<li>When we want to get a simpler version of the log, use <code>git log --pretty=oneline</code>.</li>
+</ol>
+<h2 id="reverting">Reverting</h2>
+<ol>
+<li>
+<p>Use <code>git checkout .</code> to revert to the last commit before adding the new changes.</p>
+</li>
+<li>
+<p>Use <code>git checkout</code> plus the first 6 characters of the reference ID to check out the old commits. This enters the detached HEAD state. And it&rsquo;s best <em><strong>not to make changes</strong></em> when checking out old commits. Use <code>git checkout master</code> to go back the master branch.</p>
+</li>
+<li>
+<p>Use <code>git reset --hard</code> plus the first 6 character of the reference ID to reset the project to the old commit.</p>
+</li>
+<li>
+<p><code>git reset HEAD README.md</code> to unstage the file.</p>
+</li>
+<li>
+<p><code>git checkout -- README.md</code> to discard the changes for the file.</p>
+</li>
+</ol>
+<h2 id="remotes">Remotes</h2>
+<ol>
+<li>
+<p><code>git remote -v</code> to see all the remotes verbosely with URLs. <code>origin</code> is the default name.</p>
+</li>
+<li>
+<p><code>git pull</code> = <code>git fetch</code> + <code>git merge</code>.</p>
+</li>
+<li>
+<p><code>git push &lt;remote&gt; &lt;branch&gt;</code>: <code>git push origin master</code>.</p>
+</li>
+<li>
+<p><code>git remote show &lt;remote&gt;</code> to see details of a remote.</p>
+</li>
+<li>
+<p><code>git remote rename &lt;old_remote&gt; &lt;new_remote&gt;</code> and <code>git remote remove &lt;remote&gt;</code>.</p>
+</li>
+</ol>
+<h2 id="tags">Tags</h2>
+<ol>
+<li>
+<p>Annotated tags: <code>git tag -a v1.0 -m &quot;my first tag&quot;</code>. <code>git tag</code> to see the tags</p>
+</li>
+<li>
+<p><code>git show v1.0</code> to show the details.</p>
+</li>
+<li>
+<p>Lightweight tags: <code>git tag v1.0-lw</code> (just provide a tag name only). It&rsquo;s a commit checksum - no other info is kept.</p>
+</li>
+<li>
+<p>Add tags for previous commits: <code>git tag -a v1.0 &lt;log_number&gt;</code>.</p>
+</li>
+<li>
+<p><code>git push</code> doesn&rsquo;t push tags to the remote servers. We need <code>git push origin &lt;tag_name&gt;</code> or <code>git push origin --tags</code> for all tags.</p>
+</li>
+<li>
+<p><code>git tag -d &lt;tag_name&gt;</code> and <code>git push origin --delete &lt;tag_name&gt;</code> for deletion.</p>
+</li>
+</ol>
+<h2 id="branching">Branching</h2>
+<ol>
+<li>
+<p><code>git branch &lt;branch_name&gt;</code> creates a new branch. <code>git checkout &lt;branch_name&gt;</code> moves <code>HEAD</code> to the branch. The shorter version is <code>git checkout -b &lt;branch_name&gt;</code> to do both at the same time.</p>
+</li>
+<li>
+<p><code>git log --oneline --decorate</code> shows the branch pointers.</p>
+</li>
+<li>
+<p><code>git log --oneline --decorate --graph --all</code> shows the divergence.</p>
+</li>
+<li>
+<p>Branches are cheap since they are essentially a file that has the 40-character checksum of the commit pointed to.</p>
+</li>
+<li>
+<p><code>git checkout master</code> + <code>git merge hotfix</code> will fast-forward (or use the recursive strategy) the master branch to the match the hotfix branch. Then <code>git branch -d hotfix</code> deletes it.</p>
+</li>
+<li>
+<p>In case of merge conflict, we need to choose one side or merge the contents ourselves. Then add and commit the file again.</p>
+</li>
+<li>
+<p><code>git branch -v</code> shows the last commit of each branch. <code>git branch --merged</code> and <code>git branch --no-merged</code> shows the branched that are already merged to the current branch or not yet respectively. Or <code>git branch --no-merged master</code>.</p>
+</li>
+<li>
+<p><code>git checkout experiment</code> + <code>git rebase master</code> + <code>git checkout master</code> + <code>git merge experiment</code> gives a fast-forward merge.</p>
+</li>
+<li>
+<p><code>git stash</code> is a convenience tool. But since branching is cheap, we can always branch and then delete it.</p>
+</li>
+</ol>
+<h2 id="deleting-a-repository">Deleting a repository</h2>
+<ol>
+<li>We can either delete the .git directory in a file browser or use <code>rm -rf .git</code>.</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python+crash+course&amp;qid=1558808134&amp;s=gateway&amp;sr=8-1">Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming</a></p>
+</li>
+<li>
+<p><a href="https://git-scm.com/book/en/v2">Pro Git, 2nd Edition</a></p>
+</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

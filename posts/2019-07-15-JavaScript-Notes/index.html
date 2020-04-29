@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for JavaScript">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript Notes"/>
+<meta name="twitter:description" content="Some notes for JavaScript"/>
+
+    <meta property="og:title" content="JavaScript Notes" />
+<meta property="og:description" content="Some notes for JavaScript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" />
+<meta property="article:published_time" content="2019-07-15T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-07-15T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/">
+    
+    <title>
+  JavaScript Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">JavaScript Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-07-15T00:00:00&#43;02:00'>
+                July 15, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Variables:</p>
+<ul>
+<li>Global variables live as long as the page.</li>
+<li>If we forget to declare a variable before using it, it&rsquo;ll always be global even if we first use it in a function.</li>
+</ul>
+</li>
+<li>
+<p>The syntax for an array is similar to Python, using <code>[]</code> instead of <code>{}</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#268bd2">var</span> foo <span style="color:#719e07">=</span> [<span style="color:#2aa198">1</span>, <span style="color:#2aa198">2</span>, <span style="color:#2aa198">3</span>, <span style="color:#2aa198">4</span>, <span style="color:#2aa198">5</span>];
+foo.push(<span style="color:#2aa198">6</span>);
+console.log(foo.length);
+foo[<span style="color:#2aa198">6</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">7</span>; <span style="color:#586e75">// We can do this, but be sure to avoid creating a sparse array
+</span></code></pre></div></li>
+<li>
+<p><code>undefined</code> vs <code>null</code> vs <code>isNaN()</code>:</p>
+<ul>
+<li><code>undefined</code> is used for;
+<ul>
+<li>Unassigned/ Uninitiated variables;</li>
+<li>A missing property for an object;</li>
+<li>A missing value for an array;</li>
+</ul>
+</li>
+<li><code>null</code> is used for uncreated objects (like <code>.getElementById()</code>'s returned value;)</li>
+<li><code>isNaN(foo)</code> is true if foo is the number can&rsquo;t be represented by a computer like 0/0.</li>
+</ul>
+</li>
+<li>
+<p><code>===</code> is the strict equality check (both the type and value) while <code>==</code> is not strict.</p>
+</li>
+<li>
+<p><code>===</code> between two object references will be true only if they refer to the same object.</p>
+</li>
+<li>
+<p>A function in JavaScript can behave just like any data type. It can be assigned to, passed, and returned.</p>
+</li>
+</ol>
+<h2 id="oop">OOP</h2>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#268bd2">var</span> foo <span style="color:#719e07">=</span> {
+    name<span style="color:#719e07">:</span> <span style="color:#2aa198">&#34;bar&#34;</span>, <span style="color:#586e75">// A comma here
+</span><span style="color:#586e75"></span>    coding<span style="color:#719e07">:</span> <span style="color:#268bd2">function</span>() {
+        <span style="color:#719e07">this</span>.name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;coding bar&#34;</span>; <span style="color:#586e75">// Must add `this.`
+</span><span style="color:#586e75"></span>        alert.log(<span style="color:#2aa198">&#34;I&#39;m coding now.&#34;</span>);
+    }, <span style="color:#586e75">// A comma here
+</span><span style="color:#586e75"></span>    age<span style="color:#719e07">:</span> <span style="color:#2aa198">17</span> <span style="color:#586e75">// NO comma here. But can be added after ES5. However, not in JSON.
+</span><span style="color:#586e75"></span>};
+foo.height <span style="color:#719e07">=</span> <span style="color:#2aa198">190</span>; <span style="color:#586e75">// This adds a new property
+</span><span style="color:#586e75"></span>console.log(foo[<span style="color:#2aa198">&#34;name&#34;</span>]); <span style="color:#586e75">// Also works
+</span><span style="color:#586e75"></span><span style="color:#719e07">delete</span> foo.age; <span style="color:#586e75">// This deletes the property
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> (<span style="color:#268bd2">var</span> prop <span style="color:#719e07">in</span> foo) { <span style="color:#586e75">// Prints all properties
+</span><span style="color:#586e75"></span>    console.log(prop <span style="color:#719e07">+</span> <span style="color:#2aa198">&#34;: &#34;</span> <span style="color:#719e07">+</span> foo[prop]);
+}
+</code></pre></div></li>
+<li>
+<p>Like in Java, use <code>this</code> and <code>new</code> for constructors.</p>
+</li>
+<li>
+<p>JavaScript (before ES6) doesn&rsquo;t have classes. For inheritance, we have prototypal inheritance. (Prototype is like the parent class.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#268bd2">function</span> Foo(bar, stuff) {
+    <span style="color:#719e07">this</span>.bar <span style="color:#719e07">=</span> bar;
+    <span style="color:#719e07">this</span>.stuff <span style="color:#719e07">=</span> stuff;
+}
+
+Foo.prototype.foobar <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;hello&#34;</span>;
+<span style="color:#268bd2">var</span> bob <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Foo(<span style="color:#2aa198">&#34;this is&#34;</span>, <span style="color:#2aa198">&#34;cool&#34;</span>);
+console.log(bob.foobar) <span style="color:#586e75">// &#34;hello&#34;
+</span><span style="color:#586e75"></span><span style="color:#268bd2">function</span> Foooo(bar, stuff, more) {
+    Foo.call(<span style="color:#719e07">this</span>, bar, stuff); <span style="color:#586e75">// calling the Foo constructor
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">this</span>.more <span style="color:#719e07">=</span> more;
+}
+Foooo.prototype <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Foo();
+Foooo.prototype.new_property <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;blah&#34;</span>;
+Foooo.prototype.constructor <span style="color:#719e07">=</span> Foooo;
+</code></pre></div></li>
+</ol>
+<h2 id="dom-document-object-model">DOM (Document Object Model)</h2>
+<ol>
+<li>
+<p><code>document.getElementById(&quot;foo&quot;).innerHTML</code> gives the content of the html element with the id &lsquo;foo&rsquo;. JavaScript does this by interacting with the DOM.</p>
+</li>
+<li>
+<p><code>foo.setAttribute(&quot;class&quot;, &quot;bar&quot;)</code> sets the attribute and <code>var text = document.getElementById(&quot;bar&quot;).getAttribute(&quot;alt&quot;)</code> gets the &lsquo;alt&rsquo; attribute.</p>
+</li>
+</ol>
+<h2 id="handling-events">Handling events</h2>
+<ol>
+<li>
+<p><code>onclick</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#268bd2">var</span> image <span style="color:#719e07">=</span> <span style="color:#b58900">document</span>.getElementById(<span style="color:#2aa198">&#34;foo&#34;</span>);
+image.onclick <span style="color:#719e07">=</span> bar();
+<span style="color:#268bd2">function</span> bar() {
+    <span style="color:#268bd2">var</span> image <span style="color:#719e07">=</span> <span style="color:#b58900">document</span>.getElementById(<span style="color:#2aa198">&#34;foo&#34;</span>);
+    image.src <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;new.png&#34;</span>; <span style="color:#586e75">// We can change the property when we have the element.
+</span><span style="color:#586e75"></span>}
+<span style="color:#268bd2">var</span> images <span style="color:#719e07">=</span> <span style="color:#b58900">document</span>.getElementsByTagName(<span style="color:#2aa198">&#34;img&#34;</span>); <span style="color:#586e75">// Get a bunch
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> (<span style="color:#268bd2">var</span> i <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>; i <span style="color:#719e07">&lt;</span> images.length; i<span style="color:#719e07">++</span>) {
+    images[i].onclick <span style="color:#719e07">=</span> bar();
+}
+</code></pre></div></li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?crid=2NISC4BUYXL03&amp;keywords=head+first+javascript+programming&amp;qid=1562253717&amp;s=gateway&amp;sprefix=head+first+javascript%2Caps%2C402&amp;sr=8-1">Head First JavaScript Programming: A Brain-Friendly Guide, 1st Edition</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

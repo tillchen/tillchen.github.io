@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for Python">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Notes"/>
+<meta name="twitter:description" content="Some notes for Python"/>
+
+    <meta property="og:title" content="Python Notes" />
+<meta property="og:description" content="Some notes for Python" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-05-12-Python-Notes/" />
+<meta property="article:published_time" content="2019-05-12T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-05-12T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-05-12-Python-Notes/">
+    
+    <title>
+  Python Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-05-12-Python-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Python Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-05-12T00:00:00&#43;02:00'>
+                May 12, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#tuples">Tuples</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#input">Input</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#oop">OOP</a></li>
+<li><a href="#random">Random</a></li>
+<li><a href="#files">Files</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="strings">Strings</h2>
+<ol>
+<li>Change Case:<code>.title()</code> <code>.upper()</code> <code>.lower()</code></li>
+<li>f-strings are preferred.</li>
+<li>Stripping Whitespace: <code>.lstrip()</code> <code>.rstrip()</code> <code>.strip()</code></li>
+</ol>
+<h2 id="numbers">Numbers</h2>
+<ol>
+<li>
+<p>We can group digits using underscores to make large numbers more readable:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">universe_age <span style="color:#719e07">=</span> <span style="color:#2aa198">14</span>_000_000_000
+<span style="color:#719e07">print</span> (universe_age)
+<span style="color:#586e75"># Output: 14000000000</span>
+</code></pre></div></li>
+<li>
+<p>Multiple Assignment: <code>x, y, z = 1, 2, 3</code></p>
+</li>
+<li>
+<p>Constants: No-built in constants, use uppercase as a convention (like in C/C++): <code>MAX = 100</code></p>
+</li>
+<li>
+<p>Exponential: Use **: <code>a = 2 ** 3</code></p>
+</li>
+<li>
+<p>range(): <code>range(1,11,2)</code> is 1, 3, 5, 7, 9</p>
+</li>
+</ol>
+<h2 id="lists">Lists</h2>
+<ol>
+<li>
+<p>Inserting: <code>A.insert(0, foo)</code></p>
+</li>
+<li>
+<p>Removing:</p>
+<ul>
+<li>By index
+<ul>
+<li>del: <code>del A[0]</code></li>
+<li>pop():
+<ul>
+<li><code>last = A.pop()</code></li>
+<li><code>first = A.pop(0)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>By value
+<ul>
+<li>remove(): <code>A.remove(foo)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Organizing:</p>
+<ul>
+<li>Sorting (Alphabetically): <code>A.sort()</code> <code>A.sort(reverse=True)</code> <code>print(sorted(A))</code></li>
+<li>Reversing (Chronologically): <code>A.reverse()</code></li>
+</ul>
+</li>
+<li>
+<p><code>min(A) max(A) sum(A)</code></p>
+</li>
+<li>
+<p>List Comprehensions: <code>A = [a ** 2 for a in range(1,3)]</code> <code>A = [1,4]</code></p>
+</li>
+<li>
+<p>Slicing: <code>A = [0,1,2,3,4]</code></p>
+<ul>
+<li><code>print (A[1:4])</code> gives 1,2,3</li>
+<li><code>print (A[:4])</code> is equivalent to <code>print (A[0:4])</code></li>
+<li><code>print (A[1:])</code> is equivalent to <code>print (A[1:5])</code></li>
+<li><code>print (A[-3:])</code> is equivalent to <code>print (A[2:])</code></li>
+</ul>
+</li>
+<li>
+<p>Copying: <code>B = A[:]</code> (full slicing) instead of <code>B = A</code></p>
+</li>
+<li>
+<p>Checking existence:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A <span style="color:#719e07">=</span> [<span style="color:#2aa198">1</span>,<span style="color:#2aa198">2</span>,<span style="color:#2aa198">3</span>,<span style="color:#2aa198">4</span>,<span style="color:#2aa198">5</span>]
+<span style="color:#719e07">if</span> <span style="color:#2aa198">1</span> <span style="color:#719e07">in</span> A:
+    <span style="color:#719e07">print</span> (<span style="color:#2aa198">&#34;1 in A&#34;</span>)
+<span style="color:#719e07">if</span> <span style="color:#2aa198">6</span> <span style="color:#719e07">not</span> <span style="color:#719e07">in</span> A:
+    <span style="color:#719e07">print</span> (<span style="color:#2aa198">&#34;6 not in A&#34;</span>)
+</code></pre></div></li>
+<li>
+<p>With while loops:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">while</span> A: <span style="color:#586e75"># while A is not empty</span>
+
+<span style="color:#719e07">while</span> <span style="color:#2aa198">1</span> <span style="color:#719e07">in</span> A: <span style="color:#586e75"># while there is 1 in A</span>
+</code></pre></div></li>
+</ol>
+<h2 id="tuples">Tuples</h2>
+<ol>
+<li>Tuples can&rsquo;t be modified: <code>A = (1,2)</code> <code>A[0] = 3</code> doesn&rsquo;t work.</li>
+<li>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</li>
+</ol>
+<h2 id="dictionaries">Dictionaries</h2>
+<ol>
+<li>
+<p>Basic usage:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A <span style="color:#719e07">=</span> {<span style="color:#2aa198">&#34;language&#34;</span>: <span style="color:#2aa198">&#34;python&#34;</span>, <span style="color:#2aa198">&#34;age&#34;</span>: <span style="color:#2aa198">19</span>}
+<span style="color:#719e07">print</span>(A[<span style="color:#2aa198">&#34;language&#34;</span>])
+<span style="color:#586e75"># Output: python</span>
+A[<span style="color:#2aa198">&#34;height&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">190</span> <span style="color:#586e75"># adding a new pair</span>
+A[<span style="color:#2aa198">&#34;language&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;C++&#34;</span> <span style="color:#586e75"># modifying</span>
+</code></pre></div></li>
+<li>
+<p>get() (When not sure if the key exists): <code>print (A.get(&quot;weight&quot;, &quot;no weight assigned&quot;))</code></p>
+</li>
+<li>
+<p>Looping through:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">for</span> k,v <span style="color:#719e07">in</span> A<span style="color:#719e07">.</span>items(): <span style="color:#586e75"># keys and values</span>
+
+<span style="color:#719e07">for</span> k <span style="color:#719e07">in</span> A<span style="color:#719e07">.</span>keys(): <span style="color:#586e75"># equivalent to the line below</span>
+<span style="color:#719e07">for</span> k <span style="color:#719e07">in</span> A: <span style="color:#586e75"># since looping through the keys is default</span>
+<span style="color:#719e07">for</span> k <span style="color:#719e07">in</span> <span style="color:#b58900">sorted</span>(A<span style="color:#719e07">.</span>keys()) <span style="color:#586e75"># sorted</span>
+
+<span style="color:#719e07">for</span> v <span style="color:#719e07">in</span> A<span style="color:#719e07">.</span>values(): <span style="color:#586e75"># just values</span>
+<span style="color:#719e07">for</span> v <span style="color:#719e07">in</span> <span style="color:#b58900">set</span>(A<span style="color:#719e07">.</span>values()) <span style="color:#586e75"># unique values</span>
+</code></pre></div></li>
+<li>
+<p>Lists and dictionaries can be nested into each other or themselves.</p>
+</li>
+</ol>
+<h2 id="sets">Sets</h2>
+<ol>
+<li>
+<p>Basic usage:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">languages <span style="color:#719e07">=</span> {<span style="color:#2aa198">&#34;python&#34;</span>, <span style="color:#2aa198">&#34;C++&#34;</span>, <span style="color:#2aa198">&#34;C&#34;</span>, <span style="color:#2aa198">&#34;python&#34;</span>}
+<span style="color:#719e07">print</span> (languages)
+<span style="color:#586e75"># Output {&#39;python&#39;, &#39;C++&#39;, &#39;C&#39;}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="input">Input</h2>
+<ol>
+<li>Reading an int: <code>n = int(input(&quot;Please input a number: &quot;))</code></li>
+</ol>
+<h2 id="functions">Functions</h2>
+<ol>
+<li>
+<p>Optional keyword arguments that avoid confusion:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">def</span> <span style="color:#268bd2">minus</span>(a, b):
+    <span style="color:#719e07">return</span> (a <span style="color:#719e07">-</span> b)
+
+<span style="color:#719e07">print</span>(minus(a<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>, b<span style="color:#719e07">=</span><span style="color:#2aa198">2</span>)) <span style="color:#586e75"># is equivalent to the line below</span>
+<span style="color:#719e07">print</span>(minus(b<span style="color:#719e07">=</span><span style="color:#2aa198">2</span>, a<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>))
+</code></pre></div></li>
+<li>
+<p>Default values for the parameters can be added:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">def</span> <span style="color:#268bd2">minus</span>(a, b <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>):
+    <span style="color:#719e07">return</span> (a <span style="color:#719e07">-</span> b)
+
+<span style="color:#719e07">print</span>(minus(<span style="color:#2aa198">1</span>))
+</code></pre></div></li>
+<li>
+<p>We can make an argument optional by using None or &ldquo;&quot;:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">def</span> <span style="color:#268bd2">build_person</span>(first, last, age<span style="color:#719e07">=</span><span style="color:#268bd2">None</span>):
+    person <span style="color:#719e07">=</span> {<span style="color:#2aa198">&#34;first_name&#34;</span>: first, <span style="color:#2aa198">&#34;last_name&#34;</span>: last}
+    <span style="color:#719e07">if</span> age:
+        person[<span style="color:#2aa198">&#34;age&#34;</span>] <span style="color:#719e07">=</span> age
+    <span style="color:#719e07">return</span> person
+</code></pre></div></li>
+<li>
+<p>To prevent a function from modifying a list, pass the list with full slicing: <code>foo(A[:])</code></p>
+</li>
+<li>
+<p>Variadic functions:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">def</span> <span style="color:#268bd2">print_languages</span>(<span style="color:#719e07">*</span>languages): <span style="color:#586e75"># The * makes an empty tuple and packs any value it receives</span>
+    <span style="color:#719e07">for</span> language <span style="color:#719e07">in</span> languages:
+        <span style="color:#719e07">print</span>(f<span style="color:#2aa198">&#34;- {language}&#34;</span>)
+<span style="color:#586e75"># more generically, *args</span>
+<span style="color:#586e75"># **kwargs for key-value pairs</span>
+</code></pre></div></li>
+<li>
+<p>Importing:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> module_name <span style="color:#719e07">import</span> func_1, func_2, func_3 <span style="color:#586e75"># importing multiple functions</span>
+
+<span style="color:#719e07">from</span> module_name <span style="color:#719e07">import</span> func_1 <span style="color:#719e07">as</span> f <span style="color:#586e75"># alias</span>
+<span style="color:#719e07">import</span> module_name <span style="color:#719e07">as</span> m <span style="color:#586e75"># alias</span>
+<span style="color:#719e07">from</span> module_name <span style="color:#719e07">import</span> <span style="color:#719e07">*</span> <span style="color:#586e75"># all functions</span>
+<span style="color:#586e75"># We must import everything at the beginning of each file</span>
+</code></pre></div></li>
+</ol>
+<h2 id="oop">OOP</h2>
+<ol>
+<li>
+<p>Default value:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">foo</span>:
+    <span style="color:#719e07">def</span> __init__(<span style="color:#268bd2">self</span>, value):
+        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>value <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>
+</code></pre></div></li>
+<li>
+<p>Inheritance:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> foo <span style="color:#719e07">import</span> Foo
+<span style="color:#719e07">class</span> <span style="color:#268bd2">Foo</span>(Bar): <span style="color:#586e75"># Bar is the parent class</span>
+    <span style="color:#719e07">def</span> __init__(<span style="color:#268bd2">self</span>, value):
+        <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>__init__(value) <span style="color:#586e75"># superclass</span>
+<span style="color:#586e75"># we can also override a method by redefining it in the child class.</span>
+</code></pre></div></li>
+<li>
+<p>Conventions:</p>
+<ul>
+<li>Capitalize the first letter of each word, <strong>without</strong> underscores. Instances and module names use underscores and are in lowercase.</li>
+</ul>
+</li>
+</ol>
+<h2 id="random">Random</h2>
+<ol>
+<li>
+<p>randint:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> random <span style="color:#719e07">import</span> randint
+<span style="color:#719e07">print</span>(randint(<span style="color:#2aa198">1</span>,<span style="color:#2aa198">6</span>))
+</code></pre></div></li>
+<li>
+<p>choice:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> random <span style="color:#719e07">import</span> choice
+A <span style="color:#719e07">=</span> [<span style="color:#2aa198">1</span>,<span style="color:#2aa198">2</span>,<span style="color:#2aa198">3</span>,<span style="color:#2aa198">4</span>,<span style="color:#2aa198">5</span>,<span style="color:#2aa198">6</span>]
+<span style="color:#719e07">print</span>(choice(A))
+</code></pre></div></li>
+</ol>
+<h2 id="files">Files</h2>
+<ol>
+<li>
+<p>Reading an entire file:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">with</span> <span style="color:#b58900">open</span>(<span style="color:#2aa198">&#34;file.txt&#34;</span>) <span style="color:#719e07">as</span> file_obj: <span style="color:#586e75"># &#34;r&#34; is the default mode</span>
+    contents <span style="color:#719e07">=</span> file_obj<span style="color:#719e07">.</span>read()
+    <span style="color:#586e75"># lines = file_obj.readlines() -&gt; a list of lines</span>
+    <span style="color:#586e75"># for line in lines:</span>
+        <span style="color:#586e75">#print(line.rstrip())</span>
+    <span style="color:#719e07">print</span>(contents<span style="color:#719e07">.</span>rstrip()) <span style="color:#586e75"># Removing the additional \n</span>
+    <span style="color:#586e75"># no need to close, python will do it automatically</span>
+</code></pre></div></li>
+<li>
+<p>Reading line by line:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">with</span> <span style="color:#b58900">open</span>(<span style="color:#2aa198">&#34;file.txt&#34;</span>) <span style="color:#719e07">as</span> file_obj:
+    <span style="color:#719e07">for</span> line <span style="color:#719e07">in</span> file_obj:
+        <span style="color:#719e07">print</span>(line<span style="color:#719e07">.</span>rstrip())
+</code></pre></div></li>
+<li>
+<p>Writing:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#586e75"># python only writes strings, use str() if necessary</span>
+<span style="color:#719e07">with</span> <span style="color:#b58900">open</span>(<span style="color:#2aa198">&#34;file.txt&#34;</span>, <span style="color:#2aa198">&#34;w&#34;</span>) <span style="color:#719e07">as</span> file_obj: <span style="color:#586e75"># &#34;a&#34;, &#34;r+&#34;</span>
+    file_obj<span style="color:#719e07">.</span>write(<span style="color:#2aa198">&#34;Python.&#34;</span>)
+</code></pre></div></li>
+</ol>
+<h2 id="exceptions">Exceptions</h2>
+<ol>
+<li>
+<p>Basic try-except-else:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">try</span>:
+    <span style="color:#719e07">print</span>(<span style="color:#2aa198">1</span><span style="color:#719e07">/</span><span style="color:#2aa198">0</span>)
+<span style="color:#719e07">except</span> <span style="color:#cb4b16">ZeroDivisionError</span>:
+    <span style="color:#719e07">print</span>(<span style="color:#2aa198">&#34;Can&#39;t divide by 0.&#34;</span>)
+<span style="color:#719e07">else</span>: <span style="color:#586e75"># optional</span>
+    <span style="color:#719e07">print</span>(<span style="color:#2aa198">&#34;Success&#34;</span>)
+</code></pre></div></li>
+<li>
+<p>Failing silently using <em>pass</em>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">try</span>:
+    <span style="color:#719e07">with</span> <span style="color:#b58900">open</span>(<span style="color:#2aa198">&#34;file.txt&#34;</span>) <span style="color:#719e07">as</span> file_obj:
+        content <span style="color:#719e07">=</span> file_obj<span style="color:#719e07">.</span>read()
+<span style="color:#719e07">except</span> FileNotFoundError:
+    <span style="color:#719e07">pass</span>
+<span style="color:#719e07">else</span>:
+     <span style="color:#719e07">print</span>(<span style="color:#b58900">len</span>(content<span style="color:#719e07">.</span>split())) <span style="color:#586e75"># word count</span>
+</code></pre></div></li>
+</ol>
+<h2 id="testing">Testing</h2>
+<ol>
+<li>
+<p>Basic unit testing:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">import</span> unittest
+<span style="color:#719e07">from</span> file <span style="color:#719e07">import</span> function_1:
+
+<span style="color:#719e07">class</span> <span style="color:#268bd2">Func1Test</span>(unittest<span style="color:#719e07">.</span>TestCase):
+    <span style="color:#719e07">def</span> <span style="color:#268bd2">test</span>(<span style="color:#268bd2">self</span>):
+        result <span style="color:#719e07">=</span> function_1(value)
+        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertEqual(result, foo)
+
+<span style="color:#719e07">if</span> __name__ <span style="color:#719e07">=</span> <span style="color:#2aa198">&#34;__main__&#34;</span>:
+    unittest<span style="color:#719e07">.</span>main()
+</code></pre></div></li>
+<li>
+<p>setUp() method can be used to test a class</p>
+</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python+crash+course&amp;qid=1558808134&amp;s=gateway&amp;sr=8-1">Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Science on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Computer-Science/</link>
+    <description>Recent content in Computer Science on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Apr 2020 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Computer-Science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithms and Data Structures</title>
+      <link>https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/</link>
+      <pubDate>Fri, 10 Apr 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#dynamic-programming&#34;&gt;Dynamic Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#greedy-algorithms&#34;&gt;Greedy Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dynamic-programming&#34;&gt;Dynamic Programming&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The two key ingredients:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;optimal substructure: The optimal solution contains the optimal solutions to subproblems.
+&lt;ul&gt;
+&lt;li&gt;The subproblems need to be independent, which means the solution to one subproblem does not affect the solution to another subproblem.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;overlapping subproblems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The other two steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reconstruct an optimal solution&lt;/li&gt;
+&lt;li&gt;Memoization: When the subproblem is first encountered as the recursive algorithm unfolds, its solution is computed and then stored in the stable. Each subsequent time that we encounter this subproblem, we simply look up the value and return it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;greedy-algorithms&#34;&gt;Greedy Algorithms&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;For many optimization problems, using dynamic programming is overkill. Even though there is almost always a more cumbersome dynamic-programming solution beneath every greedy algorithm.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A greedy algorithm always makes the choice that looks best at the moment. That is, it makes a locally optimal choice in the hope that this choice will lead to a globally optimal solution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The two key ingredients:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;greedy-choice property: we can assemble a globally optimal solution by making locally optimal (greedy) choices.
+&lt;ul&gt;
+&lt;li&gt;Unlike dynamic programming, which solves the subproblems before making the first choice (bottom up), a greedy algorithm makes its first choice before solving any subproblems (top down.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;optimal substructure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Introduction-Algorithms-Leiserson-published-Hardcover-dp-B008F1DKXU/dp/B008F1DKXU/ref=mt_paperback?_encoding=UTF8&amp;amp;me=&amp;amp;qid=1586534178&#34;&gt;Introduction to Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

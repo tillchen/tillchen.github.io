@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile Development on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Mobile-Development/</link>
+    <description>Recent content in Mobile Development on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Aug 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Mobile-Development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS Development Notes</title>
+      <link>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</link>
+      <pubDate>Tue, 13 Aug 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#view-controller-lifecycle&#34;&gt;View Controller Lifecycle:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mvc-architecture&#34;&gt;MVC Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#project-organization&#34;&gt;Project Organization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Model-View-Controller is a design pattern in iOS.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unlike in Android Studio, the Interface Builder is not a graphical representation of code. A storyboard file is an archive of object instances.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Outlets are references to objects: &lt;code&gt;@IBOutlet var questionLabel: UILabel!&lt;/code&gt; (IB means interface builder.) (Right click the item and drag it to the assistant editor to create the outlet.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Actions: &lt;code&gt;@IBAction func showNextQuestion(_ sender: UIButton) {}&lt;/code&gt; (Right click the item and drag it to the assistant editor to create the action.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;View Controller&lt;/code&gt; to add new screens. Use Embed in &amp;gt; &lt;code&gt;Navigation Controller&lt;/code&gt; to add a nav controller.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use this to pass info between screens:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;prepare&lt;/span&gt;(&lt;span style=&#34;color:#719e07&#34;&gt;for&lt;/span&gt; segue: UIStoryboardSegue, sender: &lt;span style=&#34;color:#b58900&#34;&gt;Any&lt;/span&gt;?) {
+    segue.destination.navigationItem.title = textField.text
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;performSegue&lt;/code&gt; to create a segue programmatically (could be used for conditional segue.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;performSegue(withIdentifier: &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;Foo&amp;#34;&lt;/span&gt;, sender: &lt;span style=&#34;color:#cb4b16&#34;&gt;nil&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Right click and drag to a view controller to add the new view controller to the Tab Bar Controller (select view controllers).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect the new ViewController file by setting the custom class attribute in storyboard.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;view-controller-lifecycle&#34;&gt;View Controller Lifecycle:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/ios_lifecycle.png&#34; alt=&#34;Lifecycle image&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Detailed methods: &lt;a href=&#34;https://guides.codepath.com/ios/View-Controller-Lifecycle&#34;&gt;https://guides.codepath.com/ios/View-Controller-Lifecycle&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;mvc-architecture&#34;&gt;MVC Architecture&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/mvc.png&#34; alt=&#34;MVC image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;project-organization&#34;&gt;Project Organization&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Example: &lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/ios_project_organization.jpeg&#34; alt=&#34;project organization image&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/iOS-Programming-Ranch-Guide-Guides/dp/0134682335/ref=sr_1_2?keywords=ios+programming&amp;amp;qid=1564912891&amp;amp;s=gateway&amp;amp;sr=8-2&#34;&gt;iOS Programming: The Big Nerd Ranch Guide&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;App Development With Swift&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Android Development Notes</title>
+      <link>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</guid>
+      <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#table-of-contents&#34;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#app-resources&#34;&gt;App Resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#permissions&#34;&gt;Permissions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#androidmanifestxml&#34;&gt;AndroidManifest.xml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#layout&#34;&gt;Layout&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#activities&#34;&gt;Activities&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#fragments&#34;&gt;Fragments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notifications&#34;&gt;Notifications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#android-studio-tips&#34;&gt;Android Studio Tips&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#miscellaneous&#34;&gt;Miscellaneous&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#resources&#34;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Layout&lt;/strong&gt; is typically defined in XML, whereas &lt;strong&gt;activities&lt;/strong&gt; are in Java class.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Android operating system is a multi-user Linux system in which each app is a different user.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;app-resources&#34;&gt;App Resources&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;String array: &lt;code&gt;android:entries=&amp;quot;@array/foo&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;string-array&lt;/span&gt; name=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;bar1&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;bar2&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/string-array&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/resources/providing-resources#AliasResources&#34;&gt;Creating alias resources&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;drawable&lt;/span&gt; name=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;icon&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;gt;&lt;/span&gt;@drawable/icon_ca&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/drawable&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/look-and-feel/themes&#34;&gt;Styles and Themes&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/resources/providing-resources#ReferencesToThemeAttributes&#34;&gt;Referencing style attributes&lt;/a&gt;: &lt;code&gt;android:textColor=&amp;quot;?android:textColorSecondary&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/multiscreen/screendensities&#34;&gt;Support different pixel densities&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/practices/screens-distribution&#34;&gt;Declare restricted screen support&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;permissions&#34;&gt;Permissions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/permissions/requesting#explain&#34;&gt;Request App Permissions&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/permissions/usage-notes#perms_vs_intents&#34;&gt;Use an intent instead&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;androidmanifestxml&#34;&gt;AndroidManifest.xml&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;The &lt;code&gt;minSdkVersion&lt;/code&gt; attribute declares the minimum version with which your app is compatible and the &lt;code&gt;targetSdkVersion&lt;/code&gt; attribute declares the highest version on which you&amp;rsquo;ve optimized your app: &lt;code&gt;&amp;lt;uses-sdk android:minSdkVersion=&amp;quot;4&amp;quot; android:targetSdkVersion=&amp;quot;15&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;layout&#34;&gt;Layout&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;EditText&amp;gt;&lt;/code&gt; is an editable text field:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;android:hint=&amp;quot;@string/hint&amp;quot;&lt;/code&gt;: normally &amp;ldquo;Enter a message&amp;rdquo;, telling the user what to type;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;android:ems=&amp;quot;10&amp;quot;&lt;/code&gt;: 10-M space.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;android:layout_weight=&amp;quot;number&amp;quot;&lt;/code&gt; makes a view stretch.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a has the weight of 1 and b has 2, a&amp;rsquo;ll have 1/3 and b&amp;rsquo;ll have 2/3 of the screen.&lt;/li&gt;
+&lt;li&gt;We usually have &lt;code&gt;android:layout_height=&amp;quot;0dp&amp;quot;&lt;/code&gt; (for vertical layout) above layout_weight.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;android:gravity=&amp;quot;top&amp;quot;&lt;/code&gt; moves the CONTENT of a view to the top of the view, whereas &lt;code&gt;android:layout_gravity=&amp;quot;end&amp;quot;&lt;/code&gt; moves the placement of the VIEW itself to the end.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;FrameLayout&amp;gt;&amp;lt;/FrameLayout&amp;gt;&lt;/code&gt; allows views to overlap. Ues it when we need to replace the fragments and add the changes to the back stack.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Surround LinearLayout/FrameLayout with &lt;code&gt;&amp;lt;ScrollView&amp;gt;&amp;lt;/ScrollView&amp;gt;&lt;/code&gt; to get a vertical scrollbar. (&lt;code&gt;HorizontalScrollView&lt;/code&gt; for the horizontal scrollbar.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A CoordinatorLayout allows the behavior of one view to affect the behavior of another.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AdapterView:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;ArrayAdapter&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;String&lt;span style=&#34;color:#719e07&#34;&gt;&amp;gt;&lt;/span&gt; adapter &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; ArrayAdapter&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;String&lt;span style=&#34;color:#719e07&#34;&gt;&amp;gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt;
+    android&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;layout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;simple_list_item_1&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; myStringArray&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+ListView listView &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;ListView&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;listview&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+listView&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setAdapter&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;adapter&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#586e75&#34;&gt;// Create a message handling object as an anonymous class.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;private&lt;/span&gt; OnItemClickListener messageClickedHandler &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; OnItemClickListener&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onItemClick&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;AdapterView parent&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; View v&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;int&lt;/span&gt; position&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;long&lt;/span&gt; id&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#586e75&#34;&gt;// Do something in response to the click
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;};&lt;/span&gt;
+
+listView&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setOnItemClickListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;messageClickedHandler&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/layout/recyclerview&#34;&gt;Create a List with RecyclerView&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/improving-layouts/reusing-layouts&#34;&gt;Re-using layouts with include&lt;/a&gt;: &lt;code&gt;&amp;lt;merge&amp;gt;&amp;lt;/merge&amp;gt;&lt;/code&gt; &lt;code&gt;&amp;lt;include layout=&amp;quot;@layout/foo&amp;quot;/&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spinners:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;Spinner s1 &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Spinner&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;spinner1&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+ArrayAdapter adapter &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; ArrayAdapter&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;createFromResource&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;array&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;colors&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; android&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;layout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;simple_spinner_item&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+adapter&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setDropDownViewResource&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;android&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;layout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;simple_spinner_dropdown_item&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+s1&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setAdapter&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;adapter&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+s1&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setOnItemSelectedListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; AdapterView&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;OnItemSelectedListener&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onItemSelected&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;AdapterView&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; parent&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; View view&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;int&lt;/span&gt; position&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;long&lt;/span&gt; id&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#586e75&#34;&gt;// TODO
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onNothingSelected&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;AdapterView&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;?&amp;gt;&lt;/span&gt; parent&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+       &lt;span style=&#34;color:#586e75&#34;&gt;// sometimes you need nothing here
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/controls/button&#34;&gt;Buttons&lt;/a&gt; Set onClick programmatically:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;Button button &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Button&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;button_send&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+button&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setOnClickListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; View&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;OnClickListener&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onClick&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;View v&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#586e75&#34;&gt;// Do something in response to button click
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/controls/checkbox&#34;&gt;Checkboxes&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/controls/radiobutton&#34;&gt;Radio Buttons&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tutlane.com/tutorial/android/android-switch-on-off-button-with-examples&#34;&gt;Switch Buttons&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;android:checked=&amp;#34;true&amp;#34;
+android:textOff=&amp;#34;OFF&amp;#34;
+android:textOn=&amp;#34;ON
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;Switch sw &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Switch&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;switch1&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+sw&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setOnCheckedChangeListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; CompoundButton&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;OnCheckedChangeListener&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onCheckedChanged&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;CompoundButton buttonView&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;boolean&lt;/span&gt; isChecked&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;isChecked&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#586e75&#34;&gt;// The toggle is enabled
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#586e75&#34;&gt;// The toggle is disabled
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/controls/pickers&#34;&gt;Pickers&lt;/a&gt; (Time/Date Pickers)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Centralized onClick events:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;ActivityA&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;extends&lt;/span&gt; Activity &lt;span style=&#34;color:#268bd2&#34;&gt;implements&lt;/span&gt; View&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;OnClickListener &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onCreate&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;@Nullable&lt;/span&gt; Bundle savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#268bd2&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;onCreate&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+
+        findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;first&lt;span style=&#34;color:#719e07&#34;&gt;).&lt;/span&gt;setOnClickListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+        findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;second&lt;span style=&#34;color:#719e07&#34;&gt;).&lt;/span&gt;setOnClickListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+        findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;third&lt;span style=&#34;color:#719e07&#34;&gt;).&lt;/span&gt;setOnClickListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onClick&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;View v&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;v&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;getId&lt;span style=&#34;color:#719e07&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#719e07&#34;&gt;case&lt;/span&gt; R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;first&lt;span style=&#34;color:#719e07&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color:#586e75&#34;&gt;// Manage click.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#719e07&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;;&lt;/span&gt;
+
+            &lt;span style=&#34;color:#719e07&#34;&gt;case&lt;/span&gt; R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;second&lt;span style=&#34;color:#719e07&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color:#586e75&#34;&gt;// Manage click.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#719e07&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;;&lt;/span&gt;
+
+            &lt;span style=&#34;color:#719e07&#34;&gt;case&lt;/span&gt; R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;third&lt;span style=&#34;color:#719e07&#34;&gt;:&lt;/span&gt;
+                &lt;span style=&#34;color:#586e75&#34;&gt;// Manage click.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#719e07&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;App bar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/appbar/setting-up&#34;&gt;Set up the app bar&lt;/a&gt; (Use &lt;code&gt;Toolbar&lt;/code&gt; instead of the native &lt;code&gt;ActionBar&lt;/code&gt;) and &lt;a href=&#34;https://developer.android.com/training/appbar/up-action&#34;&gt;Add an up action&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;android:theme=&amp;#34;@style/Theme.AppCompat.Light.NoActionBar&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;android.support.v7.widget.Toolbar&lt;/span&gt;
+    android:id=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;@+id/my_toolbar&amp;#34;&lt;/span&gt;
+    android:layout_width=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;match_parent&amp;#34;&lt;/span&gt;
+    android:layout_height=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;?attr/actionBarSize&amp;#34;&lt;/span&gt;
+    android:background=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;?attr/colorPrimary&amp;#34;&lt;/span&gt;
+    android:elevation=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;4dp&amp;#34;&lt;/span&gt;
+    android:theme=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;@style/ThemeOverlay.AppCompat.ActionBar&amp;#34;&lt;/span&gt;
+    app:popupTheme=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;@style/ThemeOverlay.AppCompat.Light&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;    &lt;span style=&#34;color:#586e75&#34;&gt;&amp;lt;!-- A child of the main activity --&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;activity&lt;/span&gt;
+   android:name=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;com.example.myfirstapp.MyChildActivity&amp;#34;&lt;/span&gt;
+   android:label=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;@string/title_activity_child&amp;#34;&lt;/span&gt;
+   android:parentActivityName=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;com.example.myfirstapp.MainActivity&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#586e75&#34;&gt;&amp;lt;!-- Parent activity meta-data to support 4.0 and lower --&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;meta-data&lt;/span&gt;
+        android:name=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;android.support.PARENT_ACTIVITY&amp;#34;&lt;/span&gt;
+        android:value=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;com.example.myfirstapp.MainActivity&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// OnCreate
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;Toolbar myToolbar &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Toolbar&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; findViewById&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;my_toolbar&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+setSupportActionBar&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;myToolbar&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#586e75&#34;&gt;// Get a support ActionBar corresponding to this toolbar
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;ActionBar ab &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; getSupportActionBar&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+
+&lt;span style=&#34;color:#586e75&#34;&gt;// Enable the Up button
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;ab&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setDisplayHomeAsUpEnabled&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/appbar/actions&#34;&gt;Add and handle actions&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Toasts: &lt;code&gt;Toast toast = Toast.makeText(this, &amp;quot;hello world&amp;quot;, Toast.LENGTH_SHORT); toast.show();&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;activities&#34;&gt;Activities&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;All activities have to extend the Activity class or its subclass.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;R is a special Java class that enables you to retrieve references to resources. &lt;code&gt;TextView foo = findViewById(R.id.foo)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use Intent to call another activity (can be from other apps):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Explicit intent:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onSendMessage&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;View view&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    Intent intent &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; Intent&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; FooActivity&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;class&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;// explicit intent
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;putExtra&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; value&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;// message is the name of the extra
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    startActivity&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;intent&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;...&lt;/span&gt;
+Intent intent &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; getIntent&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+String string &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;getStringExtra&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Implicit intent: (with actions to allow users to choose which app to run)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;Intent intent &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; Intent&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;ACTION_SEND&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;// ACTION_DIAL/ACTION_WEB_SEARCH
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setType&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;text/plain&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;putExtra&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;EXTRA_TEXT&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; messageText&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+String chooserTitle &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; getString&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;string&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;chooser&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#586e75&#34;&gt;// Ensure that the user always get the chance to choose an activity
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;Intent chosenIntent &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; Intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;createChooser&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;intent&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; chooserTitle&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#586e75&#34;&gt;// Start an activity if it&amp;#39;s safe
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;intent&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;resolveActivity&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;getPackageManager&lt;span style=&#34;color:#719e07&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#cb4b16&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    startActivity&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;chosenIntent&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/components/intents-common&#34;&gt;Common Intents&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Save the instance state:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// Either in onCreate savedInstanceState != null or use the method below
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onRestoreInstanceState&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Bundle savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;onRestoreInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+    seconds &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;getInt&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;seconds&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+    running &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;getBoolean&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;running&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onSaveInstanceState&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;Bundle savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;onSaveInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+    savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;putInt&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;seconds&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; seconds&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+    savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;putBoolean&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;running&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; running&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Activity lifecycle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When we implement them (&lt;code&gt;onCreate()&lt;/code&gt;, &lt;code&gt;onStart()&lt;/code&gt;, &lt;code&gt;onResume()&lt;/code&gt;, &lt;code&gt;onPause()&lt;/code&gt;, &lt;code&gt;onStop()&lt;/code&gt;, &lt;code&gt;onRestart()&lt;/code&gt;, &lt;code&gt;onDestroy()&lt;/code&gt;), we must call the super class methods.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onResume()&lt;/code&gt; is called when the activity is started OR resumed; &lt;code&gt;onPause()&lt;/code&gt; is called when the activity is paused OR stopped.&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/activity_lifecycle.png&#34; alt=&#34;Activity lifecycle&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/components/activities/tasks-and-back-stack#TaskLaunchModes&#34;&gt;Defining launch modes&lt;/a&gt; (singleTop, singleTask, etc.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Fragment lifecycle:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/fragment_lifecycle.png&#34; alt=&#34;Fragment lifecycle&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;ExampleFragment&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;extends&lt;/span&gt; Fragment &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; View &lt;span style=&#34;color:#268bd2&#34;&gt;onCreateView&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;LayoutInflater inflater&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; ViewGroup container&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; Bundle savedInstanceState&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#586e75&#34;&gt;// Inflate the layout for this fragment
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; inflater&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;inflate&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;layout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;example_fragment&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; container&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#cb4b16&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color:#586e75&#34;&gt;// In this case, this is false because the system is already inserting the inflated layout into the container
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the fragment programmatically:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;FragmentManager fragmentManager &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; getSupportFragmentManager&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+FragmentTransaction fragmentTransaction &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; fragmentManager&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;beginTransaction&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+ExampleFragment fragment &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; ExampleFragment&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+fragmentTransaction&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;add&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;fragment_container&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; fragment&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+fragmentTransaction&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;commit&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fragment transactions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// Create new fragment and transaction
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;Fragment newFragment &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; ExampleFragment&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+FragmentTransaction transaction &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; getSupportFragmentManager&lt;span style=&#34;color:#719e07&#34;&gt;().&lt;/span&gt;beginTransaction&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+
+&lt;span style=&#34;color:#586e75&#34;&gt;// Replace whatever is in the fragment_container view with this fragment,
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// and add the transaction to the back stack
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;transaction&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;replace&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;fragment_container&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; newFragment&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+transaction&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;addToBackStack&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#586e75&#34;&gt;// Commit the transaction
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;transaction&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;commit&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For dynamic fragments, use FrameLayout instead of Fragment and use FragmentTransaction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;notifications&#34;&gt;Notifications&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.android.com/training/notify-user/build-notification&#34;&gt;Create a Notification&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;android-studio-tips&#34;&gt;Android Studio Tips&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/annotations.html#java&#34;&gt;Improve code inspection with annotations&lt;/a&gt; (&lt;code&gt;@Nullable&lt;/code&gt;, &lt;code&gt;@NonNull&lt;/code&gt;&amp;hellip;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/sample-code&#34;&gt;Find sample code&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/tool-attributes&#34;&gt;Tools attributes reference&lt;/a&gt; (&lt;code&gt;tools:text=&amp;quot;foo&amp;quot;&lt;/code&gt;, &lt;code&gt;tools:itemCount=&amp;quot;3&amp;quot;...&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/debug&#34;&gt;Debug your app&lt;/a&gt; (&lt;code&gt; private static final String TAG = &amp;quot;MyActivity&amp;quot;; Log.d(TAG, &amp;quot;foo&amp;quot;);&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/debug/am-logcat&#34;&gt;Write and View Logs with Logcat&lt;/a&gt; (e (error), w (warning), i (information), d (debug), v (verbose))&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/debug/layout-inspector&#34;&gt;Debug Your layout with Layout Inspector&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/resource-manager&#34;&gt;Manage your app&amp;rsquo;s UI resources with Resource Manager&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/image-asset-studio#java&#34;&gt;Create app icons with Image Asset Studio&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/draw9patch&#34;&gt;Create resizable bitmaps (9-Patch files)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/studio/write/app-link-indexing#java&#34;&gt;Add Android App Links&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;miscellaneous&#34;&gt;Miscellaneous&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Android builds the back stack to keep track of the activity/fragment transactions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/app-links/deep-linking&#34;&gt;Create Deep Links to App Content&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+  ...
+  &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;data&lt;/span&gt; android:scheme=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;https&amp;#34;&lt;/span&gt; android:host=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;www.example.com&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;data&lt;/span&gt; android:scheme=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;app&amp;#34;&lt;/span&gt; android:host=&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;open.my.app&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/app-links/verify-site-associations&#34;&gt;Verify Android App Links&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/swipe/add-swipe-interface&#34;&gt;Adding Swipe-to-Refresh To Your App&lt;/a&gt; (Add &lt;code&gt;SwipeRefreshLayout&lt;/code&gt; as the parent of a single &lt;code&gt;ListView&lt;/code&gt; or &lt;code&gt;GridView&lt;/code&gt;.) (&lt;code&gt;android.support.v4.widget.SwipeRefreshLayout&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/training/swipe/respond-refresh-request&#34;&gt;Responding to Refresh Request&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;mySwipeRefreshLayout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setOnRefreshListener&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; SwipeRefreshLayout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;OnRefreshListener&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+        &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onRefresh&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+            Log&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;i&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;LOG_TAG&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;onRefresh called from SwipeRefreshLayout&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+
+            &lt;span style=&#34;color:#586e75&#34;&gt;// This method performs the actual data-refresh operation.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#586e75&#34;&gt;// The method calls setRefreshing(false) when it&amp;#39;s finished.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;            myUpdateOperation&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// For refreshing in the app bar
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;@Override&lt;/span&gt;
+&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;boolean&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;onOptionsItemSelected&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;MenuItem item&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;switch&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;item&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;getItemId&lt;span style=&#34;color:#719e07&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+
+        &lt;span style=&#34;color:#586e75&#34;&gt;// Check if user triggered a refresh:
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#719e07&#34;&gt;case&lt;/span&gt; R&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;id&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;menu_refresh&lt;span style=&#34;color:#719e07&#34;&gt;:&lt;/span&gt;
+            Log&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;i&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;LOG_TAG&lt;span style=&#34;color:#719e07&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;Refresh menu item selected&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+
+            &lt;span style=&#34;color:#586e75&#34;&gt;// Signal SwipeRefreshLayout to start the progress indicator
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;            mySwipeRefreshLayout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;setRefreshing&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+
+            &lt;span style=&#34;color:#586e75&#34;&gt;// Start the refresh background task.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#586e75&#34;&gt;// This method calls setRefreshing(false) when it&amp;#39;s finished.
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;            myUpdateOperation&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+
+            &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#cb4b16&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#586e75&#34;&gt;// User didn&amp;#39;t trigger a refresh, let the superclass handle this action
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;super&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;onOptionsItemSelected&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;item&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Head-First-Android-Development-Brain-Friendly/dp/1491974052/ref=sr_1_1?keywords=head+first+android&amp;amp;qid=1560338899&amp;amp;s=gateway&amp;amp;sr=8-1&#34;&gt;Head First Android Development: A Brain-Friendly Guide 2nd Edition&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com&#34;&gt;https://developer.android.com&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

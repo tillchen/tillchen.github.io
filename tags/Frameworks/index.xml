@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frameworks on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Frameworks/</link>
+    <description>Recent content in Frameworks on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 09 Jun 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Frameworks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django Notes</title>
+      <link>https://tillchen.com/posts/2019-06-09-Django-Notes/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2019-06-09-Django-Notes/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#start-the-django-project-foo-as-the-project-name-and-bar-as-the-app-name&#34;&gt;Start the Django project (foo as the project name and bar as the app name)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-admin-site&#34;&gt;The admin site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-django-shell-control-d-to-exit&#34;&gt;The Django shell (Control-d to exit)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#making-pages&#34;&gt;Making pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;start-the-django-project-foo-as-the-project-name-and-bar-as-the-app-name&#34;&gt;Start the Django project (foo as the project name and bar as the app name)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a virtual environment (where we can install packages and isolate them from all other packages): (venv is the virtual environment module.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python3 -m venv foo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Activate the virtual environment: (Packages inside will be available only when the environment is active.) (use &lt;code&gt;deactivate&lt;/code&gt; to deactivate.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#b58900&#34;&gt;source&lt;/span&gt; foo/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install Django (Note: use &lt;code&gt;python&lt;/code&gt; and &lt;code&gt;pip&lt;/code&gt; instead of &lt;code&gt;python3&lt;/code&gt; or &lt;code&gt;pip3&lt;/code&gt;) in the virtual environment.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;pip install django
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start the project. (The dot at the end creates the project with a directory structure, i.e. with &lt;code&gt;__init__.py&lt;/code&gt;, &lt;code&gt;settings.py&lt;/code&gt;, &lt;code&gt;urls.py&lt;/code&gt;, and &lt;code&gt;wsgi.py&lt;/code&gt; (web server gateway interface.))&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;django-admin startproject foo .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create the database (SQLite): (Run the command anytime we modify the database.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python manage.py migrate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start and view the project:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A Django project is a group of individual apps that work together. Let&amp;rsquo;s start an app: （creating the following in the bar folder: &lt;code&gt;__init__.py&lt;/code&gt;, &lt;code&gt;admin.py&lt;/code&gt;, &lt;code&gt;apps.py&lt;/code&gt;, &lt;code&gt;migrations&lt;/code&gt;, &lt;code&gt;models.py&lt;/code&gt;, &lt;code&gt;test.py&lt;/code&gt;, and &lt;code&gt;view.py&lt;/code&gt;.）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python manage.py startapp bar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Code-wise, a model is just a class. An example model:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.db &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; models
+
+&lt;span style=&#34;color:#586e75&#34;&gt;# Create your models here.&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Topic&lt;/span&gt;(models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;Model):
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;The class that manages the topic the user is learning about.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    text &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;CharField(max_length&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;200&lt;/span&gt;)
+    date_added &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;DateTimeField(auto_now_add&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;True&lt;/span&gt;)
+
+    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; __str__(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
+        &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;The string representation of the model.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Activate the models:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add the apps to &lt;code&gt;INSTALLED_APPS&lt;/code&gt; in &lt;code&gt;settings.py&lt;/code&gt;;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;INSTALLED_APPS &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; [
+    &lt;span style=&#34;color:#586e75&#34;&gt;# My apps&lt;/span&gt;
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;,
+
+    &lt;span style=&#34;color:#586e75&#34;&gt;# Default django apps&lt;/span&gt;
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;django.contrib.admin&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;django.contrib.auth&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;django.contrib.contenttypes&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;django.contrib.sessions&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;django.contrib.messages&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;django.contrib.staticfiles&amp;#39;&lt;/span&gt;,
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Migrate:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python manage.py makemigrations bar
+python manage.py migrate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-admin-site&#34;&gt;The admin site&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Add a superuser: (Django only stores the hash of the password)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python manage.py createsuperuser
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Register the model with the admin site. Example &lt;code&gt;admin.py&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.contrib &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; admin
+
+&lt;span style=&#34;color:#586e75&#34;&gt;# Register your models here.&lt;/span&gt;
+
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; .models &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; Topic, Entry &lt;span style=&#34;color:#586e75&#34;&gt;# . means looking for the file in the same directory as admin.py&lt;/span&gt;
+
+admin&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;register(Topic)
+admin&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;register(Entry)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-django-shell-control-d-to-exit&#34;&gt;The Django shell (Control-d to exit)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;python manage.py shell
+&amp;gt;&amp;gt;&amp;gt; from bar.models import Topic
+&amp;gt;&amp;gt;&amp;gt; Topic.objects.all&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;# returns a queryset&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;making-pages&#34;&gt;Making pages&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Defining URLs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Include the URLs in foo/urls.py:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.contrib &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; admin
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.urls &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; path, include
+
+urlpatterns &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; [
+    path(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;admin/&amp;#39;&lt;/span&gt;, admin&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;urls),
+    path(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, include(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;bar.urls&amp;#39;&lt;/span&gt;)),
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new bar/urls.py file and add the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.urls &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; path
+
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; . &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; views
+
+app_name &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;
+urlpatterns &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#586e75&#34;&gt;# a list of individual pages that can be requested.&lt;/span&gt;
+    &lt;span style=&#34;color:#586e75&#34;&gt;# Homepage&lt;/span&gt;
+    path(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;, views&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;index, name&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;index&amp;#39;&lt;/span&gt;), &lt;span style=&#34;color:#586e75&#34;&gt;# &amp;#39;&amp;#39; means the base URL; call the index() function in views.py&lt;/span&gt;
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Writing views:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.shortcuts &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; render
+
+&lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;index&lt;/span&gt;(request):
+    &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;The homepage.&amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; render(request, &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;bar/index.html&amp;#39;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Writing templates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Make the directory bar/templates/bar&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write the file index.html:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;Learning Log&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;
+
+&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;Learning Log helps you keep track of your learning, for any topic you&amp;#39;re learning about.&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If we see the error: &lt;code&gt;ModuleNotFoundError: No module named &#39;learning_logs.urls&#39;&lt;/code&gt;, just CTRL-C and rerun the server by &lt;code&gt;python manage.py runserver&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Template inheritance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Make a base.html file and include it on every page: (template tag:{percent percent}; bar is the namespace defined in bar/urls.py app_name) (in reality, use &lt;strong&gt;%&lt;/strong&gt; instead of percent! here is just for avoiding the markdown error.)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;a&lt;/span&gt; href&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;{percent url &amp;#39;bar:index&amp;#39; percent}&amp;#34;&lt;/span&gt;&amp;gt;Foo&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;a&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;
+
+{percent block content percent}{percent endblock content percent}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Inherit the base.html: (index.html)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{percent extends &amp;#34;bar/base.html&amp;#34; percent}
+
+{percent block content percent}
+&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;Learning Log helps you become a better learner by keeping track of the topic you&amp;#39;re learning.&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;p&lt;/span&gt;&amp;gt;
+{percent endblock content percent}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python+crash+course&amp;amp;qid=1558808134&amp;amp;s=gateway&amp;amp;sr=8-1&#34;&gt;Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

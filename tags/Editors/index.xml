@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Editors on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Editors/</link>
+    <description>Recent content in Editors on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 May 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Editors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vim Tips</title>
+      <link>https://tillchen.com/posts/2019-05-05-Vim-Tips/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2019-05-05-Vim-Tips/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#deletion&#34;&gt;Deletion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#navigation&#34;&gt;Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#modification&#34;&gt;Modification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#miscellaneous&#34;&gt;Miscellaneous&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#plugins&#34;&gt;Plugins&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#multiple-cursors&#34;&gt;Multiple Cursors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#emmet&#34;&gt;Emmet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tagbar&#34;&gt;Tagbar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nerdtree&#34;&gt;NERDTree&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deletion&#34;&gt;Deletion&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;lsquo;dw’ deletes the word including the space.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘d$’ deletes from the cursor to the end of the line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘de’ deletes the word excluding the space.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘d2w’, ‘d2e’ delete 2 words.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘dd’ deletes a whole line, ‘2dd’ deletes 2 lines.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘p’ puts the deleted content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;‘0’ goes to the start of the line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘2w’ goes 2 words ahead.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘2e’ goes to the end of the second word ahead.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘G’ goes to the bottom, &amp;lt;C-g&amp;gt; shows the location status, ‘gg’ goes to the top, ‘5G’ goes to the 5th line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;modification&#34;&gt;Modification&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;‘u’ undoes, ‘U’ fixes the whole line, &amp;lt;C-r&amp;gt; undoes the undo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘r’ and ‘a’ replace the char with a.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘ce’ and ‘abc’ change the word to the end with abc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘c$’ changes to the end of the line.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;:r foo appends the content of foo to the file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘R’ goes to replace mode.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘y’ yanks and ‘p’ pastes, ‘yw’ yanks word.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;‘gt’ goes to the next tab, ‘gT’ goes to the previous tab.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;:1,10s/foo/bar/g&lt;/code&gt; replaces foo with bar between line 1 and line 10.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;miscellaneous&#34;&gt;Miscellaneous&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;To enable spell check :setlocal spell spelllang=en_us .&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;:terminal to open terminal, &amp;lt;C-\&amp;gt;&amp;lt;C-n&amp;gt; to enter vim mode to enable go up and go down.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;g, &amp;lt;C-g&amp;gt; to see the word count.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;plugins&#34;&gt;Plugins&lt;/h2&gt;
+&lt;h3 id=&#34;multiple-cursors&#34;&gt;Multiple Cursors&lt;/h3&gt;
+&lt;p&gt;In &lt;strong&gt;normal mode&lt;/strong&gt;, &amp;lt;C-n&amp;gt;&amp;lt;C-n&amp;gt;&amp;lt;C-n&amp;gt;c, new_name (select 3 variables and rename.)&lt;/p&gt;
+&lt;h3 id=&#34;emmet&#34;&gt;Emmet&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;html:5_&lt;/code&gt; (&amp;quot;_&amp;rdquo; is the cursor position), then &amp;lt;C-y&amp;gt; &lt;strong&gt;,&lt;/strong&gt; , we get:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;html&lt;/span&gt; lang&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;meta&lt;/span&gt; charset&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;title&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;title&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;head&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#268bd2&#34;&gt;body&lt;/span&gt;&amp;gt;
+    _
+&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#268bd2&#34;&gt;html&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;tagbar&#34;&gt;Tagbar&lt;/h3&gt;
+&lt;p&gt;F8 to toggle.&lt;/p&gt;
+&lt;h3 id=&#34;nerdtree&#34;&gt;NERDTree&lt;/h3&gt;
+&lt;p&gt;:NERDTreeFocus to turn on.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

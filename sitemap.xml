@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://tillchen.com/contact/</loc>
+    <lastmod>2020-04-29T11:03:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/</loc>
+    <lastmod>2020-04-29T11:03:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/testimonials/</loc>
+    <lastmod>2020-04-29T11:03:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/skills/</loc>
+    <lastmod>2020-04-29T11:02:27+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/projects/</loc>
+    <lastmod>2020-04-28T21:37:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/about/</loc>
+    <lastmod>2020-04-28T21:37:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/</loc>
+    <lastmod>2020-04-10T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Computer-Science/</loc>
+    <lastmod>2020-04-10T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/</loc>
+    <lastmod>2020-04-10T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/</loc>
+    <lastmod>2020-04-10T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2020-03-29-Design-Patterns/</loc>
+    <lastmod>2020-03-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Software-Engineering/</loc>
+    <lastmod>2020-03-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2020-02-17-Go-Notes/</loc>
+    <lastmod>2020-02-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Programming-Languages/</loc>
+    <lastmod>2020-02-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-09-04-Kotlin-Notes/</loc>
+    <lastmod>2019-09-04T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</loc>
+    <lastmod>2019-08-13T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Mobile-Development/</loc>
+    <lastmod>2019-08-13T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-08-2-Swift-Notes/</loc>
+    <lastmod>2019-08-02T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-7-27-SQL-Notes/</loc>
+    <lastmod>2019-07-27T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-7-24-Bash-Tips/</loc>
+    <lastmod>2019-07-24T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-07-15-JavaScript-Notes/</loc>
+    <lastmod>2019-07-15T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</loc>
+    <lastmod>2019-07-10T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-06-09-Django-Notes/</loc>
+    <lastmod>2019-06-09T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Frameworks/</loc>
+    <lastmod>2019-06-09T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Web-Development/</loc>
+    <lastmod>2019-06-09T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-06-05-Java-Notes/</loc>
+    <lastmod>2019-06-05T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-05-25-Git-Tips/</loc>
+    <lastmod>2019-05-25T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Tools/</loc>
+    <lastmod>2019-05-25T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Version-Control/</loc>
+    <lastmod>2019-05-25T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-05-12-Python-Notes/</loc>
+    <lastmod>2019-05-12T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/</loc>
+    <lastmod>2019-05-05T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Editors/</loc>
+    <lastmod>2019-05-05T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2019-05-05-Vim-Tips/</loc>
+    <lastmod>2019-05-05T00:00:00+02:00</lastmod>
+  </url>
+  
+</urlset>

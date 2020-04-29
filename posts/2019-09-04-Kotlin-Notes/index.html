@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for Kotlin">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kotlin Notes"/>
+<meta name="twitter:description" content="Some notes for Kotlin"/>
+
+    <meta property="og:title" content="Kotlin Notes" />
+<meta property="og:description" content="Some notes for Kotlin" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" />
+<meta property="article:published_time" content="2019-09-04T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-09-04T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/">
+    
+    <title>
+  Kotlin Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Kotlin Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-09-04T00:00:00&#43;02:00'>
+                September 4, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#oop">OOP</a></li>
+<li><a href="#nulls-and-exceptions">Nulls and Exceptions</a></li>
+<li><a href="#collections">Collections</a></li>
+<li><a href="#lambdas-and-higher-order-functions">Lambdas and Higher-Order Functions</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Kotlin requires one <code>main</code> per app:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">fun</span> <span style="color:#268bd2">main</span>(args: Array&lt;String&gt;) { <span style="color:#586e75">// the args part can be omitted
+</span><span style="color:#586e75"></span>    println(<span style="color:#2aa198">&#34;Hello Kotlin!&#34;</span>)
+}
+</code></pre></div></li>
+<li>
+<p>Shorter <code>if</code></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">println(<span style="color:#719e07">if</span> (x &gt; y) <span style="color:#2aa198">&#34;x is greater&#34;</span> <span style="color:#719e07">else</span> <span style="color:#2aa198">&#34;x is not greater&#34;</span>)
+</code></pre></div></li>
+<li>
+<p><code>var</code> vs <code>val</code>:</p>
+<ul>
+<li>When using <code>var</code>, we can assign another value to the variable.</li>
+<li>When using <code>val</code>, the reference to the object stays forever. However, if the variable is an array, the array itself can be updated. (Similar to <code>let</code> in Swift)</li>
+</ul>
+</li>
+<li>
+<p>Primitive types are also objects controlled by references.</p>
+</li>
+<li>
+<p>Similar to Swift, we can define the type:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">var</span> z: Int = <span style="color:#2aa198">6</span>
+<span style="color:#719e07">var</span> x: Long = z.toLong() <span style="color:#586e75">// similarly, toFloat(), to Byte(), etc.
+</span></code></pre></div></li>
+<li>
+<p>Arrays:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">var</span> myArray = arrayOf(<span style="color:#2aa198">1</span>, <span style="color:#2aa198">2</span>, <span style="color:#2aa198">3</span>)
+<span style="color:#719e07">var</span> myLength = myArray.size
+<span style="color:#719e07">var</span> explicitArray: Array&lt;Int&gt; = arrayOf(<span style="color:#2aa198">1</span>, <span style="color:#2aa198">2</span>, <span style="color:#2aa198">3</span>)
+</code></pre></div></li>
+<li>
+<p>Strings:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">var</span> x = <span style="color:#2aa198">42</span>
+<span style="color:#719e07">var</span> myString = <span style="color:#2aa198">&#34;x is $x&#34;</span>
+<span style="color:#586e75">// When accessing a property or function of a object, use ${}
+</span><span style="color:#586e75"></span><span style="color:#719e07">var</span> myArray = arrayOf(<span style="color:#2aa198">1</span>, <span style="color:#2aa198">2</span>, <span style="color:#2aa198">3</span>)
+<span style="color:#719e07">var</span> arraySize = <span style="color:#2aa198">&#34;The size if ${myArray.size}&#34;</span>
+<span style="color:#719e07">var</span> firstItem = <span style="color:#2aa198">&#34;The first item is ${myArray[0]}&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Functions;</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">fun</span> <span style="color:#268bd2">foo</span>(bar: Int): Int{ <span style="color:#586e75">// Unit means no return value, or just omit it
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// stuff
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">return</span> <span style="color:#2aa198">1</span>
+}
+
+<span style="color:#719e07">var</span> result = foo(<span style="color:#2aa198">1</span>)
+
+<span style="color:#719e07">fun</span> <span style="color:#268bd2">max</span>(a: Int, b: Int): Int = <span style="color:#719e07">if</span> (a &gt; b) a <span style="color:#719e07">else</span> b <span style="color:#586e75">// also works
+</span></code></pre></div></li>
+<li>
+<p>Loops:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">for</span> (x <span style="color:#719e07">in</span> <span style="color:#2aa198">1.</span>.<span style="color:#2aa198">100</span>) println(x) <span style="color:#586e75">// end inclusive
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> (x <span style="color:#719e07">in</span> <span style="color:#2aa198">1</span> until <span style="color:#2aa198">100</span>) println(x) <span style="color:#586e75">// not end inclusive
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> (x <span style="color:#719e07">in</span> <span style="color:#2aa198">15</span> downTo <span style="color:#2aa198">1</span>) println(x)
+<span style="color:#719e07">for</span> (x <span style="color:#719e07">in</span> <span style="color:#2aa198">1.</span>.<span style="color:#2aa198">100</span> step <span style="color:#2aa198">2</span>) println(x)
+<span style="color:#719e07">for</span> (item <span style="color:#719e07">in</span> items) println(item)
+</code></pre></div></li>
+<li>
+<p>Input:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">val</span> userInput = readLine()
+</code></pre></div></li>
+<li>
+<p><code>when</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">when</span> (x) {
+    <span style="color:#2aa198">0</span> -&gt; println(<span style="color:#2aa198">&#34;It&#39;s 0&#34;</span>)
+    <span style="color:#2aa198">1</span>, <span style="color:#2aa198">2</span> -&gt; println(<span style="color:#2aa198">&#34;It&#39;s 1 or 2&#34;</span>)
+    <span style="color:#719e07">else</span> -&gt; {
+        println(<span style="color:#2aa198">&#34;It&#39;s not 0.&#34;</span>)
+        println(<span style="color:#2aa198">&#34;It&#39;s not 1 nor 2.&#34;</span>)
+    }
+}
+</code></pre></div></li>
+</ol>
+<h2 id="oop">OOP</h2>
+<ol>
+<li>
+<p>Example class:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">class</span> <span style="color:#268bd2">Dog</span>(<span style="color:#719e07">val</span> name: String, <span style="color:#719e07">var</span> weight: int, <span style="color:#719e07">val</span> breed: String = <span style="color:#2aa198">&#34;default&#34;</span>) {
+    <span style="color:#719e07">var</span> temperament: String = <span style="color:#2aa198">&#34;&#34;</span>
+    <span style="color:#586e75">// All properties must be initialized.
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// Or:
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// lateinit var temperament = String
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">fun</span> <span style="color:#268bd2">bark</span>() {
+        println(<span style="color:#2aa198">&#34;Woof!&#34;</span>)
+    }
+}
+</code></pre></div></li>
+<li>
+<p>Custom getters and setters:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">...
+<span style="color:#719e07">val</span> weightInKgs: Double
+    <span style="color:#719e07">get</span>() = weight / <span style="color:#2aa198">2.2</span>
+<span style="color:#719e07">var</span> weight = weightParam
+    <span style="color:#719e07">set</span>(value) {
+        <span style="color:#719e07">if</span> (value &gt; <span style="color:#2aa198">0</span>) field = value <span style="color:#586e75">// field is a keyword
+</span><span style="color:#586e75"></span>    }
+...
+</code></pre></div></li>
+<li>
+<p>In fact, the complier adds getters and setters automatically:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">var</span> myProperty: String
+    <span style="color:#719e07">get</span>() = field
+    <span style="color:#719e07">set</span>(value) {
+        field = value
+    }
+</code></pre></div></li>
+<li>
+<p>Classes, variables, and methods are final by default. To enable inheritance and overriding, add <code>open</code> before them. We also need to add <code>override</code> to variables.</p>
+</li>
+<li>
+<p>The <code>init {}</code> blocks are called during initialization.</p>
+</li>
+<li>
+<p>If a property is defined using <code>val</code> in the superclass, we must override it in the subclass if we want to assign a new value to it. However, if it&rsquo;s defined using <code>var</code>, we just need to reassign it in the <code>init {}</code> block without using <code>override</code>.</p>
+</li>
+<li>
+<p><code>abstract</code> for classes, variables, and methods. These properties must all be overridden later.</p>
+</li>
+<li>
+<p>An <code>interface</code> lets us define common behavior OUTSIDE a superclass hierarchy. (Not IS-A, but share a property.) A class can have multiple interfaces, but can only inherit from a single direct superclass. <code>class X: A, B {}</code> (No parentheses. <code>class X: A()</code> means we are inheriting.)</p>
+</li>
+<li>
+<p>Use <code>is</code> to check the type: <code>if (animal is Wolf)</code>. And use <code>as</code> for explicit casting.</p>
+</li>
+<li>
+<p><code>Any</code> is the superclass of everything.</p>
+</li>
+<li>
+<p>Add <code>data</code> to the start of the class to make it behave like a <code>struct</code> in Swift. Then we can use <code>==</code> or <code>.equals</code> to test the equivalence. (Equal objects have the same <code>.hashCode()</code> value.) (And <code>.toString()</code> returns the value of each property.) (BTW, <code>===</code> is used for referential check (identity).)</p>
+</li>
+<li>
+<p>For <code>data</code>, we have:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">val</span> (title, number) = r
+<span style="color:#586e75">// is equivalent to
+</span><span style="color:#586e75"></span><span style="color:#719e07">val</span> title = r.component1
+<span style="color:#719e07">val</span> number = r.component2
+</code></pre></div></li>
+<li>
+<p>Named arguments (<code>var r = Recipe(title = &quot;title&quot;, foo = &quot;bar&quot;)</code>) are also available like in Swift.</p>
+</li>
+<li>
+<p>Secondary constructors:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">constructor</span>(foo: Boolean) : <span style="color:#719e07">this</span>(<span style="color:#2aa198">0</span>, foo) {} <span style="color:#586e75">// calls the primary constructor
+</span></code></pre></div></li>
+</ol>
+<h2 id="nulls-and-exceptions">Nulls and Exceptions</h2>
+<ol>
+<li>
+<p>Use <code>?</code> for nullable objects just like in Swift.</p>
+</li>
+<li>
+<p><code>w?.eat()</code> is a safe call. It&rsquo;s only called when w is not null.</p>
+</li>
+<li>
+<p>Like optional binding in Swift, use <code>let</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">w<span style="color:#719e07">?.</span>let {
+    <span style="color:#586e75">// executed when w is not null
+</span><span style="color:#586e75"></span>}
+</code></pre></div></li>
+<li>
+<p>The Elvis operator <code>?:</code></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">w<span style="color:#719e07">?.</span>hunger <span style="color:#719e07">?:</span> -<span style="color:#2aa198">1</span> <span style="color:#586e75">// if null, return -1
+</span></code></pre></div></li>
+<li>
+<p><code>!!</code> is like <code>!</code> in Swift. It throws a NullPointerException if the value is null: <code>w!!.hunger</code>.</p>
+</li>
+<li>
+<p>Like Java, the same <code>try catch finally</code> block for exception handling. And the same <code>throw</code>.</p>
+</li>
+</ol>
+<h2 id="collections">Collections</h2>
+<ol>
+<li>
+<p><code>List</code>, <code>Set</code>, <code>Map</code>, <code>MutableList</code>, <code>MutableSet</code>, <code>MutableMap</code>.</p>
+</li>
+<li>
+<p><code>listOf()</code>, <code>mutableListOf()</code>. <code>mList.set(1, &quot;foo&quot;)</code>, <code>.shuffle()</code></p>
+</li>
+<li>
+<p><code>mapOf(0 to 'a', 1 to 'b', 2 to 'c')</code> <code>for ((key, value) in mMap)</code></p>
+</li>
+<li>
+<p>Add <code>out</code> (<code>&lt;out E&gt;</code>) to make the generics covariant (use a subtype instead of a supertype) - achieving polymorphism. Add <code>in</code> to make it contravariant - the opposite of covariance.</p>
+</li>
+</ol>
+<h2 id="lambdas-and-higher-order-functions">Lambdas and Higher-Order Functions</h2>
+<ol>
+<li>
+<p>We can assign a lambda to a variable:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">val</span> addFive: (Int) -&gt; Int = {x: Int -&gt; x + <span style="color:#2aa198">5</span>}
+<span style="color:#719e07">val</span> result = addFive.invoke(<span style="color:#2aa198">1</span>) <span style="color:#586e75">// 6
+</span><span style="color:#586e75">// or
+</span><span style="color:#586e75"></span><span style="color:#719e07">val</span> result = addFive(<span style="color:#2aa198">1</span>)
+</code></pre></div></li>
+<li>
+<p><code>{it + 5}</code> is equivalent to <code>{x -&gt; x + 5}</code>.</p>
+</li>
+<li>
+<p>Lambdas can also be passed to functions.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#719e07">fun</span> <span style="color:#268bd2">convert</span>(x: Double, converter: (Double) -&gt; Double) : Double {
+    <span style="color:#719e07">return</span> converter(x)
+}
+println(convert(<span style="color:#2aa198">1</span>, {c: Double -&gt; c * <span style="color:#2aa198">1.8</span> + <span style="color:#2aa198">32</span>}))
+</code></pre></div></li>
+<li>
+<p><code>.min()</code> and <code>.max()</code> work with basic types: <code>val mMax = mList.max()</code></p>
+</li>
+<li>
+<p><code>minBy {}</code> and <code>maxBy {}</code> work with all types: <code>val mMaxQuantity = groceries.maxBy {it.quantity}</code>. Also <code>sumBy {}</code> and <code>sumByDouble {}</code> : <code>mMap.values.sumBy {it}</code></p>
+</li>
+<li>
+<p><code>filter {}</code>: <code>val pricesOver3 = groceries.filter {it.price &gt; 3.0}</code>. Also <code>filterNot {}</code>.</p>
+</li>
+<li>
+<p><code>map {}</code>: <code>val doubleInts = ints.map {it * 2}</code></p>
+</li>
+<li>
+<p><code>forEach {}</code>: <code>groceries.forEach {println(it.name)}</code></p>
+</li>
+<li>
+<p>Closure means that a lambda can access any local variable that it captures.</p>
+</li>
+<li>
+<p><code>groupBy {}</code> returns a <code>Map</code>.</p>
+</li>
+<li>
+<p><code>fold {}</code>: <code>val sumOfInts = ints.fold(0) {mSum, item -&gt; mSum + item}</code></p>
+</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Head-First-Kotlin-Brain-Friendly-Guide/dp/1491996692/ref=sr_1_1?keywords=head+first+kotlin&amp;qid=1567580813&amp;s=gateway&amp;sr=8-1">Head First Kotlin: A Brain-Friendly Guide</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

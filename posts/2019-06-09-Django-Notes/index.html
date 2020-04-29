@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for Django">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Django Notes"/>
+<meta name="twitter:description" content="Some notes for Django"/>
+
+    <meta property="og:title" content="Django Notes" />
+<meta property="og:description" content="Some notes for Django" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-06-09-Django-Notes/" />
+<meta property="article:published_time" content="2019-06-09T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-06-09T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-06-09-Django-Notes/">
+    
+    <title>
+  Django Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-06-09-Django-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Django Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-06-09T00:00:00&#43;02:00'>
+                June 9, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Web-Development/">Web Development</a>
+      <span class="separator">•</span>
+    <a href="https://tillchen.com/tags/Frameworks/">Frameworks</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#start-the-django-project-foo-as-the-project-name-and-bar-as-the-app-name">Start the Django project (foo as the project name and bar as the app name)</a></li>
+<li><a href="#the-admin-site">The admin site</a></li>
+<li><a href="#the-django-shell-control-d-to-exit">The Django shell (Control-d to exit)</a></li>
+<li><a href="#making-pages">Making pages</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="start-the-django-project-foo-as-the-project-name-and-bar-as-the-app-name">Start the Django project (foo as the project name and bar as the app name)</h2>
+<ol>
+<li>
+<p>Create a virtual environment (where we can install packages and isolate them from all other packages): (venv is the virtual environment module.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3 -m venv foo
+</code></pre></div></li>
+<li>
+<p>Activate the virtual environment: (Packages inside will be available only when the environment is active.) (use <code>deactivate</code> to deactivate.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#b58900">source</span> foo/bin/activate
+</code></pre></div></li>
+<li>
+<p>Install Django (Note: use <code>python</code> and <code>pip</code> instead of <code>python3</code> or <code>pip3</code>) in the virtual environment.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pip install django
+</code></pre></div></li>
+<li>
+<p>Start the project. (The dot at the end creates the project with a directory structure, i.e. with <code>__init__.py</code>, <code>settings.py</code>, <code>urls.py</code>, and <code>wsgi.py</code> (web server gateway interface.))</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">django-admin startproject foo .
+</code></pre></div></li>
+<li>
+<p>Create the database (SQLite): (Run the command anytime we modify the database.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python manage.py migrate
+</code></pre></div></li>
+<li>
+<p>Start and view the project:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python manage.py runserver
+</code></pre></div></li>
+<li>
+<p>A Django project is a group of individual apps that work together. Let&rsquo;s start an app: （creating the following in the bar folder: <code>__init__.py</code>, <code>admin.py</code>, <code>apps.py</code>, <code>migrations</code>, <code>models.py</code>, <code>test.py</code>, and <code>view.py</code>.）</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python manage.py startapp bar
+</code></pre></div></li>
+<li>
+<p>Code-wise, a model is just a class. An example model:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+
+<span style="color:#586e75"># Create your models here.</span>
+<span style="color:#719e07">class</span> <span style="color:#268bd2">Topic</span>(models<span style="color:#719e07">.</span>Model):
+    <span style="color:#2aa198">&#34;&#34;&#34;The class that manages the topic the user is learning about.&#34;&#34;&#34;</span>
+    text <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">200</span>)
+    date_added <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>DateTimeField(auto_now_add<span style="color:#719e07">=</span><span style="color:#268bd2">True</span>)
+
+    <span style="color:#719e07">def</span> __str__(<span style="color:#268bd2">self</span>):
+        <span style="color:#2aa198">&#34;&#34;&#34;The string representation of the model.&#34;&#34;&#34;</span>
+        <span style="color:#719e07">return</span> <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>text
+</code></pre></div></li>
+<li>
+<p>Activate the models:</p>
+<ul>
+<li>
+<p>Add the apps to <code>INSTALLED_APPS</code> in <code>settings.py</code>;</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">INSTALLED_APPS <span style="color:#719e07">=</span> [
+    <span style="color:#586e75"># My apps</span>
+    <span style="color:#2aa198">&#39;bar&#39;</span>,
+
+    <span style="color:#586e75"># Default django apps</span>
+    <span style="color:#2aa198">&#39;django.contrib.admin&#39;</span>,
+    <span style="color:#2aa198">&#39;django.contrib.auth&#39;</span>,
+    <span style="color:#2aa198">&#39;django.contrib.contenttypes&#39;</span>,
+    <span style="color:#2aa198">&#39;django.contrib.sessions&#39;</span>,
+    <span style="color:#2aa198">&#39;django.contrib.messages&#39;</span>,
+    <span style="color:#2aa198">&#39;django.contrib.staticfiles&#39;</span>,
+]
+</code></pre></div></li>
+<li>
+<p>Migrate:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python manage.py makemigrations bar
+python manage.py migrate
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="the-admin-site">The admin site</h2>
+<ol>
+<li>
+<p>Add a superuser: (Django only stores the hash of the password)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python manage.py createsuperuser
+</code></pre></div></li>
+<li>
+<p>Register the model with the admin site. Example <code>admin.py</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.contrib <span style="color:#719e07">import</span> admin
+
+<span style="color:#586e75"># Register your models here.</span>
+
+<span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> Topic, Entry <span style="color:#586e75"># . means looking for the file in the same directory as admin.py</span>
+
+admin<span style="color:#719e07">.</span>site<span style="color:#719e07">.</span>register(Topic)
+admin<span style="color:#719e07">.</span>site<span style="color:#719e07">.</span>register(Entry)
+</code></pre></div></li>
+</ol>
+<h2 id="the-django-shell-control-d-to-exit">The Django shell (Control-d to exit)</h2>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python manage.py shell
+&gt;&gt;&gt; from bar.models import Topic
+&gt;&gt;&gt; Topic.objects.all<span style="color:#719e07">()</span> <span style="color:#586e75"># returns a queryset</span>
+</code></pre></div></li>
+</ol>
+<h2 id="making-pages">Making pages</h2>
+<ol>
+<li>
+<p>Defining URLs:</p>
+<ul>
+<li>
+<p>Include the URLs in foo/urls.py:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.contrib <span style="color:#719e07">import</span> admin
+<span style="color:#719e07">from</span> django.urls <span style="color:#719e07">import</span> path, include
+
+urlpatterns <span style="color:#719e07">=</span> [
+    path(<span style="color:#2aa198">&#39;admin/&#39;</span>, admin<span style="color:#719e07">.</span>site<span style="color:#719e07">.</span>urls),
+    path(<span style="color:#2aa198">&#39;&#39;</span>, include(<span style="color:#2aa198">&#39;bar.urls&#39;</span>)),
+]
+</code></pre></div></li>
+<li>
+<p>Create a new bar/urls.py file and add the following:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.urls <span style="color:#719e07">import</span> path
+
+<span style="color:#719e07">from</span> . <span style="color:#719e07">import</span> views
+
+app_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;bar&#39;</span>
+urlpatterns <span style="color:#719e07">=</span> [ <span style="color:#586e75"># a list of individual pages that can be requested.</span>
+    <span style="color:#586e75"># Homepage</span>
+    path(<span style="color:#2aa198">&#39;&#39;</span>, views<span style="color:#719e07">.</span>index, name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;index&#39;</span>), <span style="color:#586e75"># &#39;&#39; means the base URL; call the index() function in views.py</span>
+]
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Writing views:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.shortcuts <span style="color:#719e07">import</span> render
+
+<span style="color:#719e07">def</span> <span style="color:#268bd2">index</span>(request):
+    <span style="color:#2aa198">&#34;&#34;&#34;The homepage.&#34;&#34;&#34;</span>
+    <span style="color:#719e07">return</span> render(request, <span style="color:#2aa198">&#39;bar/index.html&#39;</span>)
+</code></pre></div></li>
+<li>
+<p>Writing templates:</p>
+<ul>
+<li>
+<p>Make the directory bar/templates/bar</p>
+</li>
+<li>
+<p>Write the file index.html:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">p</span>&gt;Learning Log&lt;/<span style="color:#268bd2">p</span>&gt;
+
+&lt;<span style="color:#268bd2">p</span>&gt;Learning Log helps you keep track of your learning, for any topic you&#39;re learning about.&lt;/<span style="color:#268bd2">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>If we see the error: <code>ModuleNotFoundError: No module named 'learning_logs.urls'</code>, just CTRL-C and rerun the server by <code>python manage.py runserver</code>.</p>
+</li>
+<li>
+<p>Template inheritance:</p>
+<ul>
+<li>
+<p>Make a base.html file and include it on every page: (template tag:{percent percent}; bar is the namespace defined in bar/urls.py app_name) (in reality, use <strong>%</strong> instead of percent! here is just for avoiding the markdown error.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2">p</span>&gt;
+    &lt;<span style="color:#268bd2">a</span> href<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;{percent url &#39;bar:index&#39; percent}&#34;</span>&gt;Foo&lt;/<span style="color:#268bd2">a</span>&gt;
+&lt;/<span style="color:#268bd2">p</span>&gt;
+
+{percent block content percent}{percent endblock content percent}
+</code></pre></div></li>
+<li>
+<p>Inherit the base.html: (index.html)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{percent extends &#34;bar/base.html&#34; percent}
+
+{percent block content percent}
+&lt;<span style="color:#268bd2">p</span>&gt;Learning Log helps you become a better learner by keeping track of the topic you&#39;re learning.&lt;/<span style="color:#268bd2">p</span>&gt;
+{percent endblock content percent}
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python+crash+course&amp;qid=1558808134&amp;s=gateway&amp;sr=8-1">Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

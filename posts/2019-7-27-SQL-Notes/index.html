@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for SQL">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL Notes"/>
+<meta name="twitter:description" content="Some notes for SQL"/>
+
+    <meta property="og:title" content="SQL Notes" />
+<meta property="og:description" content="Some notes for SQL" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-7-27-SQL-Notes/" />
+<meta property="article:published_time" content="2019-07-27T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-07-27T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-7-27-SQL-Notes/">
+    
+    <title>
+  SQL Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-7-27-SQL-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">SQL Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-07-27T00:00:00&#43;02:00'>
+                July 27, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#select">SELECT</a></li>
+<li><a href="#delete">DELETE</a></li>
+<li><a href="#update">UPDATE</a></li>
+<li><a href="#alter">ALTER</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Create and use the database (MySQL as an example)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#719e07">CREATE</span> <span style="color:#719e07">DATABASE</span> gregs_list;
+USE gregs_list;
+<span style="color:#719e07">CREATE</span> <span style="color:#719e07">TABLE</span> doughnut_list
+(
+    doughnut_id <span style="color:#b58900">INT</span> <span style="color:#719e07">NOT</span> <span style="color:#719e07">NULL</span> AUTO_INCREMENT,
+    doughnut_name <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">10</span>) <span style="color:#719e07">DEFAULT</span> <span style="color:#719e07">NULL</span>,
+    doughnut_type <span style="color:#b58900">VARCHAR</span>(<span style="color:#2aa198">8</span>) <span style="color:#719e07">DEFAULT</span> <span style="color:#719e07">NULL</span>,
+    <span style="color:#719e07">PRIMARY</span> <span style="color:#719e07">KEY</span> (doughnut_id)
+); <span style="color:#586e75">-- Variable Char, up to 10 and 8 chars.
+</span><span style="color:#586e75"></span><span style="color:#719e07">DESC</span> doughnut_list; <span style="color:#586e75">-- Describe the table.
+</span><span style="color:#586e75">-- DROP TABLE doughnut_list; -- Delete the table.
+</span><span style="color:#586e75"></span><span style="color:#719e07">INSERT</span> <span style="color:#719e07">INTO</span> doughnut_list (doughnut_name, doughnut_type) <span style="color:#719e07">VALUES</span> (<span style="color:#2aa198">&#39;hello&#39;</span>, <span style="color:#2aa198">&#39;world&#39;</span>); <span style="color:#586e75">-- The order doesn&#39;t matter, but they must match
+</span><span style="color:#586e75"></span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> doughnut_list; <span style="color:#586e75">-- Show the table. * means all columns.
+</span><span style="color:#586e75"></span><span style="color:#719e07">SELECT</span> doughnut_name <span style="color:#719e07">FROM</span> doughnut_list; <span style="color:#586e75">-- Just show the name column
+</span><span style="color:#586e75"></span><span style="color:#719e07">SELECT</span> <span style="color:#719e07">*</span> <span style="color:#719e07">FROM</span> doughnut_list <span style="color:#719e07">WHERE</span> doughnut_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;hello&#39;</span> <span style="color:#719e07">AND</span> doughnut_type <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;world&#39;</span>; <span style="color:#586e75">-- Show the table selectively. = instead of ==
+</span></code></pre></div></li>
+<li>
+<p>For <code>INSERT</code>, there are three variations from above:</p>
+<ul>
+<li>Changing the order of the columns, as long as the values match them in the same order.</li>
+<li>Omitting column names altogether, as long as we add all the values in the same order.</li>
+<li>Leaving some columns out, as long as the values we&rsquo;re adding match the columns.</li>
+</ul>
+</li>
+<li>
+<p><code>\'</code> or <code>''</code> to insert data with the single quote.</p>
+</li>
+</ol>
+<h2 id="select">SELECT</h2>
+<ol>
+<li>
+<p><code>&lt;&gt;</code> means not equal.</p>
+</li>
+<li>
+<p>Use <code>IS NULL</code> to select null ones: <code>WHERE doughnut_name IS NULL;</code>.</p>
+</li>
+<li>
+<p><code>WHERE location LIKE '%CA';</code> selects all the values that end with CA. <code>%</code> replaces anything while <code>_</code> replaces one letter.</p>
+</li>
+<li>
+<p><code>WHERE value BETWEEN 1 AND 10;</code>.</p>
+</li>
+<li>
+<p><code>WHERE language IN ('Java', 'Python', 'C', 'C++');</code> is equivalent to using <code>OR</code>. Plus, we have <code>WHERE language NOT IN ('Java', 'Python', 'C', 'C++');</code>.</p>
+</li>
+<li>
+<p><code>NOT</code> goes right after <code>WHERE</code> when used with <code>BETWEEN</code> and <code>LIKE</code> : <code>WHERE NOT location LIKE '%CA';</code> <code>WHERE NOT value BETWEEN 1 AND 10;</code>.</p>
+</li>
+<li>
+<p><code>ORDER BY foo DESC, bar;</code> can be added to the end (DESC means descending.)</p>
+</li>
+</ol>
+<h2 id="delete">DELETE</h2>
+<ol>
+<li>
+<p><code>DELETE FROM doughnut_list WHERE doughnut_type = 'bar';</code>.</p>
+</li>
+<li>
+<p><code>DELETE FROM doughnut_list;</code> deletes the entire table.</p>
+</li>
+<li>
+<p>Use <code>SELECT</code> first to make sure what we&rsquo;re deleting is correct.</p>
+</li>
+</ol>
+<h2 id="update">UPDATE</h2>
+<ol>
+<li>
+<p><code>UPDATE doughnut_list SET doughnut_type = 'barbar' WHERE doughnut_type = 'bar';</code>.</p>
+</li>
+<li>
+<p>Without <code>WHERE</code>, every possible one will be updated.</p>
+</li>
+<li>
+<p>Use comma to seperate different columns after <code>SET</code>.</p>
+</li>
+<li>
+<p>It can do basic math: <code>SET cost = cost + 1</code>.</p>
+</li>
+</ol>
+<h2 id="alter">ALTER</h2>
+<ol>
+<li>
+<p><code>ALTER TABLE doughnut_list ADD COLUMN doughnut_id INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (doughnut_id);</code></p>
+</li>
+<li>
+<p><code>FIRST</code>, <code>SECOND</code>, <code>LAST</code>, <code>BEFORE foo</code>, <code>AFTER foo</code> can be used.</p>
+</li>
+<li>
+<p><code>ALTER TABLE doughnut_list RENAME TO foo;</code>.</p>
+</li>
+<li>
+<p><code>ALTER TABLE doughnut_list CHANGE COlUMN foo bar INT;</code> changes foo to bar with int.</p>
+</li>
+<li>
+<p><code>ALTER TABLE doughnut_list MODIFY COLUMN foo VARCHAR(10);</code> changes the data type. We can also do <code>FIRST</code> or <code>LAST</code>.</p>
+</li>
+<li>
+<p><code>ALTER TABLE doughnut_list DROP COLUMN foo;</code> deletes a column.</p>
+</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Head-First-SQL-Brain-Learners/dp/0596526849/ref=sr_1_1?keywords=head+first+sql&amp;qid=1564318633&amp;s=gateway&amp;sr=8-1">Head First SQL</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>

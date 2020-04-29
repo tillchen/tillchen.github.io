@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version Control on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Version-Control/</link>
+    <description>Recent content in Version Control on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 May 2019 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Version-Control/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Tips</title>
+      <link>https://tillchen.com/posts/2019-05-25-Git-Tips/</link>
+      <pubDate>Sat, 25 May 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2019-05-25-Git-Tips/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gitignore&#34;&gt;.gitignore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#log&#34;&gt;Log&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reverting&#34;&gt;Reverting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#remotes&#34;&gt;Remotes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tags&#34;&gt;Tags&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#branching&#34;&gt;Branching&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#deleting-a-repository&#34;&gt;Deleting a repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Git - more like a mini filesystem - thinks about its data more like a stream of snapshots, unlike other delta-based version control systems (Subversion.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unlike CVCS, nearly every operation in Git is local.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git has integrity. Everything is checksummed. It uses SHA-1 to store everything in it&amp;rsquo;s DB.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git generally only adds data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git has three stages: &lt;em&gt;modified&lt;/em&gt;, &lt;em&gt;staged&lt;/em&gt;, and &lt;em&gt;committed&lt;/em&gt;. And it has three main sections:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;The working tree&lt;/em&gt;: a single checkout of one version of the project. Files are pulled out of the compressed DB in the Git directory and placed on the disk for modifications.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;The staging area&lt;/em&gt;: - aka index - a file that stores info about what will go into the next commit.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;The Git directory&lt;/em&gt;: - .git - stores the metadata and object DB.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git commit --amend&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git commit -m &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;Initial commit&amp;#34;&lt;/span&gt;
+git add forgotten_file
+git commit --amend
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we&amp;rsquo;ll have one single commit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;gitignore&#34;&gt;.gitignore&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;When we want to ignore certain files or folders, create a .gitignore file and add the file/folder name inside:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;file.txt # a single file
+folder/ # a folder named `folder`
+*.txt # all txt files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If a file is already tracked, use &lt;code&gt;git rm --cached foo.txt&lt;/code&gt; to remove it first from the git repo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;log&#34;&gt;Log&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;When we want to get a simpler version of the log, use &lt;code&gt;git log --pretty=oneline&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;reverting&#34;&gt;Reverting&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;git checkout .&lt;/code&gt; to revert to the last commit before adding the new changes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;git checkout&lt;/code&gt; plus the first 6 characters of the reference ID to check out the old commits. This enters the detached HEAD state. And it&amp;rsquo;s best &lt;em&gt;&lt;strong&gt;not to make changes&lt;/strong&gt;&lt;/em&gt; when checking out old commits. Use &lt;code&gt;git checkout master&lt;/code&gt; to go back the master branch.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use &lt;code&gt;git reset --hard&lt;/code&gt; plus the first 6 character of the reference ID to reset the project to the old commit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git reset HEAD README.md&lt;/code&gt; to unstage the file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git checkout -- README.md&lt;/code&gt; to discard the changes for the file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;remotes&#34;&gt;Remotes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git remote -v&lt;/code&gt; to see all the remotes verbosely with URLs. &lt;code&gt;origin&lt;/code&gt; is the default name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt; = &lt;code&gt;git fetch&lt;/code&gt; + &lt;code&gt;git merge&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code&gt;: &lt;code&gt;git push origin master&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git remote show &amp;lt;remote&amp;gt;&lt;/code&gt; to see details of a remote.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git remote rename &amp;lt;old_remote&amp;gt; &amp;lt;new_remote&amp;gt;&lt;/code&gt; and &lt;code&gt;git remote remove &amp;lt;remote&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tags&#34;&gt;Tags&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Annotated tags: &lt;code&gt;git tag -a v1.0 -m &amp;quot;my first tag&amp;quot;&lt;/code&gt;. &lt;code&gt;git tag&lt;/code&gt; to see the tags&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git show v1.0&lt;/code&gt; to show the details.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lightweight tags: &lt;code&gt;git tag v1.0-lw&lt;/code&gt; (just provide a tag name only). It&amp;rsquo;s a commit checksum - no other info is kept.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add tags for previous commits: &lt;code&gt;git tag -a v1.0 &amp;lt;log_number&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git push&lt;/code&gt; doesn&amp;rsquo;t push tags to the remote servers. We need &lt;code&gt;git push origin &amp;lt;tag_name&amp;gt;&lt;/code&gt; or &lt;code&gt;git push origin --tags&lt;/code&gt; for all tags.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git tag -d &amp;lt;tag_name&amp;gt;&lt;/code&gt; and &lt;code&gt;git push origin --delete &amp;lt;tag_name&amp;gt;&lt;/code&gt; for deletion.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git branch &amp;lt;branch_name&amp;gt;&lt;/code&gt; creates a new branch. &lt;code&gt;git checkout &amp;lt;branch_name&amp;gt;&lt;/code&gt; moves &lt;code&gt;HEAD&lt;/code&gt; to the branch. The shorter version is &lt;code&gt;git checkout -b &amp;lt;branch_name&amp;gt;&lt;/code&gt; to do both at the same time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git log --oneline --decorate&lt;/code&gt; shows the branch pointers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git log --oneline --decorate --graph --all&lt;/code&gt; shows the divergence.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Branches are cheap since they are essentially a file that has the 40-character checksum of the commit pointed to.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git checkout master&lt;/code&gt; + &lt;code&gt;git merge hotfix&lt;/code&gt; will fast-forward (or use the recursive strategy) the master branch to the match the hotfix branch. Then &lt;code&gt;git branch -d hotfix&lt;/code&gt; deletes it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In case of merge conflict, we need to choose one side or merge the contents ourselves. Then add and commit the file again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git branch -v&lt;/code&gt; shows the last commit of each branch. &lt;code&gt;git branch --merged&lt;/code&gt; and &lt;code&gt;git branch --no-merged&lt;/code&gt; shows the branched that are already merged to the current branch or not yet respectively. Or &lt;code&gt;git branch --no-merged master&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git checkout experiment&lt;/code&gt; + &lt;code&gt;git rebase master&lt;/code&gt; + &lt;code&gt;git checkout master&lt;/code&gt; + &lt;code&gt;git merge experiment&lt;/code&gt; gives a fast-forward merge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git stash&lt;/code&gt; is a convenience tool. But since branching is cheap, we can always branch and then delete it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;deleting-a-repository&#34;&gt;Deleting a repository&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;We can either delete the .git directory in a file browser or use &lt;code&gt;rm -rf .git&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python+crash+course&amp;amp;qid=1558808134&amp;amp;s=gateway&amp;amp;sr=8-1&#34;&gt;Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/book/en/v2&#34;&gt;Pro Git, 2nd Edition&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

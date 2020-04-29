@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Engineering on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Software-Engineering/</link>
+    <description>Recent content in Software Engineering on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Software-Engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Design Patterns</title>
+      <link>https://tillchen.com/posts/2020-03-29-Design-Patterns/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0100</pubDate>
+      
+      <guid>https://tillchen.com/posts/2020-03-29-Design-Patterns/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-observer-pattern&#34;&gt;The Observer Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-decorator-pattern&#34;&gt;The Decorator Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-factory-pattern&#34;&gt;The Factory Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-singleton-pattern&#34;&gt;The Singleton Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-command-pattern&#34;&gt;The Command Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-adapter-pattern&#34;&gt;The Adapter Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-facade-pattern&#34;&gt;The Facade Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-template-method-pattern&#34;&gt;The Template Method Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-state-pattern&#34;&gt;The State Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-proxy-pattern&#34;&gt;The Proxy Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#model-view-controller&#34;&gt;Model-View-Controller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#design-patterns&#34;&gt;Design Patterns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Identify the varying parts and separate them from the invariant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Program to an interface (supertype), not an implementation.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;Animal animal &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; Dog&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+animal&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;makeSound&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+List&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#719e07&#34;&gt;&amp;gt;&lt;/span&gt; list &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; ArrayList&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#719e07&#34;&gt;&amp;gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Favor composition over inheritance. HAS-A can be better than IS-A.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The strategy pattern enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-observer-pattern&#34;&gt;The Observer Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Publishers (Subject) + Subscribers (Observers) = Observer Pattern.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It defines a one-to-many dependency. When the subject changes, all dependents are notified.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This enables loose coupling, which minimizes the interdependency between objects.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Java, we can use the built-in Observable - Observer superclasses.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// extends Observable
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;setChanged&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+notifyObservers&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#586e75&#34;&gt;// extends Observer
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;// in the constructor
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;observable&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;addObserver&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;this&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Java, Observable is a class, which means we have to subclass it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UML:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/observer.png&#34; alt=&#34;Observer&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/observer_example.png&#34; alt=&#34;Observer example&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-decorator-pattern&#34;&gt;The Decorator Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The open-closed principle&lt;/strong&gt;: classes should be open for extension, but closed for modification.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Decorators have the same supertype as the object they decorate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can use one or more decorators to wrap (HAS-A) an object.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The decorator adds its own behavior either before and/or after delegating to the object it decorates to do the rest of the job.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The decorator pattern attaches additional responsibilities to an object dynamically.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UML:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/decorator.png&#34; alt=&#34;Decorator&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/decorator_example.png&#34; alt=&#34;Decorator example&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;java.io&lt;/code&gt; is mainly using the decorator pattern.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-factory-pattern&#34;&gt;The Factory Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The factory method pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UML:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/factory.png&#34; alt=&#34;Factory&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/factory_example.png&#34; alt=&#34;Factory example&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The dependency inversion principle&lt;/strong&gt;: Depend upon abstractions. Do not depend upon concrete classes. High-level components should not depend on low-level components; rather, they should both depend on abstractions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No variables should hold a reference to a concrete class.&lt;/li&gt;
+&lt;li&gt;No class should derive from a concrete class.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The abstract factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-singleton-pattern&#34;&gt;The Singleton Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The singleton pattern restricts the instantiation of a class to one single instance, and provides a global point of access to it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Singleton&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;static&lt;/span&gt; Singleton uniqueInstance&lt;span style=&#34;color:#719e07&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Singleton&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{}&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;// PRIVATE constructor
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#268bd2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;synchronized&lt;/span&gt; Singleton &lt;span style=&#34;color:#268bd2&#34;&gt;getInstance&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;// remove synchronized if there&amp;#39;s no multithreading
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#719e07&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;uniqueInstance &lt;span style=&#34;color:#719e07&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#cb4b16&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+            uniqueInstance &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;new&lt;/span&gt; Singleton&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; uniqueInstance&lt;span style=&#34;color:#719e07&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-command-pattern&#34;&gt;The Command Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The command pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests and support undoable operations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UML:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/command.png&#34; alt=&#34;Command&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-adapter-pattern&#34;&gt;The Adapter Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The adapter pattern converts the interface of a class into another interface the clients expect. It lets classes work together that couldn&amp;rsquo;t otherwise because of incompatible interfaces.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UML:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/adapter1.png&#34; alt=&#34;Adapter1&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/adapter2.png&#34; alt=&#34;Adapter2&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-facade-pattern&#34;&gt;The Facade Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The facade pattern provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Principle of Least Knowledge&lt;/strong&gt;: talk only to your immediate friends.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-template-method-pattern&#34;&gt;The Template Method Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The template method pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm&amp;rsquo;s structure:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;abstract&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;AbstractClass&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;templateMethod&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        primitiveOperation1&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+        primitiveOperation2&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+        concreteOperation&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#268bd2&#34;&gt;abstract&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;primitiveOperation1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+
+    &lt;span style=&#34;color:#268bd2&#34;&gt;abstract&lt;/span&gt; &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;primitiveOperation2&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;();&lt;/span&gt;
+
+    &lt;span style=&#34;color:#dc322f&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;concreteOperation&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#586e75&#34;&gt;// implementation here
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;The Hollywood Principle (aka. Inversion of Control)&lt;/strong&gt;: (High-level components) Don&amp;rsquo;t call us, we&amp;rsquo;ll call you (low-level components).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Single responsibility:&lt;/strong&gt;: a class should have only one reason to change.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-state-pattern&#34;&gt;The State Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The state pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;It&amp;rsquo;s close to the concept of finite-state machines.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-proxy-pattern&#34;&gt;The Proxy Pattern&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;A remote proxy acts as a local representative to a remote object.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java RMI&amp;rsquo;s (remote method invocation) client helper is a &amp;ldquo;stub&amp;rdquo; and the service helper is a &amp;ldquo;skeleton&amp;rdquo;. The stub is the proxy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The proxy pattern provides a surrogate or placeholder for another object to access it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;model-view-controller&#34;&gt;Model-View-Controller&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;The MVC is using:
+&lt;ul&gt;
+&lt;li&gt;the strategy pattern: the view delegates to the controllers to handle user actions. (Swappable controllers.)&lt;/li&gt;
+&lt;li&gt;the composite pattern: the view is a composite of GUI components.&lt;/li&gt;
+&lt;li&gt;the observer pattern: the model is the observable, and the view &amp;amp; controller are observers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;design-patterns&#34;&gt;Design Patterns&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Categories:
+&lt;ul&gt;
+&lt;li&gt;Creational: Factory, Singleton&lt;/li&gt;
+&lt;li&gt;Behavioral (how classes communicate): State, Iterator, Command&lt;/li&gt;
+&lt;li&gt;Structural: Adapter, Composite, Decorator, Facade, Proxy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly-dp-0596007124/dp/0596007124/ref=mt_paperback?_encoding=UTF8&amp;amp;me=&amp;amp;qid=1585509064&#34;&gt;Head First Design Patterns: A Brain-Friendly Guide 1st Edition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

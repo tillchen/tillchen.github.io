@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="Some notes for Java">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java Notes"/>
+<meta name="twitter:description" content="Some notes for Java"/>
+
+    <meta property="og:title" content="Java Notes" />
+<meta property="og:description" content="Some notes for Java" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-06-05-Java-Notes/" />
+<meta property="article:published_time" content="2019-06-05T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-06-05T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2019-06-05-Java-Notes/">
+    
+    <title>
+  Java Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2019-06-05-Java-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Java Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-06-05T00:00:00&#43;02:00'>
+                June 5, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#java-data-structures">Java Data Structures</a></li>
+<li><a href="#references-and-garbage-collection">References and Garbage Collection</a></li>
+<li><a href="#static">Static</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+<li><a href="#io">I/O</a></li>
+<li><a href="#constructors">Constructors</a></li>
+<li><a href="#polymorphism">Polymorphism</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>SourceCode.java -&gt; Compile (<code>javac source_code.java</code>) -&gt; Java bytecode (SourceCode.class) -&gt;Run by the Java Virtual Machine (<code>java SouceCode</code>)</p>
+<blockquote>
+<p>Write once, run anywhere!</p>
+</blockquote>
+</li>
+<li>
+<p>Every Java app must have at least <strong>one class</strong> and at least <strong>one main</strong> method (one main per app not per class.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">main</span> <span style="color:#719e07">(</span>String<span style="color:#719e07">[]</span> args<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    <span style="color:#586e75">// code
+</span><span style="color:#586e75"></span><span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p><code>int rand = (int) (Math.random() * 10)</code> to get random integers in range [0, 9]. (Math is a Java class.)</p>
+</li>
+<li>
+<p>To use <code>float</code>, we need to append <code>f</code> to the value. This is because Java treats everything with a floating point as <code>double</code>: <code>float f = 3.14f</code></p>
+</li>
+<li>
+<p>Instance variables always get a default value, even if we don&rsquo;t initialize it: <code>int 0</code>; <code>float 0.0</code>; <code>boolean false</code>; <code>reference null</code>.</p>
+</li>
+<li>
+<p>Use <code>==</code> for primitive types and references; <code>.equals()</code> for different objects (for example string objects). (<code>==</code> checks the reference/address and <code>.equals</code> checks the content.)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">Test</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">main</span><span style="color:#719e07">(</span>String<span style="color:#719e07">[]</span> args<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    String s1 <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> String<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;HELLO&#34;</span><span style="color:#719e07">);</span>
+    String s2 <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> String<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;HELLO&#34;</span><span style="color:#719e07">);</span>
+    System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span>s1 <span style="color:#719e07">==</span> s2<span style="color:#719e07">);</span> <span style="color:#586e75">// false
+</span><span style="color:#586e75"></span>    System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span>s1<span style="color:#719e07">.</span>equals<span style="color:#719e07">(</span>s2<span style="color:#719e07">));</span> <span style="color:#586e75">// true
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p><code>Integer.parseInt(&quot;42&quot;)</code> converts a string to an int using the Java Integer class.</p>
+</li>
+<li>
+<p>The Stack and the Heap:</p>
+<ul>
+<li>The Stack: all method invocations and local variables (aka, stack variables) live here.
+<ul>
+<li>The method on the top of the stack is always the currently executing method. When it&rsquo;s removed from the stack, the method is executed, which the executing sequence for constructor chaining.</li>
+</ul>
+</li>
+<li>The Heap: <strong>all</strong> objects live here. Also know as the garbage-collectible heap.
+<ul>
+<li>Instance variables live inside the objects.</li>
+</ul>
+</li>
+<li>If the local variable is a reference to an object, the variable (the reference) goes on the stack, and the object is still on the heap.</li>
+</ul>
+</li>
+<li>
+<p>Use <code>String.valueOf()</code> to convert nearly anything (including a char array) to String.</p>
+</li>
+<li>
+<p>C <code>printf()</code> like formatting:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String s <span style="color:#719e07">=</span> String<span style="color:#719e07">.</span>format<span style="color:#719e07">(%</span>d<span style="color:#719e07">,</span> 1<span style="color:#719e07">);</span>
+System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span>s<span style="color:#719e07">);</span>
+</code></pre></div></li>
+<li>
+<p><code>.length</code> for primitive types (e.g. int[], String[]), <code>.length()</code> for objects (e.g. String). And <code>.size()</code> for collections.</p>
+</li>
+<li>
+<p><code>Integer.MAX_VALUE</code> and <code>Integer.MIN_VALUE</code>.</p>
+</li>
+</ol>
+<h2 id="java-data-structures">Java Data Structures</h2>
+<ol>
+<li>
+<p>ArrayList: (inside the java.util (utility) class) (for primitive types, Java 5 and above enabled autoboxing: <code>ArrayList&lt;Integer&gt;</code>)</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#719e07">import</span> java.util.*
+<span style="color:#268bd2">class</span> <span style="color:#268bd2">Foo</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">main</span><span style="color:#719e07">(</span>String<span style="color:#719e07">[]</span> args<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        List<span style="color:#719e07">&lt;</span>String<span style="color:#719e07">&gt;</span> A <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> ArrayList<span style="color:#719e07">&lt;</span>String<span style="color:#719e07">&gt;();</span>
+        A<span style="color:#719e07">.</span>add<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;hello&#34;</span><span style="color:#719e07">);</span>
+        A<span style="color:#719e07">.</span>add<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;world&#34;</span><span style="color:#719e07">);</span>
+        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Size is: &#34;</span> <span style="color:#719e07">+</span> A<span style="color:#719e07">.</span>size<span style="color:#719e07">());</span>
+        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Contains hello? &#34;</span> <span style="color:#719e07">+</span> A<span style="color:#719e07">.</span>contains<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;hello&#34;</span><span style="color:#719e07">));</span>
+        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Index of hello? &#34;</span> <span style="color:#719e07">+</span> A<span style="color:#719e07">.</span>indexOf<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;hello&#34;</span><span style="color:#719e07">));</span>
+        A<span style="color:#719e07">.</span>remove<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;hello&#34;</span><span style="color:#719e07">);</span> <span style="color:#586e75">// by value
+</span><span style="color:#586e75"></span>        A<span style="color:#719e07">.</span>remove<span style="color:#719e07">(</span>0<span style="color:#719e07">);</span> <span style="color:#586e75">// by index
+</span><span style="color:#586e75"></span>        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Empty? &#34;</span> <span style="color:#719e07">+</span> A<span style="color:#719e07">.</span>isEmpty<span style="color:#719e07">());</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p><code>Arrays.asList(foo)</code> and <code>.toArray(new int[0])</code></p>
+</li>
+<li>
+<p><code>Comparator</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Arrays<span style="color:#719e07">.</span>sort<span style="color:#719e07">(</span>intervals<span style="color:#719e07">,</span> <span style="color:#719e07">new</span> Comparator<span style="color:#719e07">&lt;</span><span style="color:#dc322f">int</span><span style="color:#719e07">[]&gt;()</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">@Override</span>
+    <span style="color:#268bd2">public</span> <span style="color:#dc322f">int</span> <span style="color:#268bd2">compare</span><span style="color:#719e07">(</span><span style="color:#dc322f">int</span><span style="color:#719e07">[]</span> interval1<span style="color:#719e07">,</span> <span style="color:#dc322f">int</span><span style="color:#719e07">[]</span> interval2<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">return</span> interval1<span style="color:#719e07">[</span>0<span style="color:#719e07">]</span> <span style="color:#719e07">-</span> interval2<span style="color:#719e07">[</span>0<span style="color:#719e07">];</span> <span style="color:#586e75">// negative, smaller; 0, equal; positive, bigger
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">});</span>
+</code></pre></div></li>
+<li>
+<p>When using an interface, we usually use implementations like: <code>List&lt;T&gt; = new ArrayList&lt;T&gt;()</code>, <code>Queue&lt;T&gt; = new LinkedList&lt;T&gt;()</code></p>
+</li>
+<li>
+<p>Array:</p>
+<ul>
+<li>
+<p><code>int[] array = new int[]{1,2,3};</code></p>
+</li>
+<li>
+<p>Array static methods: <code>binarySearch(A, 42)</code>, <code>copyOf(A)</code>, <code>sort(A)</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>String:</p>
+<ul>
+<li>
+<p>Methods: <code>charAt(1)</code>, <code>indexOf('A')</code>, <code>replace('a', 'A')</code>, <code>replace(&quot;a&quot;, &quot;abc&quot;)</code>, <code>substring(1,4)</code>, <code>toCharArray()</code>, <code>toLowerCase()</code>, <code>String[] words = s.split(&quot; &quot;)</code></p>
+</li>
+<li>
+<p><code>if (string == null || string.isEmpty())</code></p>
+</li>
+<li>
+<p>StringBuilder: <code>String reversed = new StringBuilder(s).reverse().toString()</code>, <code>.trim()</code> (removes leading and trailing spaces)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Map:</p>
+<ul>
+<li>
+<p>Initialize a map:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="color:#719e07">&lt;</span>Character<span style="color:#719e07">,</span> Integer<span style="color:#719e07">&gt;</span> map <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> HashMap<span style="color:#719e07">&lt;</span>Character<span style="color:#719e07">,</span> Integer<span style="color:#719e07">&gt;()</span> <span style="color:#719e07">{</span>
+    <span style="color:#719e07">{</span>
+        put<span style="color:#719e07">(</span><span style="color:#2aa198">&#39;I&#39;</span><span style="color:#719e07">,</span> 1<span style="color:#719e07">);</span>
+        put<span style="color:#719e07">(</span><span style="color:#2aa198">&#39;V&#39;</span><span style="color:#719e07">,</span> 5<span style="color:#719e07">);</span>
+        put<span style="color:#719e07">(</span><span style="color:#2aa198">&#39;X&#39;</span><span style="color:#719e07">,</span> 10<span style="color:#719e07">);</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">};</span>
+</code></pre></div></li>
+<li>
+<p><code>for (int i : map.keySet());</code> or</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#719e07">for</span> <span style="color:#719e07">(</span>Map<span style="color:#719e07">.</span>Entry<span style="color:#719e07">&lt;</span>String<span style="color:#719e07">,</span> Object<span style="color:#719e07">&gt;</span> entry <span style="color:#719e07">:</span> map<span style="color:#719e07">.</span>entrySet<span style="color:#719e07">())</span> <span style="color:#719e07">{</span>
+    String key <span style="color:#719e07">=</span> entry<span style="color:#719e07">.</span>getKey<span style="color:#719e07">();</span>
+    Object value <span style="color:#719e07">=</span> entry<span style="color:#719e07">.</span>getValue<span style="color:#719e07">();</span>
+    <span style="color:#586e75">// ...
+</span><span style="color:#586e75"></span><span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p><code>map.put(i, map.get(i)+1);</code></p>
+</li>
+<li>
+<p><code>map.containsKey();</code></p>
+</li>
+<li>
+<p>A <code>TreeMap</code> is a binary search tree (<code>SortedMap</code>) implementation. It&rsquo;s naturally sorted by keys. <code>SortedMap&lt;Integer, String&gt; sm = new TreeMap&lt;Integer, String&gt;();</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="references-and-garbage-collection">References and Garbage Collection</h2>
+<ol>
+<li>
+<p>Garbage collection:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Book b <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Book<span style="color:#719e07">();</span>
+Book c <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Book<span style="color:#719e07">();</span>
+<span style="color:#586e75">// By far, 2 references and 2 objects.
+</span><span style="color:#586e75"></span>Book d <span style="color:#719e07">=</span> c<span style="color:#719e07">;</span> <span style="color:#586e75">// d and c refer to the same object
+</span><span style="color:#586e75">// 3 references and 2 objects.
+</span><span style="color:#586e75"></span>c <span style="color:#719e07">=</span> b<span style="color:#719e07">;</span> <span style="color:#586e75">// c refers to b&#39;s object now
+</span><span style="color:#586e75">// 3 references and 2 objects.
+</span></code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Book b <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Book<span style="color:#719e07">();</span>
+Book c <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Book<span style="color:#719e07">();</span>
+b <span style="color:#719e07">=</span> c<span style="color:#719e07">;</span> <span style="color:#586e75">// b and c refer to the same object
+</span><span style="color:#586e75">// 2 references, 1 reachable object, 1 abandoned object.
+</span><span style="color:#586e75">// b&#39;s original object eligible for garbage collection
+</span><span style="color:#586e75"></span>c <span style="color:#719e07">=</span> <span style="color:#cb4b16">null</span><span style="color:#719e07">;</span> <span style="color:#586e75">//null reference
+</span><span style="color:#586e75">// 1 active reference, 1 reachable object
+</span></code></pre></div></li>
+<li>
+<p>Array of objects:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Book<span style="color:#719e07">[]</span> books<span style="color:#719e07">;</span>
+books <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Book<span style="color:#719e07">[</span>10<span style="color:#719e07">];</span>
+<span style="color:#586e75">// By far, only an array of references, no objects created.
+</span><span style="color:#586e75">// To create the objects:
+</span><span style="color:#586e75"></span><span style="color:#719e07">for</span> <span style="color:#719e07">(</span><span style="color:#dc322f">int</span> i <span style="color:#719e07">=</span> 0<span style="color:#719e07">;</span> i <span style="color:#719e07">&lt;</span> 10<span style="color:#719e07">;</span> i<span style="color:#719e07">++)</span> <span style="color:#719e07">{</span>
+    Book<span style="color:#719e07">[</span>i<span style="color:#719e07">]</span> <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Book<span style="color:#719e07">();</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="static">Static</h2>
+<ol>
+<li>
+<p>All static variables are initialized before any object can be created.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">foo</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">static</span> <span style="color:#dc322f">int</span> count <span style="color:#719e07">=</span> 0<span style="color:#719e07">;</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">increment</span><span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+        count<span style="color:#719e07">++;</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p>Static final variables are constants: <code>public static final double PI = 3.141592653589793;</code> (In uppercase by convention.) Or we can use the static initializer which runs before any code in the class:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">foo</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">static</span> <span style="color:#719e07">{</span>
+        <span style="color:#586e75">// code``
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="exceptions">Exceptions</h2>
+<ol>
+<li>
+<p>The method that throws must declare <code>throws Exception</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">Solution</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">main</span><span style="color:#719e07">(</span>String args<span style="color:#719e07">[]</span> <span style="color:#719e07">)</span> <span style="color:#268bd2">throws</span> Exception <span style="color:#719e07">{</span>
+        <span style="color:#719e07">throw</span> <span style="color:#719e07">new</span> IllegalArgumentException<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Invalid Input&#34;</span><span style="color:#719e07">);</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p>The <code>finally</code> block <strong>always runs</strong> no matter what:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#719e07">try</span> <span style="color:#719e07">{</span>
+    <span style="color:#586e75">// code
+</span><span style="color:#586e75"></span><span style="color:#719e07">}</span> <span style="color:#719e07">catch</span> <span style="color:#719e07">(</span><span style="color:#586e75">//some exception) {
+</span><span style="color:#586e75"></span>    <span style="color:#586e75">// code
+</span><span style="color:#586e75"></span><span style="color:#719e07">}</span> <span style="color:#719e07">finally</span> <span style="color:#719e07">{</span>
+    <span style="color:#586e75">// code
+</span><span style="color:#586e75"></span><span style="color:#719e07">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="io">I/O</h2>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#719e07">import</span> java.util.Scanner<span style="color:#719e07">;</span>
+
+<span style="color:#268bd2">class</span> <span style="color:#268bd2">MyClass</span> <span style="color:#719e07">{</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">main</span><span style="color:#719e07">(</span>String<span style="color:#719e07">[]</span> args<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        Scanner scanner <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Scanner<span style="color:#719e07">(</span>System<span style="color:#719e07">.</span>in<span style="color:#719e07">);</span>
+
+        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Enter name, age and salary:&#34;</span><span style="color:#719e07">);</span>
+
+        <span style="color:#586e75">// String input
+</span><span style="color:#586e75"></span>        String name <span style="color:#719e07">=</span> scanner<span style="color:#719e07">.</span>nextLine<span style="color:#719e07">();</span>
+
+        <span style="color:#586e75">// Numerical input
+</span><span style="color:#586e75"></span>        <span style="color:#dc322f">int</span> age <span style="color:#719e07">=</span> scanner<span style="color:#719e07">.</span>nextInt<span style="color:#719e07">();</span>
+        <span style="color:#dc322f">double</span> salary <span style="color:#719e07">=</span> scanner<span style="color:#719e07">.</span>nextDouble<span style="color:#719e07">();</span>
+
+        <span style="color:#586e75">// Output input by user
+</span><span style="color:#586e75"></span>        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Name: &#34;</span> <span style="color:#719e07">+</span> name<span style="color:#719e07">);</span>
+        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Age: &#34;</span> <span style="color:#719e07">+</span> age<span style="color:#719e07">);</span>
+        System<span style="color:#719e07">.</span>out<span style="color:#719e07">.</span>println<span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Salary: &#34;</span> <span style="color:#719e07">+</span> salary<span style="color:#719e07">);</span>
+    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="constructors">Constructors</h2>
+<ol>
+<li>
+<p>Invoking an overloaded constructor: call <code>this();</code>. However, we can only call <code>this()</code> <strong>OR</strong> <code>super()</code>, <strong>never both</strong> inside a constructor.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">Bar</span> <span style="color:#268bd2">extends</span> Foo <span style="color:#719e07">{</span>
+    String name<span style="color:#719e07">;</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">Bar</span><span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">this</span><span style="color:#719e07">(</span><span style="color:#2aa198">&#34;Hello&#34;</span><span style="color:#719e07">);</span> <span style="color:#586e75">// MUST BE THE FIRST STATEMENT!!!
+</span><span style="color:#586e75"></span>        <span style="color:#586e75">// code
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+    <span style="color:#268bd2">public</span> <span style="color:#268bd2">Bar</span><span style="color:#719e07">(</span>name<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+        <span style="color:#586e75">// code
+</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
+<span style="color:#719e07">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="polymorphism">Polymorphism</h2>
+<ol>
+<li>
+<p>With polymorphism, the reference type can be a superclass of the object type.</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Animal<span style="color:#719e07">[]</span> animals <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Animal<span style="color:#719e07">[</span>2<span style="color:#719e07">];</span>
+animals<span style="color:#719e07">[</span>0<span style="color:#719e07">]</span> <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Dog<span style="color:#719e07">();</span>
+animals<span style="color:#719e07">[</span>1<span style="color:#719e07">]</span> <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Cat<span style="color:#719e07">();</span>
+<span style="color:#719e07">for</span> <span style="color:#719e07">(</span>Animal animal <span style="color:#719e07">:</span> animals<span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
+    animal<span style="color:#719e07">.</span>make_sound<span style="color:#719e07">();</span> <span style="color:#586e75">// mew and bark
+</span><span style="color:#586e75"></span><span style="color:#719e07">}</span>
+</code></pre></div></li>
+<li>
+<p>We can also have polymorphic arguments and return types. (When a superclass type is requested, a subclass is sufficient to use.)</p>
+</li>
+<li>
+<p>Rules for overriding:</p>
+<ul>
+<li>Arguments must be the same, and return types must be compatible.</li>
+<li>The method can&rsquo;t be less accessible.</li>
+</ul>
+</li>
+<li>
+<p>Abstract:</p>
+<ul>
+<li>Use <code>abstract</code> to make the base class abstract. <code>public abstract class animal {}</code> (can&rsquo;t be instantiated.)</li>
+<li>Use <code>abstract</code> to make a method abstract <code>public abstract void eat();</code> (also no method body!)</li>
+<li>Abstract methods must be put in abstract classes.</li>
+<li>We must implement abstract methods by overriding.</li>
+</ul>
+</li>
+<li>
+<p>Every class in Java extends the Object class which has the methods like: <code>.equals()</code>, <code>.hashCode()</code>, <code>.getClass()</code>.</p>
+</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208/ref=sr_1_1?keywords=head+first+java&amp;qid=1560043638&amp;s=gateway&amp;sr=8-1">Head First Java, 2nd Edition</a></li>
+<li><a href="https://www.geeksforgeeks.org/difference-equals-method-java/">https://www.geeksforgeeks.org/difference-equals-method-java/</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>
