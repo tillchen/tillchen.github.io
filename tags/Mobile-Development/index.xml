@@ -61,7 +61,7 @@
 &lt;h2 id=&#34;view-controller-lifecycle&#34;&gt;View Controller Lifecycle:&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/ios_lifecycle.png&#34; alt=&#34;Lifecycle image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/ios_lifecycle.png&#34; alt=&#34;Lifecycle image&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Detailed methods: &lt;a href=&#34;https://guides.codepath.com/ios/View-Controller-Lifecycle&#34;&gt;https://guides.codepath.com/ios/View-Controller-Lifecycle&lt;/a&gt;&lt;/p&gt;
@@ -69,11 +69,11 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;mvc-architecture&#34;&gt;MVC Architecture&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/mvc.png&#34; alt=&#34;MVC image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://tillchen.com/images/mvc.png&#34; alt=&#34;MVC image&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;project-organization&#34;&gt;Project Organization&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Example: &lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/ios_project_organization.jpeg&#34; alt=&#34;project organization image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Example: &lt;img src=&#34;https://tillchen.com/images/ios_project_organization.jpeg&#34; alt=&#34;project organization image&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
@@ -396,7 +396,7 @@ String chooserTitle &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; get
 &lt;ul&gt;
 &lt;li&gt;When we implement them (&lt;code&gt;onCreate()&lt;/code&gt;, &lt;code&gt;onStart()&lt;/code&gt;, &lt;code&gt;onResume()&lt;/code&gt;, &lt;code&gt;onPause()&lt;/code&gt;, &lt;code&gt;onStop()&lt;/code&gt;, &lt;code&gt;onRestart()&lt;/code&gt;, &lt;code&gt;onDestroy()&lt;/code&gt;), we must call the super class methods.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;onResume()&lt;/code&gt; is called when the activity is started OR resumed; &lt;code&gt;onPause()&lt;/code&gt; is called when the activity is paused OR stopped.&lt;/li&gt;
-&lt;li&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/activity_lifecycle.png&#34; alt=&#34;Activity lifecycle&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src=&#34;https://tillchen.com/images/activity_lifecycle.png&#34; alt=&#34;Activity lifecycle&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -407,7 +407,7 @@ String chooserTitle &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; get
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Fragment lifecycle:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;%7B%7Bhttps://tillchen.com%7D%7D/images/fragment_lifecycle.png&#34; alt=&#34;Fragment lifecycle&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/fragment_lifecycle.png&#34; alt=&#34;Fragment lifecycle&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Example:&lt;/p&gt;
