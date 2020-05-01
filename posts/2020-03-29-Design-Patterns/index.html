@@ -152,7 +152,8 @@
       <div>
         
         <ul>
-<li><a href="#basics">Basics</a></li>
+<li><a href="#principles">Principles</a></li>
+<li><a href="#the-strategy-pattern">The Strategy Pattern</a></li>
 <li><a href="#the-observer-pattern">The Observer Pattern</a></li>
 <li><a href="#the-decorator-pattern">The Decorator Pattern</a></li>
 <li><a href="#the-factory-pattern">The Factory Pattern</a></li>
@@ -164,10 +165,10 @@
 <li><a href="#the-state-pattern">The State Pattern</a></li>
 <li><a href="#the-proxy-pattern">The Proxy Pattern</a></li>
 <li><a href="#model-view-controller">Model-View-Controller</a></li>
-<li><a href="#design-patterns">Design Patterns</a></li>
+<li><a href="#design-pattern-categories">Design Pattern Categories</a></li>
 <li><a href="#references">References</a></li>
 </ul>
-<h2 id="basics">Basics</h2>
+<h2 id="principles">Principles</h2>
 <ol>
 <li>
 <p>Identify the varying parts and separate them from the invariant.</p>
@@ -182,8 +183,39 @@ List<span style="color:#719e07">&lt;</span>Integer<span style="color:#719e07">&g
 <p>Favor composition over inheritance. HAS-A can be better than IS-A.</p>
 </li>
 <li>
-<p>The strategy pattern enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.</p>
+<p>SOLID:</p>
+<ul>
+<li>Single responsibility: a class should have only one reason to change.</li>
+<li>Open-closed: classes should be open for extension, but closed for modification.</li>
+<li>Liskov Substitution: objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program</li>
+<li>Interface Segregation: many client-specific interfaces are better than one general-purpose interface.</li>
+<li>Dependency inversion: depend upon abstractions. Do not depend upon concrete classes. High-level components should not depend on low-level components; rather, they should both depend on abstractions.
+<ul>
+<li>No variables should hold a reference to a concrete class.</li>
+<li>No class should derive from a concrete class.</li>
+</ul>
 </li>
+</ul>
+</li>
+<li>
+<p>Loose coupling: minimize the interdependency between objects.</p>
+</li>
+<li>
+<p>Design by contract: preconditions, postconditions, and invariants.</p>
+</li>
+<li>
+<p>Principle of Least Knowledge aka (Law of Demeter): talk only to your immediate friends.</p>
+</li>
+<li>
+<p>The Hollywood Principle (aka. Inversion of Control): (High-level components) Don&rsquo;t call us, we&rsquo;ll call you (low-level components).</p>
+</li>
+<li>
+<p>Tell-Don&rsquo;t-Ask: A-&gt;B  instead of B-&gt;A-&gt;B for data.</p>
+</li>
+</ol>
+<h2 id="the-strategy-pattern">The Strategy Pattern</h2>
+<ol>
+<li>The strategy pattern enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.</li>
 </ol>
 <h2 id="the-observer-pattern">The Observer Pattern</h2>
 <ol>
@@ -192,9 +224,6 @@ List<span style="color:#719e07">&lt;</span>Integer<span style="color:#719e07">&g
 </li>
 <li>
 <p>It defines a one-to-many dependency. When the subject changes, all dependents are notified.</p>
-</li>
-<li>
-<p>This enables loose coupling, which minimizes the interdependency between objects.</p>
 </li>
 <li>
 <p>In Java, we can use the built-in Observable - Observer superclasses.</p>
@@ -215,12 +244,15 @@ notifyObservers<span style="color:#719e07">();</span>
 <li>Example: <img src="https://tillchen.com/images/observer_example.png" alt="Observer example"></li>
 </ul>
 </li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Loose coupling.</li>
+</ul>
+</li>
 </ol>
 <h2 id="the-decorator-pattern">The Decorator Pattern</h2>
 <ol>
-<li>
-<p><strong>The open-closed principle</strong>: classes should be open for extension, but closed for modification.</p>
-</li>
 <li>
 <p>Decorators have the same supertype as the object they decorate.</p>
 </li>
@@ -243,6 +275,12 @@ notifyObservers<span style="color:#719e07">();</span>
 <li>
 <p><code>java.io</code> is mainly using the decorator pattern.</p>
 </li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Open-closed.</li>
+</ul>
+</li>
 </ol>
 <h2 id="the-factory-pattern">The Factory Pattern</h2>
 <ol>
@@ -257,14 +295,13 @@ notifyObservers<span style="color:#719e07">();</span>
 </ul>
 </li>
 <li>
-<p><strong>The dependency inversion principle</strong>: Depend upon abstractions. Do not depend upon concrete classes. High-level components should not depend on low-level components; rather, they should both depend on abstractions.</p>
-<ul>
-<li>No variables should hold a reference to a concrete class.</li>
-<li>No class should derive from a concrete class.</li>
-</ul>
+<p>The abstract factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.</p>
 </li>
 <li>
-<p>The abstract factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.</p>
+<p>Used principles:</p>
+<ul>
+<li>Dependency inversion.</li>
+</ul>
 </li>
 </ol>
 <h2 id="the-singleton-pattern">The Singleton Pattern</h2>
@@ -314,7 +351,10 @@ notifyObservers<span style="color:#719e07">();</span>
 <p>The facade pattern provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.</p>
 </li>
 <li>
-<p><strong>Principle of Least Knowledge</strong>: talk only to your immediate friends.</p>
+<p>Used principles:</p>
+<ul>
+<li>Least knowledge.</li>
+</ul>
 </li>
 </ol>
 <h2 id="the-template-method-pattern">The Template Method Pattern</h2>
@@ -338,10 +378,11 @@ notifyObservers<span style="color:#719e07">();</span>
 <span style="color:#719e07">}</span>
 </code></pre></div></li>
 <li>
-<p><strong>The Hollywood Principle (aka. Inversion of Control)</strong>: (High-level components) Don&rsquo;t call us, we&rsquo;ll call you (low-level components).</p>
-</li>
-<li>
-<p><strong>Single responsibility:</strong>: a class should have only one reason to change.</p>
+<p>Used principles:</p>
+<ul>
+<li>Inversion of control.</li>
+<li>Single responsibility.</li>
+</ul>
 </li>
 </ol>
 <h2 id="the-state-pattern">The State Pattern</h2>
@@ -375,19 +416,20 @@ notifyObservers<span style="color:#719e07">();</span>
 </ul>
 </li>
 </ol>
-<h2 id="design-patterns">Design Patterns</h2>
-<ol>
-<li>Categories:
+<h2 id="design-pattern-categories">Design Pattern Categories</h2>
 <ul>
 <li>Creational: Factory, Singleton</li>
 <li>Behavioral (how classes communicate): State, Iterator, Command</li>
 <li>Structural: Adapter, Composite, Decorator, Facade, Proxy</li>
 </ul>
-</li>
-</ol>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly-dp-0596007124/dp/0596007124/ref=mt_paperback?_encoding=UTF8&amp;me=&amp;qid=1585509064">Head First Design Patterns: A Brain-Friendly Guide 1st Edition</a></li>
+<li>
+<p><a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly-dp-0596007124/dp/0596007124/ref=mt_paperback?_encoding=UTF8&amp;me=&amp;qid=1585509064">Head First Design Patterns: A Brain-Friendly Guide 1st Edition</a></p>
+</li>
+<li>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjp6c22-JLpAhWO-qQKHQ_GBQoQFjAAegQIARAB&amp;url=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F4099.The_Pragmatic_Programmer&amp;usg=AOvVaw0I5l-Ojbr1FUIYyreWhRyx">The Pragmatic Programmer</a></p>
+</li>
 </ul>
 
       </div>
