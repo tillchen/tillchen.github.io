@@ -284,6 +284,9 @@ List&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;sp
 &lt;li&gt;
 &lt;p&gt;Tell-Don&amp;rsquo;t-Ask: A-&amp;gt;B  instead of B-&amp;gt;A-&amp;gt;B for data.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Build end-to-end (incrementally) instead of top-down nor bottom-up.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;the-strategy-pattern&#34;&gt;The Strategy Pattern&lt;/h2&gt;
 &lt;ol&gt;
