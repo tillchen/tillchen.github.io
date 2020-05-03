@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Tianyao Chen</title>
+    <link>https://tillchen.com/tags/Machine-Learning/</link>
+    <description>Recent content in Machine Learning on Tianyao Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 May 2020 09:25:01 +0200</lastBuildDate>
+    
+	<atom:link href="https://tillchen.com/tags/Machine-Learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Machine Learning Notes</title>
+      <link>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</link>
+      <pubDate>Fri, 01 May 2020 09:25:01 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#types-of-learning&#34;&gt;Types of Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notations-and-definitions&#34;&gt;Notations and Definitions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This post is about some basic machine learning concepts.&lt;/p&gt;
+&lt;h3 id=&#34;types-of-learning&#34;&gt;Types of Learning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Supervised learning
+&lt;ul&gt;
+&lt;li&gt;In a feature vector $x_i$ (i=1&amp;hellip;N), a single feature is denoted by $x^j$ (j=1&amp;hellip;D). And $y_i$ is the label.&lt;/li&gt;
+&lt;li&gt;The goal is to produce a model that takes a feature vector x as input and outputs the label.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Unsupervised learning
+&lt;ul&gt;
+&lt;li&gt;The goal is either to transform the input feature vector into another vector (dimensionality reduction) or into a value (clustering, outlier detection).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Semi-supervised learning
+&lt;ul&gt;
+&lt;li&gt;The dataset has both labeled and unlabeled (much higher quantity) data.&lt;/li&gt;
+&lt;li&gt;The same goal as supervised learning.&lt;/li&gt;
+&lt;li&gt;The hope is that the unlabeled data can help produce a better model. This is because a larger sample reflects better the probability distribution of the source of the labeled data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Reinforcement learning
+&lt;ul&gt;
+&lt;li&gt;It perceives the &lt;strong&gt;state&lt;/strong&gt; of the environment as a feature vector adn the execute &lt;strong&gt;actions&lt;/strong&gt; in every state, which bring &lt;strong&gt;rewards&lt;/strong&gt; and move the machine to another state.&lt;/li&gt;
+&lt;li&gt;The goal is to learn a &lt;strong&gt;policy&lt;/strong&gt;: a function that takes the feature vector as input and outputs an optimal action that maximizes the expected average reward.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s suited for problems whose decision making is sequential and the goal is long-term.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;notations-and-definitions&#34;&gt;Notations and Definitions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;$x_{l,u}^{(j)}$ in a neural net means the feature j of unit u in layer l.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$x$ is by default a column vector and $x^T$ a row vector. Then vector is on the left side of a matrix, we usually do $x^TA$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$arg max_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$\mathbb{E}[\hat\theta(S_X) = \theta]$, where $\hat\theta(S_X)$ is the unbiased estimator of some statistic $\theta$ (e.g. $\mu$) calculated using a sample $S_X$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A hyperparameter is a parameter whose value is set before the learning process begins. By contrast, the values of other parameters are derived via training.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Model-based learning vs instance-based learning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model-based: creates a model with parameters learned from the data. (Most supervised learning algorithms)&lt;/li&gt;
+&lt;li&gt;Instance-based: uses the whole dataset as the model. Instead of performing explicit generalization, it compares new problem instances with instances seen in training (e.g. kNN).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shallow vs deep learning:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shallow learning: learns the parameters of the model directly from the features of the training examples.&lt;/li&gt;
+&lt;li&gt;Deep (neural network) learning: uses neural nets with more than one layer and learns the parameters from the outputs of the preceding layers instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book&#34;&gt;The Hundred-Page Machine Learning Book&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tillchen.com/tags/AI/</loc>
+    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Machine-Learning/</loc>
+    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</loc>
+    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/</loc>
+    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/</loc>
+    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tillchen.com/contact/</loc>
     <lastmod>2020-04-29T11:03:29+02:00</lastmod>
   </url>
@@ -39,16 +64,6 @@
   
   <url>
     <loc>https://tillchen.com/tags/Computer-Science/</loc>
-    <lastmod>2020-04-10T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tillchen.com/posts/</loc>
-    <lastmod>2020-04-10T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tillchen.com/tags/</loc>
     <lastmod>2020-04-10T00:00:00+02:00</lastmod>
   </url>
   
