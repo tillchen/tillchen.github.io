@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2-minute read
+              3-minute read
             </span>
           </div>
           
@@ -156,43 +156,49 @@
         <ul>
 <li><a href="#introduction">Introduction</a>
 <ul>
-<li><a href="#types-of-learning">Types of Learning</a></li>
+<li><a href="#types-of-learning">Types of Learning</a>
+<ul>
+<li><a href="#supervised-learning">Supervised learning</a></li>
+<li><a href="#unsupervised-learning">Unsupervised learning</a></li>
+<li><a href="#semi-supervised-learning">Semi-supervised learning</a></li>
+<li><a href="#reinforcement-learning">Reinforcement learning</a></li>
 </ul>
 </li>
 <li><a href="#notations-and-definitions">Notations and Definitions</a></li>
+</ul>
+</li>
+<li><a href="#fundamental-algorithms">Fundamental Algorithms</a>
+<ul>
+<li><a href="#linear-regression">Linear Regression</a></li>
+</ul>
+</li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>This post is about some basic machine learning concepts.</p>
 <h3 id="types-of-learning">Types of Learning</h3>
-<ul>
-<li>Supervised learning
+<h4 id="supervised-learning">Supervised learning</h4>
 <ul>
 <li>In a feature vector $x_i$ (i=1&hellip;N), a single feature is denoted by $x^j$ (j=1&hellip;D). And $y_i$ is the label.</li>
 <li>The goal is to produce a model that takes a feature vector x as input and outputs the label.</li>
 </ul>
-</li>
-<li>Unsupervised learning
+<h4 id="unsupervised-learning">Unsupervised learning</h4>
 <ul>
 <li>The goal is either to transform the input feature vector into another vector (dimensionality reduction) or into a value (clustering, outlier detection).</li>
 </ul>
-</li>
-<li>Semi-supervised learning
+<h4 id="semi-supervised-learning">Semi-supervised learning</h4>
 <ul>
 <li>The dataset has both labeled and unlabeled (much higher quantity) data.</li>
 <li>The same goal as supervised learning.</li>
 <li>The hope is that the unlabeled data can help produce a better model. This is because a larger sample reflects better the probability distribution of the source of the labeled data.</li>
 </ul>
-</li>
-<li>Reinforcement learning
+<h4 id="reinforcement-learning">Reinforcement learning</h4>
 <ul>
 <li>It perceives the <strong>state</strong> of the environment as a feature vector adn the execute <strong>actions</strong> in every state, which bring <strong>rewards</strong> and move the machine to another state.</li>
 <li>The goal is to learn a <strong>policy</strong>: a function that takes the feature vector as input and outputs an optimal action that maximizes the expected average reward.</li>
 <li>It&rsquo;s suited for problems whose decision making is sequential and the goal is long-term.</li>
 </ul>
-</li>
-</ul>
-<h2 id="notations-and-definitions">Notations and Definitions</h2>
+<h3 id="notations-and-definitions">Notations and Definitions</h3>
 <ol>
 <li>
 <p>$x_{l,u}^{(j)}$ in a neural net means the feature j of unit u in layer l.</p>
@@ -222,6 +228,27 @@
 <li>Shallow learning: learns the parameters of the model directly from the features of the training examples.</li>
 <li>Deep (neural network) learning: uses neural nets with more than one layer and learns the parameters from the outputs of the preceding layers instead.</li>
 </ul>
+</li>
+</ol>
+<h2 id="fundamental-algorithms">Fundamental Algorithms</h2>
+<h3 id="linear-regression">Linear Regression</h3>
+<ol>
+<li>We want a model as a linear combination of features of example x ($w$ is a D-dimensional vector of parameters and b is a real number.):</li>
+</ol>
+<p>$$f_{w,b}(x) = wx+b$$</p>
+<ol start="2">
+<li>We find the optimal values $w^{*}$ and $b^{*}$ by minimizing the cost function below (the empirical risk - the average loss):</li>
+</ol>
+<p>$$\frac{1}{N}\sum_{i=1&hellip;N}(f_{w,b}(x_i)-y_i)^2$$</p>
+<ol start="3">
+<li>
+<p>Overfitting: a model that predicts well for the training data but not for data unseen during training. Linear regression rarely overfits.</p>
+</li>
+<li>
+<p>The squared loss is used since it&rsquo;s convinent. The absolute loss function doesn&rsquo;t have a continuous derivative, which makes it not smooth. Unsmooth functions create difficulties for optimization problems in linear algebra.</p>
+</li>
+<li>
+<p>To find the extrema (minima or maxima), we can simply set the gradient to zero.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
