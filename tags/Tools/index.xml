@@ -221,7 +221,7 @@ folder/ # a folder named `folder`
 &lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;‘0’ goes to the start of the line.&lt;/p&gt;
+&lt;p&gt;‘0’ goes to the start of the line. &amp;lsquo;$&amp;rsquo; goes to the end of the line.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;‘2w’ goes 2 words ahead.&lt;/p&gt;
