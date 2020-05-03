@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              3-minute read
+              4-minute read
             </span>
           </div>
           
@@ -172,6 +172,7 @@
 <li><a href="#linear-regression">Linear Regression</a></li>
 </ul>
 </li>
+<li><a href="#logistic-regression">Logistic Regression</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -250,6 +251,37 @@
 <li>
 <p>To find the extrema (minima or maxima), we can simply set the gradient to zero.</p>
 </li>
+</ol>
+<h2 id="logistic-regression">Logistic Regression</h2>
+<ol>
+<li>
+<p>Logistic regression is not a regression, but a classification learning algorithm. The names is because the mathematical formulation is similar to linear regression.</p>
+</li>
+<li>
+<p>The standard logistic function or the sigmoid function:</p>
+</li>
+</ol>
+<p>$$f(x)=\frac{1}{1+e^{-x}}$$</p>
+<p><img src="https://tillchen.com/images/logistic_function.png" alt="Logistic Function"></p>
+<ol start="3">
+<li>The logistic regression model:</li>
+</ol>
+<p>$$f(x)=\frac{1}{1+e^{-(wx+b)}}$$</p>
+<ol start="4">
+<li>
+<p>For binary classification, we can say the label is positive if the probability is higher than or equal to 0.5.</p>
+</li>
+<li>
+<p>We optimize by using the maximum likelihood $y_i$ is either 0 or 1:</p>
+</li>
+</ol>
+<p>$$L_{w,b}=\prod_{i=1&hellip;N}f_{w,b}(x_i)^{y_i}(1-f_{w,b}(x_i))^{1-y_i}$$</p>
+<ol start="6">
+<li>In practice, it&rsquo;s more convenient to maximize the log-likelihood (since ln is a strictly increasing function, maximizing this is the same as maximizing its argument):</li>
+</ol>
+<p>$$LogL_{w,b}=ln(L_{w,b})=\sum_{i=1}^Ny_iln(f_{w,b}(x_i)) + (1-y_i)ln(1-f_{w,b}(x_i))$$</p>
+<ol start="7">
+<li>Unlike linear regression, there&rsquo;s no closed form solution. A typical numerical optimization procedure is gradient descent.</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
