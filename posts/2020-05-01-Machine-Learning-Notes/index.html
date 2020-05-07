@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              5-minute read
+              6-minute read
             </span>
           </div>
           
@@ -170,8 +170,6 @@
 <li><a href="#fundamental-algorithms">Fundamental Algorithms</a>
 <ul>
 <li><a href="#linear-regression">Linear Regression</a></li>
-</ul>
-</li>
 <li><a href="#logistic-regression">Logistic Regression</a></li>
 <li><a href="#decision-tree-learning">Decision Tree Learning</a></li>
 <li><a href="#support-vector-machine">Support Vector Machine</a>
@@ -184,6 +182,15 @@
 </ul>
 </li>
 <li><a href="#k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</a></li>
+</ul>
+</li>
+<li><a href="#anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</a>
+<ul>
+<li><a href="#building-blocks">Building blocks</a></li>
+<li><a href="#gradient-descent">Gradient Descent</a></li>
+<li><a href="#particularities">Particularities</a></li>
+</ul>
+</li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -263,7 +270,7 @@
 <p>To find the extrema (minima or maxima), we can simply set the gradient to zero.</p>
 </li>
 </ol>
-<h2 id="logistic-regression">Logistic Regression</h2>
+<h3 id="logistic-regression">Logistic Regression</h3>
 <ol>
 <li>
 <p>Logistic regression is not a regression, but a classification learning algorithm. The names is because the mathematical formulation is similar to linear regression.</p>
@@ -294,13 +301,13 @@
 <ol start="7">
 <li>Unlike linear regression, there&rsquo;s no closed form solution. A typical numerical optimization procedure is gradient descent.</li>
 </ol>
-<h2 id="decision-tree-learning">Decision Tree Learning</h2>
+<h3 id="decision-tree-learning">Decision Tree Learning</h3>
 <p>To be filled.</p>
-<h2 id="support-vector-machine">Support Vector Machine</h2>
+<h3 id="support-vector-machine">Support Vector Machine</h3>
 <p>To be filled.</p>
-<h3 id="dealing-with-noise">Dealing With Noise</h3>
+<h4 id="dealing-with-noise">Dealing With Noise</h4>
 <p>To be filled.</p>
-<h4 id="dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</h4>
+<h5 id="dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</h5>
 <ol>
 <li>
 <p>The kernel trick: use a function to <em>implicitly</em> transform the original space into a higher dimensional space during the cost function optimization. (We hope that data will be linearly separable in the transformed space).</p>
@@ -315,13 +322,58 @@
 <p>We can use the quadratic kernel $k(x_i, x_k) = (x_ix_k)^2$ here. Another widely used kernel is the RBF (radial basis function) kernel: $k(x, x^{'}) = exp(-\frac{||x-x^{'}||^2}{2\sigma^2})$. It has infinite dimensions. We can vary the hyperparameter $\sigma$  and choose wether to get a smooth of curvy decision boundary.</p>
 </li>
 </ol>
-<h2 id="k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</h2>
+<h3 id="k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</h3>
 <ol>
 <li>
 <p>kNN is a non-parametric learning algorithm. Contrary to other learning algorithms that allow discarding the training data after the model is built, kNN keeps all training examples in memory.</p>
 </li>
 <li>
 <p>The closeness of two examples is given by a distance function. Other than the Euclidean distance, we could also use the cosine similarity function ($0^{\circ}: 1; 90^{\circ}: 0; 180^{\circ}: -1$).</p>
+</li>
+</ol>
+<h2 id="anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</h2>
+<h3 id="building-blocks">Building blocks</h3>
+<ol>
+<li>A loss function</li>
+<li>An optimization criterion based on the loss function (e.g. a cost function)</li>
+<li>An optimization routine leveraging training data to find a solution to the optimization criterion.</li>
+</ol>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<ol>
+<li>
+<p>To find a local minimum, start at some random point and takes step proportional (learning rate) to the negative of the gradient.</p>
+</li>
+<li>
+<p>The gradient is calculated by taking the partial derivative for every parameter in the loss function: (take linear regression as an example)</p>
+</li>
+</ol>
+<p>$$l = \frac{1}{N}\sum_{i=1}^{N}(y_i-(wx_i+b))^2$$</p>
+<p>$$\frac{\partial l}{\partial w} = \frac{1}{N}\sum_{i=1}^{N}-2x_i(y_i-(wx_i+b))$$</p>
+<p>$$\frac{\partial l}{\partial b} = \frac{1}{N}\sum_{i=1}^{N}-2(y_i-(wx_i+b))$$</p>
+<ol start="3">
+<li>An epoch consists of using the training set entirely to update each parameter. At each epoch, we update $w$ and $b$ ($\alpha$ is the learning rate):</li>
+</ol>
+<p>$$w \leftarrow w - \alpha\frac{\partial l}{\partial w}$$</p>
+<p>$$b \leftarrow b - \alpha\frac{\partial l}{\partial b}$$</p>
+<ol start="4">
+<li>Minibatch stochastic gradient descent is a version that speed up the computation by approximating the gradient using smaller batches.</li>
+</ol>
+<h3 id="particularities">Particularities</h3>
+<ol>
+<li>
+<p>Some algorithms, like decision tree learning, can accept categorical features while others expect numerical values. All algorithms in scikit-learn expect numerical features.</p>
+</li>
+<li>
+<p>Some algorithms, like SVM, allow weightings for each class. If the weighting is higher, the algorithm tries not to make errors in predicting training examples of this class.</p>
+</li>
+<li>
+<p>Some classification models, like SVM and kNN, only output the class. Others, like logistic regression or decision trees, can also return the score between 0 and 1 (can be used as a confidence score).</p>
+</li>
+<li>
+<p>Some classification algorithms - like decision trees, logistic regression, or SVM - build the model using the whole dataset at once. Others can be trained iteratively, one batch at a time.</p>
+</li>
+<li>
+<p>Some algorithms, like decision trees/SVM/kNN, can be used for both classification and regression, while others can only solve one type of problem.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
