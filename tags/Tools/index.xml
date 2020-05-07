@@ -160,6 +160,12 @@ folder/ # a folder named `folder`
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;git stash&lt;/code&gt; is a convenience tool. But since branching is cheap, we can always branch and then delete it.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git branch -a&lt;/code&gt; to see all the branches.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;git fetch&lt;/code&gt; and &lt;code&gt;git checkout -b test remotes/origin/test&lt;/code&gt; creates a local &lt;code&gt;test&lt;/code&gt; branch and connects it with the remote branch.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;deleting-a-repository&#34;&gt;Deleting a repository&lt;/h2&gt;
 &lt;ol&gt;
