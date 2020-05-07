@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -173,6 +173,17 @@
 </ul>
 </li>
 <li><a href="#logistic-regression">Logistic Regression</a></li>
+<li><a href="#decision-tree-learning">Decision Tree Learning</a></li>
+<li><a href="#support-vector-machine">Support Vector Machine</a>
+<ul>
+<li><a href="#dealing-with-noise">Dealing With Noise</a>
+<ul>
+<li><a href="#dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -195,7 +206,7 @@
 </ul>
 <h4 id="reinforcement-learning">Reinforcement learning</h4>
 <ul>
-<li>It perceives the <strong>state</strong> of the environment as a feature vector adn the execute <strong>actions</strong> in every state, which bring <strong>rewards</strong> and move the machine to another state.</li>
+<li>It perceives the <strong>state</strong> of the environment as a feature vector and then execute <strong>actions</strong> in every state, which bring <strong>rewards</strong> and move the machine to another state.</li>
 <li>The goal is to learn a <strong>policy</strong>: a function that takes the feature vector as input and outputs an optimal action that maximizes the expected average reward.</li>
 <li>It&rsquo;s suited for problems whose decision making is sequential and the goal is long-term.</li>
 </ul>
@@ -282,6 +293,36 @@
 <p>$$LogL_{w,b}=ln(L_{w,b})=\sum_{i=1}^Ny_iln(f_{w,b}(x_i)) + (1-y_i)ln(1-f_{w,b}(x_i))$$</p>
 <ol start="7">
 <li>Unlike linear regression, there&rsquo;s no closed form solution. A typical numerical optimization procedure is gradient descent.</li>
+</ol>
+<h2 id="decision-tree-learning">Decision Tree Learning</h2>
+<p>To be filled.</p>
+<h2 id="support-vector-machine">Support Vector Machine</h2>
+<p>To be filled.</p>
+<h3 id="dealing-with-noise">Dealing With Noise</h3>
+<p>To be filled.</p>
+<h4 id="dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</h4>
+<ol>
+<li>
+<p>The kernel trick: use a function to <em>implicitly</em> transform the original space into a higher dimensional space during the cost function optimization. (We hope that data will be linearly separable in the transformed space).</p>
+</li>
+<li>
+<p>We use kernel functions or simply kernels to efficiently work in higher-dimensional spaces without doing this transformation explicitly.</p>
+</li>
+<li>
+<p>By using the kernel trick, we get rid of a costly transformation to the higher dimension and avoid computing their dot-product.</p>
+</li>
+<li>
+<p>We can use the quadratic kernel $k(x_i, x_k) = (x_ix_k)^2$ here. Another widely used kernel is the RBF (radial basis function) kernel: $k(x, x^{'}) = exp(-\frac{||x-x^{'}||^2}{2\sigma^2})$. It has infinite dimensions. We can vary the hyperparameter $\sigma$  and choose wether to get a smooth of curvy decision boundary.</p>
+</li>
+</ol>
+<h2 id="k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</h2>
+<ol>
+<li>
+<p>kNN is a non-parametric learning algorithm. Contrary to other learning algorithms that allow discarding the training data after the model is built, kNN keeps all training examples in memory.</p>
+</li>
+<li>
+<p>The closeness of two examples is given by a distance function. Other than the Euclidean distance, we could also use the cosine similarity function ($0^{\circ}: 1; 90^{\circ}: 0; 180^{\circ}: -1$).</p>
+</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
