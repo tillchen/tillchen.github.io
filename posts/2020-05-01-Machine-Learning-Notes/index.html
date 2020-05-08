@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              7-minute read
+              8-minute read
             </span>
           </div>
           
@@ -164,9 +164,9 @@
 <li><a href="#reinforcement-learning">Reinforcement learning</a></li>
 </ul>
 </li>
-<li><a href="#notations-and-definitions">Notations and Definitions</a></li>
 </ul>
 </li>
+<li><a href="#notations-and-definitions">Notations and Definitions</a></li>
 <li><a href="#fundamental-algorithms">Fundamental Algorithms</a>
 <ul>
 <li><a href="#linear-regression">Linear Regression</a></li>
@@ -199,8 +199,11 @@
 <li><a href="#binning-bucketing-numerical---categorical">Binning (Bucketing) (Numerical -&gt; Categorical)</a></li>
 <li><a href="#normalization">Normalization</a></li>
 <li><a href="#standardization-z-score-normalization">Standardization (Z-score Normalization)</a></li>
+<li><a href="#dealing-with-missing-features">Dealing with Missing Features</a></li>
 </ul>
 </li>
+<li><a href="#learning-algorithm-selection">Learning Algorithm Selection</a></li>
+<li><a href="#three-sets">Three Sets</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -229,7 +232,7 @@
 <li>The goal is to learn a <strong>policy</strong>: a function that takes the feature vector as input and outputs an optimal action that maximizes the expected average reward.</li>
 <li>It&rsquo;s suited for problems whose decision making is sequential and the goal is long-term.</li>
 </ul>
-<h3 id="notations-and-definitions">Notations and Definitions</h3>
+<h2 id="notations-and-definitions">Notations and Definitions</h2>
 <ol>
 <li>
 <p>$x_{l,u}^{(j)}$ in a neural net means the feature j of unit u in layer l.</p>
@@ -435,11 +438,55 @@
 <ol start="3">
 <li>Normalization vs Standardization:
 <ul>
-<li>Unsupervised learning - standardization</li>
-<li>The distribution is close to a normal distribution - standardization</li>
-<li>Have outliers - standardization (normalization will squeeze the normal values into a very small range)</li>
+<li>Unsupervised learning - standardization.</li>
+<li>The distribution is close to a normal distribution - standardization.</li>
+<li>Have outliers - standardization (normalization will squeeze the normal values into a very small range).</li>
 <li>Other cases - normalization.</li>
 </ul>
+</li>
+</ol>
+<h4 id="dealing-with-missing-features">Dealing with Missing Features</h4>
+<ol>
+<li>
+<p>Remove the examples with missing features</p>
+</li>
+<li>
+<p>Use a learning algorithm that can deal with missing feature values.</p>
+</li>
+<li>
+<p>Use Data imputation (the process of replacing missing data with substituted values)</p>
+<ul>
+<li>Replace the missing value with an average value.</li>
+<li>Replace the missing value with a value outside the normal range.</li>
+<li>Replace the missing value with a value in the middle of the range.</li>
+<li>Use the missing value as the target for a regression problem.</li>
+<li>Increase the dimensionality by adding a binary indicator feature.</li>
+</ul>
+</li>
+</ol>
+<h3 id="learning-algorithm-selection">Learning Algorithm Selection</h3>
+<ul>
+<li>Explainability</li>
+<li>In-memory vs. out-of-memory (batch or incremental/online)</li>
+<li>Number of features and examples (neural networks for a huge number of features)</li>
+<li>Categorical vs. numerical features</li>
+<li>Nonlinearity of the data (SVM/linear regression/linear kernel/logistic regression of lineraly separable data)</li>
+<li>Training speed (neural networks are slow to train)</li>
+<li>Prediction speed</li>
+</ul>
+<p><img src="https://tillchen.com/images/ml_map.png" alt="scikit-learn cheat sheet"></p>
+<h3 id="three-sets">Three Sets</h3>
+<ol>
+<li>
+<p>Three sets:</p>
+<ul>
+<li>Training set (95%)</li>
+<li>Validation set (2.5%): choose the learning algorithm and find the best values of hyperparameters.</li>
+<li>Test set (2.5%): assess the model before delivery and production.</li>
+</ul>
+</li>
+<li>
+<p>The last two are also called holdout sets, which are not used to build the model.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
