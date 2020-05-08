@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              8-minute read
+              10-minute read
             </span>
           </div>
           
@@ -204,6 +204,8 @@
 </li>
 <li><a href="#learning-algorithm-selection">Learning Algorithm Selection</a></li>
 <li><a href="#three-sets">Three Sets</a></li>
+<li><a href="#underfitting-and-overfitting">Underfitting and Overfitting</a></li>
+<li><a href="#regularization">Regularization</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -487,6 +489,65 @@
 </li>
 <li>
 <p>The last two are also called holdout sets, which are not used to build the model.</p>
+</li>
+</ol>
+<h3 id="underfitting-and-overfitting">Underfitting and Overfitting</h3>
+<ol>
+<li>
+<p>Underfitting: the model makes many mistakes on the training data - high bias.</p>
+<ul>
+<li>The model is too simple.</li>
+<li>The features are not informative enough.</li>
+</ul>
+</li>
+<li>
+<p>Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set)</p>
+<ul>
+<li>The model is too complex.</li>
+<li>Too many features but a small number of training examples.</li>
+</ul>
+</li>
+<li>
+<p>The overfitting model learns the idiosyncrasies of the training set:</p>
+<ul>
+<li>the noise</li>
+<li>the sampling imperfection due to the small dataset size</li>
+<li>other artifacts extrinsic to the decision problem</li>
+</ul>
+</li>
+<li>
+<p>Solutions for overfitting:</p>
+<ul>
+<li>Try a simply model</li>
+<li>Reduce the dimensionality</li>
+<li>Add more training data</li>
+<li>Regularization - the most widely used approach</li>
+</ul>
+</li>
+</ol>
+<h3 id="regularization">Regularization</h3>
+<ol>
+<li>
+<p>Regularization forces the learning algorithm to build a less complex model, which leads to a slightly higher bias but a much lower variance - the bias-variance tradeoff.</p>
+</li>
+<li>
+<p>The two most widely used are L1 and L2 regularization, which add a penalizing term whose value is higher when the model is more complex.</p>
+</li>
+<li>
+<p>For linear regression, L1 looks like this ($|\mathbf{w}| = \sum_{i=1}^D|w^{(j)}|$ and C is a hyperparameter), which tries to set most $w^{(j)}$ to value small values or zero (|| means abs here):</p>
+</li>
+</ol>
+<p>$$\min_{\mathbf{w},b} \left[C|\mathbf{w}| + \frac{1}{N}\sum_{i=1&hellip;N}(f_{\mathbf{w},b}(\mathbf{x}_i)-y_i)^2\right]$$</p>
+<ol start="4">
+<li>For linear regression, L2 looks like this (($||\mathbf{w}||^2 = \sum_{i=1}^D(w^{(j)})^2$):</li>
+</ol>
+<p>$$\min_{\mathbf{w},b} \left[C||\mathbf{w}||^2 + \frac{1}{N}\sum_{i=1&hellip;N}(f_{\mathbf{w},b}(\mathbf{x}_i)-y_i)^2\right]$$</p>
+<ol start="5">
+<li>
+<p>L1 produces a sparse model with most parameters equal to zero if C is large enough, which makes feature selection that decides which features are essential and increases explainability. L2 gives better results if our only goal is to maximize the performance on holdout sets. Plus L2 is differentiable - graident descent.</p>
+</li>
+<li>
+<p>L1 and L2 are the special cases for elastic net regularization. L1 - lasso; L2 - ridge regularization.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
