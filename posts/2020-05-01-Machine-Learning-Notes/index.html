@@ -206,6 +206,12 @@
 <li><a href="#three-sets">Three Sets</a></li>
 <li><a href="#underfitting-and-overfitting">Underfitting and Overfitting</a></li>
 <li><a href="#regularization">Regularization</a></li>
+<li><a href="#model-performance-assessment">Model Performance Assessment</a></li>
+<li><a href="#hyperparameter-tuning">Hyperparameter Tuning</a>
+<ul>
+<li><a href="#cross-validation">Cross-Validation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -548,6 +554,19 @@
 </li>
 <li>
 <p>L1 and L2 are the special cases for elastic net regularization. L1 - lasso; L2 - ridge regularization.</p>
+</li>
+</ol>
+<h3 id="model-performance-assessment">Model Performance Assessment</h3>
+<p>To be filled.</p>
+<h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
+<p>To be filled.</p>
+<h4 id="cross-validation">Cross-Validation</h4>
+<ol>
+<li>
+<p>When we have few training examples, it could be prohibitive to have both validation and test set. So we can split the data into a training and a test set and use cross-validation on the training set to simulate a validation set.</p>
+</li>
+<li>
+<p>Each subset of the training set is called a fold. Typically, a five-fold cross-validation is used in practice. We would train five models (use $F_2 F_3 F_4 F_5$ for model 1 and so on) and compute the value of the metric of interest on each validation set, from $F_1$ to $F_5$ and get the average score.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
