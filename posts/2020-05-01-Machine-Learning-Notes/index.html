@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              10-minute read
+              11-minute read
             </span>
           </div>
           
@@ -210,6 +210,16 @@
 <li><a href="#hyperparameter-tuning">Hyperparameter Tuning</a>
 <ul>
 <li><a href="#cross-validation">Cross-Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#neural-networks-and-deep-learning">Neural Networks and Deep Learning</a>
+<ul>
+<li><a href="#neural-networks">Neural Networks</a>
+<ul>
+<li><a href="#multilayer-perceptron-vanilla-neural-network">Multilayer Perceptron (Vanilla Neural Network)</a></li>
+<li><a href="#feed-forward-neural-network-architecture">Feed-Forward Neural Network Architecture</a></li>
 </ul>
 </li>
 </ul>
@@ -569,6 +579,49 @@
 <p>Each subset of the training set is called a fold. Typically, a five-fold cross-validation is used in practice. We would train five models (use $F_2 F_3 F_4 F_5$ for model 1 and so on) and compute the value of the metric of interest on each validation set, from $F_1$ to $F_5$ and get the average score.</p>
 </li>
 </ol>
+<h2 id="neural-networks-and-deep-learning">Neural Networks and Deep Learning</h2>
+<h3 id="neural-networks">Neural Networks</h3>
+<ol>
+<li>The function $f_{NN}$ is a nested function. So for a 3-layer neural network that returns a scalar:</li>
+</ol>
+<p>$$y=f_{NN}(\mathbf{x}) = f_3(\mathbf{f}_2(\mathbf{f}_1(\mathbf{x})))$$</p>
+<ol>
+<li>$\mathbf{f}_1$ and $\mathbf{f}_2$ are vector functions of the following form ($\mathbf{g}_l$ is the activation function - a fixed and chosen nonlinear function; $\mathbf{W}_l$ (a matrix) and $\mathbf{b}_l$ (a vector) are learned using gradient descent):</li>
+</ol>
+<p>$$\mathbf{f}_l(\mathbf{z}) = \mathbf{g}_l(\mathbf{W}_l\mathbf{z} + \mathbf{b}_l)$$</p>
+<h4 id="multilayer-perceptron-vanilla-neural-network">Multilayer Perceptron (Vanilla Neural Network)</h4>
+<ol>
+<li>
+<p>A multiplayer perceptron (MLP) is a class of a feed-forward neural network (FFNN). It has a fully-connected architecture.</p>
+</li>
+<li>
+<p>In each rectangle unit:</p>
+<ol>
+<li>All inputs of the unit are joined together to form an input vector.</li>
+<li>The unit applies a linear transformation.</li>
+<li>The unit applies an activation function.</li>
+</ol>
+</li>
+<li>
+<p>An example (each unit&rsquo;s parameters $\mathbf{w}<em>{l,u}$ and $b</em>{l,u}$):</p>
+</li>
+</ol>
+<p><img src="https://tillchen.com/images/mlp.png" alt="MLP"></p>
+<h4 id="feed-forward-neural-network-architecture">Feed-Forward Neural Network Architecture</h4>
+<ol>
+<li>
+<p>If we want to solve a regression or a classification problem, the last layer usually contains only one unit. If $g_{last}$ is linear, then the neural net is a regression model. If $g_{last}$ is a logistic function, it&rsquo;s a binary classification model.</p>
+</li>
+<li>
+<p>Any differentiable function can be chosen as $g_{l,u}$. And primary reason of such a nonlinear component is to allow the neural net to approximate nonlinear functions.</p>
+</li>
+<li>
+<p>Popular choices for $g$ are the logistic function, TanH, and ReLU (rectified linear unit function):</p>
+</li>
+</ol>
+<p>$$tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$$</p>
+<p>$$relu(z) = 0 \ \ if \ z &lt; 0$$</p>
+<p>$$relu(z)= z \ \ otherwise$$</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
