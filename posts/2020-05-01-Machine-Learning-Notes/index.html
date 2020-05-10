@@ -246,7 +246,20 @@
 </ul>
 </li>
 <li><a href="#advanced-practice">Advanced Practice</a></li>
-<li><a href="#unsupervised-learning-1">Unsupervised Learning</a></li>
+<li><a href="#unsupervised-learning-1">Unsupervised Learning</a>
+<ul>
+<li><a href="#density-estimation">Density Estimation</a></li>
+<li><a href="#clustering">Clustering</a>
+<ul>
+<li><a href="#k-means">K-Means</a></li>
+<li><a href="#dbscan-and-hdbscan">DBSCAN and HDBSCAN</a></li>
+<li><a href="#determining-the-number-of-clusters">Determining the Number of Clusters</a></li>
+<li><a href="#other-clustering-algorithms">Other Clustering Algorithms</a></li>
+</ul>
+</li>
+<li><a href="#dimensionality-reduction">Dimensionality Reduction</a></li>
+</ul>
+</li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -703,6 +716,26 @@
 <h2 id="advanced-practice">Advanced Practice</h2>
 <p>To be filled.</p>
 <h2 id="unsupervised-learning-1">Unsupervised Learning</h2>
+<p>Unsupervised learning deals with problems in which data doesn&rsquo;t have labels.</p>
+<h3 id="density-estimation">Density Estimation</h3>
+<p>To be filled.</p>
+<h3 id="clustering">Clustering</h3>
+<p>Clustering is a problem of learning to assign a label to examples by leveraging an unlabeled dataset.</p>
+<h4 id="k-means">K-Means</h4>
+<ol>
+<li>Choose k - the number of clusters (a hyperparameter which requires an educated guess).</li>
+<li>Randomly put k feature vectors, called centroids, to the feature space. (The initial positions influence the final positions.)</li>
+<li>Compute the distance from each example x to each centroid c using some metric, like the Euclidean distance. Assign the closest centroid to each example.</li>
+<li>For each centroid, calculate the average feature vector of the examples labeled with it. The average feature vectors become the new locations of the centroids.</li>
+<li>Recompute the distance from each example to each centroid, modify the assignment and repeat the procedure until the assignments don&rsquo;t change after the centroid locations were recomputed.</li>
+</ol>
+<h4 id="dbscan-and-hdbscan">DBSCAN and HDBSCAN</h4>
+<p>To be filled.</p>
+<h4 id="determining-the-number-of-clusters">Determining the Number of Clusters</h4>
+<p>To be filled.</p>
+<h4 id="other-clustering-algorithms">Other Clustering Algorithms</h4>
+<p>To be filled.</p>
+<h3 id="dimensionality-reduction">Dimensionality Reduction</h3>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
