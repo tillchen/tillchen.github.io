@@ -424,7 +424,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set)&lt;/p&gt;
+&lt;p&gt;Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set) (variance is the difference in fits between data sets - consistency)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The model is too complex.&lt;/li&gt;
 &lt;li&gt;Too many features but a small number of training examples.&lt;/li&gt;
