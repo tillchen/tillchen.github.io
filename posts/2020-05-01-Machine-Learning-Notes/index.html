@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              12-minute read
+              13-minute read
             </span>
           </div>
           
@@ -233,8 +233,20 @@
 <li><a href="#problems-and-solutions">Problems and Solutions</a>
 <ul>
 <li><a href="#kernel-regression">Kernel Regression</a></li>
+<li><a href="#multiclass-classification">Multiclass Classification</a></li>
+<li><a href="#one-class-classification">One-Class Classification</a></li>
+<li><a href="#multi-label-classification">Multi-Label Classification</a></li>
+<li><a href="#ensemble-learning">Ensemble Learning</a></li>
+<li><a href="#learning-to-label-sequences">Learning to Label Sequences</a></li>
+<li><a href="#sequence-to-sequence-learning">Sequence to Sequence Learning</a></li>
+<li><a href="#active-learning">Active Learning</a></li>
+<li><a href="#semi-supervised-learning-1">Semi-Supervised Learning</a></li>
+<li><a href="#one-shot-learning">One-Shot Learning</a></li>
+<li><a href="#zero-shot-learning">Zero-Shot Learning</a></li>
 </ul>
 </li>
+<li><a href="#advanced-practice">Advanced Practice</a></li>
+<li><a href="#unsupervised-learning-1">Unsupervised Learning</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -655,6 +667,42 @@
 <p>To be filled.</p>
 <h2 id="problems-and-solutions">Problems and Solutions</h2>
 <h3 id="kernel-regression">Kernel Regression</h3>
+<ol>
+<li>
+<p>Kernel regression is a non-parametric method, which means there are no parameters to learn. The model is based on the data itself (like in kNN).</p>
+</li>
+<li>
+<p>The simplest kernel regression looks like this (the function $k(\cdot)$ is called a kernel, which plays the role of a similarity function - $w_i$ is higher when x is similar to $x_i$):</p>
+</li>
+</ol>
+<p>$$f(x)=\frac{1}{N}\sum_{i=1}^{N}w_iy_i, \ where \ w_i = \frac{Nk(\frac{x_i - x}{b})}{\sum_{l=1}^Nk(\frac{x_l - x}{b})}$$</p>
+<ol start="3">
+<li>Kernels can have different forms, the most frequently used is the Gaussian kernel:</li>
+</ol>
+<p>$$k(z)=\frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2})$$</p>
+<h3 id="multiclass-classification">Multiclass Classification</h3>
+<p>To be filled.</p>
+<h3 id="one-class-classification">One-Class Classification</h3>
+<p>To be filled.</p>
+<h3 id="multi-label-classification">Multi-Label Classification</h3>
+<p>To be filled.</p>
+<h3 id="ensemble-learning">Ensemble Learning</h3>
+<p>To be filled.</p>
+<h3 id="learning-to-label-sequences">Learning to Label Sequences</h3>
+<p>To be filled.</p>
+<h3 id="sequence-to-sequence-learning">Sequence to Sequence Learning</h3>
+<p>To be filled.</p>
+<h3 id="active-learning">Active Learning</h3>
+<p>To be filled.</p>
+<h3 id="semi-supervised-learning-1">Semi-Supervised Learning</h3>
+<p>To be filled.</p>
+<h3 id="one-shot-learning">One-Shot Learning</h3>
+<p>To be filled.</p>
+<h3 id="zero-shot-learning">Zero-Shot Learning</h3>
+<p>To be filled.</p>
+<h2 id="advanced-practice">Advanced Practice</h2>
+<p>To be filled.</p>
+<h2 id="unsupervised-learning-1">Unsupervised Learning</h2>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
