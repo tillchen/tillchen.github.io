@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              11-minute read
+              12-minute read
             </span>
           </div>
           
@@ -222,6 +222,17 @@
 <li><a href="#feed-forward-neural-network-architecture">Feed-Forward Neural Network Architecture</a></li>
 </ul>
 </li>
+<li><a href="#deep-learning">Deep Learning</a>
+<ul>
+<li><a href="#convolutional-neural-network">Convolutional Neural Network</a></li>
+<li><a href="#recurrent-neural-network">Recurrent Neural Network</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#problems-and-solutions">Problems and Solutions</a>
+<ul>
+<li><a href="#kernel-regression">Kernel Regression</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -603,7 +614,7 @@
 </ol>
 </li>
 <li>
-<p>An example (each unit&rsquo;s parameters $\mathbf{w}<em>{l,u}$ and $b</em>{l,u}$):</p>
+<p>An example (each unit&rsquo;s parameters $w_{l,u}$ and $b_{l,u}$):</p>
 </li>
 </ol>
 <p><img src="https://tillchen.com/images/mlp.png" alt="MLP"></p>
@@ -622,6 +633,28 @@
 <p>$$tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$$</p>
 <p>$$relu(z) = 0 \ \ if \ z &lt; 0$$</p>
 <p>$$relu(z)= z \ \ otherwise$$</p>
+<h3 id="deep-learning">Deep Learning</h3>
+<ol>
+<li>
+<p>Deep learning refers to training neural networks with more than two non-ouput layers.</p>
+</li>
+<li>
+<p>The two biggest challenges:</p>
+<ul>
+<li>Exploding gradient - use gradient clipping or $L_1$ $L_2$ regularization</li>
+<li>Vanishing gradient - use ReLU, LSTM, and skip connections (in residual neural networks)</li>
+</ul>
+</li>
+<li>
+<p>Backpropagation is an efficient algorithm for computing gradients on neural networks using the chain rule. (It&rsquo;s used to update the parameters.)</p>
+</li>
+</ol>
+<h4 id="convolutional-neural-network">Convolutional Neural Network</h4>
+<p>To be filled.</p>
+<h4 id="recurrent-neural-network">Recurrent Neural Network</h4>
+<p>To be filled.</p>
+<h2 id="problems-and-solutions">Problems and Solutions</h2>
+<h3 id="kernel-regression">Kernel Regression</h3>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
