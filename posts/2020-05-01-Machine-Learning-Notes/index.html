@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              13-minute read
+              15-minute read
             </span>
           </div>
           
@@ -257,9 +257,16 @@
 <li><a href="#other-clustering-algorithms">Other Clustering Algorithms</a></li>
 </ul>
 </li>
-<li><a href="#dimensionality-reduction">Dimensionality Reduction</a></li>
+<li><a href="#dimensionality-reduction">Dimensionality Reduction</a>
+<ul>
+<li><a href="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
+<li><a href="#umap">UMAP</a></li>
 </ul>
 </li>
+<li><a href="#outlier-detection">Outlier Detection</a></li>
+</ul>
+</li>
+<li><a href="#other-forms-of-learning">Other Forms of Learning</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -736,6 +743,36 @@
 <h4 id="other-clustering-algorithms">Other Clustering Algorithms</h4>
 <p>To be filled.</p>
 <h3 id="dimensionality-reduction">Dimensionality Reduction</h3>
+<ol>
+<li>
+<p>Since modern ML algorithms can handle very high-dimensional examples, dimensionality reduction techniques are used less in practice than in the past.</p>
+</li>
+<li>
+<p>The most frequent use case is data visualization: human can only interpret on a plot the maximum of three dimensions.</p>
+</li>
+<li>
+<p>Another situation is that we need to build an interpretable model and are limited in the choice of algorithms. Then it removes redundant or highly correlated features and also reduces the noise in the data, which all improve the interpretability of the model.</p>
+</li>
+</ol>
+<h4 id="principal-component-analysis-pca">Principal Component Analysis (PCA)</h4>
+<ol>
+<li>Example:</li>
+</ol>
+<p><img src="https://tillchen.com/images/pca.png" alt="PCA"></p>
+<ol start="2">
+<li>
+<p>Principal components are vectors that define a new coordinate system in which the first axis goes in the direction of the highest variance in the data. The second axis is orthogonal to the first one and goes in the direction of the second highest variance in the data. The length of the arrow reflects the variance in the direction.</p>
+</li>
+<li>
+<p>If we want to reduce the dimensionality to $D_{new} &lt; D$, we pick $D_{new}$ largest principal components and project our data points on them. For 2D, we can set $D_{new} = 1$ and get the projected orange points in the figure. To describe each orange point, we need only one coordinate instead of two: the coordinate with respect to the first principal component.</p>
+</li>
+</ol>
+<h4 id="umap">UMAP</h4>
+<p>To be filled.</p>
+<h3 id="outlier-detection">Outlier Detection</h3>
+<p>To be filled.</p>
+<h2 id="other-forms-of-learning">Other Forms of Learning</h2>
+<p>To be filled.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
