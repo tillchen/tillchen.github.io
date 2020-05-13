@@ -260,6 +260,12 @@
 &lt;li&gt;The algorithm:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/linear_regression.png&#34; alt=&#34;Linear Regression&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Find local minimum/maximum:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/min_max.png&#34; alt=&#34;min max&#34;&gt;&lt;/p&gt;
+&lt;p&gt;$$M \ \text{positive definite} \Leftrightarrow x^TMx&amp;gt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$&lt;/p&gt;
+&lt;p&gt;$$M \ \text{negative definite} \Leftrightarrow x^TMx&amp;lt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$&lt;/p&gt;
 &lt;h3 id=&#34;logistic-regression&#34;&gt;Logistic Regression&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -695,6 +701,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book&#34;&gt;The Hundred-Page Machine Learning Book&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/148009.The_Elements_of_Statistical_Learning?ac=1&amp;amp;from_search=true&amp;amp;qid=8GAFr2BFEO&amp;amp;rank=1&#34;&gt;The Elements of Statistical Learning: Data Mining, Inference, and Prediction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/17397466-an-introduction-to-statistical-learning&#34;&gt;An Introduction to Statistical Learning: With Applications in R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Machine Learning course by &lt;a href=&#34;https://www.jacobs-university.de/directory/zaspel&#34;&gt;Prof. Dr. Peter Zaspel&lt;/a&gt; at Jacobs University Bremen&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
