@@ -170,7 +170,7 @@
 &lt;p&gt;$x$ is by default a column vector and $x^T$ a row vector. Then vector is on the left side of a matrix, we usually do $x^TA$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;$\argmax_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).&lt;/p&gt;
+&lt;p&gt;$argmax_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;$\mathbb{E}[\hat\theta(S_X) = \theta]$, where $\hat\theta(S_X)$ is the unbiased estimator of some statistic $\theta$ (e.g. $\mu$) calculated using a sample $S_X$.&lt;/p&gt;
@@ -217,7 +217,7 @@
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Bayes classifier:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;$$f(x)=\argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$&lt;/p&gt;
+&lt;p&gt;$$f(x)=argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$&lt;/p&gt;
 &lt;p&gt;$$f(x)=\mathbf{g} \ if \ p(\mathbf{g}|x) = \max_{g \in R_G}p(g|x)$$&lt;/p&gt;
 &lt;h2 id=&#34;fundamental-algorithms&#34;&gt;Fundamental Algorithms&lt;/h2&gt;
 &lt;h3 id=&#34;linear-regression&#34;&gt;Linear Regression&lt;/h3&gt;
