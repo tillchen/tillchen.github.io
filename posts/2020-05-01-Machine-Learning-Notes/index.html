@@ -166,7 +166,11 @@
 </li>
 </ul>
 </li>
-<li><a href="#notations-and-definitions">Notations and Definitions</a></li>
+<li><a href="#notations-and-definitions">Notations and Definitions</a>
+<ul>
+<li><a href="#statistical-decision-theory">Statistical Decision Theory</a></li>
+</ul>
+</li>
 <li><a href="#fundamental-algorithms">Fundamental Algorithms</a>
 <ul>
 <li><a href="#linear-regression">Linear Regression</a></li>
@@ -302,7 +306,7 @@
 <p>$x$ is by default a column vector and $x^T$ a row vector. Then vector is on the left side of a matrix, we usually do $x^TA$.</p>
 </li>
 <li>
-<p>$arg max_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).</p>
+<p>$\argmax_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).</p>
 </li>
 <li>
 <p>$\mathbb{E}[\hat\theta(S_X) = \theta]$, where $\hat\theta(S_X)$ is the unbiased estimator of some statistic $\theta$ (e.g. $\mu$) calculated using a sample $S_X$.</p>
@@ -325,6 +329,32 @@
 </ul>
 </li>
 </ol>
+<h3 id="statistical-decision-theory">Statistical Decision Theory</h3>
+<ol>
+<li>
+<p>Quantitative outputs are called $Y$ with $Y = (Y_1,&hellip;,Y_K)^T$; and qualitative outputs are called $G$ with $G = (G_1,&hellip;,G_K)^T$ (group).</p>
+</li>
+<li>
+<p>Loss functions:</p>
+</li>
+</ol>
+<p>$$L_2(y, y&rsquo;) = (y-y&rsquo;)^2$$</p>
+<p>$$L_{0-1}(g, g&rsquo;) = 0 \ (g=g&rsquo;) \ or \ 1 \ (g\neq g&rsquo;)$$</p>
+<p>$$L_1(y,y&rsquo;) = |y-y'|$$</p>
+<ol start="3">
+<li>Expected prediction error (EPE):</li>
+</ol>
+<p>$$EPE(f)=E(L_2(Y,f(X)))$$</p>
+<p>$$EPE(f)=E(L_{0-1}(G,f(X)))$$</p>
+<ol start="4">
+<li>The function f that minimizes EPE is give by: ($E(Y|X=x)$ is called a regressor/regression function)</li>
+</ol>
+<p>$$f(x)=E(Y|X=x)$$</p>
+<ol start="5">
+<li>Bayes classifier:</li>
+</ol>
+<p>$$f(x)=\argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$</p>
+<p>$$f(x)=\mathbf{g} \ if \ p(\mathbf{g}|x) = \max_{g \in R_G}p(g|x)$$</p>
 <h2 id="fundamental-algorithms">Fundamental Algorithms</h2>
 <h3 id="linear-regression">Linear Regression</h3>
 <ol>
@@ -406,7 +436,10 @@
 <li>
 <p>The closeness of two examples is given by a distance function. Other than the Euclidean distance, we could also use the cosine similarity function ($0^{\circ}: 1; 90^{\circ}: 0; 180^{\circ}: -1$).</p>
 </li>
+<li></li>
 </ol>
+<p><img src="https://tillchen.com/images/kNN_regression.png" alt="kNN regression"></p>
+<p><img src="https://tillchen.com/images/kNN_classification.png" alt="kNN classification"></p>
 <h2 id="anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</h2>
 <h3 id="building-blocks">Building blocks</h3>
 <ol>
@@ -776,6 +809,8 @@
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
+<li><a href="https://www.goodreads.com/book/show/148009.The_Elements_of_Statistical_Learning?ac=1&amp;from_search=true&amp;qid=8GAFr2BFEO&amp;rank=1">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a></li>
+<li><a href="https://www.goodreads.com/book/show/17397466-an-introduction-to-statistical-learning">An Introduction to Statistical Learning: With Applications in R</a></li>
 </ul>
 
       </div>

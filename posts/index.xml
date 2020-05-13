@@ -30,7 +30,11 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#notations-and-definitions&#34;&gt;Notations and Definitions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notations-and-definitions&#34;&gt;Notations and Definitions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#statistical-decision-theory&#34;&gt;Statistical Decision Theory&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#fundamental-algorithms&#34;&gt;Fundamental Algorithms&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#linear-regression&#34;&gt;Linear Regression&lt;/a&gt;&lt;/li&gt;
@@ -166,7 +170,7 @@
 &lt;p&gt;$x$ is by default a column vector and $x^T$ a row vector. Then vector is on the left side of a matrix, we usually do $x^TA$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;$arg max_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).&lt;/p&gt;
+&lt;p&gt;$\argmax_{a \in A}f(a)$ returns the element a of the set A that maximizes f(a).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;$\mathbb{E}[\hat\theta(S_X) = \theta]$, where $\hat\theta(S_X)$ is the unbiased estimator of some statistic $\theta$ (e.g. $\mu$) calculated using a sample $S_X$.&lt;/p&gt;
@@ -189,6 +193,32 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;statistical-decision-theory&#34;&gt;Statistical Decision Theory&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Quantitative outputs are called $Y$ with $Y = (Y_1,&amp;hellip;,Y_K)^T$; and qualitative outputs are called $G$ with $G = (G_1,&amp;hellip;,G_K)^T$ (group).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Loss functions:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$L_2(y, y&amp;rsquo;) = (y-y&amp;rsquo;)^2$$&lt;/p&gt;
+&lt;p&gt;$$L_{0-1}(g, g&amp;rsquo;) = 0 \ (g=g&amp;rsquo;) \ or \ 1 \ (g\neq g&amp;rsquo;)$$&lt;/p&gt;
+&lt;p&gt;$$L_1(y,y&amp;rsquo;) = |y-y&#39;|$$&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Expected prediction error (EPE):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$EPE(f)=E(L_2(Y,f(X)))$$&lt;/p&gt;
+&lt;p&gt;$$EPE(f)=E(L_{0-1}(G,f(X)))$$&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;The function f that minimizes EPE is give by: ($E(Y|X=x)$ is called a regressor/regression function)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$f(x)=E(Y|X=x)$$&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Bayes classifier:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$f(x)=\argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$&lt;/p&gt;
+&lt;p&gt;$$f(x)=\mathbf{g} \ if \ p(\mathbf{g}|x) = \max_{g \in R_G}p(g|x)$$&lt;/p&gt;
 &lt;h2 id=&#34;fundamental-algorithms&#34;&gt;Fundamental Algorithms&lt;/h2&gt;
 &lt;h3 id=&#34;linear-regression&#34;&gt;Linear Regression&lt;/h3&gt;
 &lt;ol&gt;
@@ -270,7 +300,10 @@
 &lt;li&gt;
 &lt;p&gt;The closeness of two examples is given by a distance function. Other than the Euclidean distance, we could also use the cosine similarity function ($0^{\circ}: 1; 90^{\circ}: 0; 180^{\circ}: -1$).&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/kNN_regression.png&#34; alt=&#34;kNN regression&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/kNN_classification.png&#34; alt=&#34;kNN classification&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;anatomy-of-a-learning-algorithm&#34;&gt;Anatomy of a Learning Algorithm&lt;/h2&gt;
 &lt;h3 id=&#34;building-blocks&#34;&gt;Building blocks&lt;/h3&gt;
 &lt;ol&gt;
@@ -640,6 +673,8 @@
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book&#34;&gt;The Hundred-Page Machine Learning Book&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/148009.The_Elements_of_Statistical_Learning?ac=1&amp;amp;from_search=true&amp;amp;qid=8GAFr2BFEO&amp;amp;rank=1&#34;&gt;The Elements of Statistical Learning: Data Mining, Inference, and Prediction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/17397466-an-introduction-to-statistical-learning&#34;&gt;An Introduction to Statistical Learning: With Applications in R&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
