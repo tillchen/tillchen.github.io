@@ -375,7 +375,27 @@
 <li>
 <p>To find the extrema (minima or maxima), we can simply set the gradient to zero.</p>
 </li>
+<li>
+<p>The linear model is an approximation for the regressor $E(Y|X)$ of the form: ($\beta_0$ is the intercept or bias)</p>
+</li>
 </ol>
+<p>$$f_{\beta}(X) = \beta_0+\sum_{j=1}^DX_j\beta_j$$</p>
+<ol start="7">
+<li>By using $\beta = (\beta_0,&hellip;,\beta_D)^T$ and $Z=(1,X_1,&hellip;,X_D)^T$, we can rewrite the model to:</li>
+</ol>
+<p>$$f_{\beta}(Z)=Z^T\beta$$</p>
+<ol start="8">
+<li>The least squares estimator (parameter estimator $\gamma$):</li>
+</ol>
+<p>$$\gamma = argmin_{\gamma}\sum_{i=1}^N(y_i-f_{\gamma}(x_i))^2$$</p>
+<ol start="9">
+<li>Solution for the estimator:</li>
+</ol>
+<p><img src="https://tillchen.com/images/linear_regression_least_squares.png" alt="Linear Regression by Least Squares"></p>
+<ol start="10">
+<li>The algorithm:</li>
+</ol>
+<p><img src="https://tillchen.com/images/linear_regression.png" alt="Linear Regression"></p>
 <h3 id="logistic-regression">Logistic Regression</h3>
 <ol>
 <li>
