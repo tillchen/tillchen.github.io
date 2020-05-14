@@ -77,6 +77,8 @@
 &lt;li&gt;&lt;a href=&#34;#model-performance-assessment&#34;&gt;Model Performance Assessment&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#hyperparameter-tuning&#34;&gt;Hyperparameter Tuning&lt;/a&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#training-error&#34;&gt;Training Error&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#generalizationtest-error&#34;&gt;Generalization/Test Error&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#cross-validation&#34;&gt;Cross-Validation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -516,7 +518,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set) (variance is the difference in fits between data sets - consistency)&lt;/p&gt;
+&lt;p&gt;Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set) (variance is the difference in fits between data sets - consistency) (large generalization error)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The model is too complex.&lt;/li&gt;
 &lt;li&gt;Too many features but a small number of training examples.&lt;/li&gt;
@@ -569,6 +571,28 @@
 &lt;p&gt;To be filled.&lt;/p&gt;
 &lt;h3 id=&#34;hyperparameter-tuning&#34;&gt;Hyperparameter Tuning&lt;/h3&gt;
 &lt;p&gt;To be filled.&lt;/p&gt;
+&lt;h4 id=&#34;training-error&#34;&gt;Training Error&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Definition ($\tau$ is the training set):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$TE(\hat f, \tau) = \frac{1}{N}\sum_{i=1}^NL(y_i,\hat f(x_i))$$&lt;/p&gt;
+&lt;h4 id=&#34;generalizationtest-error&#34;&gt;Generalization/Test Error&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Definition ($\tau$ is a sample of the random variable T):&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+GE(\hat f, \tau) = E_{X,Y}(L(Y, \hat f_T(X))|T=\tau) \&lt;br&gt;
+= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy \&lt;br&gt;
+= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\frac{\rho(x,y,\tau)}{\rho_\tau\tau}dxdy
+$$&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Expected generalization/test error&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$
+EGE(\hat f, \tau) = E_T(E_{X,Y}(L(Y, \hat f_T(X))|T=\tau)) \&lt;br&gt;
+= \int_{R_T}(\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy)\rho(\tau)d\tau \&lt;br&gt;
+= \int_{R_T}\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y,\tau) dxdyd\tau
+$$&lt;/p&gt;
 &lt;h4 id=&#34;cross-validation&#34;&gt;Cross-Validation&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;

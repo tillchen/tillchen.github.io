@@ -213,6 +213,8 @@
 <li><a href="#model-performance-assessment">Model Performance Assessment</a></li>
 <li><a href="#hyperparameter-tuning">Hyperparameter Tuning</a>
 <ul>
+<li><a href="#training-error">Training Error</a></li>
+<li><a href="#generalizationtest-error">Generalization/Test Error</a></li>
 <li><a href="#cross-validation">Cross-Validation</a></li>
 </ul>
 </li>
@@ -652,7 +654,7 @@
 </ul>
 </li>
 <li>
-<p>Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set) (variance is the difference in fits between data sets - consistency)</p>
+<p>Overfitting: the model predicts very well the training data but poorly the data from the holdout sets. - high variance (the error due to the sensitivity to small fluctuations in the training set) (variance is the difference in fits between data sets - consistency) (large generalization error)</p>
 <ul>
 <li>The model is too complex.</li>
 <li>Too many features but a small number of training examples.</li>
@@ -705,6 +707,28 @@
 <p>To be filled.</p>
 <h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
 <p>To be filled.</p>
+<h4 id="training-error">Training Error</h4>
+<ol>
+<li>Definition ($\tau$ is the training set):</li>
+</ol>
+<p>$$TE(\hat f, \tau) = \frac{1}{N}\sum_{i=1}^NL(y_i,\hat f(x_i))$$</p>
+<h4 id="generalizationtest-error">Generalization/Test Error</h4>
+<ol>
+<li>Definition ($\tau$ is a sample of the random variable T):</li>
+</ol>
+<p>$$
+GE(\hat f, \tau) = E_{X,Y}(L(Y, \hat f_T(X))|T=\tau) \<br>
+= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy \<br>
+= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\frac{\rho(x,y,\tau)}{\rho_\tau\tau}dxdy
+$$</p>
+<ol start="2">
+<li>Expected generalization/test error</li>
+</ol>
+<p>$$
+EGE(\hat f, \tau) = E_T(E_{X,Y}(L(Y, \hat f_T(X))|T=\tau)) \<br>
+= \int_{R_T}(\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy)\rho(\tau)d\tau \<br>
+= \int_{R_T}\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y,\tau) dxdyd\tau
+$$</p>
 <h4 id="cross-validation">Cross-Validation</h4>
 <ol>
 <li>
