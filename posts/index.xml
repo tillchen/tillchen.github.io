@@ -353,7 +353,7 @@
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;The bias-variance decomposition:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;images/kNN_bias_variance_decomposition.png&#34; alt=&#34;kNN bias-variance decomposition&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/kNN_bias_variance_decomposition.png&#34; alt=&#34;kNN bias-variance decomposition&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;The bias-variance trade-off:
 &lt;ul&gt;
