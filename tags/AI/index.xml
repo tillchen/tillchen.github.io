@@ -285,7 +285,7 @@
 &lt;ol start=&#34;13&#34;&gt;
 &lt;li&gt;For a K-dimensional output:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/images/linear_regression_k_d_output.png&#34; alt=&#34;linear regression K-D output&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/linear_regression_k_d_output.png&#34; alt=&#34;linear regression K-D output&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;logistic-regression&#34;&gt;Logistic Regression&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -350,6 +350,19 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/kNN_regression.png&#34; alt=&#34;kNN regression&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/kNN_classification.png&#34; alt=&#34;kNN classification&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;The bias-variance decomposition:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;images/kNN_bias_variance_decomposition.png&#34; alt=&#34;kNN bias-variance decomposition&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;The bias-variance trade-off:
+&lt;ul&gt;
+&lt;li&gt;k=1: if $x_0$ is in the training data, the bias = 0; the largest variance. (similar to overfitting)&lt;/li&gt;
+&lt;li&gt;k=N: the largest bias (the predictor is constant); the smallest variance. (similar to underfitting)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/kNN_error_example.png&#34; alt=&#34;kNN error example&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;anatomy-of-a-learning-algorithm&#34;&gt;Anatomy of a Learning Algorithm&lt;/h2&gt;
 &lt;h3 id=&#34;building-blocks&#34;&gt;Building blocks&lt;/h3&gt;
 &lt;ol&gt;
