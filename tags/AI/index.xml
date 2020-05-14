@@ -266,6 +266,14 @@
 &lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/min_max.png&#34; alt=&#34;min max&#34;&gt;&lt;/p&gt;
 &lt;p&gt;$$M \ \text{positive definite} \Leftrightarrow x^TMx&amp;gt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$&lt;/p&gt;
 &lt;p&gt;$$M \ \text{negative definite} \Leftrightarrow x^TMx&amp;lt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$&lt;/p&gt;
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;Statistical analysis with the additive noise:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/analysis_for_linear_regression.png&#34; alt=&#34;statistical analysis&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/variance.png&#34; alt=&#34;variance&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/z_score.png&#34; alt=&#34;z-score&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/z_score_rule_of_thumb.png&#34; alt=&#34;z-score rule of thumb&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/z_score_example.png&#34; alt=&#34;z-score example&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;logistic-regression&#34;&gt;Logistic Regression&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
