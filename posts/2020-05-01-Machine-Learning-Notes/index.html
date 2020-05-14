@@ -355,6 +355,14 @@
 </ol>
 <p>$$f(x)=argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$</p>
 <p>$$f(x)=\mathbf{g} \ if \ p(\mathbf{g}|x) = \max_{g \in R_G}p(g|x)$$</p>
+<ol start="6">
+<li>Expected squared prediction error of $\hat f$ at location $x_0$:</li>
+</ol>
+<p>$$EPE(\hat f, x_0)=E(L_2(Y,f(X))|X=x_0)$$</p>
+<ol start="7">
+<li>Error = Irreducible Error + $\text{Bias}^2$ + Variance</li>
+</ol>
+<p><img src="https://tillchen.com/images/error_decomposition.png" alt="error decomposition"></p>
 <h2 id="fundamental-algorithms">Fundamental Algorithms</h2>
 <h3 id="linear-regression">Linear Regression</h3>
 <ol>

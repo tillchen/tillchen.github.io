@@ -219,6 +219,14 @@
 &lt;/ol&gt;
 &lt;p&gt;$$f(x)=argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$&lt;/p&gt;
 &lt;p&gt;$$f(x)=\mathbf{g} \ if \ p(\mathbf{g}|x) = \max_{g \in R_G}p(g|x)$$&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Expected squared prediction error of $\hat f$ at location $x_0$:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$EPE(\hat f, x_0)=E(L_2(Y,f(X))|X=x_0)$$&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Error = Irreducible Error + $\text{Bias}^2$ + Variance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/error_decomposition.png&#34; alt=&#34;error decomposition&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;fundamental-algorithms&#34;&gt;Fundamental Algorithms&lt;/h2&gt;
 &lt;h3 id=&#34;linear-regression&#34;&gt;Linear Regression&lt;/h3&gt;
 &lt;ol&gt;
