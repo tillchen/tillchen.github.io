@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              16-minute read
+              18-minute read
             </span>
           </div>
           
@@ -339,44 +339,44 @@
 </li>
 <li>
 <p>Loss functions:</p>
-</li>
-</ol>
 <p>$$L_2(y, y&rsquo;) = (y-y&rsquo;)^2$$</p>
 <p>$$L_{0-1}(g, g&rsquo;) = 0 \ (g=g&rsquo;) \ or \ 1 \ (g\neq g&rsquo;)$$</p>
 <p>$$L_1(y,y&rsquo;) = |y-y'|$$</p>
-<ol start="3">
-<li>Expected prediction error (EPE):</li>
-</ol>
+</li>
+<li>
+<p>Expected prediction error (EPE):</p>
 <p>$$EPE(f)=E(L_2(Y,f(X)))$$</p>
 <p>$$EPE(f)=E(L_{0-1}(G,f(X)))$$</p>
-<ol start="4">
-<li>The function f that minimizes EPE is give by: ($E(Y|X=x)$ is called a regressor/regression function)</li>
-</ol>
+</li>
+<li>
+<p>The function f that minimizes EPE is give by: ($E(Y|X=x)$ is called a regressor/regression function)</p>
 <p>$$f(x)=E(Y|X=x)$$</p>
-<ol start="5">
-<li>Bayes classifier:</li>
-</ol>
+</li>
+<li>
+<p>Bayes classifier:</p>
 <p>$$f(x)=argmin_{g \in R_G}[1-p(g|x)] \Rightarrow$$</p>
 <p>$$f(x)=\mathbf{g} \ if \ p(\mathbf{g}|x) = \max_{g \in R_G}p(g|x)$$</p>
-<ol start="6">
-<li>Expected squared prediction error of $\hat f$ at location $x_0$:</li>
-</ol>
+</li>
+<li>
+<p>Expected squared prediction error of $\hat f$ at location $x_0$:</p>
 <p>$$EPE(\hat f, x_0)=E(L_2(Y,f(X))|X=x_0)$$</p>
-<ol start="7">
-<li>Error = Irreducible Error + $\text{Bias}^2$ + Variance</li>
-</ol>
+</li>
+<li>
+<p>Error = Irreducible Error + $\text{Bias}^2$ + Variance</p>
 <p><img src="https://tillchen.com/images/error_decomposition.png" alt="error decomposition"></p>
+</li>
+</ol>
 <h2 id="fundamental-algorithms">Fundamental Algorithms</h2>
 <h3 id="linear-regression">Linear Regression</h3>
 <ol>
-<li>We want a model as a linear combination of features of example x ($w$ is a D-dimensional vector of parameters and b is a real number.):</li>
-</ol>
+<li>
+<p>We want a model as a linear combination of features of example x ($w$ is a D-dimensional vector of parameters and b is a real number.):</p>
 <p>$$f_{w,b}(x) = wx+b$$</p>
-<ol start="2">
-<li>We find the optimal values $w^{*}$ and $b^{*}$ by minimizing the cost function below (the empirical risk - the average loss):</li>
-</ol>
+</li>
+<li>
+<p>We find the optimal values $w^{*}$ and $b^{*}$ by minimizing the cost function below (the empirical risk - the average loss):</p>
 <p>$$\frac{1}{N}\sum_{i=1&hellip;N}(f_{w,b}(x_i)-y_i)^2$$</p>
-<ol start="3">
+</li>
 <li>
 <p>Overfitting: a model that predicts well for the training data but not for data unseen during training. Linear regression rarely overfits.</p>
 </li>
@@ -388,43 +388,43 @@
 </li>
 <li>
 <p>The linear model is an approximation for the regressor $E(Y|X)$ of the form: ($\beta_0$ is the intercept or bias)</p>
-</li>
-</ol>
 <p>$$f_{\beta}(X) = \beta_0+\sum_{j=1}^DX_j\beta_j$$</p>
-<ol start="7">
-<li>By using $\beta = (\beta_0,&hellip;,\beta_D)^T$ and $Z=(1,X_1,&hellip;,X_D)^T$, we can rewrite the model to:</li>
-</ol>
+</li>
+<li>
+<p>By using $\beta = (\beta_0,&hellip;,\beta_D)^T$ and $Z=(1,X_1,&hellip;,X_D)^T$, we can rewrite the model to:</p>
 <p>$$f_{\beta}(Z)=Z^T\beta$$</p>
-<ol start="8">
-<li>The least squares estimator (parameter estimator $\gamma$):</li>
-</ol>
+</li>
+<li>
+<p>The least squares estimator (parameter estimator $\gamma$):</p>
 <p>$$\gamma = argmin_{\gamma}\sum_{i=1}^N(y_i-f_{\gamma}(x_i))^2$$</p>
-<ol start="9">
-<li>Solution for the estimator:</li>
-</ol>
+</li>
+<li>
+<p>Solution for the estimator:</p>
 <p><img src="https://tillchen.com/images/linear_regression_least_squares.png" alt="Linear Regression by Least Squares"></p>
-<ol start="10">
-<li>The algorithm:</li>
-</ol>
+</li>
+<li>
+<p>The algorithm:</p>
 <p><img src="https://tillchen.com/images/linear_regression.png" alt="Linear Regression"></p>
-<ol start="11">
-<li>Find local minimum/maximum:</li>
-</ol>
+</li>
+<li>
+<p>Find local minimum/maximum:</p>
 <p><img src="https://tillchen.com/images/min_max.png" alt="min max"></p>
 <p>$$M \ \text{positive definite} \Leftrightarrow x^TMx&gt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$</p>
 <p>$$M \ \text{negative definite} \Leftrightarrow x^TMx&lt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$</p>
-<ol start="12">
-<li>Statistical analysis with the additive noise:</li>
-</ol>
+</li>
+<li>
+<p>Statistical analysis with the additive noise:</p>
 <p><img src="https://tillchen.com/images/analysis_for_linear_regression.png" alt="statistical analysis"></p>
 <p><img src="https://tillchen.com/images/variance.png" alt="variance"></p>
 <p><img src="https://tillchen.com/images/z_score.png" alt="z-score"></p>
 <p><img src="https://tillchen.com/images/z_score_rule_of_thumb.png" alt="z-score rule of thumb"></p>
 <p><img src="https://tillchen.com/images/z_score_example.png" alt="z-score example"></p>
-<ol start="13">
-<li>For a K-dimensional output:</li>
-</ol>
+</li>
+<li>
+<p>For a K-dimensional output:</p>
 <p><img src="https://tillchen.com/images/linear_regression_k_d_output.png" alt="linear regression K-D output"></p>
+</li>
+</ol>
 <h3 id="logistic-regression">Logistic Regression</h3>
 <ol>
 <li>
@@ -432,29 +432,27 @@
 </li>
 <li>
 <p>The standard logistic function or the sigmoid function:</p>
-</li>
-</ol>
 <p>$$f(x)=\frac{1}{1+e^{-x}}$$</p>
 <p><img src="https://tillchen.com/images/logistic_function.png" alt="Logistic Function"></p>
-<ol start="3">
-<li>The logistic regression model:</li>
-</ol>
+</li>
+<li>
+<p>The logistic regression model:</p>
 <p>$$f(x)=\frac{1}{1+e^{-(wx+b)}}$$</p>
-<ol start="4">
+</li>
 <li>
 <p>For binary classification, we can say the label is positive if the probability is higher than or equal to 0.5.</p>
 </li>
 <li>
 <p>We optimize by using the maximum likelihood (the goodness of fit) ($y_i$ is either 0 or 1):</p>
-</li>
-</ol>
 <p>$$L_{w,b}=\prod_{i=1&hellip;N}f_{w,b}(x_i)^{y_i}(1-f_{w,b}(x_i))^{1-y_i}$$</p>
-<ol start="6">
-<li>In practice, it&rsquo;s more convenient to maximize the log-likelihood (since ln is a strictly increasing function, maximizing this is the same as maximizing its argument):</li>
-</ol>
+</li>
+<li>
+<p>In practice, it&rsquo;s more convenient to maximize the log-likelihood (since ln is a strictly increasing function, maximizing this is the same as maximizing its argument):</p>
 <p>$$LogL_{w,b}=ln(L_{w,b})=\sum_{i=1}^Ny_iln(f_{w,b}(x_i)) + (1-y_i)ln(1-f_{w,b}(x_i))$$</p>
-<ol start="7">
-<li>Unlike linear regression, there&rsquo;s no closed form solution. A typical numerical optimization procedure is gradient descent.</li>
+</li>
+<li>
+<p>Unlike linear regression, there&rsquo;s no closed form solution. A typical numerical optimization procedure is gradient descent.</p>
+</li>
 </ol>
 <h3 id="decision-tree-learning">Decision Tree Learning</h3>
 <p>To be filled.</p>
@@ -485,23 +483,24 @@
 <li>
 <p>The closeness of two examples is given by a distance function. Other than the Euclidean distance, we could also use the cosine similarity function ($0^{\circ}: 1; 90^{\circ}: 0; 180^{\circ}: -1$).</p>
 </li>
-<li></li>
-</ol>
+<li>
+<p>Algorithms</p>
 <p><img src="https://tillchen.com/images/kNN_regression.png" alt="kNN regression"></p>
 <p><img src="https://tillchen.com/images/kNN_classification.png" alt="kNN classification"></p>
-<ol start="4">
-<li>The bias-variance decomposition:</li>
-</ol>
+</li>
+<li>
+<p>The bias-variance decomposition:</p>
 <p><img src="https://tillchen.com/images/kNN_bias_variance_decomposition.png" alt="kNN bias-variance decomposition"></p>
-<ol start="5">
-<li>The bias-variance trade-off:
+</li>
+<li>
+<p>The bias-variance trade-off:</p>
 <ul>
 <li>k=1: if $x_0$ is in the training data, the bias = 0; the largest variance. (similar to overfitting)</li>
 <li>k=N: the largest bias (the predictor is constant); the smallest variance. (similar to underfitting)</li>
 </ul>
+<p><img src="https://tillchen.com/images/kNN_error_example.png" alt="kNN error example"></p>
 </li>
 </ol>
-<p><img src="https://tillchen.com/images/kNN_error_example.png" alt="kNN error example"></p>
 <h2 id="anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</h2>
 <h3 id="building-blocks">Building blocks</h3>
 <ol>
@@ -516,18 +515,18 @@
 </li>
 <li>
 <p>The gradient is calculated by taking the partial derivative for every parameter in the loss function: (take linear regression as an example)</p>
-</li>
-</ol>
 <p>$$l = \frac{1}{N}\sum_{i=1}^{N}(y_i-(wx_i+b))^2$$</p>
 <p>$$\frac{\partial l}{\partial w} = \frac{1}{N}\sum_{i=1}^{N}-2x_i(y_i-(wx_i+b))$$</p>
 <p>$$\frac{\partial l}{\partial b} = \frac{1}{N}\sum_{i=1}^{N}-2(y_i-(wx_i+b))$$</p>
-<ol start="3">
-<li>An epoch consists of using the training set entirely to update each parameter. At each epoch, we update $w$ and $b$ ($\alpha$ is the learning rate):</li>
-</ol>
+</li>
+<li>
+<p>An epoch consists of using the training set entirely to update each parameter. At each epoch, we update $w$ and $b$ ($\alpha$ is the learning rate):</p>
 <p>$$w \leftarrow w - \alpha\frac{\partial l}{\partial w}$$</p>
 <p>$$b \leftarrow b - \alpha\frac{\partial l}{\partial b}$$</p>
-<ol start="4">
-<li>Minibatch stochastic gradient descent is a version that speed up the computation by approximating the gradient using smaller batches.</li>
+</li>
+<li>
+<p>Minibatch stochastic gradient descent is a version that speed up the computation by approximating the gradient using smaller batches.</p>
+</li>
 </ol>
 <h3 id="particularities">Particularities</h3>
 <ol>
@@ -578,9 +577,11 @@
 </ol>
 <h4 id="normalization">Normalization</h4>
 <ol>
-<li>Normalization converts a numerical value into a value typically in the interval [-1,1] or [0,1], which increases the speed of learning:</li>
-</ol>
+<li>
+<p>Normalization converts a numerical value into a value typically in the interval [-1,1] or [0,1], which increases the speed of learning:</p>
 <p>$$\bar x^{(j)} = \frac{x^{(j)}-min^{(j)}}{max^{(j)}-min^{(j)}}$$</p>
+</li>
+</ol>
 <h4 id="standardization-z-score-normalization">Standardization (Z-score Normalization)</h4>
 <ol>
 <li>
@@ -588,11 +589,10 @@
 </li>
 <li>
 <p>Standard scores or z-scores can be calculated as follows:</p>
-</li>
-</ol>
 <p>$$\hat x^{(j)} = \frac{x^{(j)} - \mu^{(j)}}{\sigma^{(j)}}$$</p>
-<ol start="3">
-<li>Normalization vs Standardization:
+</li>
+<li>
+<p>Normalization vs Standardization:</p>
 <ul>
 <li>Unsupervised learning - standardization.</li>
 <li>The distribution is close to a normal distribution - standardization.</li>
@@ -628,9 +628,9 @@
 <li>Categorical vs. numerical features</li>
 <li>Nonlinearity of the data (SVM/linear regression/linear kernel/logistic regression of lineraly separable data)</li>
 <li>Training speed (neural networks are slow to train)</li>
-<li>Prediction speed</li>
+<li>Prediction speed
+<img src="https://tillchen.com/images/ml_map.png" alt="scikit-learn cheat sheet"></li>
 </ul>
-<p><img src="https://tillchen.com/images/ml_map.png" alt="scikit-learn cheat sheet"></p>
 <h3 id="three-sets">Three Sets</h3>
 <ol>
 <li>
@@ -689,14 +689,12 @@
 </li>
 <li>
 <p>For linear regression, L1 looks like this ($|\mathbf{w}| = \sum_{i=1}^D|w^{(j)}|$ and C is a hyperparameter), which tries to set most $w^{(j)}$ to value small values or zero (|| means abs here):</p>
-</li>
-</ol>
 <p>$$\min_{\mathbf{w},b} \left[C|\mathbf{w}| + \frac{1}{N}\sum_{i=1&hellip;N}(f_{\mathbf{w},b}(\mathbf{x}_i)-y_i)^2\right]$$</p>
-<ol start="4">
-<li>For linear regression, L2 looks like this (($||\mathbf{w}||^2 = \sum_{i=1}^D(w^{(j)})^2$):</li>
-</ol>
+</li>
+<li>
+<p>For linear regression, L2 looks like this (($||\mathbf{w}||^2 = \sum_{i=1}^D(w^{(j)})^2$):</p>
 <p>$$\min_{\mathbf{w},b} \left[C||\mathbf{w}||^2 + \frac{1}{N}\sum_{i=1&hellip;N}(f_{\mathbf{w},b}(\mathbf{x}_i)-y_i)^2\right]$$</p>
-<ol start="5">
+</li>
 <li>
 <p>L1 produces a sparse model with most parameters equal to zero if C is large enough, which makes feature selection that decides which features are essential and increases explainability. L2 gives better results if our only goal is to maximize the performance on holdout sets. Plus L2 is differentiable - graident descent.</p>
 </li>
@@ -710,26 +708,30 @@
 <p>To be filled.</p>
 <h4 id="training-error">Training Error</h4>
 <ol>
-<li>Definition ($\tau$ is the training set):</li>
-</ol>
+<li>
+<p>Definition ($\tau$ is the training set):</p>
 <p>$$TE(\hat f, \tau) = \frac{1}{N}\sum_{i=1}^NL(y_i,\hat f(x_i))$$</p>
+</li>
+</ol>
 <h4 id="generalizationtest-error">Generalization/Test Error</h4>
 <ol>
-<li>Definition ($\tau$ is a sample of the random variable T):</li>
-</ol>
+<li>
+<p>Definition ($\tau$ is a sample of the random variable T):</p>
 <p>$$
 GE(\hat f, \tau) = E_{X,Y}(L(Y, \hat f_T(X))|T=\tau) \<br>
 = \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy \<br>
 = \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\frac{\rho(x,y,\tau)}{\rho_\tau\tau}dxdy
 $$</p>
-<ol start="2">
-<li>Expected generalization/test error</li>
-</ol>
+</li>
+<li>
+<p>Expected generalization/test error</p>
 <p>$$
 EGE(\hat f, \tau) = E_T(E_{X,Y}(L(Y, \hat f_T(X))|T=\tau)) \<br>
 = \int_{R_T}(\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy)\rho(\tau)d\tau \<br>
 = \int_{R_T}\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y,\tau) dxdyd\tau
 $$</p>
+</li>
+</ol>
 <h4 id="validation-set-error-estimation">Validation Set Error Estimation</h4>
 <p><img src="https://tillchen.com/images/validation_set.png" alt="validation set"></p>
 <h4 id="cross-validation">Cross-Validation</h4>
@@ -739,13 +741,13 @@ $$</p>
 </li>
 <li>
 <p>Each subset of the training set is called a fold. Typically, a five-fold cross-validation is used in practice. We would train five models (use $F_2 F_3 F_4 F_5$ for model 1 and so on) and compute the value of the metric of interest on each validation set, from $F_1$ to $F_5$ and get the average score.</p>
+<p><img src="https://tillchen.com/images/cross_validation.png" alt="cross validation"></p>
+</li>
+<li>
+<p>Leave-one-out cross validation:</p>
+<p><img src="https://tillchen.com/images/leave_one_out_validation.png" alt="leave-one-out cross validation"></p>
 </li>
 </ol>
-<p><img src="https://tillchen.com/images/cross_validation.png" alt="cross validation"></p>
-<ol start="3">
-<li>Leave-one-out cross validation:</li>
-</ol>
-<p><img src="https://tillchen.com/images/leave_one_out_validation.png" alt="leave-one-out cross validation"></p>
 <h2 id="neural-networks-and-deep-learning">Neural Networks and Deep Learning</h2>
 <h3 id="neural-networks">Neural Networks</h3>
 <ol>
@@ -771,9 +773,9 @@ $$</p>
 </li>
 <li>
 <p>An example (each unit&rsquo;s parameters $w_{l,u}$ and $b_{l,u}$):</p>
+<p><img src="https://tillchen.com/images/mlp.png" alt="MLP"></p>
 </li>
 </ol>
-<p><img src="https://tillchen.com/images/mlp.png" alt="MLP"></p>
 <h4 id="feed-forward-neural-network-architecture">Feed-Forward Neural Network Architecture</h4>
 <ol>
 <li>
@@ -784,11 +786,11 @@ $$</p>
 </li>
 <li>
 <p>Popular choices for $g$ are the logistic function, TanH, and ReLU (rectified linear unit function):</p>
-</li>
-</ol>
 <p>$$tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}$$</p>
 <p>$$relu(z) = 0 \ \ if \ z &lt; 0$$</p>
 <p>$$relu(z)= z \ \ otherwise$$</p>
+</li>
+</ol>
 <h3 id="deep-learning">Deep Learning</h3>
 <ol>
 <li>
@@ -806,7 +808,42 @@ $$</p>
 </li>
 </ol>
 <h4 id="convolutional-neural-network">Convolutional Neural Network</h4>
-<p>To be filled.</p>
+<ol>
+<li>
+<p>When our training examples are images, the input is very high-dimensional (each picture is a feature). If we use MLP, the optimization problem is likely to become intractable.</p>
+</li>
+<li>
+<p>A convolutional neural network (CNN) is a special kind of FFNN that significantly reduces the number of parameters. Convolutional networks are simply neural networks that use convolution in place of general matrix multiplication in at least one of their layers.</p>
+</li>
+<li>
+<p>We use the moving window approach and then train multiple smaller regression models at once, each small regression model receiving a square patch as input. The goal of each small regression model is to detect a specific kind of pattern in the input patch. To detect some pattern, a small regression model has to learn the parameters of a matrix $\mathbf{F}$ (filter).</p>
+</li>
+<li>
+<p>For example, if we have the following matrix $\mathbf{P}$ (patch) and $\mathbf{F}$, we can calculate the convolution of them. And the value is higher the more similar $\mathbf{F}$ is to $\mathbf{P}$. (The patch represents a pattern that looks like a cross.)</p>
+<p><img src="https://tillchen.com/images/convolution.png" alt="convolution"></p>
+</li>
+<li>
+<p>For convenience, there&rsquo;s also a bias parameter b associated with each filter which is added to the result to a convolution.</p>
+</li>
+<li>
+<p>One layer of a CNN consists of multiple convolution filters. Each filter of the first layer slides - or convolves - across the input image, left to right, top to bottom.</p>
+<p><img src="https://tillchen.com/images/convolving.png" alt="convolving"></p>
+</li>
+<li>
+<p>The filters and bias values are trainable parameters and are optimized using gradient descent with backpropagation.</p>
+</li>
+<li>
+<p>The subsequent layer treats the output of the preceding layer as a collection of image matrices. Such a collection is called a volume.</p>
+<p><img src="https://tillchen.com/images/volume.png" alt="volume"></p>
+</li>
+<li>
+<p>Stride is the step size of the moving window. We can also use paddings.</p>
+</li>
+<li>
+<p>Pooling is a layer that applies a fixed operator, usually either max or average instead of applying a trainable filter. It increases the accuracy and improves the training speed by reducing the number of parameters. (The one below uses max.)</p>
+<p><img src="https://tillchen.com/images/pooling.png" alt="pooling"></p>
+</li>
+</ol>
 <h4 id="recurrent-neural-network">Recurrent Neural Network</h4>
 <p>To be filled.</p>
 <h2 id="problems-and-solutions">Problems and Solutions</h2>
@@ -817,13 +854,13 @@ $$</p>
 </li>
 <li>
 <p>The simplest kernel regression looks like this (the function $k(\cdot)$ is called a kernel, which plays the role of a similarity function - $w_i$ is higher when x is similar to $x_i$):</p>
+<p>$$f(x)=\frac{1}{N}\sum_{i=1}^{N}w_iy_i, \ where \ w_i = \frac{Nk(\frac{x_i - x}{b})}{\sum_{l=1}^Nk(\frac{x_l - x}{b})}$$</p>
+</li>
+<li>
+<p>Kernels can have different forms, the most frequently used is the Gaussian kernel:</p>
+<p>$$k(z)=\frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2})$$</p>
 </li>
 </ol>
-<p>$$f(x)=\frac{1}{N}\sum_{i=1}^{N}w_iy_i, \ where \ w_i = \frac{Nk(\frac{x_i - x}{b})}{\sum_{l=1}^Nk(\frac{x_l - x}{b})}$$</p>
-<ol start="3">
-<li>Kernels can have different forms, the most frequently used is the Gaussian kernel:</li>
-</ol>
-<p>$$k(z)=\frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2})$$</p>
 <h3 id="multiclass-classification">Multiclass Classification</h3>
 <p>To be filled.</p>
 <h3 id="one-class-classification">One-Class Classification</h3>
@@ -880,10 +917,10 @@ $$</p>
 </ol>
 <h4 id="principal-component-analysis-pca">Principal Component Analysis (PCA)</h4>
 <ol>
-<li>Example:</li>
-</ol>
+<li>
+<p>Example:</p>
 <p><img src="https://tillchen.com/images/pca.png" alt="PCA"></p>
-<ol start="2">
+</li>
 <li>
 <p>Principal components are vectors that define a new coordinate system in which the first axis goes in the direction of the highest variance in the data. The second axis is orthogonal to the first one and goes in the direction of the second highest variance in the data. The length of the arrow reflects the variance in the direction.</p>
 </li>
