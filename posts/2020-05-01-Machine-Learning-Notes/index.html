@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              18-minute read
+              19-minute read
             </span>
           </div>
           
@@ -210,7 +210,15 @@
 <li><a href="#three-sets">Three Sets</a></li>
 <li><a href="#underfitting-and-overfitting">Underfitting and Overfitting</a></li>
 <li><a href="#regularization">Regularization</a></li>
-<li><a href="#model-performance-assessment">Model Performance Assessment</a></li>
+<li><a href="#model-performance-assessment">Model Performance Assessment</a>
+<ul>
+<li><a href="#confusion-matrix">Confusion Matrix</a></li>
+<li><a href="#precisionrecall">Precision/Recall</a></li>
+<li><a href="#accuracy">Accuracy</a></li>
+<li><a href="#cost-sensitive-accuracy">Cost-Sensitive Accuracy</a></li>
+<li><a href="#area-under-the-roc-curve-auc">Area under the ROC Curve (AUC)</a></li>
+</ul>
+</li>
 <li><a href="#hyperparameter-tuning">Hyperparameter Tuning</a>
 <ul>
 <li><a href="#training-error">Training Error</a></li>
@@ -240,7 +248,11 @@
 <li><a href="#problems-and-solutions">Problems and Solutions</a>
 <ul>
 <li><a href="#kernel-regression">Kernel Regression</a></li>
-<li><a href="#classification">Classification</a></li>
+<li><a href="#classification">Classification</a>
+<ul>
+<li><a href="#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
+</ul>
+</li>
 <li><a href="#multiclass-classification">Multiclass Classification</a></li>
 <li><a href="#one-class-classification">One-Class Classification</a></li>
 <li><a href="#multi-label-classification">Multi-Label Classification</a></li>
@@ -704,6 +716,53 @@
 </li>
 </ol>
 <h3 id="model-performance-assessment">Model Performance Assessment</h3>
+<ol>
+<li>
+<p>For regression, we first compare our model with the mean model, which always predicts the average of the labels in the training data. If the fit or our model is better than the mean model, we compare the MSE (mean squared error) for the training and test data. If the MSE for the test data is substantially higher, it is a sign of overfitting.</p>
+</li>
+<li>
+<p>For classification, we have the following metrics and tools:</p>
+</li>
+</ol>
+<h4 id="confusion-matrix">Confusion Matrix</h4>
+<ol>
+<li>
+<p>The confusion matrix is a table that summarizes how successful the classification model at predicting examples belonging to various classes.</p>
+</li>
+<li>
+<p>Take a binary classification problem as an example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>spam (predicted)</th>
+<th>not_spam (predicted)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spam (actual)</td>
+<td>23 (TP)</td>
+<td>1 (FN)</td>
+</tr>
+<tr>
+<td>not_spam (actual)</td>
+<td>12 (FP)</td>
+<td>556 (TN)</td>
+</tr>
+</tbody>
+</table>
+<p>TP - True Positive; FN - False Negative;</p>
+<p>FP - False Positive; TN - True Negative;</p>
+</li>
+</ol>
+<h4 id="precisionrecall">Precision/Recall</h4>
+<p>To be filled.</p>
+<h4 id="accuracy">Accuracy</h4>
+<p>To be filled.</p>
+<h4 id="cost-sensitive-accuracy">Cost-Sensitive Accuracy</h4>
+<p>To be filled.</p>
+<h4 id="area-under-the-roc-curve-auc">Area under the ROC Curve (AUC)</h4>
 <p>To be filled.</p>
 <h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
 <p>To be filled.</p>
@@ -874,6 +933,23 @@ $$</p>
 <li>
 <p>Classification by linear regression of indicator matrix:</p>
 <p><img src="https://tillchen.com/images/classification_by_linear_regression.png" alt="classification by linear regression"></p>
+</li>
+</ol>
+<h4 id="linear-discriminant-analysis">Linear Discriminant Analysis</h4>
+<ol>
+<li>
+<p>Linear Discriminant analysis (LDA) is a method used to find a linear combination of features that characterizes or separates two or more classes of objects or events. The resulting combination may be used as a linear classifier, or, more commonly, for dimensionality reduction before later classification.</p>
+</li>
+<li>
+<p>The mathematical definition and the algorithm:</p>
+<p><img src="https://tillchen.com/images/LDA.png" alt="LDA">
+<img src="https://tillchen.com/images/LDA_algorithm.png" alt="LDA algorithm"></p>
+</li>
+<li>
+<p>LDA ia linear predictor.</p>
+</li>
+<li>
+<p>A non-linear classification predictor can be obtained if we use $N(\mu_g, \Sigma_g)$ instead of $N(\mu_g, \Sigma)$, i.e. a class dependent covariance.</p>
 </li>
 </ol>
 <h3 id="multiclass-classification">Multiclass Classification</h3>
