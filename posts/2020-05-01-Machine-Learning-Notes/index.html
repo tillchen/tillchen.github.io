@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              19-minute read
+              20-minute read
             </span>
           </div>
           
@@ -979,14 +979,51 @@ $$</p>
 <h3 id="density-estimation">Density Estimation</h3>
 <p>To be filled.</p>
 <h3 id="clustering">Clustering</h3>
+<ol>
+<li>
 <p>Clustering is a problem of learning to assign a label to examples by leveraging an unlabeled dataset.</p>
+</li>
+<li>
+<p>A dissimilarity function measures the difference / lack of affinity between two observations from X. It holds that $d(x,x) = 0$ and $d(x,x&rsquo;)=d(x&rsquo;,x)$. Some examples:</p>
+<ul>
+<li>Squared Euclidean Distance: $d(x,x&rsquo;)=\sum_{j=1}^D(x_j-x_{j}')^2$</li>
+<li>Componentwise Distance: $d(x,x&rsquo;)=\sum_{j=1}^D|x_j-x_{j}&lsquo;|$</li>
+<li>Weighted Squared Euclidean Distance: $d(x,x&rsquo;)=\sum_{j=1}^Dw_j(x_j-x_{j}')^2$</li>
+</ul>
+</li>
+<li>
+<p>In combinatorial clustering, we look for an encoder $C:\{1,..,N\} \rightarrow \{1,..,K\}$ that assigns each sample $x_i$ a label or cluster $k = C(i)$ such that a given loss is minimized.</p>
+</li>
+<li>
+<p>The canonical loss for the encoder:</p>
+<p>$$L(C) = \frac{1}{2}\sum_{k=1}^K\sum_{C(i)=k}\sum_{C_(i&rsquo;)=k}d(x_i,x_{i&rsquo;})$$</p>
+</li>
+<li>
+<p>We can use centroids ($\bar x_k = \frac{1}{N_k}\sum_{C(i)=k}x_i$) to simplify the loss function</p>
+<p>$$L(C)=\sum_{k=1}^KN_k\sum_{C(i)=k}||x_i=\bar x_k||^2$$</p>
+</li>
+</ol>
 <h4 id="k-means">K-Means</h4>
 <ol>
-<li>Choose k - the number of clusters (a hyperparameter which requires an educated guess).</li>
-<li>Randomly put k feature vectors, called centroids, to the feature space. (The initial positions influence the final positions.)</li>
-<li>Compute the distance from each example x to each centroid c using some metric, like the Euclidean distance. Assign the closest centroid to each example.</li>
-<li>For each centroid, calculate the average feature vector of the examples labeled with it. The average feature vectors become the new locations of the centroids.</li>
-<li>Recompute the distance from each example to each centroid, modify the assignment and repeat the procedure until the assignments don&rsquo;t change after the centroid locations were recomputed.</li>
+<li>
+<p>Choose k - the number of clusters (a hyperparameter which requires an educated guess).</p>
+</li>
+<li>
+<p>Randomly put k feature vectors, called centroids, to the feature space. (The initial positions influence the final positions.)</p>
+</li>
+<li>
+<p>Compute the distance from each example x to each centroid c using some metric, like the Euclidean distance. Assign the closest centroid to each example.</p>
+</li>
+<li>
+<p>For each centroid, calculate the average feature vector of the examples labeled with it. The average feature vectors become the new locations of the centroids.</p>
+</li>
+<li>
+<p>Recompute the distance from each example to each centroid, modify the assignment and repeat the procedure until the assignments don&rsquo;t change after the centroid locations were recomputed.</p>
+</li>
+<li>
+<p>The algorithm (using iterative greedy descent):</p>
+<p><img src="https://tillchen.com/images/k_means.png" alt="k-means"></p>
+</li>
 </ol>
 <h4 id="dbscan-and-hdbscan">DBSCAN and HDBSCAN</h4>
 <p>To be filled.</p>
