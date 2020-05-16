@@ -730,7 +730,7 @@ $$&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Decision boundary: the set of points at which the probability of x to be in either of the classes is equal:&lt;/p&gt;
-&lt;p&gt;$${x \in \mathbb{R}_X|p(1|x)=p(2|x)}$$&lt;/p&gt;
+&lt;p&gt;$$\{x \in \mathbb{R}_X|p(1|x)=p(2|x)\}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The classification is linear if the decision boundaries are linear.&lt;/p&gt;
