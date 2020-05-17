@@ -595,10 +595,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;So we limit the size of coefficients (shrinkage) (a larger $\lambda$ means stronger shrinkage. The value is optimized by cross validation.):&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../static/images/ridge_regression.png&#34; alt=&#34;ridge regression&#34;&gt;
-&lt;img src=&#34;../../static/images/ridge_regression_estimator.png&#34; alt=&#34;ridge regression estimator&#34;&gt;
-&lt;img src=&#34;../../static/images/kernel_ridge_regression.png&#34; alt=&#34;kernel ridge regression&#34;&gt;
-&lt;img src=&#34;../../static/images/kernel_ridge_regression_algorithm.png&#34; alt=&#34;kernel ridge regression algorithm&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tillchen.com/images/ridge_regression.png&#34; alt=&#34;ridge regression&#34;&gt;
+&lt;img src=&#34;https://tillchen.com/images/ridge_regression_estimator.png&#34; alt=&#34;ridge regression estimator&#34;&gt;
+&lt;img src=&#34;https://tillchen.com/images/kernel_ridge_regression.png&#34; alt=&#34;kernel ridge regression&#34;&gt;
+&lt;img src=&#34;https://tillchen.com/images/kernel_ridge_regression_algorithm.png&#34; alt=&#34;kernel ridge regression algorithm&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;model-performance-assessment&#34;&gt;Model Performance Assessment&lt;/h3&gt;
