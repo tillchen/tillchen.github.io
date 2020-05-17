@@ -1050,10 +1050,26 @@ $$</p>
 <p><img src="https://tillchen.com/images/pca.png" alt="PCA"></p>
 </li>
 <li>
-<p>Principal components are vectors that define a new coordinate system in which the first axis goes in the direction of the highest variance in the data. The second axis is orthogonal to the first one and goes in the direction of the second highest variance in the data. The length of the arrow reflects the variance in the direction.</p>
+<p>Principal components are vectors that define a new coordinate system in which the first axis goes in the direction of the highest variance in the data. The second axis is orthogonal to the first one and goes in the direction of the second highest variance in the data. The length of the arrow reflects the variance in the direction. They form the orthogonal basis.</p>
 </li>
 <li>
 <p>If we want to reduce the dimensionality to $D_{new} &lt; D$, we pick $D_{new}$ largest principal components and project our data points on them. For 2D, we can set $D_{new} = 1$ and get the projected orange points in the figure. To describe each orange point, we need only one coordinate instead of two: the coordinate with respect to the first principal component.</p>
+</li>
+<li>
+<p>For data compression/ dimensionality reduction, we aim to look for a lower-dimensional representation / compression of data (lossy compression, ${W}_d \ {V}_d$ are matrices for compression and decompression respectively):</p>
+<p>$$z_i = comp_d (x_i)$$
+$$x_i \approx \hat x_i = decomp_d (z_i)$$
+$$(\hat{V_d}, \hat{W_d}) = argmin_{W_d, {V}_d} \sum_{i=1}^N||x_i-V_d {W}_d x_i||^2$$</p>
+</li>
+<li>
+<p>For the matrix above ($\hat{V_d}$), it&rsquo;s orthonormal and $\hat{W_d} = \hat{V_d^T}$. So we can rewrite our minimization problem (the columns of $\hat {V}_d$ are called principle components, which are ordered by importance):</p>
+<p>$$\hat {V_d} = argmin_{V_d} \sum_{i=1}^N||x_i-V_d V_d^T x_i||^2$$</p>
+</li>
+<li>
+<p>Algorithms (svd -&gt; singular value)</p>
+<p><img src="https://tillchen.com/images/PCA_algorithm.png" alt="PCA algorithm">
+<img src="https://tillchen.com/images/compression.png" alt="compression">
+<img src="https://tillchen.com/images/decompression.png" alt="decompression"></p>
 </li>
 </ol>
 <h4 id="umap">UMAP</h4>
