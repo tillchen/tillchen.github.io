@@ -247,6 +247,11 @@
 </li>
 <li><a href="#problems-and-solutions">Problems and Solutions</a>
 <ul>
+<li><a href="#basis-expansions">Basis Expansions</a>
+<ul>
+<li><a href="#regression-with-gaussian-kernel">Regression with Gaussian Kernel</a></li>
+</ul>
+</li>
 <li><a href="#kernel-regression">Kernel Regression</a></li>
 <li><a href="#classification">Classification</a>
 <ul>
@@ -907,6 +912,31 @@ $$</p>
 <h4 id="recurrent-neural-network">Recurrent Neural Network</h4>
 <p>To be filled.</p>
 <h2 id="problems-and-solutions">Problems and Solutions</h2>
+<h3 id="basis-expansions">Basis Expansions</h3>
+<ol>
+<li>
+<p>Basis expansion extends the linear model to a non-linear model. We achieve this by introducing basis functions $\phi_m (X)$.</p>
+</li>
+<li>
+<p>Definition:</p>
+<p><img src="https://tillchen.com/images/basis_expansion.png" alt="basis expansion"></p>
+</li>
+<li>
+<p>For quadratic polynomial regression, our basis functions will be: $\phi_1(x)=1, \ \phi_2(x)=x, \ \phi_3(x)=x^2$</p>
+</li>
+</ol>
+<h4 id="regression-with-gaussian-kernel">Regression with Gaussian Kernel</h4>
+<ol>
+<li>
+<p>The Gaussian kernel ($\sigma^2$ is a scaler parameter, i.e. the variance or kernel width):</p>
+<p>$$k(x,x&rsquo;)=e^{-\frac{||x-x'||^2}{\sigma^2}}$$</p>
+</li>
+<li>
+<p>Regression for kernel-based model:</p>
+<p><img src="https://tillchen.com/images/kernel_based_regression.png" alt="kernel-based regression">
+<img src="https://tillchen.com/images/kernel_algorithm.png" alt="kernel algorithm"></p>
+</li>
+</ol>
 <h3 id="kernel-regression">Kernel Regression</h3>
 <ol>
 <li>
