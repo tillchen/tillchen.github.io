@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tillchen.com/posts/</loc>
+    <lastmod>2020-05-21T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/Software-Engineering/</loc>
+    <lastmod>2020-05-21T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/</loc>
+    <lastmod>2020-05-21T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tillchen.com/tags/</loc>
+    <lastmod>2020-05-21T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tillchen.com/tags/AI/</loc>
     <lastmod>2020-05-01T09:25:01+02:00</lastmod>
   </url>
@@ -14,16 +34,6 @@
   
   <url>
     <loc>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</loc>
-    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tillchen.com/posts/</loc>
-    <lastmod>2020-05-01T09:25:01+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tillchen.com/tags/</loc>
     <lastmod>2020-05-01T09:25:01+02:00</lastmod>
   </url>
   
@@ -69,11 +79,6 @@
   
   <url>
     <loc>https://tillchen.com/posts/2020-03-29-Design-Patterns/</loc>
-    <lastmod>2020-03-29T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tillchen.com/tags/Software-Engineering/</loc>
     <lastmod>2020-03-29T00:00:00+01:00</lastmod>
   </url>
   

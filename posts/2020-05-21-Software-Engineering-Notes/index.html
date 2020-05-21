@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Tianyao Chen">
+    <meta name="description" content="This is the course notes for Software Engineering at Jacobs University Bremen.">
+    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Software Engineering Notes"/>
+<meta name="twitter:description" content="This is the course notes for Software Engineering at Jacobs University Bremen."/>
+
+    <meta property="og:title" content="Software Engineering Notes" />
+<meta property="og:description" content="This is the course notes for Software Engineering at Jacobs University Bremen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/" />
+<meta property="article:published_time" content="2020-05-21T00:00:00+02:00" />
+<meta property="article:modified_time" content="2020-05-21T00:00:00+02:00" />
+
+
+    
+      <base href="https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/">
+    
+    <title>
+  Software Engineering Notes · Tianyao Chen
+</title>
+
+    
+      <link rel="canonical" href="https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.69.2" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://tillchen.com/">
+      Tianyao Chen
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Software Engineering Notes</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-05-21T00:00:00&#43;02:00'>
+                May 21, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://tillchen.com/tags/Software-Engineering/">Software Engineering</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#socio-technical-systems">Socio-Technical Systems</a></li>
+</ul>
+</li>
+<li><a href="#the-software-lifecycle">The Software Lifecycle</a>
+<ul>
+<li><a href="#software-lifecycle">Software Lifecycle</a></li>
+<li><a href="#requirements-engineering">Requirements Engineering</a></li>
+<li><a href="#uml">UML</a></li>
+<li><a href="#design-patterns">Design Patterns</a></li>
+<li><a href="#compiling-and-linking">Compiling and Linking</a></li>
+<li><a href="#defensive-programming">Defensive Programming</a></li>
+<li><a href="#configuration-version-and-release-management">Configuration, Version, and Release Management</a></li>
+</ul>
+</li>
+<li><a href="#web-and-other-applications">Web and Other Applications</a></li>
+<li><a href="#project-and-process-management">Project and Process Management</a></li>
+<li><a href="#security-and-ethics">Security and Ethics</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This is the course notes for Software Engineering at Jacobs University Bremen.</p>
+<h3 id="intro">Intro</h3>
+<ol>
+<li>
+<p>The code-and-fix cycle:</p>
+<ul>
+<li>Maintainability and reliability decrease continuously (entropy).</li>
+<li>If the programmer leaves, all know-how leaves.</li>
+<li>If the developer is not the user, we get frequent dissent about expectations vs implementations.</li>
+</ul>
+</li>
+<li>
+<p>Common problems:</p>
+<ul>
+<li>Complexity</li>
+<li>Integration requirements</li>
+<li>Quality requirements</li>
+<li>Flexibility requirements</li>
+<li>Portability and internationalization requirements</li>
+<li>Organizational requirements
+<ul>
+<li>Communication problems/ bad project management</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Software engineering is multi-person construction of multi-version software</p>
+</li>
+<li>
+<p>Software = programs + documentation</p>
+</li>
+<li>
+<p>System engineering = hardware + software + process engineering</p>
+</li>
+<li>
+<p>Good software delivers functionality and performance that is (MEDA)</p>
+<ul>
+<li>Maintainable</li>
+<li>Efficient</li>
+<li>Dependable</li>
+<li>Acceptable</li>
+</ul>
+</li>
+</ol>
+<h3 id="socio-technical-systems">Socio-Technical Systems</h3>
+<ol>
+<li>
+<p>System = software + hardware + people</p>
+</li>
+<li>
+<p>System categories:</p>
+<ul>
+<li>Technical = software + hardware</li>
+<li>Socio-technical = technical systems + operational processes &amp; people</li>
+</ul>
+</li>
+<li>
+<p>Socio-technical system characteristics:</p>
+<ul>
+<li>Emergent properties</li>
+<li>Non-deterministic
+<ul>
+<li>Partially dependent on human operators + a time-varying environment</li>
+</ul>
+</li>
+<li>Complex relationships with organizational objectives</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-software-lifecycle">The Software Lifecycle</h2>
+<h3 id="software-lifecycle">Software Lifecycle</h3>
+<ol>
+<li>Requirements Engineering</li>
+<li>Design</li>
+<li>Coding</li>
+<li>Verification &amp; Testing</li>
+<li>Deployment &amp; Maintenance</li>
+</ol>
+<h3 id="requirements-engineering">Requirements Engineering</h3>
+<ol>
+<li>
+<p>Requirements engineering = services + constraints</p>
+</li>
+<li>
+<p>Types of requirements:</p>
+<ul>
+<li>User requirements - understandable by users (UML)</li>
+<li>System requirements</li>
+</ul>
+</li>
+<li>
+<p>Another way of classification:</p>
+<ul>
+<li>Functional requirements</li>
+<li>Non-functional requirements - properties + constraints</li>
+<li>Domain requirements</li>
+</ul>
+</li>
+</ol>
+<h3 id="uml">UML</h3>
+<ol>
+<li>
+<p>Use case diagrams</p>
+<ul>
+<li>Use case = a chunk of functionality</li>
+<li>Actor = someone/something that interacts with the system</li>
+</ul>
+</li>
+<li>
+<p>Activity diagrams</p>
+<ul>
+<li>Represents the overall flow of control</li>
+<li>User-perceived actions</li>
+</ul>
+</li>
+<li>
+<p>Class diagrams: <a href="https://creately.com/blog/diagrams/class-diagram-relationships/">https://creately.com/blog/diagrams/class-diagram-relationships/</a></p>
+<ul>
+<li>Relationships:
+<ul>
+<li>Association - connection</li>
+<li>Aggregation - stronger: HAS-A</li>
+<li>Dependency - weaker</li>
+</ul>
+</li>
+<li>Arrow head means it&rsquo;s traversable only this direction</li>
+</ul>
+</li>
+<li>
+<p>Sequence diagrams: object interactions in a time sequence</p>
+<ul>
+<li>Actors + system components (unlike activity diagrams)</li>
+</ul>
+</li>
+<li>
+<p>State transition diagrams: lifecycle of a given class</p>
+</li>
+<li>
+<p>Alternative: DSLs (domain specific modelling languages)</p>
+<ul>
+<li>Better used for embedded systems</li>
+</ul>
+</li>
+</ol>
+<h3 id="design-patterns">Design Patterns</h3>
+<ol>
+<li>
+<p>Pattern = description + essence of its solution</p>
+</li>
+<li>
+<p>Design pattern = re-using abstract knowledge; generic, reusable design templates for OOP</p>
+</li>
+<li>
+<p>Singleton: ensure a class has only one instance and provide a global access point</p>
+</li>
+<li>
+<p>Observer: separate the display of object state from the object itself</p>
+</li>
+<li>
+<p>Mediator: define an object that encapsulates how a set of objects interact</p>
+<ul>
+<li>Loose coupling</li>
+</ul>
+</li>
+<li>
+<p>Facade: a unified interface to a set of interfaces in a subsystem</p>
+<ul>
+<li>Loose coupling</li>
+</ul>
+</li>
+<li>
+<p>Proxy: a surrogate or placeholder for another object to control access to it</p>
+</li>
+<li>
+<p>Adapter: let classes work together that could not otherwise because of incompatible interfaces</p>
+</li>
+<li>
+<p>Composite: compose objects into tree structures to represent part-whole hierarchies</p>
+</li>
+<li>
+<p>Types:</p>
+<ul>
+<li>Creational</li>
+<li>Structural</li>
+<li>Behavioral</li>
+</ul>
+</li>
+</ol>
+<h3 id="compiling-and-linking">Compiling and Linking</h3>
+<ol>
+<li>
+<p>source + header files -&gt; Preprocessor -&gt; source -&gt; compiler -&gt; object code -&gt; linker -&gt; executable</p>
+</li>
+<li>
+<p>Preprocessor: textual substitution (with directives #)</p>
+</li>
+<li>
+<p>Object files contain code for a program fragment.</p>
+</li>
+<li>
+<p>Name mangling (name decoration): compiler modifies names to make them unique</p>
+</li>
+<li>
+<p>Linker generates one executable from several object and library files.</p>
+</li>
+<li>
+<p>Strip:</p>
+<ul>
+<li>By default, executables contain symbol tables which allows reverse engineering and makes the code files substantially larger.</li>
+<li>Strip executables before shipping</li>
+</ul>
+</li>
+<li>
+<p>Library = archive file containing a collection of object files</p>
+<ul>
+<li>Object files are linked in completely, from library only what is actually needed</li>
+</ul>
+</li>
+</ol>
+<h3 id="defensive-programming">Defensive Programming</h3>
+<ol>
+<li>
+<p>Defensive programming intends to ensure the continuing function of the software despite the unforeseeable usage. - Defend against errors (avoid bugs)</p>
+</li>
+<li>
+<p>Invariants:</p>
+<ul>
+<li>Loop invariants</li>
+<li>Class invariants: true before and after each method call</li>
+<li>Method invariants: meet the pre and post conditions - part of design-by-contract (methods are contracts with the user)</li>
+<li>Ways of enforcing invariants
+<ul>
+<li>Assertions</li>
+<li>Exceptions</li>
+<li>Return codes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Structured programming: only use a small set of programming constructs</p>
+<ul>
+<li>Good: sequence, condition, repetition</li>
+<li>Bad: goto, break, continue</li>
+</ul>
+</li>
+<li>
+<p>Code guide = uniform style + best practice</p>
+</li>
+</ol>
+<h3 id="configuration-version-and-release-management">Configuration, Version, and Release Management</h3>
+<ol>
+<li>
+<p>Software configuration management (SCM) is the discipline of controlling the evolution of software systems.</p>
+</li>
+<li>
+<p>Three classic problems:</p>
+<ul>
+<li>The double maintenance problem</li>
+<li>The shared data problem</li>
+<li>The simultaneous update problem</li>
+</ul>
+</li>
+<li>
+<p>A delta is a difference between two revisions.</p>
+</li>
+<li>
+<p>Terminology:</p>
+<ul>
+<li>Release: a version that&rsquo;s available to user/client</li>
+<li>Configuration: combination of components into a system according to case-specific criteria</li>
+<li>Baseline: a static reference point</li>
+</ul>
+</li>
+<li>
+<p>Configuration models:</p>
+<ul>
+<li>Composition model = set of objects &ndash; module oriented</li>
+<li>Change set model = bundle of changes &ndash; dynamic</li>
+<li>Long transaction model = all changes all isolated into transactions &ndash; collaborative</li>
+</ul>
+</li>
+</ol>
+<h2 id="web-and-other-applications">Web and Other Applications</h2>
+<h2 id="project-and-process-management">Project and Process Management</h2>
+<h2 id="security-and-ethics">Security and Ethics</h2>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
+      
+      
+        ©
+        
+        2020
+         Tianyao Chen 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139593886-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+    
+
+  </body>
+
+</html>
