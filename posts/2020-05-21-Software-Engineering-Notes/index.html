@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -167,6 +167,7 @@
 <li><a href="#compiling-and-linking">Compiling and Linking</a></li>
 <li><a href="#defensive-programming">Defensive Programming</a></li>
 <li><a href="#configuration-version-and-release-management">Configuration, Version, and Release Management</a></li>
+<li><a href="#software-testing">Software Testing</a></li>
 </ul>
 </li>
 <li><a href="#web-and-other-applications">Web and Other Applications</a></li>
@@ -455,6 +456,72 @@
 <li>Composition model = set of objects &ndash; module oriented</li>
 <li>Change set model = bundle of changes &ndash; dynamic</li>
 <li>Long transaction model = all changes all isolated into transactions &ndash; collaborative</li>
+</ul>
+</li>
+</ol>
+<h3 id="software-testing">Software Testing</h3>
+<ol>
+<li>
+<p>Software testing: find errors before delivering to the end user.</p>
+</li>
+<li>
+<p>Unit testing: (code)</p>
+<ul>
+<li>Test driver = dummy environment</li>
+<li>Test stub = dummy methods</li>
+<li>Equivalence class testing: build equivalence classes and test one candidate per class.</li>
+</ul>
+</li>
+<li>
+<p>Integration testing: (design)</p>
+<ul>
+<li>Test interactions among units (e.g. type compatibility)</li>
+</ul>
+</li>
+<li>
+<p>System testing: (requirements)</p>
+<ul>
+<li>Determine whether system meets requirements</li>
+<li>Focus on use &amp; interaction</li>
+<li>Alpha &amp; Beta testing</li>
+</ul>
+</li>
+<li>
+<p>Acceptance testing: (users&rsquo; need)</p>
+<ul>
+<li>Get approval from customers</li>
+</ul>
+</li>
+<li>
+<p>Testing methods:</p>
+<ul>
+<li>Static testing - without executing the software
+<ul>
+<li>Static analysis = control flow + data flow analysis</li>
+<li>Formal verification</li>
+</ul>
+</li>
+<li>Dynamic testing - with executing the software
+<ul>
+<li>Black-box testing: spec based</li>
+<li>White-box testing: look inside to check all statements &amp; conditions have been executed at least once</li>
+<li>Coverage analysis: measures how much of the code has been exercised
+<ul>
+<li>Statement vs decision vs path coverage</li>
+<li>Independent paths V(G) = number of simple decisions + 1 or number of enclosed areas + 1</li>
+<li>C0 = every instruction; C1 = every branch; C2, C3 - every condition once true once false; C4 path coverage; Rule of thumb: 95% C0, 70% C1</li>
+</ul>
+</li>
+<li>Memory leaks:
+<ul>
+<li>Stack: automatic management</li>
+<li>Heap: explicit allocation and deallocation</li>
+</ul>
+</li>
+<li>Performance profiling: benchmark execution to understand where time is being spent</li>
+</ul>
+</li>
+<li>Regression testing: run tests and compare the output to same tests on the previous code version</li>
 </ul>
 </li>
 </ol>
