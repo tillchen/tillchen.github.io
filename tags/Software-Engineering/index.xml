@@ -466,6 +466,15 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;web-enabled-information-systems&#34;&gt;Web-Enabled Information Systems&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Three-Tier Architecture:
+&lt;ul&gt;
+&lt;li&gt;Presentation tier&lt;/li&gt;
+&lt;li&gt;Middle tier&lt;/li&gt;
+&lt;li&gt;Data management tier&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;ui-design&#34;&gt;UI Design&lt;/h3&gt;
 &lt;h3 id=&#34;web-design&#34;&gt;Web Design&lt;/h3&gt;
 &lt;h3 id=&#34;web-design-patterns&#34;&gt;Web Design Patterns&lt;/h3&gt;
