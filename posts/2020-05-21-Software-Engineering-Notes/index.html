@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              5-minute read
+              6-minute read
             </span>
           </div>
           
@@ -547,6 +547,58 @@
 </li>
 </ol>
 <h3 id="gui-technology">GUI Technology</h3>
+<ol>
+<li>
+<p>Sequential programs</p>
+</li>
+<li>
+<p>Modern GUI:</p>
+<ul>
+<li>Event-driven: the program waits on the user instead of the other way around
+<ul>
+<li>All events go to a single event queue</li>
+</ul>
+</li>
+<li>Widgets (window gadget): reusable interactive object
+<ul>
+<li>Handle events</li>
+<li>Update appearance</li>
+<li>Generate new events</li>
+<li>Send to listeners (custom code)</li>
+</ul>
+</li>
+<li>Interactor Tree: decompose interactive objects into a tree</li>
+</ul>
+</li>
+<li>
+<p>Model-View-Controller:</p>
+<ul>
+<li>Model = information the app is manipulating (representation of real world objects)</li>
+<li>View = a visual representation of the model
+<ul>
+<li>View will be notified if there are changes for the model</li>
+</ul>
+</li>
+<li>Controller:
+<ul>
+<li>Receives input events</li>
+<li>Decides what to do
+<ul>
+<li>Communicates with the view to select the objects</li>
+<li>Calls model methods to make changes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Why?
+<ul>
+<li>Combining MVC into one class will not scale</li>
+<li>Separation eases maintenance</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <h3 id="web-enabled-information-systems">Web-Enabled Information Systems</h3>
 <h3 id="ui-design">UI Design</h3>
 <h3 id="web-design">Web Design</h3>

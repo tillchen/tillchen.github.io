@@ -413,6 +413,58 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;gui-technology&#34;&gt;GUI Technology&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Sequential programs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Modern GUI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Event-driven: the program waits on the user instead of the other way around
+&lt;ul&gt;
+&lt;li&gt;All events go to a single event queue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Widgets (window gadget): reusable interactive object
+&lt;ul&gt;
+&lt;li&gt;Handle events&lt;/li&gt;
+&lt;li&gt;Update appearance&lt;/li&gt;
+&lt;li&gt;Generate new events&lt;/li&gt;
+&lt;li&gt;Send to listeners (custom code)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Interactor Tree: decompose interactive objects into a tree&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Model-View-Controller:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Model = information the app is manipulating (representation of real world objects)&lt;/li&gt;
+&lt;li&gt;View = a visual representation of the model
+&lt;ul&gt;
+&lt;li&gt;View will be notified if there are changes for the model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Controller:
+&lt;ul&gt;
+&lt;li&gt;Receives input events&lt;/li&gt;
+&lt;li&gt;Decides what to do
+&lt;ul&gt;
+&lt;li&gt;Communicates with the view to select the objects&lt;/li&gt;
+&lt;li&gt;Calls model methods to make changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Why?
+&lt;ul&gt;
+&lt;li&gt;Combining MVC into one class will not scale&lt;/li&gt;
+&lt;li&gt;Separation eases maintenance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;web-enabled-information-systems&#34;&gt;Web-Enabled Information Systems&lt;/h3&gt;
 &lt;h3 id=&#34;ui-design&#34;&gt;UI Design&lt;/h3&gt;
 &lt;h3 id=&#34;web-design&#34;&gt;Web Design&lt;/h3&gt;
