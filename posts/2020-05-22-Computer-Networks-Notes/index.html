@@ -152,14 +152,19 @@
       <div>
         
         <ul>
-<li><a href="#introduction">Introduction</a></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#internet-concepts-and-design-principles">Internet Concepts and Design Principles</a></li>
+<li><a href="#structure-and-growth-of-the-internet">Structure and Growth of the Internet</a></li>
+<li><a href="#internet-programming-with-sockets">Internet Programming with Sockets</a></li>
+</ul>
+</li>
 <li><a href="#references">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
-<ol>
-<li>
 <p>This is the course notes for Computer Networks at Jacobs University Bremen.</p>
-</li>
+<h3 id="internet-concepts-and-design-principles">Internet Concepts and Design Principles</h3>
+<ol>
 <li>
 <p>Internet Addresses:</p>
 <ul>
@@ -177,6 +182,22 @@
 <li>An AS is a set of routers and networks under the same administration.</li>
 <li>IP packets are forwarded between ASs by EGP (Exterior Gateway Protocol); within an AS, it&rsquo;s IGP (Interior Gateway Protocol)</li>
 <li>The Internet is a collection os ASs. There&rsquo;s no central authority.</li>
+</ul>
+</li>
+</ol>
+<h3 id="structure-and-growth-of-the-internet">Structure and Growth of the Internet</h3>
+<ol>
+<li>Internet Exchange Points (IXPs) are switching hubs where many Internet Service Providers (operating ASs) connect in order to exchange internet traffic.</li>
+</ol>
+<h3 id="internet-programming-with-sockets">Internet Programming with Sockets</h3>
+<ol>
+<li>
+<p>Sockets are abstract communication endpoints with a rather small number of associated function calls.</p>
+</li>
+<li>
+<p>Connection-less vs connection-oriented communication</p>
+<ul>
+<li>Connection-oriented communication requires a establishment and a teardown. Most of the Internet traffic is using this.</li>
 </ul>
 </li>
 </ol>

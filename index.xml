@@ -18,14 +18,19 @@
       
       <guid>https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#internet-concepts-and-design-principles&#34;&gt;Internet Concepts and Design Principles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#structure-and-growth-of-the-internet&#34;&gt;Structure and Growth of the Internet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#internet-programming-with-sockets&#34;&gt;Internet Programming with Sockets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
 &lt;p&gt;This is the course notes for Computer Networks at Jacobs University Bremen.&lt;/p&gt;
-&lt;/li&gt;
+&lt;h3 id=&#34;internet-concepts-and-design-principles&#34;&gt;Internet Concepts and Design Principles&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Internet Addresses:&lt;/p&gt;
 &lt;ul&gt;
@@ -43,6 +48,22 @@
 &lt;li&gt;An AS is a set of routers and networks under the same administration.&lt;/li&gt;
 &lt;li&gt;IP packets are forwarded between ASs by EGP (Exterior Gateway Protocol); within an AS, it&amp;rsquo;s IGP (Interior Gateway Protocol)&lt;/li&gt;
 &lt;li&gt;The Internet is a collection os ASs. There&amp;rsquo;s no central authority.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;structure-and-growth-of-the-internet&#34;&gt;Structure and Growth of the Internet&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Internet Exchange Points (IXPs) are switching hubs where many Internet Service Providers (operating ASs) connect in order to exchange internet traffic.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;internet-programming-with-sockets&#34;&gt;Internet Programming with Sockets&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Sockets are abstract communication endpoints with a rather small number of associated function calls.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connection-less vs connection-oriented communication&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connection-oriented communication requires a establishment and a teardown. Most of the Internet traffic is using this.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
