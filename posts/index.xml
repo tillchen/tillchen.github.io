@@ -17,7 +17,40 @@
       <pubDate>Fri, 22 May 2020 18:52:12 +0200</pubDate>
       
       <guid>https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/</guid>
-      <description></description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;This is the course notes for Computer Networks at Jacobs University Bremen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Internet Addresses:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leading nulls in IPv6 addresses can be omitted and two consecutive  colons can represent a sequence of nulls:
+&lt;ul&gt;
+&lt;li&gt;2001:00db8:0000:0000:0000:0000:0000:0001 can be written as 2001:db8::1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;IPv6 addresses have 16 bytes (4 x 8 groups); IPv4 addresses have 4 bytes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Autonomous Systems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;An AS is a set of routers and networks under the same administration.&lt;/li&gt;
+&lt;li&gt;IP packets are forwarded between ASs by EGP (Exterior Gateway Protocol); within an AS, it&amp;rsquo;s IGP (Interior Gateway Protocol)&lt;/li&gt;
+&lt;li&gt;The Internet is a collection os ASs. There&amp;rsquo;s no central authority.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cnds.jacobs-university.de/courses/cn-2019/&#34;&gt;https://cnds.jacobs-university.de/courses/cn-2019/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
