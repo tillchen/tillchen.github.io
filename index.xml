@@ -590,6 +590,26 @@
 &lt;li&gt;Extreme programming: very small increments (constant code improvement (refactoring))&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Iterative/Spiral Methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Loop = one phase&lt;/li&gt;
+&lt;li&gt;No fixed phases&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Evolutionary Development:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Evolve final system from initial outline spec&lt;/li&gt;
+&lt;li&gt;Throw-away prototyping - start with poorly understood requirements&lt;/li&gt;
+&lt;li&gt;Good for well isolated parts (UI)&lt;/li&gt;
+&lt;li&gt;Lack of process visibility&lt;/li&gt;
+&lt;li&gt;Often poorly structured&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use incremental dev for best understood requirements and throw-away prototyping for poorly understood.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;security-and-ethics&#34;&gt;Security and Ethics&lt;/h2&gt;
 </description>
