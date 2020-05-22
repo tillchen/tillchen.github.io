@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              1-minute read
+              2-minute read
             </span>
           </div>
           
@@ -157,6 +157,17 @@
 <li><a href="#internet-concepts-and-design-principles">Internet Concepts and Design Principles</a></li>
 <li><a href="#structure-and-growth-of-the-internet">Structure and Growth of the Internet</a></li>
 <li><a href="#internet-programming-with-sockets">Internet Programming with Sockets</a></li>
+</ul>
+</li>
+<li><a href="#fundamental-concepts">Fundamental Concepts</a>
+<ul>
+<li><a href="#classification-and-terminology">Classification and Terminology</a></li>
+<li><a href="#communication-channels-and-transmission-media">Communication Channels and Transmission Media</a></li>
+<li><a href="#media-access-control">Media Access Control</a></li>
+<li><a href="#transmission-error-detection">Transmission Error Detection</a></li>
+<li><a href="#sequence-numbers-acknowledgements-timer">Sequence Numbers, Acknowledgements, Timer</a></li>
+<li><a href="#flow-control-and-congestion-control">Flow Control and Congestion Control</a></li>
+<li><a href="#layering-and-the-osi-reference-model">Layering and the OSI Reference Model</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -201,6 +212,59 @@
 </ul>
 </li>
 </ol>
+<h2 id="fundamental-concepts">Fundamental Concepts</h2>
+<h3 id="classification-and-terminology">Classification and Terminology</h3>
+<ol>
+<li>
+<p>Communication modes:</p>
+<ul>
+<li>Unicast - 1:1</li>
+<li>Multicast - 1:n</li>
+<li>Concast - n:1</li>
+<li>Multipeer - m:n</li>
+<li>Anycast - 1: nearest receiver</li>
+<li>Broadcast - 1: all</li>
+<li>Geocast - 1: n in a region</li>
+</ul>
+</li>
+<li>
+<p>Communication protocols define the syntax and semantics of messages.</p>
+</li>
+<li>
+<p>Circuit vs packet switching:</p>
+<ul>
+<li>Circuit switching: create and remove (virtual) circuit (e.g. the telephone network)</li>
+<li>Packet switching: data is carried in packets (e.g. Internet)</li>
+</ul>
+</li>
+<li>
+<p>Connection-oriented vs connection-less:</p>
+<ul>
+<li>Connection-oriented: stateful (e.g. fetching a Web page)</li>
+<li>Connection-less: stateless (e.g. Internet name lookups)</li>
+</ul>
+</li>
+<li>
+<p>Data vs. control vs. management plane:</p>
+<ul>
+<li>Data plane: forwarding of data (hardware)</li>
+<li>Control plane: telling the data plane how to forward data (routers and switches)</li>
+<li>Management plane: configuration and monitoring of data and control planes (may involve humans)</li>
+</ul>
+</li>
+<li>
+<p>Topologies:</p>
+<ul>
+<li>Star; Ring; Meshed Network; Bus; Line.</li>
+</ul>
+</li>
+</ol>
+<h3 id="communication-channels-and-transmission-media">Communication Channels and Transmission Media</h3>
+<h3 id="media-access-control">Media Access Control</h3>
+<h3 id="transmission-error-detection">Transmission Error Detection</h3>
+<h3 id="sequence-numbers-acknowledgements-timer">Sequence Numbers, Acknowledgements, Timer</h3>
+<h3 id="flow-control-and-congestion-control">Flow Control and Congestion Control</h3>
+<h3 id="layering-and-the-osi-reference-model">Layering and the OSI Reference Model</h3>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cnds.jacobs-university.de/courses/cn-2019/">https://cnds.jacobs-university.de/courses/cn-2019/</a></li>
