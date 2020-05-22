@@ -51,7 +51,7 @@
 &lt;li&gt;&lt;a href=&#34;#software-process-models&#34;&gt;Software Process Models&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#security-and-ethics&#34;&gt;Security and Ethics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#security&#34;&gt;Security&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This is the course notes for Software Engineering at Jacobs University Bremen.&lt;/p&gt;
@@ -632,7 +632,20 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;security-and-ethics&#34;&gt;Security and Ethics&lt;/h2&gt;
+&lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Motivation (objectives):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Secrecy - users should not be able to &lt;em&gt;see&lt;/em&gt; things they are not supposed to&lt;/li&gt;
+&lt;li&gt;Integrity - users should not be able to &lt;em&gt;modify&lt;/em&gt; things they are not supposed to&lt;/li&gt;
+&lt;li&gt;Availability - users should be able to &lt;em&gt;see and modify&lt;/em&gt; things they are allowed to&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3P security management: process; people; probing your defences&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
