@@ -610,6 +610,27 @@
 &lt;li&gt;
 &lt;p&gt;Use incremental dev for best understood requirements and throw-away prototyping for poorly understood.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Capability Maturity Model Integration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CMM Levels:
+&lt;ul&gt;
+&lt;li&gt;Initial&lt;/li&gt;
+&lt;li&gt;Managed&lt;/li&gt;
+&lt;li&gt;Defined&lt;/li&gt;
+&lt;li&gt;Quantitatively Managed&lt;/li&gt;
+&lt;li&gt;Optimizing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CMMI Components:
+&lt;ul&gt;
+&lt;li&gt;24 process areas&lt;/li&gt;
+&lt;li&gt;Goals&lt;/li&gt;
+&lt;li&gt;Practices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;security-and-ethics&#34;&gt;Security and Ethics&lt;/h2&gt;
 </description>
