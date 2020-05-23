@@ -713,6 +713,32 @@
 </li>
 </ol>
 <h3 id="firewalls">Firewalls</h3>
+<ol>
+<li>
+<p>Firewall is a system that enforces access control policies between networks.</p>
+</li>
+<li>
+<p>Conservative firewalls allow known desired traffic and reject everything else.</p>
+</li>
+<li>
+<p>Optimistic firewalls reject known unwanted traffic and allow the rest.</p>
+</li>
+<li>
+<p>Firewalls typically consist of packet filters, transport gateways, and application level gateways.</p>
+</li>
+<li>
+<p>Firewall architectures:</p>
+<ul>
+<li>Screening router: the simplest - with a packet filter.</li>
+<li>Bastion host: a multihomed host which doesn&rsquo;t forward IP datagrams. but instead provide suitable gateways. - prevents direction host communication.</li>
+<li>Two packet filters which create a demilitarized zone (DMZ) - most common.
+<ul>
+<li>Externally visible servers and gateways are in the DMZ.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <h3 id="network-address-translators">Network Address Translators</h3>
 <h2 id="references">References</h2>
 <ul>
