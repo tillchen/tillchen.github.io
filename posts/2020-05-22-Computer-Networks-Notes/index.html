@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              14-minute read
+              15-minute read
             </span>
           </div>
           
@@ -977,6 +977,40 @@
 </li>
 </ol>
 <h3 id="http-11-methods">HTTP 1.1 Methods</h3>
+<ol>
+<li>
+<p>Methods:</p>
+<ul>
+<li>GET - retrieve a resource</li>
+<li>HEAD - retrieve meta-info</li>
+<li>POST - annotate an existing resource by passing info to it</li>
+<li>PUT - store info (may create a new resource)</li>
+<li>DELETE - delete the resource</li>
+<li>OPTIONS - request info about methods supported</li>
+<li>TRACE - loopback for testing</li>
+<li>CONNECT - init a TLS/SSL tunnel</li>
+</ul>
+</li>
+<li>
+<p>Safe methods</p>
+<ul>
+<li>Safe methods are intended only for information retrieval and should not change the state of the server.</li>
+<li>They should have no side effects beyond logging</li>
+<li>GET, HEAD, OPTIONS, TRACE</li>
+</ul>
+</li>
+<li>
+<p>Idempotent methods</p>
+<ul>
+<li>Idempotent methods can be executed multiple times without producing results that are different from a single execution.</li>
+<li>PUT, DELETE</li>
+<li>POST, CONNECT are not idempotent.</li>
+</ul>
+</li>
+<li>
+<p>Supporting caches well is a fundamental goal of HTTP.</p>
+</li>
+</ol>
 <h3 id="http-11-features">HTTP 1.1 Features</h3>
 <h3 id="http-20">HTTP 2.0</h3>
 <h2 id="multimedia-over-the-internet">Multimedia over the Internet</h2>
