@@ -594,7 +594,20 @@
 </ol>
 <h3 id="path-vector-policy-routing-bgp">Path Vector Policy Routing (BGP)</h3>
 <ol>
-<li>Border Gateway Protocol (BGP) is a path vector policy routing protocol that propagates reachability info between ASs.</li>
+<li>
+<p>Border Gateway Protocol (BGP) is a path vector policy routing protocol that propagates reachability info between ASs.</p>
+</li>
+<li>
+<p>AS categories:</p>
+<ul>
+<li>Stub - only one peering relationship with one other AS. It only carries local traffic.</li>
+<li>Multihomed - peering relationships with more than one other ASs. It refuses to carry transit traffic.</li>
+<li>Transit - peering relationships with more than one other ASs. It&rsquo;s designed to carry both local and transit traffic.</li>
+</ul>
+</li>
+<li>
+<p>BGP doesn&rsquo;t suffer from count-to-infinity. The AS path info allows to detect loops.</p>
+</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
