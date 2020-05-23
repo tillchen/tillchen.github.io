@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              13-minute read
+              14-minute read
             </span>
           </div>
           
@@ -221,6 +221,15 @@
 <ul>
 <li><a href="#basics-rule-names-terminal-symbols">Basics, Rule Names, Terminal Symbols</a></li>
 <li><a href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a href="#electronic-mail-smtp-imap">Electronic Mail (SMTP, IMAP)</a>
+<ul>
+<li><a href="#components-and-terminology">Components and Terminology</a></li>
+<li><a href="#simple-mail-transfer-protocol-smtp">Simple Mail Transfer Protocol (SMTP)</a></li>
+<li><a href="#multipurpose-internet-mail-extensions-mime">Multipurpose Internet Mail Extensions (MIME)</a></li>
+<li><a href="#internet-message-access-protocol-imap">Internet Message Access Protocol (IMAP)</a></li>
+<li><a href="#filtering-of-messages-sieve">Filtering of Messages (SIEVE)</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -880,6 +889,52 @@
 <li>[ab] = *1(ab)</li>
 </ul>
 </li>
+</ol>
+<h2 id="electronic-mail-smtp-imap">Electronic Mail (SMTP, IMAP)</h2>
+<h3 id="components-and-terminology">Components and Terminology</h3>
+<ol>
+<li>Terminology:
+<ul>
+<li>Mail User Agent (MUA) - source or target</li>
+<li>Mail Transfer Agent (MTA) - server and clients that transport</li>
+<li>Mail Delivery Agent (MDA) - delivers to the mailbox</li>
+</ul>
+</li>
+</ol>
+<h3 id="simple-mail-transfer-protocol-smtp">Simple Mail Transfer Protocol (SMTP)</h3>
+<ol>
+<li>It&rsquo;s running over TCP.</li>
+</ol>
+<h3 id="multipurpose-internet-mail-extensions-mime">Multipurpose Internet Mail Extensions (MIME)</h3>
+<ol>
+<li>
+<p>MIME supports multiple different char sets, different media types, etc.</p>
+</li>
+<li>
+<p>MIME is widely implemented and not only for mail.</p>
+</li>
+<li>
+<p>MIME boundaries: a delimiter consist of two dashes followed by the boundary.</p>
+</li>
+</ol>
+<h3 id="internet-message-access-protocol-imap">Internet Message Access Protocol (IMAP)</h3>
+<ol>
+<li>
+<p>IMAP allows a client to access and manipulate mail messages stored on a server.</p>
+</li>
+<li>
+<p>It&rsquo;s on TCP.</p>
+</li>
+<li>
+<p>It&rsquo;s strongly suggested to use TLS to encrypt.</p>
+</li>
+<li>
+<p>IMAP supports asynchronous, concurrent operations.</p>
+</li>
+</ol>
+<h3 id="filtering-of-messages-sieve">Filtering of Messages (SIEVE)</h3>
+<ol>
+<li>SIEVE can either be implemented on the client or the server.</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
