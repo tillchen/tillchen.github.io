@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              11-minute read
+              12-minute read
             </span>
           </div>
           
@@ -206,6 +206,15 @@
 <li><a href="#middleboxes">Middleboxes</a></li>
 <li><a href="#firewalls">Firewalls</a></li>
 <li><a href="#network-address-translators">Network Address Translators</a></li>
+</ul>
+</li>
+<li><a href="#domain-name-system-dns">Domain Name System (DNS)</a>
+<ul>
+<li><a href="#overview-and-features">Overview and features</a></li>
+<li><a href="#resource-records">Resource Records</a></li>
+<li><a href="#message-formats">Message Formats</a></li>
+<li><a href="#security-and-dynamic-updates">Security and Dynamic Updates</a></li>
+<li><a href="#creative-usage">Creative Usage</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -763,6 +772,35 @@
 <p>Symmetric NAT: only the external host that receives a packet can send a UDP packet back to the internal host.</p>
 </li>
 </ol>
+<h2 id="domain-name-system-dns">Domain Name System (DNS)</h2>
+<h3 id="overview-and-features">Overview and features</h3>
+<ol>
+<li>
+<p>DNS provides a global infrastructure to map human friendly domain names into addresses. - name resolution.</p>
+</li>
+<li>
+<p>The resolver is typically tightly integrated into the OS or more precisely the standard libraries.</p>
+</li>
+<li>
+<p>Most hosts do not resolve names themselves but instead the resolver is sending recursive queries to a domain name resolver.</p>
+</li>
+<li>
+<p>Administration of the name space can be delegated.</p>
+</li>
+<li>
+<p>The original DNS protocol doesn&rsquo;t provide sufficient security. There&rsquo;s no reason to trust DNS responses.</p>
+</li>
+<li>
+<p>DNS labels are case-insensitive.</p>
+</li>
+<li>
+<p>The absolute paths ending at the virtual root node end with a trailing dot.</p>
+</li>
+</ol>
+<h3 id="resource-records">Resource Records</h3>
+<h3 id="message-formats">Message Formats</h3>
+<h3 id="security-and-dynamic-updates">Security and Dynamic Updates</h3>
+<h3 id="creative-usage">Creative Usage</h3>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cnds.jacobs-university.de/courses/cn-2019/">https://cnds.jacobs-university.de/courses/cn-2019/</a></li>
