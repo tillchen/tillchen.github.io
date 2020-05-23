@@ -555,11 +555,42 @@
 <h2 id="internet-routing">Internet Routing</h2>
 <h3 id="distance-vector-routing-rip">Distance Vector Routing (RIP)</h3>
 <ol>
-<li>Routing Information Protocol (RIP) is a simple distance vector routing protocol that uses Bellman-Ford.</li>
+<li>
+<p>Routing Information Protocol (RIP) is a simple distance vector routing protocol that uses Bellman-Ford.</p>
+</li>
+<li>
+<p>Count-to-infinity will cause the costs to reach infinity. (A &ndash; B &ndash; C, A&ndash;B breaks, B -&gt; C -&gt; A, C updates the hop count)</p>
+</li>
+<li>
+<p>Split horizon - nodes never announce the reachability. Doesn&rsquo;t solve count-to-infinity.</p>
+</li>
+<li>
+<p>Split horizon with poisoned reverse - nodes announce the unreachablility to neighbors. - Doesn&rsquo;t solve count-to-infinity for all cases since the exchange of distance vectors is not synchronized to a global clock.</p>
+</li>
+<li>
+<p>RIP runs on UDP.</p>
+</li>
 </ol>
 <h3 id="link-state-routing-ospf">Link State Routing (OSPF)</h3>
 <ol>
-<li>Open Shortest Path First (OSPF) is a link state routing protocol that uses Dijstra.</li>
+<li>
+<p>Open Shortest Path First (OSPF) is a link state routing protocol that uses Dijstra.</p>
+</li>
+<li>
+<p>It&rsquo;s used for IS-IS (intermediate system to intermediate system).</p>
+</li>
+<li>
+<p>Router classification:</p>
+<ul>
+<li>Internal</li>
+<li>Area Border</li>
+<li>Backbone</li>
+<li>AS Boundary</li>
+</ul>
+</li>
+<li>
+<p>Stub areas are areas with a single area boarder router.</p>
+</li>
 </ol>
 <h3 id="path-vector-policy-routing-bgp">Path Vector Policy Routing (BGP)</h3>
 <ol>
