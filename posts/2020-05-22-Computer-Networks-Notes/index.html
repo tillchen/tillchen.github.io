@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              12-minute read
+              13-minute read
             </span>
           </div>
           
@@ -221,8 +221,6 @@
 <ul>
 <li><a href="#basics-rule-names-terminal-symbols">Basics, Rule Names, Terminal Symbols</a></li>
 <li><a href="#operators">Operators</a></li>
-<li><a href="#core-definitions">Core Definitions</a></li>
-<li><a href="#abnf-in-abnf">ABNF in ABNF</a></li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -840,11 +838,49 @@
 <h2 id="augmented-backus-naur-form-abnf">Augmented Backus Naur Form (ABNF)</h2>
 <h3 id="basics-rule-names-terminal-symbols">Basics, Rule Names, Terminal Symbols</h3>
 <ol>
-<li>A text-based encoding of protocol messages are programmer readable byt less efficient.</li>
+<li>
+<p>A text-based encoding of protocol messages are programmer readable byt less efficient.</p>
+</li>
+<li>
+<p>ABNF is used to formally specify textual protocol messages. It consists of set of rules (productions)</p>
+</li>
+<li>
+<p>Comments start with ;.</p>
+</li>
+<li>
+<p>The name of a rule must start with an alphabetic character.</p>
+</li>
+<li>
+<p>Terminal symbols are non-negative numbers. We can use . as concatenation and - as a value range operator. They can also be defined by ASCII characters in double quotes.</p>
+</li>
+<li>
+<p>%s - case sensitive; %i - case insensitive (the default).</p>
+</li>
 </ol>
 <h3 id="operators">Operators</h3>
-<h3 id="core-definitions">Core Definitions</h3>
-<h3 id="abnf-in-abnf">ABNF in ABNF</h3>
+<ol>
+<li>
+<p>Concatenation: empty word</p>
+</li>
+<li>
+<p>Alternatives: /</p>
+</li>
+<li>
+<p>Grouping: ()</p>
+</li>
+<li>
+<p>Repetitions: n*m (n and m are optional)</p>
+<ul>
+<li>n is the min (default 0) and m (default inf) is the max for repetitions</li>
+</ul>
+</li>
+<li>
+<p>Optional: []</p>
+<ul>
+<li>[ab] = *1(ab)</li>
+</ul>
+</li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cnds.jacobs-university.de/courses/cn-2019/">https://cnds.jacobs-university.de/courses/cn-2019/</a></li>
