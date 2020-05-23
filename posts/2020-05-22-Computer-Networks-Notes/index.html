@@ -335,6 +335,38 @@
 </li>
 </ol>
 <h3 id="sequence-numbers-acknowledgements-timer">Sequence Numbers, Acknowledgements, Timer</h3>
+<ol>
+<li>
+<p>Errors:</p>
+<ul>
+<li>Bit errors</li>
+<li>Loss of complete data frames</li>
+<li>Duplication of complete data frames</li>
+<li>Receipt of data frames that were never sent</li>
+<li>Reordering of data frames during transmission</li>
+</ul>
+</li>
+<li>
+<p>End-to-end flow control - the sender must adapt its speed to the speed of the receiver.</p>
+</li>
+<li>
+<p>Congestion control - the sender must react to congestions.</p>
+</li>
+<li>
+<p>The sender assigns growing sequence numbers to all data frames to deal with the errors above.</p>
+</li>
+<li>
+<p>The receiver sends ACK to handle errors.</p>
+<ul>
+<li>ACK: positive acknowledgement</li>
+<li>NACK: negative acknowledgement</li>
+<li>Stop-and-wait protocol - a frame is only transmitted if the previous frame was acknowledged.</li>
+</ul>
+</li>
+<li>
+<p>A send can also use a timer to retransmit a frame if no ACK has been received in time.</p>
+</li>
+</ol>
 <h3 id="flow-control-and-congestion-control">Flow Control and Congestion Control</h3>
 <h3 id="layering-and-the-osi-reference-model">Layering and the OSI Reference Model</h3>
 <h2 id="references">References</h2>
