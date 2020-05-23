@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              10-minute read
+              11-minute read
             </span>
           </div>
           
@@ -740,6 +740,29 @@
 </li>
 </ol>
 <h3 id="network-address-translators">Network Address Translators</h3>
+<ol>
+<li>
+<p>Basic NAT: translates private IP address to public IP address.</p>
+</li>
+<li>
+<p>Network Address Port Translation (NAPT): translates transport endpoint identifiers. It allows to share a single public address among many private addresses (masquerading).</p>
+</li>
+<li>
+<p>Full cone NAT is a NAT where all requests from the same internal IP address and port are mapped to the same external IP address and port.</p>
+<ul>
+<li>Any external host can send a packet to the internal host by sending a packet to the mapped external address.</li>
+</ul>
+</li>
+<li>
+<p>Restrict cone NAT: unlike full cone, an external host (with IP address X) can send a packet to the internal post only if the internal host had previously sent a packet to IP address X.</p>
+</li>
+<li>
+<p>Port restricted cone NAT also includes the restriction for the port number.</p>
+</li>
+<li>
+<p>Symmetric NAT: only the external host that receives a packet can send a UDP packet back to the internal host.</p>
+</li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cnds.jacobs-university.de/courses/cn-2019/">https://cnds.jacobs-university.de/courses/cn-2019/</a></li>
