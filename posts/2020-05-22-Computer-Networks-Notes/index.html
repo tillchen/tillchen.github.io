@@ -798,7 +798,29 @@
 </li>
 </ol>
 <h3 id="resource-records">Resource Records</h3>
+<ol>
+<li>Resource Records (RRs) hold typed info for a given name with the components:
+<ul>
+<li>Owner - domain name</li>
+<li>Type - A(IPv4 address)/AAAA(IPv6 address)/CNAME(Canonical Name)/HINFO(Host Info)/MX(Mail Exchanger)/NS(authoritative server)/PTR(pointer to another part of the name space)/SOA(Start Of zone of Authority)</li>
+<li>Class - IN for Internet</li>
+<li>Time to Life (TTL) - how many second info can be stored in a local cache (how long the response record is valid)</li>
+<li>Data Format (RDATA) - depends on the type</li>
+</ul>
+</li>
+</ol>
 <h3 id="message-formats">Message Formats</h3>
+<ol>
+<li>
+<p>Protocol header + questions + answers (RRs) + pointers to authorities + additional info.</p>
+</li>
+<li>
+<p>Simple DNS queries usually use UDP - low overhead, which is important for resolvers that may need to contact many DNS servers.</p>
+</li>
+<li>
+<p>For large data transfers, DNS may utilize TCP.</p>
+</li>
+</ol>
 <h3 id="security-and-dynamic-updates">Security and Dynamic Updates</h3>
 <h3 id="creative-usage">Creative Usage</h3>
 <h2 id="references">References</h2>
