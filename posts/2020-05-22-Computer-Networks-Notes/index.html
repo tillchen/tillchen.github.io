@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              3-minute read
+              4-minute read
             </span>
           </div>
           
@@ -323,6 +323,17 @@
 </li>
 </ol>
 <h3 id="transmission-error-detection">Transmission Error Detection</h3>
+<ol>
+<li>
+<p>Simple parity bits can be added to code words to detect bit errors.</p>
+</li>
+<li>
+<p>Cyclic redundancy check (CRC) uses polynomials (1101 = $x^3+x^2+1$)</p>
+<ul>
+<li>Divide the message with the generator, if the remainder is 0, we assume no transmission error. Otherwise, add the remainder to the message to get the real bit sequence.</li>
+</ul>
+</li>
+</ol>
 <h3 id="sequence-numbers-acknowledgements-timer">Sequence Numbers, Acknowledgements, Timer</h3>
 <h3 id="flow-control-and-congestion-control">Flow Control and Congestion Control</h3>
 <h3 id="layering-and-the-osi-reference-model">Layering and the OSI Reference Model</h3>

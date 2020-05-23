@@ -189,6 +189,17 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;transmission-error-detection&#34;&gt;Transmission Error Detection&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Simple parity bits can be added to code words to detect bit errors.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cyclic redundancy check (CRC) uses polynomials (1101 = $x^3+x^2+1$)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Divide the message with the generator, if the remainder is 0, we assume no transmission error. Otherwise, add the remainder to the message to get the real bit sequence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;sequence-numbers-acknowledgements-timer&#34;&gt;Sequence Numbers, Acknowledgements, Timer&lt;/h3&gt;
 &lt;h3 id=&#34;flow-control-and-congestion-control&#34;&gt;Flow Control and Congestion Control&lt;/h3&gt;
 &lt;h3 id=&#34;layering-and-the-osi-reference-model&#34;&gt;Layering and the OSI Reference Model&lt;/h3&gt;
