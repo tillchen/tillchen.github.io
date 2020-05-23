@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              9-minute read
+              10-minute read
             </span>
           </div>
           
@@ -636,7 +636,56 @@
 </li>
 </ol>
 <h3 id="udp">UDP</h3>
+<ol>
+<li>UDP datagrams can be multicasted to a group of receivers.</li>
+</ol>
 <h3 id="tcp">TCP</h3>
+<ol>
+<li>
+<p>Header fields:</p>
+<ul>
+<li>Sequence Number: the sequence number of the first data byte in the segment.</li>
+<li>ACK: the next sequence number which the sender of the ACK expects.</li>
+<li>Window: the number of data bytes the sender is willing to receive (the window starts with the ACK).</li>
+</ul>
+</li>
+<li>
+<p>Flags:</p>
+<ul>
+<li>ACK - indicates the ACK number filed is significant</li>
+<li>SYN - synchronization of sequence numbers</li>
+<li>FIN - no more data from sender</li>
+</ul>
+</li>
+<li>
+<p>Connection establishment:</p>
+<ul>
+<li>Handshake protocol establishes the connection</li>
+<li>Guarantees correct connection. even if packets are lost or duplicated.</li>
+</ul>
+</li>
+<li>
+<p>Connection Tear-down - bidirectional</p>
+</li>
+<li>
+<p>Flow control - both TCP engines advertise the buffer sizes during connection establishment.</p>
+</li>
+<li>
+<p>TCP congestion control:</p>
+<ul>
+<li>Fundamentally important to avoid a collapse of the Internet.</li>
+<li>Congestion window (cwnd) defines how much data can be in transit.
+<ul>
+<li>It&rsquo;s maintained by a TCP sender in addition to the flow control receiver window (rwnd).</li>
+</ul>
+</li>
+<li>The sender uses the two windows to limit the flightsize (the data sent but not yet received) to the minimum of the windows.</li>
+</ul>
+</li>
+<li>
+<p>Retransmission timer controls when a segment is resent if no ACK has been received.</p>
+</li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cnds.jacobs-university.de/courses/cn-2019/">https://cnds.jacobs-university.de/courses/cn-2019/</a></li>
