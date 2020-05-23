@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -368,6 +368,21 @@
 </li>
 </ol>
 <h3 id="flow-control-and-congestion-control">Flow Control and Congestion Control</h3>
+<ol>
+<li>
+<p>Flow control - allows the sender to send multiple frames before waiting for ACKs.</p>
+</li>
+<li>
+<p>Sliding window flow control - the size of the window and the speed of the sender must match the buffer capacity of the receiver.</p>
+<ul>
+<li>For the send: LFS - LAR + 1 &lt;= SWS (last frame sent, last ACK received, send window size)</li>
+<li>For the receiver: LFA - NFE + 1 &lt;= RWS (last frame acceptable, next frame expected, receive window size)</li>
+</ul>
+</li>
+<li>
+<p>Congestions control is used to adapt the speed of the sender to the speed of the network.</p>
+</li>
+</ol>
 <h3 id="layering-and-the-osi-reference-model">Layering and the OSI Reference Model</h3>
 <h2 id="references">References</h2>
 <ul>
