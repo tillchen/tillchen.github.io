@@ -325,6 +325,9 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;virtual-lan&#34;&gt;Virtual LAN&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;VLANs provide a separation of logical LAN topologies from physical LAN topologies, which separates the traffic and reduces the network load.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;port-access-control&#34;&gt;Port Access Control&lt;/h3&gt;
 &lt;h3 id=&#34;wireless-lan&#34;&gt;Wireless LAN&lt;/h3&gt;
 &lt;h3 id=&#34;logical-link-control&#34;&gt;Logical Link Control&lt;/h3&gt;
