@@ -55,7 +55,7 @@
 &lt;li&gt;$\Gamma$ is the tape alphabet, where $\sqcup \in \Gamma$ and $\Sigma \subseteq \Gamma$&lt;/li&gt;
 &lt;li&gt;$\delta :Q\times \Gamma \rightarrow Q\times \Gamma \times \{L,R\}$ is the transition function&lt;/li&gt;
 &lt;li&gt;$q_0 \in Q$ is the start state&lt;/li&gt;
-&lt;li&gt;$q_{accept} \in Q$ is the accept state, where $q_{accept} \neq q{reject}$&lt;/li&gt;
+&lt;li&gt;$q_{accept} \in Q$ is the accept state, where $q_{accept} \neq q_{reject}$&lt;/li&gt;
 &lt;li&gt;$q_{reject} \in Q$ is the reject state.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
