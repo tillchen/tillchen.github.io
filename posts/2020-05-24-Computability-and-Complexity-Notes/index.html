@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              1-minute read
+              2-minute read
             </span>
           </div>
           
@@ -179,7 +179,8 @@
 <h3 id="the-church-turing-thesis">The Church-Turing Thesis</h3>
 <h4 id="turing-machines">Turing Machines</h4>
 <ol>
-<li>Formal definition of a TM:
+<li>
+<p>Formal definition of a TM:</p>
 <ul>
 <li>A Turing machine is a 7-tuple, $M=(Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})$, where $Q,\Sigma,\Gamma$ are all finite sets and
 <ol>
@@ -192,6 +193,27 @@
 <li>$q_{reject} \in Q$ is the reject state.</li>
 </ol>
 </li>
+</ul>
+</li>
+<li>
+<p>Configuration of a TM:</p>
+<ul>
+<li>Let M be a TM, $u,v \in \Gamma^*$ and $q \in Q$. The setting $uqv$ is a configuration of the TM, where
+<ul>
+<li>$u$ is the current tape content to the left of the head</li>
+<li>$q$ is the current state</li>
+<li>$v$ is the current tape content <strong>below</strong> ($v_1$) <strong>and to the right</strong> of the head (being terminated by blanks $\sqcup$)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>A configuration $C_1$ <strong>yields</strong> a configuration $C_2$ if M can legally from $C_1$ to $C_2$ in a single step.</p>
+<ul>
+<li>Leftward move: $uaq_i bv$ yields $uq_j acv$ iff $\delta(q_i, b) = (q_j, c, L)$</li>
+<li>Rightward move: $uaq_i bv$ yields $uacq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$</li>
+<li>L-move, left tape end: $q_i bv$ yields $q_j cv$ iff $\delta(q_i, b) = (q_j, c, L)$</li>
+<li>R-move, left tape end: $q_i bv$ yields $cq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$</li>
 </ul>
 </li>
 </ol>

@@ -45,7 +45,8 @@
 &lt;h3 id=&#34;the-church-turing-thesis&#34;&gt;The Church-Turing Thesis&lt;/h3&gt;
 &lt;h4 id=&#34;turing-machines&#34;&gt;Turing Machines&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;Formal definition of a TM:
+&lt;li&gt;
+&lt;p&gt;Formal definition of a TM:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A Turing machine is a 7-tuple, $M=(Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})$, where $Q,\Sigma,\Gamma$ are all finite sets and
 &lt;ol&gt;
@@ -58,6 +59,27 @@
 &lt;li&gt;$q_{reject} \in Q$ is the reject state.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configuration of a TM:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Let M be a TM, $u,v \in \Gamma^*$ and $q \in Q$. The setting $uqv$ is a configuration of the TM, where
+&lt;ul&gt;
+&lt;li&gt;$u$ is the current tape content to the left of the head&lt;/li&gt;
+&lt;li&gt;$q$ is the current state&lt;/li&gt;
+&lt;li&gt;$v$ is the current tape content &lt;strong&gt;below&lt;/strong&gt; ($v_1$) &lt;strong&gt;and to the right&lt;/strong&gt; of the head (being terminated by blanks $\sqcup$)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A configuration $C_1$ &lt;strong&gt;yields&lt;/strong&gt; a configuration $C_2$ if M can legally from $C_1$ to $C_2$ in a single step.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leftward move: $uaq_i bv$ yields $uq_j acv$ iff $\delta(q_i, b) = (q_j, c, L)$&lt;/li&gt;
+&lt;li&gt;Rightward move: $uaq_i bv$ yields $uacq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$&lt;/li&gt;
+&lt;li&gt;L-move, left tape end: $q_i bv$ yields $q_j cv$ iff $\delta(q_i, b) = (q_j, c, L)$&lt;/li&gt;
+&lt;li&gt;R-move, left tape end: $q_i bv$ yields $cq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
