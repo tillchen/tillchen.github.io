@@ -505,6 +505,29 @@
 </li>
 </ol>
 <h4 id="the-class-np">The Class NP</h4>
+<ol>
+<li>
+<p>The nondeterministic time complexity class NTIME(t(n)) is the set of all languages that are decidable by an O(t(n)) time NTM.</p>
+</li>
+<li>
+<p>$NP = \bigcup_{k \in \mathbb{N}_0} NTIME(n^k)$</p>
+</li>
+<li>
+<p>$P \subset NP$</p>
+</li>
+<li>
+<p>A verifier for a language A is a deterministic decider $V_A$ that takes as input $\langle w,c \rangle$ such that it holds: $w \in A$ iff there exists c such that $\langle w,c \rangle$ is accepted by $V_A$. c is called certificate.</p>
+</li>
+<li>
+<p>$V_A$ is a polynomial time verifier if it has a polynomial running time in the size of its input. A is called polynomially verifiable if there exists a polynomial time verifier for it.</p>
+</li>
+<li>
+<p>An alternative definition for NP: NP is the class of languages for which there exist polynomial time verifiers.</p>
+</li>
+<li>
+<p>There exists a polynomial time verifier for A iff there exists a nondeterministic polynomial time TM that recognizes A.</p>
+</li>
+</ol>
 <h3 id="space-complexity">Space Complexity</h3>
 <h2 id="references">References</h2>
 <ul>
