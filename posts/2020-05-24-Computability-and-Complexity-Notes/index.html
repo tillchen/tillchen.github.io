@@ -568,7 +568,19 @@
 <p>F is satisfiable if F has at least one model.</p>
 </li>
 <li>
-<p>Cook-Levin: $SAT =\{\langle F \rangle| \text{F is a satisfiable Boolean formula}\}$ is NP-complete.</p>
+<p>Cook-Levin: $SAT =\{\langle F \rangle| \text{F is a satisfiable Boolean formula}\}$ is NP-complete. The proof:</p>
+<ul>
+<li>$F = F_{cell} \wedge F_{start} \wedge F_{move} \wedge F_{accept}$</li>
+</ul>
+</li>
+<li>
+<p>$3SAT =\{\langle F \rangle| \text{F is in 3CNF and is satisfiable} \}$ is NP-complete.</p>
+</li>
+<li>
+<p>For all boolean formulas F in CNF there exists a boolean formula $F'$ in 3CNF such that F is satisfiable iff $F'$ is satisfiable. $F'$ can be built from F in polynomial time.</p>
+</li>
+<li>
+<p>CLIQUE is NP-complete. (Proof $3SAT \leq_P CLIQUE$)</p>
 </li>
 </ol>
 <h4 id="hierarchy-theorems">Hierarchy Theorems</h4>
