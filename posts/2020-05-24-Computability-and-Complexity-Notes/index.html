@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              3-minute read
+              4-minute read
             </span>
           </div>
           
@@ -183,6 +183,12 @@
 <p>This is the course notes for Computability and Complexity by Prof. Dr. Peter Zaspel at Jacobs University Bremen.</p>
 <h2 id="computability-theory">Computability Theory</h2>
 <h3 id="the-church-turing-thesis">The Church-Turing Thesis</h3>
+<p>There exists</p>
+<ol>
+<li>an intuitive idea of an algorithm and</li>
+<li>a formalization via DTM/NTM/RAM</li>
+</ol>
+<p>The hypothesis that both are equal is called Church-Turing Thesis.</p>
 <h4 id="turing-machines">Turing Machines</h4>
 <ol>
 <li>
@@ -301,6 +307,33 @@
 </li>
 </ol>
 <h5 id="random-access-machine">Random Access Machine</h5>
+<ol>
+<li>
+<p>k - command counter; a - accumulator; c - register; x - input; $h_r$ - position on input; y - output.</p>
+</li>
+<li>
+<p>Some commands:</p>
+<ul>
+<li>read: $a = x_{h_r}; \ h_r = h_r + 1; k = k + 1$</li>
+<li>print a: $y=ay; k = k + 1$</li>
+</ul>
+</li>
+<li>
+<p>Input tape: read-only and read once, can only move to the right</p>
+</li>
+<li>
+<p>Program: finite sequence of commands.</p>
+</li>
+<li>
+<p>There exists a RAM that terminates and outputs 1 whenever a TM M accepts. The RAM terminates and outputs 0 whenever M rejects.</p>
+</li>
+<li>
+<p>Let R be an RAM. For an arbitrary input x it outputs y(x). There exists a multi-tape TM that accepts the input x after writing y(x) on one of its tapes.</p>
+</li>
+<li>
+<p>TMs and RAMs have the same expressive power.</p>
+</li>
+</ol>
 <h3 id="decidability">Decidability</h3>
 <h3 id="reducibility">Reducibility</h3>
 <h2 id="complexity-theory">Complexity Theory</h2>
