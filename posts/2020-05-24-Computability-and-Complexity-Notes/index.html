@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2-minute read
+              3-minute read
             </span>
           </div>
           
@@ -215,6 +215,46 @@
 <li>L-move, left tape end: $q_i bv$ yields $q_j cv$ iff $\delta(q_i, b) = (q_j, c, L)$</li>
 <li>R-move, left tape end: $q_i bv$ yields $cq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$</li>
 </ul>
+</li>
+<li>
+<p>Characterization of configuration:</p>
+<ul>
+<li>Start configuration: $u = \epsilon$, i.e. head is at leftmost end of tape</li>
+<li>Accepting configuration: $q=q_{accept}$</li>
+<li>Rejecting configuration: $q=q_{reject}$</li>
+<li>Halting configuration: accepting or rejecting configuration</li>
+<li>Remark: there&rsquo;s exactly one accepting/rejecting state, but there can be many accepting/rejecting configurations.</li>
+</ul>
+</li>
+<li>
+<p>Accepted input and recognized language:</p>
+<ul>
+<li>M accepts $w$ if a sequence of configurations $C_1 , C_2 , &hellip;, C_k$ exists, such that
+<ol>
+<li>$C_1$ is the start configuration</li>
+<li>$C_i$ yields $C_{i+1}$</li>
+<li>$C_k$ is the accepting configuration</li>
+</ol>
+</li>
+<li>The language of M is $L(M) = \{w \in \Sigma^* | M \ \text{accepts} \ w\}$. We say L is recognized by M.</li>
+</ul>
+</li>
+<li>
+<p>Turing-recognizable or recursively enumerable language, if some TM recognizes it.</p>
+</li>
+<li>
+<p>M halts on $w$ if a sequence of configurations $C_1 , C_2 , &hellip;, C_k$ exists, such that</p>
+<ol>
+<li>$C_1$ is the start configuration</li>
+<li>$C_i$ yields $C_{i+1}$</li>
+<li>$C_k$ is the halting configuration</li>
+</ol>
+</li>
+<li>
+<p>Decider: if it halts on all inputs $w \in \Sigma^*$. A decider M that recognizes L is said to decide L.</p>
+</li>
+<li>
+<p>Decidable/Recursive/Turing-decidable language: if there exists a TM (i.e. a decider) that decides it.</p>
 </li>
 </ol>
 <h4 id="variants-of-turing-machines">Variants of Turing Machines</h4>
