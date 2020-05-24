@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              11-minute read
+              12-minute read
             </span>
           </div>
           
@@ -189,7 +189,12 @@
 <li><a href="#hierarchy-theorems">Hierarchy Theorems</a></li>
 </ul>
 </li>
-<li><a href="#space-complexity">Space Complexity</a></li>
+<li><a href="#space-complexity">Space Complexity</a>
+<ul>
+<li><a href="#measuring-space-complexity">Measuring Space Complexity</a></li>
+<li><a href="#pspace-and-related-classes">PSPACE and Related Classes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#references">References</a></li>
@@ -605,6 +610,64 @@
 </li>
 </ol>
 <h3 id="space-complexity">Space Complexity</h3>
+<h4 id="measuring-space-complexity">Measuring Space Complexity</h4>
+<ol>
+<li>
+<p>Space complexity is the maximum number of tape cells that are scanned by M for an arbitrary input o length n.</p>
+</li>
+<li>
+<p>SPACE(f(n)) is the set of all languages decided by $O(f(n))$ DTM.</p>
+</li>
+<li>
+<p>$SAT \in SPACE(n)$.</p>
+</li>
+<li>
+<p>NSAPCE is the set of all languages decided by $O(f(n))$ NTM.</p>
+</li>
+<li>
+<p>The language $ALL_{NFA}=\{\langle A \rangle| \text{A is a NFA and } L(A) = \Sigma^*\}$. $\overline{ALL_{NFA}} \in NSPACE(n)$</p>
+</li>
+<li>
+<p>f(n) at least $O(\log n)$. F is space constructible if a computable function exists that maps the string $1^n$ (the unary representation) to the binary representation of f(n) in space $O(f(n))$.</p>
+</li>
+<li>
+<p>Savitch&rsquo;s Theorem: $NSPACE(f(n)) \subseteq SPACE(f^2(n))$.</p>
+<ul>
+<li>Proof: Instead of calculating all branches, ask whether start config yields accepting config and check recursively, which leads to space reuse.</li>
+</ul>
+</li>
+</ol>
+<h4 id="pspace-and-related-classes">PSPACE and Related Classes</h4>
+<ol>
+<li>
+<p>$P = \bigcup_{k \in \mathbb{N}_0} TIME(n^k)$</p>
+</li>
+<li>
+<p>$PSPACE = \bigcup_{k} SPACE(n^k)$ (deterministic)</p>
+</li>
+<li>
+<p>$NPSPACE = \bigcup_{k} SPACE(n^k)$ (non-deterministic)</p>
+</li>
+<li>
+<p>$PSPACE = NPSPACE$</p>
+</li>
+<li>
+<p>$P \subseteq PSPACE$ and $NP \subseteq NPSPACE$ and $NP \subseteq PSPACE$.</p>
+</li>
+<li>
+<p>PSPACE-complete if:</p>
+<ul>
+<li>$B \in PSPACE$ and</li>
+<li>$A \leq_p B$ for all $A \in PSPACE$ (only poly-time reduction; using poly-space would be as hard as the full class)</li>
+</ul>
+</li>
+<li>
+<p>The language $FQBF=\{\langle F \rangle| \text{F is a true fully quantified Boolean formula}\}$ is PSPACE-complete.</p>
+</li>
+<li>
+<p>$P \subseteq NP \subseteq PSPACE = NPSPACE \subset EXPTIME$ (one of this subsets have to be a proper subset due to $P \subsetneq EXPTIME$)</p>
+</li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li>
