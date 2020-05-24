@@ -50,6 +50,7 @@
 &lt;li&gt;&lt;a href=&#34;#measuring-complexity&#34;&gt;Measuring Complexity&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#the-class-p&#34;&gt;The Class P&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#the-class-np&#34;&gt;The Class NP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#polynomial-time-reducibility&#34;&gt;Polynomial Time Reducibility&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#space-complexity&#34;&gt;Space Complexity&lt;/a&gt;&lt;/li&gt;
@@ -393,7 +394,17 @@
 &lt;li&gt;
 &lt;p&gt;There exists a polynomial time verifier for A iff there exists a nondeterministic polynomial time TM that recognizes A.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A Hamiltonian path in G is a directed path that goes through each node exactly once. $HAMPATH \in NP$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A clique is a subgraph such that there exist edges between all paris of nodes. A k-clique is a clique with k vertices. $CLIQUE \in NP$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$SUBSETSUM \in NP$&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h4 id=&#34;polynomial-time-reducibility&#34;&gt;Polynomial Time Reducibility&lt;/h4&gt;
 &lt;h3 id=&#34;space-complexity&#34;&gt;Space Complexity&lt;/h3&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
