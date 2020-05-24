@@ -414,6 +414,29 @@
 </li>
 </ol>
 <h3 id="reducibility">Reducibility</h3>
+<ol>
+<li>
+<p>The language $HALT_{TM}=\{\langle M,w \rangle| \text{M is a TM and M halts on input} w \}$ is undecidable. (Proof by contradiction. Assume there&rsquo;s a decider R for $HALT_{TM}$. Construct a decider for $A_{TM}$ (&ldquo;R rejects, reject&rdquo; eliminates the loop case.))</p>
+</li>
+<li>
+<p>A Computable function f $\Rightarrow$ there exists some TM M, on every input w, halts with just f(w) on its tape.</p>
+</li>
+<li>
+<p>A is mapping reducible to B ($A \leq_{m} B$) if there&rsquo;s a computable function f between them. f is called a reduction from A to B.</p>
+</li>
+<li>
+<p>If $A \leq_{m} B$ and B is decidable, A is decidable.</p>
+</li>
+<li>
+<p>If $A \leq_{m} B$ and A is undecidable, B is undecidable.</p>
+</li>
+<li>
+<p>We can also prove $HALT_{TM}$ to be undecidable by finding a reduction from $A_{TM}$. ($w \in A_{TM} \Leftrightarrow f(w) \in HALT_{TM}$)</p>
+</li>
+<li>
+<p>The language $REGULAR_{TM}=\{\langle M \rangle| \text{M is a TM and L(M) is a regular language} \}$ is undecidable.</p>
+</li>
+</ol>
 <h2 id="complexity-theory">Complexity Theory</h2>
 <h3 id="time-complexity">Time Complexity</h3>
 <h3 id="space-complexity">Space Complexity</h3>
