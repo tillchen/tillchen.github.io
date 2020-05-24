@@ -356,6 +356,18 @@
 <li>
 <p>The language $EQ_{DFA}=\{\langle A,B \rangle| \text{A and B are DFAs and L(A)=L(B) } \}$ is decidable. (Build C that&rsquo;s empty iff A=B. Use $E_{DFA}$ on C.)</p>
 </li>
+<li>
+<p>The language $A_{CFG}=\{\langle G,w \rangle| \text{A is a CFG that generates string } w \}$ is decidable. (Convert G to CFG in Chomsky Normal Form; enumerate all derivations within 2n-1 steps.)</p>
+</li>
+<li>
+<p>The language $E_{CFG}=\{\langle A \rangle| \text{A is a CFG and L(G) = } \empty \}$ is decidable. (Mark all terminal symbols. Follow the rules until no new variables are marked. If the start symbol is not marked, accept.)</p>
+</li>
+<li>
+<p>But $EQ_{CFG}$ is not decidable.</p>
+</li>
+<li>
+<p>Every context-free language L is decidable. (Build a TM with CFG G with $A_{CFG}$)</p>
+</li>
 </ol>
 <h3 id="reducibility">Reducibility</h3>
 <h2 id="complexity-theory">Complexity Theory</h2>
