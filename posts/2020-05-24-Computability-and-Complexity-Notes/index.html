@@ -158,7 +158,13 @@
 <li><a href="#the-church-turing-thesis">The Church-Turing Thesis</a>
 <ul>
 <li><a href="#turing-machines">Turing Machines</a></li>
-<li><a href="#variants-of-turing-machines">Variants of Turing Machines</a></li>
+<li><a href="#variants-of-turing-machines">Variants of Turing Machines</a>
+<ul>
+<li><a href="#mutlitape-tm">Mutlitape TM</a></li>
+<li><a href="#nondeterministic-tm">Nondeterministic TM</a></li>
+<li><a href="#random-access-machine">Random Access Machine</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#decidability">Decidability</a></li>
@@ -258,6 +264,23 @@
 </li>
 </ol>
 <h4 id="variants-of-turing-machines">Variants of Turing Machines</h4>
+<ol>
+<li>All variants have the same power as a standard TM.</li>
+</ol>
+<h5 id="mutlitape-tm">Mutlitape TM</h5>
+<ol>
+<li>
+<p>The definition differs from the standard TM that: $\delta :Q\times \Gamma^k \rightarrow Q\times \Gamma^k \times \{L,R\}^k$</p>
+</li>
+<li>
+<p>For every multitape TM M, there exits a single-tape TM S that recognizes the same language.</p>
+</li>
+<li>
+<p>Turing-recognizable iff some multitape TM recognizes it.</p>
+</li>
+</ol>
+<h5 id="nondeterministic-tm">Nondeterministic TM</h5>
+<h5 id="random-access-machine">Random Access Machine</h5>
 <h3 id="decidability">Decidability</h3>
 <h3 id="reducibility">Reducibility</h3>
 <h2 id="complexity-theory">Complexity Theory</h2>
