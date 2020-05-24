@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              5-minute read
+              6-minute read
             </span>
           </div>
           
@@ -170,6 +170,7 @@
 <li><a href="#decidability">Decidability</a>
 <ul>
 <li><a href="#decidable-languages">Decidable Languages</a></li>
+<li><a href="#undecidability-of-math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmsubmiamimrowmitmimimmimrowmsubmrowannotation-encoding%22applicationx-tex%22atmannotationsemanticsmathatm%e2%80%8b">Undecidability of $A_{TM}$</a></li>
 </ul>
 </li>
 <li><a href="#reducibility">Reducibility</a></li>
@@ -351,7 +352,7 @@
 <p>The language $A_{REX}=\{\langle B,w \rangle| \text{B is a regular expression that generates string } w \}$ is decidable. (Convert R to DFA.)</p>
 </li>
 <li>
-<p>The language $E_{DFA}=\{\langle A \rangle| \text{A is a DFA and L(A) = } \empty \}$ is decidable. (No accept states are marked.)</p>
+<p>The language $E_{DFA}=\{\langle A \rangle| \text{A is a DFA and L(A) = } \emptyset \}$ is decidable. (No accept states are marked.)</p>
 </li>
 <li>
 <p>The language $EQ_{DFA}=\{\langle A,B \rangle| \text{A and B are DFAs and L(A)=L(B) } \}$ is decidable. (Build C that&rsquo;s empty iff A=B. Use $E_{DFA}$ on C.)</p>
@@ -360,13 +361,22 @@
 <p>The language $A_{CFG}=\{\langle G,w \rangle| \text{A is a CFG that generates string } w \}$ is decidable. (Convert G to CFG in Chomsky Normal Form; enumerate all derivations within 2n-1 steps.)</p>
 </li>
 <li>
-<p>The language $E_{CFG}=\{\langle A \rangle| \text{A is a CFG and L(G) = } \empty \}$ is decidable. (Mark all terminal symbols. Follow the rules until no new variables are marked. If the start symbol is not marked, accept.)</p>
+<p>The language $E_{CFG}=\{\langle A \rangle| \text{A is a CFG and L(G) = } \emptyset \}$ is decidable. (Mark all terminal symbols. Follow the rules until no new variables are marked. If the start symbol is not marked, accept.)</p>
 </li>
 <li>
 <p>But $EQ_{CFG}$ is not decidable.</p>
 </li>
 <li>
 <p>Every context-free language L is decidable. (Build a TM with CFG G with $A_{CFG}$)</p>
+</li>
+</ol>
+<h4 id="undecidability-of-a_tm">Undecidability of $A_{TM}$</h4>
+<ol>
+<li>
+<p>The language $A_{TM}=\{\langle M,w \rangle| \text{M is a TM and M accepts } w \}$ is undecidable. (Proof by diagonalization)</p>
+</li>
+<li>
+<p>The language $A_{TM}=\{\langle M,w \rangle| \text{M is a TM and M accepts } w \}$ is Turing-recognizable. (Build TM U. Simulate M on w. If M accepts, U accepts. If M rejects, U rejects.) (U is an instance of Universal TM) (U can run forever.)</p>
 </li>
 </ol>
 <h3 id="reducibility">Reducibility</h3>
