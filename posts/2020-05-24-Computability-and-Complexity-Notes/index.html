@@ -178,6 +178,23 @@
 <h2 id="computability-theory">Computability Theory</h2>
 <h3 id="the-church-turing-thesis">The Church-Turing Thesis</h3>
 <h4 id="turing-machines">Turing Machines</h4>
+<ol>
+<li>Formal definition of a TM:
+<ul>
+<li>A Turing machine is a 7-tuple, $M=(Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})$, where $Q,\Sigma,\Gamma$ are all finite sets and
+<ol>
+<li>$Q$ is the set of states</li>
+<li>$\Sigma$ is the input alphabet not containing the blank symbol $\sqcup$</li>
+<li>$\Gamma$ is the tape alphabet, where $\sqcup \in \Gamma$ and $\Sigma \subseteq \Gamma$</li>
+<li>$\delta :Q\times \Gamma \rightarrow Q\times \Gamma \times \{L,R\}$ is the transition function</li>
+<li>$q_0 \in Q$ is the start state</li>
+<li>$q_{accept} \in Q$ is the accept state, where $q_{accept} \neq q{reject}$</li>
+<li>$q_{reject} \in Q$ is the reject state.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
 <h4 id="variants-of-turing-machines">Variants of Turing Machines</h4>
 <h3 id="decidability">Decidability</h3>
 <h3 id="reducibility">Reducibility</h3>
