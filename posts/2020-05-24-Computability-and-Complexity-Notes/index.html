@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           
@@ -167,7 +167,11 @@
 </li>
 </ul>
 </li>
-<li><a href="#decidability">Decidability</a></li>
+<li><a href="#decidability">Decidability</a>
+<ul>
+<li><a href="#decidable-languages">Decidable Languages</a></li>
+</ul>
+</li>
 <li><a href="#reducibility">Reducibility</a></li>
 </ul>
 </li>
@@ -335,6 +339,24 @@
 </li>
 </ol>
 <h3 id="decidability">Decidability</h3>
+<h4 id="decidable-languages">Decidable Languages</h4>
+<ol>
+<li>
+<p>The language $A_{DFA}=\{\langle B,w \rangle| \text{B is a DFA that accepts input string } w \}$ is decidable. (The problem of testing whether a given DFA accepts a given string is decidable.)</p>
+</li>
+<li>
+<p>The language $A_{NFA}=\{\langle B,w \rangle| \text{B is a NFA that accepts input string } w \}$ is decidable. (Convert to NFA to DFA.)</p>
+</li>
+<li>
+<p>The language $A_{REX}=\{\langle B,w \rangle| \text{B is a regular expression that generates string } w \}$ is decidable. (Convert R to DFA.)</p>
+</li>
+<li>
+<p>The language $E_{DFA}=\{\langle A \rangle| \text{A is a DFA and L(A) = } \empty \}$ is decidable. (No accept states are marked.)</p>
+</li>
+<li>
+<p>The language $EQ_{DFA}=\{\langle A,B \rangle| \text{A and B are DFAs and L(A)=L(B) } \}$ is decidable. (Build C that&rsquo;s empty iff A=B. Use $E_{DFA}$ on C.)</p>
+</li>
+</ol>
 <h3 id="reducibility">Reducibility</h3>
 <h2 id="complexity-theory">Complexity Theory</h2>
 <h3 id="time-complexity">Time Complexity</h3>
