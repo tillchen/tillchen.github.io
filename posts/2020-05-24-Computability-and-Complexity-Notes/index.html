@@ -280,6 +280,26 @@
 </li>
 </ol>
 <h5 id="nondeterministic-tm">Nondeterministic TM</h5>
+<ol>
+<li>
+<p>The definition differs from the standard TM that: $\delta :Q\times \Gamma \rightarrow \mathcal{P}(Q\times \Gamma \times \{L,R\})$</p>
+</li>
+<li>
+<p>For definition of yielding configurations, it differs from the standard TM that we need to change from $=$ to $\in$. (One config can yield several or no config.)</p>
+</li>
+<li>
+<p>Exactly the same definition for accepted input and recognized language.</p>
+</li>
+<li>
+<p>For every NTM N, there exists a deterministic (single-tape) TM S that recognizes the same language.</p>
+</li>
+<li>
+<p>Turing-recognizable iff some NTM recognizes it.</p>
+</li>
+<li>
+<p>Nondeterministic decider: if all branches halt on all inputs.</p>
+</li>
+</ol>
 <h5 id="random-access-machine">Random Access Machine</h5>
 <h3 id="decidability">Decidability</h3>
 <h3 id="reducibility">Reducibility</h3>
