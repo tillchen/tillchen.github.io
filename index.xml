@@ -270,13 +270,13 @@
 &lt;h4 id=&#34;a-turing-unrecognizable-language&#34;&gt;A Turing-Unrecognizable Language&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;L is co-Turing-recognizable if $\bar L$ is Turing-recognizable.&lt;/p&gt;
+&lt;p&gt;L is co-Turing-recognizable if $\overline L$ is Turing-recognizable.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;A language is decidable iff it&amp;rsquo;s Turing-recognizable and co-Turing-recognizable. (Run two TMs in parallel.)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The language $\bar{A_{TM}}$ is not Turing recognizable. (L is undecidable $\Rightarrow$ L not Turing recognizable $\vee$ $\bar L$ not Turing recognizable $\Rightarrow$ $\bar L$ not Turing recognizable)&lt;/p&gt;
+&lt;p&gt;The language $\overline{A_{TM}}$ is not Turing recognizable. (L is undecidable $\Rightarrow$ L not Turing recognizable $\vee$ $\overline L$ not Turing recognizable $\Rightarrow$ $\overline L$ not Turing recognizable)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;reducibility&#34;&gt;Reducibility&lt;/h3&gt;
