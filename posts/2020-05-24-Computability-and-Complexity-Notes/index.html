@@ -138,7 +138,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              10-minute read
+              11-minute read
             </span>
           </div>
           
@@ -584,6 +584,26 @@
 </li>
 </ol>
 <h4 id="hierarchy-theorems">Hierarchy Theorems</h4>
+<ol>
+<li>
+<p>Time constructible: f(n) at least $O(n \log n)$. f is time constructible if a computable function exists that maps the string $1^n$ (the unary representation) to the binary representation of f(n) in time $O(f(n))$. (output could also be unary.) (normal functions are all time constructible)</p>
+</li>
+<li>
+<p>Let f be a time-constructible function. There exists a language A that&rsquo;s decidable in $O(f(n))$ but not decidable in time $o(f(n)/\log f(n))$. (By increasing the time complexity by more than a logarithm of it, we increase the size of the time complexity class.)</p>
+</li>
+<li>
+<p>Let $f_1 \ f_2$ be time-constructible and $f_1(n) = o(f_2(n)/\log f_2(n))$, then $TIME(f_1(n)) \subsetneq TIME(f_2(n))$</p>
+</li>
+<li>
+<p>For $1 \leq \epsilon_1 &lt; \epsilon_2$ and $n^{\epsilon_1}$ at least in $O(n\log n)$, it holds $TIME(f_1(n)) \subsetneq TIME(f_2(n))$</p>
+</li>
+<li>
+<p>$EXPTIME = \bigcup_{k \in \mathbb{N}_0} TIME(2^{n^k})$.</p>
+</li>
+<li>
+<p>$P \subsetneq EXPTIME$. (Even if P=NP, there are problems of exponential runtime.)</p>
+</li>
+</ol>
 <h3 id="space-complexity">Space Complexity</h3>
 <h2 id="references">References</h2>
 <ul>
