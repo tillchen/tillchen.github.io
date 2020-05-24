@@ -182,6 +182,8 @@
 <li><a href="#time-complexity">Time Complexity</a>
 <ul>
 <li><a href="#measuring-complexity">Measuring Complexity</a></li>
+<li><a href="#the-class-p">The Class P</a></li>
+<li><a href="#the-class-np">The Class NP</a></li>
 </ul>
 </li>
 <li><a href="#space-complexity">Space Complexity</a></li>
@@ -471,7 +473,24 @@
 <li>Exponential bound - $f(n) = 2^{(O(n^\delta))}$</li>
 </ul>
 </li>
+<li>
+<p>The time complexity class TIME(t(n)) is the set of all languages that are decidable by an O(t(n)) time single-tape DTM.</p>
+</li>
+<li>
+<p>For every t(n) time deterministic multi-tape TM there exists an equivalent $O(t^2(n))$ time deterministic single-tape TM.</p>
+<ul>
+<li>This only gives existence. But there can be better implementations.</li>
+</ul>
+</li>
+<li>
+<p>The running time of nondeterministic decider N is the maximum number of steps f(n) uses on any branch.</p>
+</li>
+<li>
+<p>For every t(n) NTM there exists an equivalent $2^{O(t(n))}$ time DTM. (By BFS.)</p>
+</li>
 </ol>
+<h4 id="the-class-p">The Class P</h4>
+<h4 id="the-class-np">The Class NP</h4>
 <h3 id="space-complexity">Space Complexity</h3>
 <h2 id="references">References</h2>
 <ul>
