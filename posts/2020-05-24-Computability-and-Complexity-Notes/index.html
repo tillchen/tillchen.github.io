@@ -7,30 +7,30 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Tianyao Chen">
-    <meta name="description" content="Some handy tips for Bash">
+    <meta name="description" content="Course notes for Computability and Complexity at Jacobs University Bremen">
     <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bash Tips"/>
-<meta name="twitter:description" content="Some handy tips for Bash"/>
+<meta name="twitter:title" content="Computability and Complexity Notes"/>
+<meta name="twitter:description" content="Course notes for Computability and Complexity at Jacobs University Bremen"/>
 
-    <meta property="og:title" content="Bash Tips" />
-<meta property="og:description" content="Some handy tips for Bash" />
+    <meta property="og:title" content="Computability and Complexity Notes" />
+<meta property="og:description" content="Course notes for Computability and Complexity at Jacobs University Bremen" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tillchen.com/posts/2019-7-24-Bash-Tips/" />
-<meta property="article:published_time" content="2019-07-24T00:00:00+02:00" />
-<meta property="article:modified_time" content="2019-07-24T00:00:00+02:00" />
+<meta property="og:url" content="https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/" />
+<meta property="article:published_time" content="2020-05-24T08:45:46+02:00" />
+<meta property="article:modified_time" content="2020-05-24T08:45:46+02:00" />
 
 
     
-      <base href="https://tillchen.com/posts/2019-7-24-Bash-Tips/">
+      <base href="https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/">
     
     <title>
-  Bash Tips · Tianyao Chen
+  Computability and Complexity Notes · Tianyao Chen
 </title>
 
     
-      <link rel="canonical" href="https://tillchen.com/posts/2019-7-24-Bash-Tips/">
+      <link rel="canonical" href="https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -126,25 +126,25 @@
     <article>
       <header>
         <div class="post-title">
-          <h1 class="title">Bash Tips</h1>
+          <h1 class="title">Computability and Complexity Notes</h1>
         </div>
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
               <i class="fas fa-calendar"></i>
-              <time datetime='2019-07-24T00:00:00&#43;02:00'>
-                July 24, 2019
+              <time datetime='2020-05-24T08:45:46&#43;02:00'>
+                May 24, 2020
               </time>
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2-minute read
+              1-minute read
             </span>
           </div>
           
           <div class="tags">
   <i class="fas fa-tag"></i>
-    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
+    <a href="https://tillchen.com/tags/Computer-Science/">Computer Science</a></div>
 
         </div>
       </header>
@@ -152,96 +152,46 @@
       <div>
         
         <ul>
-<li><a href="#basics">Basics</a></li>
-<li><a href="#writing-scripts">Writing Scripts</a></li>
-<li><a href="#advanced-tricks">Advanced Tricks</a></li>
-<li><a href="#resources">Resources</a></li>
-</ul>
-<h2 id="basics">Basics</h2>
-<ol>
-<li>
-<p><code>cd</code> alone goes to the home directory.</p>
-</li>
-<li>
-<p><code>ls -lt</code> gives the long format and sorted by modification time.</p>
-</li>
-<li>
-<p><code>file foo.txt</code> gives the file type.</p>
-</li>
-<li>
-<p><code>less foo.txt</code> gives the content of the file.</p>
-</li>
-<li>
-<p>We can double click a filename to copy it.</p>
-</li>
-<li>
-<p><code>cp</code> copies the files.</p>
-</li>
-<li>
-<p><code>mv</code> moves the files or renames the files.</p>
-</li>
-<li>
-<p><code>ln</code> creates links.</p>
-</li>
-<li>
-<p>Use <code>|</code> to combine commands.</p>
-</li>
-<li>
-<p>Control A goes to the beginning.</p>
-</li>
-<li>
-<p>Control R goes to revere searching in the history.</p>
-</li>
-<li>
-<p><code>zip -r foo.zip foo</code> zips the file/directory. <code>unzip foo.zip</code> unzips.</p>
-</li>
-<li>
-<p><code>grep regex foo.txt</code> searches in foo.txt .</p>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#computability-theory">Computability Theory</a>
 <ul>
-<li>-i for case-insensitive</li>
-<li>-v for inversion</li>
+<li><a href="#the-church-turing-thesis">The Church-Turing Thesis</a>
+<ul>
+<li><a href="#turing-machines">Turing Machines</a></li>
+<li><a href="#variants-of-turing-machines">Variants of Turing Machines</a></li>
 </ul>
 </li>
-<li>
-<p><code>find . -name &quot;foo*&quot;</code> finds the files with the name foo* .</p>
+<li><a href="#decidability">Decidability</a></li>
+<li><a href="#reducibility">Reducibility</a></li>
+</ul>
 </li>
-<li>
-<p><code>exec zsh</code> and <code>exec bash</code> switch between the two shells.</p>
-</li>
-<li>
-<p>Control N clears the current line.</p>
-</li>
-</ol>
-<h2 id="writing-scripts">Writing Scripts</h2>
-<ol>
-<li>
-<p>Put <code>#!/bin/bash</code> at the beginning of the script.</p>
-</li>
-<li>
-<p>Use <code>chmod 755 foo.sh</code> to make the script executable for everyone. (700 for the owner only.)</p>
-</li>
-</ol>
-<h2 id="advanced-tricks">Advanced Tricks</h2>
-<ol>
-<li>
-<p><code>touch {a..z}{0001..0100}.txt</code> creates multiple files at once.</p>
-</li>
-<li>
-<p><code>grep -r &quot;hello&quot; .</code> searches for hello recursively in the current directory.</p>
-</li>
-<li>
-<p><code>wget --no-parent -r https://cnds.jacobs-university.de/courses/os-2019/src/</code> gets the content recursively.</p>
-</li>
-<li>
-<p><code>find . -name &quot;*html*&quot; -delete</code> removes all files containing html.</p>
-</li>
-<li>
-<p><code>command &amp;</code> to run the command in the background.</p>
-</li>
-</ol>
-<h2 id="resources">Resources</h2>
+<li><a href="#complexity-theory">Complexity Theory</a>
 <ul>
-<li><a href="https://www.amazon.com/Linux-Command-Line-Complete-Introduction-dp-1593273894/dp/1593273894/ref=mt_paperback?_encoding=UTF8&amp;me=&amp;qid=1564723984">The Linux Command Line: A Complete Introduction</a></li>
+<li><a href="#time-complexity">Time Complexity</a></li>
+<li><a href="#space-complexity">Space Complexity</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This is the course notes for Computability and Complexity by Prof. Dr. Peter Zaspel at Jacobs University Bremen.</p>
+<h2 id="computability-theory">Computability Theory</h2>
+<h3 id="the-church-turing-thesis">The Church-Turing Thesis</h3>
+<h4 id="turing-machines">Turing Machines</h4>
+<h4 id="variants-of-turing-machines">Variants of Turing Machines</h4>
+<h3 id="decidability">Decidability</h3>
+<h3 id="reducibility">Reducibility</h3>
+<h2 id="complexity-theory">Complexity Theory</h2>
+<h3 id="time-complexity">Time Complexity</h3>
+<h3 id="space-complexity">Space Complexity</h3>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://www.goodreads.com/book/show/400716.Introduction_to_the_Theory_of_Computation">Introduction to the Theory of Computation</a> by Michael Sipser</p>
+</li>
+<li>
+<p>Course slides/notes from Prof. Dr. Peter Zaspel at Jacobs University Bremen.</p>
+</li>
 </ul>
 
       </div>

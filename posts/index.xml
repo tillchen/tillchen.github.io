@@ -6,10 +6,61 @@
     <description>Recent content in Posts on Tianyao Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2020 18:52:12 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 08:45:46 +0200</lastBuildDate>
     
 	<atom:link href="https://tillchen.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computability and Complexity Notes</title>
+      <link>https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/</link>
+      <pubDate>Sun, 24 May 2020 08:45:46 +0200</pubDate>
+      
+      <guid>https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#computability-theory&#34;&gt;Computability Theory&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-church-turing-thesis&#34;&gt;The Church-Turing Thesis&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#turing-machines&#34;&gt;Turing Machines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#variants-of-turing-machines&#34;&gt;Variants of Turing Machines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#decidability&#34;&gt;Decidability&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reducibility&#34;&gt;Reducibility&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#complexity-theory&#34;&gt;Complexity Theory&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#time-complexity&#34;&gt;Time Complexity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#space-complexity&#34;&gt;Space Complexity&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This is the course notes for Computability and Complexity by Prof. Dr. Peter Zaspel at Jacobs University Bremen.&lt;/p&gt;
+&lt;h2 id=&#34;computability-theory&#34;&gt;Computability Theory&lt;/h2&gt;
+&lt;h3 id=&#34;the-church-turing-thesis&#34;&gt;The Church-Turing Thesis&lt;/h3&gt;
+&lt;h4 id=&#34;turing-machines&#34;&gt;Turing Machines&lt;/h4&gt;
+&lt;h4 id=&#34;variants-of-turing-machines&#34;&gt;Variants of Turing Machines&lt;/h4&gt;
+&lt;h3 id=&#34;decidability&#34;&gt;Decidability&lt;/h3&gt;
+&lt;h3 id=&#34;reducibility&#34;&gt;Reducibility&lt;/h3&gt;
+&lt;h2 id=&#34;complexity-theory&#34;&gt;Complexity Theory&lt;/h2&gt;
+&lt;h3 id=&#34;time-complexity&#34;&gt;Time Complexity&lt;/h3&gt;
+&lt;h3 id=&#34;space-complexity&#34;&gt;Space Complexity&lt;/h3&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/400716.Introduction_to_the_Theory_of_Computation&#34;&gt;Introduction to the Theory of Computation&lt;/a&gt; by Michael Sipser&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Course slides/notes from Prof. Dr. Peter Zaspel at Jacobs University Bremen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Computer Networks Notes</title>
@@ -4032,6 +4083,10 @@ USE gregs_list;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;grep regex foo.txt&lt;/code&gt; searches in foo.txt .&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-i for case-insensitive&lt;/li&gt;
+&lt;li&gt;-v for inversion&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;find . -name &amp;quot;foo*&amp;quot;&lt;/code&gt; finds the files with the name foo* .&lt;/p&gt;
