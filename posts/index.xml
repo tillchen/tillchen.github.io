@@ -506,9 +506,6 @@
 &lt;h4 id=&#34;pspace-and-related-classes&#34;&gt;PSPACE and Related Classes&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;$P = \bigcup_{k \in \mathbb{N}_0} TIME(n^k)$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;$PSPACE = \bigcup_{k} SPACE(n^k)$ (deterministic)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
