@@ -302,6 +302,15 @@
 &lt;li&gt;
 &lt;p&gt;The language $REGULAR_{TM}=\{\langle M \rangle| \text{M is a TM and L(M) is a regular language} \}$ is undecidable.&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If $A \leq_{m} B$ and B is Turing-recognizable, A is Turing-recognizable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If $A \leq_{m} B$ and A is not Turing-recognizable, B is not Turing-recognizable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The language $EQ_{TM}=\{\langle M_1, M_2 \rangle| M_1 \ M_2 \text{ are TMs and } L(M_1) = L(M_2) \}$ is not Turing-recognizable. (Proof by $A_{TM} \leq_{m} \overline{EQ_{TM}}$ ($M_1$ rejects everything and $M_2$ accepts if M accepts w.))&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;complexity-theory&#34;&gt;Complexity Theory&lt;/h2&gt;
 &lt;h3 id=&#34;time-complexity&#34;&gt;Time Complexity&lt;/h3&gt;
