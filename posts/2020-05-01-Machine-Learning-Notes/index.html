@@ -115,7 +115,7 @@
 <main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
+            <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Machine Learning Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 1, 2020">May 1, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4365 words&nbsp;
@@ -1075,21 +1075,13 @@
 <li>
 <p>Definition ($\tau$ is a sample of the random variable T):</p>
 <p>$$
-\begin{align}
-GE(\hat f, \tau) &amp;= E_{X,Y}(L(Y, \hat f_T(X))|T=\tau) \\<br>
-&amp;= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy \\<br>
-&amp;= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\frac{\rho(x,y,\tau)}{\rho_\tau\tau}dxdy
-\end{align}
+\begin{aligned} GE(\hat f, \tau) &amp;= E_{X,Y}(L(Y, \hat f_T(X))|T=\tau) \\ &amp;= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy \\ &amp;= \int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\frac{\rho(x,y,\tau)}{\rho_\tau\tau}dxdy \end{aligned}
 $$</p>
 </li>
 <li>
 <p>Expected generalization/test error</p>
 <p>$$
-\begin{align}
-EGE(\hat f, \tau) &amp;= E_T(E_{X,Y}(L(Y, \hat f_T(X))|T=\tau)) \\<br>
-&amp;= \int_{R_T}(\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy)\rho(\tau)d\tau \\<br>
-&amp;= \int_{R_T}\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y,\tau) dxdyd\tau
-\end{align}
+\begin{aligned} EGE(\hat f, \tau) &amp;= E_T(E_{X,Y}(L(Y, \hat f_T(X))|T=\tau)) \\ &amp;= \int_{R_T}(\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y|\tau)dxdy)\rho(\tau)d\tau \\ &amp;= \int_{R_T}\int_{R_Y}\int_{R_X}L(y, \hat f_T(x))\rho(x,y,\tau) dxdyd\tau \end{aligned}
 $$</p>
 </li>
 </ol>
