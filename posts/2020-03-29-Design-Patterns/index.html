@@ -1,172 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-
-    <meta name="author" content="Tianyao Chen">
-    <meta name="description" content="Some notes for design patterns">
-    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Design Patterns"/>
-<meta name="twitter:description" content="Some notes for design patterns"/>
-
-    <meta property="og:title" content="Design Patterns" />
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Design Patterns - Tianyao Chen</title><meta name="Description" content="Some notes for design patterns"><meta property="og:title" content="Design Patterns" />
 <meta property="og:description" content="Some notes for design patterns" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tillchen.com/posts/2020-03-29-Design-Patterns/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
 <meta property="article:published_time" content="2020-03-29T00:00:00+01:00" />
 <meta property="article:modified_time" content="2020-03-29T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
 
+<meta name="twitter:title" content="Design Patterns"/>
+<meta name="twitter:description" content="Some notes for design patterns"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-03-29-Design-Patterns/" /><link rel="prev" href="https://tillchen.com/posts/2020-02-17-Go-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Design Patterns",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2020-03-29-Design-Patterns\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Software Engineering","wordcount":  972 ,
+        "url": "https:\/\/tillchen.com\/posts\/2020-03-29-Design-Patterns\/","datePublished": "2020-03-29T00:00:00+01:00","dateModified": "2020-03-29T00:00:00+01:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for design patterns"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-    
-      <base href="https://tillchen.com/posts/2020-03-29-Design-Patterns/">
-    
-    <title>
-  Design Patterns · Tianyao Chen
-</title>
-
-    
-      <link rel="canonical" href="https://tillchen.com/posts/2020-03-29-Design-Patterns/">
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
-    
-      
-      
-      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
-        
-        
-        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
-      
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
-
-    <meta name="generator" content="Hugo 0.69.2" />
-  </head>
-
-  
-  
-    
-  
-  <body class="colorscheme-auto">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://tillchen.com/">
-      Tianyao Chen
-    </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
-</nav>
-
-
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">Design Patterns</h1>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
         </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2020-03-29T00:00:00&#43;01:00'>
-                March 29, 2020
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              5-minute read
-            </span>
-          </div>
-          
-          <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://tillchen.com/tags/Software-Engineering/">Software Engineering</a></div>
-
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
         </div>
-      </header>
-
-      <div>
-        
-        <ul>
-<li><a href="#principles">Principles</a></li>
-<li><a href="#the-strategy-pattern">The Strategy Pattern</a></li>
-<li><a href="#the-observer-pattern">The Observer Pattern</a></li>
-<li><a href="#the-decorator-pattern">The Decorator Pattern</a></li>
-<li><a href="#the-factory-pattern">The Factory Pattern</a></li>
-<li><a href="#the-singleton-pattern">The Singleton Pattern</a></li>
-<li><a href="#the-command-pattern">The Command Pattern</a></li>
-<li><a href="#the-adapter-pattern">The Adapter Pattern</a></li>
-<li><a href="#the-facade-pattern">The Facade Pattern</a></li>
-<li><a href="#the-template-method-pattern">The Template Method Pattern</a></li>
-<li><a href="#the-state-pattern">The State Pattern</a></li>
-<li><a href="#the-proxy-pattern">The Proxy Pattern</a></li>
-<li><a href="#model-view-controller">Model-View-Controller</a></li>
-<li><a href="#design-pattern-categories">Design Pattern Categories</a></li>
-<li><a href="#references">References</a></li>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Design Patterns</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="March 29, 2020">March 29, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;972 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#the-strategy-pattern">The Strategy Pattern</a></li>
+    <li><a href="#the-observer-pattern">The Observer Pattern</a></li>
+    <li><a href="#the-decorator-pattern">The Decorator Pattern</a></li>
+    <li><a href="#the-factory-pattern">The Factory Pattern</a></li>
+    <li><a href="#the-singleton-pattern">The Singleton Pattern</a></li>
+    <li><a href="#the-command-pattern">The Command Pattern</a></li>
+    <li><a href="#the-adapter-pattern">The Adapter Pattern</a></li>
+    <li><a href="#the-facade-pattern">The Facade Pattern</a></li>
+    <li><a href="#the-template-method-pattern">The Template Method Pattern</a></li>
+    <li><a href="#the-state-pattern">The State Pattern</a></li>
+    <li><a href="#the-proxy-pattern">The Proxy Pattern</a></li>
+    <li><a href="#model-view-controller">Model-View-Controller</a></li>
+    <li><a href="#design-pattern-categories">Design Pattern Categories</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><ul>
+<li><a href="#principles" rel="">Principles</a></li>
+<li><a href="#the-strategy-pattern" rel="">The Strategy Pattern</a></li>
+<li><a href="#the-observer-pattern" rel="">The Observer Pattern</a></li>
+<li><a href="#the-decorator-pattern" rel="">The Decorator Pattern</a></li>
+<li><a href="#the-factory-pattern" rel="">The Factory Pattern</a></li>
+<li><a href="#the-singleton-pattern" rel="">The Singleton Pattern</a></li>
+<li><a href="#the-command-pattern" rel="">The Command Pattern</a></li>
+<li><a href="#the-adapter-pattern" rel="">The Adapter Pattern</a></li>
+<li><a href="#the-facade-pattern" rel="">The Facade Pattern</a></li>
+<li><a href="#the-template-method-pattern" rel="">The Template Method Pattern</a></li>
+<li><a href="#the-state-pattern" rel="">The State Pattern</a></li>
+<li><a href="#the-proxy-pattern" rel="">The Proxy Pattern</a></li>
+<li><a href="#model-view-controller" rel="">Model-View-Controller</a></li>
+<li><a href="#design-pattern-categories" rel="">Design Pattern Categories</a></li>
+<li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="principles">Principles</h2>
 <ol>
@@ -175,10 +168,19 @@
 </li>
 <li>
 <p>Program to an interface (supertype), not an implementation.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Animal animal <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Dog<span style="color:#719e07">();</span>
-animal<span style="color:#719e07">.</span>makeSound<span style="color:#719e07">();</span>
-List<span style="color:#719e07">&lt;</span>Integer<span style="color:#719e07">&gt;</span> list <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> ArrayList<span style="color:#719e07">&lt;</span>Integer<span style="color:#719e07">&gt;();</span>
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+<span class="n">animal</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Favor composition over inheritance. HAS-A can be better than IS-A.</p>
 </li>
@@ -242,21 +244,47 @@ List<span style="color:#719e07">&lt;</span>Integer<span style="color:#719e07">&g
 </li>
 <li>
 <p>In Java, we can use the built-in Observable - Observer superclasses.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#586e75">// extends Observable
-</span><span style="color:#586e75"></span>setChanged<span style="color:#719e07">();</span>
-notifyObservers<span style="color:#719e07">();</span>
-<span style="color:#586e75">// extends Observer
-</span><span style="color:#586e75">// in the constructor
-</span><span style="color:#586e75"></span>observable<span style="color:#719e07">.</span>addObserver<span style="color:#719e07">(</span><span style="color:#719e07">this</span><span style="color:#719e07">);</span>
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// extends Observable
+</span><span class="c1"></span><span class="n">setChanged</span><span class="o">();</span>
+<span class="n">notifyObservers</span><span class="o">();</span>
+<span class="c1">// extends Observer
+</span><span class="c1">// in the constructor
+</span><span class="c1"></span><span class="n">observable</span><span class="o">.</span><span class="na">addObserver</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>In Java, Observable is a class, which means we have to subclass it.</p>
 </li>
 <li>
 <p>UML:</p>
 <ul>
-<li><img src="https://tillchen.com/images/observer.png" alt="Observer"></li>
-<li>Example: <img src="https://tillchen.com/images/observer_example.png" alt="Observer example"></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/observer.png"
+        data-srcset="/images/observer.png, /images/observer.png 1.5x, /images/observer.png 2x"
+        data-sizes="auto"
+        alt="Observer"
+        title="Observer" /></li>
+<li>Example: <img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/observer_example.png"
+        data-srcset="/images/observer_example.png, /images/observer_example.png 1.5x, /images/observer_example.png 2x"
+        data-sizes="auto"
+        alt="Observer example"
+        title="Observer example" /></li>
 </ul>
 </li>
 <li>
@@ -283,8 +311,22 @@ notifyObservers<span style="color:#719e07">();</span>
 <li>
 <p>UML:</p>
 <ul>
-<li><img src="https://tillchen.com/images/decorator.png" alt="Decorator"></li>
-<li>Example: <img src="https://tillchen.com/images/decorator_example.png" alt="Decorator example"></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/decorator.png"
+        data-srcset="/images/decorator.png, /images/decorator.png 1.5x, /images/decorator.png 2x"
+        data-sizes="auto"
+        alt="Decorator"
+        title="Decorator" /></li>
+<li>Example: <img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/decorator_example.png"
+        data-srcset="/images/decorator_example.png, /images/decorator_example.png 1.5x, /images/decorator_example.png 2x"
+        data-sizes="auto"
+        alt="Decorator example"
+        title="Decorator example" /></li>
 </ul>
 </li>
 <li>
@@ -305,8 +347,22 @@ notifyObservers<span style="color:#719e07">();</span>
 <li>
 <p>UML:</p>
 <ul>
-<li><img src="https://tillchen.com/images/factory.png" alt="Factory"></li>
-<li>Example: <img src="https://tillchen.com/images/factory_example.png" alt="Factory example"></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/factory.png"
+        data-srcset="/images/factory.png, /images/factory.png 1.5x, /images/factory.png 2x"
+        data-sizes="auto"
+        alt="Factory"
+        title="Factory" /></li>
+<li>Example: <img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/factory_example.png"
+        data-srcset="/images/factory_example.png, /images/factory_example.png 1.5x, /images/factory_example.png 2x"
+        data-sizes="auto"
+        alt="Factory example"
+        title="Factory example" /></li>
 </ul>
 </li>
 <li>
@@ -323,17 +379,33 @@ notifyObservers<span style="color:#719e07">();</span>
 <ol>
 <li>
 <p>The singleton pattern restricts the instantiation of a class to one single instance, and provides a global point of access to it:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">public</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">Singleton</span> <span style="color:#719e07">{</span>
-    <span style="color:#268bd2">private</span> <span style="color:#268bd2">static</span> Singleton uniqueInstance<span style="color:#719e07">;</span>
-    <span style="color:#268bd2">private</span> <span style="color:#268bd2">Singleton</span><span style="color:#719e07">()</span> <span style="color:#719e07">{}</span> <span style="color:#586e75">// PRIVATE constructor
-</span><span style="color:#586e75"></span>    <span style="color:#268bd2">public</span> <span style="color:#268bd2">static</span> <span style="color:#268bd2">synchronized</span> Singleton <span style="color:#268bd2">getInstance</span><span style="color:#719e07">()</span> <span style="color:#719e07">{</span> <span style="color:#586e75">// remove synchronized if there&#39;s no multithreading
-</span><span style="color:#586e75"></span>        <span style="color:#719e07">if</span> <span style="color:#719e07">(</span>uniqueInstance <span style="color:#719e07">==</span> <span style="color:#cb4b16">null</span><span style="color:#719e07">)</span> <span style="color:#719e07">{</span>
-            uniqueInstance <span style="color:#719e07">=</span> <span style="color:#719e07">new</span> Singleton<span style="color:#719e07">();</span>
-        <span style="color:#719e07">}</span>
-        <span style="color:#719e07">return</span> uniqueInstance<span style="color:#719e07">;</span>
-    <span style="color:#719e07">}</span>
-<span style="color:#719e07">}</span>
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">uniqueInstance</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span> <span class="c1">// PRIVATE constructor
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">synchronized</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// remove synchronized if there&#39;s no multithreading
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">uniqueInstance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">uniqueInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">uniqueInstance</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="the-command-pattern">The Command Pattern</h2>
 <ol>
@@ -343,7 +415,14 @@ notifyObservers<span style="color:#719e07">();</span>
 <li>
 <p>UML:</p>
 <ul>
-<li><img src="https://tillchen.com/images/command.png" alt="Command"></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/command.png"
+        data-srcset="/images/command.png, /images/command.png 1.5x, /images/command.png 2x"
+        data-sizes="auto"
+        alt="Command"
+        title="Command" /></li>
 </ul>
 </li>
 </ol>
@@ -355,8 +434,22 @@ notifyObservers<span style="color:#719e07">();</span>
 <li>
 <p>UML:</p>
 <ul>
-<li><img src="https://tillchen.com/images/adapter1.png" alt="Adapter1"></li>
-<li><img src="https://tillchen.com/images/adapter2.png" alt="Adapter2"></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/adapter1.png"
+        data-srcset="/images/adapter1.png, /images/adapter1.png 1.5x, /images/adapter1.png 2x"
+        data-sizes="auto"
+        alt="Adapter1"
+        title="Adapter1" /></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/adapter2.png"
+        data-srcset="/images/adapter2.png, /images/adapter2.png 1.5x, /images/adapter2.png 2x"
+        data-sizes="auto"
+        alt="Adapter2"
+        title="Adapter2" /></li>
 </ul>
 </li>
 </ol>
@@ -376,22 +469,43 @@ notifyObservers<span style="color:#719e07">();</span>
 <ol>
 <li>
 <p>The template method pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm&rsquo;s structure:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#268bd2">abstract</span> <span style="color:#268bd2">class</span> <span style="color:#268bd2">AbstractClass</span> <span style="color:#719e07">{</span>
-    <span style="color:#268bd2">final</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">templateMethod</span><span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
-        primitiveOperation1<span style="color:#719e07">();</span>
-        primitiveOperation2<span style="color:#719e07">();</span>
-        concreteOperation<span style="color:#719e07">();</span>
-    <span style="color:#719e07">}</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractClass</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kt">void</span> <span class="nf">templateMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">primitiveOperation1</span><span class="o">();</span>
+        <span class="n">primitiveOperation2</span><span class="o">();</span>
+        <span class="n">concreteOperation</span><span class="o">();</span>
+    <span class="o">}</span>
 
-    <span style="color:#268bd2">abstract</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">primitiveOperation1</span><span style="color:#719e07">();</span>
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">primitiveOperation1</span><span class="o">();</span>
 
-    <span style="color:#268bd2">abstract</span> <span style="color:#dc322f">void</span> <span style="color:#268bd2">primitiveOperation2</span><span style="color:#719e07">();</span>
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">primitiveOperation2</span><span class="o">();</span>
 
-    <span style="color:#dc322f">void</span> <span style="color:#268bd2">concreteOperation</span><span style="color:#719e07">()</span> <span style="color:#719e07">{</span>
-        <span style="color:#586e75">// implementation here
-</span><span style="color:#586e75"></span>    <span style="color:#719e07">}</span>
-<span style="color:#719e07">}</span>
-</code></pre></div></li>
+    <span class="kt">void</span> <span class="nf">concreteOperation</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// implementation here
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Used principles:</p>
 <ul>
@@ -440,113 +554,62 @@ notifyObservers<span style="color:#719e07">();</span>
 <h2 id="references">References</h2>
 <ul>
 <li>
-<p><a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly-dp-0596007124/dp/0596007124/ref=mt_paperback?_encoding=UTF8&amp;me=&amp;qid=1585509064">Head First Design Patterns: A Brain-Friendly Guide 1st Edition</a></p>
+<p><a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly-dp-0596007124/dp/0596007124/ref=mt_paperback?_encoding=UTF8&amp;me=&amp;qid=1585509064" target="_blank" rel="noopener noreffer">Head First Design Patterns: A Brain-Friendly Guide 1st Edition</a></p>
 </li>
 <li>
-<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjp6c22-JLpAhWO-qQKHQ_GBQoQFjAAegQIARAB&amp;url=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F4099.The_Pragmatic_Programmer&amp;usg=AOvVaw0I5l-Ojbr1FUIYyreWhRyx">The Pragmatic Programmer</a></p>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjp6c22-JLpAhWO-qQKHQ_GBQoQFjAAegQIARAB&amp;url=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F4099.The_Pragmatic_Programmer&amp;usg=AOvVaw0I5l-Ojbr1FUIYyreWhRyx" target="_blank" rel="noopener noreffer">The Pragmatic Programmer</a></p>
 </li>
 <li>
-<p><a href="https://www.goodreads.com/book/show/3735293-clean-code">Clean Code</a></p>
+<p><a href="https://www.goodreads.com/book/show/3735293-clean-code" target="_blank" rel="noopener noreffer">Clean Code</a></p>
 </li>
 <li>
-<p><a href="https://www.goodreads.com/book/show/23215733-the-software-craftsman?ac=1&amp;from_search=true&amp;qid=aFF78JXQaM&amp;rank=2#">The Software Craftsman: Professionalism, Pragmatism, Pride</a></p>
+<p><a href="https://www.goodreads.com/book/show/23215733-the-software-craftsman?ac=1&amp;from_search=true&amp;qid=aFF78JXQaM&amp;rank=2#" target="_blank" rel="noopener noreffer">The Software Craftsman: Professionalism, Pragmatism, Pride</a></p>
 </li>
 </ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on March 29, 2020</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2020-03-29-Design-Patterns/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns" data-hashtags="Software Engineering"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-hashtag="Software Engineering"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
 
-      </div>
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Software-Engineering/">Software Engineering</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
 
+    <div class="post-nav"><a href="/posts/2020-02-17-Go-Notes/" class="prev" rel="prev" title="Go Notes"><i class="fas fa-angle-left fa-fw"></i>Go Notes</a>
+            <a href="/posts/2020-4-10-Algorithms-and-Data-Structures/" class="next" rel="next" title="Algorithms and Data Structures">Algorithms and Data Structures<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
 
-      <footer>
-        
-
-
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
-        
-      </footer>
-    </article>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
-  </section>
-
-      </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
-      
-      
-        ©
-        
-        2020
-         Tianyao Chen 
-      
-      
-         · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-      
-      
-    </section>
-  </footer>
-
-    </main>
-
-    
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-139593886-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-
-    
-
-  </body>
-
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
 </html>

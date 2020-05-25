@@ -1,302 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-
-    <meta name="author" content="Tianyao Chen">
-    <meta name="description" content="Some notes for basic machine learning concepts.">
-    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Machine Learning Notes"/>
-<meta name="twitter:description" content="Some notes for basic machine learning concepts."/>
-
-    <meta property="og:title" content="Machine Learning Notes" />
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Machine Learning Notes - Tianyao Chen</title><meta name="Description" content="Some notes for basic machine learning concepts."><meta property="og:title" content="Machine Learning Notes" />
 <meta property="og:description" content="Some notes for basic machine learning concepts." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
 <meta property="article:published_time" content="2020-05-01T09:25:01+02:00" />
 <meta property="article:modified_time" content="2020-05-01T09:25:01+02:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
 
+<meta name="twitter:title" content="Machine Learning Notes"/>
+<meta name="twitter:description" content="Some notes for basic machine learning concepts."/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/" /><link rel="next" href="https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Machine Learning Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2020-05-01-Machine-Learning-Notes\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Machine Learning, AI","wordcount":  4365 ,
+        "url": "https:\/\/tillchen.com\/posts\/2020-05-01-Machine-Learning-Notes\/","datePublished": "2020-05-01T09:25:01+02:00","dateModified": "2020-05-01T09:25:01+02:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for basic machine learning concepts."
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-    
-      <base href="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/">
-    
-    <title>
-  Machine Learning Notes · Tianyao Chen
-</title>
-
-    
-      <link rel="canonical" href="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/">
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
-    
-      
-      
-      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
-        
-        
-        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
-      
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
-
-    <meta name="generator" content="Hugo 0.69.2" />
-  </head>
-
-  
-  
-    
-  
-  <body class="colorscheme-auto">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://tillchen.com/">
-      Tianyao Chen
-    </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
-</nav>
-
-
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">Machine Learning Notes</h1>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
         </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2020-05-01T09:25:01&#43;02:00'>
-                May 1, 2020
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              21-minute read
-            </span>
-          </div>
-          
-          <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://tillchen.com/tags/Machine-Learning/">Machine Learning</a>
-      <span class="separator">•</span>
-    <a href="https://tillchen.com/tags/AI/">AI</a></div>
-
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
         </div>
-      </header>
-
-      <div>
-        
-        <ul>
-<li><a href="#introduction">Introduction</a>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Machine Learning Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 1, 2020">May 1, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4365 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#types-of-learning">Types of Learning</a>
+          <ul>
+            <li><a href="#supervised-learning">Supervised learning</a></li>
+            <li><a href="#unsupervised-learning">Unsupervised learning</a></li>
+            <li><a href="#semi-supervised-learning">Semi-supervised learning</a></li>
+            <li><a href="#reinforcement-learning">Reinforcement learning</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#notations-and-definitions">Notations and Definitions</a>
+      <ul>
+        <li><a href="#statistical-decision-theory">Statistical Decision Theory</a></li>
+      </ul>
+    </li>
+    <li><a href="#fundamental-algorithms">Fundamental Algorithms</a>
+      <ul>
+        <li><a href="#linear-regression">Linear Regression</a></li>
+        <li><a href="#logistic-regression">Logistic Regression</a></li>
+        <li><a href="#decision-tree-learning">Decision Tree Learning</a></li>
+        <li><a href="#support-vector-machine">Support Vector Machine</a>
+          <ul>
+            <li><a href="#dealing-with-noise">Dealing With Noise</a>
+              <ul>
+                <li><a href="#dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</a></li>
+      </ul>
+    </li>
+    <li><a href="#anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</a>
+      <ul>
+        <li><a href="#building-blocks">Building blocks</a></li>
+        <li><a href="#gradient-descent">Gradient Descent</a></li>
+        <li><a href="#particularities">Particularities</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-practice">Basic Practice</a>
+      <ul>
+        <li><a href="#feature-engineering">Feature Engineering</a>
+          <ul>
+            <li><a href="#one-hot-encoding-categorical---numerical">One-Hot Encoding (Categorical -&gt; Numerical)</a></li>
+            <li><a href="#binning-bucketing-numerical---categorical">Binning (Bucketing) (Numerical -&gt; Categorical)</a></li>
+            <li><a href="#normalization">Normalization</a></li>
+            <li><a href="#standardization-z-score-normalization">Standardization (Z-score Normalization)</a></li>
+            <li><a href="#dealing-with-missing-features">Dealing with Missing Features</a></li>
+          </ul>
+        </li>
+        <li><a href="#learning-algorithm-selection">Learning Algorithm Selection</a></li>
+        <li><a href="#three-sets">Three Sets</a></li>
+        <li><a href="#underfitting-and-overfitting">Underfitting and Overfitting</a></li>
+        <li><a href="#regularization">Regularization</a>
+          <ul>
+            <li><a href="#shrinkage-ridge-regression">Shrinkage: Ridge Regression</a></li>
+          </ul>
+        </li>
+        <li><a href="#model-performance-assessment">Model Performance Assessment</a>
+          <ul>
+            <li><a href="#confusion-matrix">Confusion Matrix</a></li>
+            <li><a href="#precisionrecall">Precision/Recall</a></li>
+            <li><a href="#accuracy">Accuracy</a></li>
+            <li><a href="#cost-sensitive-accuracy">Cost-Sensitive Accuracy</a></li>
+            <li><a href="#area-under-the-roc-curve-auc">Area under the ROC Curve (AUC)</a></li>
+          </ul>
+        </li>
+        <li><a href="#hyperparameter-tuning">Hyperparameter Tuning</a>
+          <ul>
+            <li><a href="#training-error">Training Error</a></li>
+            <li><a href="#generalizationtest-error">Generalization/Test Error</a></li>
+            <li><a href="#validation-set-error-estimation">Validation Set Error Estimation</a></li>
+            <li><a href="#cross-validation">Cross-Validation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#neural-networks-and-deep-learning">Neural Networks and Deep Learning</a>
+      <ul>
+        <li><a href="#neural-networks">Neural Networks</a>
+          <ul>
+            <li><a href="#multilayer-perceptron-vanilla-neural-network">Multilayer Perceptron (Vanilla Neural Network)</a></li>
+            <li><a href="#feed-forward-neural-network-architecture">Feed-Forward Neural Network Architecture</a></li>
+          </ul>
+        </li>
+        <li><a href="#deep-learning">Deep Learning</a>
+          <ul>
+            <li><a href="#convolutional-neural-network">Convolutional Neural Network</a></li>
+            <li><a href="#recurrent-neural-network">Recurrent Neural Network</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#problems-and-solutions">Problems and Solutions</a>
+      <ul>
+        <li><a href="#basis-expansions">Basis Expansions</a>
+          <ul>
+            <li><a href="#regression-with-gaussian-kernel">Regression with Gaussian Kernel</a></li>
+          </ul>
+        </li>
+        <li><a href="#kernel-regression">Kernel Regression</a></li>
+        <li><a href="#classification">Classification</a>
+          <ul>
+            <li><a href="#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
+          </ul>
+        </li>
+        <li><a href="#multiclass-classification">Multiclass Classification</a></li>
+        <li><a href="#one-class-classification">One-Class Classification</a></li>
+        <li><a href="#multi-label-classification">Multi-Label Classification</a></li>
+        <li><a href="#ensemble-learning">Ensemble Learning</a></li>
+        <li><a href="#learning-to-label-sequences">Learning to Label Sequences</a></li>
+        <li><a href="#sequence-to-sequence-learning">Sequence to Sequence Learning</a></li>
+        <li><a href="#active-learning">Active Learning</a></li>
+        <li><a href="#semi-supervised-learning-1">Semi-Supervised Learning</a></li>
+        <li><a href="#one-shot-learning">One-Shot Learning</a></li>
+        <li><a href="#zero-shot-learning">Zero-Shot Learning</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-practice">Advanced Practice</a></li>
+    <li><a href="#unsupervised-learning-1">Unsupervised Learning</a>
+      <ul>
+        <li><a href="#density-estimation">Density Estimation</a></li>
+        <li><a href="#clustering">Clustering</a>
+          <ul>
+            <li><a href="#k-means">K-Means</a></li>
+            <li><a href="#dbscan-and-hdbscan">DBSCAN and HDBSCAN</a></li>
+            <li><a href="#determining-the-number-of-clusters">Determining the Number of Clusters</a></li>
+            <li><a href="#other-clustering-algorithms">Other Clustering Algorithms</a></li>
+          </ul>
+        </li>
+        <li><a href="#dimensionality-reduction">Dimensionality Reduction</a>
+          <ul>
+            <li><a href="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
+            <li><a href="#umap">UMAP</a></li>
+          </ul>
+        </li>
+        <li><a href="#outlier-detection">Outlier Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#other-forms-of-learning">Other Forms of Learning</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><ul>
+<li><a href="#introduction" rel="">Introduction</a>
 <ul>
-<li><a href="#types-of-learning">Types of Learning</a>
+<li><a href="#types-of-learning" rel="">Types of Learning</a>
 <ul>
-<li><a href="#supervised-learning">Supervised learning</a></li>
-<li><a href="#unsupervised-learning">Unsupervised learning</a></li>
-<li><a href="#semi-supervised-learning">Semi-supervised learning</a></li>
-<li><a href="#reinforcement-learning">Reinforcement learning</a></li>
+<li><a href="#supervised-learning" rel="">Supervised learning</a></li>
+<li><a href="#unsupervised-learning" rel="">Unsupervised learning</a></li>
+<li><a href="#semi-supervised-learning" rel="">Semi-supervised learning</a></li>
+<li><a href="#reinforcement-learning" rel="">Reinforcement learning</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#notations-and-definitions">Notations and Definitions</a>
+<li><a href="#notations-and-definitions" rel="">Notations and Definitions</a>
 <ul>
-<li><a href="#statistical-decision-theory">Statistical Decision Theory</a></li>
+<li><a href="#statistical-decision-theory" rel="">Statistical Decision Theory</a></li>
 </ul>
 </li>
-<li><a href="#fundamental-algorithms">Fundamental Algorithms</a>
+<li><a href="#fundamental-algorithms" rel="">Fundamental Algorithms</a>
 <ul>
-<li><a href="#linear-regression">Linear Regression</a></li>
-<li><a href="#logistic-regression">Logistic Regression</a></li>
-<li><a href="#decision-tree-learning">Decision Tree Learning</a></li>
-<li><a href="#support-vector-machine">Support Vector Machine</a>
+<li><a href="#linear-regression" rel="">Linear Regression</a></li>
+<li><a href="#logistic-regression" rel="">Logistic Regression</a></li>
+<li><a href="#decision-tree-learning" rel="">Decision Tree Learning</a></li>
+<li><a href="#support-vector-machine" rel="">Support Vector Machine</a>
 <ul>
-<li><a href="#dealing-with-noise">Dealing With Noise</a>
+<li><a href="#dealing-with-noise" rel="">Dealing With Noise</a>
 <ul>
-<li><a href="#dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#k-nearest-neighbors-knn">k-Nearest Neighbors (kNN)</a></li>
-</ul>
-</li>
-<li><a href="#anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</a>
-<ul>
-<li><a href="#building-blocks">Building blocks</a></li>
-<li><a href="#gradient-descent">Gradient Descent</a></li>
-<li><a href="#particularities">Particularities</a></li>
-</ul>
-</li>
-<li><a href="#basic-practice">Basic Practice</a>
-<ul>
-<li><a href="#feature-engineering">Feature Engineering</a>
-<ul>
-<li><a href="#one-hot-encoding-categorical---numerical">One-Hot Encoding (Categorical -&gt; Numerical)</a></li>
-<li><a href="#binning-bucketing-numerical---categorical">Binning (Bucketing) (Numerical -&gt; Categorical)</a></li>
-<li><a href="#normalization">Normalization</a></li>
-<li><a href="#standardization-z-score-normalization">Standardization (Z-score Normalization)</a></li>
-<li><a href="#dealing-with-missing-features">Dealing with Missing Features</a></li>
-</ul>
-</li>
-<li><a href="#learning-algorithm-selection">Learning Algorithm Selection</a></li>
-<li><a href="#three-sets">Three Sets</a></li>
-<li><a href="#underfitting-and-overfitting">Underfitting and Overfitting</a></li>
-<li><a href="#regularization">Regularization</a>
-<ul>
-<li><a href="#shrinkage-ridge-regression">Shrinkage: Ridge Regression</a></li>
-</ul>
-</li>
-<li><a href="#model-performance-assessment">Model Performance Assessment</a>
-<ul>
-<li><a href="#confusion-matrix">Confusion Matrix</a></li>
-<li><a href="#precisionrecall">Precision/Recall</a></li>
-<li><a href="#accuracy">Accuracy</a></li>
-<li><a href="#cost-sensitive-accuracy">Cost-Sensitive Accuracy</a></li>
-<li><a href="#area-under-the-roc-curve-auc">Area under the ROC Curve (AUC)</a></li>
-</ul>
-</li>
-<li><a href="#hyperparameter-tuning">Hyperparameter Tuning</a>
-<ul>
-<li><a href="#training-error">Training Error</a></li>
-<li><a href="#generalizationtest-error">Generalization/Test Error</a></li>
-<li><a href="#validation-set-error-estimation">Validation Set Error Estimation</a></li>
-<li><a href="#cross-validation">Cross-Validation</a></li>
+<li><a href="#dealing-with-inherent-non-linearity-kernels" rel="">Dealing with Inherent Non-Linearity (Kernels)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#neural-networks-and-deep-learning">Neural Networks and Deep Learning</a>
-<ul>
-<li><a href="#neural-networks">Neural Networks</a>
-<ul>
-<li><a href="#multilayer-perceptron-vanilla-neural-network">Multilayer Perceptron (Vanilla Neural Network)</a></li>
-<li><a href="#feed-forward-neural-network-architecture">Feed-Forward Neural Network Architecture</a></li>
+<li><a href="#k-nearest-neighbors-knn" rel="">k-Nearest Neighbors (kNN)</a></li>
 </ul>
 </li>
-<li><a href="#deep-learning">Deep Learning</a>
+<li><a href="#anatomy-of-a-learning-algorithm" rel="">Anatomy of a Learning Algorithm</a>
 <ul>
-<li><a href="#convolutional-neural-network">Convolutional Neural Network</a></li>
-<li><a href="#recurrent-neural-network">Recurrent Neural Network</a></li>
+<li><a href="#building-blocks" rel="">Building blocks</a></li>
+<li><a href="#gradient-descent" rel="">Gradient Descent</a></li>
+<li><a href="#particularities" rel="">Particularities</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#problems-and-solutions">Problems and Solutions</a>
+<li><a href="#basic-practice" rel="">Basic Practice</a>
 <ul>
-<li><a href="#basis-expansions">Basis Expansions</a>
+<li><a href="#feature-engineering" rel="">Feature Engineering</a>
 <ul>
-<li><a href="#regression-with-gaussian-kernel">Regression with Gaussian Kernel</a></li>
+<li><a href="#one-hot-encoding-categorical---numerical" rel="">One-Hot Encoding (Categorical -&gt; Numerical)</a></li>
+<li><a href="#binning-bucketing-numerical---categorical" rel="">Binning (Bucketing) (Numerical -&gt; Categorical)</a></li>
+<li><a href="#normalization" rel="">Normalization</a></li>
+<li><a href="#standardization-z-score-normalization" rel="">Standardization (Z-score Normalization)</a></li>
+<li><a href="#dealing-with-missing-features" rel="">Dealing with Missing Features</a></li>
 </ul>
 </li>
-<li><a href="#kernel-regression">Kernel Regression</a></li>
-<li><a href="#classification">Classification</a>
+<li><a href="#learning-algorithm-selection" rel="">Learning Algorithm Selection</a></li>
+<li><a href="#three-sets" rel="">Three Sets</a></li>
+<li><a href="#underfitting-and-overfitting" rel="">Underfitting and Overfitting</a></li>
+<li><a href="#regularization" rel="">Regularization</a>
 <ul>
-<li><a href="#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
+<li><a href="#shrinkage-ridge-regression" rel="">Shrinkage: Ridge Regression</a></li>
 </ul>
 </li>
-<li><a href="#multiclass-classification">Multiclass Classification</a></li>
-<li><a href="#one-class-classification">One-Class Classification</a></li>
-<li><a href="#multi-label-classification">Multi-Label Classification</a></li>
-<li><a href="#ensemble-learning">Ensemble Learning</a></li>
-<li><a href="#learning-to-label-sequences">Learning to Label Sequences</a></li>
-<li><a href="#sequence-to-sequence-learning">Sequence to Sequence Learning</a></li>
-<li><a href="#active-learning">Active Learning</a></li>
-<li><a href="#semi-supervised-learning-1">Semi-Supervised Learning</a></li>
-<li><a href="#one-shot-learning">One-Shot Learning</a></li>
-<li><a href="#zero-shot-learning">Zero-Shot Learning</a></li>
-</ul>
-</li>
-<li><a href="#advanced-practice">Advanced Practice</a></li>
-<li><a href="#unsupervised-learning-1">Unsupervised Learning</a>
+<li><a href="#model-performance-assessment" rel="">Model Performance Assessment</a>
 <ul>
-<li><a href="#density-estimation">Density Estimation</a></li>
-<li><a href="#clustering">Clustering</a>
+<li><a href="#confusion-matrix" rel="">Confusion Matrix</a></li>
+<li><a href="#precisionrecall" rel="">Precision/Recall</a></li>
+<li><a href="#accuracy" rel="">Accuracy</a></li>
+<li><a href="#cost-sensitive-accuracy" rel="">Cost-Sensitive Accuracy</a></li>
+<li><a href="#area-under-the-roc-curve-auc" rel="">Area under the ROC Curve (AUC)</a></li>
+</ul>
+</li>
+<li><a href="#hyperparameter-tuning" rel="">Hyperparameter Tuning</a>
 <ul>
-<li><a href="#k-means">K-Means</a></li>
-<li><a href="#dbscan-and-hdbscan">DBSCAN and HDBSCAN</a></li>
-<li><a href="#determining-the-number-of-clusters">Determining the Number of Clusters</a></li>
-<li><a href="#other-clustering-algorithms">Other Clustering Algorithms</a></li>
+<li><a href="#training-error" rel="">Training Error</a></li>
+<li><a href="#generalizationtest-error" rel="">Generalization/Test Error</a></li>
+<li><a href="#validation-set-error-estimation" rel="">Validation Set Error Estimation</a></li>
+<li><a href="#cross-validation" rel="">Cross-Validation</a></li>
 </ul>
 </li>
-<li><a href="#dimensionality-reduction">Dimensionality Reduction</a>
+</ul>
+</li>
+<li><a href="#neural-networks-and-deep-learning" rel="">Neural Networks and Deep Learning</a>
 <ul>
-<li><a href="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
-<li><a href="#umap">UMAP</a></li>
+<li><a href="#neural-networks" rel="">Neural Networks</a>
+<ul>
+<li><a href="#multilayer-perceptron-vanilla-neural-network" rel="">Multilayer Perceptron (Vanilla Neural Network)</a></li>
+<li><a href="#feed-forward-neural-network-architecture" rel="">Feed-Forward Neural Network Architecture</a></li>
 </ul>
 </li>
-<li><a href="#outlier-detection">Outlier Detection</a></li>
+<li><a href="#deep-learning" rel="">Deep Learning</a>
+<ul>
+<li><a href="#convolutional-neural-network" rel="">Convolutional Neural Network</a></li>
+<li><a href="#recurrent-neural-network" rel="">Recurrent Neural Network</a></li>
 </ul>
 </li>
-<li><a href="#other-forms-of-learning">Other Forms of Learning</a></li>
-<li><a href="#references">References</a></li>
+</ul>
+</li>
+<li><a href="#problems-and-solutions" rel="">Problems and Solutions</a>
+<ul>
+<li><a href="#basis-expansions" rel="">Basis Expansions</a>
+<ul>
+<li><a href="#regression-with-gaussian-kernel" rel="">Regression with Gaussian Kernel</a></li>
+</ul>
+</li>
+<li><a href="#kernel-regression" rel="">Kernel Regression</a></li>
+<li><a href="#classification" rel="">Classification</a>
+<ul>
+<li><a href="#linear-discriminant-analysis" rel="">Linear Discriminant Analysis</a></li>
+</ul>
+</li>
+<li><a href="#multiclass-classification" rel="">Multiclass Classification</a></li>
+<li><a href="#one-class-classification" rel="">One-Class Classification</a></li>
+<li><a href="#multi-label-classification" rel="">Multi-Label Classification</a></li>
+<li><a href="#ensemble-learning" rel="">Ensemble Learning</a></li>
+<li><a href="#learning-to-label-sequences" rel="">Learning to Label Sequences</a></li>
+<li><a href="#sequence-to-sequence-learning" rel="">Sequence to Sequence Learning</a></li>
+<li><a href="#active-learning" rel="">Active Learning</a></li>
+<li><a href="#semi-supervised-learning-1" rel="">Semi-Supervised Learning</a></li>
+<li><a href="#one-shot-learning" rel="">One-Shot Learning</a></li>
+<li><a href="#zero-shot-learning" rel="">Zero-Shot Learning</a></li>
+</ul>
+</li>
+<li><a href="#advanced-practice" rel="">Advanced Practice</a></li>
+<li><a href="#unsupervised-learning-1" rel="">Unsupervised Learning</a>
+<ul>
+<li><a href="#density-estimation" rel="">Density Estimation</a></li>
+<li><a href="#clustering" rel="">Clustering</a>
+<ul>
+<li><a href="#k-means" rel="">K-Means</a></li>
+<li><a href="#dbscan-and-hdbscan" rel="">DBSCAN and HDBSCAN</a></li>
+<li><a href="#determining-the-number-of-clusters" rel="">Determining the Number of Clusters</a></li>
+<li><a href="#other-clustering-algorithms" rel="">Other Clustering Algorithms</a></li>
+</ul>
+</li>
+<li><a href="#dimensionality-reduction" rel="">Dimensionality Reduction</a>
+<ul>
+<li><a href="#principal-component-analysis-pca" rel="">Principal Component Analysis (PCA)</a></li>
+<li><a href="#umap" rel="">UMAP</a></li>
+</ul>
+</li>
+<li><a href="#outlier-detection" rel="">Outlier Detection</a></li>
+</ul>
+</li>
+<li><a href="#other-forms-of-learning" rel="">Other Forms of Learning</a></li>
+<li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>This post is about some basic machine learning concepts.</p>
@@ -385,7 +504,14 @@
 </li>
 <li>
 <p>Error = Irreducible Error + $\text{Bias}^2$ + Variance</p>
-<p><img src="https://tillchen.com/images/error_decomposition.png" alt="error decomposition"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/error_decomposition.png"
+        data-srcset="/images/error_decomposition.png, /images/error_decomposition.png 1.5x, /images/error_decomposition.png 2x"
+        data-sizes="auto"
+        alt="error decomposition"
+        title="error decomposition" /></p>
 </li>
 </ol>
 <h2 id="fundamental-algorithms">Fundamental Algorithms</h2>
@@ -422,29 +548,92 @@
 </li>
 <li>
 <p>Solution for the estimator:</p>
-<p><img src="https://tillchen.com/images/linear_regression_least_squares.png" alt="Linear Regression by Least Squares"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/linear_regression_least_squares.png"
+        data-srcset="/images/linear_regression_least_squares.png, /images/linear_regression_least_squares.png 1.5x, /images/linear_regression_least_squares.png 2x"
+        data-sizes="auto"
+        alt="Linear Regression by Least Squares"
+        title="Linear Regression by Least Squares" /></p>
 </li>
 <li>
 <p>The algorithm:</p>
-<p><img src="https://tillchen.com/images/linear_regression.png" alt="Linear Regression"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/linear_regression.png"
+        data-srcset="/images/linear_regression.png, /images/linear_regression.png 1.5x, /images/linear_regression.png 2x"
+        data-sizes="auto"
+        alt="Linear Regression"
+        title="Linear Regression" /></p>
 </li>
 <li>
 <p>Find local minimum/maximum:</p>
-<p><img src="https://tillchen.com/images/min_max.png" alt="min max"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/min_max.png"
+        data-srcset="/images/min_max.png, /images/min_max.png 1.5x, /images/min_max.png 2x"
+        data-sizes="auto"
+        alt="min max"
+        title="min max" /></p>
 <p>$$M \ \text{positive definite} \Leftrightarrow x^TMx&gt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$</p>
 <p>$$M \ \text{negative definite} \Leftrightarrow x^TMx&lt;0 \ \text{for all }x \in \mathbb{R}^n \backslash \mathbf{0}$$</p>
 </li>
 <li>
 <p>Statistical analysis with the additive noise:</p>
-<p><img src="https://tillchen.com/images/analysis_for_linear_regression.png" alt="statistical analysis"></p>
-<p><img src="https://tillchen.com/images/variance.png" alt="variance"></p>
-<p><img src="https://tillchen.com/images/z_score.png" alt="z-score"></p>
-<p><img src="https://tillchen.com/images/z_score_rule_of_thumb.png" alt="z-score rule of thumb"></p>
-<p><img src="https://tillchen.com/images/z_score_example.png" alt="z-score example"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/analysis_for_linear_regression.png"
+        data-srcset="/images/analysis_for_linear_regression.png, /images/analysis_for_linear_regression.png 1.5x, /images/analysis_for_linear_regression.png 2x"
+        data-sizes="auto"
+        alt="statistical analysis"
+        title="statistical analysis" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/variance.png"
+        data-srcset="/images/variance.png, /images/variance.png 1.5x, /images/variance.png 2x"
+        data-sizes="auto"
+        alt="variance"
+        title="variance" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/z_score.png"
+        data-srcset="/images/z_score.png, /images/z_score.png 1.5x, /images/z_score.png 2x"
+        data-sizes="auto"
+        alt="z-score"
+        title="z-score" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/z_score_rule_of_thumb.png"
+        data-srcset="/images/z_score_rule_of_thumb.png, /images/z_score_rule_of_thumb.png 1.5x, /images/z_score_rule_of_thumb.png 2x"
+        data-sizes="auto"
+        alt="z-score rule of thumb"
+        title="z-score rule of thumb" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/z_score_example.png"
+        data-srcset="/images/z_score_example.png, /images/z_score_example.png 1.5x, /images/z_score_example.png 2x"
+        data-sizes="auto"
+        alt="z-score example"
+        title="z-score example" /></p>
 </li>
 <li>
 <p>For a K-dimensional output:</p>
-<p><img src="https://tillchen.com/images/linear_regression_k_d_output.png" alt="linear regression K-D output"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/linear_regression_k_d_output.png"
+        data-srcset="/images/linear_regression_k_d_output.png, /images/linear_regression_k_d_output.png 1.5x, /images/linear_regression_k_d_output.png 2x"
+        data-sizes="auto"
+        alt="linear regression K-D output"
+        title="linear regression K-D output" /></p>
 </li>
 </ol>
 <h3 id="logistic-regression">Logistic Regression</h3>
@@ -455,7 +644,14 @@
 <li>
 <p>The standard logistic function or the sigmoid function:</p>
 <p>$$f(x)=\frac{1}{1+e^{-x}}$$</p>
-<p><img src="https://tillchen.com/images/logistic_function.png" alt="Logistic Function"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/logistic_function.png"
+        data-srcset="/images/logistic_function.png, /images/logistic_function.png 1.5x, /images/logistic_function.png 2x"
+        data-sizes="auto"
+        alt="Logistic Function"
+        title="Logistic Function" /></p>
 </li>
 <li>
 <p>The logistic regression model:</p>
@@ -507,12 +703,33 @@
 </li>
 <li>
 <p>Algorithms</p>
-<p><img src="https://tillchen.com/images/kNN_regression.png" alt="kNN regression"></p>
-<p><img src="https://tillchen.com/images/kNN_classification.png" alt="kNN classification"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kNN_regression.png"
+        data-srcset="/images/kNN_regression.png, /images/kNN_regression.png 1.5x, /images/kNN_regression.png 2x"
+        data-sizes="auto"
+        alt="kNN regression"
+        title="kNN regression" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kNN_classification.png"
+        data-srcset="/images/kNN_classification.png, /images/kNN_classification.png 1.5x, /images/kNN_classification.png 2x"
+        data-sizes="auto"
+        alt="kNN classification"
+        title="kNN classification" /></p>
 </li>
 <li>
 <p>The bias-variance decomposition:</p>
-<p><img src="https://tillchen.com/images/kNN_bias_variance_decomposition.png" alt="kNN bias-variance decomposition"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kNN_bias_variance_decomposition.png"
+        data-srcset="/images/kNN_bias_variance_decomposition.png, /images/kNN_bias_variance_decomposition.png 1.5x, /images/kNN_bias_variance_decomposition.png 2x"
+        data-sizes="auto"
+        alt="kNN bias-variance decomposition"
+        title="kNN bias-variance decomposition" /></p>
 </li>
 <li>
 <p>The bias-variance trade-off:</p>
@@ -520,7 +737,14 @@
 <li>k=1: if $x_0$ is in the training data, the bias = 0; the largest variance. (similar to overfitting)</li>
 <li>k=N: the largest bias (the predictor is constant); the smallest variance. (similar to underfitting)</li>
 </ul>
-<p><img src="https://tillchen.com/images/kNN_error_example.png" alt="kNN error example"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kNN_error_example.png"
+        data-srcset="/images/kNN_error_example.png, /images/kNN_error_example.png 1.5x, /images/kNN_error_example.png 2x"
+        data-sizes="auto"
+        alt="kNN error example"
+        title="kNN error example" /></p>
 </li>
 </ol>
 <h2 id="anatomy-of-a-learning-algorithm">Anatomy of a Learning Algorithm</h2>
@@ -667,7 +891,14 @@
 <li>Nonlinearity of the data (SVM/linear regression/linear kernel/logistic regression of lineraly separable data)</li>
 <li>Training speed (neural networks are slow to train)</li>
 <li>Prediction speed
-<img src="https://tillchen.com/images/ml_map.png" alt="scikit-learn cheat sheet"></li>
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/ml_map.png"
+        data-srcset="/images/ml_map.png, /images/ml_map.png 1.5x, /images/ml_map.png 2x"
+        data-sizes="auto"
+        alt="scikit-learn cheat sheet"
+        title="scikit-learn cheat sheet" /></li>
 </ul>
 <h3 id="three-sets">Three Sets</h3>
 <ol>
@@ -747,10 +978,38 @@
 </li>
 <li>
 <p>So we limit the size of coefficients (shrinkage) (a larger $\lambda$ means stronger shrinkage. The value is optimized by cross validation.):</p>
-<p><img src="https://tillchen.com/images/ridge_regression.png" alt="ridge regression">
-<img src="https://tillchen.com/images/ridge_regression_estimator.png" alt="ridge regression estimator">
-<img src="https://tillchen.com/images/kernel_ridge_regression.png" alt="kernel ridge regression">
-<img src="https://tillchen.com/images/kernel_ridge_regression_algorithm.png" alt="kernel ridge regression algorithm"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/ridge_regression.png"
+        data-srcset="/images/ridge_regression.png, /images/ridge_regression.png 1.5x, /images/ridge_regression.png 2x"
+        data-sizes="auto"
+        alt="ridge regression"
+        title="ridge regression" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/ridge_regression_estimator.png"
+        data-srcset="/images/ridge_regression_estimator.png, /images/ridge_regression_estimator.png 1.5x, /images/ridge_regression_estimator.png 2x"
+        data-sizes="auto"
+        alt="ridge regression estimator"
+        title="ridge regression estimator" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kernel_ridge_regression.png"
+        data-srcset="/images/kernel_ridge_regression.png, /images/kernel_ridge_regression.png 1.5x, /images/kernel_ridge_regression.png 2x"
+        data-sizes="auto"
+        alt="kernel ridge regression"
+        title="kernel ridge regression" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kernel_ridge_regression_algorithm.png"
+        data-srcset="/images/kernel_ridge_regression_algorithm.png, /images/kernel_ridge_regression_algorithm.png 1.5x, /images/kernel_ridge_regression_algorithm.png 2x"
+        data-sizes="auto"
+        alt="kernel ridge regression algorithm"
+        title="kernel ridge regression algorithm" /></p>
 </li>
 </ol>
 <h3 id="model-performance-assessment">Model Performance Assessment</h3>
@@ -835,7 +1094,14 @@ $$</p>
 </li>
 </ol>
 <h4 id="validation-set-error-estimation">Validation Set Error Estimation</h4>
-<p><img src="https://tillchen.com/images/validation_set.png" alt="validation set"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/validation_set.png"
+        data-srcset="/images/validation_set.png, /images/validation_set.png 1.5x, /images/validation_set.png 2x"
+        data-sizes="auto"
+        alt="validation set"
+        title="validation set" /></p>
 <h4 id="cross-validation">Cross-Validation</h4>
 <ol>
 <li>
@@ -843,11 +1109,25 @@ $$</p>
 </li>
 <li>
 <p>Each subset of the training set is called a fold. Typically, a five-fold cross-validation is used in practice. We would train five models (use $F_2 F_3 F_4 F_5$ for model 1 and so on) and compute the value of the metric of interest on each validation set, from $F_1$ to $F_5$ and get the average score.</p>
-<p><img src="https://tillchen.com/images/cross_validation.png" alt="cross validation"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/cross_validation.png"
+        data-srcset="/images/cross_validation.png, /images/cross_validation.png 1.5x, /images/cross_validation.png 2x"
+        data-sizes="auto"
+        alt="cross validation"
+        title="cross validation" /></p>
 </li>
 <li>
 <p>Leave-one-out cross validation:</p>
-<p><img src="https://tillchen.com/images/leave_one_out_validation.png" alt="leave-one-out cross validation"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/leave_one_out_validation.png"
+        data-srcset="/images/leave_one_out_validation.png, /images/leave_one_out_validation.png 1.5x, /images/leave_one_out_validation.png 2x"
+        data-sizes="auto"
+        alt="leave-one-out cross validation"
+        title="leave-one-out cross validation" /></p>
 </li>
 </ol>
 <h2 id="neural-networks-and-deep-learning">Neural Networks and Deep Learning</h2>
@@ -875,11 +1155,25 @@ $$</p>
 </li>
 <li>
 <p>An example (each unit&rsquo;s parameters $w_{l,u}$ and $b_{l,u}$):</p>
-<p><img src="https://tillchen.com/images/mlp.png" alt="MLP"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/mlp.png"
+        data-srcset="/images/mlp.png, /images/mlp.png 1.5x, /images/mlp.png 2x"
+        data-sizes="auto"
+        alt="MLP"
+        title="MLP" /></p>
 </li>
 <li>
 <p>A more rigorous definition:</p>
-<p><img src="https://tillchen.com/images/multilayer_perceptron.png" alt="multilayer perceptron"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/multilayer_perceptron.png"
+        data-srcset="/images/multilayer_perceptron.png, /images/multilayer_perceptron.png 1.5x, /images/multilayer_perceptron.png 2x"
+        data-sizes="auto"
+        alt="multilayer perceptron"
+        title="multilayer perceptron" /></p>
 </li>
 <li>
 <p>We can do regression/classification by optimizing the weight $\omega \ \alpha$.</p>
@@ -942,28 +1236,56 @@ $$</p>
 </li>
 <li>
 <p>For example, if we have the following matrix $\mathbf{P}$ (patch) and $\mathbf{F}$, we can calculate the convolution of them. And the value is higher the more similar $\mathbf{F}$ is to $\mathbf{P}$. (The patch represents a pattern that looks like a cross.)</p>
-<p><img src="https://tillchen.com/images/convolution.png" alt="convolution"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/convolution.png"
+        data-srcset="/images/convolution.png, /images/convolution.png 1.5x, /images/convolution.png 2x"
+        data-sizes="auto"
+        alt="convolution"
+        title="convolution" /></p>
 </li>
 <li>
 <p>For convenience, there&rsquo;s also a bias parameter b associated with each filter which is added to the result to a convolution.</p>
 </li>
 <li>
 <p>One layer of a CNN consists of multiple convolution filters. Each filter of the first layer slides - or convolves - across the input image, left to right, top to bottom.</p>
-<p><img src="https://tillchen.com/images/convolving.png" alt="convolving"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/convolving.png"
+        data-srcset="/images/convolving.png, /images/convolving.png 1.5x, /images/convolving.png 2x"
+        data-sizes="auto"
+        alt="convolving"
+        title="convolving" /></p>
 </li>
 <li>
 <p>The filters and bias values are trainable parameters and are optimized using gradient descent with backpropagation.</p>
 </li>
 <li>
 <p>The subsequent layer treats the output of the preceding layer as a collection of image matrices. Such a collection is called a volume.</p>
-<p><img src="https://tillchen.com/images/volume.png" alt="volume"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/volume.png"
+        data-srcset="/images/volume.png, /images/volume.png 1.5x, /images/volume.png 2x"
+        data-sizes="auto"
+        alt="volume"
+        title="volume" /></p>
 </li>
 <li>
 <p>Stride is the step size of the moving window. We can also use paddings.</p>
 </li>
 <li>
 <p>Pooling is a layer that applies a fixed operator, usually either max or average instead of applying a trainable filter. It increases the accuracy and improves the training speed by reducing the number of parameters. (The one below uses max.)</p>
-<p><img src="https://tillchen.com/images/pooling.png" alt="pooling"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/pooling.png"
+        data-srcset="/images/pooling.png, /images/pooling.png 1.5x, /images/pooling.png 2x"
+        data-sizes="auto"
+        alt="pooling"
+        title="pooling" /></p>
 </li>
 </ol>
 <h4 id="recurrent-neural-network">Recurrent Neural Network</h4>
@@ -976,7 +1298,14 @@ $$</p>
 </li>
 <li>
 <p>Definition:</p>
-<p><img src="https://tillchen.com/images/basis_expansion.png" alt="basis expansion"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/basis_expansion.png"
+        data-srcset="/images/basis_expansion.png, /images/basis_expansion.png 1.5x, /images/basis_expansion.png 2x"
+        data-sizes="auto"
+        alt="basis expansion"
+        title="basis expansion" /></p>
 </li>
 <li>
 <p>For quadratic polynomial regression, our basis functions will be: $\phi_1(x)=1, \ \phi_2(x)=x, \ \phi_3(x)=x^2$</p>
@@ -990,8 +1319,22 @@ $$</p>
 </li>
 <li>
 <p>Regression for kernel-based model:</p>
-<p><img src="https://tillchen.com/images/kernel_based_regression.png" alt="kernel-based regression">
-<img src="https://tillchen.com/images/kernel_algorithm.png" alt="kernel algorithm"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kernel_based_regression.png"
+        data-srcset="/images/kernel_based_regression.png, /images/kernel_based_regression.png 1.5x, /images/kernel_based_regression.png 2x"
+        data-sizes="auto"
+        alt="kernel-based regression"
+        title="kernel-based regression" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/kernel_algorithm.png"
+        data-srcset="/images/kernel_algorithm.png, /images/kernel_algorithm.png 1.5x, /images/kernel_algorithm.png 2x"
+        data-sizes="auto"
+        alt="kernel algorithm"
+        title="kernel algorithm" /></p>
 </li>
 </ol>
 <h3 id="kernel-regression">Kernel Regression</h3>
@@ -1019,7 +1362,14 @@ $$</p>
 </li>
 <li>
 <p>Classification by linear regression of indicator matrix:</p>
-<p><img src="https://tillchen.com/images/classification_by_linear_regression.png" alt="classification by linear regression"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/classification_by_linear_regression.png"
+        data-srcset="/images/classification_by_linear_regression.png, /images/classification_by_linear_regression.png 1.5x, /images/classification_by_linear_regression.png 2x"
+        data-sizes="auto"
+        alt="classification by linear regression"
+        title="classification by linear regression" /></p>
 </li>
 </ol>
 <h4 id="linear-discriminant-analysis">Linear Discriminant Analysis</h4>
@@ -1029,8 +1379,22 @@ $$</p>
 </li>
 <li>
 <p>The mathematical definition and the algorithm:</p>
-<p><img src="https://tillchen.com/images/LDA.png" alt="LDA">
-<img src="https://tillchen.com/images/LDA_algorithm.png" alt="LDA algorithm"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/LDA.png"
+        data-srcset="/images/LDA.png, /images/LDA.png 1.5x, /images/LDA.png 2x"
+        data-sizes="auto"
+        alt="LDA"
+        title="LDA" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/LDA_algorithm.png"
+        data-srcset="/images/LDA_algorithm.png, /images/LDA_algorithm.png 1.5x, /images/LDA_algorithm.png 2x"
+        data-sizes="auto"
+        alt="LDA algorithm"
+        title="LDA algorithm" /></p>
 </li>
 <li>
 <p>LDA ia linear predictor.</p>
@@ -1109,7 +1473,14 @@ $$</p>
 </li>
 <li>
 <p>The algorithm (using iterative greedy descent):</p>
-<p><img src="https://tillchen.com/images/k_means.png" alt="k-means"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/k_means.png"
+        data-srcset="/images/k_means.png, /images/k_means.png 1.5x, /images/k_means.png 2x"
+        data-sizes="auto"
+        alt="k-means"
+        title="k-means" /></p>
 </li>
 </ol>
 <h4 id="dbscan-and-hdbscan">DBSCAN and HDBSCAN</h4>
@@ -1134,7 +1505,14 @@ $$</p>
 <ol>
 <li>
 <p>Example:</p>
-<p><img src="https://tillchen.com/images/pca.png" alt="PCA"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/pca.png"
+        data-srcset="/images/pca.png, /images/pca.png 1.5x, /images/pca.png 2x"
+        data-sizes="auto"
+        alt="PCA"
+        title="PCA" /></p>
 </li>
 <li>
 <p>Principal components are vectors that define a new coordinate system in which the first axis goes in the direction of the highest variance in the data. The second axis is orthogonal to the first one and goes in the direction of the second highest variance in the data. The length of the arrow reflects the variance in the direction. They form the orthogonal basis.</p>
@@ -1154,9 +1532,30 @@ $$(\hat{V_d}, \hat{W_d}) = argmin_{W_d, {V}_d} \sum_{i=1}^N||x_i-V_d {W}_d x_i||
 </li>
 <li>
 <p>Algorithms (svd -&gt; singular value)</p>
-<p><img src="https://tillchen.com/images/PCA_algorithm.png" alt="PCA algorithm">
-<img src="https://tillchen.com/images/compression.png" alt="compression">
-<img src="https://tillchen.com/images/decompression.png" alt="decompression"></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/PCA_algorithm.png"
+        data-srcset="/images/PCA_algorithm.png, /images/PCA_algorithm.png 1.5x, /images/PCA_algorithm.png 2x"
+        data-sizes="auto"
+        alt="PCA algorithm"
+        title="PCA algorithm" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/compression.png"
+        data-srcset="/images/compression.png, /images/compression.png 1.5x, /images/compression.png 2x"
+        data-sizes="auto"
+        alt="compression"
+        title="compression" />
+<img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/decompression.png"
+        data-srcset="/images/decompression.png, /images/decompression.png 1.5x, /images/decompression.png 2x"
+        data-sizes="auto"
+        alt="decompression"
+        title="decompression" /></p>
 </li>
 </ol>
 <h4 id="umap">UMAP</h4>
@@ -1167,106 +1566,55 @@ $$(\hat{V_d}, \hat{W_d}) = argmin_{W_d, {V}_d} \sum_{i=1}^N||x_i-V_d {W}_d x_i||
 <p>To be filled.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book">The Hundred-Page Machine Learning Book</a></li>
-<li><a href="https://www.goodreads.com/book/show/148009.The_Elements_of_Statistical_Learning?ac=1&amp;from_search=true&amp;qid=8GAFr2BFEO&amp;rank=1">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a></li>
-<li><a href="https://www.goodreads.com/book/show/17397466-an-introduction-to-statistical-learning">An Introduction to Statistical Learning: With Applications in R</a></li>
-<li>Machine Learning course by <a href="https://www.jacobs-university.de/directory/zaspel">Prof. Dr. Peter Zaspel</a> at Jacobs University Bremen</li>
+<li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book" target="_blank" rel="noopener noreffer">The Hundred-Page Machine Learning Book</a></li>
+<li><a href="https://www.goodreads.com/book/show/148009.The_Elements_of_Statistical_Learning?ac=1&amp;from_search=true&amp;qid=8GAFr2BFEO&amp;rank=1" target="_blank" rel="noopener noreffer">The Elements of Statistical Learning: Data Mining, Inference, and Prediction</a></li>
+<li><a href="https://www.goodreads.com/book/show/17397466-an-introduction-to-statistical-learning" target="_blank" rel="noopener noreffer">An Introduction to Statistical Learning: With Applications in R</a></li>
+<li>Machine Learning course by <a href="https://www.jacobs-university.de/directory/zaspel" target="_blank" rel="noopener noreffer">Prof. Dr. Peter Zaspel</a> at Jacobs University Bremen</li>
 </ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on May 1, 2020</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2020-05-01-Machine-Learning-Notes/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" data-title="Machine Learning Notes" data-hashtags="Machine Learning,AI"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" data-hashtag="Machine Learning"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" data-title="Machine Learning Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" data-title="Machine Learning Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" data-title="Machine Learning Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" data-title="Machine Learning Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
 
-      </div>
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Machine-Learning/">Machine Learning</a>,&nbsp;<a href="/tags/AI/">AI</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
 
+    <div class="post-nav"><a href="/posts/2020-4-10-Algorithms-and-Data-Structures/" class="prev" rel="prev" title="Algorithms and Data Structures"><i class="fas fa-angle-left fa-fw"></i>Algorithms and Data Structures</a>
+            <a href="/posts/2020-05-21-Software-Engineering-Notes/" class="next" rel="next" title="Software Engineering Notes">Software Engineering Notes<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
 
-      <footer>
-        
-
-
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
-        
-      </footer>
-    </article>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
-  </section>
-
-      </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
-      
-      
-        ©
-        
-        2020
-         Tianyao Chen 
-      
-      
-         · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-      
-      
-    </section>
-  </footer>
-
-    </main>
-
-    
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-139593886-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-
-    
-
-  </body>
-
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
 </html>

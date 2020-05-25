@@ -1,192 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-
-    <meta name="author" content="Tianyao Chen">
-    <meta name="description" content="Some notes for C and C&#43;&#43;">
-    <meta name="keywords" content="Tianyao Chen, Till Chen, tech, software, AI, ML">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="C and C&#43;&#43; Notes"/>
-<meta name="twitter:description" content="Some notes for C and C&#43;&#43;"/>
-
-    <meta property="og:title" content="C and C&#43;&#43; Notes" />
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>C and C&#43;&#43; Notes - Tianyao Chen</title><meta name="Description" content="Some notes for C and C&#43;&#43;"><meta property="og:title" content="C and C&#43;&#43; Notes" />
 <meta property="og:description" content="Some notes for C and C&#43;&#43;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
 <meta property="article:published_time" content="2019-05-05T00:00:00+02:00" />
 <meta property="article:modified_time" content="2019-05-05T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
 
+<meta name="twitter:title" content="C and C&#43;&#43; Notes"/>
+<meta name="twitter:description" content="Some notes for C and C&#43;&#43;"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2019-05-05-Vim-Tips/" /><link rel="next" href="https://tillchen.com/posts/2019-05-12-Python-Notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "C and C++ Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2019-05-05-C-and-C\x2b\x2b-Notes\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  552 ,
+        "url": "https:\/\/tillchen.com\/posts\/2019-05-05-C-and-C\x2b\x2b-Notes\/","datePublished": "2019-05-05T00:00:00+02:00","dateModified": "2019-05-05T00:00:00+02:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for C and C++"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-    
-      <base href="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/">
-    
-    <title>
-  C and C&#43;&#43; Notes · Tianyao Chen
-</title>
-
-    
-      <link rel="canonical" href="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/">
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
-    
-      
-      
-      <link rel="stylesheet" href="https://tillchen.com/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
-        
-        
-        <link rel="stylesheet" href="https://tillchen.com/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
-      
-    
-
-    
-
-    
-
-    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://tillchen.com/images/favicon-16x16.png" sizes="16x16">
-
-    <meta name="generator" content="Hugo 0.69.2" />
-  </head>
-
-  
-  
-    
-  
-  <body class="colorscheme-auto">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://tillchen.com/">
-      Tianyao Chen
-    </a>
-    
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/about/">About</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/posts/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/tags/">Tags</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/skills/">Skills</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/testimonials/">Testimonials</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/pdfs/Tianyao_Chen_resume.pdf">Resume</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://tillchen.com/contact/">Contact</a>
-          </li>
-        
-      
-      
-    </ul>
-    
-  </section>
-</nav>
-
-
-      <div class="content">
-        
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">C and C&#43;&#43; Notes</h1>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
         </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fas fa-calendar"></i>
-              <time datetime='2019-05-05T00:00:00&#43;02:00'>
-                May 5, 2019
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fas fa-clock"></i>
-              3-minute read
-            </span>
-          </div>
-          
-          <div class="tags">
-  <i class="fas fa-tag"></i>
-    <a href="https://tillchen.com/tags/Programming-Languages/">Programming Languages</a></div>
-
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
         </div>
-      </header>
-
-      <div>
-        
-        <ul>
-<li><a href="#basics">Basics</a></li>
-<li><a href="#dynamic-memory-allocation">Dynamic Memory Allocation</a></li>
-<li><a href="#makefiles">Makefiles</a></li>
-<li><a href="#templates">Templates</a></li>
-<li><a href="#stl">STL</a></li>
-<li><a href="#miscellaneous">Miscellaneous</a></li>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">C and C&#43;&#43; Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 5, 2019">May 5, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;552 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#dynamic-memory-allocation">Dynamic Memory Allocation</a></li>
+    <li><a href="#makefiles">Makefiles</a></li>
+    <li><a href="#templates">Templates</a></li>
+    <li><a href="#stl">STL</a></li>
+    <li><a href="#miscellaneous">Miscellaneous</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><ul>
+<li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#dynamic-memory-allocation" rel="">Dynamic Memory Allocation</a></li>
+<li><a href="#makefiles" rel="">Makefiles</a></li>
+<li><a href="#templates" rel="">Templates</a></li>
+<li><a href="#stl" rel="">STL</a></li>
+<li><a href="#miscellaneous" rel="">Miscellaneous</a></li>
 </ul>
 <h2 id="basics">Basics</h2>
 <ol>
 <li>
 <p>How to compile:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gcc -Wall -o foo foo.c
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">gcc -Wall -o foo foo.c
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Input in C:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#dc322f">char</span> foo[<span style="color:#2aa198">100</span>];
-<span style="color:#dc322f">int</span> bar;
-fgets(foo, <span style="color:#719e07">sizeof</span>(foo), stdin);
-scanf(<span style="color:#2aa198">&#34;%d&#34;</span>, <span style="color:#719e07">&amp;</span>bar);
-getchar(); <span style="color:#586e75">// must be added after scanf. It handels /n
-</span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">char</span> <span class="n">foo</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">bar</span><span class="p">;</span>
+<span class="n">fgets</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">foo</span><span class="p">),</span> <span class="n">stdin</span><span class="p">);</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bar</span><span class="p">);</span>
+<span class="n">getchar</span><span class="p">();</span> <span class="c1">// must be added after scanf. It handels /n
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Input in C++:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">string foo;
-getline(cin, foo);
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">string</span> <span class="n">foo</span><span class="p">;</span>
+<span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">foo</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>When two types sum, a promotion happens. When a type is passed to a function, a demotion happens.</p>
 </li>
 <li>
 <p>Prefix and postfix <code>++</code> <code>--</code> differ when used in an assignment:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#dc322f">int</span> a <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
-<span style="color:#dc322f">int</span> b <span style="color:#719e07">=</span> <span style="color:#719e07">++</span>a; <span style="color:#586e75">// a = 2, b = 2
-</span><span style="color:#586e75"></span><span style="color:#dc322f">int</span> b <span style="color:#719e07">=</span> a<span style="color:#719e07">++</span>; <span style="color:#586e75">// a = 3, b = 2
-</span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="o">++</span><span class="n">a</span><span class="p">;</span> <span class="c1">// a = 2, b = 2
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">++</span><span class="p">;</span> <span class="c1">// a = 3, b = 2
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>0 is false. Everything else is true.</p>
 </li>
@@ -201,13 +220,25 @@ getline(cin, foo);
 <ol>
 <li>
 <p>In C:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#dc322f">int</span><span style="color:#719e07">*</span> foo;
-foo <span style="color:#719e07">=</span> (<span style="color:#dc322f">int</span><span style="color:#719e07">*</span>) malloc(<span style="color:#719e07">sizeof</span>(<span style="color:#dc322f">int</span>) <span style="color:#719e07">*</span> <span style="color:#2aa198">10</span>);
-<span style="color:#719e07">if</span> (foo <span style="color:#719e07">==</span> <span style="color:#b58900">NULL</span>) {
-    <span style="color:#586e75">// blah blah
-</span><span style="color:#586e75"></span>}
-free(foo);
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">foo</span><span class="p">;</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">foo</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// blah blah
+</span><span class="c1"></span><span class="p">}</span>
+<span class="n">free</span><span class="p">(</span><span class="n">foo</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>In C++: <code>T* ptr = new T(value)</code> is equivalent to <code>T* ptr = new T[1] {value}</code> ((value) and {value} can be omitted.) (<code>delete [] ptr</code> for arrays; <code>delete ptr</code> for single values.)</p>
 </li>
@@ -216,77 +247,165 @@ free(foo);
 <ol>
 <li>
 <p>How to run:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make // <span style="color:#719e07">if</span> no extension
-</code></pre></div><div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">make -f Mymakefile.txt
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">make // <span class="k">if</span> no extension
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">make -f Mymakefile.txt
 make
-</code></pre></div></li>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="templates">Templates</h2>
 <ol>
 <li>
 <p>Generic Functions:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#719e07">template</span> <span style="color:#719e07">&lt;</span><span style="color:#719e07">class</span> <span style="color:#268bd2">T</span><span style="color:#719e07">&gt;</span>
-T array_sum(T arr[], <span style="color:#dc322f">int</span> size) {
-    <span style="color:#dc322f">int</span> i;
-    T sum <span style="color:#719e07">=</span> arr[<span style="color:#2aa198">0</span>];
-    <span style="color:#719e07">for</span> (i <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>; i <span style="color:#719e07">&lt;</span> size; i <span style="color:#719e07">++</span>) {
-        sum <span style="color:#719e07">=</span> sum <span style="color:#719e07">+</span> arr[i];
-    }
-    <span style="color:#719e07">return</span> sum;
-}
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">array_sum</span><span class="p">(</span><span class="n">T</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">T</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span> <span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Generic Classes:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#719e07">template</span> <span style="color:#719e07">&lt;</span><span style="color:#719e07">class</span> <span style="color:#268bd2">T</span><span style="color:#719e07">&gt;</span>
-<span style="color:#719e07">class</span> <span style="color:#268bd2">BoundedArray</span> {
-    T array[size];
-<span style="color:#719e07">public</span><span style="color:#719e07">:</span>
-    BoundedArray(){};
-    T<span style="color:#719e07">&amp;</span> <span style="color:#719e07">operator</span>[](<span style="color:#dc322f">int</span>); <span style="color:#586e75">// overloaded access operator
-</span><span style="color:#586e75"></span>};
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">BoundedArray</span> <span class="p">{</span>
+    <span class="n">T</span> <span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">BoundedArray</span><span class="p">(){};</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span><span class="p">);</span> <span class="c1">// overloaded access operator
+</span><span class="c1"></span><span class="p">};</span>
 
-<span style="color:#719e07">template</span><span style="color:#719e07">&lt;</span><span style="color:#719e07">class</span> <span style="color:#268bd2">T</span><span style="color:#719e07">&gt;</span>
-T<span style="color:#719e07">&amp;</span> BoundedArray<span style="color:#719e07">&lt;</span>T<span style="color:#719e07">&gt;::</span><span style="color:#719e07">operator</span>[](<span style="color:#dc322f">int</span> pos) {
-    <span style="color:#719e07">if</span> ((pos <span style="color:#719e07">&lt;</span> <span style="color:#2aa198">0</span>) <span style="color:#719e07">||</span> (pos <span style="color:#719e07">&gt;=</span> size)) {
-        exit(<span style="color:#2aa198">1</span>);
-    }
-    <span style="color:#719e07">return</span> array[pos];
-}
-<span style="color:#586e75">// ...
-</span><span style="color:#586e75"></span>BoundedArray<span style="color:#719e07">&lt;</span><span style="color:#dc322f">int</span><span style="color:#719e07">&gt;</span> intArray;
-</code></pre></div></li>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">&amp;</span> <span class="n">BoundedArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">pos</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">pos</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">array</span><span class="p">[</span><span class="n">pos</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="c1">// ...
+</span><span class="c1"></span><span class="n">BoundedArray</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">intArray</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="stl">STL</h2>
 <ol>
 <li>
 <p>Vectors:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;vector&gt;</span><span style="color:#719e07">
-</span><span style="color:#719e07"></span><span style="color:#586e75">// ...
-</span><span style="color:#586e75"></span>vector<span style="color:#719e07">&lt;</span><span style="color:#dc322f">int</span><span style="color:#719e07">&gt;</span> vInt(<span style="color:#2aa198">5</span>);
-vInt.push_back(<span style="color:#2aa198">1</span>); <span style="color:#586e75">// .clear, .size, .pop_back
-</span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">// ...
+</span><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vInt</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">vInt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// .clear, .size, .pop_back
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Deques: (Double Ended Queues)</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#719e07">#include</span> <span style="color:#719e07">&lt;deque&gt;</span><span style="color:#719e07">
-</span><span style="color:#719e07"></span><span style="color:#586e75">// .push_front, .pop_front
-</span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;deque&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">// .push_front, .pop_front
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Lists: (Doubly Linked Lists) (No random access.)</p>
 </li>
 <li>
 <p>Iterators:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">vector<span style="color:#719e07">&lt;</span><span style="color:#dc322f">int</span><span style="color:#719e07">&gt;</span> vInt;
-vector<span style="color:#719e07">&lt;</span><span style="color:#dc322f">int</span><span style="color:#719e07">&gt;::</span>iterator vIterator;
-<span style="color:#719e07">for</span> (vIterator <span style="color:#719e07">=</span> vInt.begin(); vIterator <span style="color:#719e07">!=</span> vInt.end(); vIterator<span style="color:#719e07">++</span>) {}
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vInt</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">vIterator</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">vIterator</span> <span class="o">=</span> <span class="n">vInt</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">vIterator</span> <span class="o">!=</span> <span class="n">vInt</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">vIterator</span><span class="o">++</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Set: (insert, erase, clear, empty, size, find, count)</p>
 </li>
 <li>
 <p>Maps: (find, clear, erase, insert)</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">map<span style="color:#719e07">&lt;</span><span style="color:#719e07">const</span> <span style="color:#dc322f">char</span><span style="color:#719e07">*</span>, <span style="color:#dc322f">int</span>, LessThanStr<span style="color:#719e07">&gt;</span> months;
-months[<span style="color:#2aa198">&#34;january&#34;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">31</span>;
-</code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">LessThanStr</span><span class="o">&gt;</span> <span class="n">months</span><span class="p">;</span>
+<span class="n">months</span><span class="p">[</span><span class="s">&#34;january&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="miscellaneous">Miscellaneous</h2>
 <ol>
@@ -298,124 +417,103 @@ months[<span style="color:#2aa198">&#34;january&#34;</span>] <span style="color:
 </li>
 <li>
 <p>We must initialize static data members outside of the class:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#719e07">class</span> <span style="color:#268bd2">foo</span> {
-    <span style="color:#719e07">static</span> <span style="color:#dc322f">int</span> var;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">class</span> <span class="nc">foo</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">var</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#dc322f">int</span> foo<span style="color:#719e07">::</span>var <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>;
-</code></pre></div></li>
+<span class="kt">int</span> <span class="n">foo</span><span class="o">::</span><span class="n">var</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>When we write to a file, the data is first stored in the buffer. When the buffer is flushed, the data is written into the file.</p>
 </li>
 <li>
 <p><code>const</code> with pointers</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#dc322f">int</span> a <span style="color:#719e07">=</span> <span style="color:#2aa198">2</span>;
-<span style="color:#719e07">const</span> <span style="color:#dc322f">int</span><span style="color:#719e07">*</span> ptr <span style="color:#719e07">=</span> <span style="color:#719e07">&amp;</span>a; <span style="color:#586e75">// constant data (2), not constant pointer
-</span><span style="color:#586e75"></span><span style="color:#dc322f">int</span><span style="color:#719e07">*</span> <span style="color:#719e07">const</span> ptr_1 <span style="color:#719e07">=</span> <span style="color:#719e07">&amp;</span>a; <span style="color:#586e75">// constant pointer, not constant data
-</span><span style="color:#586e75"></span><span style="color:#719e07">const</span> <span style="color:#dc322f">int</span><span style="color:#719e07">*</span> <span style="color:#719e07">const</span> ptr_2 <span style="color:#719e07">=</span> <span style="color:#719e07">&amp;</span>a; <span style="color:#586e75">// constant pointer and data
-</span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// constant data (2), not constant pointer
+</span><span class="c1"></span><span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">ptr_1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// constant pointer, not constant data
+</span><span class="c1"></span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">ptr_2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// constant pointer and data
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Auto-dereferencing in C++:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#dc322f">int</span> foo <span style="color:#719e07">=</span> <span style="color:#2aa198">1</span>;
-<span style="color:#dc322f">int</span><span style="color:#719e07">&amp;</span> bar <span style="color:#719e07">=</span> foo;
-bar <span style="color:#719e07">=</span> <span style="color:#2aa198">2</span>; <span style="color:#586e75">// Both are 2 now
-</span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">foo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">bar</span> <span class="o">=</span> <span class="n">foo</span><span class="p">;</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// Both are 2 now
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on May 5, 2019</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2019-05-05-C-and-C&#43;&#43;-Notes/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" data-title="C and C&#43;&#43; Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" data-title="C and C&#43;&#43; Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" data-title="C and C&#43;&#43; Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" data-title="C and C&#43;&#43; Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/" data-title="C and C&#43;&#43; Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
 
-      </div>
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
 
+    <div class="post-nav"><a href="/posts/2019-05-05-Vim-Tips/" class="prev" rel="prev" title="Vim Tips"><i class="fas fa-angle-left fa-fw"></i>Vim Tips</a>
+            <a href="/posts/2019-05-12-Python-Notes/" class="next" rel="next" title="Python Notes">Python Notes<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
 
-      <footer>
-        
-
-
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "tillchen" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
-        
-      </footer>
-    </article>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
-  </section>
-
-      </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-        <p>Sharing thoughts on Computer Science, Software Engineering, AI, Machine Learning, and Data Science.</p>
-      
-      
-        ©
-        
-        2020
-         Tianyao Chen 
-      
-      
-         · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-      
-      
-    </section>
-  </footer>
-
-    </main>
-
-    
-
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-139593886-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
-
-    
-
-  </body>
-
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
 </html>
