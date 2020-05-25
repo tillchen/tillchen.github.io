@@ -240,7 +240,7 @@
 </ul>
 </li>
 <li>
-<p>A configuration $C_1$ <strong>yields</strong> a configuration $C_2$ if M can legally from $C_1$ to $C_2$ in a single step.</p>
+<p>A configuration $C_1$ <strong>yields</strong> a configuration $C_2$ if M can legally move from $C_1$ to $C_2$ in a single step.</p>
 <ul>
 <li>Leftward move: $uaq_i bv$ yields $uq_j acv$ iff $\delta(q_i, b) = (q_j, c, L)$</li>
 <li>Rightward move: $uaq_i bv$ yields $uacq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$</li>
@@ -430,7 +430,7 @@
 <h3 id="reducibility">Reducibility</h3>
 <ol>
 <li>
-<p>The language $HALT_{TM}=\{\langle M,w \rangle| \text{M is a TM and M halts on input} w \}$ is undecidable. (Proof by contradiction. Assume there&rsquo;s a decider R for $HALT_{TM}$. Construct a decider for $A_{TM}$ (&ldquo;R rejects, reject&rdquo; eliminates the loop case.))</p>
+<p>The language $HALT_{TM}=\{\langle M,w \rangle| \text{M is a TM and M halts on input } w \}$ is undecidable. (Proof by contradiction. Assume there&rsquo;s a decider R for $HALT_{TM}$. Construct a decider for $A_{TM}$ (&ldquo;R rejects, reject&rdquo; eliminates the loop case.))</p>
 </li>
 <li>
 <p>A Computable function f $\Rightarrow$ there exists some TM M, on every input w, halts with just f(w) on its tape.</p>
@@ -662,7 +662,7 @@
 <p>The language $FQBF=\{\langle F \rangle| \text{F is a true fully quantified Boolean formula}\}$ is PSPACE-complete.</p>
 </li>
 <li>
-<p>$P \subseteq NP \subseteq PSPACE = NPSPACE \subset EXPTIME$ (one of this subsets have to be a proper subset due to $P \subsetneq EXPTIME$)</p>
+<p>$P \subseteq NP \subseteq PSPACE = NPSPACE \subseteq EXPTIME$ (one of this subsets have to be a proper subset due to $P \subsetneq EXPTIME$)</p>
 </li>
 </ol>
 <h2 id="references">References</h2>

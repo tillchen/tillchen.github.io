@@ -106,7 +106,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;A configuration $C_1$ &lt;strong&gt;yields&lt;/strong&gt; a configuration $C_2$ if M can legally from $C_1$ to $C_2$ in a single step.&lt;/p&gt;
+&lt;p&gt;A configuration $C_1$ &lt;strong&gt;yields&lt;/strong&gt; a configuration $C_2$ if M can legally move from $C_1$ to $C_2$ in a single step.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Leftward move: $uaq_i bv$ yields $uq_j acv$ iff $\delta(q_i, b) = (q_j, c, L)$&lt;/li&gt;
 &lt;li&gt;Rightward move: $uaq_i bv$ yields $uacq_j v$ iff $\delta(q_i, b) = (q_j, c, R)$&lt;/li&gt;
@@ -296,7 +296,7 @@
 &lt;h3 id=&#34;reducibility&#34;&gt;Reducibility&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;The language $HALT_{TM}=\{\langle M,w \rangle| \text{M is a TM and M halts on input} w \}$ is undecidable. (Proof by contradiction. Assume there&amp;rsquo;s a decider R for $HALT_{TM}$. Construct a decider for $A_{TM}$ (&amp;ldquo;R rejects, reject&amp;rdquo; eliminates the loop case.))&lt;/p&gt;
+&lt;p&gt;The language $HALT_{TM}=\{\langle M,w \rangle| \text{M is a TM and M halts on input } w \}$ is undecidable. (Proof by contradiction. Assume there&amp;rsquo;s a decider R for $HALT_{TM}$. Construct a decider for $A_{TM}$ (&amp;ldquo;R rejects, reject&amp;rdquo; eliminates the loop case.))&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;A Computable function f $\Rightarrow$ there exists some TM M, on every input w, halts with just f(w) on its tape.&lt;/p&gt;
@@ -528,7 +528,7 @@
 &lt;p&gt;The language $FQBF=\{\langle F \rangle| \text{F is a true fully quantified Boolean formula}\}$ is PSPACE-complete.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;$P \subseteq NP \subseteq PSPACE = NPSPACE \subset EXPTIME$ (one of this subsets have to be a proper subset due to $P \subsetneq EXPTIME$)&lt;/p&gt;
+&lt;p&gt;$P \subseteq NP \subseteq PSPACE = NPSPACE \subseteq EXPTIME$ (one of this subsets have to be a proper subset due to $P \subsetneq EXPTIME$)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
