@@ -525,7 +525,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The language $FQBF=\{\langle F \rangle| \text{F is a true fully quantified Boolean formula}\}$ is PSPACE-complete.&lt;/p&gt;
+&lt;p&gt;The language $TQBF=\{\langle F \rangle| \text{F is a true fully quantified Boolean formula}\}$ is PSPACE-complete.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;$P \subseteq NP \subseteq PSPACE = NPSPACE \subseteq EXPTIME$ (one of this subsets have to be a proper subset due to $P \subsetneq EXPTIME$)&lt;/p&gt;
