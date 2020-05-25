@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Mobile Development - Tag - Tianyao Chen</title>
+        <link>https://tillchen.com/tags/Mobile-Development/</link>
+        <description>Mobile Development - Tag - Tianyao Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Tue, 13 Aug 2019 00:00:00 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Mobile-Development/" rel="self" type="application/rss+xml" /><item>
+    <title>iOS Development Notes</title>
+    <link>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</link>
+    <pubDate>Tue, 13 Aug 2019 00:00:00 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</guid>
+    <description><![CDATA[Basics View Controller Lifecycle: MVC Architecture Project Organization References  Basics   Model-View-Controller is a design pattern in iOS.
+  Unlike in Android Studio, the Interface Builder is not a graphical representation of code. A storyboard file is an archive of object instances.
+  Outlets are references to objects: @IBOutlet var questionLabel: UILabel! (IB means interface builder.) (Right click the item and drag it to the assistant editor to create the outlet.]]></description>
+</item><item>
+    <title>Android Development Notes</title>
+    <link>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</link>
+    <pubDate>Wed, 10 Jul 2019 00:00:00 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</guid>
+    <description><![CDATA[Table of Contents  Table of Contents Basics App Resources Permissions AndroidManifest.xml Layout Activities Fragments Notifications Android Studio Tips Miscellaneous Resources  Basics   Layout is typically defined in XML, whereas activities are in Java class.
+  The Android operating system is a multi-user Linux system in which each app is a different user.
+  App Resources   String array: android:entries=&quot;@array/foo&quot;.
+1 2 3 4  &lt;string-array name=&#34;foo&#34;&gt; &lt;item&gt;bar1&lt;/item&gt; &lt;item&gt;bar2&lt;/item&gt; &lt;/string-array&gt;     Creating alias resources:]]></description>
+</item></channel>
+</rss>

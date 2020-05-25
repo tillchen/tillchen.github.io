@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>JavaScript Notes - Tianyao Chen</title><meta name="Description" content="Some notes for JavaScript"><meta property="og:title" content="JavaScript Notes" />
+<meta property="og:description" content="Some notes for JavaScript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+<meta property="article:published_time" content="2019-07-15T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-07-15T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+
+<meta name="twitter:title" content="JavaScript Notes"/>
+<meta name="twitter:description" content="Some notes for JavaScript"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" /><link rel="next" href="https://tillchen.com/posts/2019-7-24-Bash-Tips/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "JavaScript Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  483 ,
+        "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+02:00","dateModified": "2019-07-15T00:00:00+02:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for JavaScript"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;483 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#oop">OOP</a></li>
+    <li><a href="#dom-document-object-model">DOM (Document Object Model)</a></li>
+    <li><a href="#handling-events">Handling events</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Variables:</p>
+<ul>
+<li>Global variables live as long as the page.</li>
+<li>If we forget to declare a variable before using it, it&rsquo;ll always be global even if we first use it in a function.</li>
+</ul>
+</li>
+<li>
+<p>The syntax for an array is similar to Python, using <code>[]</code> instead of <code>{}</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="nx">foo</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// We can do this, but be sure to avoid creating a sparse array
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>undefined</code> vs <code>null</code> vs <code>isNaN()</code>:</p>
+<ul>
+<li><code>undefined</code> is used for;
+<ul>
+<li>Unassigned/ Uninitiated variables;</li>
+<li>A missing property for an object;</li>
+<li>A missing value for an array;</li>
+</ul>
+</li>
+<li><code>null</code> is used for uncreated objects (like <code>.getElementById()</code>'s returned value;)</li>
+<li><code>isNaN(foo)</code> is true if foo is the number can&rsquo;t be represented by a computer like 0/0.</li>
+</ul>
+</li>
+<li>
+<p><code>===</code> is the strict equality check (both the type and value) while <code>==</code> is not strict.</p>
+</li>
+<li>
+<p><code>===</code> between two object references will be true only if they refer to the same object.</p>
+</li>
+<li>
+<p>A function in JavaScript can behave just like any data type. It can be assigned to, passed, and returned.</p>
+</li>
+</ol>
+<h2 id="oop">OOP</h2>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span><span class="p">,</span> <span class="c1">// A comma here
+</span><span class="c1"></span>    <span class="nx">coding</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;coding bar&#34;</span><span class="p">;</span> <span class="c1">// Must add `this.`
+</span><span class="c1"></span>        <span class="nx">alert</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;I&#39;m coding now.&#34;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="c1">// A comma here
+</span><span class="c1"></span>    <span class="nx">age</span><span class="o">:</span> <span class="mi">17</span> <span class="c1">// NO comma here. But can be added after ES5. However, not in JSON.
+</span><span class="c1"></span><span class="p">};</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">190</span><span class="p">;</span> <span class="c1">// This adds a new property
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]);</span> <span class="c1">// Also works
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// This deletes the property
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Prints all properties
+</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prop</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="nx">foo</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Like in Java, use <code>this</code> and <code>new</code> for constructors.</p>
+</li>
+<li>
+<p>JavaScript (before ES6) doesn&rsquo;t have classes. For inheritance, we have prototypal inheritance. (Prototype is like the parent class.)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Foo</span><span class="p">(</span><span class="nx">bar</span><span class="p">,</span> <span class="nx">stuff</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bar</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">stuff</span> <span class="o">=</span> <span class="nx">stuff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">foobar</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">bob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">(</span><span class="s2">&#34;this is&#34;</span><span class="p">,</span> <span class="s2">&#34;cool&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bob</span><span class="p">.</span><span class="nx">foobar</span><span class="p">)</span> <span class="c1">// &#34;hello&#34;
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">Foooo</span><span class="p">(</span><span class="nx">bar</span><span class="p">,</span> <span class="nx">stuff</span><span class="p">,</span> <span class="nx">more</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Foo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">bar</span><span class="p">,</span> <span class="nx">stuff</span><span class="p">);</span> <span class="c1">// calling the Foo constructor
+</span><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">more</span> <span class="o">=</span> <span class="nx">more</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">Foooo</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+<span class="nx">Foooo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">new_property</span> <span class="o">=</span> <span class="s2">&#34;blah&#34;</span><span class="p">;</span>
+<span class="nx">Foooo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Foooo</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="dom-document-object-model">DOM (Document Object Model)</h2>
+<ol>
+<li>
+<p><code>document.getElementById(&quot;foo&quot;).innerHTML</code> gives the content of the html element with the id &lsquo;foo&rsquo;. JavaScript does this by interacting with the DOM.</p>
+</li>
+<li>
+<p><code>foo.setAttribute(&quot;class&quot;, &quot;bar&quot;)</code> sets the attribute and <code>var text = document.getElementById(&quot;bar&quot;).getAttribute(&quot;alt&quot;)</code> gets the &lsquo;alt&rsquo; attribute.</p>
+</li>
+</ol>
+<h2 id="handling-events">Handling events</h2>
+<ol>
+<li>
+<p><code>onclick</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+<span class="nx">image</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">();</span>
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+    <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">&#34;new.png&#34;</span><span class="p">;</span> <span class="c1">// We can change the property when we have the element.
+</span><span class="c1"></span><span class="p">}</span>
+<span class="kd">var</span> <span class="nx">images</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;img&#34;</span><span class="p">);</span> <span class="c1">// Get a bunch
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">images</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?crid=2NISC4BUYXL03&amp;keywords=head&#43;first&#43;javascript&#43;programming&amp;qid=1562253717&amp;s=gateway&amp;sprefix=head&#43;first&#43;javascript%2Caps%2C402&amp;sr=8-1" target="_blank" rel="noopener noreffer">Head First JavaScript Programming: A Brain-Friendly Guide, 1st Edition</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on July 15, 2019</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2019-07-15-JavaScript-Notes/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" data-title="JavaScript Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" data-title="JavaScript Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" data-title="JavaScript Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" data-title="JavaScript Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" data-title="JavaScript Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2019-07-10-Android-Development-Notes/" class="prev" rel="prev" title="Android Development Notes"><i class="fas fa-angle-left fa-fw"></i>Android Development Notes</a>
+            <a href="/posts/2019-7-24-Bash-Tips/" class="next" rel="next" title="Bash Tips">Bash Tips<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
+</html>

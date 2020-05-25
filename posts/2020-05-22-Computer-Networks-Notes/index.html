@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Computer Networks Notes - Tianyao Chen</title><meta name="Description" content="Course notes for Computer Networks at Jacobs University Bremen"><meta property="og:title" content="Computer Networks Notes" />
+<meta property="og:description" content="Course notes for Computer Networks at Jacobs University Bremen" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+<meta property="article:published_time" content="2020-05-22T18:52:12+02:00" />
+<meta property="article:modified_time" content="2020-05-22T18:52:12+02:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+
+<meta name="twitter:title" content="Computer Networks Notes"/>
+<meta name="twitter:description" content="Course notes for Computer Networks at Jacobs University Bremen"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Computer Networks Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2020-05-22-Computer-Networks-Notes\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Computer Science","wordcount":  3113 ,
+        "url": "https:\/\/tillchen.com\/posts\/2020-05-22-Computer-Networks-Notes\/","datePublished": "2020-05-22T18:52:12+02:00","dateModified": "2020-05-22T18:52:12+02:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Course notes for Computer Networks at Jacobs University Bremen"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Computer Networks Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 22, 2020">May 22, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3113 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#internet-concepts-and-design-principles">Internet Concepts and Design Principles</a></li>
+        <li><a href="#structure-and-growth-of-the-internet">Structure and Growth of the Internet</a></li>
+        <li><a href="#internet-programming-with-sockets">Internet Programming with Sockets</a></li>
+      </ul>
+    </li>
+    <li><a href="#fundamental-concepts">Fundamental Concepts</a>
+      <ul>
+        <li><a href="#classification-and-terminology">Classification and Terminology</a></li>
+        <li><a href="#communication-channels-and-transmission-media">Communication Channels and Transmission Media</a></li>
+        <li><a href="#media-access-control">Media Access Control</a></li>
+        <li><a href="#transmission-error-detection">Transmission Error Detection</a></li>
+        <li><a href="#sequence-numbers-acknowledgements-timer">Sequence Numbers, Acknowledgements, Timer</a></li>
+        <li><a href="#flow-control-and-congestion-control">Flow Control and Congestion Control</a></li>
+        <li><a href="#layering-and-the-osi-reference-model">Layering and the OSI Reference Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#local-area-networks">Local Area Networks</a>
+      <ul>
+        <li><a href="#local-area-networks-overview">Local Area Networks Overview</a></li>
+        <li><a href="#ethernet">Ethernet</a></li>
+        <li><a href="#bridges">Bridges</a></li>
+        <li><a href="#virtual-lan">Virtual LAN</a></li>
+        <li><a href="#port-access-control">Port Access Control</a></li>
+        <li><a href="#wireless-lan">Wireless LAN</a></li>
+      </ul>
+    </li>
+    <li><a href="#internet-network-layer">Internet Network Layer</a>
+      <ul>
+        <li><a href="#concepts-and-terminology">Concepts and Terminology</a></li>
+        <li><a href="#ipv6">IPv6</a></li>
+        <li><a href="#ipv4">IPv4</a></li>
+      </ul>
+    </li>
+    <li><a href="#internet-routing">Internet Routing</a>
+      <ul>
+        <li><a href="#distance-vector-routing-rip">Distance Vector Routing (RIP)</a></li>
+        <li><a href="#link-state-routing-ospf">Link State Routing (OSPF)</a></li>
+        <li><a href="#path-vector-policy-routing-bgp">Path Vector Policy Routing (BGP)</a></li>
+      </ul>
+    </li>
+    <li><a href="#internet-transport-layer-udp-tcp">Internet Transport Layer (UDP, TCP)</a>
+      <ul>
+        <li><a href="#transport-layer-overview">Transport Layer Overview</a></li>
+        <li><a href="#udp">UDP</a></li>
+        <li><a href="#tcp">TCP</a></li>
+      </ul>
+    </li>
+    <li><a href="#firewalls-and-network-address-translators">Firewalls and Network Address Translators</a>
+      <ul>
+        <li><a href="#middleboxes">Middleboxes</a></li>
+        <li><a href="#firewalls">Firewalls</a></li>
+        <li><a href="#network-address-translators">Network Address Translators</a></li>
+      </ul>
+    </li>
+    <li><a href="#domain-name-system-dns">Domain Name System (DNS)</a>
+      <ul>
+        <li><a href="#overview-and-features">Overview and features</a></li>
+        <li><a href="#resource-records">Resource Records</a></li>
+        <li><a href="#message-formats">Message Formats</a></li>
+        <li><a href="#security-and-dynamic-updates">Security and Dynamic Updates</a></li>
+        <li><a href="#creative-usage">Creative Usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#augmented-backus-naur-form-abnf">Augmented Backus Naur Form (ABNF)</a>
+      <ul>
+        <li><a href="#basics-rule-names-terminal-symbols">Basics, Rule Names, Terminal Symbols</a></li>
+        <li><a href="#operators">Operators</a></li>
+      </ul>
+    </li>
+    <li><a href="#electronic-mail-smtp-imap">Electronic Mail (SMTP, IMAP)</a>
+      <ul>
+        <li><a href="#components-and-terminology">Components and Terminology</a></li>
+        <li><a href="#simple-mail-transfer-protocol-smtp">Simple Mail Transfer Protocol (SMTP)</a></li>
+        <li><a href="#multipurpose-internet-mail-extensions-mime">Multipurpose Internet Mail Extensions (MIME)</a></li>
+        <li><a href="#internet-message-access-protocol-imap">Internet Message Access Protocol (IMAP)</a></li>
+        <li><a href="#filtering-of-messages-sieve">Filtering of Messages (SIEVE)</a></li>
+      </ul>
+    </li>
+    <li><a href="#hypertext-transfer-protocol-http">HyperText Transfer Protocol (HTTP)</a>
+      <ul>
+        <li><a href="#urls-urns-uris-iris">URLs, URNs, URIs, IRIs</a></li>
+        <li><a href="#http-11-methods">HTTP 1.1 Methods</a></li>
+        <li><a href="#http-11-features">HTTP 1.1 Features</a></li>
+        <li><a href="#http-20">HTTP 2.0</a></li>
+      </ul>
+    </li>
+    <li><a href="#multimedia-over-the-internet">Multimedia over the Internet</a>
+      <ul>
+        <li><a href="#voice-over-ip">Voice over IP</a></li>
+        <li><a href="#real-time-transport-protocol-rtp">Real-Time Transport Protocol (RTP)</a></li>
+        <li><a href="#session-initiation-protocol-sip">Session Initiation Protocol (SIP)</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><ul>
+<li><a href="#introduction" rel="">Introduction</a>
+<ul>
+<li><a href="#internet-concepts-and-design-principles" rel="">Internet Concepts and Design Principles</a></li>
+<li><a href="#structure-and-growth-of-the-internet" rel="">Structure and Growth of the Internet</a></li>
+<li><a href="#internet-programming-with-sockets" rel="">Internet Programming with Sockets</a></li>
+</ul>
+</li>
+<li><a href="#fundamental-concepts" rel="">Fundamental Concepts</a>
+<ul>
+<li><a href="#classification-and-terminology" rel="">Classification and Terminology</a></li>
+<li><a href="#communication-channels-and-transmission-media" rel="">Communication Channels and Transmission Media</a></li>
+<li><a href="#media-access-control" rel="">Media Access Control</a></li>
+<li><a href="#transmission-error-detection" rel="">Transmission Error Detection</a></li>
+<li><a href="#sequence-numbers-acknowledgements-timer" rel="">Sequence Numbers, Acknowledgements, Timer</a></li>
+<li><a href="#flow-control-and-congestion-control" rel="">Flow Control and Congestion Control</a></li>
+<li><a href="#layering-and-the-osi-reference-model" rel="">Layering and the OSI Reference Model</a></li>
+</ul>
+</li>
+<li><a href="#local-area-networks" rel="">Local Area Networks</a>
+<ul>
+<li><a href="#local-area-networks-overview" rel="">Local Area Networks Overview</a></li>
+<li><a href="#ethernet" rel="">Ethernet</a></li>
+<li><a href="#bridges" rel="">Bridges</a></li>
+<li><a href="#virtual-lan" rel="">Virtual LAN</a></li>
+<li><a href="#port-access-control" rel="">Port Access Control</a></li>
+<li><a href="#wireless-lan" rel="">Wireless LAN</a></li>
+</ul>
+</li>
+<li><a href="#internet-network-layer" rel="">Internet Network Layer</a>
+<ul>
+<li><a href="#concepts-and-terminology" rel="">Concepts and Terminology</a></li>
+<li><a href="#ipv6" rel="">IPv6</a></li>
+<li><a href="#ipv4" rel="">IPv4</a></li>
+</ul>
+</li>
+<li><a href="#internet-routing" rel="">Internet Routing</a>
+<ul>
+<li><a href="#distance-vector-routing-rip" rel="">Distance Vector Routing (RIP)</a></li>
+<li><a href="#link-state-routing-ospf" rel="">Link State Routing (OSPF)</a></li>
+<li><a href="#path-vector-policy-routing-bgp" rel="">Path Vector Policy Routing (BGP)</a></li>
+</ul>
+</li>
+<li><a href="#internet-transport-layer-udp-tcp" rel="">Internet Transport Layer (UDP, TCP)</a>
+<ul>
+<li><a href="#transport-layer-overview" rel="">Transport Layer Overview</a></li>
+<li><a href="#udp" rel="">UDP</a></li>
+<li><a href="#tcp" rel="">TCP</a></li>
+</ul>
+</li>
+<li><a href="#firewalls-and-network-address-translators" rel="">Firewalls and Network Address Translators</a>
+<ul>
+<li><a href="#middleboxes" rel="">Middleboxes</a></li>
+<li><a href="#firewalls" rel="">Firewalls</a></li>
+<li><a href="#network-address-translators" rel="">Network Address Translators</a></li>
+</ul>
+</li>
+<li><a href="#domain-name-system-dns" rel="">Domain Name System (DNS)</a>
+<ul>
+<li><a href="#overview-and-features" rel="">Overview and features</a></li>
+<li><a href="#resource-records" rel="">Resource Records</a></li>
+<li><a href="#message-formats" rel="">Message Formats</a></li>
+<li><a href="#security-and-dynamic-updates" rel="">Security and Dynamic Updates</a></li>
+<li><a href="#creative-usage" rel="">Creative Usage</a></li>
+</ul>
+</li>
+<li><a href="#augmented-backus-naur-form-abnf" rel="">Augmented Backus Naur Form (ABNF)</a>
+<ul>
+<li><a href="#basics-rule-names-terminal-symbols" rel="">Basics, Rule Names, Terminal Symbols</a></li>
+<li><a href="#operators" rel="">Operators</a></li>
+</ul>
+</li>
+<li><a href="#electronic-mail-smtp-imap" rel="">Electronic Mail (SMTP, IMAP)</a>
+<ul>
+<li><a href="#components-and-terminology" rel="">Components and Terminology</a></li>
+<li><a href="#simple-mail-transfer-protocol-smtp" rel="">Simple Mail Transfer Protocol (SMTP)</a></li>
+<li><a href="#multipurpose-internet-mail-extensions-mime" rel="">Multipurpose Internet Mail Extensions (MIME)</a></li>
+<li><a href="#internet-message-access-protocol-imap" rel="">Internet Message Access Protocol (IMAP)</a></li>
+<li><a href="#filtering-of-messages-sieve" rel="">Filtering of Messages (SIEVE)</a></li>
+</ul>
+</li>
+<li><a href="#hypertext-transfer-protocol-http" rel="">HyperText Transfer Protocol (HTTP)</a>
+<ul>
+<li><a href="#urls-urns-uris-iris" rel="">URLs, URNs, URIs, IRIs</a></li>
+<li><a href="#http-11-methods" rel="">HTTP 1.1 Methods</a></li>
+<li><a href="#http-11-features" rel="">HTTP 1.1 Features</a></li>
+<li><a href="#http-20" rel="">HTTP 2.0</a></li>
+</ul>
+</li>
+<li><a href="#multimedia-over-the-internet" rel="">Multimedia over the Internet</a>
+<ul>
+<li><a href="#voice-over-ip" rel="">Voice over IP</a></li>
+<li><a href="#real-time-transport-protocol-rtp" rel="">Real-Time Transport Protocol (RTP)</a></li>
+<li><a href="#session-initiation-protocol-sip" rel="">Session Initiation Protocol (SIP)</a></li>
+</ul>
+</li>
+<li><a href="#references" rel="">References</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This is the course notes for Computer Networks at Jacobs University Bremen.</p>
+<h3 id="internet-concepts-and-design-principles">Internet Concepts and Design Principles</h3>
+<ol>
+<li>
+<p>Internet Addresses:</p>
+<ul>
+<li>Leading nulls in IPv6 addresses can be omitted and two consecutive  colons can represent a sequence of nulls:
+<ul>
+<li>2001:00db8:0000:0000:0000:0000:0000:0001 can be written as 2001:db8::1</li>
+</ul>
+</li>
+<li>IPv6 addresses have 16 bytes (4 x 8 groups); IPv4 addresses have 4 bytes.</li>
+</ul>
+</li>
+<li>
+<p>Autonomous Systems:</p>
+<ul>
+<li>An AS is a set of routers and networks under the same administration.</li>
+<li>IP packets are forwarded between ASs by EGP (Exterior Gateway Protocol); within an AS, it&rsquo;s IGP (Interior Gateway Protocol)</li>
+<li>The Internet is a collection os ASs. There&rsquo;s no central authority.</li>
+</ul>
+</li>
+</ol>
+<h3 id="structure-and-growth-of-the-internet">Structure and Growth of the Internet</h3>
+<ol>
+<li>Internet Exchange Points (IXPs) are switching hubs where many Internet Service Providers (operating ASs) connect in order to exchange internet traffic.</li>
+</ol>
+<h3 id="internet-programming-with-sockets">Internet Programming with Sockets</h3>
+<ol>
+<li>
+<p>Sockets are abstract communication endpoints with a rather small number of associated function calls.</p>
+</li>
+<li>
+<p>Connection-less vs connection-oriented communication</p>
+<ul>
+<li>Connection-oriented communication requires a establishment and a teardown. Most of the Internet traffic is using this.</li>
+</ul>
+</li>
+</ol>
+<h2 id="fundamental-concepts">Fundamental Concepts</h2>
+<h3 id="classification-and-terminology">Classification and Terminology</h3>
+<ol>
+<li>
+<p>Communication modes:</p>
+<ul>
+<li>Unicast - 1:1</li>
+<li>Multicast - 1:n</li>
+<li>Concast - n:1</li>
+<li>Multipeer - m:n</li>
+<li>Anycast - 1: nearest receiver</li>
+<li>Broadcast - 1: all</li>
+<li>Geocast - 1: n in a region</li>
+</ul>
+</li>
+<li>
+<p>Communication protocols define the syntax and semantics of messages.</p>
+</li>
+<li>
+<p>Circuit vs packet switching:</p>
+<ul>
+<li>Circuit switching: create and remove (virtual) circuit (e.g. the telephone network)</li>
+<li>Packet switching: data is carried in packets (e.g. Internet)</li>
+</ul>
+</li>
+<li>
+<p>Connection-oriented vs connection-less:</p>
+<ul>
+<li>Connection-oriented: stateful (e.g. fetching a Web page)</li>
+<li>Connection-less: stateless (e.g. Internet name lookups)</li>
+</ul>
+</li>
+<li>
+<p>Data vs. control vs. management plane:</p>
+<ul>
+<li>Data plane: forwarding of data (hardware)</li>
+<li>Control plane: telling the data plane how to forward data (routers and switches)</li>
+<li>Management plane: configuration and monitoring of data and control planes (may involve humans)</li>
+</ul>
+</li>
+<li>
+<p>Topologies:</p>
+<ul>
+<li>Star; Ring; Meshed Network; Bus; Line.</li>
+</ul>
+</li>
+</ol>
+<h3 id="communication-channels-and-transmission-media">Communication Channels and Transmission Media</h3>
+<ol>
+<li>
+<p>Signals are in general modified during transmission, leading to transmission errors.</p>
+</li>
+<li>
+<p>Data rate (bit rate) vs bit time:</p>
+<ul>
+<li>Bit time is the time needed to transmit a single bit (1 microsecond for 1 Mbit/s)</li>
+</ul>
+</li>
+<li>
+<p>Delay is the time needed to transmit a message from the source to the sink. It consists of transmission delay and propagation delay.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/transmission_propagation_delay.png"
+        data-srcset="/images/transmission_propagation_delay.png, /images/transmission_propagation_delay.png 1.5x, /images/transmission_propagation_delay.png 2x"
+        data-sizes="auto"
+        alt="transmission vs propagation delay"
+        title="transmission vs propagation delay" /></p>
+</li>
+<li>
+<p>Bit error rate is the probability of a bit being changed during transmission.</p>
+</li>
+<li>
+<p>Simple wires can easily experience crosstalk caused by capacitive coupling.</p>
+</li>
+<li>
+<p>Transmission impairments:</p>
+<ul>
+<li>Attenuation</li>
+<li>Delay distortion (different frequencies arrive at different time)</li>
+<li>Noise</li>
+</ul>
+</li>
+</ol>
+<h3 id="media-access-control">Media Access Control</h3>
+<ol>
+<li>
+<p>Media access control - shared transmission media require coordinated access to the medium.</p>
+</li>
+<li>
+<p>Frequency division multiplexing (FDM): simultaneous signals in different frequency bands.</p>
+</li>
+<li>
+<p>Wavelength division multiplexing (WDM): different wavelengths at the same time.</p>
+</li>
+<li>
+<p>Time division multiplexing (TDM): signals are assigned to specific time slots.</p>
+</li>
+<li>
+<p>Pure aloha - sends data as soon as data becomes available (not very efficient)</p>
+</li>
+<li>
+<p>Slotted aloha - sends do not send immediately but wait for the beginning of a time slot - (slightly more efficient)</p>
+</li>
+<li>
+<p>Carrier sense multiple access (CSMA) - sense the media whether it&rsquo;s unused before starting a transmission.</p>
+</li>
+<li>
+<p>CSMA with collision detection (CSMA-CD) - terminates the transmission as soon as a collision has been detected (and retries after some random delay).</p>
+</li>
+<li>
+<p>Multiple access with collision avoidance (MACA) - sends RTS (ready to send) and CTS (clear to send)</p>
+</li>
+<li>
+<p>Token passing - a token is a special bit pattern circulating between stations (only the station holding the token is allowed to send data).</p>
+</li>
+</ol>
+<h3 id="transmission-error-detection">Transmission Error Detection</h3>
+<ol>
+<li>
+<p>Simple parity bits can be added to code words to detect bit errors.</p>
+</li>
+<li>
+<p>Cyclic redundancy check (CRC) uses polynomials (1101 = $x^3+x^2+1$)</p>
+<ul>
+<li>Divide the message with the generator, if the remainder is 0, we assume no transmission error. Otherwise, add the remainder to the message to get the real bit sequence.</li>
+</ul>
+</li>
+</ol>
+<h3 id="sequence-numbers-acknowledgements-timer">Sequence Numbers, Acknowledgements, Timer</h3>
+<ol>
+<li>
+<p>Errors:</p>
+<ul>
+<li>Bit errors</li>
+<li>Loss of complete data frames</li>
+<li>Duplication of complete data frames</li>
+<li>Receipt of data frames that were never sent</li>
+<li>Reordering of data frames during transmission</li>
+</ul>
+</li>
+<li>
+<p>End-to-end flow control - the sender must adapt its speed to the speed of the receiver.</p>
+</li>
+<li>
+<p>Congestion control - the sender must react to congestions.</p>
+</li>
+<li>
+<p>The sender assigns growing sequence numbers to all data frames to deal with the errors above.</p>
+</li>
+<li>
+<p>The receiver sends ACK to handle errors.</p>
+<ul>
+<li>ACK: positive acknowledgement</li>
+<li>NACK: negative acknowledgement</li>
+<li>Stop-and-wait protocol - a frame is only transmitted if the previous frame was acknowledged.</li>
+</ul>
+</li>
+<li>
+<p>A send can also use a timer to retransmit a frame if no ACK has been received in time.</p>
+</li>
+</ol>
+<h3 id="flow-control-and-congestion-control">Flow Control and Congestion Control</h3>
+<ol>
+<li>
+<p>Flow control - allows the sender to send multiple frames before waiting for ACKs.</p>
+</li>
+<li>
+<p>Sliding window flow control - the size of the window and the speed of the sender must match the buffer capacity of the receiver.</p>
+<ul>
+<li>For the send: LFS - LAR + 1 &lt;= SWS (last frame sent, last ACK received, send window size)</li>
+<li>For the receiver: LFA - NFE + 1 &lt;= RWS (last frame acceptable, next frame expected, receive window size)</li>
+</ul>
+</li>
+<li>
+<p>Congestions control is used to adapt the speed of the sender to the speed of the network.</p>
+</li>
+</ol>
+<h3 id="layering-and-the-osi-reference-model">Layering and the OSI Reference Model</h3>
+<ol>
+<li>
+<p>Protocol data units (PDUs) are exchanged between peer entities; service data units (SDUs) are exchanged between layers (services).</p>
+</li>
+<li>
+<p>The Open systems interconnection model (OSI model): (layer 7 -&gt; layer 1)</p>
+<ul>
+<li>Application</li>
+<li>Presentation - data compression/integrity services etc.</li>
+<li>Session - security services</li>
+<li>Transport - communication channels</li>
+<li>Network - determination of paths</li>
+<li>Data link - transmission of bit sequences in so called frames</li>
+<li>Physical - transmission of an unstructured bit stream</li>
+</ul>
+</li>
+</ol>
+<h2 id="local-area-networks">Local Area Networks</h2>
+<h3 id="local-area-networks-overview">Local Area Networks Overview</h3>
+<ol>
+<li>IEEE 802 addresses (MAC addresses) are 6 octets (48 bits) long.
+<ul>
+<li>It&rsquo;s usually separated using colons or hyphens (00:D0:59:5C:03:8A)</li>
+<li>The highest bit indicates whether it&rsquo;s unicast (0) or multicast (1)</li>
+<li>The broadcast address is FF-FF-FF-FF-FF</li>
+</ul>
+</li>
+</ol>
+<h3 id="ethernet">Ethernet</h3>
+<ol>
+<li>
+<p>Classic Ethernet usd CSMA/CD and shared bus.</p>
+</li>
+<li>
+<p>Today&rsquo;s Ethernet uses a star topology with full duplex links.</p>
+</li>
+</ol>
+<h3 id="bridges">Bridges</h3>
+<ol>
+<li>
+<p>Source routing bridges - sender routes the frame through the bridged network.</p>
+</li>
+<li>
+<p>Transparent bridges - bridges are transparent to senders and receivers.</p>
+<ul>
+<li>Look up an entry in the forwarding DB (entry added when a frame is received) and forward the frame to the port.</li>
+<li>If not matching entry exists, do flooding - forward the frame to all outgoing ports except the port from which the frame was received.</li>
+</ul>
+</li>
+<li>
+<p>Port states:</p>
+<ul>
+<li>Blocking</li>
+<li>Listening</li>
+<li>Learning</li>
+<li>Forwarding</li>
+<li>Disabled</li>
+</ul>
+</li>
+<li>
+<p>A bridged LAN has a single broadcast domain - frames sent to this address will be forwarded on all links.</p>
+</li>
+</ol>
+<h3 id="virtual-lan">Virtual LAN</h3>
+<ol>
+<li>VLANs provide a separation of logical LAN topologies from physical LAN topologies, which separates the traffic and reduces the network load.</li>
+</ol>
+<h3 id="port-access-control">Port Access Control</h3>
+<ol>
+<li>
+<p>Port-based network access control grants access to a switch port based on the identity of the connected machine.</p>
+</li>
+<li>
+<p>Components:</p>
+<ul>
+<li>Supplicant - on a machine</li>
+<li>Authenticator - on a bridge</li>
+<li>Authentication server</li>
+</ul>
+</li>
+</ol>
+<h3 id="wireless-lan">Wireless LAN</h3>
+<ol>
+<li>
+<p>Data frames - &ldquo;useful&rdquo; payloads</p>
+</li>
+<li>
+<p>Control frames - facilitates the exchange of data frames</p>
+<ul>
+<li>RTS &amp; CTS</li>
+<li>ACK</li>
+</ul>
+</li>
+<li>
+<p>Management frames - maintenance of the network</p>
+</li>
+</ol>
+<h2 id="internet-network-layer">Internet Network Layer</h2>
+<p>The Internet network layer provides a packet-oriented connection-less data exchange function.</p>
+<h3 id="concepts-and-terminology">Concepts and Terminology</h3>
+<ol>
+<li>
+<p>Terminology:</p>
+<ul>
+<li>Node - a device which implements an Internet Protocol.</li>
+<li>Router - a node that forwards IP packets not addressed to itself.</li>
+<li>Host - any node that&rsquo;s not a router.</li>
+<li>Link - a communication channel.</li>
+<li>Neighbors - the set of all nodes attached to the same link.</li>
+<li>Interface - a node&rsquo;s attachment to a link.</li>
+<li>IP address - identifies an interface or set of interfaces.</li>
+<li>IP prefix - the initial part of an IP address identifying an IP network.</li>
+<li>IP packet - a bit sequence of an IP header and the payload.</li>
+<li>Link MTU - maximum transmission unit (max packet size) on a link.</li>
+<li>Path MTU - min link MTU of all the links in a path.</li>
+</ul>
+</li>
+<li>
+<p>Calculate the available addresses:</p>
+<ul>
+<li>IPv4 - $2^{32-prefix} - 2$</li>
+<li>IPv6 - $2^{128-prefix} - 2$</li>
+</ul>
+</li>
+<li>
+<p>we use longest prefix match for IP forwarding in a forwarding table.</p>
+</li>
+</ol>
+<h3 id="ipv6">IPv6</h3>
+<ol>
+<li>Error handling - ICMPv6 (Internet Control Message Protocol Version 6).</li>
+</ol>
+<h3 id="ipv4">IPv4</h3>
+<ol>
+<li>
+<p>Error handling - ICMPv4.</p>
+</li>
+<li>
+<p>IPv4 fragmentation - IPv4 packets that do not fit the link MTU will get fragmented into smaller packets. It is considered harmful.</p>
+</li>
+<li>
+<p>Dynamic Host Configuration Protocol (DHCP) allows nodes to retrieve configuration parameters from a central configuration server.</p>
+</li>
+</ol>
+<h2 id="internet-routing">Internet Routing</h2>
+<h3 id="distance-vector-routing-rip">Distance Vector Routing (RIP)</h3>
+<ol>
+<li>
+<p>Routing Information Protocol (RIP) is a simple distance vector routing protocol that uses Bellman-Ford.</p>
+</li>
+<li>
+<p>Count-to-infinity will cause the costs to reach infinity. (A &ndash; B &ndash; C, A&ndash;B breaks, B -&gt; C -&gt; A, C updates the hop count)</p>
+</li>
+<li>
+<p>Split horizon - nodes never announce the reachability. Doesn&rsquo;t solve count-to-infinity.</p>
+</li>
+<li>
+<p>Split horizon with poisoned reverse - nodes announce the unreachablility to neighbors. - Doesn&rsquo;t solve count-to-infinity for all cases since the exchange of distance vectors is not synchronized to a global clock.</p>
+</li>
+<li>
+<p>RIP runs on UDP.</p>
+</li>
+</ol>
+<h3 id="link-state-routing-ospf">Link State Routing (OSPF)</h3>
+<ol>
+<li>
+<p>Open Shortest Path First (OSPF) is a link state routing protocol that uses Dijstra.</p>
+</li>
+<li>
+<p>It&rsquo;s used for IS-IS (intermediate system to intermediate system).</p>
+</li>
+<li>
+<p>Router classification:</p>
+<ul>
+<li>Internal</li>
+<li>Area Border</li>
+<li>Backbone</li>
+<li>AS Boundary</li>
+</ul>
+</li>
+<li>
+<p>Stub areas are areas with a single area boarder router.</p>
+</li>
+</ol>
+<h3 id="path-vector-policy-routing-bgp">Path Vector Policy Routing (BGP)</h3>
+<ol>
+<li>
+<p>Border Gateway Protocol (BGP) is a path vector policy routing protocol that propagates reachability info between ASs.</p>
+</li>
+<li>
+<p>AS categories:</p>
+<ul>
+<li>Stub - only one peering relationship with one other AS. It only carries local traffic.</li>
+<li>Multihomed - peering relationships with more than one other ASs. It refuses to carry transit traffic.</li>
+<li>Transit - peering relationships with more than one other ASs. It&rsquo;s designed to carry both local and transit traffic.</li>
+</ul>
+</li>
+<li>
+<p>BGP doesn&rsquo;t suffer from count-to-infinity. The AS path info allows to detect loops.</p>
+</li>
+</ol>
+<h2 id="internet-transport-layer-udp-tcp">Internet Transport Layer (UDP, TCP)</h2>
+<h3 id="transport-layer-overview">Transport Layer Overview</h3>
+<ol>
+<li>
+<p>The transport layer provides communication services for apps running on hosts.</p>
+</li>
+<li>
+<p>Network layer addresses identify interfaces on nodes (node-to-node significance); Transport layer addresses identify communicating app processes (end-to-end significance).</p>
+</li>
+<li>
+<p>UDP provides a simple unreliable best-effort datagram service.</p>
+</li>
+<li>
+<p>TCP provides a bidirectional, connection-oriented and reliable data stream.</p>
+</li>
+<li>
+<p>Stream Control Transmission Protocol (SCTP) and Datagram Congestion Control Protocol (DCCP).</p>
+</li>
+</ol>
+<h3 id="udp">UDP</h3>
+<ol>
+<li>UDP datagrams can be multicasted to a group of receivers.</li>
+</ol>
+<h3 id="tcp">TCP</h3>
+<ol>
+<li>
+<p>Header fields:</p>
+<ul>
+<li>Sequence Number: the sequence number of the first data byte in the segment.</li>
+<li>ACK: the next sequence number which the sender of the ACK expects.</li>
+<li>Window: the number of data bytes the sender is willing to receive (the window starts with the ACK).</li>
+</ul>
+</li>
+<li>
+<p>Flags:</p>
+<ul>
+<li>ACK - indicates the ACK number filed is significant</li>
+<li>SYN - synchronization of sequence numbers</li>
+<li>FIN - no more data from sender</li>
+</ul>
+</li>
+<li>
+<p>Connection establishment:</p>
+<ul>
+<li>Handshake protocol establishes the connection</li>
+<li>Guarantees correct connection. even if packets are lost or duplicated.</li>
+</ul>
+</li>
+<li>
+<p>Connection Tear-down - bidirectional</p>
+</li>
+<li>
+<p>Flow control - both TCP engines advertise the buffer sizes during connection establishment.</p>
+</li>
+<li>
+<p>TCP congestion control:</p>
+<ul>
+<li>Fundamentally important to avoid a collapse of the Internet.</li>
+<li>Congestion window (cwnd) defines how much data can be in transit.
+<ul>
+<li>It&rsquo;s maintained by a TCP sender in addition to the flow control receiver window (rwnd).</li>
+</ul>
+</li>
+<li>The sender uses the two windows to limit the flightsize (the data sent but not yet received) to the minimum of the windows.</li>
+</ul>
+</li>
+<li>
+<p>Retransmission timer controls when a segment is resent if no ACK has been received.</p>
+</li>
+</ol>
+<h2 id="firewalls-and-network-address-translators">Firewalls and Network Address Translators</h2>
+<h3 id="middleboxes">Middleboxes</h3>
+<ol>
+<li>
+<p>A middlebox ia any intermediary device performing functions other than the normal standard functions of an IP router.</p>
+</li>
+<li>
+<p>It challenges the End-to-End principle.</p>
+</li>
+<li>
+<p>Types of middleboxes:</p>
+<ul>
+<li>Network Address Translators (NAT): a function that dynamically assigns a globally unique address to a host.</li>
+<li>IP Firewalls</li>
+<li>Proxies</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ol>
+<h3 id="firewalls">Firewalls</h3>
+<ol>
+<li>
+<p>Firewall is a system that enforces access control policies between networks.</p>
+</li>
+<li>
+<p>Conservative firewalls allow known desired traffic and reject everything else.</p>
+</li>
+<li>
+<p>Optimistic firewalls reject known unwanted traffic and allow the rest.</p>
+</li>
+<li>
+<p>Firewalls typically consist of packet filters, transport gateways, and application level gateways.</p>
+</li>
+<li>
+<p>Firewall architectures:</p>
+<ul>
+<li>Screening router: the simplest - with a packet filter.</li>
+<li>Bastion host: a multihomed host which doesn&rsquo;t forward IP datagrams. but instead provide suitable gateways. - prevents direction host communication.</li>
+<li>Two packet filters which create a demilitarized zone (DMZ) - most common.
+<ul>
+<li>Externally visible servers and gateways are in the DMZ.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="network-address-translators">Network Address Translators</h3>
+<ol>
+<li>
+<p>Basic NAT: translates private IP address to public IP address.</p>
+</li>
+<li>
+<p>Network Address Port Translation (NAPT): translates transport endpoint identifiers. It allows to share a single public address among many private addresses (masquerading).</p>
+</li>
+<li>
+<p>Full cone NAT is a NAT where all requests from the same internal IP address and port are mapped to the same external IP address and port.</p>
+<ul>
+<li>Any external host can send a packet to the internal host by sending a packet to the mapped external address.</li>
+</ul>
+</li>
+<li>
+<p>Restrict cone NAT: unlike full cone, an external host (with IP address X) can send a packet to the internal post only if the internal host had previously sent a packet to IP address X.</p>
+</li>
+<li>
+<p>Port restricted cone NAT also includes the restriction for the port number.</p>
+</li>
+<li>
+<p>Symmetric NAT: only the external host that receives a packet can send a UDP packet back to the internal host.</p>
+</li>
+</ol>
+<h2 id="domain-name-system-dns">Domain Name System (DNS)</h2>
+<h3 id="overview-and-features">Overview and features</h3>
+<ol>
+<li>
+<p>DNS provides a global infrastructure to map human friendly domain names into addresses. - name resolution.</p>
+</li>
+<li>
+<p>The resolver is typically tightly integrated into the OS or more precisely the standard libraries.</p>
+</li>
+<li>
+<p>Most hosts do not resolve names themselves but instead the resolver is sending recursive queries to a domain name resolver.</p>
+</li>
+<li>
+<p>Administration of the name space can be delegated.</p>
+</li>
+<li>
+<p>The original DNS protocol doesn&rsquo;t provide sufficient security. There&rsquo;s no reason to trust DNS responses.</p>
+</li>
+<li>
+<p>DNS labels are case-insensitive.</p>
+</li>
+<li>
+<p>The absolute paths ending at the virtual root node end with a trailing dot.</p>
+</li>
+</ol>
+<h3 id="resource-records">Resource Records</h3>
+<ol>
+<li>Resource Records (RRs) hold typed info for a given name with the components:
+<ul>
+<li>Owner - domain name</li>
+<li>Type - A(IPv4 address)/AAAA(IPv6 address)/CNAME(Canonical Name)/HINFO(Host Info)/MX(Mail Exchanger)/NS(authoritative server)/PTR(pointer to another part of the name space)/SOA(Start Of zone of Authority)</li>
+<li>Class - IN for Internet</li>
+<li>Time to Life (TTL) - how many second info can be stored in a local cache (how long the response record is valid)</li>
+<li>Data Format (RDATA) - depends on the type</li>
+</ul>
+</li>
+</ol>
+<h3 id="message-formats">Message Formats</h3>
+<ol>
+<li>
+<p>Protocol header + questions + answers (RRs) + pointers to authorities + additional info.</p>
+</li>
+<li>
+<p>Simple DNS queries usually use UDP - low overhead, which is important for resolvers that may need to contact many DNS servers.</p>
+</li>
+<li>
+<p>For large data transfers, DNS may utilize TCP.</p>
+</li>
+</ol>
+<h3 id="security-and-dynamic-updates">Security and Dynamic Updates</h3>
+<ol>
+<li>Resource Record Signature (RRSIG) RR stores digital signatures.</li>
+</ol>
+<h3 id="creative-usage">Creative Usage</h3>
+<ol>
+<li>DNS Blacklists (email spam with A and TXT)</li>
+</ol>
+<h2 id="augmented-backus-naur-form-abnf">Augmented Backus Naur Form (ABNF)</h2>
+<h3 id="basics-rule-names-terminal-symbols">Basics, Rule Names, Terminal Symbols</h3>
+<ol>
+<li>
+<p>A text-based encoding of protocol messages are programmer readable byt less efficient.</p>
+</li>
+<li>
+<p>ABNF is used to formally specify textual protocol messages. It consists of set of rules (productions)</p>
+</li>
+<li>
+<p>Comments start with ;.</p>
+</li>
+<li>
+<p>The name of a rule must start with an alphabetic character.</p>
+</li>
+<li>
+<p>Terminal symbols are non-negative numbers. We can use . as concatenation and - as a value range operator. They can also be defined by ASCII characters in double quotes.</p>
+</li>
+<li>
+<p>%s - case sensitive; %i - case insensitive (the default).</p>
+</li>
+</ol>
+<h3 id="operators">Operators</h3>
+<ol>
+<li>
+<p>Concatenation: empty word</p>
+</li>
+<li>
+<p>Alternatives: /</p>
+</li>
+<li>
+<p>Grouping: ()</p>
+</li>
+<li>
+<p>Repetitions: n*m (n and m are optional)</p>
+<ul>
+<li>n is the min (default 0) and m (default inf) is the max for repetitions</li>
+</ul>
+</li>
+<li>
+<p>Optional: []</p>
+<ul>
+<li>[ab] = *1(ab)</li>
+</ul>
+</li>
+</ol>
+<h2 id="electronic-mail-smtp-imap">Electronic Mail (SMTP, IMAP)</h2>
+<h3 id="components-and-terminology">Components and Terminology</h3>
+<ol>
+<li>Terminology:
+<ul>
+<li>Mail User Agent (MUA) - source or target</li>
+<li>Mail Transfer Agent (MTA) - server and clients that transport</li>
+<li>Mail Delivery Agent (MDA) - delivers to the mailbox</li>
+</ul>
+</li>
+</ol>
+<h3 id="simple-mail-transfer-protocol-smtp">Simple Mail Transfer Protocol (SMTP)</h3>
+<ol>
+<li>It&rsquo;s running over TCP.</li>
+</ol>
+<h3 id="multipurpose-internet-mail-extensions-mime">Multipurpose Internet Mail Extensions (MIME)</h3>
+<ol>
+<li>
+<p>MIME supports multiple different char sets, different media types, etc.</p>
+</li>
+<li>
+<p>MIME is widely implemented and not only for mail.</p>
+</li>
+<li>
+<p>MIME boundaries: a delimiter consist of two dashes followed by the boundary.</p>
+</li>
+</ol>
+<h3 id="internet-message-access-protocol-imap">Internet Message Access Protocol (IMAP)</h3>
+<ol>
+<li>
+<p>IMAP allows a client to access and manipulate mail messages stored on a server.</p>
+</li>
+<li>
+<p>It&rsquo;s on TCP.</p>
+</li>
+<li>
+<p>It&rsquo;s strongly suggested to use TLS to encrypt.</p>
+</li>
+<li>
+<p>IMAP supports asynchronous, concurrent operations.</p>
+</li>
+</ol>
+<h3 id="filtering-of-messages-sieve">Filtering of Messages (SIEVE)</h3>
+<ol>
+<li>SIEVE can either be implemented on the client or the server.</li>
+</ol>
+<h2 id="hypertext-transfer-protocol-http">HyperText Transfer Protocol (HTTP)</h2>
+<ol>
+<li>HTTP runs on TCP.</li>
+</ol>
+<h3 id="urls-urns-uris-iris">URLs, URNs, URIs, IRIs</h3>
+<ol>
+<li>
+<p>URI - Uniform Resource Identifier</p>
+</li>
+<li>
+<p>URL - Uniform Resource Locator</p>
+<ul>
+<li>A subset of URIs</li>
+</ul>
+</li>
+<li>
+<p>URN - Uniform Resource Name</p>
+<ul>
+<li>A subset of URIs wih globally unique and persistent name.</li>
+</ul>
+</li>
+<li>
+<p>IRI - Internationalized Resource Identifier</p>
+</li>
+</ol>
+<h3 id="http-11-methods">HTTP 1.1 Methods</h3>
+<ol>
+<li>
+<p>Methods:</p>
+<ul>
+<li>GET - retrieve a resource</li>
+<li>HEAD - retrieve meta-info</li>
+<li>POST - annotate an existing resource by passing info to it</li>
+<li>PUT - store info (may create a new resource)</li>
+<li>DELETE - delete the resource</li>
+<li>OPTIONS - request info about methods supported</li>
+<li>TRACE - loopback for testing</li>
+<li>CONNECT - init a TLS/SSL tunnel</li>
+</ul>
+</li>
+<li>
+<p>Safe methods</p>
+<ul>
+<li>Safe methods are intended only for information retrieval and should not change the state of the server.</li>
+<li>They should have no side effects beyond logging</li>
+<li>GET, HEAD, OPTIONS, TRACE</li>
+</ul>
+</li>
+<li>
+<p>Idempotent methods</p>
+<ul>
+<li>Idempotent methods can be executed multiple times without producing results that are different from a single execution.</li>
+<li>PUT, DELETE</li>
+<li>POST, CONNECT are not idempotent.</li>
+</ul>
+</li>
+<li>
+<p>Supporting caches well is a fundamental goal of HTTP.</p>
+</li>
+</ol>
+<h3 id="http-11-features">HTTP 1.1 Features</h3>
+<ol>
+<li>
+<p>Persistent connections and pipelining. (Make multiple requests without waiting for each response.)</p>
+</li>
+<li>
+<p>Chunked transfer encoding.</p>
+</li>
+<li>
+<p>Caching and proxies - most interesting and complex part of HTTP.</p>
+</li>
+<li>
+<p>Negotiation</p>
+</li>
+<li>
+<p>Conditional requests</p>
+</li>
+<li>
+<p>Entity tags (ETag) is an opaque identifier assigned by a web server to a specific version of resource found at a URL.</p>
+</li>
+</ol>
+<h3 id="http-20">HTTP 2.0</h3>
+<ol>
+<li>
+<p>HTTP/1.0 - separate TCP connection for every resource request</p>
+</li>
+<li>
+<p>HTTP/1.1 - persistent connections and pipelining &amp; conditional requests</p>
+</li>
+<li>
+<p>HTTP/2 - header compression &amp; multiplexing &amp; server push into client caches</p>
+</li>
+</ol>
+<h2 id="multimedia-over-the-internet">Multimedia over the Internet</h2>
+<h3 id="voice-over-ip">Voice over IP</h3>
+<ol>
+<li>UDP can be used.</li>
+</ol>
+<h3 id="real-time-transport-protocol-rtp">Real-Time Transport Protocol (RTP)</h3>
+<ol>
+<li>
+<p>End-to-end real-time data.</p>
+</li>
+<li>
+<p>Commonly used over UDP.</p>
+</li>
+</ol>
+<h3 id="session-initiation-protocol-sip">Session Initiation Protocol (SIP)</h3>
+<ol>
+<li>Create, modify, and terminate sessions with one or more participants.</li>
+</ol>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://cnds.jacobs-university.de/courses/cn-2019/">https://cnds.jacobs-university.de/courses/cn-2019/</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on May 22, 2020</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2020-05-22-Computer-Networks-Notes/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" data-title="Computer Networks Notes" data-hashtags="Computer Science"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" data-hashtag="Computer Science"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" data-title="Computer Networks Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" data-title="Computer Networks Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" data-title="Computer Networks Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-05-22-Computer-Networks-Notes/" data-title="Computer Networks Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Computer-Science/">Computer Science</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2020-05-21-Software-Engineering-Notes/" class="prev" rel="prev" title="Software Engineering Notes"><i class="fas fa-angle-left fa-fw"></i>Software Engineering Notes</a>
+            <a href="/posts/2020-05-24-Computability-and-Complexity-Notes/" class="next" rel="next" title="Computability and Complexity Notes">Computability and Complexity Notes<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
+</html>

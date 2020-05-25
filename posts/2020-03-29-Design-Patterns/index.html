@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Design Patterns - Tianyao Chen</title><meta name="Description" content="Some notes for design patterns"><meta property="og:title" content="Design Patterns" />
+<meta property="og:description" content="Some notes for design patterns" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2020-03-29-Design-Patterns/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+<meta property="article:published_time" content="2020-03-29T00:00:00+01:00" />
+<meta property="article:modified_time" content="2020-03-29T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+
+<meta name="twitter:title" content="Design Patterns"/>
+<meta name="twitter:description" content="Some notes for design patterns"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-03-29-Design-Patterns/" /><link rel="prev" href="https://tillchen.com/posts/2020-02-17-Go-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Design Patterns",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2020-03-29-Design-Patterns\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Software Engineering","wordcount":  972 ,
+        "url": "https:\/\/tillchen.com\/posts\/2020-03-29-Design-Patterns\/","datePublished": "2020-03-29T00:00:00+01:00","dateModified": "2020-03-29T00:00:00+01:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for design patterns"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Design Patterns</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="March 29, 2020">March 29, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;972 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="#the-strategy-pattern">The Strategy Pattern</a></li>
+    <li><a href="#the-observer-pattern">The Observer Pattern</a></li>
+    <li><a href="#the-decorator-pattern">The Decorator Pattern</a></li>
+    <li><a href="#the-factory-pattern">The Factory Pattern</a></li>
+    <li><a href="#the-singleton-pattern">The Singleton Pattern</a></li>
+    <li><a href="#the-command-pattern">The Command Pattern</a></li>
+    <li><a href="#the-adapter-pattern">The Adapter Pattern</a></li>
+    <li><a href="#the-facade-pattern">The Facade Pattern</a></li>
+    <li><a href="#the-template-method-pattern">The Template Method Pattern</a></li>
+    <li><a href="#the-state-pattern">The State Pattern</a></li>
+    <li><a href="#the-proxy-pattern">The Proxy Pattern</a></li>
+    <li><a href="#model-view-controller">Model-View-Controller</a></li>
+    <li><a href="#design-pattern-categories">Design Pattern Categories</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><ul>
+<li><a href="#principles" rel="">Principles</a></li>
+<li><a href="#the-strategy-pattern" rel="">The Strategy Pattern</a></li>
+<li><a href="#the-observer-pattern" rel="">The Observer Pattern</a></li>
+<li><a href="#the-decorator-pattern" rel="">The Decorator Pattern</a></li>
+<li><a href="#the-factory-pattern" rel="">The Factory Pattern</a></li>
+<li><a href="#the-singleton-pattern" rel="">The Singleton Pattern</a></li>
+<li><a href="#the-command-pattern" rel="">The Command Pattern</a></li>
+<li><a href="#the-adapter-pattern" rel="">The Adapter Pattern</a></li>
+<li><a href="#the-facade-pattern" rel="">The Facade Pattern</a></li>
+<li><a href="#the-template-method-pattern" rel="">The Template Method Pattern</a></li>
+<li><a href="#the-state-pattern" rel="">The State Pattern</a></li>
+<li><a href="#the-proxy-pattern" rel="">The Proxy Pattern</a></li>
+<li><a href="#model-view-controller" rel="">Model-View-Controller</a></li>
+<li><a href="#design-pattern-categories" rel="">Design Pattern Categories</a></li>
+<li><a href="#references" rel="">References</a></li>
+</ul>
+<h2 id="principles">Principles</h2>
+<ol>
+<li>
+<p>Identify the varying parts and separate them from the invariant.</p>
+</li>
+<li>
+<p>Program to an interface (supertype), not an implementation.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="o">();</span>
+<span class="n">animal</span><span class="o">.</span><span class="na">makeSound</span><span class="o">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Favor composition over inheritance. HAS-A can be better than IS-A.</p>
+</li>
+<li>
+<p>SOLID:</p>
+<ul>
+<li>Single responsibility: a class should have only one reason to change.</li>
+<li>Open-closed: classes should be open for extension, but closed for modification.</li>
+<li>Liskov Substitution: objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program</li>
+<li>Interface Segregation: many client-specific interfaces are better than one general-purpose interface.</li>
+<li>Dependency inversion: depend upon abstractions. Do not depend upon concrete classes. High-level components should not depend on low-level components; rather, they should both depend on abstractions.
+<ul>
+<li>No variables should hold a reference to a concrete class.</li>
+<li>No class should derive from a concrete class.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Loose coupling: minimize the interdependency between objects.</p>
+</li>
+<li>
+<p>Design by contract: preconditions, postconditions, and invariants.</p>
+</li>
+<li>
+<p>Principle of Least Knowledge aka (Law of Demeter): talk only to your immediate friends.</p>
+</li>
+<li>
+<p>The Hollywood Principle (aka. Inversion of Control): (High-level components) Don&rsquo;t call us, we&rsquo;ll call you (low-level components).</p>
+<ul>
+<li>A form of IoC:  Dependency injection - a technique in which an object receives other objects that it depends on.</li>
+</ul>
+</li>
+<li>
+<p>Tell-Don&rsquo;t-Ask: A-&gt;B  instead of B-&gt;A-&gt;B for data.</p>
+</li>
+<li>
+<p>Build end-to-end (incrementally) instead of top-down nor bottom-up.</p>
+</li>
+<li>
+<p>In a Test-driven development (TDD), there&rsquo;s no need to do a big design up front.</p>
+</li>
+<li>
+<p>There&rsquo;s no need to prefix <code>m_</code> for private stuff.</p>
+</li>
+<li>
+<p>We shouldn&rsquo;t <em>always</em> use patterns in today&rsquo;s agile and XP trends. But if our specific solution is similar to a pattern, refactor it to make it more generic if needed.</p>
+</li>
+</ol>
+<h2 id="the-strategy-pattern">The Strategy Pattern</h2>
+<ol>
+<li>The strategy pattern enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.</li>
+</ol>
+<h2 id="the-observer-pattern">The Observer Pattern</h2>
+<ol>
+<li>
+<p>Publishers (Subject) + Subscribers (Observers) = Observer Pattern.</p>
+</li>
+<li>
+<p>It defines a one-to-many dependency. When the subject changes, all dependents are notified.</p>
+</li>
+<li>
+<p>In Java, we can use the built-in Observable - Observer superclasses.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// extends Observable
+</span><span class="c1"></span><span class="n">setChanged</span><span class="o">();</span>
+<span class="n">notifyObservers</span><span class="o">();</span>
+<span class="c1">// extends Observer
+</span><span class="c1">// in the constructor
+</span><span class="c1"></span><span class="n">observable</span><span class="o">.</span><span class="na">addObserver</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>In Java, Observable is a class, which means we have to subclass it.</p>
+</li>
+<li>
+<p>UML:</p>
+<ul>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/observer.png"
+        data-srcset="/images/observer.png, /images/observer.png 1.5x, /images/observer.png 2x"
+        data-sizes="auto"
+        alt="Observer"
+        title="Observer" /></li>
+<li>Example: <img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/observer_example.png"
+        data-srcset="/images/observer_example.png, /images/observer_example.png 1.5x, /images/observer_example.png 2x"
+        data-sizes="auto"
+        alt="Observer example"
+        title="Observer example" /></li>
+</ul>
+</li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Loose coupling.</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-decorator-pattern">The Decorator Pattern</h2>
+<ol>
+<li>
+<p>Decorators have the same supertype as the object they decorate.</p>
+</li>
+<li>
+<p>You can use one or more decorators to wrap (HAS-A) an object.</p>
+</li>
+<li>
+<p>The decorator adds its own behavior either before and/or after delegating to the object it decorates to do the rest of the job.</p>
+</li>
+<li>
+<p>The decorator pattern attaches additional responsibilities to an object dynamically.</p>
+</li>
+<li>
+<p>UML:</p>
+<ul>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/decorator.png"
+        data-srcset="/images/decorator.png, /images/decorator.png 1.5x, /images/decorator.png 2x"
+        data-sizes="auto"
+        alt="Decorator"
+        title="Decorator" /></li>
+<li>Example: <img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/decorator_example.png"
+        data-srcset="/images/decorator_example.png, /images/decorator_example.png 1.5x, /images/decorator_example.png 2x"
+        data-sizes="auto"
+        alt="Decorator example"
+        title="Decorator example" /></li>
+</ul>
+</li>
+<li>
+<p><code>java.io</code> is mainly using the decorator pattern.</p>
+</li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Open-closed.</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-factory-pattern">The Factory Pattern</h2>
+<ol>
+<li>
+<p>The factory method pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.</p>
+</li>
+<li>
+<p>UML:</p>
+<ul>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/factory.png"
+        data-srcset="/images/factory.png, /images/factory.png 1.5x, /images/factory.png 2x"
+        data-sizes="auto"
+        alt="Factory"
+        title="Factory" /></li>
+<li>Example: <img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/factory_example.png"
+        data-srcset="/images/factory_example.png, /images/factory_example.png 1.5x, /images/factory_example.png 2x"
+        data-sizes="auto"
+        alt="Factory example"
+        title="Factory example" /></li>
+</ul>
+</li>
+<li>
+<p>The abstract factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.</p>
+</li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Dependency inversion.</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-singleton-pattern">The Singleton Pattern</h2>
+<ol>
+<li>
+<p>The singleton pattern restricts the instantiation of a class to one single instance, and provides a global point of access to it:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">uniqueInstance</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span> <span class="c1">// PRIVATE constructor
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">synchronized</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// remove synchronized if there&#39;s no multithreading
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">uniqueInstance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">uniqueInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">uniqueInstance</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="the-command-pattern">The Command Pattern</h2>
+<ol>
+<li>
+<p>The command pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests and support undoable operations.</p>
+</li>
+<li>
+<p>UML:</p>
+<ul>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/command.png"
+        data-srcset="/images/command.png, /images/command.png 1.5x, /images/command.png 2x"
+        data-sizes="auto"
+        alt="Command"
+        title="Command" /></li>
+</ul>
+</li>
+</ol>
+<h2 id="the-adapter-pattern">The Adapter Pattern</h2>
+<ol>
+<li>
+<p>The adapter pattern converts the interface of a class into another interface the clients expect. It lets classes work together that couldn&rsquo;t otherwise because of incompatible interfaces.</p>
+</li>
+<li>
+<p>UML:</p>
+<ul>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/adapter1.png"
+        data-srcset="/images/adapter1.png, /images/adapter1.png 1.5x, /images/adapter1.png 2x"
+        data-sizes="auto"
+        alt="Adapter1"
+        title="Adapter1" /></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/adapter2.png"
+        data-srcset="/images/adapter2.png, /images/adapter2.png 1.5x, /images/adapter2.png 2x"
+        data-sizes="auto"
+        alt="Adapter2"
+        title="Adapter2" /></li>
+</ul>
+</li>
+</ol>
+<h2 id="the-facade-pattern">The Facade Pattern</h2>
+<ol>
+<li>
+<p>The facade pattern provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.</p>
+</li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Least knowledge.</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-template-method-pattern">The Template Method Pattern</h2>
+<ol>
+<li>
+<p>The template method pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm&rsquo;s structure:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractClass</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kt">void</span> <span class="nf">templateMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">primitiveOperation1</span><span class="o">();</span>
+        <span class="n">primitiveOperation2</span><span class="o">();</span>
+        <span class="n">concreteOperation</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">primitiveOperation1</span><span class="o">();</span>
+
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">primitiveOperation2</span><span class="o">();</span>
+
+    <span class="kt">void</span> <span class="nf">concreteOperation</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// implementation here
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Used principles:</p>
+<ul>
+<li>Inversion of control.</li>
+<li>Single responsibility.</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-state-pattern">The State Pattern</h2>
+<ol>
+<li>
+<p>The state pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.</p>
+</li>
+<li>
+<p>It&rsquo;s close to the concept of finite-state machines.</p>
+</li>
+</ol>
+<h2 id="the-proxy-pattern">The Proxy Pattern</h2>
+<ol>
+<li>
+<p>A remote proxy acts as a local representative to a remote object.</p>
+</li>
+<li>
+<p>Java RMI&rsquo;s (remote method invocation) client helper is a &ldquo;stub&rdquo; and the service helper is a &ldquo;skeleton&rdquo;. The stub is the proxy.</p>
+</li>
+<li>
+<p>The proxy pattern provides a surrogate or placeholder for another object to access it.</p>
+</li>
+</ol>
+<h2 id="model-view-controller">Model-View-Controller</h2>
+<ol>
+<li>The MVC is using:
+<ul>
+<li>the strategy pattern: the view delegates to the controllers to handle user actions. (Swappable controllers.)</li>
+<li>the composite pattern: the view is a composite of GUI components.</li>
+<li>the observer pattern: the model is the observable, and the view &amp; controller are observers.</li>
+</ul>
+</li>
+</ol>
+<h2 id="design-pattern-categories">Design Pattern Categories</h2>
+<ul>
+<li>Creational: Factory, Singleton</li>
+<li>Behavioral (how classes communicate): State, Iterator, Command</li>
+<li>Structural: Adapter, Composite, Decorator, Facade, Proxy</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly-dp-0596007124/dp/0596007124/ref=mt_paperback?_encoding=UTF8&amp;me=&amp;qid=1585509064" target="_blank" rel="noopener noreffer">Head First Design Patterns: A Brain-Friendly Guide 1st Edition</a></p>
+</li>
+<li>
+<p><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=2ahUKEwjp6c22-JLpAhWO-qQKHQ_GBQoQFjAAegQIARAB&amp;url=https%3A%2F%2Fwww.goodreads.com%2Fbook%2Fshow%2F4099.The_Pragmatic_Programmer&amp;usg=AOvVaw0I5l-Ojbr1FUIYyreWhRyx" target="_blank" rel="noopener noreffer">The Pragmatic Programmer</a></p>
+</li>
+<li>
+<p><a href="https://www.goodreads.com/book/show/3735293-clean-code" target="_blank" rel="noopener noreffer">Clean Code</a></p>
+</li>
+<li>
+<p><a href="https://www.goodreads.com/book/show/23215733-the-software-craftsman?ac=1&amp;from_search=true&amp;qid=aFF78JXQaM&amp;rank=2#" target="_blank" rel="noopener noreffer">The Software Craftsman: Professionalism, Pragmatism, Pride</a></p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on March 29, 2020</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2020-03-29-Design-Patterns/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns" data-hashtags="Software Engineering"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-hashtag="Software Engineering"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-03-29-Design-Patterns/" data-title="Design Patterns"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Software-Engineering/">Software Engineering</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2020-02-17-Go-Notes/" class="prev" rel="prev" title="Go Notes"><i class="fas fa-angle-left fa-fw"></i>Go Notes</a>
+            <a href="/posts/2020-4-10-Algorithms-and-Data-Structures/" class="next" rel="next" title="Algorithms and Data Structures">Algorithms and Data Structures<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
+</html>

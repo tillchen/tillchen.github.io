@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Go Notes - Tianyao Chen</title><meta name="Description" content="Some notes for Go"><meta property="og:title" content="Go Notes" />
+<meta property="og:description" content="Some notes for Go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2020-02-17-Go-Notes/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+<meta property="article:published_time" content="2020-02-17T00:00:00+01:00" />
+<meta property="article:modified_time" content="2020-02-17T00:00:00+01:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+
+<meta name="twitter:title" content="Go Notes"/>
+<meta name="twitter:description" content="Some notes for Go"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-02-17-Go-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-03-29-Design-Patterns/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Go Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2020-02-17-Go-Notes\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1283 ,
+        "url": "https:\/\/tillchen.com\/posts\/2020-02-17-Go-Notes\/","datePublished": "2020-02-17T00:00:00+01:00","dateModified": "2020-02-17T00:00:00+01:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for Go"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Go Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="February 17, 2020">February 17, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1283 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#data-structures">Data Structures</a></li>
+    <li><a href="#structs">Structs</a></li>
+    <li><a href="#errors-and-failures">Errors and Failures</a></li>
+    <li><a href="#goroutines-and-channels">Goroutines and Channels</a></li>
+    <li><a href="#testing">Testing</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><ul>
+<li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#data-structures" rel="">Data Structures</a></li>
+<li><a href="#structs" rel="">Structs</a></li>
+<li><a href="#errors-and-failures" rel="">Errors and Failures</a></li>
+<li><a href="#goroutines-and-channels" rel="">Goroutines and Channels</a></li>
+<li><a href="#testing" rel="">Testing</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>Hello World:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&#34;fmt&#34;</span>
+    <span class="s">&#34;strings&#34;</span>
+    <span class="s">&#34;math/rand&#34;</span>
+    <span class="s">&#34;time&#34;</span>
+    <span class="s">&#34;github.com/headfirstgo/keyboard&#34;</span> <span class="c1">// use go get to download the package
+</span><span class="c1"></span><span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello Go!&#34;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Title</span><span class="p">(</span><span class="s">&#34;head first go&#34;</span><span class="p">))</span>
+    <span class="nx">rand</span><span class="p">.</span><span class="nf">Seed</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Unix</span><span class="p">())</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">rand</span><span class="p">.</span><span class="nf">Intn</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="c1">// 0 - 99
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Use <code>go fmt</code> to format the code. (Go uses tabs instead of spaces.)</p>
+</li>
+<li>
+<p>Use <code>go run</code> to compile and run. Or <code>go build</code> and <code>./foo</code>. <code>go install</code> generates the binary in the bin directory.</p>
+</li>
+<li>
+<p>Rune literals are surrounded by single quotes. (Just like C chars.)</p>
+</li>
+<li>
+<p>Initialization:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">foobar</span> <span class="kt">bool</span> <span class="c1">// the zero (default) value is false
+</span><span class="c1">// The zero values: 0 for int and float; false for bool
+</span><span class="c1"></span><span class="nx">foo</span> <span class="o">:=</span> <span class="mi">42</span> <span class="c1">// short variable declaration
+</span><span class="c1">// ONLY ONE variable in the short variable declaration has to be new
+</span><span class="c1">// This allows multiple err for definitions
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Go prefers the camelCase and no semicolons.</p>
+</li>
+<li>
+<p>Type conversions:</p>
+<ul>
+<li>Go uses the C-like style type conversion: <code>length = float64(width)</code></li>
+<li>And similarly for string to int: <code>foo, err := strconv.Atoi(&quot;123&quot;)</code> (ASCII to Int)</li>
+</ul>
+</li>
+<li>
+<p>Go doesn&rsquo;t allow variable declarations unless we use these variables.</p>
+</li>
+<li>
+<p>We can use the blank identifier just like in Swift:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span><span class="p">)</span>
+<span class="nx">input</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadString</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="c1">// if we don&#39;t handle the err
+</span><span class="c1">// or we handle it:
+</span><span class="c1">// if err != nil {
+</span><span class="c1"></span>    <span class="c1">// log.Fatal(err)
+</span><span class="c1">//}
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Like in Swift/Python, there&rsquo;s no need to add parentheses for <code>if</code> and <code>for</code>.</p>
+</li>
+<li>
+<p>Since Go is syntactically similar to C, it also uses the formatting verbs: <code>%f</code>, <code>%d</code>, <code>%s</code>, <code>%t</code> (Boolean), <code>%v</code> (Any.) (<code>%2d</code> and <code>%.2f</code> are also used to round the numbers.)</p>
+</li>
+<li>
+<p>Like in Swift and Kotlin, the types are after the parameter names in a function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">foo</span><span class="p">(</span><span class="nx">bar</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">foobar</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&#34;Hello Go!&#34;</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">foofoo</span><span class="p">()</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="s">&#34;Go!&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Go is a &ldquo;pass-by-value&rdquo; language by default.</p>
+<ul>
+<li>
+<p>And we have the C-style pointers and addresses. A shorter form: <code>fooPointer := &amp;foo</code> <code>*fooPointer = 42</code> <code>fmt.Println(*fooPointer)</code>.</p>
+</li>
+<li>
+<p>Use pointers to change the value for functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">myFunc</span><span class="p">(</span><span class="nx">foo</span> <span class="o">*</span><span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">foo</span><span class="p">.</span><span class="nx">foofoo</span> <span class="o">++</span>
+<span class="p">}</span>
+
+<span class="nf">myFunc</span><span class="p">(</span><span class="nx">foofoofoo</span><span class="o">&amp;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><code>const fooBar = 42</code> or <code>const fooBar int = 42</code></p>
+</li>
+<li>
+<p>Documentations:</p>
+<ul>
+<li><code>go doc strconv</code> to see the documentation of strconv.</li>
+<li><code>go doc strconv Atoi</code> to see the specific function.</li>
+<li><code>godoc -http=:6060</code> starts the local server at port 6060.</li>
+</ul>
+</li>
+<li>
+<p>Add ordinary comments before the package line and before functions to make them doc comments. A few conventions:</p>
+<ul>
+<li>Comments should be complete sentences.</li>
+<li>Package comments should begin with &ldquo;Package + name&rdquo;: <code>// Package myPackage does nothing.</code>.</li>
+<li>Function comments should begin with the function name: <code>// MyFunction does nothing.</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>import (&quot;os&quot;)</code> and <code>os.Args[1:]</code> gives the command-line arguments (except the file name).</p>
+</li>
+<li>
+<p>Variadic functions: <code>func myFunc (param1 int, param2 ...string) {}</code> (unlimited string parameters stored as a alice in param2)</p>
+</li>
+<li>
+<p>Functions are first-class in go as well.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">twice</span><span class="p">(</span><span class="nx">theFunction</span> <span class="kd">func</span><span class="p">())</span> <span class="p">{</span>
+    <span class="nf">theFunction</span><span class="p">()</span>
+    <span class="nf">theFunction</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="data-structures">Data Structures</h2>
+<ol>
+<li>
+<p>Arrays:</p>
+<ul>
+<li><code>var myArray [4]string</code></li>
+<li><code>myArray := [2]int{3, 4}</code></li>
+<li><code>fmt.Println(myArray)</code> (can be printed directly).</li>
+<li>Like in Python, use <code>len(meArray)</code> to check the length.</li>
+</ul>
+</li>
+<li>
+<p>For loops: <code>for index, value := range myArray</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">for</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">note</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">notes</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">note</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// or
+</span><span class="c1"></span><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">note</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">notes</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// or
+</span><span class="c1"></span><span class="k">for</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">notes</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Slices: (similar to Python)</p>
+<ul>
+<li><code>var notes []string</code> then <code>notes = make([]string, 7)</code></li>
+<li>Or <code>notes := []string{&quot;foo&quot;, &quot;bar&quot;}</code></li>
+<li><code>myArray := [5]string{&quot;a&quot;, &quot;b, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;}</code> <code>mySlice := myArray[1:3]</code> gives b, c.</li>
+<li>We can also do <code>[1:]</code> or <code>[:3]</code>.</li>
+<li>The modifications for the original array or the slice will affect each other.</li>
+<li><code>slice = append(slice, &quot;foo&quot;, &quot;bar&quot;, &quot;foobar&quot;)</code></li>
+</ul>
+</li>
+<li>
+<p>Maps:</p>
+<ul>
+<li>
+<p><code>var myMap map[string]int</code> then <code>myMap = make(map[string]int)</code>.</p>
+</li>
+<li>
+<p>Or <code>myMap := make(map[string]int)</code>.</p>
+</li>
+<li>
+<p><code>myMap[&quot;newKey&quot;] = 1</code> to insert and <code>myMap[&quot;newKey&quot;]</code> to access.</p>
+</li>
+<li>
+<p>Map literals:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">ranks</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="s">&#34;bronze&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#34;silver&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#34;gold&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="c1">// or multiline
+</span><span class="c1"></span><span class="nx">elements</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span>
+    <span class="s">&#34;H&#34;</span><span class="p">:</span> <span class="s">&#34;Hydrogen&#34;</span><span class="p">,</span>
+    <span class="s">&#34;Li&#34;</span><span class="p">:</span> <span class="s">&#34;Lithium&#34;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="nx">emptyMap</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">{}</span> <span class="c1">// empty
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Use <code>ok</code> (a boolean value) to tell if it&rsquo;s a zero value: <code>grade, ok := grades[name]</code> then <code>if !go {}</code>.</p>
+</li>
+<li>
+<p>Use <code>delete(myMap, &quot;myKey&quot;)</code> to delete the pair.</p>
+</li>
+<li>
+<p>for loops:</p>
+<ul>
+<li><code>for key, value := range myMap {}</code></li>
+<li><code>for key := range myMap {}</code></li>
+<li><code>for _, value := myMap {}</code></li>
+</ul>
+</li>
+<li>
+<p><code>sort.Strings(names)</code> and then loop to have the sorted map.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="structs">Structs</h2>
+<ol>
+<li>
+<p>Example: (<code>go fmt</code> will format the spaces)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Capitalize if we want to export the package
+</span><span class="c1">// Lowercase if we want to make it private in its own package
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">MyStruct</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Number</span> <span class="kt">float64</span>
+    <span class="nx">Word</span> <span class="kt">string</span>
+    <span class="nx">Toggle</span> <span class="kt">bool</span>
+<span class="p">}</span>
+<span class="nx">MyStruct</span><span class="p">.</span><span class="nx">number</span> <span class="p">=</span> <span class="mf">3.14</span>
+<span class="c1">// or define a type
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">Car</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Name</span> <span class="kt">string</span>
+    <span class="nx">TopSpeed</span> <span class="kt">float64</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">myCar</span> <span class="nx">Car</span>
+<span class="c1">// or struct literal
+</span><span class="c1"></span><span class="nx">myCar</span> <span class="o">:=</span> <span class="nx">Car</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;Tesla&#34;</span><span class="p">,</span> <span class="nx">TopSpeed</span><span class="p">:</span> <span class="mi">337</span><span class="p">}</span>
+<span class="c1">// Anonymous fields with just the type name is also allowed
+</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="o">*</span><span class="nx">Car</span><span class="p">)</span> <span class="nf">myMethod</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;This is a method from Car %s&#34;</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span>
+    <span class="o">*</span><span class="nx">m</span><span class="p">.</span><span class="nx">TopSpeed</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="o">*</span><span class="nx">Car</span><span class="p">)</span> <span class="nf">SetTopSpeed</span><span class="p">(</span><span class="nx">speed</span> <span class="kt">float64</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span> <span class="c1">// must pass by reference
+</span><span class="c1"></span>    <span class="k">if</span> <span class="nx">speed</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;Invalid speed&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">m</span><span class="p">.</span><span class="nx">TopSpeed</span> <span class="p">=</span> <span class="nx">speed</span>
+    <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="o">*</span><span class="nx">Car</span><span class="p">)</span> <span class="nf">TopSpeed</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span> <span class="c1">// Don&#39;t add Get to the name in the Getter
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">m</span><span class="p">.</span><span class="nx">TopSpeed</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Interfaces:</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">MyInterface</span> <span class="kd">interface</span> <span class="p">{</span>
+    <span class="nf">Foo</span><span class="p">()</span>
+    <span class="nf">Bar</span><span class="p">(</span><span class="kt">float64</span><span class="p">)</span>
+    <span class="nf">FooBar</span><span class="p">()</span> <span class="kt">string</span>
+ <span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="nx">MyType</span><span class="p">)</span> <span class="nf">Foo</span><span class="p">()</span> <span class="p">{}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="nx">MyType</span><span class="p">)</span> <span class="nf">Bar</span><span class="p">(</span><span class="nx">f</span> <span class="kt">float64</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="nx">MyType</span><span class="p">)</span> <span class="nf">FooBar</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
+<span class="k">return</span> <span class="s">&#34;Now I&#39;m complete&#34;</span>
+<span class="p">}</span>
+<span class="c1">// No further stuff needed. MyType automatically matches the interface now,
+</span><span class="c1">// if it has defined all the methods.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Type assertion: <code>robot, ok := noiseMaker.(Robot)</code> (noiseMaker is the interface var).</p>
+</li>
+<li>
+<p>The empty interface can accept any type. <code>func AcceptAnything(thing interface{})</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="errors-and-failures">Errors and Failures</h2>
+<ol>
+<li>
+<p>Add <code>defer</code> to make sure a function call takes place, even if the calling function exist early (returned or panicking). <code>defer fmt.Println(&quot;I'm deferred to the end.&quot;)</code>.</p>
+</li>
+<li>
+<p><code>panic(&quot;I'm panicking&quot;)</code> to create a panic (crashing the program).</p>
+</li>
+<li>
+<p><code>recover</code> takes the return value of <code>panic</code> and exits the program normally.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">calmDown</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">recover</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">freakOut</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">defer</span> <span class="nf">calmDown</span><span class="p">()</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;Oh no&#34;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;I won&#39;t be run!&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">freakout</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">calmDown</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">p</span> <span class="o">:=</span> <span class="nb">recover</span><span class="p">()</span>
+    <span class="nx">err</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">p</span><span class="p">.(</span><span class="kt">error</span><span class="p">)</span> <span class="c1">// assert that it&#39;s an error
+</span><span class="c1"></span>    <span class="k">if</span> <span class="nx">ok</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">defer</span> <span class="nf">calmDown</span><span class="p">()</span>
+    <span class="nx">err</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;There&#39;s an error&#34;</span><span class="p">)</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>This is intentionally designed in Go to be clumsy, which discourages its usage. Normally, we just need to do <code>log.Fatal(err)</code> and return in the functions.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="goroutines-and-channels">Goroutines and Channels</h2>
+<ol>
+<li>
+<p>Goroutines (<code>go</code> in front of function calls) enable parallelism (lightweight threads):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">go</span> <span class="nf">a</span><span class="p">()</span>
+    <span class="k">go</span> <span class="nf">b</span><span class="p">()</span> <span class="c1">// can&#39;t deal with the return value
+</span><span class="c1"></span>    <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span> <span class="c1">// sleep for 1 second to let the routines finish
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Channels to enable the communication between goroutines.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">greeting</span><span class="p">(</span><span class="nx">myChannel</span> <span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">myChannel</span> <span class="o">&lt;-</span> <span class="s">&#34;hi&#34;</span>
+    <span class="c1">// time.Sleep(time.Second) to synchronize
+</span><span class="c1"></span><span class="p">}</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">myChannel</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span>
+    <span class="k">go</span> <span class="nf">greeting</span><span class="p">(</span><span class="nx">myChannel</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">myChannel</span><span class="p">)</span> <span class="c1">// receives &#34;hi&#34;
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="testing">Testing</h2>
+<ol>
+<li>
+<p>Run <code>go test</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">TestFoo</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">t</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="s">&#34;test failed&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on February 17, 2020</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2020-02-17-Go-Notes/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/" data-title="Go Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/" data-title="Go Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/" data-title="Go Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/" data-title="Go Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-02-17-Go-Notes/" data-title="Go Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2019-09-04-Kotlin-Notes/" class="prev" rel="prev" title="Kotlin Notes"><i class="fas fa-angle-left fa-fw"></i>Kotlin Notes</a>
+            <a href="/posts/2020-03-29-Design-Patterns/" class="next" rel="next" title="Design Patterns">Design Patterns<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
+</html>

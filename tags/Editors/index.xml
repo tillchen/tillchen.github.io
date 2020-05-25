@@ -1,0 +1,20 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Editors - Tag - Tianyao Chen</title>
+        <link>https://tillchen.com/tags/Editors/</link>
+        <description>Editors - Tag - Tianyao Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Sun, 05 May 2019 00:00:00 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Editors/" rel="self" type="application/rss+xml" /><item>
+    <title>Vim Tips</title>
+    <link>https://tillchen.com/posts/2019-05-05-Vim-Tips/</link>
+    <pubDate>Sun, 05 May 2019 00:00:00 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2019-05-05-Vim-Tips/</guid>
+    <description><![CDATA[Deletion Navigation Modification Miscellaneous Plugins  Multiple Cursors Emmet Tagbar NERDTree    Deletion   &lsquo;dw’ deletes the word including the space.
+  ‘d$’ deletes from the cursor to the end of the line.
+  ‘de’ deletes the word excluding the space.
+  ‘d2w’, ‘d2e’ delete 2 words.
+  ‘dd’ deletes a whole line, ‘2dd’ deletes 2 lines.
+  ‘p’ puts the deleted content.]]></description>
+</item></channel>
+</rss>

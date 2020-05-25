@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Android Development Notes - Tianyao Chen</title><meta name="Description" content="Some notes for Android Development"><meta property="og:title" content="Android Development Notes" />
+<meta property="og:description" content="Some notes for Android Development" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" />
+<meta property="og:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+<meta property="article:published_time" content="2019-07-10T00:00:00+02:00" />
+<meta property="article:modified_time" content="2019-07-10T00:00:00+02:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tillchen.com/images/Tianyao_Chen_resume.jpeg"/>
+
+<meta name="twitter:title" content="Android Development Notes"/>
+<meta name="twitter:description" content="Some notes for Android Development"/>
+<meta name="application-name" content="Tianyao Chen">
+<meta name="apple-mobile-web-app-title" content="Tianyao Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2019-06-09-Django-Notes/" /><link rel="next" href="https://tillchen.com/posts/2019-07-15-JavaScript-Notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.65cc6a26e228ec18570a0247a015df4f84fcec2c12fe2804894af3e7c7477591.css" integrity="sha256-ZcxqJuIo7BhXCgJHoBXfT4T87CwS/igEiUrz58dHdZE="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Android Development Notes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tillchen.com\/posts\/2019-07-10-Android-Development-Notes\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Mobile Development","wordcount":  1403 ,
+        "url": "https:\/\/tillchen.com\/posts\/2019-07-10-Android-Development-Notes\/","datePublished": "2019-07-10T00:00:00+02:00","dateModified": "2019-07-10T00:00:00+02:00","publisher": {
+                "@type": "Organization",
+                "name": "Tianyao Chen",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Tianyao Chen"
+            },"description": "Some notes for Android Development"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/skills/"> Skills </a><a class="menu-item" href="/testimonials/"> Testimonials </a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf"> Resume </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Tianyao Chen">Tianyao Chen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/skills/" title="">Skills</a><a class="menu-item" href="/testimonials/" title="">Testimonials</a><a class="menu-item" href="/pdfs/Tianyao_Chen_resume.pdf" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Android Development Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 10, 2019">July 10, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1403 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#app-resources">App Resources</a></li>
+    <li><a href="#permissions">Permissions</a></li>
+    <li><a href="#androidmanifestxml">AndroidManifest.xml</a></li>
+    <li><a href="#layout">Layout</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#fragments">Fragments</a></li>
+    <li><a href="#notifications">Notifications</a></li>
+    <li><a href="#android-studio-tips">Android Studio Tips</a></li>
+    <li><a href="#miscellaneous">Miscellaneous</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#table-of-contents" rel="">Table of Contents</a></li>
+<li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#app-resources" rel="">App Resources</a></li>
+<li><a href="#permissions" rel="">Permissions</a></li>
+<li><a href="#androidmanifestxml" rel="">AndroidManifest.xml</a></li>
+<li><a href="#layout" rel="">Layout</a></li>
+<li><a href="#activities" rel="">Activities</a></li>
+<li><a href="#fragments" rel="">Fragments</a></li>
+<li><a href="#notifications" rel="">Notifications</a></li>
+<li><a href="#android-studio-tips" rel="">Android Studio Tips</a></li>
+<li><a href="#miscellaneous" rel="">Miscellaneous</a></li>
+<li><a href="#resources" rel="">Resources</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p><strong>Layout</strong> is typically defined in XML, whereas <strong>activities</strong> are in Java class.</p>
+</li>
+<li>
+<p>The Android operating system is a multi-user Linux system in which each app is a different user.</p>
+</li>
+</ol>
+<h2 id="app-resources">App Resources</h2>
+<ol>
+<li>
+<p>String array: <code>android:entries=&quot;@array/foo&quot;</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">&#34;foo&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item&gt;</span>bar1<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item&gt;</span>bar2<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/resources/providing-resources#AliasResources" target="_blank" rel="noopener noreffer">Creating alias resources</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span class="nt">&lt;resources&gt;</span>
+    <span class="nt">&lt;drawable</span> <span class="na">name=</span><span class="s">&#34;icon&#34;</span><span class="nt">&gt;</span>@drawable/icon_ca<span class="nt">&lt;/drawable&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/look-and-feel/themes" target="_blank" rel="noopener noreffer">Styles and Themes</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/resources/providing-resources#ReferencesToThemeAttributes" target="_blank" rel="noopener noreffer">Referencing style attributes</a>: <code>android:textColor=&quot;?android:textColorSecondary</code></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/multiscreen/screendensities" target="_blank" rel="noopener noreffer">Support different pixel densities</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/practices/screens-distribution" target="_blank" rel="noopener noreffer">Declare restricted screen support</a></p>
+</li>
+</ol>
+<h2 id="permissions">Permissions</h2>
+<ol>
+<li>
+<p><a href="https://developer.android.com/training/permissions/requesting#explain" target="_blank" rel="noopener noreffer">Request App Permissions</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/permissions/usage-notes#perms_vs_intents" target="_blank" rel="noopener noreffer">Use an intent instead</a></p>
+</li>
+</ol>
+<h2 id="androidmanifestxml">AndroidManifest.xml</h2>
+<ol>
+<li>The <code>minSdkVersion</code> attribute declares the minimum version with which your app is compatible and the <code>targetSdkVersion</code> attribute declares the highest version on which you&rsquo;ve optimized your app: <code>&lt;uses-sdk android:minSdkVersion=&quot;4&quot; android:targetSdkVersion=&quot;15&quot; /&gt;</code></li>
+</ol>
+<h2 id="layout">Layout</h2>
+<ol>
+<li>
+<p><code>&lt;EditText&gt;</code> is an editable text field:</p>
+<ul>
+<li><code>android:hint=&quot;@string/hint&quot;</code>: normally &ldquo;Enter a message&rdquo;, telling the user what to type;</li>
+<li><code>android:ems=&quot;10&quot;</code>: 10-M space.</li>
+</ul>
+</li>
+<li>
+<p><code>android:layout_weight=&quot;number&quot;</code> makes a view stretch.</p>
+<ul>
+<li>If a has the weight of 1 and b has 2, a&rsquo;ll have 1/3 and b&rsquo;ll have 2/3 of the screen.</li>
+<li>We usually have <code>android:layout_height=&quot;0dp&quot;</code> (for vertical layout) above layout_weight.</li>
+</ul>
+</li>
+<li>
+<p><code>android:gravity=&quot;top&quot;</code> moves the CONTENT of a view to the top of the view, whereas <code>android:layout_gravity=&quot;end&quot;</code> moves the placement of the VIEW itself to the end.</p>
+</li>
+<li>
+<p><code>&lt;FrameLayout&gt;&lt;/FrameLayout&gt;</code> allows views to overlap. Ues it when we need to replace the fragments and add the changes to the back stack.</p>
+</li>
+<li>
+<p>Surround LinearLayout/FrameLayout with <code>&lt;ScrollView&gt;&lt;/ScrollView&gt;</code> to get a vertical scrollbar. (<code>HorizontalScrollView</code> for the horizontal scrollbar.)</p>
+</li>
+<li>
+<p>A CoordinatorLayout allows the behavior of one view to affect the behavior of another.</p>
+</li>
+<li>
+<p>AdapterView:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;(</span><span class="k">this</span><span class="o">,</span>
+    <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_list_item_1</span><span class="o">,</span> <span class="n">myStringArray</span><span class="o">);</span>
+<span class="n">ListView</span> <span class="n">listView</span> <span class="o">=</span> <span class="o">(</span><span class="n">ListView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">listview</span><span class="o">);</span>
+<span class="n">listView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">)</span>
+<span class="c1">// Create a message handling object as an anonymous class.
+</span><span class="c1"></span><span class="kd">private</span> <span class="n">OnItemClickListener</span> <span class="n">messageClickedHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OnItemClickListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onItemClick</span><span class="o">(</span><span class="n">AdapterView</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">v</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Do something in response to the click
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="n">listView</span><span class="o">.</span><span class="na">setOnItemClickListener</span><span class="o">(</span><span class="n">messageClickedHandler</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/layout/recyclerview" target="_blank" rel="noopener noreffer">Create a List with RecyclerView</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/improving-layouts/reusing-layouts" target="_blank" rel="noopener noreffer">Re-using layouts with include</a>: <code>&lt;merge&gt;&lt;/merge&gt;</code> <code>&lt;include layout=&quot;@layout/foo&quot;/&gt;</code></p>
+</li>
+<li>
+<p>Spinners:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Spinner</span> <span class="n">s1</span> <span class="o">=</span> <span class="o">(</span><span class="n">Spinner</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spinner1</span><span class="o">);</span>
+<span class="n">ArrayAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="n">ArrayAdapter</span><span class="o">.</span><span class="na">createFromResource</span><span class="o">(</span>
+<span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">array</span><span class="o">.</span><span class="na">colors</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_spinner_item</span><span class="o">);</span>
+<span class="n">adapter</span><span class="o">.</span><span class="na">setDropDownViewResource</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_spinner_dropdown_item</span><span class="o">);</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">setOnItemSelectedListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AdapterView</span><span class="o">.</span><span class="na">OnItemSelectedListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onItemSelected</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// TODO
+</span><span class="c1"></span>    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNothingSelected</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+       <span class="c1">// sometimes you need nothing here
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/button" target="_blank" rel="noopener noreffer">Buttons</a> Set onClick programmatically:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Button</span> <span class="n">button</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">button_send</span><span class="o">);</span>
+<span class="n">button</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Do something in response to button click
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/checkbox" target="_blank" rel="noopener noreffer">Checkboxes</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/radiobutton" target="_blank" rel="noopener noreffer">Radio Buttons</a></p>
+</li>
+<li>
+<p><a href="https://www.tutlane.com/tutorial/android/android-switch-on-off-button-with-examples" target="_blank" rel="noopener noreffer">Switch Buttons</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">android:checked=&#34;true&#34;
+android:textOff=&#34;OFF&#34;
+android:textOn=&#34;ON
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Switch</span> <span class="n">sw</span> <span class="o">=</span> <span class="o">(</span><span class="n">Switch</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">switch1</span><span class="o">);</span>
+<span class="n">sw</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">CompoundButton</span> <span class="n">buttonView</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isChecked</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isChecked</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// The toggle is enabled
+</span><span class="c1"></span>        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// The toggle is disabled
+</span><span class="c1"></span>        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/topics/ui/controls/pickers" target="_blank" rel="noopener noreffer">Pickers</a> (Time/Date Pickers)</p>
+</li>
+<li>
+<p>Centralized onClick events:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ActivityA</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+
+        <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">first</span><span class="o">).</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">second</span><span class="o">).</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">third</span><span class="o">).</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getId</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">first</span><span class="o">:</span>
+                <span class="c1">// Manage click.
+</span><span class="c1"></span>                <span class="k">break</span><span class="o">;</span>
+
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">second</span><span class="o">:</span>
+                <span class="c1">// Manage click.
+</span><span class="c1"></span>                <span class="k">break</span><span class="o">;</span>
+
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">third</span><span class="o">:</span>
+                <span class="c1">// Manage click.
+</span><span class="c1"></span>                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>App bar:</p>
+<ul>
+<li>
+<p><a href="https://developer.android.com/training/appbar/setting-up" target="_blank" rel="noopener noreffer">Set up the app bar</a> (Use <code>Toolbar</code> instead of the native <code>ActionBar</code>) and <a href="https://developer.android.com/training/appbar/up-action" target="_blank" rel="noopener noreffer">Add an up action</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">android:theme=&#34;@style/Theme.AppCompat.Light.NoActionBar&#34;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+    <span class="na">android:id=</span><span class="s">&#34;@+id/my_toolbar&#34;</span>
+    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+    <span class="na">android:layout_height=</span><span class="s">&#34;?attr/actionBarSize&#34;</span>
+    <span class="na">android:background=</span><span class="s">&#34;?attr/colorPrimary&#34;</span>
+    <span class="na">android:elevation=</span><span class="s">&#34;4dp&#34;</span>
+    <span class="na">android:theme=</span><span class="s">&#34;@style/ThemeOverlay.AppCompat.ActionBar&#34;</span>
+    <span class="na">app:popupTheme=</span><span class="s">&#34;@style/ThemeOverlay.AppCompat.Light&#34;</span><span class="nt">/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">    <span class="c">&lt;!-- A child of the main activity --&gt;</span>
+<span class="nt">&lt;activity</span>
+   <span class="na">android:name=</span><span class="s">&#34;com.example.myfirstapp.MyChildActivity&#34;</span>
+   <span class="na">android:label=</span><span class="s">&#34;@string/title_activity_child&#34;</span>
+   <span class="na">android:parentActivityName=</span><span class="s">&#34;com.example.myfirstapp.MainActivity&#34;</span> <span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Parent activity meta-data to support 4.0 and lower --&gt;</span>
+    <span class="nt">&lt;meta-data</span>
+        <span class="na">android:name=</span><span class="s">&#34;android.support.PARENT_ACTIVITY&#34;</span>
+        <span class="na">android:value=</span><span class="s">&#34;com.example.myfirstapp.MainActivity&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// OnCreate
+</span><span class="c1"></span><span class="n">Toolbar</span> <span class="n">myToolbar</span> <span class="o">=</span> <span class="o">(</span><span class="n">Toolbar</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">my_toolbar</span><span class="o">);</span>
+<span class="n">setSupportActionBar</span><span class="o">(</span><span class="n">myToolbar</span><span class="o">);</span>
+    <span class="c1">// Get a support ActionBar corresponding to this toolbar
+</span><span class="c1"></span><span class="n">ActionBar</span> <span class="n">ab</span> <span class="o">=</span> <span class="n">getSupportActionBar</span><span class="o">();</span>
+
+<span class="c1">// Enable the Up button
+</span><span class="c1"></span><span class="n">ab</span><span class="o">.</span><span class="na">setDisplayHomeAsUpEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/training/appbar/actions" target="_blank" rel="noopener noreffer">Add and handle actions</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Toasts: <code>Toast toast = Toast.makeText(this, &quot;hello world&quot;, Toast.LENGTH_SHORT); toast.show();</code></p>
+</li>
+</ol>
+<h2 id="activities">Activities</h2>
+<ol>
+<li>
+<p>All activities have to extend the Activity class or its subclass.</p>
+</li>
+<li>
+<p>R is a special Java class that enables you to retrieve references to resources. <code>TextView foo = findViewById(R.id.foo)</code></p>
+</li>
+<li>
+<p>Use Intent to call another activity (can be from other apps):</p>
+<ul>
+<li>
+<p>Explicit intent:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSendMessage</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">FooActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span> <span class="c1">// explicit intent
+</span><span class="c1"></span>    <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span> <span class="c1">// message is the name of the extra
+</span><span class="c1"></span>    <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>
+<span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">string</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getStringExtra</span><span class="o">(</span><span class="s">&#34;message&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Implicit intent: (with actions to allow users to choose which app to run)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">ACTION_SEND</span><span class="o">);</span> <span class="c1">// ACTION_DIAL/ACTION_WEB_SEARCH
+</span><span class="c1"></span><span class="n">intent</span><span class="o">.</span><span class="na">setType</span><span class="o">(</span><span class="s">&#34;text/plain&#34;</span><span class="o">);</span>
+<span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="n">Intent</span><span class="o">.</span><span class="na">EXTRA_TEXT</span><span class="o">,</span> <span class="n">messageText</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">chooserTitle</span> <span class="o">=</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">chooser</span><span class="o">);</span>
+<span class="c1">// Ensure that the user always get the chance to choose an activity
+</span><span class="c1"></span><span class="n">Intent</span> <span class="n">chosenIntent</span> <span class="o">=</span> <span class="n">Intent</span><span class="o">.</span><span class="na">createChooser</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">chooserTitle</span><span class="o">);</span>
+
+<span class="c1">// Start an activity if it&#39;s safe
+</span><span class="c1"></span><span class="k">if</span> <span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">resolveActivity</span><span class="o">(</span><span class="n">getPackageManager</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">startActivity</span><span class="o">(</span><span class="n">chosenIntent</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/guide/components/intents-common" target="_blank" rel="noopener noreffer">Common Intents</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Save the instance state:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Either in onCreate savedInstanceState != null or use the method below
+</span><span class="c1"></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRestoreInstanceState</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onRestoreInstanceState</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="n">savedInstanceState</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&#34;seconds&#34;</span><span class="o">);</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="n">savedInstanceState</span><span class="o">.</span><span class="na">getBoolean</span><span class="o">(</span><span class="s">&#34;running&#34;</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSaveInstanceState</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onSaveInstanceState</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+    <span class="n">savedInstanceState</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">&#34;seconds&#34;</span><span class="o">,</span> <span class="n">seconds</span><span class="o">);</span>
+    <span class="n">savedInstanceState</span><span class="o">.</span><span class="na">putBoolean</span><span class="o">(</span><span class="s">&#34;running&#34;</span><span class="o">,</span> <span class="n">running</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Activity lifecycle:</p>
+<ul>
+<li>When we implement them (<code>onCreate()</code>, <code>onStart()</code>, <code>onResume()</code>, <code>onPause()</code>, <code>onStop()</code>, <code>onRestart()</code>, <code>onDestroy()</code>), we must call the super class methods.</li>
+<li><code>onResume()</code> is called when the activity is started OR resumed; <code>onPause()</code> is called when the activity is paused OR stopped.</li>
+<li><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/activity_lifecycle.png"
+        data-srcset="/images/activity_lifecycle.png, /images/activity_lifecycle.png 1.5x, /images/activity_lifecycle.png 2x"
+        data-sizes="auto"
+        alt="Activity lifecycle"
+        title="Activity lifecycle" /></li>
+</ul>
+</li>
+<li>
+<p><a href="https://developer.android.com/guide/components/activities/tasks-and-back-stack#TaskLaunchModes" target="_blank" rel="noopener noreffer">Defining launch modes</a> (singleTop, singleTask, etc.)</p>
+</li>
+</ol>
+<h2 id="fragments">Fragments</h2>
+<ol>
+<li>
+<p>Fragment lifecycle:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/fragment_lifecycle.png"
+        data-srcset="/images/fragment_lifecycle.png, /images/fragment_lifecycle.png 1.5x, /images/fragment_lifecycle.png 2x"
+        data-sizes="auto"
+        alt="Fragment lifecycle"
+        title="Fragment lifecycle" /></p>
+</li>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ExampleFragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Inflate the layout for this fragment
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">example_fragment</span><span class="o">,</span> <span class="n">container</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="c1">// In this case, this is false because the system is already inserting the inflated layout into the container
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Add the fragment programmatically:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">FragmentManager</span> <span class="n">fragmentManager</span> <span class="o">=</span> <span class="n">getSupportFragmentManager</span><span class="o">();</span>
+<span class="n">FragmentTransaction</span> <span class="n">fragmentTransaction</span> <span class="o">=</span> <span class="n">fragmentManager</span><span class="o">.</span><span class="na">beginTransaction</span><span class="o">();</span>
+<span class="n">ExampleFragment</span> <span class="n">fragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExampleFragment</span><span class="o">();</span>
+<span class="n">fragmentTransaction</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">,</span> <span class="n">fragment</span><span class="o">);</span>
+<span class="n">fragmentTransaction</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Fragment transactions:</p>
+<ul>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Create new fragment and transaction
+</span><span class="c1"></span><span class="n">Fragment</span> <span class="n">newFragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExampleFragment</span><span class="o">();</span>
+<span class="n">FragmentTransaction</span> <span class="n">transaction</span> <span class="o">=</span> <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">();</span>
+
+<span class="c1">// Replace whatever is in the fragment_container view with this fragment,
+</span><span class="c1">// and add the transaction to the back stack
+</span><span class="c1"></span><span class="n">transaction</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">,</span> <span class="n">newFragment</span><span class="o">);</span>
+<span class="n">transaction</span><span class="o">.</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+
+<span class="c1">// Commit the transaction
+</span><span class="c1"></span><span class="n">transaction</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>For dynamic fragments, use FrameLayout instead of Fragment and use FragmentTransaction.</p>
+</li>
+</ol>
+<h2 id="notifications">Notifications</h2>
+<ol>
+<li><a href="https://developer.android.com/training/notify-user/build-notification" target="_blank" rel="noopener noreffer">Create a Notification</a></li>
+</ol>
+<h2 id="android-studio-tips">Android Studio Tips</h2>
+<ol>
+<li>
+<p><a href="https://developer.android.com/studio/write/annotations.html#java" target="_blank" rel="noopener noreffer">Improve code inspection with annotations</a> (<code>@Nullable</code>, <code>@NonNull</code>&hellip;)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/sample-code" target="_blank" rel="noopener noreffer">Find sample code</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/tool-attributes" target="_blank" rel="noopener noreffer">Tools attributes reference</a> (<code>tools:text=&quot;foo&quot;</code>, <code>tools:itemCount=&quot;3&quot;...</code>)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/debug" target="_blank" rel="noopener noreffer">Debug your app</a> (<code> private static final String TAG = &quot;MyActivity&quot;; Log.d(TAG, &quot;foo&quot;);</code>)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/debug/am-logcat" target="_blank" rel="noopener noreffer">Write and View Logs with Logcat</a> (e (error), w (warning), i (information), d (debug), v (verbose))</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/debug/layout-inspector" target="_blank" rel="noopener noreffer">Debug Your layout with Layout Inspector</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/resource-manager" target="_blank" rel="noopener noreffer">Manage your app&rsquo;s UI resources with Resource Manager</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/image-asset-studio#java" target="_blank" rel="noopener noreffer">Create app icons with Image Asset Studio</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/draw9patch" target="_blank" rel="noopener noreffer">Create resizable bitmaps (9-Patch files)</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/studio/write/app-link-indexing#java" target="_blank" rel="noopener noreffer">Add Android App Links</a></p>
+</li>
+</ol>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<ol>
+<li>
+<p>Android builds the back stack to keep track of the activity/fragment transactions.</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/app-links/deep-linking" target="_blank" rel="noopener noreffer">Create Deep Links to App Content</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;intent-filter&gt;</span>
+  ...
+  <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&#34;https&#34;</span> <span class="na">android:host=</span><span class="s">&#34;www.example.com&#34;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&#34;app&#34;</span> <span class="na">android:host=</span><span class="s">&#34;open.my.app&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/intent-filter&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><a href="https://developer.android.com/training/app-links/verify-site-associations" target="_blank" rel="noopener noreffer">Verify Android App Links</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/swipe/add-swipe-interface" target="_blank" rel="noopener noreffer">Adding Swipe-to-Refresh To Your App</a> (Add <code>SwipeRefreshLayout</code> as the parent of a single <code>ListView</code> or <code>GridView</code>.) (<code>android.support.v4.widget.SwipeRefreshLayout</code>)</p>
+</li>
+<li>
+<p><a href="https://developer.android.com/training/swipe/respond-refresh-request" target="_blank" rel="noopener noreffer">Responding to Refresh Request</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">mySwipeRefreshLayout</span><span class="o">.</span><span class="na">setOnRefreshListener</span><span class="o">(</span>
+    <span class="k">new</span> <span class="n">SwipeRefreshLayout</span><span class="o">.</span><span class="na">OnRefreshListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRefresh</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&#34;onRefresh called from SwipeRefreshLayout&#34;</span><span class="o">);</span>
+
+            <span class="c1">// This method performs the actual data-refresh operation.
+</span><span class="c1"></span>            <span class="c1">// The method calls setRefreshing(false) when it&#39;s finished.
+</span><span class="c1"></span>            <span class="n">myUpdateOperation</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// For refreshing in the app bar
+</span><span class="c1"></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">())</span> <span class="o">{</span>
+
+        <span class="c1">// Check if user triggered a refresh:
+</span><span class="c1"></span>        <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">menu_refresh</span><span class="o">:</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">LOG_TAG</span><span class="o">,</span> <span class="s">&#34;Refresh menu item selected&#34;</span><span class="o">);</span>
+
+            <span class="c1">// Signal SwipeRefreshLayout to start the progress indicator
+</span><span class="c1"></span>            <span class="n">mySwipeRefreshLayout</span><span class="o">.</span><span class="na">setRefreshing</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+
+            <span class="c1">// Start the refresh background task.
+</span><span class="c1"></span>            <span class="c1">// This method calls setRefreshing(false) when it&#39;s finished.
+</span><span class="c1"></span>            <span class="n">myUpdateOperation</span><span class="o">();</span>
+
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// User didn&#39;t trigger a refresh, let the superclass handle this action
+</span><span class="c1"></span>    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>
+<p><a href="https://www.amazon.com/Head-First-Android-Development-Brain-Friendly/dp/1491974052/ref=sr_1_1?keywords=head&#43;first&#43;android&amp;qid=1560338899&amp;s=gateway&amp;sr=8-1" target="_blank" rel="noopener noreffer">Head First Android Development: A Brain-Friendly Guide 2nd Edition</a></p>
+</li>
+<li>
+<p><a href="https://developer.android.com">https://developer.android.com</a></p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on July 10, 2019</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/2019-07-10-Android-Development-Notes/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" data-title="Android Development Notes" data-hashtags="Mobile Development"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" data-hashtag="Mobile Development"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" data-title="Android Development Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" data-title="Android Development Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" data-title="Android Development Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2019-07-10-Android-Development-Notes/" data-title="Android Development Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Mobile-Development/">Mobile Development</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/2019-06-09-Django-Notes/" class="prev" rel="prev" title="Django Notes"><i class="fas fa-angle-left fa-fw"></i>Django Notes</a>
+            <a href="/posts/2019-07-15-JavaScript-Notes/" class="next" rel="next" title="JavaScript Notes">JavaScript Notes<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b6a719a7cf033e3fc0580737dd792b949c3decc876163026fb8e0973104c2996.js" integrity="sha256-tqcZp88DPj/AWAc33XkrlJw97Mh2FjAm&#43;44JcxBMKZY="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>
+</html>
