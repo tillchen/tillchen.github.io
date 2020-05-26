@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  563 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  781 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;563 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;781 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -134,7 +134,12 @@
         <li><a href="#dependability-metrics">Dependability Metrics</a></li>
       </ul>
     </li>
-    <li><a href="#software-engineering-aspects">Software Engineering Aspects</a></li>
+    <li><a href="#software-engineering-aspects">Software Engineering Aspects</a>
+      <ul>
+        <li><a href="#general-aspects">General Aspects</a></li>
+        <li><a href="#software-testing">Software Testing</a></li>
+      </ul>
+    </li>
     <li><a href="#software-vulnerabilities-and-exploits">Software Vulnerabilities and Exploits</a></li>
     <li><a href="#cryptography">Cryptography</a></li>
     <li><a href="#secure-communication-protocols">Secure Communication Protocols</a></li>
@@ -151,7 +156,12 @@
 <li><a href="#dependability-metrics" rel="">Dependability Metrics</a></li>
 </ul>
 </li>
-<li><a href="#software-engineering-aspects" rel="">Software Engineering Aspects</a></li>
+<li><a href="#software-engineering-aspects" rel="">Software Engineering Aspects</a>
+<ul>
+<li><a href="#general-aspects" rel="">General Aspects</a></li>
+<li><a href="#software-testing" rel="">Software Testing</a></li>
+</ul>
+</li>
 <li><a href="#software-vulnerabilities-and-exploits" rel="">Software Vulnerabilities and Exploits</a></li>
 <li><a href="#cryptography" rel="">Cryptography</a></li>
 <li><a href="#secure-communication-protocols" rel="">Secure Communication Protocols</a></li>
@@ -274,6 +284,50 @@
 </li>
 </ol>
 <h2 id="software-engineering-aspects">Software Engineering Aspects</h2>
+<h3 id="general-aspects">General Aspects</h3>
+<ol>
+<li>Defensive programming: requires the preconditions to be checked when a function is called</li>
+</ol>
+<h3 id="software-testing">Software Testing</h3>
+<ol>
+<li>
+<p>Unit and regression testing:</p>
+<ul>
+<li>Regression testing: testing of an entire program to ensure that a modified version of a program still handles all input correctly that an older version did.</li>
+<li>A bug reported by a customer is primarily a weakness of the regression test suite.</li>
+</ul>
+</li>
+<li>
+<p>Test coverages:</p>
+<ul>
+<li>Function coverage</li>
+<li>Statement coverage</li>
+<li>Branch coverage</li>
+<li>Predicate coverage (condition coverage): Boolean sub-expression both true and false</li>
+</ul>
+</li>
+<li>
+<p>Mutation testing:</p>
+<ul>
+<li>Mutation testing involves modifying a program in small ways.</li>
+<li>It evaluates the effectiveness of a test suite.</li>
+<li>The source code is modified algorithmically by applying mutation operations in order to produce mutants.</li>
+<li>A mutant is killed by the test suite if tests fail for the mutant. Mutants that are not killed indicate that the test suite is incomplete.</li>
+<li>The mutation score is the number of mutants killed normalized by the number of mutants.</li>
+</ul>
+</li>
+<li>
+<p>Fuzzing or fuzz testing feeds invalid, unexpected, or simply random data into computer programs.</p>
+</li>
+<li>
+<p>Fault injection inject faults by:</p>
+<ul>
+<li>modifying source code (very similar to mutation testing) or</li>
+<li>injecting faults at runtime (often via modified library calls)</li>
+<li>It&rsquo;s highly effective to test whether software deals with rare failure situations, e.g. the injection of system calls failures that usually work.</li>
+</ul>
+</li>
+</ol>
 <h2 id="software-vulnerabilities-and-exploits">Software Vulnerabilities and Exploits</h2>
 <h2 id="cryptography">Cryptography</h2>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
