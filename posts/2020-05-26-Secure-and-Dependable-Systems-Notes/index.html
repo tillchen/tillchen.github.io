@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  472 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  563 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;472 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;563 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -249,6 +249,30 @@
 </li>
 </ol>
 <h3 id="dependability-metrics">Dependability Metrics</h3>
+<ol>
+<li>
+<p>Reliability and MTTF/MTBF/MTTR:</p>
+<ul>
+<li>Reliability: the probability that the system is delivering correct service in the time interval.</li>
+<li>MTTF (Mean Time To Failure): non repairable.</li>
+<li>MTBF (Mean Time Between Failure): repairable.</li>
+<li>MTTR (Mean Time To Repair).</li>
+</ul>
+</li>
+<li>
+<p>Availability: the probability that the system is delivering correct service at time t.</p>
+<ul>
+<li>For a repairable system, A = MTBF/(MTBF + MTTR).</li>
+<li>5 nine availability means 99.999%.</li>
+</ul>
+</li>
+<li>
+<p>Safety: the probability that the system is delivering correct service or has failed in the manner that does not cause harm in the interval.</p>
+<ul>
+<li>Mean Time To Catastrophic Failure.</li>
+</ul>
+</li>
+</ol>
 <h2 id="software-engineering-aspects">Software Engineering Aspects</h2>
 <h2 id="software-vulnerabilities-and-exploits">Software Vulnerabilities and Exploits</h2>
 <h2 id="cryptography">Cryptography</h2>
