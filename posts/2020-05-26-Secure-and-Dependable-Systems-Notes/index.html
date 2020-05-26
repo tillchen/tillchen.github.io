@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  781 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  881 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;781 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;881 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -138,6 +138,8 @@
       <ul>
         <li><a href="#general-aspects">General Aspects</a></li>
         <li><a href="#software-testing">Software Testing</a></li>
+        <li><a href="#software-specification">Software Specification</a></li>
+        <li><a href="#software-verification">Software Verification</a></li>
       </ul>
     </li>
     <li><a href="#software-vulnerabilities-and-exploits">Software Vulnerabilities and Exploits</a></li>
@@ -160,6 +162,8 @@
 <ul>
 <li><a href="#general-aspects" rel="">General Aspects</a></li>
 <li><a href="#software-testing" rel="">Software Testing</a></li>
+<li><a href="#software-specification" rel="">Software Specification</a></li>
+<li><a href="#software-verification" rel="">Software Verification</a></li>
 </ul>
 </li>
 <li><a href="#software-vulnerabilities-and-exploits" rel="">Software Vulnerabilities and Exploits</a></li>
@@ -328,6 +332,43 @@
 </ul>
 </li>
 </ol>
+<h3 id="software-specification">Software Specification</h3>
+<ol>
+<li>
+<p>Formal specification: uses a formal (mathematical) notation to provide a precise definition of what a program should do.</p>
+</li>
+<li>
+<p>Formal verification uses logical rules to mathematically prove that a program satisfies a formal specification.</p>
+</li>
+<li>
+<p>Hoare triple: {P}C{Q} (precondition, program, postcondition)</p>
+</li>
+<li>
+<p>Partial correctness and total correctness:</p>
+<ul>
+<li>Partially correct: the results satisfy the postcondition Q</li>
+<li>Totally correct: partially correct + always terminates [P]C[Q]</li>
+</ul>
+</li>
+<li>
+<p>Notations:</p>
+<ul>
+<li>V: variable</li>
+<li>E: expression</li>
+<li>S: statement (either true or false)</li>
+<li>C: command</li>
+<li>x,y: auxiliary variables</li>
+</ul>
+</li>
+<li>
+<p>Conditionals and while loop:</p>
+<ul>
+<li>IF S THEN $C_1$ ELSE $C_2$ FI</li>
+<li>WHILE S DO C OD</li>
+</ul>
+</li>
+</ol>
+<h3 id="software-verification">Software Verification</h3>
 <h2 id="software-vulnerabilities-and-exploits">Software Vulnerabilities and Exploits</h2>
 <h2 id="cryptography">Cryptography</h2>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
