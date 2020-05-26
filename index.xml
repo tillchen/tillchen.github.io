@@ -7,6 +7,14 @@
             <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Wed, 29 Apr 2020 11:03:14 &#43;0200</lastBuildDate>
             <atom:link href="https://tillchen.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Secure and Dependable Systems Notes</title>
+    <link>https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/</link>
+    <pubDate>Tue, 26 May 2020 16:11:13 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/</guid>
+    <description><![CDATA[Introduction  Recent Computing Disasters Dependability Concepts and Terminology   Software Engineering Aspects Software Vulnerabilities and Exploits Cryptography Secure Communication Protocols Information Hiding and Privacy System Security References  Introduction This is the course notes for Secure and Dependable Systems by Dr. Jürgen Schönwälder at Jacobs University Bremen.
+Recent Computing Disasters   Main memory and CPU memory caches: when the data need is in the main memory but not in the caches, the CPU has to wait quite a while.]]></description>
+</item><item>
     <title>Computability and Complexity Notes</title>
     <link>https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/</link>
     <pubDate>Sun, 24 May 2020 08:45:46 &#43;0200</pubDate>
@@ -78,14 +86,5 @@
     <description><![CDATA[Basics View Controller Lifecycle: MVC Architecture Project Organization References  Basics   Model-View-Controller is a design pattern in iOS.
   Unlike in Android Studio, the Interface Builder is not a graphical representation of code. A storyboard file is an archive of object instances.
   Outlets are references to objects: @IBOutlet var questionLabel: UILabel! (IB means interface builder.) (Right click the item and drag it to the assistant editor to create the outlet.]]></description>
-</item><item>
-    <title>Swift Notes</title>
-    <link>https://tillchen.com/posts/2019-08-2-Swift-Notes/</link>
-    <pubDate>Fri, 02 Aug 2019 00:00:00 &#43;0200</pubDate>
-    <author>Author</author>
-    <guid>https://tillchen.com/posts/2019-08-2-Swift-Notes/</guid>
-    <description><![CDATA[Basics OOP References  Basics   How to compile and run:
-1  swift hello_world.swift     No semicolons (though allowed) and no main functions. But semicolons must be used to write multiple statements in a single line.
-  Use let to make a constant and var to make a variable. (Use let whenever possible) Plus, multiple variables can be declared in one line: var x = 0, y = 0.]]></description>
 </item></channel>
 </rss>

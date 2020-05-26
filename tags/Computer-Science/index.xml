@@ -4,7 +4,15 @@
         <link>https://tillchen.com/tags/Computer-Science/</link>
         <description>Computer Science - Tag - Tianyao Chen</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Sun, 24 May 2020 08:45:46 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Computer-Science/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Tue, 26 May 2020 16:11:13 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Computer-Science/" rel="self" type="application/rss+xml" /><item>
+    <title>Secure and Dependable Systems Notes</title>
+    <link>https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/</link>
+    <pubDate>Tue, 26 May 2020 16:11:13 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/</guid>
+    <description><![CDATA[Introduction  Recent Computing Disasters Dependability Concepts and Terminology   Software Engineering Aspects Software Vulnerabilities and Exploits Cryptography Secure Communication Protocols Information Hiding and Privacy System Security References  Introduction This is the course notes for Secure and Dependable Systems by Dr. Jürgen Schönwälder at Jacobs University Bremen.
+Recent Computing Disasters   Main memory and CPU memory caches: when the data need is in the main memory but not in the caches, the CPU has to wait quite a while.]]></description>
+</item><item>
     <title>Computability and Complexity Notes</title>
     <link>https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/</link>
     <pubDate>Sun, 24 May 2020 08:45:46 &#43;0200</pubDate>
