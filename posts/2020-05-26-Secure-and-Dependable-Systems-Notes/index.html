@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  313 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  472 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;313 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;472 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -131,6 +131,7 @@
       <ul>
         <li><a href="#recent-computing-disasters">Recent Computing Disasters</a></li>
         <li><a href="#dependability-concepts-and-terminology">Dependability Concepts and Terminology</a></li>
+        <li><a href="#dependability-metrics">Dependability Metrics</a></li>
       </ul>
     </li>
     <li><a href="#software-engineering-aspects">Software Engineering Aspects</a></li>
@@ -147,6 +148,7 @@
 <ul>
 <li><a href="#recent-computing-disasters" rel="">Recent Computing Disasters</a></li>
 <li><a href="#dependability-concepts-and-terminology" rel="">Dependability Concepts and Terminology</a></li>
+<li><a href="#dependability-metrics" rel="">Dependability Metrics</a></li>
 </ul>
 </li>
 <li><a href="#software-engineering-aspects" rel="">Software Engineering Aspects</a></li>
@@ -206,7 +208,47 @@
 <li>Correct service: the service that implements the system function.</li>
 </ul>
 </li>
+<li>
+<p>Failure, error, and fault: (Threats)</p>
+<ul>
+<li>Failure: service failure, when the delivered service deviates from correct service.</li>
+<li>Error: the part of the total state that may lead to subsequent failure.</li>
+<li>Fault: the adjudged or hypothesized cause of an error. A fault is active when it produces an error, otherwise it&rsquo;s dormant.</li>
+<li>Fault -&gt; Error -&gt; Failure.</li>
+</ul>
+</li>
+<li>
+<p>Dependability:</p>
+<ul>
+<li>The ability of a system to deliver service than can justifiably be trusted.</li>
+<li>The ability to avoid service failures that are more frequent and more severe than is acceptable.</li>
+</ul>
+</li>
+<li>
+<p>Dependability attributes:</p>
+<ul>
+<li>Availability: readiness to deliver</li>
+<li>Reliability: continuity</li>
+<li>Safety: no catastrophic consequences</li>
+<li>Integrity: no improper alterations</li>
+<li>Maintainability: undergo modifications</li>
+<li>Confidentiality: no disclosure of info</li>
+</ul>
+</li>
+<li>
+<p>Security - confidentiality, integrity, and availability.</p>
+</li>
+<li>
+<p>Means:</p>
+<ul>
+<li>Prevention: preventing the occurence or introduction of faults.</li>
+<li>Tolerance: avoiding service failures in the presence of faults.</li>
+<li>Removal: reducing the number and severity of faults.</li>
+<li>Forecasting: estimating the present number, the future incidence, and the likely consequences of faults.</li>
+</ul>
+</li>
 </ol>
+<h3 id="dependability-metrics">Dependability Metrics</h3>
 <h2 id="software-engineering-aspects">Software Engineering Aspects</h2>
 <h2 id="software-vulnerabilities-and-exploits">Software Vulnerabilities and Exploits</h2>
 <h2 id="cryptography">Cryptography</h2>
