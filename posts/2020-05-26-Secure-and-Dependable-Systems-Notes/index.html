@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  1645 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  2066 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1645 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2066 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -557,6 +557,112 @@
 </li>
 </ol>
 <h3 id="symmetric-encryption-algorithms-and-block-ciphers">Symmetric Encryption Algorithms and Block Ciphers</h3>
+<ol>
+<li>
+<p>Substitution cipher: easier to attach via frequency analysis</p>
+<ul>
+<li>Monoaphlaetic: bijection on the set of symbols of an alphabet.</li>
+<li>Polyalphabetic: multiple bijections, i.e. a collection of monoalphabeic ciphers.</li>
+</ul>
+</li>
+<li>
+<p>Permutation (transposition) cipher: maps a plaintext $m_0, &hellip; ,m_{l-1}$ to $m_{\tau(0)}, &hellip; , m_{\tau(l-1)}$ where $\tau$ is a bijection of the positions in the message.</p>
+</li>
+<li>
+<p>Product cipher: combines two or more ciphers</p>
+<ul>
+<li>Multiple substitution cipher gives another substitution cipher -&gt; little value.</li>
+<li>Multiple permutation cipher gives another permutation cipher -&gt; little value.</li>
+<li>Substitution + permutation -&gt; harder to break.</li>
+</ul>
+</li>
+<li>
+<p>Chosen plaintext attack and chosen ciphertext attack:</p>
+<ul>
+<li>Choose arbitrary cleartext/ciphertext and feed them into E/D to obtain the corresponding ciphertext/cleartext.</li>
+</ul>
+</li>
+<li>
+<p>Polynomial and negligible functions:</p>
+<ul>
+<li>Polynomial: $f \in O(p)$ for some polynomial p</li>
+<li>Super-polynomial: $f \notin O(p)$ for every polynomial p</li>
+<li>Negligible: $f \in O(1/|p|)$ for every polynomial p
+<ul>
+<li>A security scheme is secure if the probability of security failure is negligible in terms of the cryptographic key length n.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Polynomial time and probabilistic algorithms:</p>
+<ul>
+<li>Polynomial time: worst-case time complexity is a polynomial function</li>
+<li>Probabilistic algorithm: may return different results when called multiple times for the same input.</li>
+<li>Probabilistic polynomial algorithm.</li>
+</ul>
+</li>
+<li>
+<p>One-way function: f can be computed by a polynomial time algorithm, but any polynomial time randomized algorithm F that attempts to compute a pseudo-inverse for f succeeds with negligible probability.</p>
+<ul>
+<li>They are super-polynomial hard to invert.</li>
+</ul>
+</li>
+<li>
+<p>Security of ciphers:</p>
+<ul>
+<li>Pick two plaintexts $m_0$ and $m_1$ and randomly receives either $E(m_0)$ or $E(m_1)$.</li>
+<li>Secure if we can&rsquo;t distinguish between the two situations with a probability that&rsquo;s non-negligibly better than 1/2.</li>
+</ul>
+</li>
+<li>
+<p>Block cipher: a cipher that operates on fixed-length groups of bits called a block.</p>
+<ul>
+<li>The last block may need to be padded.</li>
+<li>Electronic codebook (ECB): simply slices the input into a sequence of blocks that are encrypted in isolation.
+<ul>
+<li>Parallelizable for encryption and decryption; Random access; Lack of diffusion (doesn&rsquo;t hide data pattern)</li>
+</ul>
+</li>
+<li>Cipher block chaining (CBC): feeds the ciphertext of the previous block to the subsequent block.
+<ul>
+<li>Parallelizable for decryption but not for encryption; Random access.</li>
+</ul>
+</li>
+<li>Output feedback (OFB): the encryption and decryption work exactly the same.
+<ul>
+<li>No parallelization nor random access.</li>
+</ul>
+</li>
+<li>Counter (CTR): improves OFB (sequential and doesn&rsquo;t support random access).
+<ul>
+<li>Parallelizable for both encryption and decryption; Random access.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Substitution-permutation network: a block cipher whose bijections arise as products of substitution and permutation ciphers.</p>
+<ul>
+<li>Substitution step (S-box)</li>
+<li>Permutation step (P-box)</li>
+<li>Key step (xor)</li>
+</ul>
+</li>
+<li>
+<p>Advanced encryption standard (AES):</p>
+<ul>
+<li>Characteristics:
+<ul>
+<li>Overall blocksize: 128 bits</li>
+<li>Number of parallel S-boxes: 16</li>
+<li>Bitsize of an S-box: 8</li>
+<li>10 rounds with 128 bit keys; 12 with 192; 14 with 256</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <h3 id="asymmetric-encryption-algorithms">Asymmetric Encryption Algorithms</h3>
 <h3 id="cryptographic-hash-functions">Cryptographic Hash Functions</h3>
 <h3 id="digital-signatures-and-certificates">Digital Signatures and Certificates</h3>
