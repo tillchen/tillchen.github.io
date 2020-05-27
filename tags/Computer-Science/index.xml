@@ -10,8 +10,7 @@
     <pubDate>Tue, 26 May 2020 16:11:13 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/</guid>
-    <description><![CDATA[Introduction  Recent Computing Disasters Dependability Concepts and Terminology Dependability Metrics   Software Engineering Aspects  General Aspects Software Testing Software Specification Software Verification   Software Vulnerabilities and Exploits  Control Flow Exploits   Cryptography Secure Communication Protocols Information Hiding and Privacy System Security References  Introduction This is the course notes for Secure and Dependable Systems by Dr. Jürgen Schönwälder at Jacobs University Bremen.
-Recent Computing Disasters   Main memory and CPU memory caches: when the data need is in the main memory but not in the caches, the CPU has to wait quite a while.]]></description>
+    <description><![CDATA[Introduction  Recent Computing Disasters Dependability Concepts and Terminology Dependability Metrics   Software Engineering Aspects  General Aspects Software Testing Software Specification Software Verification   Software Vulnerabilities and Exploits  Control Flow Exploits   Cryptography  Cryptography Primer Symmetric Encryption Algorithms and Block Ciphers Asymmetric Encryption Algorithms Cryptographic Hash Functions Digital Signatures and Certificates Key Exchange Schemes   Secure Communication Protocols Information Hiding and Privacy System Security References  Introduction This is the course notes for Secure and Dependable Systems by Dr.]]></description>
 </item><item>
     <title>Computability and Complexity Notes</title>
     <link>https://tillchen.com/posts/2020-05-24-Computability-and-Complexity-Notes/</link>

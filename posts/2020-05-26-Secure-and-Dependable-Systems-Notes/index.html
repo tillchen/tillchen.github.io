@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  1465 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  1645 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1465 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1645 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -147,7 +147,16 @@
         <li><a href="#control-flow-exploits">Control Flow Exploits</a></li>
       </ul>
     </li>
-    <li><a href="#cryptography">Cryptography</a></li>
+    <li><a href="#cryptography">Cryptography</a>
+      <ul>
+        <li><a href="#cryptography-primer">Cryptography Primer</a></li>
+        <li><a href="#symmetric-encryption-algorithms-and-block-ciphers">Symmetric Encryption Algorithms and Block Ciphers</a></li>
+        <li><a href="#asymmetric-encryption-algorithms">Asymmetric Encryption Algorithms</a></li>
+        <li><a href="#cryptographic-hash-functions">Cryptographic Hash Functions</a></li>
+        <li><a href="#digital-signatures-and-certificates">Digital Signatures and Certificates</a></li>
+        <li><a href="#key-exchange-schemes">Key Exchange Schemes</a></li>
+      </ul>
+    </li>
     <li><a href="#secure-communication-protocols">Secure Communication Protocols</a></li>
     <li><a href="#information-hiding-and-privacy">Information Hiding and Privacy</a></li>
     <li><a href="#system-security">System Security</a></li>
@@ -175,7 +184,16 @@
 <li><a href="#control-flow-exploits" rel="">Control Flow Exploits</a></li>
 </ul>
 </li>
-<li><a href="#cryptography" rel="">Cryptography</a></li>
+<li><a href="#cryptography" rel="">Cryptography</a>
+<ul>
+<li><a href="#cryptography-primer" rel="">Cryptography Primer</a></li>
+<li><a href="#symmetric-encryption-algorithms-and-block-ciphers" rel="">Symmetric Encryption Algorithms and Block Ciphers</a></li>
+<li><a href="#asymmetric-encryption-algorithms" rel="">Asymmetric Encryption Algorithms</a></li>
+<li><a href="#cryptographic-hash-functions" rel="">Cryptographic Hash Functions</a></li>
+<li><a href="#digital-signatures-and-certificates" rel="">Digital Signatures and Certificates</a></li>
+<li><a href="#key-exchange-schemes" rel="">Key Exchange Schemes</a></li>
+</ul>
+</li>
 <li><a href="#secure-communication-protocols" rel="">Secure Communication Protocols</a></li>
 <li><a href="#information-hiding-and-privacy" rel="">Information Hiding and Privacy</a></li>
 <li><a href="#system-security" rel="">System Security</a></li>
@@ -506,6 +524,43 @@
 </li>
 </ol>
 <h2 id="cryptography">Cryptography</h2>
+<h3 id="cryptography-primer">Cryptography Primer</h3>
+<ol>
+<li>
+<p>Terminology:</p>
+<ul>
+<li>Cryptology: cryptography (secret writing) + cryptanalysis (break ciphers)</li>
+<li>Ciper: an algorithm for encryption and decryption</li>
+<li>Key: some secret info used as a parameter of a cipher and customizes the encryption algorithm.</li>
+<li>The security rests on the secrecy of the keys not the algorithms.</li>
+</ul>
+</li>
+<li>
+<p>Crptosystem: $D_k(E_k(m)) = m$</p>
+</li>
+<li>
+<p>Cryptographic hash function:</p>
+<ul>
+<li>Efficient to compute for arbitrary input.</li>
+<li>Given a hash value h, difficult to find an input m such that h = H(m) (preimage resistance).</li>
+<li>Given an input m, difficult to find another input $m&rsquo; \neq m$ such that H(m) = H(m&rsquo;) (2nd-preimage resistance).</li>
+<li>Difficult to find two different inputs such that H(m) = H(m&rsquo;) (collision resistance).</li>
+</ul>
+</li>
+<li>
+<p>Digital signatures are used to prove the authenticity and integrity of a message.</p>
+<ul>
+<li>Authentication: verify the identity</li>
+<li>Non-repudiation: cant deny that it sent the message</li>
+<li>Integrity: verify it&rsquo;s not tampered with</li>
+</ul>
+</li>
+</ol>
+<h3 id="symmetric-encryption-algorithms-and-block-ciphers">Symmetric Encryption Algorithms and Block Ciphers</h3>
+<h3 id="asymmetric-encryption-algorithms">Asymmetric Encryption Algorithms</h3>
+<h3 id="cryptographic-hash-functions">Cryptographic Hash Functions</h3>
+<h3 id="digital-signatures-and-certificates">Digital Signatures and Certificates</h3>
+<h3 id="key-exchange-schemes">Key Exchange Schemes</h3>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
 <h2 id="information-hiding-and-privacy">Information Hiding and Privacy</h2>
 <h2 id="system-security">System Security</h2>
