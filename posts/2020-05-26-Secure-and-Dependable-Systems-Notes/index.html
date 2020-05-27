@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  3416 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  3544 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3416 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3544 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;17 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -164,7 +164,14 @@
         <li><a href="#secure-shell">Secure Shell</a></li>
       </ul>
     </li>
-    <li><a href="#information-hiding-and-privacy">Information Hiding and Privacy</a></li>
+    <li><a href="#information-hiding-and-privacy">Information Hiding and Privacy</a>
+      <ul>
+        <li><a href="#steganography-and-watermarks">Steganography and Watermarks</a></li>
+        <li><a href="#covert-channels">Covert Channels</a></li>
+        <li><a href="#anonymization-terminology">Anonymization Terminology</a></li>
+        <li><a href="#mixes-and-onion-routing">Mixes and Onion Routing</a></li>
+      </ul>
+    </li>
     <li><a href="#system-security">System Security</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -207,7 +214,14 @@
 <li><a href="#secure-shell" rel="">Secure Shell</a></li>
 </ul>
 </li>
-<li><a href="#information-hiding-and-privacy" rel="">Information Hiding and Privacy</a></li>
+<li><a href="#information-hiding-and-privacy" rel="">Information Hiding and Privacy</a>
+<ul>
+<li><a href="#steganography-and-watermarks" rel="">Steganography and Watermarks</a></li>
+<li><a href="#covert-channels" rel="">Covert Channels</a></li>
+<li><a href="#anonymization-terminology" rel="">Anonymization Terminology</a></li>
+<li><a href="#mixes-and-onion-routing" rel="">Mixes and Onion Routing</a></li>
+</ul>
+</li>
 <li><a href="#system-security" rel="">System Security</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
@@ -949,6 +963,29 @@
 </li>
 </ol>
 <h2 id="information-hiding-and-privacy">Information Hiding and Privacy</h2>
+<h3 id="steganography-and-watermarks">Steganography and Watermarks</h3>
+<ol>
+<li>
+<p>Information hiding: conceal the very existence of some kind of info for some specific purpose. Often used together with encryption.</p>
+</li>
+<li>
+<p>Steganography: the embedding of some info (hidden-text) within digital media (cover-text) so that the resulting digital media (stego-text) looks unchanged (imperceptible) to a human/machine.</p>
+<ul>
+<li>Unused or redundant bits.</li>
+<li>Robust stegnographic methods may survive some typical modifications of stego-texts (cropping/recoding or images).</li>
+<li>Media types of large size usually make it easier to hide info.</li>
+</ul>
+</li>
+<li>
+<p>Watermarking: the hidden info itself is not important; the watermark says something about the cover-text.</p>
+<ul>
+<li>Steganography: the cover-text is not important; the hidden text is the valuable info and is independent of cover-text.</li>
+</ul>
+</li>
+</ol>
+<h3 id="covert-channels">Covert Channels</h3>
+<h3 id="anonymization-terminology">Anonymization Terminology</h3>
+<h3 id="mixes-and-onion-routing">Mixes and Onion Routing</h3>
 <h2 id="system-security">System Security</h2>
 <h2 id="references">References</h2>
 <ul>
