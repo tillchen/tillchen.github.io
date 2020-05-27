@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  2207 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  2372 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2207 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2372 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -696,6 +696,49 @@
 </li>
 </ol>
 <h3 id="cryptographic-hash-functions">Cryptographic Hash Functions</h3>
+<ol>
+<li>
+<p>Purposes:</p>
+<ul>
+<li>Integrity verification</li>
+<li>Authentication</li>
+<li>Fingerprints for digital signatures</li>
+<li>Adjustable proof of work mechanisms</li>
+</ul>
+</li>
+<li>
+<p>MD (Message Digest); SHA (Secure Hash Algorithm).</p>
+</li>
+<li>
+<p>Merkle-Damgard construction: the message is padded and postfixed with a length value.</p>
+</li>
+<li>
+<p>Hashed message authentication code (HMAC): a type of message authentication code (MAC) involving a cryptographic hash function and secret cryptographic key.</p>
+<ul>
+<li>HMAC can be used to verify both data integrity and authenticity.</li>
+<li>HMAC doesn&rsquo;t encrypt the message.</li>
+<li>The message must be send with the HMAC hash. The receiver will hash it again with the key and match the hash.</li>
+<li>Computation: $HMAC_H(k,m) = H((k&rsquo; \bigoplus opad) || H((k&rsquo; \bigoplus ipad) || m))$
+<ul>
+<li>k&rsquo; is derived by padding k with 0s or hashing k.</li>
+<li>opad is the outer padding: 0x5c5c5c5c&hellip;5c</li>
+<li>ipad is the inner padding: 0x36363636 &hellip; 36</li>
+<li>xor and concatenation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Authenticated encryption with associated data:</p>
+<ul>
+<li>It&rsquo;s often necessary to combine encryption with authentication.</li>
+<li>MAC protects the data against modifications.</li>
+<li>Encrypt-then-Mac (EtM): $E_k(M) || H_k(E_k(M))$</li>
+<li>Encrypt-and-Mac (EaM): $E_k(M) || H_k(M)$</li>
+<li>Mac-then-Encrypt (MtE): $E_k(M || H_k(M))$</li>
+</ul>
+</li>
+</ol>
 <h3 id="digital-signatures-and-certificates">Digital Signatures and Certificates</h3>
 <h3 id="key-exchange-schemes">Key Exchange Schemes</h3>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
