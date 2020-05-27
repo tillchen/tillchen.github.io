@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  3052 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  3416 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3052 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;15 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3416 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;17 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -877,7 +877,7 @@
 <p>Change Cipher Spec Protocol: signals transitions in ciphering strategies. (No longer in TLS 1.3)</p>
 </li>
 <li>
-<p>Alter Protocol: signals exceptions (warnings, errors) occured during the processing of TLS protocol messages.</p>
+<p>Alert Protocol: signals exceptions (warnings, errors) occured during the processing of TLS protocol messages.</p>
 <ul>
 <li>Used to properly close a TLS connection by exchanging close_notify alert messages.</li>
 <li>In order to scale servers, it&rsquo;s the best if the clients init the TCP connection teardown and end up in TIME_WAIT.</li>
@@ -885,6 +885,69 @@
 </li>
 </ol>
 <h3 id="secure-shell">Secure Shell</h3>
+<ol>
+<li>
+<p>SSH provides a secure connection through which user authentication and several inner protocols can be run.</p>
+</li>
+<li>
+<p>SSH Protocol layers:</p>
+<ul>
+<li>Transport Layer Protocol: server authentication, confidentiality, and integrity with perfect forward secrecy.</li>
+<li>User Authentication Protocol: can auth by user&rsquo;s keys and also other means like passwords.</li>
+<li>Connection Protocol: multiplexes the encrypted data stream into several logical channels.</li>
+</ul>
+</li>
+<li>
+<p>SSH keys, passwords, and passphrases:</p>
+<ul>
+<li>Host key:
+<ul>
+<li>Every server must have a public/private host key pair</li>
+<li>Used for server authentication</li>
+<li>Identified by their fingerprint</li>
+</ul>
+</li>
+<li>User key:
+<ul>
+<li>Every user must have their own public/private key pairs, optionally used to authenticate users.</li>
+</ul>
+</li>
+<li>User password: remote accounts may use passwords to authenticate users.</li>
+<li>Passphrase: user&rsquo;s private key may be protected by a passphrase.</li>
+<li>In reality, users often blindly accept the host key offered at the first connection time.</li>
+</ul>
+</li>
+<li>
+<p>TCP forwarding: tunnel unencrypted traffic through an encrypted SSH connection,</p>
+<ul>
+<li><code>ssh -f joe@example.com -L 2000:example.com:25 -N</code> creates a tunnel connecting a client to port 25 on <code>example.com</code> and provides a listening endpoint on Joe&rsquo;s localhost on port 2000. If a program connects to the lcoal port 2000, it&rsquo;s talking to <code>example.com</code> using port 25.</li>
+</ul>
+</li>
+<li>
+<p>X11 forwarding: a special application of TCP forwarding allowing X11 clients on remote machines to access the local X11 server (managing the display and the keyboard/mouse) (run graphical apps remotely)</p>
+</li>
+<li>
+<p>Connection sharing: new SSH connections hook as new channel into an existing SSH connection, reducing session startup times.</p>
+</li>
+<li>
+<p>IP tunneling: tunnel IP packets over an SSH connection by inserting tunnel interfaces into kernels and by configuring IP forwarding.</p>
+<ul>
+<li>Essentially a simple VPN over which you can securely send arbitrary IP traffic.</li>
+</ul>
+</li>
+<li>
+<p>SSH agent: maintains client credentials during a login session so that credentials can be reused by different SSH invocations without user interaction.</p>
+</li>
+<li>
+<p>SSh agent forwarding: an SSH server emulates an SSh agent and forwards requests to the SSH agent, creating a chain of SSH agent delegations.</p>
+<ul>
+<li>It enables users to access a remote system and from there to access further systems, always accessing the local SSH agent. SSH connections can go over multiple hops in a very convenient way without having to store any user keys on intermediate systems.</li>
+</ul>
+</li>
+<li>
+<p>OpenSSh privilege separation: two processes (special and normal privileges).</p>
+</li>
+</ol>
 <h2 id="information-hiding-and-privacy">Information Hiding and Privacy</h2>
 <h2 id="system-security">System Security</h2>
 <h2 id="references">References</h2>
