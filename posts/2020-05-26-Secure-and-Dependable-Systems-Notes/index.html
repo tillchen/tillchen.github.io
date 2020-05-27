@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  1337 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  1465 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1337 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1465 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -480,6 +480,31 @@
 </li>
 </ol>
 <h3 id="control-flow-exploits">Control Flow Exploits</h3>
+<ol>
+<li>
+<p>Registers:</p>
+<ul>
+<li>ebp (rbp): base pointer</li>
+<li>esp (rsp): stack pointer</li>
+<li>eip (rip): instruction pointer</li>
+</ul>
+</li>
+<li>
+<p>Shellcode: a small piece of code used as the payload in the exploitation. (It&rsquo;s called shellcode because it typically starts a command shell.)</p>
+</li>
+<li>
+<p>Stack buffer overflow: a program writes to a memory address on the call stack outside of the intended data structure, which is usually a fixed-length buffer.</p>
+<ul>
+<li>Stack smashing: inject executable code into the program.</li>
+</ul>
+</li>
+<li>
+<p>Return-oriented programming: allows an attach to execute code in the presence of security defenses. An attacher gains control of the call stack to hijack the control flow and executes carefully chosen machine instruction sequences that are already present in the memory.</p>
+</li>
+<li>
+<p>Format string attack: format strings can be used to crash a program or to execute harmful code.</p>
+</li>
+</ol>
 <h2 id="cryptography">Cryptography</h2>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
 <h2 id="information-hiding-and-privacy">Information Hiding and Privacy</h2>
