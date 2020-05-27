@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  2066 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  2207 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2066 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2207 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -664,6 +664,37 @@
 </li>
 </ol>
 <h3 id="asymmetric-encryption-algorithms">Asymmetric Encryption Algorithms</h3>
+<ol>
+<li>
+<p>Encrypt using the receiver&rsquo;s public key. Decrypt using the receiver&rsquo;s private key.</p>
+</li>
+<li>
+<p>When signing, encrypt using the sender&rsquo;s private key. Decrypt using the sender&rsquo;s public key.</p>
+</li>
+<li>
+<p>Rivest-Shamir-Adleman (RSA):</p>
+<ul>
+<li>Key gen:
+<ul>
+<li>Gen two large prime numbers p and q of roughly the same length</li>
+<li>Compute n = pq and $\phi (n) = (p-1)(q-1)$</li>
+<li>Choose e satisfying $1 &lt; e &lt; \phi (n)$ and $gcd(e, \phi (n)) = 1$</li>
+<li>Compute d satisfying $1 &lt; d &lt; \phi (n)$ and $ed \ mod \ \phi(n)= 1$</li>
+<li>Public key: (n,e); private key: (n,d)</li>
+</ul>
+</li>
+<li>Encryption: compute $c_i = m_{i}^e \ mod \ n$ for all $m_i$</li>
+<li>Decryption: compute $m_i = c_{i}^d \ mod \ n$ for all $c_i$</li>
+<li>It&rsquo;s computationally intensive and hence used only on small cleartexts.</li>
+</ul>
+</li>
+<li>
+<p>Elliptic curve cryptography (ECC):</p>
+<ul>
+<li>Elliptic curve: $E = \{(x,y)|y^2 = x^3 + ax + b\} \cup \{\infty \}$</li>
+</ul>
+</li>
+</ol>
 <h3 id="cryptographic-hash-functions">Cryptographic Hash Functions</h3>
 <h3 id="digital-signatures-and-certificates">Digital Signatures and Certificates</h3>
 <h3 id="key-exchange-schemes">Key Exchange Schemes</h3>
