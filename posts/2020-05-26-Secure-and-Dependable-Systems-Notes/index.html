@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  2521 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  2743 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2521 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2743 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;13 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -774,6 +774,38 @@
 </li>
 </ol>
 <h3 id="key-exchange-schemes">Key Exchange Schemes</h3>
+<ol>
+<li>
+<p>Key exchange (key establishment) is any method by which cryptographic keys are exchanged between two parties.</p>
+<ul>
+<li>Ephemeral key: it&rsquo;s generated for each execution of a key establishment process.</li>
+<li>Ephemeral keys provide perfect forward secrecy: the ephemeral keys will not be compromised even if long-term keys are compromised in the future.</li>
+<li>Keys are easier to break the more they are used.</li>
+</ul>
+</li>
+<li>
+<p>Diffie-Hellman Key Exchange:</p>
+<ul>
+<li>Define a prime number p and a primitive root g with g &lt; p.</li>
+<li>A randomly picks $x_A \in Z_p$ and computes $y_A = g^{x_a} \ mod \ p$ and sends it to B.</li>
+<li>B randomly picks $x_B \in Z_p$ and computes $y_B = g^{x_B} \ mod \ p$ and sends it to A.</li>
+<li>A computes: $K_{AB} = y_{B}^{x_A} \ mod \ p = g^{x_Ax_B} \ mod \ P$</li>
+<li>B computes: $K_{AB} = y_{A}^{x_B} \ mod \ p = = g^{x_Ax_B} \ mod \ P$</li>
+<li>g is a primitive root of $Z_p = \{0,&hellip;,p-1\}$ if $g^1 \ mod \ p$, &hellip;, $g^{p-1} \ mod \ p$ produces 1, &hellip;, p-1 in any permutation.</li>
+<li>It suffers from Man in the Middle.</li>
+</ul>
+</li>
+<li>
+<p>Needham-Schroeder Protocol and Kerberos Protocol.</p>
+<ul>
+<li>The former uses 5 messages</li>
+<li>The latter uses 4 messages. It uses time stamps to address the flaw of the former.</li>
+</ul>
+</li>
+<li>
+<p>BAN (Burrows-Abadi-Needham) logic: a first attempt to provide formalism for authentication protocol analysis.</p>
+</li>
+</ol>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
 <h2 id="information-hiding-and-privacy">Information Hiding and Privacy</h2>
 <h2 id="system-security">System Security</h2>
