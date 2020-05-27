@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  2372 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  2521 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2372 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2521 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -736,10 +736,43 @@
 <li>Encrypt-then-Mac (EtM): $E_k(M) || H_k(E_k(M))$</li>
 <li>Encrypt-and-Mac (EaM): $E_k(M) || H_k(M)$</li>
 <li>Mac-then-Encrypt (MtE): $E_k(M || H_k(M))$</li>
+<li>EtM is preferred since it protects against chosen ciphertext attacks and avoids ay confidentiality issues from the MAC of the cleartext.</li>
 </ul>
 </li>
 </ol>
 <h3 id="digital-signatures-and-certificates">Digital Signatures and Certificates</h3>
+<ol>
+<li>
+<p>Direct signature:</p>
+<ul>
+<li>Signer: $S = E_{k^{-1}}(m)$</li>
+<li>Verifier: $D_k(S) \stackrel{?}{=} m$</li>
+</ul>
+</li>
+<li>
+<p>Indirect signature of a hash: (faster and more common, but it requires the signature to be sent with the document)</p>
+<ul>
+<li>Signer: $S = E_{k^{-1}}(H(m))$</li>
+<li>Verifier: $D_k(S) \stackrel{?}{=} H(m)$</li>
+</ul>
+</li>
+<li>
+<p>Public key certificate: an electronic document to prove the ownership of a public key. It contains:</p>
+<ul>
+<li>Info about the public key.</li>
+<li>Info about the identity of the owner (subject).</li>
+<li>The digital signature of an entity that has verified the certificate&rsquo;s content (issuer).</li>
+</ul>
+</li>
+<li>
+<p>Public key infrastructure (PKI): a set of roles, policies, and procedures.</p>
+<ul>
+<li>A central element is the certificate authority (CA)</li>
+<li>CAs are hierarchically organized. A root CS may delegate some work to trusted secondary CAs.</li>
+<li>A key function of a CA is to verify the identity of the subject.</li>
+</ul>
+</li>
+</ol>
 <h3 id="key-exchange-schemes">Key Exchange Schemes</h3>
 <h2 id="secure-communication-protocols">Secure Communication Protocols</h2>
 <h2 id="information-hiding-and-privacy">Information Hiding and Privacy</h2>
