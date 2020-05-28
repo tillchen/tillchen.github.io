@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  3748 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  3879 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3748 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;18 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3879 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;19 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -1019,6 +1019,34 @@
 </li>
 </ol>
 <h3 id="covert-channels">Covert Channels</h3>
+<ol>
+<li>
+<p>Covert channels represent unforeseen communication methods that break security policies. They hid the fact that communication takes place.</p>
+</li>
+<li>
+<p>Cover channels embed info in:</p>
+<ul>
+<li>header fields of protocol data units (protocol messages)</li>
+<li>the timing of protocol data units (inter-arrival messages)</li>
+</ul>
+</li>
+<li>
+<p>Cover channel patterns:</p>
+<ul>
+<li>Size modulation: size of a head field or protocol message</li>
+<li>Sequence: the sequence of head fields</li>
+<li>Add redundancy: new space in a header field or a message</li>
+<li>PDU (protocol data unit) corruption/loss: generates corrupted or unitizes packet loss</li>
+<li>Random value: in a head field containing a random value</li>
+<li>Value modulation: selects one of the values in a header</li>
+<li>Reserved/unused: into a reserved or unused header field</li>
+<li>Inter-arrival time: alters timing intervals</li>
+<li>Rate: alters the data rate</li>
+<li>Protocol message order: synthetic protocol message order</li>
+<li>Re-transmission: retransmits sent or received messages.</li>
+</ul>
+</li>
+</ol>
 <h3 id="anonymization-terminology">Anonymization Terminology</h3>
 <h3 id="mixes-and-onion-routing">Mixes and Onion Routing</h3>
 <h2 id="system-security">System Security</h2>
