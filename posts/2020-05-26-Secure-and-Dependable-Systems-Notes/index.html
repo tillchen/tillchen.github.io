@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  3544 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  3748 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3544 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;17 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3748 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;18 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -972,7 +972,7 @@
 <p>Steganography: the embedding of some info (hidden-text) within digital media (cover-text) so that the resulting digital media (stego-text) looks unchanged (imperceptible) to a human/machine.</p>
 <ul>
 <li>Unused or redundant bits.</li>
-<li>Robust stegnographic methods may survive some typical modifications of stego-texts (cropping/recoding or images).</li>
+<li>Robust steganographic methods may survive some typical modifications of stego-texts (cropping/recoding or images).</li>
 <li>Media types of large size usually make it easier to hide info.</li>
 </ul>
 </li>
@@ -980,6 +980,41 @@
 <p>Watermarking: the hidden info itself is not important; the watermark says something about the cover-text.</p>
 <ul>
 <li>Steganography: the cover-text is not important; the hidden text is the valuable info and is independent of cover-text.</li>
+<li>Digital watermarks are widely used for copyright protection and source tracking purposes.</li>
+</ul>
+</li>
+<li>
+<p>Classification of steganographic algorithms:</p>
+<ul>
+<li>Fragile vs robust (survive modifications)</li>
+<li>Blind vs semi-blind (blind needs the original cover-text for detection/extraction)</li>
+<li>Pure vs symmetric (secret key) vs asymmetric (public key) (pure needs no key) (asymmetric needs a secret key for embedding and a public key for extraction)</li>
+</ul>
+</li>
+<li>
+<p>LSB-based image steganography: changes the least-significant bits are difficult for humans to see (three 8-bit color values)</p>
+<ul>
+<li>Use a key to select some LSBs to embed info</li>
+<li>Encode the info multiple times to achieve robustness against noise.</li>
+<li>Problems:
+<ul>
+<li>Existence of hidden info may be revealed if the statistical properties of LSBs change.</li>
+<li>Fragile against noise such as compression, resizing, cropping, rotating, or additive white Gaussian noise.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>DCT-based image steganography: image formats like JPEG use discrete cosine transforms (DCT) to encode image data. The manipulation happens in the frequency domain instead of the spatial domain, which reduces visual attacks.</p>
+<ul>
+<li>Replace the LSBs of some of the DCT coefficients.</li>
+<li>Use a key to select some DCT coefficients.</li>
+<li>Problem:
+<ul>
+<li>Existence of hidden info may be revealed if the statistical properties of the DCT coefficients are changed.</li>
+<li>The risk may be reduced by using a pseudo-random number generator to select coefficients.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
