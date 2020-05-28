@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  4291 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  4415 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4291 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4415 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -172,7 +172,14 @@
         <li><a href="#mixes-and-onion-routing">Mixes and Onion Routing</a></li>
       </ul>
     </li>
-    <li><a href="#system-security">System Security</a></li>
+    <li><a href="#system-security">System Security</a>
+      <ul>
+        <li><a href="#trusted-computing">Trusted Computing</a></li>
+        <li><a href="#authentication">Authentication</a></li>
+        <li><a href="#authorization">Authorization</a></li>
+        <li><a href="#auditing">Auditing</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -222,7 +229,14 @@
 <li><a href="#mixes-and-onion-routing" rel="">Mixes and Onion Routing</a></li>
 </ul>
 </li>
-<li><a href="#system-security" rel="">System Security</a></li>
+<li><a href="#system-security" rel="">System Security</a>
+<ul>
+<li><a href="#trusted-computing" rel="">Trusted Computing</a></li>
+<li><a href="#authentication" rel="">Authentication</a></li>
+<li><a href="#authorization" rel="">Authorization</a></li>
+<li><a href="#auditing" rel="">Auditing</a></li>
+</ul>
+</li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -1140,6 +1154,51 @@
 </li>
 </ol>
 <h2 id="system-security">System Security</h2>
+<ol>
+<li>
+<p>Lamspson model: subject authenticates guard, which auhtorizes object. Audit trail audits guard.</p>
+</li>
+<li>
+<p>Isolation: design and deployment.</p>
+</li>
+</ol>
+<h3 id="trusted-computing">Trusted Computing</h3>
+<h3 id="authentication">Authentication</h3>
+<h3 id="authorization">Authorization</h3>
+<ol>
+<li>
+<p>Lampson&rsquo;s access control matrix: greate in theory by difficult in practice (huge.)</p>
+<ul>
+<li>Subjects are row headings and objects are column headings. (S X O)</li>
+</ul>
+</li>
+<li>
+<p>Access control list: the column of the matrix. Given an object, have a list of subjects X rights.</p>
+<ul>
+<li>Example: Unix inode.</li>
+</ul>
+</li>
+<li>
+<p>Capabliteies: the row of the matrix. Given a subject, have a list of obejcts X rights.</p>
+<ul>
+<li>Example: Unix file descriptor.</li>
+</ul>
+</li>
+<li>
+<p>ACL and capabilties are theorically equivalent.</p>
+</li>
+<li>
+<p>Discreiotnary vs mandatory access control:</p>
+<ul>
+<li>Deiscriotnary: subjects can define (Unix filesystem permissions)</li>
+<li>Mandatory: system controls</li>
+</ul>
+</li>
+</ol>
+<h3 id="auditing">Auditing</h3>
+<ol>
+<li>Auditing: keep a log (audit trail) of decisions. For debugging and forensics.</li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://cnds.jacobs-university.de/courses/sads-2020/">https://cnds.jacobs-university.de/courses/sads-2020/</a></li>
