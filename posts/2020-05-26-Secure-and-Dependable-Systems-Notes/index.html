@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  4415 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  4708 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4415 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4708 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;23 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -1163,6 +1163,70 @@
 </li>
 </ol>
 <h3 id="trusted-computing">Trusted Computing</h3>
+<ol>
+<li>
+<p>Trusted computing base: the set of hard and software components crititcial to achvieve the systems&rsquo; security properties.</p>
+<ul>
+<li>When other parts are attacked, the device will not misbehave.</li>
+<li>Small to veify the correctness.</li>
+<li>Tamper-resistant.</li>
+<li>Spcial hardware components.</li>
+</ul>
+</li>
+<li>
+<p>It&rsquo;s hard to design software that can be trusted.</p>
+</li>
+<li>
+<p>Goals:</p>
+<ul>
+<li>Isolation: separate essentail from general</li>
+<li>Attestation: prove a component is in a certain state</li>
+<li>Sealing: wrapping of code and data that can only be unwrapped under certain cicumstances.</li>
+<li>Code confidentiality: sensitive code and static data can&rsquo;t be obtained by untrusted.</li>
+<li>Side-channel resistence: unstructed can&rsquo;t deduce info about the internal state of a trusted component.</li>
+<li>Memory protection: protects the integrity and authenticity of data.</li>
+</ul>
+</li>
+<li>
+<p>The first candidates of functions to place into trusted hardware are cryptographic algorithms and key gen and storage.</p>
+</li>
+<li>
+<p>Attestation may be local or remote.</p>
+</li>
+<li>
+<p>Trusted platform module (TPM) is a dedicated microcontroller to secure hardware through integrated cryptographic operations and key storage.</p>
+<ul>
+<li>RNG, Endorsement Key (EK), Attestation Identity Keys (AIKs)</li>
+</ul>
+</li>
+<li>
+<p>Trusted and rich execution envrionment:</p>
+<ul>
+<li>Trusted Execution Environment (TEE): secure</li>
+<li>Rich Execution Environment (REE): non-secure</li>
+<li>REE resources are acccessbile from TEE</li>
+</ul>
+</li>
+<li>
+<p>TrustZone Cortex-A/M (ARM)</p>
+<ul>
+<li>The non-secure (NS) bit conveys whether the processor works in secure or normal mode.</li>
+<li>To perform a context switch, it transits through a monitor mode, which saves and restores the state.</li>
+<li>Cotex-M repalces the monitor mode with a faster mechanism to call secure code via multiple secure fucntion entry points.</li>
+<li>Cortex-A is for resoruce rich systems like mobile phones.</li>
+<li>Cortex-M is for limited systems like embedded.</li>
+</ul>
+</li>
+<li>
+<p>Secuity Guard Extension (SGE, Intel)</p>
+<ul>
+<li>Protected parts - enclaves.</li>
+<li>Non-enclave code can&rsquo;t access enclave code.</li>
+<li>The content of enclaves is loaded when the enclaves are created.</li>
+<li>Creation and deletion of enclaves is using the highest privilege. Entering and leaving is using the lowest privilege.</li>
+</ul>
+</li>
+</ol>
 <h3 id="authentication">Authentication</h3>
 <h3 id="authorization">Authorization</h3>
 <ol>
