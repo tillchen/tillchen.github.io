@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  3879 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  4111 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3879 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;19 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4111 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;20 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -1048,6 +1048,62 @@
 </li>
 </ol>
 <h3 id="anonymization-terminology">Anonymization Terminology</h3>
+<ol>
+<li>
+<p>Anonymity: the attacker can&rsquo;t sufficiently identify the subject within a set of subjects, the anonymity set.</p>
+<ul>
+<li>Larger anonymity set &amp; more evenly distributed -&gt; stronger anonymity</li>
+<li>Robustness: hwo stable the quantity of anonymity is against changes</li>
+</ul>
+</li>
+<li>
+<p>Unlinkability</p>
+<ul>
+<li>Unlinkability of items of interest (IOIs), the attacker can&rsquo;t sufficiently distinguish whether these IOIs are related.</li>
+<li>Sender anonymity means each message is unlinkable.</li>
+</ul>
+</li>
+<li>
+<p>Undetectability: can&rsquo;t sufficiently distinguish whether an IOI exists</p>
+</li>
+<li>
+<p>Unobservability:</p>
+<ul>
+<li>undetectability of the IOI against all subjects uninvolved.</li>
+<li>anonymity of the subjects involved in the IOI against others involved.</li>
+<li>Sender unobservability: undetectable whether any sender within the unobservability set sends.</li>
+<li>Relaitonship unobservability: undetectable whether anything is sent out of a set of could-be senders to a set of could-be recipients.</li>
+</ul>
+</li>
+<li>
+<p>Relationships:</p>
+<ul>
+<li>unobservability $\Rightarrow$ anonymity</li>
+<li>sender/recipient anonymity/unobservability $\Rightarrow$ send/recipient anonymity/unobservability</li>
+</ul>
+</li>
+<li>
+<p>Pseudonymity: the use of pseudonyms as identifiers.</p>
+<ul>
+<li>Pseudonym: the identifier other than the real names.</li>
+<li>A public key certificate bides the public key to another pseudonym. In case the pseudonym is the real name, it&rsquo;s called an identity certificate.</li>
+</ul>
+</li>
+<li>
+<p>Identifiability: sufficiently identify the subject within the identifiability set.</p>
+<ul>
+<li>Identity: any subset of attribute values which sufficiently identifies the person.</li>
+</ul>
+</li>
+<li>
+<p>Identity management: managing various partial identities.</p>
+<ul>
+<li>A partial identity is a subset of attribute values of a complete identity (the union of all attribute values of all identities)</li>
+<li>A pseudonym might be an identifier for a partial identity.</li>
+<li>It&rsquo;s privacy-enhancing if it sufficiently preserves unlinkability</li>
+</ul>
+</li>
+</ol>
 <h3 id="mixes-and-onion-routing">Mixes and Onion Routing</h3>
 <h2 id="system-security">System Security</h2>
 <h2 id="references">References</h2>
