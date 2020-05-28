@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  4708 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  4846 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4708 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4846 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;23 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -1228,6 +1228,40 @@
 </li>
 </ol>
 <h3 id="authentication">Authentication</h3>
+<ol>
+<li>
+<p>Authentication: verify that it ahs a certain attribute value.</p>
+<ul>
+<li>Identificaiotn step: presenting the claimed attribute value (user identifier)</li>
+<li>Verification step: presetning or genreating authentication info (e.g. a value singed with a private key) as evidence to prove the binding.</li>
+</ul>
+</li>
+<li>
+<p>Authentication factors:</p>
+<ul>
+<li>Knowledge: passowrd, PIN</li>
+<li>Possesion: mobile phone, token</li>
+<li>Static biometrics: fingerpirnt</li>
+<li>Dynamic biometrics: voice, signature, typing rhythm</li>
+</ul>
+</li>
+<li>
+<p>Password authentication: store H(s||p), s is the salt that ensures that the same passwords don&rsquo;t havve the same hash value.</p>
+</li>
+<li>
+<p>Challegne-response authentication: require correct auth info to be provided in reposnse to a challenge.</p>
+<ul>
+<li>Password is a special case.</li>
+</ul>
+</li>
+<li>
+<p>One-time password authentication:</p>
+<ul>
+<li>The user computes $q = H^n(s||p)$</li>
+<li>The server verifies: $H(q) = H(H^n(s||p)) = H^{n+1}(s||p)$ and checks if it matches. If it does, set k = 1 and decrement n. If n becomes 0, a new ini must be performed.</li>
+</ul>
+</li>
+</ol>
 <h3 id="authorization">Authorization</h3>
 <ol>
 <li>
