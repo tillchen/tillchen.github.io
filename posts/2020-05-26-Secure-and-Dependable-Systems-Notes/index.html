@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Computer Science","wordcount":  4111 ,
+            },"genre": "posts","keywords": "Computer Science","wordcount":  4291 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-26-Secure-and-Dependable-Systems-Notes\/","datePublished": "2020-05-26T16:11:13+02:00","dateModified": "2020-05-26T16:11:13+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Secure and Dependable Systems Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4111 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;20 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 26, 2020">May 26, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4291 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -1105,6 +1105,40 @@
 </li>
 </ol>
 <h3 id="mixes-and-onion-routing">Mixes and Onion Routing</h3>
+<ol>
+<li>
+<p>Mix networks:</p>
+<ul>
+<li>It uses special proxies called mixes.</li>
+<li>The mixes can filter, collect, recode, and reorder messages to hid conversations.
+<ul>
+<li>Removal or duplicate messages</li>
+<li>Collection to create an ideally large anonymity set.</li>
+<li>Recoding so that incoming and outgoing messages can&rsquo;t be linked.</li>
+<li>Reordering so that the order can&rsquo;t be used to link.</li>
+<li>Padding so that the message sizes do not reveal info to link.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Onion routing:</p>
+<ul>
+<li>A message is sent via an overlay network of intermediate routers called a circuit.</li>
+<li>A message is cryptographically wrapped multiple itmes that every router unwraps one layer and learns to which router the message needs to be forwarded</li>
+<li>No node in the circuit can tell whether the node before is the originator or another intermediary.</li>
+<li>Only the final node (exit node) can determine its own location in the chain.</li>
+<li>Choose routes difficult to observe. Can provide real-time services.</li>
+</ul>
+</li>
+<li>
+<p>Tor:</p>
+<ul>
+<li>Every Tor router has a long-term identity key (sign TLS cert) and a short-term onion key (decrypt to set up circuits and ephemeral keys).</li>
+<li>Crucial to use end-to-end encryption to protect against compromised exit node.</li>
+</ul>
+</li>
+</ol>
 <h2 id="system-security">System Security</h2>
 <h2 id="references">References</h2>
 <ul>
