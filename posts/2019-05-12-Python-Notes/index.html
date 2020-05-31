@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  877 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  889 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;877 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;889 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -161,9 +161,25 @@
 </ul>
 <h2 id="strings">Strings</h2>
 <ol>
-<li>Change Case:<code>.title()</code> <code>.upper()</code> <code>.lower()</code></li>
-<li>f-strings are preferred.</li>
-<li>Stripping Whitespace: <code>.lstrip()</code> <code>.rstrip()</code> <code>.strip()</code></li>
+<li>
+<p>Change Case:<code>.title()</code> <code>.upper()</code> <code>.lower()</code></p>
+</li>
+<li>
+<p>f-strings are preferred.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;foo&#34;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;The name is {name}.&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Stripping Whitespace: <code>.lstrip()</code> <code>.rstrip()</code> <code>.strip()</code></p>
+</li>
 </ol>
 <h2 id="numbers">Numbers</h2>
 <ol>
@@ -177,7 +193,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">universe_age</span> <span class="o">=</span> <span class="mi">14</span><span class="n">_000_000_000</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">universe_age</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">universe_age</span><span class="p">)</span>
 <span class="c1"># Output: 14000000000</span>
 </code></pre></td></tr></table>
 </div>
@@ -186,7 +202,7 @@
 <p>Multiple Assignment: <code>x, y, z = 1, 2, 3</code></p>
 </li>
 <li>
-<p>Constants: No-built in constants, use uppercase as a convention (like in C/C++): <code>MAX = 100</code></p>
+<p>Constants: no-built in constants, use uppercase as a convention (like in C/C++): <code>MAX = 100</code></p>
 </li>
 <li>
 <p>Exponential: Use **: <code>a = 2 ** 3</code></p>
@@ -198,7 +214,11 @@
 <h2 id="lists">Lists</h2>
 <ol>
 <li>
-<p>Inserting: <code>A.insert(0, foo)</code></p>
+<p>Adding:</p>
+<ul>
+<li>Insert: <code>A.insert(0, foo)</code></li>
+<li>Append:<code>A.append(foo)</code></li>
+</ul>
 </li>
 <li>
 <p>Removing:</p>
@@ -235,7 +255,7 @@
 <p>List Comprehensions: <code>A = [a ** 2 for a in range(1,3)]</code> <code>A = [1,4]</code></p>
 </li>
 <li>
-<p>Slicing: <code>A = [0,1,2,3,4]</code></p>
+<p>Slicing (not end-inclusive): <code>A = [0,1,2,3,4]</code></p>
 <ul>
 <li><code>print (A[1:4])</code> gives 1,2,3</li>
 <li><code>print (A[:4])</code> is equivalent to <code>print (A[0:4])</code></li>
@@ -244,7 +264,7 @@
 </ul>
 </li>
 <li>
-<p>Copying: <code>B = A[:]</code> (full slicing) instead of <code>B = A</code></p>
+<p>Copying: <code>B = A[:]</code> (full slicing) instead of <code>B = A</code>. Or <code>B = A.copy()</code>.</p>
 </li>
 <li>
 <p>Checking existence:</p>
@@ -283,8 +303,12 @@
 </ol>
 <h2 id="tuples">Tuples</h2>
 <ol>
-<li>Tuples can&rsquo;t be modified: <code>A = (1,2)</code> <code>A[0] = 3</code> doesn&rsquo;t work.</li>
-<li>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</li>
+<li>
+<p>Tuples can&rsquo;t be modified: <code>A = (1,2)</code> <code>A[0] = 3</code> doesn&rsquo;t work.</p>
+</li>
+<li>
+<p>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</p>
+</li>
 </ol>
 <h2 id="dictionaries">Dictionaries</h2>
 <ol>
@@ -296,12 +320,10 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;language&#34;</span><span class="p">:</span> <span class="s2">&#34;python&#34;</span><span class="p">,</span> <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
 <span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="s2">&#34;language&#34;</span><span class="p">])</span>
-<span class="c1"># Output: python</span>
 <span class="n">A</span><span class="p">[</span><span class="s2">&#34;height&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">190</span> <span class="c1"># adding a new pair</span>
 <span class="n">A</span><span class="p">[</span><span class="s2">&#34;language&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;C++&#34;</span> <span class="c1"># modifying</span>
 </code></pre></td></tr></table>
