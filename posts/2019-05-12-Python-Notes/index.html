@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  889 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  987 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;889 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;987 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -127,6 +127,7 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#basics">Basics</a></li>
     <li><a href="#strings">Strings</a></li>
     <li><a href="#numbers">Numbers</a></li>
     <li><a href="#lists">Lists</a></li>
@@ -144,6 +145,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><ul>
+<li><a href="#basics" rel="">Basics</a></li>
 <li><a href="#strings" rel="">Strings</a></li>
 <li><a href="#numbers" rel="">Numbers</a></li>
 <li><a href="#lists" rel="">Lists</a></li>
@@ -159,6 +161,21 @@
 <li><a href="#testing" rel="">Testing</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
+<h2 id="basics">Basics</h2>
+<ol>
+<li>
+<p>If-elif-else</p>
+</li>
+<li>
+<p><code>dir(random)</code> prints all the attributes of the random module.</p>
+</li>
+<li>
+<p><code>help(random.randint)</code> gives the help.</p>
+</li>
+<li>
+<p>Everything in Python is an object. Python is object-based.</p>
+</li>
+</ol>
 <h2 id="strings">Strings</h2>
 <ol>
 <li>
@@ -180,6 +197,36 @@
 <li>
 <p>Stripping Whitespace: <code>.lstrip()</code> <code>.rstrip()</code> <code>.strip()</code></p>
 </li>
+<li>
+<p><code>join</code>: joins the elements of an iterable (list/tuple/dictionary) into a single string:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;A&#34;</span><span class="p">,</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;#&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># A#B#C</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Multiline string (&rsquo; and &quot; are equivalent):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39; First line
+</span><span class="s1">second line
+</span><span class="s1">third line
+</span><span class="s1">&#39;&#39;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="numbers">Numbers</h2>
 <ol>
@@ -217,7 +264,9 @@
 <p>Adding:</p>
 <ul>
 <li>Insert: <code>A.insert(0, foo)</code></li>
-<li>Append:<code>A.append(foo)</code></li>
+<li>Append: <code>A.append(foo)</code></li>
+<li>Extend: <code>A.extend([1,2])</code></li>
+<li>Concatenate: <code>A += B</code></li>
 </ul>
 </li>
 <li>
@@ -257,10 +306,13 @@
 <li>
 <p>Slicing (not end-inclusive): <code>A = [0,1,2,3,4]</code></p>
 <ul>
-<li><code>print (A[1:4])</code> gives 1,2,3</li>
-<li><code>print (A[:4])</code> is equivalent to <code>print (A[0:4])</code></li>
-<li><code>print (A[1:])</code> is equivalent to <code>print (A[1:5])</code></li>
-<li><code>print (A[-3:])</code> is equivalent to <code>print (A[2:])</code></li>
+<li><code>print(A[1:4])</code> gives 1,2,3</li>
+<li><code>print(A[:4])</code> is equivalent to <code>print (A[0:4])</code></li>
+<li><code>print(A[1:])</code> is equivalent to <code>print (A[1:5])</code></li>
+<li><code>print(A[-3:])</code> is equivalent to <code>print (A[2:])</code></li>
+<li><code>print(A[0:5:2])</code> or <code>print(A[::2])</code> gives every second letter.</li>
+<li><code>print(A[::-1])</code> prints backwards.</li>
+<li>Slicing is nondestructive, while list methods change the state of a list.</li>
 </ul>
 </li>
 <li>
@@ -279,9 +331,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;1 in A&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;1 in A&#34;</span><span class="p">)</span>
 <span class="k">if</span> <span class="mi">6</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;6 not in A&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;6 not in A&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -304,7 +356,7 @@
 <h2 id="tuples">Tuples</h2>
 <ol>
 <li>
-<p>Tuples can&rsquo;t be modified: <code>A = (1,2)</code> <code>A[0] = 3</code> doesn&rsquo;t work.</p>
+<p>Tuples can&rsquo;t be modified: <code>A = (1,2)</code> <code>A[0] = 3</code> doesn&rsquo;t work. (Immutable list)</p>
 </li>
 <li>
 <p>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</p>
@@ -698,7 +750,12 @@
 </ol>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python&#43;crash&#43;course&amp;qid=1558808134&amp;s=gateway&amp;sr=8-1" target="_blank" rel="noopener noreffer">Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming</a></li>
+<li>
+<p><a href="https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_1?keywords=python&#43;crash&#43;course&amp;qid=1558808134&amp;s=gateway&amp;sr=8-1" target="_blank" rel="noopener noreffer">Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming</a></p>
+</li>
+<li>
+<p><a href="https://www.goodreads.com/book/show/8933914-head-first-python?ac=1&amp;from_search=true&amp;qid=6qxJAxXHSN&amp;rank=1" target="_blank" rel="noopener noreffer">Head First Python</a></p>
+</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
