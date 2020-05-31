@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  1087 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1171 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1087 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1171 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -178,6 +178,9 @@
 <li>
 <p><code>type()</code> gives the type of the object.</p>
 </li>
+<li>
+<p><code>bool()</code> returns False if it&rsquo;s False/0/empty/None; it returns True if it&rsquo;s not empty.</p>
+</li>
 </ol>
 <h2 id="strings">Strings</h2>
 <ol>
@@ -192,8 +195,8 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;foo&#34;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;The name is {name}.&#34;</span><span class="p">)</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;The name is {name}.&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -208,13 +211,13 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;A&#34;</span><span class="p">,</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">]</span>
-<span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;#&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># A#B#C</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># A#B#C</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
-<p>Multiline string (&rsquo; and &quot; are equivalent):</p>
+<p>Multiline string (&rsquo; and ' are equivalent):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -231,18 +234,21 @@
 </div>
 </div></li>
 <li>
-<p>string to list: <code>string.split(&quot;delimiter&quot;)</code></p>
+<p>string to list: <code>string.split('delimiter')</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span>
-<span class="n">my_list</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span> <span class="c1"># [&#34;Hello&#34;, &#34;World&#34;]</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="c1"># [&#39;Hello&#39;, &#39;World&#39;]</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p>Be consistent with single and double quotes. PEP8 suggests use single quotes if possible.</p>
+</li>
 </ol>
 <h2 id="numbers">Numbers</h2>
 <ol>
@@ -347,9 +353,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;1 in A&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;1 in A&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="mi">6</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;6 not in A&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;6 not in A&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -378,7 +384,7 @@
 <p>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</p>
 </li>
 <li>
-<p>For a single-object tuple like <code>t = (&quot;Python&quot;)</code>, it becomes a string. But if we add a comma, it becomes a tuple <code>t = (&quot;Python&quot;,)</code></p>
+<p>For a single-object tuple like <code>t = ('Python')</code>, it becomes a string. But if we add a comma, it becomes a tuple <code>t = ('Python',)</code></p>
 </li>
 </ol>
 <h2 id="dictionaries">Dictionaries</h2>
@@ -393,15 +399,15 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;language&#34;</span><span class="p">:</span> <span class="s2">&#34;python&#34;</span><span class="p">,</span> <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="s2">&#34;language&#34;</span><span class="p">])</span>
-<span class="n">A</span><span class="p">[</span><span class="s2">&#34;height&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">190</span> <span class="c1"># adding a new pair</span>
-<span class="n">A</span><span class="p">[</span><span class="s2">&#34;language&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;C++&#34;</span> <span class="c1"># modifying</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">])</span>
+<span class="n">A</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">190</span> <span class="c1"># adding a new pair</span>
+<span class="n">A</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;C++&#39;</span> <span class="c1"># modifying</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
-<p>get() (When not sure if the key exists): <code>print (A.get(&quot;weight&quot;, &quot;no weight assigned&quot;))</code></p>
+<p>get() (When not sure if the key exists): <code>print (A.get('weight', 'no weight assigned'))</code></p>
 </li>
 <li>
 <p>Looping through:</p>
@@ -466,12 +472,14 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">languages</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;python&#34;</span><span class="p">,</span> <span class="s2">&#34;C++&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">,</span> <span class="s2">&#34;python&#34;</span><span class="p">}</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">empty_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">languages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">}</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">languages</span><span class="p">)</span>
 <span class="c1"># Output {&#39;python&#39;, &#39;C++&#39;, &#39;C&#39;}</span>
-<span class="n">word</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span>
+<span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
 <span class="n">wordSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -482,7 +490,7 @@
 </ol>
 <h2 id="input">Input</h2>
 <ol>
-<li>Reading an int: <code>n = int(input(&quot;Please input a number: &quot;))</code></li>
+<li>Reading an int: <code>n = int(input('Please input a number: '))</code></li>
 </ol>
 <h2 id="functions">Functions</h2>
 <ol>
@@ -523,7 +531,7 @@
 </div>
 </div></li>
 <li>
-<p>We can make an argument optional by using None or &ldquo;&quot;:</p>
+<p>We can make an argument optional by using None or &lsquo;':</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -534,9 +542,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;first_name&#34;</span><span class="p">:</span> <span class="n">first</span><span class="p">,</span> <span class="s2">&#34;last_name&#34;</span><span class="p">:</span> <span class="n">last</span><span class="p">}</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="n">first</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">:</span> <span class="n">last</span><span class="p">}</span>
     <span class="k">if</span> <span class="n">age</span><span class="p">:</span>
-        <span class="n">person</span><span class="p">[</span><span class="s2">&#34;age&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
     <span class="k">return</span> <span class="n">person</span>
 </code></pre></td></tr></table>
 </div>
@@ -557,7 +565,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_languages</span><span class="p">(</span><span class="o">*</span><span class="n">languages</span><span class="p">):</span> <span class="c1"># The * makes an empty tuple and packs any value it receives</span>
     <span class="k">for</span> <span class="n">language</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;- {language}&#34;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;- {language}&#39;</span><span class="p">)</span>
 <span class="c1"># more generically, *args</span>
 <span class="c1"># **kwargs for key-value pairs</span>
 </code></pre></td></tr></table>
@@ -573,6 +581,7 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">func_1</span><span class="p">,</span> <span class="n">func_2</span><span class="p">,</span> <span class="n">func_3</span> <span class="c1"># importing multiple functions</span>
@@ -581,6 +590,37 @@
 <span class="kn">import</span> <span class="nn">module_name</span> <span class="kn">as</span> <span class="nn">m</span> <span class="c1"># alias</span>
 <span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># all functions</span>
 <span class="c1"># We must import everything at the beginning of each file</span>
+<span class="c1"># Searching in 1.wd 2. site-packages 3. standard library locations</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Add docstrings for functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;This is a docstring.&#34;&#34;&#34;</span>
+    <span class="k">return</span> <span class="s1">&#39;bar&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Use annotations/type hints to improve the docs: (optional and informational only)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">word</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="s2">&#34;&#34;&#34;Take a string and return a string&#34;&#34;&#34;</span>
+    <span class="k">return</span> <span class="n">word</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -674,7 +714,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;file.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span> <span class="c1"># &#34;r&#34; is the default mode</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span> <span class="c1"># &#39;r&#39; is the default mode</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="c1"># lines = file_obj.readlines() -&gt; a list of lines</span>
     <span class="c1"># for line in lines:</span>
@@ -693,7 +733,7 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;file.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_obj</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
 </code></pre></td></tr></table>
@@ -709,8 +749,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># python only writes strings, use str() if necessary</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;file.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span> <span class="c1"># &#34;a&#34;, &#34;r+&#34;</span>
-    <span class="n">file_obj</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Python.&#34;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span> <span class="c1"># &#39;a&#39;, &#39;r+&#39;</span>
+    <span class="n">file_obj</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Python.&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -732,9 +772,9 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Can&#39;t divide by 0.&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Can&#39;</span><span class="n">t</span> <span class="n">divide</span> <span class="n">by</span> <span class="mf">0.</span><span class="s1">&#39;)</span>
 <span class="k">else</span><span class="p">:</span> <span class="c1"># optional</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Success&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Success&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -752,7 +792,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;file.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
         <span class="n">content</span> <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="k">except</span> <span class="n">FileNotFoundError</span><span class="p">:</span>
     <span class="k">pass</span>
@@ -788,7 +828,7 @@
         <span class="n">result</span> <span class="o">=</span> <span class="n">function_1</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">=</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>

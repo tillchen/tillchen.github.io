@@ -81,8 +81,7 @@
   help(random.randint) gives the help.
   Everything in Python is an object. Python is object-based.
   type() gives the type of the object.
-  Strings   Change Case:.title() .upper() .lower()
-  f-strings are preferred.]]></description>
+  bool() returns False if it&rsquo;s False/0/empty/None; it returns True if it&rsquo;s not empty.]]></description>
 </item><item>
     <title>C and C&#43;&#43; Notes</title>
     <link>https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/</link>
