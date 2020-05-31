@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  987 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1087 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;987 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1087 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -175,6 +175,9 @@
 <li>
 <p>Everything in Python is an object. Python is object-based.</p>
 </li>
+<li>
+<p><code>type()</code> gives the type of the object.</p>
+</li>
 </ol>
 <h2 id="strings">Strings</h2>
 <ol>
@@ -224,6 +227,19 @@
 </span><span class="s1">second line
 </span><span class="s1">third line
 </span><span class="s1">&#39;&#39;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>string to list: <code>string.split(&quot;delimiter&quot;)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&#34;Hello World&#34;</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span> <span class="c1"># [&#34;Hello&#34;, &#34;World&#34;]</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -361,6 +377,9 @@
 <li>
 <p>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</p>
 </li>
+<li>
+<p>For a single-object tuple like <code>t = (&quot;Python&quot;)</code>, it becomes a string. But if we add a comma, it becomes a tuple <code>t = (&quot;Python&quot;,)</code></p>
+</li>
 </ol>
 <h2 id="dictionaries">Dictionaries</h2>
 <ol>
@@ -412,6 +431,29 @@
 <li>
 <p>Lists and dictionaries can be nested into each other or themselves.</p>
 </li>
+<li>
+<p>Check for membership with <code>in</code> and <code>not in</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="s1">&#39;bananas&#39;</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="n">fruits</span><span class="p">[</span><span class="s1">&#39;bananas&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># not in</span>
+    <span class="n">fruits</span><span class="p">[</span><span class="s1">&#39;bananas&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>setdefault()</code> to avoid KeyError: <code>fruits.setdefault(fruit, 0)</code></p>
+</li>
+<li>
+<p><code>import pprint</code> <code>pprint.pprint()</code> pretty-print for complex data structures.</p>
+</li>
 </ol>
 <h2 id="sets">Sets</h2>
 <ol>
@@ -422,14 +464,21 @@
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">languages</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;python&#34;</span><span class="p">,</span> <span class="s2">&#34;C++&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">,</span> <span class="s2">&#34;python&#34;</span><span class="p">}</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">languages</span><span class="p">)</span>
 <span class="c1"># Output {&#39;python&#39;, &#39;C++&#39;, &#39;C&#39;}</span>
+<span class="n">word</span> <span class="o">=</span> <span class="s2">&#34;hello&#34;</span>
+<span class="n">wordSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>.union()</code>, <code>.difference()</code>, <code>.intersection()</code></p>
+</li>
 </ol>
 <h2 id="input">Input</h2>
 <ol>

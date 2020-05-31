@@ -80,9 +80,9 @@
   dir(random) prints all the attributes of the random module.
   help(random.randint) gives the help.
   Everything in Python is an object. Python is object-based.
+  type() gives the type of the object.
   Strings   Change Case:.title() .upper() .lower()
-  f-strings are preferred.
-1 2  name = &#34;foo&#34; print(f&#34;The name is {name}.]]></description>
+  f-strings are preferred.]]></description>
 </item><item>
     <title>C and C&#43;&#43; Notes</title>
     <link>https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/</link>
