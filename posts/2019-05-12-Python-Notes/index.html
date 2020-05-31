@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  1236 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1329 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1236 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1329 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -185,6 +185,19 @@
 <li>
 <p><code>bool()</code> returns False if it&rsquo;s False/0/empty/None; it returns True if it&rsquo;s not empty.</p>
 </li>
+<li>
+<p>Generator is surrounded by parentheses: (it produces one item at a time, unlike listcomp that produces all data at once)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="strings">Strings</h2>
 <ol>
@@ -327,7 +340,11 @@
 <p><code>min(A) max(A) sum(A)</code></p>
 </li>
 <li>
-<p>List Comprehensions: <code>A = [a ** 2 for a in range(1,3)]</code> <code>A = [1,4]</code></p>
+<p>List Comprehensions:</p>
+<ul>
+<li><code>A = [a ** 2 for a in range(1,3)]</code> <code>A = [1,4]</code></li>
+<li><code>foo = [k for k,v in foo_dictionary.items()]</code></li>
+</ul>
 </li>
 <li>
 <p>Slicing (not end-inclusive): <code>A = [0,1,2,3,4]</code></p>
@@ -464,6 +481,21 @@
 <li>
 <p><code>import pprint</code> <code>pprint.pprint()</code> pretty-print for complex data structures.</p>
 </li>
+<li>
+<p>Dictionary comprehension:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">flights</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+           <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+           <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="sb">`foo`</span><span class="p">}</span> <span class="c1"># optional filter</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="sets">Sets</h2>
 <ol>
@@ -490,6 +522,9 @@
 </div></li>
 <li>
 <p><code>.union()</code>, <code>.difference()</code>, <code>.intersection()</code></p>
+</li>
+<li>
+<p>Set comprehension: <code>foo = {v for v in vowels}</code></p>
 </li>
 </ol>
 <h2 id="input">Input</h2>
@@ -565,6 +600,7 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_languages</span><span class="p">(</span><span class="o">*</span><span class="n">languages</span><span class="p">):</span> <span class="c1"># The * makes an empty tuple and packs any value it receives</span>
@@ -572,6 +608,7 @@
         <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;- {language}&#39;</span><span class="p">)</span>
 <span class="c1"># more generically, *args</span>
 <span class="c1"># **kwargs for key-value pairs</span>
+<span class="c1"># * works on the way in as well: *foo expands the list foo to individual arguments</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -778,8 +815,8 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Can&#39;</span><span class="n">t</span> <span class="n">divide</span> <span class="n">by</span> <span class="mf">0.</span><span class="s1">&#39;)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Can&#39;t divide by 0.&#34;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span> <span class="c1"># optional</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Success&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
@@ -808,6 +845,9 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p>Raise an error: <code>raise FileNotFoundError(&quot;foo&quot;)</code></p>
+</li>
 </ol>
 <h2 id="testing">Testing</h2>
 <ol>
