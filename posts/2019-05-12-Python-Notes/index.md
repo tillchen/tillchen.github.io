@@ -17,6 +17,7 @@
 * [Testing](#testing)
 * [Install Packages](#install-packages)
 * [PEP8](#pep8)
+* [Virtual Environments](#virtual-environments)
 * [References](#references)
 
 ## Basics
@@ -427,7 +428,7 @@
 
 ## PEP8
 
-1. `python3 -m pip install pytest-pep8` `py.test -pep8 foo.py` tests for PEP8 compliance.
+1. `pip3 install pycodestyle` `pycodestyle --show-source --show-pep8 foo.py` tests for PEP8 compliance.
 
 2. For multiline with binary operators, break before the operators:
 
@@ -478,6 +479,22 @@
     # are better than
     if len(seq):
     if not len(seq):
+    ```
+
+8. `pip3 install autopep8` `autopep8 --in-place foo.py` auto-formats the code.
+
+## Virtual Environments
+
+1. Create and activate with virtualenv:
+
+    ```python
+    cd foo
+    virtualenv --python python3 my_venv
+    source my_venv/bin/activate
+    pip install numpy
+    pip freeze > requirements.txt
+    pip install -r requirements.txt
+    deactivate
     ```
 
 ## References
