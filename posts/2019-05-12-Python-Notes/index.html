@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  1548 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1599 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1548 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1599 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -188,7 +188,7 @@
 <p><code>bool()</code> returns False if it&quot;s False/0/empty/None; it returns True if it&quot;s not empty.</p>
 </li>
 <li>
-<p>Generator is surrounded by parentheses: (it produces one item at a time, unlike listcomp that produces all data at once)</p>
+<p>Generator is surrounded by parentheses: (it produces one item at a time, unlike listcomp that produces all data at once).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -200,6 +200,9 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>is</code> checks if the two variables refer to the same object. <code>if a is None:</code></p>
+</li>
 </ol>
 <h2 id="strings">Strings</h2>
 <ol>
@@ -397,6 +400,19 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>enumerate()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{i} - {item}&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="tuples">Tuples</h2>
 <ol>
@@ -430,7 +446,7 @@
 </div>
 </div></li>
 <li>
-<p>get() (When not sure if the key exists): <code>print (A.get(&quot;weight&quot;, &quot;no weight assigned&quot;))</code></p>
+<p>get() (When not sure if the key exists): <code>print (A.get(&quot;weight&quot;, &quot;no weight assigned&quot;))</code> (preferred)</p>
 </li>
 <li>
 <p>Looping through:</p>
@@ -978,7 +994,7 @@
 </div>
 </div></li>
 <li>
-<p>Use the fact that empty sequences are false:</p>
+<p>Use the fact that empty sequences (strings/lists/sets/etc.) are false:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -998,6 +1014,12 @@
 </div></li>
 <li>
 <p><code>pip3 install autopep8</code> <code>autopep8 --in-place foo.py</code> auto-formats the code.</p>
+</li>
+<li>
+<p>Prefix with an underscore for &ldquo;private&rdquo; properties/methods. (As a convention but not a protection.)</p>
+</li>
+<li>
+<p>Add parentheses for continuing a long line of code.</p>
 </li>
 </ol>
 <h2 id="virtual-environments">Virtual Environments</h2>
