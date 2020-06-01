@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  1329 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1345 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1329 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1345 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -451,7 +451,7 @@
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># sorted</span>
 
 <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">values</span><span class="p">():</span> <span class="c1"># just values</span>
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># unique values</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span> <span class="c1"># unique values</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -476,7 +476,7 @@
 </div>
 </div></li>
 <li>
-<p><code>setdefault()</code> to avoid KeyError: <code>fruits.setdefault(fruit, 0)</code></p>
+<p><code>setdefault()</code> to avoid KeyError: <code>x = fruits.setdefault(fruit, 0)</code> (it returns the value. If it doesn&rsquo;t exist, insert the key with the specified value.)</p>
 </li>
 <li>
 <p><code>import pprint</code> <code>pprint.pprint()</code> pretty-print for complex data structures.</p>
@@ -492,7 +492,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">flights</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
            <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-           <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="sb">`foo`</span><span class="p">}</span> <span class="c1"># optional filter</span>
+           <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="s1">&#39;foo&#39;</span><span class="p">}</span> <span class="c1"># optional filter</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -513,7 +513,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">empty_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">languages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">}</span>
-<span class="k">print</span> <span class="p">(</span><span class="n">languages</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
 <span class="c1"># Output {&#39;python&#39;, &#39;C++&#39;, &#39;C&#39;}</span>
 <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
 <span class="n">wordSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
