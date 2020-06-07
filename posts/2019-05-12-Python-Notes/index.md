@@ -581,3 +581,5 @@
 
 * [Head First Python](https://www.goodreads.com/book/show/8933914-head-first-python?ac=1&from_search=true&qid=6qxJAxXHSN&rank=1)
 
+* [Serious Python: Black-Belt Advice on Deployment, Scalability, Testing, and More](https://www.goodreads.com/book/show/43174990-serious-python?ac=1&from_search=true&qid=rJc3jJI1QR&rank=1)
+
