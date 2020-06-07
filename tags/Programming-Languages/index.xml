@@ -76,7 +76,7 @@
     <pubDate>Sun, 12 May 2019 00:00:00 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-05-12-Python-Notes/</guid>
-    <description><![CDATA[Basics Strings Numbers Lists Tuples Dictionaries Sets Input Functions OOP Random Files Exceptions Testing Install Packages PEP8 Virtual Environments Miscellaneous References  Basics   If-elif-else
+    <description><![CDATA[Basics Strings Numbers Lists Tuples Dictionaries Sets Input Functions OOP Random Files Exceptions Testing Install Packages PEP8 Virtual Environments Decorators Miscellaneous References  Basics   If-elif-else
   dir(random) prints all the attributes of the random module.
   help(random.randint) gives the help.
   Everything in Python is an object. Python is object-based.

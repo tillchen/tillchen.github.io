@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  1635 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1755 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+02:00","dateModified": "2019-05-12T00:00:00+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1635 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1755 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -144,6 +144,7 @@
     <li><a href="#install-packages">Install Packages</a></li>
     <li><a href="#pep8">PEP8</a></li>
     <li><a href="#virtual-environments">Virtual Environments</a></li>
+    <li><a href="#decorators">Decorators</a></li>
     <li><a href="#miscellaneous">Miscellaneous</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -166,6 +167,7 @@
 <li><a href="#install-packages" rel="">Install Packages</a></li>
 <li><a href="#pep8" rel="">PEP8</a></li>
 <li><a href="#virtual-environments" rel="">Virtual Environments</a></li>
+<li><a href="#decorators" rel="">Decorators</a></li>
 <li><a href="#miscellaneous" rel="">Miscellaneous</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
@@ -1050,6 +1052,79 @@
 </div>
 </div></li>
 </ol>
+<h2 id="decorators">Decorators</h2>
+<ol>
+<li>
+<p>A decorator is a function that takes another function as an argument and replaces it with a new modified function.</p>
+</li>
+<li>
+<p>Creation:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span>
+
+<span class="nd">@identity</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;bar&#39;</span>
+<span class="c1"># This same as foo = identity(foo)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Static methods:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Pizza</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">mix_ingredients</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="n">three</span> <span class="o">=</span> <span class="n">Pizza</span><span class="o">.</span><span class="n">mix_ingredients</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Class methods (used for factory methods. which instantiate objects using a different signature other than <code>__init__</code>):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Pizza</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ingredients</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ingredients</span> <span class="o">=</span> <span class="n">ingredients</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_fridge</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">fridge</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">fridge</span><span class="o">.</span><span class="n">get_cheese</span><span class="p">()</span> <span class="o">+</span> <span class="n">fridge</span><span class="o">.</span><span class="n">get_vegetables</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
 <h2 id="miscellaneous">Miscellaneous</h2>
 <ol>
 <li>
@@ -1057,6 +1132,9 @@
 </li>
 <li>
 <p>Use list comprehensions over loops.</p>
+</li>
+<li>
+<p>Python requires an <code>__init__.py</code> file for the directory to be considered a submodule.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
