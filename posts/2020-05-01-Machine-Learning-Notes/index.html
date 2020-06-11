@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Machine Learning, AI","wordcount":  4400 ,
+            },"genre": "posts","keywords": "Machine Learning, AI","wordcount":  4565 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-05-01-Machine-Learning-Notes\/","datePublished": "2020-05-01T09:25:01+02:00","dateModified": "2020-05-01T09:25:01+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Machine Learning Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 1, 2020">May 1, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4400 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 1, 2020">May 1, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4565 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;22 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -235,40 +235,29 @@
             <li><a href="#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
           </ul>
         </li>
-        <li><a href="#multiclass-classification">Multiclass Classification</a></li>
-        <li><a href="#one-class-classification">One-Class Classification</a></li>
-        <li><a href="#multi-label-classification">Multi-Label Classification</a></li>
-        <li><a href="#ensemble-learning">Ensemble Learning</a></li>
-        <li><a href="#learning-to-label-sequences">Learning to Label Sequences</a></li>
-        <li><a href="#sequence-to-sequence-learning">Sequence to Sequence Learning</a></li>
-        <li><a href="#active-learning">Active Learning</a></li>
-        <li><a href="#semi-supervised-learning-1">Semi-Supervised Learning</a></li>
-        <li><a href="#one-shot-learning">One-Shot Learning</a></li>
-        <li><a href="#zero-shot-learning">Zero-Shot Learning</a></li>
+        <li><a href="#ensemble-learning">Ensemble Learning</a>
+          <ul>
+            <li><a href="#boosting-and-bagging">Boosting and Bagging</a></li>
+            <li><a href="#random-forest">Random Forest</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#advanced-practice">Advanced Practice</a></li>
     <li><a href="#unsupervised-learning-1">Unsupervised Learning</a>
       <ul>
         <li><a href="#density-estimation">Density Estimation</a></li>
         <li><a href="#clustering">Clustering</a>
           <ul>
             <li><a href="#k-means">K-Means</a></li>
-            <li><a href="#dbscan-and-hdbscan">DBSCAN and HDBSCAN</a></li>
-            <li><a href="#determining-the-number-of-clusters">Determining the Number of Clusters</a></li>
-            <li><a href="#other-clustering-algorithms">Other Clustering Algorithms</a></li>
           </ul>
         </li>
         <li><a href="#dimensionality-reduction">Dimensionality Reduction</a>
           <ul>
             <li><a href="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
-            <li><a href="#umap">UMAP</a></li>
           </ul>
         </li>
-        <li><a href="#outlier-detection">Outlier Detection</a></li>
       </ul>
     </li>
-    <li><a href="#other-forms-of-learning">Other Forms of Learning</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -381,40 +370,29 @@
 <li><a href="#linear-discriminant-analysis" rel="">Linear Discriminant Analysis</a></li>
 </ul>
 </li>
-<li><a href="#multiclass-classification" rel="">Multiclass Classification</a></li>
-<li><a href="#one-class-classification" rel="">One-Class Classification</a></li>
-<li><a href="#multi-label-classification" rel="">Multi-Label Classification</a></li>
-<li><a href="#ensemble-learning" rel="">Ensemble Learning</a></li>
-<li><a href="#learning-to-label-sequences" rel="">Learning to Label Sequences</a></li>
-<li><a href="#sequence-to-sequence-learning" rel="">Sequence to Sequence Learning</a></li>
-<li><a href="#active-learning" rel="">Active Learning</a></li>
-<li><a href="#semi-supervised-learning-1" rel="">Semi-Supervised Learning</a></li>
-<li><a href="#one-shot-learning" rel="">One-Shot Learning</a></li>
-<li><a href="#zero-shot-learning" rel="">Zero-Shot Learning</a></li>
+<li><a href="#ensemble-learning" rel="">Ensemble Learning</a>
+<ul>
+<li><a href="#boosting-and-bagging" rel="">Boosting and Bagging</a></li>
+<li><a href="#random-forest" rel="">Random Forest</a></li>
 </ul>
 </li>
-<li><a href="#advanced-practice" rel="">Advanced Practice</a></li>
+</ul>
+</li>
 <li><a href="#unsupervised-learning-1" rel="">Unsupervised Learning</a>
 <ul>
 <li><a href="#density-estimation" rel="">Density Estimation</a></li>
 <li><a href="#clustering" rel="">Clustering</a>
 <ul>
 <li><a href="#k-means" rel="">K-Means</a></li>
-<li><a href="#dbscan-and-hdbscan" rel="">DBSCAN and HDBSCAN</a></li>
-<li><a href="#determining-the-number-of-clusters" rel="">Determining the Number of Clusters</a></li>
-<li><a href="#other-clustering-algorithms" rel="">Other Clustering Algorithms</a></li>
 </ul>
 </li>
 <li><a href="#dimensionality-reduction" rel="">Dimensionality Reduction</a>
 <ul>
 <li><a href="#principal-component-analysis-pca" rel="">Principal Component Analysis (PCA)</a></li>
-<li><a href="#umap" rel="">UMAP</a></li>
 </ul>
 </li>
-<li><a href="#outlier-detection" rel="">Outlier Detection</a></li>
 </ul>
 </li>
-<li><a href="#other-forms-of-learning" rel="">Other Forms of Learning</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -678,13 +656,41 @@
 <p>If the value is below a specific threshold, the left branch is followed. Otherwise, the right branch is followed. The decision is made about the class when the leaf node is reached.</p>
 </li>
 <li>
-<p>We consider ID3 (Iterative Dichotomiser 3).</p>
+<p>We consider ID3 (Iterative Dichotomiser 3), which also optimizes the average log-likelihood like logistic regression. It does some approximately by constructing a nonparametric model $f_{ID3} = Pr(y=1|\mathbf{x})$.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/decision_tree_learning.png"
+        data-srcset="/images/decision_tree_learning.png, /images/decision_tree_learning.png 1.5x, /images/decision_tree_learning.png 2x"
+        data-sizes="auto"
+        alt="decision tree learning"
+        title="decision tree learning" /></p>
+</li>
+<li>
+<p>Entropy is a measure of uncertainty about a random variable. We find a split that minimizes the entropy.</p>
 </li>
 </ol>
 <h3 id="support-vector-machine">Support Vector Machine</h3>
-<p>To be filled.</p>
+<ol>
+<li>
+<p>The model $f(\mathbf{x}) = sign(\mathbf{w^{*}x} - b^{*})$ (sign returns +1 if it&rsquo;s positive and -1 if it&rsquo;s negative) (The sign * means the optimal value.)</p>
+</li>
+<li>
+<p>We prefer the hyperplane with the largest margin, which is the distance between the closest examples of two classes. A large margin contributes to a better generalization. We achieve this by minimizing the norm of $\mathbf{w}$: $||\mathbf{w}||$.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading/small.min.svg"
+        data-src="/images/SVM.png"
+        data-srcset="/images/SVM.png, /images/SVM.png 1.5x, /images/SVM.png 2x"
+        data-sizes="auto"
+        alt="SVM"
+        title="SVM" /></p>
+</li>
+</ol>
 <h4 id="dealing-with-noise">Dealing With Noise</h4>
-<p>To be filled.</p>
+<ol>
+<li>We can use the hinge loss function: $\max (0, 1 - y_i(\mathbf{wx}_i - b))$ for data that&rsquo;s not linearly separable.</li>
+</ol>
 <h5 id="dealing-with-inherent-non-linearity-kernels">Dealing with Inherent Non-Linearity (Kernels)</h5>
 <ol>
 <li>
@@ -1061,15 +1067,40 @@
 </li>
 </ol>
 <h4 id="precisionrecall">Precision/Recall</h4>
-<p>To be filled.</p>
+<ol>
+<li>
+<p>Precision = $\frac{TP}{TP+FP}$ (TP/Positive Predictions)</p>
+</li>
+<li>
+<p>Recall = $\frac{TP}{TP+FN}$ (TP/Positive Examples)</p>
+</li>
+</ol>
 <h4 id="accuracy">Accuracy</h4>
-<p>To be filled.</p>
+<ol>
+<li>Accuracy = $\frac{TP+TN}{TP+TN+FP+FN}$</li>
+</ol>
 <h4 id="cost-sensitive-accuracy">Cost-Sensitive Accuracy</h4>
-<p>To be filled.</p>
+<ol>
+<li>When the classes have different importance, assign cost for FP and FN then multiply before calculating the accuracy.</li>
+</ol>
 <h4 id="area-under-the-roc-curve-auc">Area under the ROC Curve (AUC)</h4>
-<p>To be filled.</p>
+<ol>
+<li>
+<p>ROC (Receiver Operating Characteristic) curve uses TPR (True Positive Rate &ndash; recall) and FPR (False Positive Rate &ndash; FP/FP+TN).</p>
+</li>
+<li>
+<p>The higher the area under the ROC curve (AUC), the better the classifier.</p>
+</li>
+</ol>
 <h3 id="hyperparameter-tuning">Hyperparameter Tuning</h3>
-<p>To be filled.</p>
+<ol>
+<li>
+<p>Grid search: use continuous parameters in the logarithmic scale to generate all the combinations.</p>
+</li>
+<li>
+<p>Some other techniques are Random Search (provide statistical distribution) and Bayesian (based on past evaluations).</p>
+</li>
+</ol>
 <h4 id="training-error">Training Error</h4>
 <ol>
 <li>
@@ -1288,7 +1319,9 @@ $$</p>
 </li>
 </ol>
 <h4 id="recurrent-neural-network">Recurrent Neural Network</h4>
-<p>To be filled.</p>
+<ol>
+<li>RNN is the neural network whose connections between nodes form a directed graph along a temporal sequence. This allows it to exhibit temporal dynamic behavior.</li>
+</ol>
 <h2 id="problems-and-solutions">Problems and Solutions</h2>
 <h3 id="basis-expansions">Basis Expansions</h3>
 <ol>
@@ -1402,28 +1435,23 @@ $$</p>
 <p>A non-linear classification predictor can be obtained if we use $N(\mu_g, \Sigma_g)$ instead of $N(\mu_g, \Sigma)$, i.e. a class dependent covariance.</p>
 </li>
 </ol>
-<h3 id="multiclass-classification">Multiclass Classification</h3>
-<p>To be filled.</p>
-<h3 id="one-class-classification">One-Class Classification</h3>
-<p>To be filled.</p>
-<h3 id="multi-label-classification">Multi-Label Classification</h3>
-<p>To be filled.</p>
 <h3 id="ensemble-learning">Ensemble Learning</h3>
-<p>To be filled.</p>
-<h3 id="learning-to-label-sequences">Learning to Label Sequences</h3>
-<p>To be filled.</p>
-<h3 id="sequence-to-sequence-learning">Sequence to Sequence Learning</h3>
-<p>To be filled.</p>
-<h3 id="active-learning">Active Learning</h3>
-<p>To be filled.</p>
-<h3 id="semi-supervised-learning-1">Semi-Supervised Learning</h3>
-<p>To be filled.</p>
-<h3 id="one-shot-learning">One-Shot Learning</h3>
-<p>To be filled.</p>
-<h3 id="zero-shot-learning">Zero-Shot Learning</h3>
-<p>To be filled.</p>
-<h2 id="advanced-practice">Advanced Practice</h2>
-<p>To be filled.</p>
+<ol>
+<li>Ensemble learning trains a large number of low-accuracy models and then combine the predictions given by the weak models to obtain a high-accuracy meta-model.</li>
+</ol>
+<h4 id="boosting-and-bagging">Boosting and Bagging</h4>
+<ol>
+<li>
+<p>Boosting: each new model would be different from the previous ones by trying to fix the errors of the previous models.</p>
+</li>
+<li>
+<p>Bagging: create many copies of the training data (each slightly different from others). Random forest is based on bagging.</p>
+</li>
+</ol>
+<h4 id="random-forest">Random Forest</h4>
+<ol>
+<li>Random forest avoids the correlation of the trees, which reduces the variance.</li>
+</ol>
 <h2 id="unsupervised-learning-1">Unsupervised Learning</h2>
 <p>Unsupervised learning deals with problems in which data doesn&rsquo;t have labels.</p>
 <h3 id="density-estimation">Density Estimation</h3>
@@ -1482,12 +1510,6 @@ $$</p>
         title="k-means" /></p>
 </li>
 </ol>
-<h4 id="dbscan-and-hdbscan">DBSCAN and HDBSCAN</h4>
-<p>To be filled.</p>
-<h4 id="determining-the-number-of-clusters">Determining the Number of Clusters</h4>
-<p>To be filled.</p>
-<h4 id="other-clustering-algorithms">Other Clustering Algorithms</h4>
-<p>To be filled.</p>
 <h3 id="dimensionality-reduction">Dimensionality Reduction</h3>
 <ol>
 <li>
@@ -1557,12 +1579,6 @@ $$(\hat{V_d}, \hat{W_d}) = argmin_{W_d, {V}_d} \sum_{i=1}^N||x_i-V_d {W}_d x_i||
         title="decompression" /></p>
 </li>
 </ol>
-<h4 id="umap">UMAP</h4>
-<p>To be filled.</p>
-<h3 id="outlier-detection">Outlier Detection</h3>
-<p>To be filled.</p>
-<h2 id="other-forms-of-learning">Other Forms of Learning</h2>
-<p>To be filled.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.goodreads.com/book/show/43190851-the-hundred-page-machine-learning-book" target="_blank" rel="noopener noreffer">The Hundred-Page Machine Learning Book</a></li>

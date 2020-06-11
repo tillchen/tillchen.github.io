@@ -57,29 +57,15 @@
   * [Kernel Regression](#kernel-regression)
   * [Classification](#classification)
     * [Linear Discriminant Analysis](#linear-discriminant-analysis)
-  * [Multiclass Classification](#multiclass-classification)
-  * [One-Class Classification](#one-class-classification)
-  * [Multi-Label Classification](#multi-label-classification)
   * [Ensemble Learning](#ensemble-learning)
-  * [Learning to Label Sequences](#learning-to-label-sequences)
-  * [Sequence to Sequence Learning](#sequence-to-sequence-learning)
-  * [Active Learning](#active-learning)
-  * [Semi-Supervised Learning](#semi-supervised-learning-1)
-  * [One-Shot Learning](#one-shot-learning)
-  * [Zero-Shot Learning](#zero-shot-learning)
-* [Advanced Practice](#advanced-practice)
+    * [Boosting and Bagging](#boosting-and-bagging)
+    * [Random Forest](#random-forest)
 * [Unsupervised Learning](#unsupervised-learning-1)
   * [Density Estimation](#density-estimation)
   * [Clustering](#clustering)
     * [K-Means](#k-means)
-    * [DBSCAN and HDBSCAN](#dbscan-and-hdbscan)
-    * [Determining the Number of Clusters](#determining-the-number-of-clusters)
-    * [Other Clustering Algorithms](#other-clustering-algorithms)
   * [Dimensionality Reduction](#dimensionality-reduction)
     * [Principal Component Analysis (PCA)](#principal-component-analysis-pca)
-    * [UMAP](#umap)
-  * [Outlier Detection](#outlier-detection)
-* [Other Forms of Learning](#other-forms-of-learning)
 * [References](#references)
 
 ## Introduction
@@ -257,15 +243,23 @@ This post is about some basic machine learning concepts.
 
 1. If the value is below a specific threshold, the left branch is followed. Otherwise, the right branch is followed. The decision is made about the class when the leaf node is reached.
 
-2. We consider ID3 (Iterative Dichotomiser 3).
+2. We consider ID3 (Iterative Dichotomiser 3), which also optimizes the average log-likelihood like logistic regression. It does some approximately by constructing a nonparametric model $f_{ID3} = Pr(y=1|\mathbf{x})$.
+
+    ![decision tree learning](/images/decision_tree_learning.png)
+
+3. Entropy is a measure of uncertainty about a random variable. We find a split that minimizes the entropy.
 
 ### Support Vector Machine
 
-To be filled.
+1. The model $f(\mathbf{x}) = sign(\mathbf{w^{\*}x} - b^{\*})$ (sign returns +1 if it's positive and -1 if it's negative) (The sign * means the optimal value.)
+
+2. We prefer the hyperplane with the largest margin, which is the distance between the closest examples of two classes. A large margin contributes to a better generalization. We achieve this by minimizing the norm of $\mathbf{w}$: $||\mathbf{w}||$.
+
+    ![SVM](/images/SVM.png)
 
 #### Dealing With Noise
 
-To be filled.
+1. We can use the hinge loss function: $\max (0, 1 - y_i(\mathbf{wx}_i - b))$ for data that's not linearly separable.
 
 ##### Dealing with Inherent Non-Linearity (Kernels)
 
@@ -497,23 +491,29 @@ To be filled.
 
 #### Precision/Recall
 
-To be filled.
+1. Precision = $\frac{TP}{TP+FP}$ (TP/Positive Predictions)
+
+2. Recall = $\frac{TP}{TP+FN}$ (TP/Positive Examples)
 
 #### Accuracy
 
-To be filled.
+1. Accuracy = $\frac{TP+TN}{TP+TN+FP+FN}$
 
 #### Cost-Sensitive Accuracy
 
-To be filled.
+1. When the classes have different importance, assign cost for FP and FN then multiply before calculating the accuracy.
 
 #### Area under the ROC Curve (AUC)
 
-To be filled.
+1. ROC (Receiver Operating Characteristic) curve uses TPR (True Positive Rate -- recall) and FPR (False Positive Rate -- FP/FP+TN).
+
+2. The higher the area under the ROC curve (AUC), the better the classifier.
 
 ### Hyperparameter Tuning
 
-To be filled.
+1. Grid search: use continuous parameters in the logarithmic scale to generate all the combinations.
+
+2. Some other techniques are Random Search (provide statistical distribution) and Bayesian (based on past evaluations).
 
 #### Training Error
 
@@ -646,7 +646,7 @@ $$\mathbf{f}_l(\mathbf{z}) = \mathbf{g}_l(\mathbf{W}_l\mathbf{z} + \mathbf{b}_l)
 
 #### Recurrent Neural Network
 
-To be filled.
+1. RNN is the neural network whose connections between nodes form a directed graph along a temporal sequence. This allows it to exhibit temporal dynamic behavior.
 
 ## Problems and Solutions
 
@@ -708,49 +708,19 @@ To be filled.
 
 4. A non-linear classification predictor can be obtained if we use $N(\mu_g, \Sigma_g)$ instead of $N(\mu_g, \Sigma)$, i.e. a class dependent covariance.
 
-### Multiclass Classification
-
-To be filled.
-
-### One-Class Classification
-
-To be filled.
-
-### Multi-Label Classification
-
-To be filled.
-
 ### Ensemble Learning
 
-To be filled.
+1. Ensemble learning trains a large number of low-accuracy models and then combine the predictions given by the weak models to obtain a high-accuracy meta-model.
 
-### Learning to Label Sequences
+#### Boosting and Bagging
 
-To be filled.
+1. Boosting: each new model would be different from the previous ones by trying to fix the errors of the previous models.
 
-### Sequence to Sequence Learning
+2. Bagging: create many copies of the training data (each slightly different from others). Random forest is based on bagging.
 
-To be filled.
+#### Random Forest
 
-### Active Learning
-
-To be filled.
-
-### Semi-Supervised Learning
-
-To be filled.
-
-### One-Shot Learning
-
-To be filled.
-
-### Zero-Shot Learning
-
-To be filled.
-
-## Advanced Practice
-
-To be filled.
+1. Random forest avoids the correlation of the trees, which reduces the variance.
 
 ## Unsupervised Learning
 
@@ -790,18 +760,6 @@ To be filled.
 
     ![k-means](/images/k_means.png)
 
-#### DBSCAN and HDBSCAN
-
-To be filled.
-
-#### Determining the Number of Clusters
-
-To be filled.
-
-#### Other Clustering Algorithms
-
-To be filled.
-
 ### Dimensionality Reduction
 
 1. Since modern ML algorithms can handle very high-dimensional examples, dimensionality reduction techniques are used less in practice than in the past.
@@ -835,18 +793,6 @@ To be filled.
     ![PCA algorithm](/images/PCA_algorithm.png)
     ![compression](/images/compression.png)
     ![decompression](/images/decompression.png)
-
-#### UMAP
-
-To be filled.
-
-### Outlier Detection
-
-To be filled.
-
-## Other Forms of Learning
-
-To be filled.
 
 ## References
 
