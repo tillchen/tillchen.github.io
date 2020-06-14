@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  641 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  766 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;641 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;766 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -137,6 +137,8 @@
         <li><a href="#lists">Lists</a></li>
         <li><a href="#sets">Sets</a></li>
         <li><a href="#maps">Maps</a></li>
+        <li><a href="#runes-and-grapheme-clusters">Runes and Grapheme Clusters</a></li>
+        <li><a href="#symbols">Symbols</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -153,6 +155,8 @@
 <li><a href="#lists" rel="">Lists</a></li>
 <li><a href="#sets" rel="">Sets</a></li>
 <li><a href="#maps" rel="">Maps</a></li>
+<li><a href="#runes-and-grapheme-clusters" rel="">Runes and Grapheme Clusters</a></li>
+<li><a href="#symbols" rel="">Symbols</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -295,6 +299,9 @@
 </div></li>
 <li>
 <p>Like in Python, create a multi-line string using triple quote <code>'''</code> or <code>&quot;&quot;&quot;</code>.</p>
+</li>
+<li>
+<p>Strings use UTF-16.</p>
 </li>
 </ol>
 <h3 id="booleans">Booleans</h3>
@@ -442,6 +449,45 @@
 <p>The map returns a <code>null</code> if the key doesn&rsquo;t exist.</p>
 </li>
 </ol>
+<h3 id="runes-and-grapheme-clusters">Runes and Grapheme Clusters</h3>
+<ol>
+<li>
+<p>In Dart, runes expose the Unicode code points of a string.</p>
+</li>
+<li>
+<p>Because a Dart string is a sequence of UTF-16 code units, the usual way to express a code point is <code>\uXXXX</code>, where XXXX is a 4-digit hexadecimal value. For more or less than 4 hex digits, place the value in curly brackets.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">import</span> <span class="s1">&#39;package:characters/characters.dart&#39;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="n">hi</span> <span class="o">=</span> <span class="s1">&#39;Hi 🇩🇰&#39;</span><span class="p">;</span>
+<span class="n">print</span><span class="p">(</span><span class="s1">&#39;The las character: </span><span class="si">${</span><span class="n">hi</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="symbols">Symbols</h3>
+<ol>
+<li>
+<p>A <code>Symbol</code> object represents an operator or identifier declared in a Dart program. We might never need to use symbols, but they&rsquo;re invaluable for APIs that refer to identifiers by name, because minification changes identifier names but not identifier symbols.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="err">#</span><span class="n">radix</span>
+<span class="err">#</span><span class="n">bar</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://dart.dev/guides/language/language-tour" target="_blank" rel="noopener noreffer">A tour of the Dart language</a></li>
@@ -477,7 +523,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
