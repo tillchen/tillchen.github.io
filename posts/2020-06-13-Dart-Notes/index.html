@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  982 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1091 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;982 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1091 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -152,6 +152,7 @@
         <li><a href="#anonymous-functions">Anonymous Functions</a></li>
       </ul>
     </li>
+    <li><a href="#operators">Operators</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -181,6 +182,7 @@
 <li><a href="#anonymous-functions" rel="">Anonymous Functions</a></li>
 </ul>
 </li>
+<li><a href="#operators" rel="">Operators</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -557,6 +559,9 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p>All functions return a value. If no return value is specified, it returns <code>null</code>.</p>
+</li>
 </ol>
 <h3 id="optional-parameters">Optional Parameters</h3>
 <ol>
@@ -630,6 +635,28 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+</ol>
+<h2 id="operators">Operators</h2>
+<ol>
+<li>
+<p><code>~/</code> is the floor division. The rest are the same as the ones in Java.</p>
+</li>
+<li>
+<p><code>as</code>, <code>is</code>, and <code>is!</code>:</p>
+<ul>
+<li><code>as</code>: Typecast. Use it iff we are sure the object is of that type: <code>(emp as Person).firstName = 'Bob'</code></li>
+<li><code>is</code> True if the object has the type. <code>is!</code> False if the object has the type.</li>
+</ul>
+</li>
+<li>
+<p><code>b ??= value</code> assigns if b is null; otherwise b stays the same.</p>
+</li>
+<li>
+<p><code>String playerName(String name) =&gt; name ?? 'Guest';</code> gives name <code>'Guest'</code>is name is null.</p>
+</li>
+<li>
+<p><code>?.</code> conditional access like in Swift/Kotlin. <code>foo?.bar</code> is null if foo is null.</p>
+</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
