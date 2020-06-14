@@ -17,6 +17,7 @@
     * [Positional parameters](#positional-parameters)
   * [Anonymous Functions](#anonymous-functions)
 * [Operators](#operators)
+* [Exceptions](#exceptions)
 * [References](#references)
 
 ## Introduction
@@ -143,6 +144,14 @@
         '#0',
         for (var i in listOfInts) `#$i`
     ];
+    ```
+
+4. `forEach()` can replace a for loop; `where()` can be used to filter:
+
+    ```dart
+    candidates
+        .where((c) => c.yearsOfExperience >= 5)
+        .forEach((c) => c.interview());
     ```
 
 ### Sets
@@ -283,6 +292,28 @@
 4. `String playerName(String name) => name ?? 'Guest';` gives name `'Guest'`is name is null.
 
 5. `?.` conditional access like in Swift/Kotlin. `foo?.bar` is null if foo is null.
+
+## Exceptions
+
+1. Example:
+
+    ```dart
+    throw FormatException('Expected at least 1 section');
+    try {
+        breadMoreLlamas();
+    } on OutOfLlamasException {
+        buyMoreLlamas();
+    } on Exception catch (e, s) {
+        print('Unknown exception: $e');
+        print('Stack trace $s');
+    } catch (e) {
+        // handles all
+        print('Something really unknown: $e');
+        rethrow; // Allow callers to see the exception.
+    } finally {
+        // Always executes.
+    }
+    ```
 
 ## References
 

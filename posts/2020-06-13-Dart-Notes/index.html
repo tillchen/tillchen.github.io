@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  1091 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  1186 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1091 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1186 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -153,6 +153,7 @@
       </ul>
     </li>
     <li><a href="#operators">Operators</a></li>
+    <li><a href="#exceptions">Exceptions</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -183,6 +184,7 @@
 </ul>
 </li>
 <li><a href="#operators" rel="">Operators</a></li>
+<li><a href="#exceptions" rel="">Exceptions</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -408,6 +410,21 @@
     <span class="s1">&#39;#0&#39;</span><span class="p">,</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">listOfInts</span><span class="p">)</span> <span class="err">`#</span><span class="n">$i</span><span class="err">`</span>
 <span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>forEach()</code> can replace a for loop; <code>where()</code> can be used to filter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">candidates</span>
+    <span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">yearsOfExperience</span> <span class="o">&gt;=</span> <span class="m">5</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">interview</span><span class="p">());</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -657,6 +674,48 @@
 <li>
 <p><code>?.</code> conditional access like in Swift/Kotlin. <code>foo?.bar</code> is null if foo is null.</p>
 </li>
+</ol>
+<h2 id="exceptions">Exceptions</h2>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">throw</span> <span class="n">FormatException</span><span class="p">(</span><span class="s1">&#39;Expected at least 1 section&#39;</span><span class="p">);</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="n">breadMoreLlamas</span><span class="p">();</span>
+<span class="p">}</span> <span class="n">on</span> <span class="n">OutOfLlamasException</span> <span class="p">{</span>
+    <span class="n">buyMoreLlamas</span><span class="p">();</span>
+<span class="p">}</span> <span class="n">on</span> <span class="n">Exception</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Unknown exception: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Stack trace </span><span class="si">$</span><span class="n">s</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handles all
+</span><span class="c1"></span>    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Something really unknown: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
+    <span class="n">rethrow</span><span class="p">;</span> <span class="c1">// Allow callers to see the exception.
+</span><span class="c1"></span><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+    <span class="c1">// Always executes.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
