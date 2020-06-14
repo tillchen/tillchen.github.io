@@ -10,9 +10,8 @@
     <pubDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-06-13-Dart-Notes/</guid>
-    <description><![CDATA[Introduction Variables References  Introduction   A basic Dart program:
-1 2 3 4 5 6 7 8  printInteger(int aNumber) { print(&#39;The number iis $aNumber&#39;); } main() { var number = 42; printInteger(number); }     Everything that can be placed in a variable is an object. Even numbers, function, and null are objects. Are objects inherit from the Object class.
-  Dart is strongly typed.]]></description>
+    <description><![CDATA[Introduction Variables Built-in Types  Numbers Strings   References  Introduction   A basic Dart program:
+1 2 3 4 5 6 7 8  printInteger(int aNumber) { print(&#39;The number iis $aNumber&#39;); } main() { var number = 42; printInteger(number); }     Everything that can be placed in a variable is an object. Even numbers, function, and null are objects. Are objects inherit from the Object class.]]></description>
 </item><item>
     <title>Go Notes</title>
     <link>https://tillchen.com/posts/2020-02-17-Go-Notes/</link>

@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  269 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  365 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,7 +118,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;269 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;365 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -129,12 +129,24 @@
   <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#variables">Variables</a></li>
+    <li><a href="#built-in-types">Built-in Types</a>
+      <ul>
+        <li><a href="#numbers">Numbers</a></li>
+        <li><a href="#strings">Strings</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><ul>
 <li><a href="#introduction" rel="">Introduction</a></li>
 <li><a href="#variables" rel="">Variables</a></li>
+<li><a href="#built-in-types" rel="">Built-in Types</a>
+<ul>
+<li><a href="#numbers" rel="">Numbers</a></li>
+<li><a href="#strings" rel="">Strings</a></li>
+</ul>
+</li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -229,6 +241,52 @@
 </div>
 </div></li>
 </ul>
+</li>
+</ol>
+<h2 id="built-in-types">Built-in Types</h2>
+<h3 id="numbers">Numbers</h3>
+<ol>
+<li>
+<p>Both <code>int</code> and <code>double</code> are subtypes of <code>num</code>.</p>
+</li>
+<li>
+<p>Conversion between a string and a number:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">int</span> <span class="n">one</span> <span class="o">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">onePointOne</span> <span class="o">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
+<span class="kt">String</span> <span class="n">oneAsString</span> <span class="o">=</span> <span class="m">1.</span><span class="n">toString</span><span class="p">();</span>
+<span class="kt">String</span> <span class="n">piAsString</span> <span class="o">=</span> <span class="m">3.14159</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">);</span> <span class="c1">// 3.14
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="strings">Strings</h3>
+<ol>
+<li>
+<p>Both single or double quotes are fine. It&rsquo;s easy to escape the delimiter: <code>'It\'s easy.'</code></p>
+</li>
+<li>
+<p>String interpolation: <code>${expression}</code>. If the expression is an identifier, we can skip <code>{}</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;string interpolation&#39;</span><span class="p">;</span>
+<span class="n">print</span><span class="p">(</span><span class="s1">&#39;Dart has </span><span class="si">$</span><span class="n">s</span><span class="s1">&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Like in Python, create a multi-line string using triple quote <code>'''</code> or <code>&quot;&quot;&quot;</code>.</p>
 </li>
 </ol>
 <h2 id="references">References</h2>
