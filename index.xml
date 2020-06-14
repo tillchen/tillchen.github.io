@@ -12,7 +12,7 @@
     <pubDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-06-13-Dart-Notes/</guid>
-    <description><![CDATA[Introduction Variables Built-in Types  Numbers Strings Booleans Lists Sets Maps Runes and Grapheme Clusters Symbols   Functions  Optional Parameters  Named Parameters Positional parameters   Anonymous Functions   Operators Exceptions References  Introduction   A basic Dart program:
+    <description><![CDATA[Introduction Variables Built-in Types  Numbers Strings Booleans Lists Sets Maps Runes and Grapheme Clusters Symbols   Functions  Optional Parameters  Named Parameters Positional parameters   Anonymous Functions   Operators Exceptions Classes References  Introduction   A basic Dart program:
 1 2 3 4 5 6 7 8  printInteger(int aNumber) { print(&#39;The number iis $aNumber&#39;); } main() { var number = 42; printInteger(number); }     Everything that can be placed in a variable is an object.]]></description>
 </item><item>
     <title>Secure and Dependable Systems Notes</title>
