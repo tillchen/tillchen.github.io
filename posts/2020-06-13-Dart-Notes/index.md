@@ -7,6 +7,7 @@
   * [Strings](#strings)
   * [Booleans](#booleans)
   * [Lists](#lists)
+  * [Sets](#sets)
 * [References](#references)
 
 ## Introduction
@@ -131,6 +132,20 @@
         '#0',
         for (var i in listOfInts) `#$i`
     ];
+    ```
+
+### Sets
+
+1. Example:
+
+    ```dart
+    var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+    var names = <String>{}; // Empty set
+    // Set<String> names = {}; // Works too
+    // var names = {}; // Creates a map, not a set.
+    var elements = <String>{};
+    elements.add('flourine');
+    elements.addAll(halogens);
     ```
 
 ## References
