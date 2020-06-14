@@ -4,7 +4,16 @@
         <link>https://tillchen.com/tags/Programming-Languages/</link>
         <description>Programming Languages - Tag - Tianyao Chen</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Mon, 17 Feb 2020 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://tillchen.com/tags/Programming-Languages/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Programming-Languages/" rel="self" type="application/rss+xml" /><item>
+    <title>Dart Notes</title>
+    <link>https://tillchen.com/posts/2020-06-13-Dart-Notes/</link>
+    <pubDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2020-06-13-Dart-Notes/</guid>
+    <description><![CDATA[Introduction Variables References  Introduction   A basic Dart program:
+1 2 3 4 5 6 7 8  printInteger(int aNumber) { print(&#39;The number iis $aNumber&#39;); } main() { var number = 42; printInteger(number); }     Everything that can be placed in a variable is an object. Even numbers, function, and null are objects. Are objects inherit from the Object class.
+  Dart is strongly typed.]]></description>
+</item><item>
     <title>Go Notes</title>
     <link>https://tillchen.com/posts/2020-02-17-Go-Notes/</link>
     <pubDate>Mon, 17 Feb 2020 00:00:00 &#43;0100</pubDate>
