@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  365 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  530 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;365 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;530 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -133,6 +133,8 @@
       <ul>
         <li><a href="#numbers">Numbers</a></li>
         <li><a href="#strings">Strings</a></li>
+        <li><a href="#booleans">Booleans</a></li>
+        <li><a href="#lists">Lists</a></li>
       </ul>
     </li>
     <li><a href="#references">References</a></li>
@@ -145,6 +147,8 @@
 <ul>
 <li><a href="#numbers" rel="">Numbers</a></li>
 <li><a href="#strings" rel="">Strings</a></li>
+<li><a href="#booleans" rel="">Booleans</a></li>
+<li><a href="#lists" rel="">Lists</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -288,6 +292,90 @@
 <li>
 <p>Like in Python, create a multi-line string using triple quote <code>'''</code> or <code>&quot;&quot;&quot;</code>.</p>
 </li>
+</ol>
+<h3 id="booleans">Booleans</h3>
+<ol>
+<li>
+<p>Only <code>true</code> and <code>false</code> have the type <code>bool</code>, which means we have to check the values explicitly (unlike Python).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">fullName</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="k">assert</span><span class="p">(</span><span class="n">fullName</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="lists">Lists</h3>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+<span class="k">assert</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="m">3</span><span class="p">);</span>
+<span class="kd">var</span> <span class="n">constantList</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+<span class="c1">// constantList[1]  = 1; // Uncommenting this causes an error.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Spread operator (<code>...</code>) and null-aware spread operator (<code>....?</code>) provide a concise way to insert all elements into a collection:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+<span class="kd">var</span> <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="p">...</span><span class="n">list</span><span class="p">];</span> <span class="c1">// [0, 1, 2, 3]
+</span><span class="c1"></span><span class="kd">var</span> <span class="n">list3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">list4</span> <span class="o">=</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="p">...</span><span class="o">?</span><span class="n">list3</span><span class="p">];</span> <span class="c1">// list3 might be null. Avoid exceptions.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Collection if and collection for (similar to list comprehension in Python):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">nav</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Home&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Furniture&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Plants&#39;</span><span class="p">,</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">promoActive</span><span class="p">)</span> <span class="s1">&#39;Outlet&#39;</span>
+<span class="p">];</span>
+<span class="kd">var</span> <span class="n">listOfInts</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+<span class="kd">var</span> <span class="n">listOfStrings</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;#0&#39;</span><span class="p">,</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">listOfInts</span><span class="p">)</span> <span class="err">`#</span><span class="n">$i</span><span class="err">`</span>
+<span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
