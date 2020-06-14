@@ -19,6 +19,7 @@
 * [Operators](#operators)
 * [Exceptions](#exceptions)
 * [Classes](#classes)
+* [Enum](#enum)
 * [References](#references)
 
 ## Introduction
@@ -350,6 +351,33 @@
 5. Redirecting constructors: `Point.alongXAxis(double x) : this(x, 0)` delegates to the main constructor.
 
 6. Use `factory` for a constructor that doesn't always create a new instance of the class. It may return an instance from a cache or return an instance of a subtype.
+
+7. Getters and setters:
+
+    ```dart
+    // We can define explicit getters and setters using get and set
+
+    double get right => left + width;
+    set right(double value) => left = value - width
+    ```
+
+8. Abstract classes and methods:
+
+    ```dart
+    abstract class AbstractContainer {
+        void updateChildren(); // Abstract method
+    }
+    ```
+
+9. Every class implicitly defines an interface containing all instance members of the class and of any interfaces it implements. Like in Java, we have `extends`, `implements`, and `@override`.
+
+10. Liked in C++, operators can be overriden:
+
+    ```dart
+    Vector operator +(Vector v) => Vector(x + v.x, y + v.y);
+    ```
+
+## Enum
 
 ## References
 
