@@ -34,7 +34,7 @@
                 "url": "https:\/\/tillchen.com\/images\/resume_photo.jpeg",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "Programming Languages","wordcount":  766 ,
+            },"genre": "posts","keywords": "Programming Languages","wordcount":  982 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
                 "@type": "Organization",
                 "name": "Tianyao Chen",
@@ -118,8 +118,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;766 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;982 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -141,6 +141,17 @@
         <li><a href="#symbols">Symbols</a></li>
       </ul>
     </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#optional-parameters">Optional Parameters</a>
+          <ul>
+            <li><a href="#named-parameters">Named Parameters</a></li>
+            <li><a href="#positional-parameters">Positional parameters</a></li>
+          </ul>
+        </li>
+        <li><a href="#anonymous-functions">Anonymous Functions</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -157,6 +168,17 @@
 <li><a href="#maps" rel="">Maps</a></li>
 <li><a href="#runes-and-grapheme-clusters" rel="">Runes and Grapheme Clusters</a></li>
 <li><a href="#symbols" rel="">Symbols</a></li>
+</ul>
+</li>
+<li><a href="#functions" rel="">Functions</a>
+<ul>
+<li><a href="#optional-parameters" rel="">Optional Parameters</a>
+<ul>
+<li><a href="#named-parameters" rel="">Named Parameters</a></li>
+<li><a href="#positional-parameters" rel="">Positional parameters</a></li>
+</ul>
+</li>
+<li><a href="#anonymous-functions" rel="">Anonymous Functions</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -484,6 +506,127 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-dart" data-lang="dart"><span class="err">#</span><span class="n">radix</span>
 <span class="err">#</span><span class="n">bar</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="functions">Functions</h2>
+<ol>
+<li>
+<p>Dart is a true object-oriented language. Even functions are objects and have a type.</p>
+</li>
+<li>
+<p>Although Effective Dart recommends type annotations for public APIs, the function still works if you omit the types.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">bool</span> <span class="n">isNoble</span><span class="p">(</span><span class="kt">int</span> <span class="n">atomicNumber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Or the below
+</span><span class="c1"></span><span class="n">isNoble</span><span class="p">(</span><span class="n">atomicNumber</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Or the arrow syntax
+</span><span class="c1"></span><span class="kt">bool</span> <span class="n">isNoble</span><span class="p">(</span><span class="kt">int</span> <span class="n">atomicNumber</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>..</code> is a cascade, which enables us to perform multiple operations on the members of a single object:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+  <span class="p">..</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Click me!&#39;</span>
+  <span class="p">..</span><span class="n">onClick</span><span class="p">.</span><span class="n">listen</span><span class="p">(</span><span class="n">reverseText</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="optional-parameters">Optional Parameters</h3>
+<ol>
+<li>Optional parameters can be either named or positional, but not both.</li>
+</ol>
+<h4 id="named-parameters">Named Parameters</h4>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">enableFlags</span><span class="p">({</span><span class="kt">bool</span> <span class="n">bold</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">hidden</span><span class="p">})</span> <span class="p">{...}</span>
+
+<span class="n">enableFlags</span><span class="p">(</span><span class="nl">bold:</span> <span class="kc">true</span><span class="p">,</span> <span class="nl">hidden:</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Although named parameters are a kind of optional parameter, we can used <code>@required</code> to make it mandatory:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">const</span> <span class="n">Scrollbar</span><span class="p">({</span><span class="n">Key</span> <span class="n">key</span><span class="p">,</span> <span class="err">@</span><span class="n">required</span> <span class="n">Widget</span> <span class="n">child</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h4 id="positional-parameters">Positional parameters</h4>
+<ol>
+<li>
+<p>Wrapping a set of parameters in <code>[]</code> makes them optional positional:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">String</span> <span class="n">say</span><span class="p">(</span><span class="kt">String</span> <span class="n">from</span><span class="p">,</span> <span class="kt">String</span> <span class="n">msg</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span> <span class="n">device</span><span class="p">])</span> <span class="p">{...}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="anonymous-functions">Anonymous Functions</h3>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;oranges&#39;</span><span class="p">];</span>
+<span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">list</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s1">: </span><span class="si">$</span><span class="n">item</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// Or the arrow notation
+</span><span class="c1"></span><span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">list</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s1">: </span><span class="si">$</span><span class="n">item</span><span class="s1">&#39;</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
