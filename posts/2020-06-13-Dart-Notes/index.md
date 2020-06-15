@@ -29,7 +29,7 @@
 
     ```dart
     printInteger(int aNumber) {
-        print('The number iis $aNumber');
+        print('The number is $aNumber');
     }
 
     main() {
@@ -38,7 +38,7 @@
     }
     ```
 
-2. Everything that can be placed in a variable is an object. Even numbers, function, and `null` are objects. Are objects inherit from the `Object` class.
+2. Everything that can be placed in a variable is an object. Even numbers, function, and `null` are objects. All objects inherit from the `Object` class.
 
 3. Dart is strongly typed. But type annotations are optional thanks to type inference. When we want to say explicitly that no type is expected, use the type `dynamic`.
 
