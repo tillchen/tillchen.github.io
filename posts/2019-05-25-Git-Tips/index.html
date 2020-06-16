@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-05-25-Git-Tips\/"
-        },"genre": "posts","keywords": "Tools, Version Control","wordcount":  757 ,
+        },"genre": "posts","keywords": "Tools, Version Control","wordcount":  767 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-25-Git-Tips\/","datePublished": "2019-05-25T00:00:00+02:00","dateModified": "2019-05-25T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git Tips</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 25, 2019">May 25, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;757 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 25, 2019">May 25, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;767 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -123,6 +123,7 @@
     <li><a href="#tags">Tags</a></li>
     <li><a href="#branching">Branching</a></li>
     <li><a href="#deleting-a-repository">Deleting a repository</a></li>
+    <li><a href="#submodules">Submodules</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -135,6 +136,7 @@
 <li><a href="#tags" rel="">Tags</a></li>
 <li><a href="#branching" rel="">Branching</a></li>
 <li><a href="#deleting-a-repository" rel="">Deleting a repository</a></li>
+<li><a href="#submodules" rel="">Submodules</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="basics">Basics</h2>
@@ -301,6 +303,20 @@ folder/ # a folder named `folder`
 <ol>
 <li>We can either delete the .git directory in a file browser or use <code>rm -rf .git</code>.</li>
 </ol>
+<h2 id="submodules">Submodules</h2>
+<ol>
+<li>
+<p>Update all:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git submodule foreach git pull
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li>
@@ -342,7 +358,7 @@ folder/ # a folder named `folder`
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.68.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

@@ -9,6 +9,7 @@
 * [Tags](#tags)
 * [Branching](#branching)
 * [Deleting a repository](#deleting-a-repository)
+* [Submodules](#submodules)
 * [References](#references)
 
 ## Basics
@@ -119,6 +120,14 @@
 ## Deleting a repository
 
 1. We can either delete the .git directory in a file browser or use `rm -rf .git`.
+
+## Submodules
+
+1. Update all:
+
+    ```sh
+    git submodule foreach git pull
+    ```
 
 ## References
 
