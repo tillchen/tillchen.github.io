@@ -21,6 +21,7 @@
 * [Classes](#classes)
 * [Enum](#enum)
 * [Asynchrony](#asynchrony)
+* [Functional Programming](#functional-programming)
 * [References](#references)
 
 ## Introduction
@@ -353,6 +354,32 @@
 
 6. Use `factory` for a constructor that doesn't always create a new instance of the class. It may return an instance from a cache or return an instance of a subtype.
 
+    ```dart
+    abstract class Shape {
+      factory Shape(String type) {
+        if (type == 'circle') return Circle(2);
+        if (type == 'square') return Square(2);
+        throw 'Can\'t create $type.';
+      }
+    num get area;
+    }
+
+    class Circle implements Shape {
+      final num radius;
+      Circle(this.radius);
+      num get area => pi * pow(radius, 2);
+    }
+
+    class Square implements Shape {
+      final num side;
+      Square(this.side);
+      num get area => pow(side, 2);
+    }
+
+    final circle = Shape('circle');
+    final square = Shape('square');
+    ```
+
 7. Getters and setters:
 
     ```dart
@@ -372,7 +399,7 @@
     }
     ```
 
-9. Every class implicitly defines an interface containing all instance members of the class and of any interfaces it implements. Like in Java, we have `extends`, `implements`, and `@override`.
+9. Every class implicitly defines an interface containing all instance members of the class and of any interfaces it implements. Like in Java, we have `extends`, `implements`, and `@override`. (But Dart doesn't have the `interface` keyword.)
 
 10. Liked in C++, operators can be overriden:
 
@@ -414,6 +441,25 @@
     ```
 
 2. Use `await for ()` to handle a Stream (wait for all of the streams results). But we should not use this for UI event listeners, because UI frameworks send endless streams of events.
+
+## Functional Programming
+
+1. Example:
+
+    ```dart
+    String scream(int length) => "A${'a' * length}h!";
+
+    main() {
+      final values = [1, 2, 3, 5, 10, 50];
+      for (var length in values) {
+        print(scream(length));
+      }
+      // Is the same as
+      values.map(scream).forEach(print);
+      // More
+      values.skip(1).take(3).map(scream).forEach(print);
+    }
+    ```
 
 ## References
 

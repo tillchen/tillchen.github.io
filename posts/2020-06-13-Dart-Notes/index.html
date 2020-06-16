@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1568 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1722 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1568 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1722 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -145,6 +145,7 @@
     <li><a href="#classes">Classes</a></li>
     <li><a href="#enum">Enum</a></li>
     <li><a href="#asynchrony">Asynchrony</a></li>
+    <li><a href="#functional-programming">Functional Programming</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -179,6 +180,7 @@
 <li><a href="#classes" rel="">Classes</a></li>
 <li><a href="#enum" rel="">Enum</a></li>
 <li><a href="#asynchrony" rel="">Asynchrony</a></li>
+<li><a href="#functional-programming" rel="">Functional Programming</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
@@ -772,7 +774,59 @@
 </li>
 <li>
 <p>Use <code>factory</code> for a constructor that doesn&rsquo;t always create a new instance of the class. It may return an instance from a cache or return an instance of a subtype.</p>
-</li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="p">{</span>
+  <span class="kd">factory</span> <span class="n">Shape</span><span class="p">(</span><span class="kt">String</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;circle&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;square&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t create </span><span class="si">$</span><span class="n">type</span><span class="s1">.&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+  <span class="kd">final</span> <span class="kt">num</span> <span class="n">radius</span><span class="p">;</span>
+  <span class="n">Circle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">radius</span><span class="p">);</span>
+  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span> <span class="o">=&gt;</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Square</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+  <span class="kd">final</span> <span class="kt">num</span> <span class="n">side</span><span class="p">;</span>
+  <span class="n">Square</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">side</span><span class="p">);</span>
+  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span> <span class="o">=&gt;</span> <span class="n">pow</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">final</span> <span class="n">circle</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">);</span>
+<span class="kd">final</span> <span class="n">square</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>Getters and setters:</p>
 <div class="highlight"><div class="chroma">
@@ -810,7 +864,7 @@
 </div>
 </div></li>
 <li>
-<p>Every class implicitly defines an interface containing all instance members of the class and of any interfaces it implements. Like in Java, we have <code>extends</code>, <code>implements</code>, and <code>@override</code>.</p>
+<p>Every class implicitly defines an interface containing all instance members of the class and of any interfaces it implements. Like in Java, we have <code>extends</code>, <code>implements</code>, and <code>@override</code>. (But Dart doesn&rsquo;t have the <code>interface</code> keyword.)</p>
 </li>
 <li>
 <p>Liked in C++, operators can be overriden:</p>
@@ -887,6 +941,42 @@
 <li>
 <p>Use <code>await for ()</code> to handle a Stream (wait for all of the streams results). But we should not use this for UI event listeners, because UI frameworks send endless streams of events.</p>
 </li>
+</ol>
+<h2 id="functional-programming">Functional Programming</h2>
+<ol>
+<li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">String</span> <span class="n">scream</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">&#34;A</span><span class="si">${</span><span class="s1">&#39;a&#39;</span> <span class="o">*</span> <span class="n">length</span><span class="si">}</span><span class="s2">h!&#34;</span><span class="p">;</span>
+
+<span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">final</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">length</span> <span class="k">in</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">scream</span><span class="p">(</span><span class="n">length</span><span class="p">));</span>
+  <span class="p">}</span>
+  <span class="c1">// Is the same as
+</span><span class="c1"></span>  <span class="n">values</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">scream</span><span class="p">).</span><span class="n">forEach</span><span class="p">(</span><span class="n">print</span><span class="p">);</span>
+  <span class="c1">// More
+</span><span class="c1"></span>  <span class="n">values</span><span class="p">.</span><span class="n">skip</span><span class="p">(</span><span class="m">1</span><span class="p">).</span><span class="n">take</span><span class="p">(</span><span class="m">3</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="n">scream</span><span class="p">).</span><span class="n">forEach</span><span class="p">(</span><span class="n">print</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
