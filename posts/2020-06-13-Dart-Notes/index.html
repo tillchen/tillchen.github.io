@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1546 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1568 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-13-Dart-Notes\/","datePublished": "2020-06-13T22:48:53+02:00","dateModified": "2020-06-13T22:48:53+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1546 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1568 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -218,7 +218,7 @@
 <p>Dart supports generic types like <code>List&lt;int&gt;</code> or <code>List&lt;dynamic&gt;</code> (a list of objects of any type).</p>
 </li>
 <li>
-<p>Unlike Java, Dart doesn&rsquo;t have <code>public</code>, <code>protected</code>, and <code>private</code>. Prefix an underscore <code>_</code> makes it private to the library. Every Dart app is a library.</p>
+<p>Unlike Java, Dart doesn&rsquo;t have <code>public</code>, <code>protected</code>, and <code>private</code>. Prefix an underscore <code>_</code> makes it private to the library. It generally means that the identifier is visible only inside the file (not just the class).</p>
 </li>
 </ol>
 <h2 id="variables">Variables</h2>
@@ -781,11 +781,15 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-dart" data-lang="dart"><span class="c1">// We can define explicit getters and setters using get and set
-</span><span class="c1"></span>
-<span class="kt">double</span> <span class="kd">get</span> <span class="n">right</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">+</span> <span class="n">width</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">_speed</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="kd">get</span> <span class="n">speed</span> <span class="o">=&gt;</span> <span class="n">_speed</span><span class="p">;</span> <span class="c1">// Read-only
+</span><span class="c1"></span><span class="kt">double</span> <span class="kd">get</span> <span class="n">right</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">+</span> <span class="n">width</span><span class="p">;</span>
 <span class="kd">set</span> <span class="n">right</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">width</span>
 </code></pre></td></tr></table>
 </div>
