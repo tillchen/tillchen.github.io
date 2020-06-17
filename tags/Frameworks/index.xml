@@ -10,9 +10,8 @@
     <pubDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-06-16-Flutter-Notes/</guid>
-    <description><![CDATA[Introduction Declarative UI  Why How   Views References  Introduction This post is assuming that the reader has Android development background.
-Declarative UI Why  Flutter lets the developer describe the current UI state and leaves the transitioning to the framework. This lightens the burden on developers from having to program how to transition between various UI states.  How   Example:
-1 2 3 4 5  // Imperative style b.]]></description>
+    <description><![CDATA[Introduction Declarative UI  Why How   Views  The equivalent of a view in Flutter How to update widgets   References  Introduction This post is assuming that the reader has Android development background.
+Declarative UI Why  Flutter lets the developer describe the current UI state and leaves the transitioning to the framework. This lightens the burden on developers from having to program how to transition between various UI states.]]></description>
 </item><item>
     <title>Django Notes</title>
     <link>https://tillchen.com/posts/2019-06-09-Django-Notes/</link>
