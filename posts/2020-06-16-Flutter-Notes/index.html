@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  425 ,
+        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  611 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/","datePublished": "2020-06-16T21:49:50+02:00","dateModified": "2020-06-16T21:49:50+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flutter Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;425 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;611 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -128,6 +128,11 @@
         <li><a href="#how-to-update-widgets">How to update widgets</a></li>
       </ul>
     </li>
+    <li><a href="#intents">Intents</a>
+      <ul>
+        <li><a href="#the-equivalent-of-an-intent-in-flutter">The equivalent of an Intent in Flutter</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -143,6 +148,11 @@
 <ul>
 <li><a href="#the-equivalent-of-a-view-in-flutter" rel="">The equivalent of a view in Flutter</a></li>
 <li><a href="#how-to-update-widgets" rel="">How to update widgets</a></li>
+</ul>
+</li>
+<li><a href="#intents" rel="">Intents</a>
+<ul>
+<li><a href="#the-equivalent-of-an-intent-in-flutter" rel="">The equivalent of an Intent in Flutter</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -346,6 +356,55 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+</ol>
+<h2 id="intents">Intents</h2>
+<h3 id="the-equivalent-of-an-intent-in-flutter">The equivalent of an Intent in Flutter</h3>
+<ol>
+<li>
+<p>Flutter doesn&rsquo;t have intents. And Flutter doesn&rsquo;t have a direct equivalent to activities and fragments; rather, we navigate between screens using a <code>Navigator</code> and <code>Route</code>s, all within the same <code>Activity</code>.</p>
+</li>
+<li>
+<p>A <code>Route</code>is an abstraction for a screen or page. And a <code>Navigator</code> is a widget that manages routes. A <code>Route</code> roughly maps to an <code>Activity</code>.</p>
+</li>
+<li>
+<p>A navigator can push and pop routes to move from screen to screen. It works like a stack on which you can <code>push()</code> new routes we want to navigate to and <code>pop()</code> routes that we want to go back.</p>
+</li>
+<li>
+<p>We specify a <code>Map</code> of route names:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="n">runApp</span><span class="p">(</span><span class="n">MaterialApp</span><span class="p">(</span>
+   <span class="nl">home:</span> <span class="n">MyAppHome</span><span class="p">(),</span> <span class="c1">// becomes the route named &#39;/&#39;
+</span><span class="c1"></span>   <span class="nl">routes:</span> <span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="n">WidgetBuilder</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span class="s1">&#39;/a&#39;</span><span class="o">:</span> <span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">MyPage</span><span class="p">(</span><span class="nl">title:</span> <span class="s1">&#39;page A&#39;</span><span class="p">),</span>
+     <span class="s1">&#39;/b&#39;</span><span class="o">:</span> <span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">MyPage</span><span class="p">(</span><span class="nl">title:</span> <span class="s1">&#39;page B&#39;</span><span class="p">),</span>
+     <span class="s1">&#39;/c&#39;</span><span class="o">:</span> <span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">MyPage</span><span class="p">(</span><span class="nl">title:</span> <span class="s1">&#39;page C&#39;</span><span class="p">),</span>
+   <span class="p">},</span>
+ <span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">Navigator</span><span class="p">.</span><span class="n">of</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="n">pushNamed</span><span class="p">(</span><span class="s1">&#39;/b&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>For calling a Camera or File picker, we need a native platform integration or use plugins.</p>
+</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
