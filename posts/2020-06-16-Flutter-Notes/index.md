@@ -18,6 +18,7 @@
 * [Layouts](#layouts)
   * [Equivalent of a LinearLayout](#equivalent-of-a-linearlayout)
   * [Flexible widget](#flexible-widget)
+  * [Expanded widget](#expanded-widget)
   * [Equivalent of a RelativeLayout](#equivalent-of-a-relativelayout)
   * [Equivalent of a ScrollView](#equivalent-of-a-scrollview)
 * [Gesture detection and touch event handling](#gesture-detection-and-touch-event-handling)
@@ -284,6 +285,10 @@ This post is assuming that the reader has Android development background.
       }
     }
     ```
+
+### Expanded widget
+
+1. It forces the widget to fill all the empty space: `Expanded(child: BlueBox())`.
 
 ### Equivalent of a RelativeLayout
 
