@@ -20,6 +20,7 @@
   * [Flexible widget](#flexible-widget)
   * [Expanded widget](#expanded-widget)
   * [SizedBox widget](#sizedbox-widget)
+  * [Spacer widget](#spacer-widget)
   * [Equivalent of a RelativeLayout](#equivalent-of-a-relativelayout)
   * [Equivalent of a ScrollView](#equivalent-of-a-scrollview)
 * [Gesture detection and touch event handling](#gesture-detection-and-touch-event-handling)
@@ -298,12 +299,16 @@ This post is assuming that the reader has Android development background.
 
     ```dart
     SizedBox(
-        width: 100,
+        width: 100,  // number of pixels
         child: BlueBox(),
     )
     ```
 
     * When it doesn't wrap a widget, it can create empty space: `SizedBox(width: 25)`
+
+### Spacer widget
+
+1. It creates empty space based on `flex`: `Spacer(flex: 1)`
 
 ### Equivalent of a RelativeLayout
 

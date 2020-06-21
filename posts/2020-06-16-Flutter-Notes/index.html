@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  2262 ,
+        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  2279 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/","datePublished": "2020-06-16T21:49:50+02:00","dateModified": "2020-06-16T21:49:50+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flutter Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2262 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2279 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -147,6 +147,7 @@
         <li><a href="#flexible-widget">Flexible widget</a></li>
         <li><a href="#expanded-widget">Expanded widget</a></li>
         <li><a href="#sizedbox-widget">SizedBox widget</a></li>
+        <li><a href="#spacer-widget">Spacer widget</a></li>
         <li><a href="#equivalent-of-a-relativelayout">Equivalent of a RelativeLayout</a></li>
         <li><a href="#equivalent-of-a-scrollview">Equivalent of a ScrollView</a></li>
       </ul>
@@ -217,6 +218,7 @@
 <li><a href="#flexible-widget" rel="">Flexible widget</a></li>
 <li><a href="#expanded-widget" rel="">Expanded widget</a></li>
 <li><a href="#sizedbox-widget" rel="">SizedBox widget</a></li>
+<li><a href="#spacer-widget" rel="">Spacer widget</a></li>
 <li><a href="#equivalent-of-a-relativelayout" rel="">Equivalent of a RelativeLayout</a></li>
 <li><a href="#equivalent-of-a-scrollview" rel="">Equivalent of a ScrollView</a></li>
 </ul>
@@ -713,8 +715,8 @@ Widget build(BuildContext context) {
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">SizedBox</span><span class="p">(</span>
-    <span class="nl">width:</span> <span class="m">100</span><span class="p">,</span>
-    <span class="nl">child:</span> <span class="n">BlueBox</span><span class="p">(),</span>
+    <span class="nl">width:</span> <span class="m">100</span><span class="p">,</span>  <span class="c1">// number of pixels
+</span><span class="c1"></span>    <span class="nl">child:</span> <span class="n">BlueBox</span><span class="p">(),</span>
 <span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -722,6 +724,10 @@ Widget build(BuildContext context) {
 <li>When it doesn&rsquo;t wrap a widget, it can create empty space: <code>SizedBox(width: 25)</code></li>
 </ul>
 </li>
+</ol>
+<h3 id="spacer-widget">Spacer widget</h3>
+<ol>
+<li>It creates empty space based on <code>flex</code>: <code>Spacer(flex: 1)</code></li>
 </ol>
 <h3 id="equivalent-of-a-relativelayout">Equivalent of a RelativeLayout</h3>
 <ol>
