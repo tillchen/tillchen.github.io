@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  1971 ,
+        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  2074 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/","datePublished": "2020-06-16T21:49:50+02:00","dateModified": "2020-06-16T21:49:50+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flutter Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1971 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2074 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -171,6 +171,12 @@
         </li>
       </ul>
     </li>
+    <li><a href="#databases-and-local-storage">Databases and local storage</a>
+      <ul>
+        <li><a href="#shared-preferences">Shared Preferences</a></li>
+        <li><a href="#sqlite">SQLite</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -229,6 +235,12 @@
 <li><a href="#show-validation-errors" rel="">Show validation errors</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#databases-and-local-storage" rel="">Databases and local storage</a>
+<ul>
+<li><a href="#shared-preferences" rel="">Shared Preferences</a></li>
+<li><a href="#sqlite" rel="">SQLite</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -1283,6 +1295,71 @@ Widget build(BuildContext context) {
 </code></pre></td></tr></table>
 </div>
 </div></li>
+</ol>
+<h2 id="databases-and-local-storage">Databases and local storage</h2>
+<h3 id="shared-preferences">Shared Preferences</h3>
+<ol>
+<li>
+<p>Use the <code>Shared_Preferences</code> plugin, which wraps the functionality of both Shared Preferences and NSUserDefaults.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">import</span> <span class="s1">&#39;package:flutter/material.dart&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="s1">&#39;package:shared_preferences/shared_preferences.dart&#39;</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">runApp</span><span class="p">(</span>
+    <span class="n">MaterialApp</span><span class="p">(</span>
+      <span class="nl">home:</span> <span class="n">Scaffold</span><span class="p">(</span>
+        <span class="nl">body:</span> <span class="n">Center</span><span class="p">(</span>
+          <span class="nl">child:</span> <span class="n">RaisedButton</span><span class="p">(</span>
+            <span class="nl">onPressed:</span> <span class="n">_incrementCounter</span><span class="p">,</span>
+            <span class="nl">child:</span> <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Increment Counter&#39;</span><span class="p">),</span>
+          <span class="p">),</span>
+        <span class="p">),</span>
+      <span class="p">),</span>
+    <span class="p">),</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">_incrementCounter</span><span class="p">()</span> <span class="kd">async</span> <span class="p">{</span>
+  <span class="n">SharedPreferences</span> <span class="n">prefs</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">SharedPreferences</span><span class="p">.</span><span class="n">getInstance</span><span class="p">();</span>
+  <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="p">(</span><span class="n">prefs</span><span class="p">.</span><span class="n">getInt</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">)</span> <span class="o">??</span> <span class="m">0</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span><span class="p">;</span>
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Pressed </span><span class="si">$</span><span class="n">counter</span><span class="s1"> times.&#39;</span><span class="p">);</span>
+  <span class="n">prefs</span><span class="p">.</span><span class="n">setInt</span><span class="p">(</span><span class="s1">&#39;counter&#39;</span><span class="p">,</span> <span class="n">counter</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="sqlite">SQLite</h3>
+<ol>
+<li>Use the <code>SQFlite</code> plugin.</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
