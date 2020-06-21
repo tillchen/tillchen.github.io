@@ -85,7 +85,7 @@
 
     ```dart
     int one = int.parse('1');
-    double onePointOne = int.parse('1.1');
+    double onePointOne = double.parse('1.1');
     String oneAsString = 1.toString();
     String piAsString = 3.14159.toStringAsFixed(2); // 3.14
     ```
