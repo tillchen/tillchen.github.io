@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  961 ,
+        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  1107 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/","datePublished": "2020-06-16T21:49:50+02:00","dateModified": "2020-06-16T21:49:50+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flutter Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;961 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1107 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -148,6 +148,12 @@
         <li><a href="#equivalent-of-a-scrollview">Equivalent of a ScrollView</a></li>
       </ul>
     </li>
+    <li><a href="#gesture-detection-and-touch-event-handling">Gesture detection and touch event handling</a>
+      <ul>
+        <li><a href="#equivalent-of-onclick">Equivalent of onClick</a></li>
+        <li><a href="#other-gestures">Other gestures</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -183,6 +189,12 @@
 <li><a href="#equivalent-of-a-linearlayout" rel="">Equivalent of a LinearLayout</a></li>
 <li><a href="#equivalent-of-a-relativelayout" rel="">Equivalent of a RelativeLayout</a></li>
 <li><a href="#equivalent-of-a-scrollview" rel="">Equivalent of a ScrollView</a></li>
+</ul>
+</li>
+<li><a href="#gesture-detection-and-touch-event-handling" rel="">Gesture detection and touch event handling</a>
+<ul>
+<li><a href="#equivalent-of-onclick" rel="">Equivalent of onClick</a></li>
+<li><a href="#other-gestures" rel="">Other gestures</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -606,6 +618,88 @@ Widget build(BuildContext context) {
 </code></pre></td></tr></table>
 </div>
 </div></li>
+</ol>
+<h2 id="gesture-detection-and-touch-event-handling">Gesture detection and touch event handling</h2>
+<h3 id="equivalent-of-onclick">Equivalent of onClick</h3>
+<ol>
+<li>
+<p>If the widget supports event detection, pass a function to it and handle it in the function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="err">@</span><span class="n">override</span>
+<span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">RaisedButton</span><span class="p">(</span>
+      <span class="nl">onPressed:</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s2">&#34;click&#34;</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="nl">child:</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&#34;Button&#34;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>If the widget doesn&rsquo;t support event detection, wrap it in a GestureDetector and pass a function to the <code>onTap</code> parameter:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">SampleApp</span> <span class="kd">extends</span> <span class="n">StatelessWidget</span> <span class="p">{</span>
+  <span class="err">@</span><span class="n">override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Scaffold</span><span class="p">(</span>
+        <span class="nl">body:</span> <span class="n">Center</span><span class="p">(</span>
+      <span class="nl">child:</span> <span class="n">GestureDetector</span><span class="p">(</span>
+        <span class="nl">child:</span> <span class="n">FlutterLogo</span><span class="p">(</span>
+          <span class="nl">size:</span> <span class="m">200.0</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="nl">onTap:</span> <span class="p">()</span> <span class="p">{</span>
+          <span class="n">print</span><span class="p">(</span><span class="s2">&#34;tap&#34;</span><span class="p">);</span>
+        <span class="p">},</span>
+      <span class="p">),</span>
+    <span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="other-gestures">Other gestures</h3>
+<ol>
+<li>Using GestureDetector, we can listen to gestures such as:
+<ul>
+<li>Tap</li>
+<li>Double tap</li>
+<li>Long press</li>
+<li>Vertical drag</li>
+<li>Horizontal drag</li>
+</ul>
+</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
