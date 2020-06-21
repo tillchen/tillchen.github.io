@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  820 ,
+        },"genre": "posts","keywords": "Mobile Development, Frameworks","wordcount":  961 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-06-16-Flutter-Notes\/","datePublished": "2020-06-16T21:49:50+02:00","dateModified": "2020-06-16T21:49:50+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flutter Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;820 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 16, 2020">June 16, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;961 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -141,6 +141,13 @@
         <li><a href="#strings">Strings</a></li>
       </ul>
     </li>
+    <li><a href="#layouts">Layouts</a>
+      <ul>
+        <li><a href="#equivalent-of-a-linearlayout">Equivalent of a LinearLayout</a></li>
+        <li><a href="#equivalent-of-a-relativelayout">Equivalent of a RelativeLayout</a></li>
+        <li><a href="#equivalent-of-a-scrollview">Equivalent of a ScrollView</a></li>
+      </ul>
+    </li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -169,6 +176,13 @@
 <ul>
 <li><a href="#image-files" rel="">Image files</a></li>
 <li><a href="#strings" rel="">Strings</a></li>
+</ul>
+</li>
+<li><a href="#layouts" rel="">Layouts</a>
+<ul>
+<li><a href="#equivalent-of-a-linearlayout" rel="">Equivalent of a LinearLayout</a></li>
+<li><a href="#equivalent-of-a-relativelayout" rel="">Equivalent of a RelativeLayout</a></li>
+<li><a href="#equivalent-of-a-scrollview" rel="">Equivalent of a ScrollView</a></li>
 </ul>
 </li>
 <li><a href="#references" rel="">References</a></li>
@@ -515,6 +529,83 @@ Widget build(BuildContext context) {
 <li>
 <p>We&rsquo;re encouraged to use the intl package for internationalization.</p>
 </li>
+</ol>
+<h2 id="layouts">Layouts</h2>
+<h3 id="equivalent-of-a-linearlayout">Equivalent of a LinearLayout</h3>
+<ol>
+<li>
+<p>The Row or Column widgets are the equivalent:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="err">@</span><span class="n">override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Row</span><span class="p">(</span>  <span class="c1">// Or Column
+</span><span class="c1"></span>      <span class="nl">mainAxisAlignment:</span> <span class="n">MainAxisAlignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+      <span class="nl">children:</span> <span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">[</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row One&#39;</span><span class="p">),</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row Two&#39;</span><span class="p">),</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row Three&#39;</span><span class="p">),</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row Four&#39;</span><span class="p">),</span>
+      <span class="p">],</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="equivalent-of-a-relativelayout">Equivalent of a RelativeLayout</h3>
+<ol>
+<li>We can achieve the same result by using a combination of Column, Row, and Stack widgets.</li>
+</ol>
+<h3 id="equivalent-of-a-scrollview">Equivalent of a ScrollView</h3>
+<ol>
+<li>
+<p>THe equivalent is a ListView. A ListView in Flutter is both a ScrollView and an Android ListView.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="err">@</span><span class="n">override</span>
+  <span class="n">Widget</span> <span class="n">build</span><span class="p">(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">ListView</span><span class="p">(</span>  <span class="c1">// Or Column
+</span><span class="c1"></span>      <span class="nl">mainAxisAlignment:</span> <span class="n">MainAxisAlignment</span><span class="p">.</span><span class="n">center</span><span class="p">,</span>
+      <span class="nl">children:</span> <span class="o">&lt;</span><span class="n">Widget</span><span class="o">&gt;</span><span class="p">[</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row One&#39;</span><span class="p">),</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row Two&#39;</span><span class="p">),</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row Three&#39;</span><span class="p">),</span>
+        <span class="n">Text</span><span class="p">(</span><span class="s1">&#39;Row Four&#39;</span><span class="p">),</span>
+      <span class="p">],</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
