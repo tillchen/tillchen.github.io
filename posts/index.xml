@@ -10,7 +10,7 @@
     <pubDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-06-16-Flutter-Notes/</guid>
-    <description><![CDATA[Introduction Declarative UI  Why How   Views  The equivalent of a view in Flutter How to update widgets   Intents  The equivalent of an Intent in Flutter How to handle incoming intents from external apps The equivalent of startActivityForResult()   Project structure and resources  Image files Strings   Layouts  Equivalent of a LinearLayout Equivalent of a RelativeLayout Equivalent of a ScrollView   Gesture detection and touch event handling  Equivalent of onClick Other gestures   References  Introduction This post is assuming that the reader has Android development background.]]></description>
+    <description><![CDATA[Introduction Declarative UI  Why How   Views  The equivalent of a view in Flutter How to update widgets   Intents  The equivalent of an Intent in Flutter How to handle incoming intents from external apps The equivalent of startActivityForResult()   Project structure and resources  Image files Strings   Layouts  Equivalent of a LinearLayout Equivalent of a RelativeLayout Equivalent of a ScrollView   Gesture detection and touch event handling  Equivalent of onClick Other gestures   ListView and adapters  Equivalent of ListView Which item is clicked   References  Introduction This post is assuming that the reader has Android development background.]]></description>
 </item><item>
     <title>Dart Notes</title>
     <link>https://tillchen.com/posts/2020-06-13-Dart-Notes/</link>
