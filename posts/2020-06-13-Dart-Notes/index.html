@@ -355,7 +355,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
-<span class="k">assert</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="m">3</span><span class="p">);</span>
+<span class="k">assert</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="n">length</span> <span class="o">==</span> <span class="m">3</span><span class="p">);</span>
 <span class="kd">var</span> <span class="n">constantList</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
 <span class="c1">// constantList[1]  = 1; // Uncommenting this causes an error.
 </span></code></pre></td></tr></table>
@@ -805,9 +805,9 @@
   <span class="kd">factory</span> <span class="n">Shape</span><span class="p">(</span><span class="kt">String</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;circle&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;square&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
-    <span class="k">throw</span> <span class="s1">&#39;Can</span><span class="se">\&#39;</span><span class="s1">t create </span><span class="si">$</span><span class="n">type</span><span class="s1">.&#39;</span><span class="p">;</span>
+    <span class="k">throw</span> <span class="s2">&#34;Can&#39;t create </span><span class="si">$</span><span class="n">type</span><span class="s2">.&#34;</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span><span class="p">;</span>
+  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
