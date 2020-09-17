@@ -9,6 +9,7 @@
   * [Twenty Billion Neurons, Berlin, Germany](#twenty-billion-neurons-berlin-germany)
   * [Jacobs University Bremen, Bremen, Germany](#jacobs-university-bremen-bremen-germany-1)
   * [TD Tech, Beijing, China](#td-tech-beijing-china)
+* [Skills](#skills)
 
 ## About Me
 
@@ -84,4 +85,10 @@ Some quick facts:
 * Delivered three significant features to two enterprise Android apps with 8k+ SLOC.
 * Built a CLI that automated the update of Android custom ROM, which reduced the time by at least 67%.
 * *Leveraged knowledge:* Android Development (Java), Python, Batch, Git, SQLite, Linux.
+
+## Skills
+
+* **Python, Java, Swift, C++, Kotlin, Dart, C, Android SDK, iOS SDK, Flutter, Git, SQL, Bash, Firebase**.
+
+* Go, JavaScript, Django, Spring, HTML/CSS, GCP, Docker, Haskell.
 
