@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-11-02-Python-Advanced-Tricks\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  2163 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  2247 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-11-02-Python-Advanced-Tricks\/","datePublished": "2020-11-02T17:45:00+01:00","dateModified": "2020-11-02T17:45:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Advanced Tricks</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2163 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2247 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -227,7 +227,119 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>This contains some advanced tricks in Python that could be useful for tech interviews.</p>
+            </div><div class="content" id="content"><ul>
+<li><a href="#decorators" rel="">Decorators</a>
+<ul>
+<li><a href="#functools" rel="">functools</a>
+<ul>
+<li><a href="#cached_property" rel="">cached_property</a></li>
+<li><a href="#lru_cache" rel="">lru_cache</a></li>
+<li><a href="#reduce" rel="">reduce</a></li>
+</ul>
+</li>
+<li><a href="#dataclasses" rel="">dataclasses</a>
+<ul>
+<li><a href="#dataclass" rel="">dataclass</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#data-structures" rel="">Data Structures</a>
+<ul>
+<li><a href="#dictioaries" rel="">Dictioaries</a>
+<ul>
+<li><a href="#ordereddict" rel="">OrderedDict</a></li>
+<li><a href="#defaultdict" rel="">defaultdict</a></li>
+<li><a href="#chainmap" rel="">ChainMap</a></li>
+<li><a href="#mappingproxytype" rel="">MappingProxyType</a></li>
+</ul>
+</li>
+<li><a href="#arrays" rel="">Arrays</a>
+<ul>
+<li><a href="#arrayarray" rel="">array.array</a></li>
+<li><a href="#bytes" rel="">bytes</a></li>
+<li><a href="#bytearray" rel="">bytearray</a></li>
+</ul>
+</li>
+<li><a href="#records-structs-and-data-transfer-objects" rel="">Records, Structs, and Data Transfer Objects</a>
+<ul>
+<li><a href="#namedtuple" rel="">namedtuple</a></li>
+<li><a href="#simplenamespace" rel="">SimpleNamespace</a></li>
+</ul>
+</li>
+<li><a href="#sets-and-multisets" rel="">Sets and Multisets</a>
+<ul>
+<li><a href="#frozenset" rel="">frozenset</a></li>
+<li><a href="#counter" rel="">Counter</a></li>
+</ul>
+</li>
+<li><a href="#stacks" rel="">Stacks</a>
+<ul>
+<li><a href="#list" rel="">list</a></li>
+<li><a href="#deque" rel="">deque</a></li>
+<li><a href="#lifoqueue" rel="">LifoQueue</a></li>
+</ul>
+</li>
+<li><a href="#queues" rel="">Queues</a>
+<ul>
+<li><a href="#list-1" rel="">list</a></li>
+<li><a href="#deque-1" rel="">deque</a></li>
+<li><a href="#queuequeue" rel="">queue.Queue</a></li>
+<li><a href="#multiprocessingqueue" rel="">multiprocessing.Queue</a></li>
+</ul>
+</li>
+<li><a href="#priority-queues" rel="">Priority Queues</a>
+<ul>
+<li><a href="#list-2" rel="">list</a></li>
+<li><a href="#heapq" rel="">heapq</a></li>
+<li><a href="#queuepriorityqueue" rel="">queue.PriorityQueue</a></li>
+</ul>
+</li>
+<li><a href="#enums" rel="">Enums</a>
+<ul>
+<li><a href="#enum" rel="">Enum</a></li>
+<li><a href="#intenum" rel="">IntEnum</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#functions" rel="">Functions</a>
+<ul>
+<li><a href="#lambdas" rel="">Lambdas</a></li>
+</ul>
+</li>
+<li><a href="#classes-and-oop" rel="">Classes and OOP</a>
+<ul>
+<li><a href="#own-exceptions" rel="">Own Exceptions</a></li>
+<li><a href="#shallow-and-deep-copy" rel="">Shallow and Deep Copy</a></li>
+<li><a href="#abstract-base-class" rel="">Abstract Base Class</a></li>
+</ul>
+</li>
+<li><a href="#looping-and-iteration" rel="">Looping and Iteration</a>
+<ul>
+<li><a href="#enumerate" rel="">Enumerate</a></li>
+<li><a href="#iterators" rel="">Iterators</a></li>
+<li><a href="#generators" rel="">Generators</a></li>
+<li><a href="#equality" rel="">Equality</a></li>
+</ul>
+</li>
+<li><a href="#itertools" rel="">Itertools</a>
+<ul>
+<li><a href="#groupby" rel="">groupby</a></li>
+<li><a href="#permutations-and-combinations" rel="">permutations and combinations</a></li>
+</ul>
+</li>
+<li><a href="#miscellaneous" rel="">Miscellaneous</a>
+<ul>
+<li><a href="#stdin" rel="">stdin</a></li>
+<li><a href="#binary-conversion" rel="">Binary conversion</a></li>
+<li><a href="#string" rel="">String</a></li>
+<li><a href="#walrus-operator" rel="">Walrus operator</a></li>
+<li><a href="#compare-with-zip" rel="">Compare with zip</a></li>
+</ul>
+</li>
+</ul>
+<p>This contains some advanced tricks in Python that could be useful for tech interviews.</p>
 <h2 id="decorators">Decorators</h2>
 <h3 id="functools">functools</h3>
 <h4 id="cached_property">cached_property</h4>

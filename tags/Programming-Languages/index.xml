@@ -10,9 +10,7 @@
     <pubDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</guid>
-    <description><![CDATA[This contains some advanced tricks in Python that could be useful for tech interviews.
-Decorators functools cached_property Just like @property, with extra caching for expensive properties
-1 2 3 4 5 6 7 8 9 10 11 12 13  from functools import cached_property class DataSet: def __init__(self, sequence_of_numbers): self._data = sequence_of_numbers @cached_property def stdev(self): return statistics.stdev(self._data) @cached_property def variance(self): return statistics.variance(self._data)   lru_cache It can be used for automatic memoization.]]></description>
+    <description><![CDATA[Decorators  functools  cached_property lru_cache reduce   dataclasses  dataclass     Data Structures  Dictioaries  OrderedDict defaultdict ChainMap MappingProxyType   Arrays  array.array bytes bytearray   Records, Structs, and Data Transfer Objects  namedtuple SimpleNamespace   Sets and Multisets  frozenset Counter   Stacks  list deque LifoQueue   Queues  list deque queue.Queue multiprocessing.Queue   Priority Queues  list heapq queue.]]></description>
 </item><item>
     <title>Dart Notes</title>
     <link>https://tillchen.com/posts/2020-06-13-Dart-Notes/</link>
