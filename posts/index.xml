@@ -4,7 +4,16 @@
         <link>https://tillchen.com/posts/</link>
         <description>All Posts | Tianyao Chen</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</lastBuildDate><atom:link href="https://tillchen.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Python Advanced Tricks</title>
+    <link>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</link>
+    <pubDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</guid>
+    <description><![CDATA[This contains some advanced tricks in Python that could be useful for tech interviews.
+Decorators functools cached_property Just like @property, with extra caching for expensive properties
+1 2 3 4 5 6 7 8 9 10 11 12 13  from functools import cached_property class DataSet: def __init__(self, sequence_of_numbers): self._data = sequence_of_numbers @cached_property def stdev(self): return statistics.stdev(self._data) @cached_property def variance(self): return statistics.variance(self._data)   lru_cache It can be used for automatic memoization.]]></description>
+</item><item>
     <title>Flutter Notes</title>
     <link>https://tillchen.com/posts/2020-06-16-Flutter-Notes/</link>
     <pubDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</pubDate>
@@ -72,13 +81,5 @@
     <description><![CDATA[Principles The Strategy Pattern The Observer Pattern The Decorator Pattern The Factory Pattern The Singleton Pattern The Command Pattern The Adapter Pattern The Facade Pattern The Template Method Pattern The State Pattern The Proxy Pattern Model-View-Controller Design Pattern Categories References  Principles   Identify the varying parts and separate them from the invariant.
   Program to an interface (supertype), not an implementation.
 1 2 3  Animal animal = new Dog(); animal.]]></description>
-</item><item>
-    <title>Go Notes</title>
-    <link>https://tillchen.com/posts/2020-02-17-Go-Notes/</link>
-    <pubDate>Mon, 17 Feb 2020 00:00:00 &#43;0100</pubDate>
-    <author>Author</author>
-    <guid>https://tillchen.com/posts/2020-02-17-Go-Notes/</guid>
-    <description><![CDATA[Basics Data Structures Structs Errors and Failures Goroutines and Channels Testing  Basics   Hello World:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package main import ( &#34;fmt&#34; &#34;strings&#34; &#34;math/rand&#34; &#34;time&#34; &#34;github.com/headfirstgo/keyboard&#34; // use go get to download the package ) func main() { fmt.Println(&#34;Hello Go!&#34;) fmt.Println(strings.Title(&#34;head first go&#34;)) rand.Seed(time.Now().Unix()) fmt.Println(rand.Intn(100)) // 0 - 99 }     Use go fmt to format the code.]]></description>
 </item></channel>
 </rss>

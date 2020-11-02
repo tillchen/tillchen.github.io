@@ -4,7 +4,16 @@
         <link>https://tillchen.com/tags/Programming-Languages/</link>
         <description>Programming Languages - Tag - Tianyao Chen</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Programming-Languages/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</lastBuildDate><atom:link href="https://tillchen.com/tags/Programming-Languages/" rel="self" type="application/rss+xml" /><item>
+    <title>Python Advanced Tricks</title>
+    <link>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</link>
+    <pubDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</guid>
+    <description><![CDATA[This contains some advanced tricks in Python that could be useful for tech interviews.
+Decorators functools cached_property Just like @property, with extra caching for expensive properties
+1 2 3 4 5 6 7 8 9 10 11 12 13  from functools import cached_property class DataSet: def __init__(self, sequence_of_numbers): self._data = sequence_of_numbers @cached_property def stdev(self): return statistics.stdev(self._data) @cached_property def variance(self): return statistics.variance(self._data)   lru_cache It can be used for automatic memoization.]]></description>
+</item><item>
     <title>Dart Notes</title>
     <link>https://tillchen.com/posts/2020-06-13-Dart-Notes/</link>
     <pubDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</pubDate>
@@ -90,15 +99,5 @@
   Everything in Python is an object. Python is object-based.
   type() gives the type of the object.
   bool() returns False if it&quot;s False/0/empty/None; it returns True if it&quot;s not empty.]]></description>
-</item><item>
-    <title>C and C&#43;&#43; Notes</title>
-    <link>https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/</link>
-    <pubDate>Sun, 05 May 2019 00:00:00 &#43;0200</pubDate>
-    <author>Author</author>
-    <guid>https://tillchen.com/posts/2019-05-05-C-and-C&#43;&#43;-Notes/</guid>
-    <description><![CDATA[Basics Dynamic Memory Allocation Makefiles Templates STL Miscellaneous  Basics   How to compile:
-1  gcc -Wall -o foo foo.c     Input in C:
-1 2 3 4 5  char foo[100]; int bar; fgets(foo, sizeof(foo), stdin); scanf(&#34;%d&#34;, &amp;bar); getchar(); // must be added after scanf. It handels /n     Input in C++:
-1 2  string foo; getline(cin, foo);     When two types sum, a promotion happens.]]></description>
 </item></channel>
 </rss>
