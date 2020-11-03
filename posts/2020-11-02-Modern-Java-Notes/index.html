@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-11-02-Modern-Java-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages, Java","wordcount":  764 ,
+        },"genre": "posts","keywords": "Programming Languages, Java","wordcount":  879 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-11-02-Modern-Java-Notes\/","datePublished": "2020-11-02T19:23:08+01:00","dateModified": "2020-11-02T19:23:08+01:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Modern Java Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;764 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;879 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -390,7 +390,7 @@
 </span><span class="c1">// For max and min, IntStream returns OptionalInt.
 </span><span class="c1"></span>
 <span class="c1">// range() is end exclusive.
-</span><span class="c1"></span><span class="n">IntStream</span> <span class="n">evenNumbers</span> <span class="o">=</span> <span class="n">Intstream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">100</span><span class="o">)</span>
+</span><span class="c1"></span><span class="n">IntStream</span> <span class="n">evenNumbers</span> <span class="o">=</span> <span class="n">IntStream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">100</span><span class="o">)</span>
                                  <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">0</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">fifty</span> <span class="o">=</span> <span class="n">evenNumbers</span><span class="o">.</span><span class="na">count</span><span class="o">()</span>
 </code></pre></td></tr></table>
@@ -426,6 +426,58 @@
     <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="n">5</span><span class="o">)</span>
     <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 <span class="n">IntStream</span> <span class="n">ones</span> <span class="o">=</span> <span class="n">IntStream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">1</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Collectors: <code>.toList()</code>, <code>.counting()</code>, <code>.maxBy()</code>, <code>.groupingBy()</code> for <code>.collect()</code>.</p>
+</li>
+<li>
+<p>Summarization:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">totalCalories</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">summingInt</span><span class="o">(</span><span class="n">Dish</span><span class="o">::</span><span class="n">getCalories</span><span class="o">);</span> <span class="c1">// or averagingInt(), summarizingInt().
+</span><span class="c1">// is the same as:
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">totalCalories</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">reducing</span><span class="o">(</span>
+                                    <span class="n">0</span><span class="o">,</span> <span class="n">Dish</span><span class="o">::</span><span class="n">getCalories</span><span class="o">,</span> <span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">));</span>
+<span class="c1">// and:
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">totalCalories</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="n">reducing</span><span class="o">(</span>
+                                    <span class="n">0</span><span class="o">,</span> <span class="n">Dish</span><span class="o">::</span><span class="n">getCalories</span><span class="o">,</span> <span class="n">Integer</span><span class="o">::</span><span class="n">sum</span><span class="o">));</span>
+
+<span class="n">String</span> <span class="n">shortMenu</span> <span class="o">=</span> <span class="n">menu</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">Dish</span><span class="o">::</span><span class="n">getName</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">joining</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">));</span>
+<span class="c1">// .map() can be omitted if there&#39;s a toString() implemented.
+</span><span class="c1"></span>
+<span class="c1">// .groupingBy() and .partitioningBy()
+</span><span class="c1"></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">candidate</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">candidateRoot</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">((</span><span class="kt">double</span><span class="o">)</span> <span class="n">candidate</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">IntStream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">candidateRoot</span><span class="o">).</span><span class="na">nonMatch</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">candidate</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="n">0</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="nf">partitionPrimes</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">IntStream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">n</span><span class="o">).</span><span class="na">boxed</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">partitioningBy</span><span class="o">(</span><span class="n">candidate</span> <span class="o">-&gt;</span> <span class="n">isPrime</span><span class="o">(</span><span class="n">candidate</span><span class="o">)));</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
