@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1048 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1071 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+02:00","dateModified": "2019-09-04T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1048 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1071 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -173,7 +173,7 @@
 <p>Primitive types are also objects controlled by references.</p>
 </li>
 <li>
-<p>Similar to Swift, we can define the type:</p>
+<p>Similar to Swift, we can specify the type:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -259,8 +259,8 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// end inclusive
 </span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1</span> <span class="n">until</span> <span class="m">100</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// not end inclusive
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">15</span> <span class="n">downTo</span> <span class="m">1</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">15</span> <span class="n">downTo</span> <span class="m">1</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// end inclusive
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">items</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -400,20 +400,22 @@
 <p>Add <code>data</code> to the start of the class to make it behave like a <code>struct</code> in Swift. Then we can use <code>==</code> or <code>.equals</code> to test the equivalence. (Equal objects have the same <code>.hashCode()</code> value.) (And <code>.toString()</code> returns the value of each property.) (BTW, <code>===</code> is used for referential check (identity).)</p>
 </li>
 <li>
-<p>For <code>data</code>, we have:</p>
+<p>For <code>data</code> objects, we have:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="err">(</span><span class="py">title</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span> <span class="p">=</span> <span class="n">r</span>
 <span class="c1">// is equivalent to
 </span><span class="c1"></span><span class="k">val</span> <span class="py">title</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">component1</span>
 <span class="k">val</span> <span class="py">number</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">component2</span>
-</code></pre></td></tr></table>
+<span class="c1">// And this can be used to return multiple values from a function, or we can use Pair.
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
