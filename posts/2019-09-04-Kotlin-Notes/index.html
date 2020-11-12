@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1320 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1355 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+02:00","dateModified": "2019-09-04T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1320 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1355 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -618,10 +618,10 @@
 <p><code>.min()</code> and <code>.max()</code> work with basic types: <code>val mMax = mList.max()</code></p>
 </li>
 <li>
-<p><code>minBy {}</code> and <code>maxBy {}</code> work with all types: <code>val mMaxQuantity = groceries.maxBy {it.quantity}</code>. Also <code>sumBy {}</code> and <code>sumByDouble {}</code> : <code>mMap.values.sumBy {it}</code></p>
+<p><code>minBy {}</code> and <code>maxBy {}</code> work with all types: <code>val mMaxQuantity = groceries.maxBy {it.quantity}</code>. Also <code>sumBy {}</code> and <code>sumByDouble {}</code> : <code>mMap.values.sumBy {it}</code>. We can also use <code>::</code> reference like in Java 8 (<code>::foo</code> calls the top-level function <code>foo</code>).</p>
 </li>
 <li>
-<p><code>filter {}</code>: <code>val pricesOver3 = groceries.filter {it.price &gt; 3.0}</code>. Also <code>filterNot {}</code>.</p>
+<p><code>filter {}</code>: <code>val pricesOver3 = groceries.filter {it.price &gt; 3.0}</code>. Also <code>filterNot {}</code>. We can also use <code>.count()</code> instead of <code>.filter().size</code>.</p>
 </li>
 <li>
 <p><code>map {}</code>: <code>val doubleInts = ints.map {it * 2}</code></p>
@@ -638,6 +638,17 @@
 <li>
 <p><code>fold {}</code>: <code>val sumOfInts = ints.fold(0) {mSum, item -&gt; mSum + item}</code></p>
 </li>
+<li>
+<p><code>all</code> and <code>any</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">listOf</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">,</span> <span class="m">27</span><span class="p">),</span> <span class="n">Person</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">,</span> <span class="m">31</span><span class="p">)).</span><span class="n">all</span> <span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">age</span> <span class="p">&lt;</span> <span class="m">28</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
