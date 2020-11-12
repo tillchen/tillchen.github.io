@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1071 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1320 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+02:00","dateModified": "2019-09-04T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1071 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1320 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -156,9 +156,11 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">println</span><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="s">&#34;x is greater&#34;</span> <span class="k">else</span> <span class="s">&#34;x is not greater&#34;</span><span class="p">)</span>
+<span class="k">return</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="n">x</span> <span class="k">else</span> <span class="n">y</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -204,12 +206,16 @@
 <p>Strings:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">42</span>
@@ -218,24 +224,34 @@
 </span><span class="c1"></span><span class="k">var</span> <span class="py">myArray</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="k">var</span> <span class="py">arraySize</span> <span class="p">=</span> <span class="s">&#34;The size if ${myArray.size}&#34;</span>
 <span class="k">var</span> <span class="py">firstItem</span> <span class="p">=</span> <span class="s">&#34;The first item is ${myArray[0]}&#34;</span>
-</code></pre></td></tr></table>
+<span class="s">&#34;12.345-6.A&#34;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#34;.&#34;</span><span class="p">,</span> <span class="s">&#34;-&#34;</span><span class="p">)</span>  <span class="c1">// splits at both . and -
+</span><span class="c1">// We don&#39;t need to escape for triple quote strings for regular expressions.
+</span><span class="c1"></span><span class="k">val</span> <span class="py">regex</span> <span class="p">=</span> <span class="s">&#34;&#34;&#34;(.+)/(.+)\.(.+)&#34;&#34;&#34;</span><span class="p">.</span><span class="n">toRegex</span><span class="p">()</span>
+<span class="c1">// We can also use triple quotes for multiline strings like in Python.
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Functions;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span><span class="p">{</span> <span class="c1">// Unit means no return value, or just omit it
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// We can have default values like in Python.
+</span><span class="c1"></span><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span> <span class="c1">// Unit means no return value, or just omit it
 </span><span class="c1"></span>    <span class="c1">// stuff
 </span><span class="c1"></span>    <span class="k">return</span> <span class="m">1</span>
 <span class="p">}</span>
@@ -243,7 +259,11 @@
 <span class="k">var</span> <span class="py">result</span> <span class="p">=</span> <span class="n">foo</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 
 <span class="k">fun</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span> <span class="c1">// also works
-</span></code></pre></td></tr></table>
+</span><span class="c1"></span>
+<span class="k">fun</span> <span class="nf">listOf</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">(</span><span class="k">vararg</span> <span class="n">values</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{...}</span>  <span class="c1">// vararg makes it variadic.
+</span><span class="c1">// And we need to explicitly unpack the array when passing:
+</span><span class="c1"></span><span class="n">listOf</span><span class="p">(</span><span class="s">&#34;args:&#34;</span><span class="p">,</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -288,6 +308,7 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
@@ -298,7 +319,8 @@
         <span class="n">println</span><span class="p">(</span><span class="s">&#34;It&#39;s not 1 nor 2.&#34;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></td></tr></table>
+<span class="c1">// We can also use when without the argument, then each case needs to be a Boolean.
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -400,7 +422,7 @@
 <p>Add <code>data</code> to the start of the class to make it behave like a <code>struct</code> in Swift. Then we can use <code>==</code> or <code>.equals</code> to test the equivalence. (Equal objects have the same <code>.hashCode()</code> value.) (And <code>.toString()</code> returns the value of each property.) (BTW, <code>===</code> is used for referential check (identity).)</p>
 </li>
 <li>
-<p>For <code>data</code> objects, we have:</p>
+<p>For <code>data</code> objects, we have destructuring declaration:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -428,10 +450,42 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">constructor</span><span class="p">(</span><span class="n">foo</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{}</span> <span class="c1">// calls the primary constructor
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">constructor</span><span class="p">(</span><span class="n">foo</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{}</span> <span class="c1">// Calls the primary constructor.
 </span></code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>enum</code> class:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="p">{</span>
+    <span class="n">RED</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">,</span> <span class="n">BLUE</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">Color</span><span class="p">)</span> <span class="p">=</span>  <span class="c1">// Returns the value directly.
+</span><span class="c1"></span>    <span class="k">when</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Color</span><span class="p">.</span><span class="n">RED</span> <span class="p">-&gt;</span> <span class="m">1</span>
+        <span class="n">Color</span><span class="p">.</span><span class="n">YELLOW</span> <span class="p">-&gt;</span> <span class="m">2</span>
+        <span class="n">Color</span><span class="p">.</span><span class="n">BLUE</span> <span class="p">-&gt;</span> <span class="m">3</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Everything is <code>public</code> by default. We also have <code>private</code>, <code>protected</code>, and <code>internal</code> (for a module).</p>
+</li>
 </ol>
 <h2 id="nulls-and-exceptions">Nulls and Exceptions</h2>
 <ol>
@@ -471,8 +525,26 @@
 <p><code>!!</code> is like <code>!</code> in Swift. It throws a NullPointerException if the value is null: <code>w!!.hunger</code>.</p>
 </li>
 <li>
-<p>Like Java, the same <code>try catch finally</code> block for exception handling. And the same <code>throw</code>.</p>
-</li>
+<p>Like Java, the same <code>try catch finally</code> block for exception handling. And the same <code>throw</code>. But we ca use <code>try</code> as an expression, which returns the value to the variable:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">number</span> <span class="p">=</span> <span class="k">try</span> <span class="p">{</span>
+    <span class="n">Integer</span><span class="p">.</span><span class="n">parseInt</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">readLine</span><span class="p">())</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">NumberFormatException</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span>  <span class="c1">// Or null if we want the flow to continue.
+</span><span class="c1"></span><span class="p">}</span>
+<span class="n">println</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="collections">Collections</h2>
 <ol>
@@ -480,14 +552,28 @@
 <p><code>List</code>, <code>Set</code>, <code>Map</code>, <code>MutableList</code>, <code>MutableSet</code>, <code>MutableMap</code>.</p>
 </li>
 <li>
-<p><code>listOf()</code>, <code>mutableListOf()</code>. <code>mList.set(1, &quot;foo&quot;)</code>, <code>.shuffle()</code></p>
+<p><code>listOf()</code>, <code>mutableListOf()</code>. <code>mList.set(1, &quot;foo&quot;)</code>, <code>.shuffle()</code>, <code>.last()</code>, <code>.max()</code>.</p>
 </li>
 <li>
-<p><code>mapOf(0 to 'a', 1 to 'b', 2 to 'c')</code> <code>for ((key, value) in mMap)</code></p>
+<p><code>mapOf(0 to 'a', 1 to 'b', 2 to 'c')</code> <code>for ((key, value) in mMap)</code>. (<code>to</code> actually creates a <code>Pair&lt;K, V&gt;</code>).</p>
 </li>
 <li>
 <p>Add <code>out</code> (<code>&lt;out E&gt;</code>) to make the generics covariant (use a subtype instead of a supertype) - achieving polymorphism. Add <code>in</code> to make it contravariant - the opposite of covariance.</p>
 </li>
+<li>
+<p>We can use <code>in</code> to check existence just like in Python.</p>
+</li>
+<li>
+<p>Like <code>enumerate()</code> in Python, we have <code>.withIndex()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{...}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="lambdas-and-higher-order-functions">Lambdas and Higher-Order Functions</h2>
 <ol>

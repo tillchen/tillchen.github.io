@@ -44,7 +44,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
     <guid>https://tillchen.com/posts/2019-09-04-Kotlin-Notes/</guid>
     <description><![CDATA[Table of Contents  Table of Contents Basics OOP Nulls and Exceptions Collections Lambdas and Higher-Order Functions References  Basics   Kotlin requires one main per app:
 1 2 3  fun main(args: Array&lt;String&gt;) { // the args part can be omitted  println(&#34;Hello Kotlin!&#34;) }     Shorter if
-1  println(if (x &gt; y) &#34;x is greater&#34; else &#34;x is not greater&#34;)     var vs val:]]></description>
+1 2  println(if (x &gt; y) &#34;x is greater&#34; else &#34;x is not greater&#34;) return if (x &gt; y) x else y     var vs val:]]></description>
 </item><item>
     <title>Swift Notes</title>
     <link>https://tillchen.com/posts/2019-08-2-Swift-Notes/</link>
