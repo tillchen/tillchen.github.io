@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1355 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1438 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+02:00","dateModified": "2019-09-04T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1355 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1438 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -633,7 +633,7 @@
 <p>Closure means that a lambda can access any local variable that it captures.</p>
 </li>
 <li>
-<p><code>groupBy {}</code> returns a <code>Map</code>.</p>
+<p><code>groupBy {}</code> returns a <code>Map&lt;Key, List&gt;</code> (Key depends on the key&rsquo;s type).</p>
 </li>
 <li>
 <p><code>fold {}</code>: <code>val sumOfInts = ints.fold(0) {mSum, item -&gt; mSum + item}</code></p>
@@ -647,6 +647,48 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">listOf</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">,</span> <span class="m">27</span><span class="p">),</span> <span class="n">Person</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">,</span> <span class="m">31</span><span class="p">)).</span><span class="n">all</span> <span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">age</span> <span class="p">&lt;</span> <span class="m">28</span><span class="p">}</span>
 </code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>flatMap {}</code> and <code>flatten()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">books</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">Book</span><span class="p">(</span><span class="s">&#34;Thursday Next&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&#34;Jasper Fforde&#34;</span><span class="p">)),</span>
+                    <span class="n">Book</span><span class="p">(</span><span class="s">&#34;Mort&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&#34;Terry Pratchett&#34;</span><span class="p">)),</span>
+                    <span class="n">Book</span><span class="p">(</span><span class="s">&#34;Good Omens&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&#34;Terry Pratchett&#34;</span><span class="p">,</span><span class="s">&#34;Neil Gaiman&#34;</span><span class="p">)))</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">books</span><span class="p">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">authors</span> <span class="p">}.</span><span class="n">toSet</span><span class="p">())</span>
+<span class="c1">// [Jasper Fforde, Terry Pratchett, Neil Gaiman]
+</span><span class="c1">// Or use .flatten() when we don&#39;t do any transformation:
+</span><span class="c1"></span><span class="n">listOfLists</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Like a Python generator or Java stream, Kotlin also has the lazy sequence:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">people</span><span class="p">.</span><span class="n">asSequence</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">Person</span><span class="o">::</span><span class="n">name</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">filter</span> <span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">)}</span>
+    <span class="p">.</span><span class="n">toList</span><span class="p">()</span>  <span class="c1">// Converts the sequence back.
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
