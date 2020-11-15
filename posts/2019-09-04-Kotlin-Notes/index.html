@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1438 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1523 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+02:00","dateModified": "2019-09-04T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1438 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1523 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -689,6 +689,49 @@
     <span class="p">.</span><span class="n">filter</span> <span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">)}</span>
     <span class="p">.</span><span class="n">toList</span><span class="p">()</span>  <span class="c1">// Converts the sequence back.
 </span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>For SAM (Single Abstract Method) interface, we can pass a lambda instead of implementing a class:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">interface</span> <span class="n">IntPredicate</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">accept</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Boolean</span>
+<span class="p">}</span>
+
+<span class="k">val</span> <span class="py">isEven</span> <span class="p">=</span> <span class="n">IntPredicate</span> <span class="p">{</span><span class="n">it</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span><span class="p">}</span>
+<span class="c1">// Instead of
+</span><span class="c1"></span><span class="k">val</span> <span class="py">isEven</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">IntPredicate</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">accpet</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="m">8</span><span class="p">))</span>
+<span class="c1">// Another example:
+</span><span class="c1"></span><span class="n">button</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="p">-&gt;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
