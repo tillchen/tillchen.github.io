@@ -69,7 +69,8 @@
 
     ```kotlin
     // We can have default values like in Python.
-    fun foo(bar: Int = 1): Int { // Unit means no return value, or just omit it
+    fun foo(bar: Int = 1): Int { // Unit means no return value, or just omit it.
+        // And Nothing means the function never returns.
         // stuff
         return 1
     }
@@ -235,6 +236,14 @@
     }
     println(number)
     ```
+
+7. `as?` is the conditional cast, which returns `null` is the casting is not possible:
+
+    ```kotlin
+    val foo = bar as? Person ?: return false
+    ```
+
+8. `.filterNotNull()` returns a list with null filtered out.
 
 ## Collections
 
