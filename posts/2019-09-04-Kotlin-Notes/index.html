@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1564 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1595 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+02:00","dateModified": "2019-09-04T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1564 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1595 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -117,9 +117,9 @@
   <ul>
     <li><a href="#table-of-contents">Table of Contents</a></li>
     <li><a href="#basics">Basics</a></li>
+    <li><a href="#collections">Collections</a></li>
     <li><a href="#oop">OOP</a></li>
     <li><a href="#nulls-and-exceptions">Nulls and Exceptions</a></li>
-    <li><a href="#collections">Collections</a></li>
     <li><a href="#lambdas-and-higher-order-functions">Lambdas and Higher-Order Functions</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -128,9 +128,9 @@
 <ul>
 <li><a href="#table-of-contents" rel="">Table of Contents</a></li>
 <li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#collections" rel="">Collections</a></li>
 <li><a href="#oop" rel="">OOP</a></li>
 <li><a href="#nulls-and-exceptions" rel="">Nulls and Exceptions</a></li>
-<li><a href="#collections" rel="">Collections</a></li>
 <li><a href="#lambdas-and-higher-order-functions" rel="">Lambdas and Higher-Order Functions</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
@@ -326,6 +326,35 @@
 </div>
 </div></li>
 </ol>
+<h2 id="collections">Collections</h2>
+<ol>
+<li>
+<p><code>List</code>, <code>Set</code>, <code>Map</code>, <code>MutableList</code>, <code>MutableSet</code>, <code>MutableMap</code>.</p>
+</li>
+<li>
+<p><code>listOf()</code>, <code>mutableListOf()</code>. <code>mList.set(1, &quot;foo&quot;)</code>, <code>.shuffle()</code>, <code>.last()</code>, <code>.max()</code>.</p>
+</li>
+<li>
+<p><code>mapOf(0 to 'a', 1 to 'b', 2 to 'c')</code> <code>for ((key, value) in mMap)</code>. (<code>to</code> actually creates a <code>Pair&lt;K, V&gt;</code>).</p>
+</li>
+<li>
+<p>Add <code>out</code> (<code>&lt;out E&gt;</code>) to make the generics covariant (use a subtype instead of a supertype) - achieving polymorphism. Add <code>in</code> to make it contravariant - the opposite of covariance.</p>
+</li>
+<li>
+<p>We can use <code>in</code> to check existence just like in Python.</p>
+</li>
+<li>
+<p>Like <code>enumerate()</code> in Python, we have <code>.withIndex()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{...}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
 <h2 id="oop">OOP</h2>
 <ol>
 <li>
@@ -488,6 +517,25 @@
 <li>
 <p>Everything is <code>public</code> by default. We also have <code>private</code>, <code>protected</code>, and <code>internal</code> (for a module).</p>
 </li>
+<li>
+<p>Operator overloading:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">data</span> <span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">plus</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span> <span class="n">Point</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="nulls-and-exceptions">Nulls and Exceptions</h2>
 <ol>
@@ -561,35 +609,6 @@
 <li>
 <p><code>.filterNotNull()</code> returns a list with null filtered out.</p>
 </li>
-</ol>
-<h2 id="collections">Collections</h2>
-<ol>
-<li>
-<p><code>List</code>, <code>Set</code>, <code>Map</code>, <code>MutableList</code>, <code>MutableSet</code>, <code>MutableMap</code>.</p>
-</li>
-<li>
-<p><code>listOf()</code>, <code>mutableListOf()</code>. <code>mList.set(1, &quot;foo&quot;)</code>, <code>.shuffle()</code>, <code>.last()</code>, <code>.max()</code>.</p>
-</li>
-<li>
-<p><code>mapOf(0 to 'a', 1 to 'b', 2 to 'c')</code> <code>for ((key, value) in mMap)</code>. (<code>to</code> actually creates a <code>Pair&lt;K, V&gt;</code>).</p>
-</li>
-<li>
-<p>Add <code>out</code> (<code>&lt;out E&gt;</code>) to make the generics covariant (use a subtype instead of a supertype) - achieving polymorphism. Add <code>in</code> to make it contravariant - the opposite of covariance.</p>
-</li>
-<li>
-<p>We can use <code>in</code> to check existence just like in Python.</p>
-</li>
-<li>
-<p>Like <code>enumerate()</code> in Python, we have <code>.withIndex()</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{...}</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
 </ol>
 <h2 id="lambdas-and-higher-order-functions">Lambdas and Higher-Order Functions</h2>
 <ol>
