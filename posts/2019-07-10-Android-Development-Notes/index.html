@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-10-Android-Development-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development","wordcount":  1403 ,
+        },"genre": "posts","keywords": "Mobile Development","wordcount":  1406 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-10-Android-Development-Notes\/","datePublished": "2019-07-10T00:00:00+02:00","dateModified": "2019-07-10T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android Development Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 10, 2019">July 10, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1403 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 10, 2019">July 10, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1406 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -119,7 +119,7 @@
     <li><a href="#basics">Basics</a></li>
     <li><a href="#app-resources">App Resources</a></li>
     <li><a href="#permissions">Permissions</a></li>
-    <li><a href="#androidmanifestxml">AndroidManifest.xml</a></li>
+    <li><a href="#gradle">Gradle</a></li>
     <li><a href="#layout">Layout</a></li>
     <li><a href="#activities">Activities</a></li>
     <li><a href="#fragments">Fragments</a></li>
@@ -135,7 +135,7 @@
 <li><a href="#basics" rel="">Basics</a></li>
 <li><a href="#app-resources" rel="">App Resources</a></li>
 <li><a href="#permissions" rel="">Permissions</a></li>
-<li><a href="#androidmanifestxml" rel="">AndroidManifest.xml</a></li>
+<li><a href="#gradle" rel="">Gradle</a></li>
 <li><a href="#layout" rel="">Layout</a></li>
 <li><a href="#activities" rel="">Activities</a></li>
 <li><a href="#fragments" rel="">Fragments</a></li>
@@ -211,9 +211,15 @@
 <p><a href="https://developer.android.com/training/permissions/usage-notes#perms_vs_intents" target="_blank" rel="noopener noreffer">Use an intent instead</a></p>
 </li>
 </ol>
-<h2 id="androidmanifestxml">AndroidManifest.xml</h2>
+<h2 id="gradle">Gradle</h2>
 <ol>
-<li>The <code>minSdkVersion</code> attribute declares the minimum version with which your app is compatible and the <code>targetSdkVersion</code> attribute declares the highest version on which you&rsquo;ve optimized your app: <code>&lt;uses-sdk android:minSdkVersion=&quot;4&quot; android:targetSdkVersion=&quot;15&quot; /&gt;</code></li>
+<li><code>compileSdkVersion</code> vs <code>targetSdkVersion</code> vs <code>minSdkVersion</code>:
+<ul>
+<li><code>compileSdkVersion</code>: The app can use all the API features from this version and lower.</li>
+<li><code>targetSdkVersion</code>: The version we&rsquo;ve tested our app.</li>
+<li><code>minSdkVersion</code>: The minimum version the app can support.</li>
+</ul>
+</li>
 </ol>
 <h2 id="layout">Layout</h2>
 <ol>
