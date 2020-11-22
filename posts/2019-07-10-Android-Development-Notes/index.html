@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-10-Android-Development-Notes\/"
-        },"genre": "posts","keywords": "Mobile Development","wordcount":  1406 ,
+        },"genre": "posts","keywords": "Mobile Development","wordcount":  1425 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-10-Android-Development-Notes\/","datePublished": "2019-07-10T00:00:00+02:00","dateModified": "2019-07-10T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android Development Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 10, 2019">July 10, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1406 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 10, 2019">July 10, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1425 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -347,6 +347,26 @@
         <span class="c1">// Do something in response to button click
 </span><span class="c1"></span>    <span class="o">}</span>
 <span class="o">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">button_send</span><span class="p">).</span><span class="n">setOnClickListener</span> <span class="p">{</span>
+    <span class="n">foo</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// or
+</span><span class="c1"></span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">button_send</span><span class="p">).</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="p">-&gt;</span>
+    <span class="c1">//...
+</span><span class="c1"></span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>

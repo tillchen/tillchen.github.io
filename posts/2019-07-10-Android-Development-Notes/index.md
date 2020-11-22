@@ -134,6 +134,16 @@
     });
     ```
 
+    ```kotlin
+    findViewById(R.id.button_send).setOnClickListener {
+        foo(it)
+    }
+    // or
+    findViewById(R.id.button_send).setOnClickListener { view ->
+        //...
+    }
+    ```
+
 12. [Checkboxes](https://developer.android.com/guide/topics/ui/controls/checkbox)
 
 13. [Radio Buttons](https://developer.android.com/guide/topics/ui/controls/radiobutton)
