@@ -2,14 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://tillchen.com/tags/Java/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/posts/2020-11-02-Modern-Java-Notes/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/posts/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/tags/Programming-Languages/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/tags/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/tags/Python/</loc><lastmod>2020-11-02T17:45:00&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</loc><lastmod>2020-11-02T17:45:00&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url><url>
+            <loc>https://tillchen.com/tags/Java/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/posts/2020-11-02-Modern-Java-Notes/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/posts/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/tags/Programming-Languages/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/tags/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/</loc><lastmod>2020-11-02T19:23:08&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/tags/Python/</loc><lastmod>2020-11-02T17:45:00&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
+            <loc>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</loc><lastmod>2020-11-02T17:45:00&#43;01:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
             <loc>https://tillchen.com/posts/2020-06-16-Flutter-Notes/</loc><lastmod>2020-06-16T21:49:50&#43;02:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
             <loc>https://tillchen.com/tags/Frameworks/</loc><lastmod>2020-06-16T21:49:50&#43;02:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
             <loc>https://tillchen.com/tags/Mobile-Development/</loc><lastmod>2020-06-16T21:49:50&#43;02:00</lastmod><changefreq>daily</changefreq><priority>0.5</priority></url><url>
