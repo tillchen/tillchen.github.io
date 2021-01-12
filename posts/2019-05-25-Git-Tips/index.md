@@ -4,6 +4,7 @@
 * [Basics](#basics)
 * [.gitignore](#gitignore)
 * [Log](#log)
+* [Compare](#compare)
 * [Reverting](#reverting)
 * [Remotes](#remotes)
 * [Tags](#tags)
@@ -52,6 +53,24 @@
 ## Log
 
 1. When we want to get a simpler version of the log, use `git log --pretty=oneline`.
+
+## Compare
+
+1. Compare the diff between two branches:
+
+    ```sh
+    git diff branch_1..branch_2
+    # Or if already in branch_1:
+    git diff ..branch_2
+    ```
+
+2. Compare the commits between two branches:
+
+    ```sh
+    git log master..branch-X
+    # Or if already in branch-X:
+    git log master..
+    ```
 
 ## Reverting
 

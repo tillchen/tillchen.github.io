@@ -10,7 +10,7 @@
     <pubDate>Sat, 25 May 2019 00:00:00 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-05-25-Git-Tips/</guid>
-    <description><![CDATA[Basics .gitignore Log Reverting Remotes Tags Branching Deleting a repository Submodules References  Basics   Git - more like a mini filesystem - thinks about its data more like a stream of snapshots, unlike other delta-based version control systems (Subversion.)
+    <description><![CDATA[Basics .gitignore Log Compare Reverting Remotes Tags Branching Deleting a repository Submodules References  Basics   Git - more like a mini filesystem - thinks about its data more like a stream of snapshots, unlike other delta-based version control systems (Subversion.)
   Unlike CVCS, nearly every operation in Git is local.
   Git has integrity. Everything is checksummed. It uses SHA-1 to store everything in it&rsquo;s DB.]]></description>
 </item><item>

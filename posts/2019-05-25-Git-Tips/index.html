@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-05-25-Git-Tips\/"
-        },"genre": "posts","keywords": "Tools, Version Control","wordcount":  767 ,
+        },"genre": "posts","keywords": "Tools, Version Control","wordcount":  811 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-25-Git-Tips\/","datePublished": "2019-05-25T00:00:00+02:00","dateModified": "2019-05-25T00:00:00+02:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git Tips</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 25, 2019">May 25, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;767 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 25, 2019">May 25, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;811 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -118,6 +118,7 @@
     <li><a href="#basics">Basics</a></li>
     <li><a href="#gitignore">.gitignore</a></li>
     <li><a href="#log">Log</a></li>
+    <li><a href="#compare">Compare</a></li>
     <li><a href="#reverting">Reverting</a></li>
     <li><a href="#remotes">Remotes</a></li>
     <li><a href="#tags">Tags</a></li>
@@ -131,6 +132,7 @@
 <li><a href="#basics" rel="">Basics</a></li>
 <li><a href="#gitignore" rel="">.gitignore</a></li>
 <li><a href="#log" rel="">Log</a></li>
+<li><a href="#compare" rel="">Compare</a></li>
 <li><a href="#reverting" rel="">Reverting</a></li>
 <li><a href="#remotes" rel="">Remotes</a></li>
 <li><a href="#tags" rel="">Tags</a></li>
@@ -202,6 +204,39 @@ folder/ # a folder named `folder`
 <h2 id="log">Log</h2>
 <ol>
 <li>When we want to get a simpler version of the log, use <code>git log --pretty=oneline</code>.</li>
+</ol>
+<h2 id="compare">Compare</h2>
+<ol>
+<li>
+<p>Compare the diff between two branches:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git diff branch_1..branch_2
+<span class="c1"># Or if already in branch_1:</span>
+git diff ..branch_2
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Compare the commits between two branches:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git log master..branch-X
+<span class="c1"># Or if already in branch-X:</span>
+git log master..
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="reverting">Reverting</h2>
 <ol>
