@@ -99,7 +99,7 @@
 
 4. Exponential: Use \*\*: `a = 2 ** 3`
 
-5. range(): `range(1,11,2)` is 1, 3, 5, 7, 9
+5. range(): `range(1, 11, 2)` is 1, 3, 5, 7, 9
 
 ## Lists
 
