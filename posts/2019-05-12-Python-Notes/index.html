@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  1885 ,
+        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  1909 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+08:00","dateModified": "2019-05-12T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1885 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1909 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -303,7 +303,6 @@
 <ul>
 <li>Insert: <code>A.insert(0, foo)</code></li>
 <li>Append: <code>A.append(foo)</code></li>
-<li>Extend: <code>A.extend([1,2])</code></li>
 <li>Concatenate: <code>A += B</code></li>
 </ul>
 </li>
@@ -323,7 +322,7 @@
 </li>
 <li>By value
 <ul>
-<li>remove(): <code>A.remove(foo)</code></li>
+<li>remove(): <code>A.remove('foo')</code></li>
 </ul>
 </li>
 </ul>
@@ -346,7 +345,7 @@
 </ul>
 </li>
 <li>
-<p>Slicing (not end-inclusive): <code>A = [0,1,2,3,4]</code></p>
+<p>Slicing (not end-inclusive): <code>A = [0, 1, 2, 3, 4]</code></p>
 <ul>
 <li><code>print(A[1:4])</code> gives 1,2,3</li>
 <li><code>print(A[:4])</code> is equivalent to <code>print (A[0:4])</code></li>
@@ -411,10 +410,10 @@
 <h2 id="tuples">Tuples</h2>
 <ol>
 <li>
-<p>Tuples can&rsquo;t be modified: <code>A = (1,2)</code> <code>A[0] = 3</code> doesn&rsquo;t work. (Immutable list)</p>
+<p>Tuples can&rsquo;t be modified: <code>A = (1, 2)</code> <code>A[0] = 3</code> doesn&rsquo;t work. (Immutable list)</p>
 </li>
 <li>
-<p>But tuples can be reassigned: <code>A = (1,2)</code> <code>A = (3,2)</code> works.</p>
+<p>But tuples can be reassigned: <code>A = (1, 2)</code> <code>A = (3, 2)</code> works.</p>
 </li>
 <li>
 <p>For a single-object tuple like <code>t = ('Python')</code>, it becomes a string. But if we add a comma, it becomes a tuple <code>t = ('Python',)</code></p>
@@ -456,7 +455,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># keys and values</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># keys and values</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">A</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># equivalent to the line below</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span> <span class="c1"># since looping through the keys is default</span>
@@ -503,7 +502,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">flights</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
-           <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+           <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
            <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="s1">&#39;foo&#39;</span><span class="p">}</span> <span class="c1"># optional filter</span>
 </code></pre></td></tr></table>
 </div>
@@ -582,7 +581,7 @@
 </div>
 </div></li>
 <li>
-<p>We can make an argument optional by using None or &lsquo;':</p>
+<p>We can make an argument optional by using None:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -643,7 +642,7 @@
 <span class="kn">import</span> <span class="nn">module_name</span> <span class="kn">as</span> <span class="nn">m</span> <span class="c1"># alias</span>
 <span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># all functions</span>
 <span class="c1"># We must import everything at the beginning of each file</span>
-<span class="c1"># Searching in 1.wd 2. site-packages 3. standard library locations</span>
+<span class="c1"># Searching in 1. wd 2. site-packages 3. standard library locations</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -684,6 +683,23 @@
 <h2 id="oop">OOP</h2>
 <ol>
 <li>
+<p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
 <p>Default value:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -707,9 +723,11 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">foo</span> <span class="kn">import</span> <span class="n">Foo</span>
+
 <span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">Bar</span><span class="p">):</span> <span class="c1"># Bar is the parent class</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1"># superclass</span>
