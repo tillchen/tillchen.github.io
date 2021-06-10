@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/Users/tillchen/Library/Mobile Documents/com~apple~CloudDocs/PersonalWebsiteLoveIt",
+	"sourceRoot": "/Users/tillchen/Projects/personal_website",
 	"sources": [
 		"themes/LoveIt/assets/css/style.scss",
 		"themes/LoveIt/assets/css/_variables.scss",

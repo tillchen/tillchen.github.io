@@ -61,7 +61,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Software Engineering Notes</title>
     <link>https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/</link>
-    <pubDate>Thu, 21 May 2020 00:00:00 &#43;0200</pubDate>
+    <pubDate>Thu, 21 May 2020 00:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-05-21-Software-Engineering-Notes/</guid>
     <description><![CDATA[Introduction  Intro Socio-Technical Systems   The Software Lifecycle  Software Lifecycle Requirements Engineering UML Design Patterns Compiling and Linking Defensive Programming Configuration, Version, and Release Management Software Testing   Web and Other Applications  Application Architectures GUI Technology Web-Enabled Information Systems UI Design Web Design   Project and Process Management  Project Management Software Process Models   Security  Introduction This is the course notes for Software Engineering at Jacobs University Bremen.]]></description>
@@ -75,7 +75,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Algorithms and Data Structures</title>
     <link>https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/</link>
-    <pubDate>Fri, 10 Apr 2020 00:00:00 &#43;0200</pubDate>
+    <pubDate>Fri, 10 Apr 2020 00:00:00 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-4-10-Algorithms-and-Data-Structures/</guid>
     <description><![CDATA[Dynamic Programming Greedy Algorithms References  Dynamic Programming   The two key ingredients:
