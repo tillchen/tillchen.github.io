@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-11-02-Python-Advanced-Tricks\/"
-        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  2247 ,
+        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  2266 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-11-02-Python-Advanced-Tricks\/","datePublished": "2020-11-02T17:45:00+01:00","dateModified": "2020-11-02T17:45:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Advanced Tricks</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2247 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2266 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -432,21 +432,23 @@
 <p>It applies the function cumulatively to the iterable.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">gcd</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 
-<span class="k">def</span> <span class="nf">gcd_for_list</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">gcd_for_list</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">gcd</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">gcd_for_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
@@ -654,7 +656,7 @@
 </div>
 </div><h3 id="arrays">Arrays</h3>
 <h4 id="arrayarray">array.array</h4>
-<p>It is a basic C-style typed array that&rsquo;s more space-efficient. Unlike list, it can only have on e type.</p>
+<p>It is a basic C-style typed array that&rsquo;s more space-efficient. Unlike list, it can only have one type.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -833,6 +835,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
@@ -848,18 +852,22 @@
 <span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">()[:</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># n lest common elements.</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{k}: {v}&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">    Counter<span class="o">({</span><span class="s1">&#39;a&#39;</span>: 2, <span class="s1">&#39;b&#39;</span>: 1<span class="o">})</span>
@@ -870,6 +878,8 @@
     Counter<span class="o">({</span><span class="s1">&#39;a&#39;</span>: 3, <span class="s1">&#39;b&#39;</span>: 1<span class="o">})</span>
     Counter<span class="o">({</span><span class="s1">&#39;a&#39;</span>: 3, <span class="s1">&#39;b&#39;</span>: 1<span class="o">})</span>
     <span class="o">[(</span><span class="s1">&#39;b&#39;</span>, 1<span class="o">)]</span>
+    a: <span class="m">3</span>
+    b: <span class="m">1</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="stacks">Stacks</h3>
@@ -1085,7 +1095,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">q</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">q</span><span class="o">.</span><span class="n">appen</span><span class="err">†</span><span class="n">d</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">))</span>
+<span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">))</span>
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;eat&#39;</span><span class="p">))</span>
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sleep&#39;</span><span class="p">))</span>
 <span class="n">q</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -1474,7 +1484,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="equality">Equality</h3>
-<p>A dictionary key is equal is they have the same <code>__hash__</code> and <code>__eq__</code>.</p>
+<p>A dictionary key is equal when they have the same <code>__hash__</code> and <code>__eq__</code>.</p>
 <h2 id="itertools">Itertools</h2>
 <h3 id="groupby">groupby</h3>
 <p>It can be used for string compression.</p>
