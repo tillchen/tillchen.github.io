@@ -8,10 +8,10 @@
         <title>Python Notes - Tianyao Chen</title><meta name="Description" content="Some notes for Python"><meta property="og:title" content="Python Notes" />
 <meta property="og:description" content="Some notes for Python" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tillchen.com/posts/2019-05-12-Python-Notes/" />
-<meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/>
+<meta property="og:url" content="https://tillchen.com/posts/2019-05-12-Python-Notes/" /><meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-05-12T00:00:00+08:00" />
 <meta property="article:modified_time" content="2019-05-12T00:00:00+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tillchen.com/images/avatar.jpg"/>
 
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  1909 ,
+        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  1908 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-05-12-Python-Notes\/","datePublished": "2019-05-12T00:00:00+08:00","dateModified": "2019-05-12T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1909 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="May 12, 2019">May 12, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1908 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -190,7 +190,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -212,7 +212,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;The name is {name}.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -233,7 +233,7 @@
 </div>
 </div></li>
 <li>
-<p>Multiline string (&rsquo; and ' are equivalent):</p>
+<p>Multiline string (' and ' are equivalent):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -277,8 +277,8 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">universe_age</span> <span class="o">=</span> <span class="mi">14</span><span class="n">_000_000_000</span>
-<span class="k">print</span><span class="p">(</span><span class="n">universe_age</span><span class="p">)</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">universe_age</span> <span class="o">=</span> <span class="mi">14_000_000_000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">universe_age</span><span class="p">)</span>
 <span class="c1"># Output: 14000000000</span>
 </code></pre></td></tr></table>
 </div>
@@ -372,9 +372,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;1 in A&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1 in A&#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="mi">6</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;6 not in A&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;6 not in A&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -402,7 +402,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{i} - {item}&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -432,7 +432,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">])</span>
 <span class="n">A</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">190</span> <span class="c1"># adding a new pair</span>
 <span class="n">A</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;C++&#39;</span> <span class="c1"># modifying</span>
 </code></pre></td></tr></table>
@@ -524,7 +524,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">empty_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 <span class="n">languages</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
 <span class="c1"># Output {&#39;python&#39;, &#39;C++&#39;, &#39;C&#39;}</span>
 <span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
 <span class="n">wordSet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -558,8 +558,8 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># is equivalent to the line below</span>
-<span class="k">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># is equivalent to the line below</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -576,7 +576,7 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">minus</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -591,7 +591,7 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="n">first</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">:</span> <span class="n">last</span><span class="p">}</span>
     <span class="k">if</span> <span class="n">age</span><span class="p">:</span>
         <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
@@ -616,7 +616,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_languages</span><span class="p">(</span><span class="o">*</span><span class="n">languages</span><span class="p">):</span> <span class="c1"># The * makes an empty tuple and packs any value it receives</span>
     <span class="k">for</span> <span class="n">language</span> <span class="ow">in</span> <span class="n">languages</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;- {language}&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;- </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="c1"># more generically, *args</span>
 <span class="c1"># **kwargs for key-value pairs</span>
 <span class="c1"># * works on the way in as well: *foo expands the list foo to individual arguments</span>
@@ -639,7 +639,7 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">func_1</span><span class="p">,</span> <span class="n">func_2</span><span class="p">,</span> <span class="n">func_3</span> <span class="c1"># importing multiple functions</span>
 
 <span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">func_1</span> <span class="k">as</span> <span class="n">f</span> <span class="c1"># alias</span>
-<span class="kn">import</span> <span class="nn">module_name</span> <span class="kn">as</span> <span class="nn">m</span> <span class="c1"># alias</span>
+<span class="kn">import</span> <span class="nn">module_name</span> <span class="k">as</span> <span class="nn">m</span> <span class="c1"># alias</span>
 <span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># all functions</span>
 <span class="c1"># We must import everything at the beginning of each file</span>
 <span class="c1"># Searching in 1. wd 2. site-packages 3. standard library locations</span>
@@ -753,7 +753,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="k">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -768,7 +768,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
 <span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -793,7 +793,7 @@
     <span class="c1"># lines = file_obj.readlines() -&gt; a list of lines</span>
     <span class="c1"># for line in lines:</span>
         <span class="c1">#print(line.rstrip())</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># Removing the additional \n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># Removing the additional \n</span>
     <span class="c1"># no need to close, python will do it automatically</span>
 </code></pre></td></tr></table>
 </div>
@@ -809,7 +809,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file_obj</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -844,11 +844,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Can&#39;</span><span class="n">t</span> <span class="n">divide</span> <span class="n">by</span> <span class="mf">0.</span><span class="s1">&#39;, str(err))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Can&#39;</span><span class="n">t</span> <span class="n">divide</span> <span class="n">by</span> <span class="mf">0.</span><span class="s1">&#39;, str(err))</span>
 <span class="k">else</span><span class="p">:</span> <span class="c1"># optional</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Success&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Success&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -868,10 +868,10 @@
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_obj</span><span class="p">:</span>
         <span class="n">content</span> <span class="o">=</span> <span class="n">file_obj</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="k">except</span> <span class="n">FileNotFoundError</span><span class="p">:</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
     <span class="k">pass</span>
 <span class="k">else</span><span class="p">:</span>
-     <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="c1"># word count</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="c1"># word count</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -973,11 +973,11 @@
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="kc">None</span>
 
 <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">return</span> <span class="kc">None</span>
     <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -1256,7 +1256,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

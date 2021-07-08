@@ -8,10 +8,10 @@
         <title>Secure and Dependable Systems Notes - Tianyao Chen</title><meta name="Description" content="Course notes for Secure and Dependable Systems at Jacobs University Bremen"><meta property="og:title" content="Secure and Dependable Systems Notes" />
 <meta property="og:description" content="Course notes for Secure and Dependable Systems at Jacobs University Bremen" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/" />
-<meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/>
+<meta property="og:url" content="https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/" /><meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-26T16:11:13+02:00" />
 <meta property="article:modified_time" content="2020-05-26T16:11:13+02:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tillchen.com/images/avatar.jpg"/>
 
@@ -432,11 +432,11 @@
 </li>
 <li>
 <p>Precondition strengthening: (it&rsquo;s stronger when the set is smaller)</p>
-<p>$$\frac{\vdash P \rightarrow P&rsquo;, \vdash \{P&rsquo;\} C \{Q\} }{\vdash \{P\} C \{Q\} }$$</p>
+<p>$$\frac{\vdash P \rightarrow P', \vdash \{P'\} C \{Q\} }{\vdash \{P\} C \{Q\} }$$</p>
 </li>
 <li>
 <p>Postcondition weakening: (it&rsquo;s weaker when the set is bigger)</p>
-<p>$$\frac{\vdash \{P&rsquo;\} C \{Q&rsquo;\}, \vdash Q&rsquo; \rightarrow Q, }{\vdash \{P\} C \{Q\} }$$</p>
+<p>$$\frac{\vdash \{P'\} C \{Q'\}, \vdash Q' \rightarrow Q, }{\vdash \{P\} C \{Q\} }$$</p>
 </li>
 <li>
 <p>Weakest precondition: the largest set of states for which C terminates.</p>
@@ -571,8 +571,8 @@
 <ul>
 <li>Efficient to compute for arbitrary input.</li>
 <li>Given a hash value h, difficult to find an input m such that h = H(m) (preimage resistance).</li>
-<li>Given an input m, difficult to find another input $m&rsquo; \neq m$ such that H(m) = H(m&rsquo;) (2nd-preimage resistance).</li>
-<li>Difficult to find two different inputs such that H(m) = H(m&rsquo;) (collision resistance).</li>
+<li>Given an input m, difficult to find another input $m' \neq m$ such that H(m) = H(m') (2nd-preimage resistance).</li>
+<li>Difficult to find two different inputs such that H(m) = H(m') (collision resistance).</li>
 </ul>
 </li>
 <li>
@@ -746,9 +746,9 @@
 <li>HMAC can be used to verify both data integrity and authenticity.</li>
 <li>HMAC doesn&rsquo;t encrypt the message.</li>
 <li>The message must be send with the HMAC hash. The receiver will hash it again with the key and match the hash.</li>
-<li>Computation: $HMAC_H(k,m) = H((k&rsquo; \bigoplus opad) || H((k&rsquo; \bigoplus ipad) || m))$
+<li>Computation: $HMAC_H(k,m) = H((k' \bigoplus opad) || H((k' \bigoplus ipad) || m))$
 <ul>
-<li>k&rsquo; is derived by padding k with 0s or hashing k.</li>
+<li>k' is derived by padding k with 0s or hashing k.</li>
 <li>opad is the outer padding: 0x5c5c5c5c&hellip;5c</li>
 <li>ipad is the inner padding: 0x36363636 &hellip; 36</li>
 <li>xor and concatenation</li>
@@ -1153,7 +1153,7 @@
 <h3 id="trusted-computing">Trusted Computing</h3>
 <ol>
 <li>
-<p>Trusted computing base: the set of hard and software components crititcial to achvieve the systems&rsquo; security properties.</p>
+<p>Trusted computing base: the set of hard and software components crititcial to achvieve the systems' security properties.</p>
 <ul>
 <li>When other parts are attacked, the device will not misbehave.</li>
 <li>Small to veify the correctness.</li>
@@ -1321,7 +1321,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

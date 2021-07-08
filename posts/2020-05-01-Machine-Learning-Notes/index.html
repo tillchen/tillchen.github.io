@@ -8,10 +8,10 @@
         <title>Machine Learning Notes - Tianyao Chen</title><meta name="Description" content="Some notes for basic machine learning concepts."><meta property="og:title" content="Machine Learning Notes" />
 <meta property="og:description" content="Some notes for basic machine learning concepts." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" />
-<meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/>
+<meta property="og:url" content="https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/" /><meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-01T09:25:01+02:00" />
 <meta property="article:modified_time" content="2020-05-01T09:25:01+02:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tillchen.com/images/avatar.jpg"/>
 
@@ -446,9 +446,9 @@
 </li>
 <li>
 <p>Loss functions:</p>
-<p>$$L_2(y, y&rsquo;) = (y-y&rsquo;)^2$$</p>
-<p>$$L_{0-1}(g, g&rsquo;) = 0 \ (g=g&rsquo;) \ or \ 1 \ (g\neq g&rsquo;)$$</p>
-<p>$$L_1(y,y&rsquo;) = |y-y'|$$</p>
+<p>$$L_2(y, y') = (y-y')^2$$</p>
+<p>$$L_{0-1}(g, g') = 0 \ (g=g') \ or \ 1 \ (g\neq g')$$</p>
+<p>$$L_1(y,y') = |y-y'|$$</p>
 </li>
 <li>
 <p>Expected prediction error (EPE):</p>
@@ -1335,7 +1335,7 @@ $$</p>
 <ol>
 <li>
 <p>The Gaussian kernel ($\sigma^2$ is a scaler parameter, i.e. the variance or kernel width):</p>
-<p>$$k(x,x&rsquo;)=e^{-\frac{||x-x'||^2}{\sigma^2}}$$</p>
+<p>$$k(x,x')=e^{-\frac{||x-x'||^2}{\sigma^2}}$$</p>
 </li>
 <li>
 <p>Regression for kernel-based model:</p>
@@ -1450,11 +1450,11 @@ $$</p>
 <p>Clustering is a problem of learning to assign a label to examples by leveraging an unlabeled dataset.</p>
 </li>
 <li>
-<p>A dissimilarity function measures the difference / lack of affinity between two observations from X. It holds that $d(x,x) = 0$ and $d(x,x&rsquo;)=d(x&rsquo;,x)$. Some examples:</p>
+<p>A dissimilarity function measures the difference / lack of affinity between two observations from X. It holds that $d(x,x) = 0$ and $d(x,x')=d(x',x)$. Some examples:</p>
 <ul>
-<li>Squared Euclidean Distance: $d(x,x&rsquo;)=\sum_{j=1}^D(x_j-x_{j}')^2$</li>
-<li>Componentwise Distance: $d(x,x&rsquo;)=\sum_{j=1}^D|x_j-x_{j}&lsquo;|$</li>
-<li>Weighted Squared Euclidean Distance: $d(x,x&rsquo;)=\sum_{j=1}^Dw_j(x_j-x_{j}')^2$</li>
+<li>Squared Euclidean Distance: $d(x,x')=\sum_{j=1}^D(x_j-x_{j}')^2$</li>
+<li>Componentwise Distance: $d(x,x')=\sum_{j=1}^D|x_j-x_{j}'|$</li>
+<li>Weighted Squared Euclidean Distance: $d(x,x')=\sum_{j=1}^Dw_j(x_j-x_{j}')^2$</li>
 </ul>
 </li>
 <li>
@@ -1462,7 +1462,7 @@ $$</p>
 </li>
 <li>
 <p>The canonical loss for the encoder:</p>
-<p>$$L(C) = \frac{1}{2}\sum_{k=1}^K\sum_{C(i)=k}\sum_{C_(i&rsquo;)=k}d(x_i,x_{i&rsquo;})$$</p>
+<p>$$L(C) = \frac{1}{2}\sum_{k=1}^K\sum_{C(i)=k}\sum_{C_(i')=k}d(x_i,x_{i'})$$</p>
 </li>
 <li>
 <p>We can use centroids ($\bar x_k = \frac{1}{N_k}\sum_{C(i)=k}x_i$) to simplify the loss function</p>
@@ -1606,7 +1606,7 @@ $$(\hat{V_d}, \hat{W_d}) = argmin_{W_d, {V}_d} \sum_{i=1}^N||x_i-V_d {W}_d x_i||
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

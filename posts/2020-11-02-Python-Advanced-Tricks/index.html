@@ -8,10 +8,10 @@
         <title>Python Advanced Tricks - Tianyao Chen</title><meta name="Description" content="Advanced tricks in Python that could be useful for tech interviews."><meta property="og:title" content="Python Advanced Tricks" />
 <meta property="og:description" content="Advanced tricks in Python that could be useful for tech interviews." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/" />
-<meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/>
+<meta property="og:url" content="https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/" /><meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-02T17:45:00+01:00" />
 <meta property="article:modified_time" content="2020-11-02T17:45:00+01:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tillchen.com/images/avatar.jpg"/>
 
@@ -396,13 +396,13 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
 
-<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span>
     <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">([</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)])</span>
 
 <span class="n">fib</span><span class="o">.</span><span class="n">cache_info</span><span class="p">()</span>
 
@@ -444,16 +444,16 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">gcd</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 
 <span class="k">def</span> <span class="nf">gcd_for_list</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">gcd</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">gcd</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">gcd_for_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gcd_for_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -506,8 +506,8 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 
-<span class="n">popitem</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">popitem</span><span class="p">(</span><span class="n">last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="defaultdict">defaultdict</h4>
@@ -546,14 +546,14 @@
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
     <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 
 <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
     <span class="n">d</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -603,13 +603,13 @@
 <span class="p">}</span>
 
 <span class="c1"># First, we can use unpacking to merge them into one.</span>
-<span class="k">print</span><span class="p">({</span><span class="o">**</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">({</span><span class="o">**</span><span class="n">dict1</span><span class="p">,</span> <span class="o">**</span><span class="n">dict2</span><span class="p">})</span>
 
 <span class="c1"># Or we can use ChainMap.</span>
 <span class="n">chained_map</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">chained_map</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chained_map</span><span class="p">)</span>
 <span class="c1"># Which can be converted to a normal dict very easily.</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">chained_map</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">chained_map</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -643,7 +643,7 @@
     <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span>
 <span class="p">}</span>
 <span class="n">read_only</span> <span class="o">=</span> <span class="n">MappingProxyType</span><span class="p">(</span><span class="n">writable</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">read_only</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">read_only</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -668,7 +668,7 @@
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">array</span>
 
 <span class="n">arr</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -688,7 +688,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">arr</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -712,7 +712,7 @@
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">arr</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
 <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -749,8 +749,8 @@
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
 <span class="n">Car</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Car&#39;</span><span class="p">,</span> <span class="s1">&#39;color mileage automatic&#39;</span><span class="p">)</span>
-<span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mf">3812.4</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">car1</span><span class="o">.</span><span class="n">mileage</span><span class="p">)</span>
+<span class="n">car1</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mf">3812.4</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">car1</span><span class="o">.</span><span class="n">mileage</span><span class="p">)</span>
 
 <span class="c1"># typing.NamedTuple provides type hints</span>
 
@@ -761,8 +761,8 @@
     <span class="n">mileage</span><span class="p">:</span> <span class="nb">float</span>
     <span class="n">automatic</span><span class="p">:</span> <span class="nb">bool</span>
 
-<span class="n">car2</span> <span class="o">=</span> <span class="n">CarCar</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mf">3812.4</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">car2</span><span class="o">.</span><span class="n">mileage</span><span class="p">)</span>
+<span class="n">car2</span> <span class="o">=</span> <span class="n">CarCar</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mf">3812.4</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">car2</span><span class="o">.</span><span class="n">mileage</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -785,8 +785,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">SimpleNamespace</span>
-<span class="n">car1</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">mileage</span><span class="o">=</span><span class="mf">3812.4</span><span class="p">,</span> <span class="n">automatic</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">car1</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+<span class="n">car1</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">mileage</span><span class="o">=</span><span class="mf">3812.4</span><span class="p">,</span> <span class="n">automatic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">car1</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -807,7 +807,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}):</span> <span class="s1">&#39;hi&#39;</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">})])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">})])</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -842,18 +842,18 @@
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>  <span class="c1"># Unique elements.</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">elements</span><span class="p">()))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>  <span class="c1"># Total counts.</span>
-<span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="s1">&#39;aaba&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span>  <span class="c1"># Unique elements.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">elements</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>  <span class="c1"># Total counts.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Counter</span><span class="p">(</span><span class="s1">&#39;aaba&#39;</span><span class="p">))</span>
 <span class="n">counter</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">()[:</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># n lest common elements.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">()[:</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># n lest common elements.</span>
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{k}: {v}&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -894,7 +894,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -921,8 +921,8 @@
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
 <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Top of the stack.</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Top of the stack.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -953,8 +953,8 @@
 <span class="n">s</span> <span class="o">=</span> <span class="n">LifoQueue</span><span class="p">()</span>
 <span class="n">s</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
 <span class="n">s</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;sleep&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -979,7 +979,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">q</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1005,7 +1005,7 @@
 
 <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1034,8 +1034,8 @@
 <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;sleep&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1066,8 +1066,8 @@
 <span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;eat&#39;</span><span class="p">)</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;sleep&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1098,9 +1098,9 @@
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">))</span>
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;eat&#39;</span><span class="p">))</span>
 <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sleep&#39;</span><span class="p">))</span>
-<span class="n">q</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1134,7 +1134,7 @@
 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;eat&#39;</span><span class="p">))</span>
 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sleep&#39;</span><span class="p">))</span>
 <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1168,7 +1168,7 @@
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;eat&#39;</span><span class="p">))</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sleep&#39;</span><span class="p">))</span>
 <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1224,25 +1224,25 @@
     <span class="n">GREEN</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">BLUE</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="k">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Color</span><span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">])</span>
 
 <span class="k">class</span> <span class="nc">ColorAuto</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">RED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
     <span class="n">BLUE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
     <span class="n">GREEN</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
 
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ColorAuto</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ColorAuto</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">ColorAuto</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{name}: {member}&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">member</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># Functional API.</span>
 <span class="n">Animal</span> <span class="o">=</span> <span class="n">Enum</span><span class="p">(</span><span class="s1">&#39;Animal&#39;</span><span class="p">,</span> <span class="s1">&#39;ANT BEE CAT DOG&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">ANT</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="n">ANT</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1300,9 +1300,9 @@
     <span class="n">POST</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">GET</span> <span class="o">=</span> <span class="mi">2</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">CIRCLE</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">CIRCLE</span> <span class="o">==</span> <span class="n">Request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">CIRCLE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">CIRCLE</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Shape</span><span class="o">.</span><span class="n">CIRCLE</span> <span class="o">==</span> <span class="n">Request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1341,20 +1341,20 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)]</span>
 <span class="n">tuples</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tuples</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tuples</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
 
 <span class="c1"># But usually this</span>
-<span class="k">print</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
 <span class="c1"># is better than</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">))))</span>
 
 <span class="n">xs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
     <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
     <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
 <span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1443,7 +1443,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{i}: {item}&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1468,9 +1468,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-py" data-lang="py"><span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<pre class="chroma"><code class="language-py" data-lang="py"><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
 <span class="c1"># is more performant than</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1504,10 +1504,10 @@
 
 <span class="n">s</span> <span class="o">=</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;aaabbccda&#39;</span><span class="p">)]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;aaabbccda&#39;</span><span class="p">)]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1535,8 +1535,8 @@
 
 <span class="n">friends</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monique&#39;</span><span class="p">,</span> <span class="s1">&#39;Ashish&#39;</span><span class="p">,</span> <span class="s1">&#39;Devon&#39;</span><span class="p">,</span> <span class="s1">&#39;Bernie&#39;</span><span class="p">]</span>
 
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">friends</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">friends</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">friends</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">friends</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">)))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1567,12 +1567,12 @@
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
 
 <span class="c1"># Or</span>
 
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="binary-conversion">Binary conversion</h3>
@@ -1586,12 +1586,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-py" data-lang="py"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{42:b}&#39;</span><span class="p">)</span>
+<pre class="chroma"><code class="language-py" data-lang="py"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="mi">42</span><span class="si">:</span><span class="s1">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">M</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">format</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="n">f</span><span class="s1">&#39;0{M}b&#39;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;{42:08b}&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># With leading zeros</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">format</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;0</span><span class="si">{</span><span class="n">M</span><span class="si">}</span><span class="s1">b&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="mi">42</span><span class="si">:</span><span class="s1">08b</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># With leading zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1643,16 +1643,16 @@
 
 
 <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;foobar&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;fooo&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Reverse the string.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;fooo&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Reverse the string.</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;f.s,h;q&#39;</span>
 <span class="n">s_no_punctuation</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s_no_punctuation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s_no_punctuation</span><span class="p">)</span>
 
 <span class="c1"># And some other handy constants:</span>
-<span class="k">print</span><span class="p">(</span>
+<span class="nb">print</span><span class="p">(</span>
 <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">,</span>
 <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">,</span>
 <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">,</span>
@@ -1665,8 +1665,8 @@
 <span class="p">)</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;121211&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">())</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1703,8 +1703,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">s_len</span> <span class="p">:</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-   <span class="k">print</span><span class="p">(</span><span class="n">s_len</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">s_len</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">s_len</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1744,14 +1744,14 @@
 <span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;abbde&#39;</span>
 <span class="k">for</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">c1</span><span class="o">==</span><span class="n">c2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="o">==</span><span class="n">c2</span><span class="p">)</span>
 
 <span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;abbd&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="ow">in</span> <span class="n">zip_longest</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1816,7 +1816,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.72.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
