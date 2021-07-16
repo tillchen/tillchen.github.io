@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  483 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  554 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;483 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;554 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -122,7 +122,14 @@
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="basics">Basics</h2>
+            </div><div class="content" id="content"><ul>
+<li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#oop" rel="">OOP</a></li>
+<li><a href="#dom-document-object-model" rel="">DOM (Document Object Model)</a></li>
+<li><a href="#handling-events" rel="">Handling events</a></li>
+<li><a href="#references" rel="">References</a></li>
+</ul>
+<h2 id="basics">Basics</h2>
 <ol>
 <li>
 <p>Variables:</p>
@@ -131,23 +138,6 @@
 <li>If we forget to declare a variable before using it, it&rsquo;ll always be global even if we first use it in a function.</li>
 </ul>
 </li>
-<li>
-<p>The syntax for an array is similar to Python, using <code>[]</code> instead of <code>{}</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
-<span class="nx">foo</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-<span class="nx">foo</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// We can do this, but be sure to avoid creating a sparse array
-</span></code></pre></td></tr></table>
-</div>
-</div></li>
 <li>
 <p><code>undefined</code> vs <code>null</code> vs <code>isNaN()</code>:</p>
 <ul>
@@ -169,7 +159,79 @@
 <p><code>===</code> between two object references will be true only if they refer to the same object.</p>
 </li>
 <li>
-<p>A function in JavaScript can behave just like any data type. It can be assigned to, passed, and returned.</p>
+<p>JavaScript has first-class support for functions.</p>
+</li>
+<li>
+<p>Tow built-in numeric types: <code>Number</code> and <code>BigInt</code>. Integers are implicitly floats: <code>3 / 2 = 1.5</code>.</p>
+</li>
+<li>
+<p><code>parseInt()</code> and <code>parseFloat()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">);</span> <span class="c1">// 123
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 3
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span> <span class="c1">// NaN
+</span><span class="c1"></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;1.2&#39;</span><span class="p">);</span> <span class="c1">// 1.2
+</span><span class="c1"></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;123.2abc&#39;</span><span class="p">);</span> <span class="c1">// 123.2. Parse until invalid char.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>NaN</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// true. It&#39;s only true when the parameter is truly NaN.
+</span><span class="c1">// The global isNaN gives unintuitive behavior, do not use!
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>Infinity</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Infinity
+</span><span class="c1"></span><span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// -Infinity
+</span><span class="c1"></span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span> <span class="c1">// false
+</span><span class="c1"></span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Strings:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 5
+</span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// e
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Like Python, JavaScript also has truthy and falsy booleans:</p>
+<ul>
+<li>false: false, 0, &lsquo;&rsquo;, NaN, null, undefined.</li>
+<li>true: all the others.</li>
+</ul>
 </li>
 </ol>
 <h2 id="oop">OOP</h2>
