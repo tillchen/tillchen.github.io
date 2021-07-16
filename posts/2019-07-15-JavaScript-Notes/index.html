@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  554 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  681 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;554 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;681 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -134,8 +134,39 @@
 <li>
 <p>Variables:</p>
 <ul>
-<li>Global variables live as long as the page.</li>
-<li>If we forget to declare a variable before using it, it&rsquo;ll always be global even if we first use it in a function.</li>
+<li>
+<p>Global variables live as long as the page.</p>
+</li>
+<li>
+<p>If we forget to declare a variable before using it, it’ll always be global even if we first use it in a function.</p>
+</li>
+<li>
+<p><code>let</code> creates clock-level variables.</p>
+</li>
+<li>
+<p><code>const</code> creates constants.</p>
+</li>
+<li>
+<p><code>var</code> is the traditional way of declaring variables.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// i visible here.
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// i visible here.
+</span><span class="c1"></span><span class="p">}</span>
+<span class="c1">// i visible here.
+</span><span class="c1">// let i = 0 makes i only visible in the for loop.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 </li>
 <li>
@@ -219,10 +250,16 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 5
-</span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// e
+</span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// &#39;e&#39;
+</span><span class="c1"></span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// &#39;123&#39;
+</span><span class="c1"></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// &#39;33&#39;
+</span><span class="c1"></span><span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// &#39;2&#39;. A useful way to convert to string.
 </span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -233,9 +270,32 @@
 <li>true: all the others.</li>
 </ul>
 </li>
+<li>
+<p>Two other ways of for loops:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">object</span> <span class="k">in</span> <span class="nx">objects</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="oop">OOP</h2>
 <ol>
+<li>
+<p>Objects are like Dictionaries in Python and HashMaps in Java.</p>
+</li>
+<li>
+<p><code>let obj = {};</code> is the preferred way to create an empty object.</p>
+</li>
 <li>
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
@@ -257,12 +317,12 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span><span class="p">,</span> <span class="c1">// A comma here
-</span><span class="c1"></span>    <span class="nx">coding</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;coding bar&#34;</span><span class="p">;</span> <span class="c1">// Must add `this.`
-</span><span class="c1"></span>        <span class="nx">alert</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;I&#39;m coding now.&#34;</span><span class="p">);</span>
-    <span class="p">},</span> <span class="c1">// A comma here
-</span><span class="c1"></span>    <span class="nx">age</span><span class="o">:</span> <span class="mi">17</span> <span class="c1">// NO comma here. But can be added after ES5. However, not in JSON.
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span><span class="p">,</span>
+    <span class="nx">coding</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;coding bar&#34;</span><span class="p">;</span>
+        <span class="nx">alert</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;I&#39;m coding now.&#34;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">17</span> <span class="c1">// NO comma here. But can be added after ES5. However, not in JSON.
 </span><span class="c1"></span><span class="p">};</span>
 <span class="nx">foo</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">190</span><span class="p">;</span> <span class="c1">// This adds a new property
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]);</span> <span class="c1">// Also works
@@ -359,7 +419,12 @@
 </ol>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?crid=2NISC4BUYXL03&amp;keywords=head&#43;first&#43;javascript&#43;programming&amp;qid=1562253717&amp;s=gateway&amp;sprefix=head&#43;first&#43;javascript%2Caps%2C402&amp;sr=8-1" target="_blank" rel="noopener noreffer">Head First JavaScript Programming: A Brain-Friendly Guide, 1st Edition</a></li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="noopener noreffer">A re-introduction to JavaScript (JS tutorial)</a></p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?crid=2NISC4BUYXL03&amp;keywords=head&#43;first&#43;javascript&#43;programming&amp;qid=1562253717&amp;s=gateway&amp;sprefix=head&#43;first&#43;javascript%2Caps%2C402&amp;sr=8-1" target="_blank" rel="noopener noreffer">Head First JavaScript Programming: A Brain-Friendly Guide, 1st Edition</a></p>
+</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
