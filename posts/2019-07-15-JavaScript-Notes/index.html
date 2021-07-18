@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  681 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  710 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;681 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;710 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -278,12 +278,37 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">object</span> <span class="k">in</span> <span class="nx">objects</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">}</span>
+    <span class="c1">// for in only iterates over the array indices.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Arrays are a special type of object:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">];</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 3
+</span><span class="c1"></span><span class="nx">array</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;fox&#39;</span><span class="p">;</span> <span class="c1">// Create a sparse array.
+</span><span class="c1"></span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 101
+</span><span class="c1"></span><span class="k">typeof</span> <span class="nx">array</span><span class="p">[</span><span class="mi">90</span><span class="p">];</span> <span class="c1">// undefined.
+</span><span class="c1"></span><span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;new_item&#39;</span><span class="p">);</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">element</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">element</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -316,26 +341,23 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span><span class="p">,</span>
     <span class="nx">coding</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&#34;coding bar&#34;</span><span class="p">;</span>
         <span class="nx">alert</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;I&#39;m coding now.&#34;</span><span class="p">);</span>
     <span class="p">},</span>
-    <span class="nx">age</span><span class="o">:</span> <span class="mi">17</span> <span class="c1">// NO comma here. But can be added after ES5. However, not in JSON.
-</span><span class="c1"></span><span class="p">};</span>
-<span class="nx">foo</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">190</span><span class="p">;</span> <span class="c1">// This adds a new property
-</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]);</span> <span class="c1">// Also works
-</span><span class="c1"></span><span class="k">delete</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// This deletes the property
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Prints all properties
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">17</span>
+<span class="p">};</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="mi">190</span><span class="p">;</span> <span class="c1">// This adds a new property.
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]);</span> <span class="c1">// Also works.
+</span><span class="c1"></span><span class="k">delete</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span> <span class="c1">// This deletes the property.
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">foo</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Print all properties.
 </span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prop</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="nx">foo</span><span class="p">[</span><span class="nx">prop</span><span class="p">]);</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
-<li>
-<p>Like in Java, use <code>this</code> and <code>new</code> for constructors.</p>
-</li>
 <li>
 <p>JavaScript (before ES6) doesn&rsquo;t have classes. For inheritance, we have prototypal inheritance. (Prototype is like the parent class.)</p>
 <div class="highlight"><div class="chroma">
