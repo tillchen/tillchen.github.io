@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  710 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  887 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;710 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;887 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -116,6 +116,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#basics">Basics</a></li>
+    <li><a href="#functions">Functions</a></li>
     <li><a href="#oop">OOP</a></li>
     <li><a href="#dom-document-object-model">DOM (Document Object Model)</a></li>
     <li><a href="#handling-events">Handling events</a></li>
@@ -124,6 +125,7 @@
 </nav></div>
             </div><div class="content" id="content"><ul>
 <li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#functions" rel="">Functions</a></li>
 <li><a href="#oop" rel="">OOP</a></li>
 <li><a href="#dom-document-object-model" rel="">DOM (Document Object Model)</a></li>
 <li><a href="#handling-events" rel="">Handling events</a></li>
@@ -313,6 +315,77 @@
 </div>
 </div></li>
 </ol>
+<h2 id="functions">Functions</h2>
+<ol>
+<li>
+<p>The named parameters are more like guidelines:</p>
+<ul>
+<li>
+<p>Calling a function without enough parameters gives undefined.</p>
+</li>
+<li>
+<p>Calling a function with more parameters than expected ignores the extra parameters.</p>
+</li>
+<li>
+<p><code>arguments</code> is an array-like object holding all the values passed in. The rest parameter syntax <code>...args</code> is preferred for ES6. We can also pass in an array with the spread operator <code>...numbers</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">foo</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">arg</span> <span class="k">of</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>Anonymous functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span> <span class="c1">// Equivalent to function foo().
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Arrow function expressions are compact alternatives to traditional functions, but they can&rsquo;t be used in all situations.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">animals</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">animal</span> <span class="p">=&gt;</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">length</span><span class="p">));</span>
+<span class="c1">// Multiple arguments or no arguments require the parentheses.
+</span><span class="c1"></span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;No arguments.&#39;</span><span class="p">);</span>
+<span class="c1">// Multiline body requires braces and return.
+</span><span class="c1"></span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">foo</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// Named function.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
 <h2 id="oop">OOP</h2>
 <ol>
 <li>
@@ -446,6 +519,9 @@
 </li>
 <li>
 <p><a href="https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?crid=2NISC4BUYXL03&amp;keywords=head&#43;first&#43;javascript&#43;programming&amp;qid=1562253717&amp;s=gateway&amp;sprefix=head&#43;first&#43;javascript%2Caps%2C402&amp;sr=8-1" target="_blank" rel="noopener noreffer">Head First JavaScript Programming: A Brain-Friendly Guide, 1st Edition</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></p>
 </li>
 </ul>
 </div><div class="post-footer" id="post-footer">
