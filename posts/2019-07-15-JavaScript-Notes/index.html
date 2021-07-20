@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  872 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  939 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;872 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;939 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -116,6 +116,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#basics">Basics</a></li>
+    <li><a href="#numbers">Numbers</a></li>
     <li><a href="#functions">Functions</a></li>
     <li><a href="#oop">OOP</a></li>
     <li><a href="#dom-document-object-model">DOM (Document Object Model)</a></li>
@@ -125,6 +126,7 @@
 </nav></div>
             </div><div class="content" id="content"><ul>
 <li><a href="#basics" rel="">Basics</a></li>
+<li><a href="#numbers" rel="">Numbers</a></li>
 <li><a href="#functions" rel="">Functions</a></li>
 <li><a href="#oop" rel="">OOP</a></li>
 <li><a href="#dom-document-object-model" rel="">DOM (Document Object Model)</a></li>
@@ -174,7 +176,7 @@
 <li>
 <p><code>undefined</code> vs <code>null</code> vs <code>isNaN()</code>:</p>
 <ul>
-<li><code>undefined</code> is used for;
+<li><code>undefined</code> is used for:
 <ul>
 <li>Unassigned/ Uninitiated variables;</li>
 <li>A missing property for an object;</li>
@@ -182,7 +184,7 @@
 </ul>
 </li>
 <li><code>null</code> is used for uncreated objects (like <code>.getElementById()</code>&rsquo;s returned value;)</li>
-<li><code>isNaN(foo)</code> is true if foo is a number that can&rsquo;t be represented (0/0).</li>
+<li><code>NaN</code> is a number that can&rsquo;t be represented (0/0).</li>
 </ul>
 </li>
 <li>
@@ -192,58 +194,6 @@
 <p><code>===</code> between two object references will be true only if they refer to the same object.</p>
 </li>
 <li>
-<p>Two built-in numeric types: <code>Number</code> and <code>BigInt</code>. Integers are implicitly floats: <code>3 / 2 = 1.5</code>.</p>
-</li>
-<li>
-<p><code>parseInt()</code> and <code>parseFloat()</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">);</span> <span class="c1">// 123
-</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 3
-</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span> <span class="c1">// NaN
-</span><span class="c1"></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;1.2&#39;</span><span class="p">);</span> <span class="c1">// 1.2
-</span><span class="c1"></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;123.2abc&#39;</span><span class="p">);</span> <span class="c1">// 123.2. Parse until invalid char.
-</span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><code>NaN</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// true. It&#39;s only true when the parameter is truly NaN.
-</span><span class="c1">// The global isNaN gives unintuitive behavior, do not use!
-</span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><code>Infinity</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Infinity
-</span><span class="c1"></span><span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// -Infinity
-</span><span class="c1"></span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span> <span class="c1">// false
-</span><span class="c1"></span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// false
-</span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
 <p>Strings:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -252,13 +202,19 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 5
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// There&#39;s no character type in JS.
+</span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 5
 </span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// &#39;e&#39;
+</span><span class="c1"></span><span class="s1">&#39;hello&#39;</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span> <span class="c1">// &#39;HELLO&#39;
 </span><span class="c1"></span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// &#39;123&#39;
 </span><span class="c1"></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// &#39;33&#39;
 </span><span class="c1"></span><span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// &#39;2&#39;. A useful way to convert to string.
+</span><span class="c1"></span><span class="s1">&#39;A&#39;</span> <span class="o">===</span> <span class="s1">&#39;\u0041&#39;</span><span class="p">;</span> <span class="c1">// \ is the escape character.
 </span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -311,6 +267,70 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>/**/</code> can also occur in regular expression literals, so it&rsquo;s recommended to use <code>//</code> instead.</p>
+</li>
+</ol>
+<h2 id="numbers">Numbers</h2>
+<ol>
+<li>
+<p>Two built-in numeric types: <code>Number</code> and <code>BigInt</code>. Integers are implicitly floats (64-bit like <code>Double</code>): <code>3 / 2 = 1.5</code>. This is good as short integer overflows are avoided.</p>
+</li>
+<li>
+<p><code>parseInt()</code> and <code>parseFloat()</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">);</span> <span class="c1">// 123
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 3
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">);</span> <span class="c1">// NaN
+</span><span class="c1"></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;1.2&#39;</span><span class="p">);</span> <span class="c1">// 1.2
+</span><span class="c1"></span><span class="nb">parseFloat</span><span class="p">(</span><span class="s1">&#39;123.2abc&#39;</span><span class="p">);</span> <span class="c1">// 123.2. Parse until invalid char.
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>NaN</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">Number</span><span class="p">.</span><span class="nb">isNaN</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// true. It&#39;s only true when the parameter is truly NaN.
+</span><span class="c1">// The global isNaN gives unintuitive behavior, do not use!
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>Infinity</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Infinity
+</span><span class="c1"></span><span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// -Infinity
+</span><span class="c1"></span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">Infinity</span><span class="p">);</span> <span class="c1">// false
+</span><span class="c1"></span><span class="nb">isFinite</span><span class="p">(</span><span class="kc">NaN</span><span class="p">);</span> <span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>1e2</code> is the same as 100.</p>
+</li>
+<li>
+<p><code>Math.floor()</code> converts a number to an integer.</p>
+</li>
 </ol>
 <h2 id="functions">Functions</h2>
 <ol>
@@ -506,6 +526,9 @@
 </li>
 <li>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></p>
+</li>
+<li>
+<p><a href="https://www.goodreads.com/book/show/2998152-javascript?from_search=true&amp;from_srp=true&amp;qid=a2NTYmkfEm&amp;rank=1" target="_blank" rel="noopener noreffer">JavaScript: The Good Parts by Douglas Crockford</a></p>
 </li>
 </ul>
 </div><div class="post-footer" id="post-footer">
