@@ -282,7 +282,7 @@
 
 1. JSON strings use double quotes. All property names are strings. No functions or comments allowed.
 
-2. `JSON.parse()` converts JSON into a JS object.
+2. `JSON.parse()` converts JSON into a JS object. `JSON.stringify()` converts a JS object to a JSON string.
 
 ## References
 
