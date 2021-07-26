@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1415 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1492 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1415 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1492 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -203,14 +203,17 @@
 <p>Strings:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// There&#39;s no character type in JS.
@@ -221,6 +224,9 @@
 </span><span class="c1"></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// &#39;33&#39;
 </span><span class="c1"></span><span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// &#39;2&#39;. A useful way to convert to string.
 </span><span class="c1"></span><span class="s1">&#39;A&#39;</span> <span class="o">===</span> <span class="s1">&#39;\u0041&#39;</span><span class="p">;</span> <span class="c1">// \ is the escape character.
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="sb">`The answer is </span><span class="si">${</span><span class="nx">foo</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span> <span class="c1">// Back ticks give us template literals. They also allow multiline strings.
+</span><span class="c1">// JS uses UTF-16, which is not enough for all the symbols. So a single 16-bit code unit is used for common characters but two code units are used for rare ones.
 </span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -271,6 +277,8 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;panda&#39;</span><span class="p">];</span>
@@ -289,7 +297,9 @@
 <span class="nx">array</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">});</span>
-<span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// Like in Python.
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">squared</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">a</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
