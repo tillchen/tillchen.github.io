@@ -27,6 +27,7 @@
         }
         // i visible here.
         // let i = 0 makes i only visible in the for loop.
+        let a = 1, b = 2; // Possible to declare multiple variables in one line.
         ```
 
 2. `undefined` vs `null` vs `isNaN()`:
@@ -146,7 +147,8 @@
 3. Anonymous functions:
 
     ```js
-    let foo = function() {}; // Equivalent to function foo().
+    const foo = function() {}; // Equivalent to function foo().
+    // This is called a function expression, which is not hoisted (unlike function declaration).
     ```
 
 4. Arrow function expressions are compact alternatives to traditional functions, but they can't be used in all situations.
