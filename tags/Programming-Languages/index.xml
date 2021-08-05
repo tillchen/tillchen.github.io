@@ -84,7 +84,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
     <description><![CDATA[Basics Numbers Functions OOP DOM (Document Object Model) Handling events Pitfalls JSON References  Basics   Variables:
   Global variables live as long as the page.
   If we forget to declare a variable before using it, it’ll always be global even if we first use it in a function.
-  let creates clock-level variables.
+  let creates block-level variables.
   const creates constants.
   var is the traditional way of declaring variables.]]></description>
 </item><item>
