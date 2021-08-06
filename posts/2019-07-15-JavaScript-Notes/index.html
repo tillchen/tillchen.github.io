@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1741 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1765 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1741 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1765 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -307,7 +307,7 @@
 <p><code>/**/</code> can also occur in regular expression literals, so it&rsquo;s recommended to use <code>//</code> instead.</p>
 </li>
 <li>
-<p><code>regexp.test(string)</code> returns true if the string matches.</p>
+<p><code>regexp.test(string)</code> returns true if the string matches. <code>let re1 = /abc/;</code> and <code>let re1 = new RegExp('abc');</code> are equivalent.</p>
 </li>
 <li>
 <p>Destructuring (similar to Python and Kotlin):</p>
@@ -334,15 +334,9 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">throw</span> <span class="p">{</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;TypeError&#39;</span><span class="p">,</span>
-    <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;foo&#39;</span>
-<span class="p">}</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Foo.&#39;</span><span class="p">);</span>
 <span class="k">try</span> <span class="p">{</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
@@ -370,6 +364,9 @@
 </span></code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>'use strict;'</code> at the top of a file or a function body enables the strict mode to catch errors.</p>
+</li>
 </ol>
 <h2 id="numbers">Numbers</h2>
 <ol>
