@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1776 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  2044 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-07-15-JavaScript-Notes\/","datePublished": "2019-07-15T00:00:00+08:00","dateModified": "2019-07-15T00:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JavaScript Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1776 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="July 15, 2019">July 15, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2044 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -123,6 +123,7 @@
     <li><a href="#handling-events">Handling events</a></li>
     <li><a href="#pitfalls">Pitfalls</a></li>
     <li><a href="#json">JSON</a></li>
+    <li><a href="#asynchronicity">Asynchronicity</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav></div>
@@ -135,6 +136,7 @@
 <li><a href="#handling-events" rel="">Handling events</a></li>
 <li><a href="#pitfalls" rel="">Pitfalls</a></li>
 <li><a href="#json" rel="">JSON</a></li>
+<li><a href="#asynchronicity" rel="">Asynchronicity</a></li>
 <li><a href="#references" rel="">References</a></li>
 </ul>
 <h2 id="basics">Basics</h2>
@@ -768,6 +770,145 @@
 <p><code>JSON.parse()</code> converts JSON into a JS object. <code>JSON.stringify()</code> converts a JS object to a JSON string.</p>
 </li>
 </ol>
+<h2 id="asynchronicity">Asynchronicity</h2>
+<ol>
+<li>
+<p><code>Promise</code> is like <code>Future</code> in Java.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">promise2</span> <span class="o">=</span> <span class="nx">doSomething</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">successCallback</span><span class="p">,</span> <span class="nx">failureCallback</span><span class="p">);</span>
+<span class="c1">// Chaining:
+</span><span class="c1"></span><span class="nx">doSomething</span><span class="p">()</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">doSomethingElse</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">newResult</span> <span class="p">=&gt;</span> <span class="nx">doThirdThing</span><span class="p">(</span><span class="nx">newResult</span><span class="p">))</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">finalResult</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Got the final result: </span><span class="si">${</span><span class="nx">finalResult</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">failureCallback</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">300</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// Promise.all rejects immediately when any input rejects.
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">p2</span> <span class="o">=</span> <span class="mi">1337</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">p3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">p1</span><span class="p">,</span> <span class="nx">p2</span><span class="p">,</span> <span class="nx">p3</span><span class="p">]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">values</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span> <span class="c1">// [3, 1337, &#34;foo&#34;].
+</span><span class="c1"></span><span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>async</code> and <code>await</code> are like in Dart. Async functions always return a promise.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// This returns a different reference.
+</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// is similar to
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// This returns the same reference.
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">async</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">await</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// is equivalent to
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kc">undefined</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Rewrite chaining:
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">getProcessedData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">downloadData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="c1">// returns a promise
+</span><span class="c1"></span>        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">downloadFallbackData</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>  <span class="c1">// returns a promise
+</span><span class="c1"></span>        <span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">v</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">processDataInWorker</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>  <span class="c1">// returns a promise
+</span><span class="c1"></span>        <span class="p">})</span>
+<span class="p">}</span>
+<span class="kr">async</span> <span class="kd">function</span> <span class="nx">getProcessedData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">v</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">v</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">downloadData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">v</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">downloadFallbackData</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">processDataInWorker</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
 <h2 id="references">References</h2>
 <ul>
 <li>
@@ -784,6 +925,12 @@
 </li>
 <li>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function</a></p>
 </li>
 </ul>
 </div><div class="post-footer" id="post-footer">
