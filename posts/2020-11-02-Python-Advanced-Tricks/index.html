@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2020-11-02-Python-Advanced-Tricks\/"
-        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  2266 ,
+        },"genre": "posts","keywords": "Programming Languages, Python","wordcount":  2340 ,
         "url": "https:\/\/tillchen.com\/posts\/2020-11-02-Python-Advanced-Tricks\/","datePublished": "2020-11-02T17:45:00+01:00","dateModified": "2020-11-02T17:45:00+01:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao Chen"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python Advanced Tricks</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2266 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="November 2, 2020">November 2, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2340 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -212,6 +212,7 @@
     </li>
     <li><a href="#itertools">Itertools</a>
       <ul>
+        <li><a href="#islice">islice</a></li>
         <li><a href="#groupby">groupby</a></li>
         <li><a href="#permutations-and-combinations">permutations and combinations</a></li>
       </ul>
@@ -325,6 +326,7 @@
 </li>
 <li><a href="#itertools" rel="">Itertools</a>
 <ul>
+<li><a href="#islice" rel="">islice</a></li>
 <li><a href="#groupby" rel="">groupby</a></li>
 <li><a href="#permutations-and-combinations" rel="">permutations and combinations</a></li>
 </ul>
@@ -339,7 +341,7 @@
 </ul>
 </li>
 </ul>
-<p>This contains some advanced tricks in Python that could be useful for tech interviews.</p>
+<p>Python advanced tricks.</p>
 <h2 id="decorators">Decorators</h2>
 <h3 id="functools">functools</h3>
 <h4 id="cached_property">cached_property</h4>
@@ -1119,13 +1121,17 @@
 <p>It is a list-based binary min-heap. Insertion and extraction take O(log n).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">heapq</span>
@@ -1133,8 +1139,12 @@
 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">))</span>
 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;eat&#39;</span><span class="p">))</span>
 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sleep&#39;</span><span class="p">))</span>
+<span class="n">heapq</span><span class="o">.</span><span class="n">heappushpop</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;repeat&#39;</span><span class="p">))</span>
 <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1142,11 +1152,13 @@
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="o">(</span>1, <span class="s1">&#39;eat&#39;</span><span class="o">)</span>
-    <span class="o">(</span>2, <span class="s1">&#39;code&#39;</span><span class="o">)</span>
+<pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="o">(</span>2, <span class="s1">&#39;code&#39;</span><span class="o">)</span>
     <span class="o">(</span>3, <span class="s1">&#39;sleep&#39;</span><span class="o">)</span>
+    <span class="o">(</span>4, <span class="s1">&#39;repeat&#39;</span><span class="o">)</span>
+    <span class="o">[</span>2, 3, 6<span class="o">]</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="queuepriorityqueue">queue.PriorityQueue</h4>
@@ -1337,6 +1349,10 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="n">tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)]</span>
@@ -1355,6 +1371,10 @@
     <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+<span class="c1"># Use a tuple as the key to sort by multiple keys.</span>
+<span class="n">tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">tuples</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -1364,6 +1384,7 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="o">[(</span>3, <span class="s1">&#39;a&#39;</span><span class="o">)</span>, <span class="o">(</span>2, <span class="s1">&#39;b&#39;</span><span class="o">)</span>, <span class="o">(</span>1, <span class="s1">&#39;d&#39;</span><span class="o">)]</span>
@@ -1371,6 +1392,7 @@
     <span class="o">[</span>0, 2, 4, 6, 8, 10, 12, 14<span class="o">]</span>
     <span class="o">[</span>0, 2, 4, 6, 8, 10, 12, 14<span class="o">]</span>
     <span class="o">[(</span><span class="s1">&#39;a&#39;</span>, 4<span class="o">)</span>, <span class="o">(</span><span class="s1">&#39;b&#39;</span>, 3<span class="o">)</span>, <span class="o">(</span><span class="s1">&#39;c&#39;</span>, 2<span class="o">)]</span>
+    <span class="o">[(</span>1, <span class="s1">&#39;d&#39;</span><span class="o">)</span>, <span class="o">(</span>2, <span class="s1">&#39;a&#39;</span><span class="o">)</span>, <span class="o">(</span>2, <span class="s1">&#39;b&#39;</span><span class="o">)</span>, <span class="o">(</span>3, <span class="s1">&#39;a&#39;</span><span class="o">)]</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="classes-and-oop">Classes and OOP</h2>
@@ -1486,7 +1508,25 @@
 </div><h3 id="equality">Equality</h3>
 <p>A dictionary key is equal when they have the same <code>__hash__</code> and <code>__eq__</code>.</p>
 <h2 id="itertools">Itertools</h2>
-<h3 id="groupby">groupby</h3>
+<h3 id="islice">islice</h3>
+<p>The <code>Iterator</code>&rsquo;s equivalence of <code>slice()</code> is <code>islice()</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">islice</span>
+
+<span class="n">stream</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">islice</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="groupby">groupby</h3>
 <p>It can be used for string compression.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
