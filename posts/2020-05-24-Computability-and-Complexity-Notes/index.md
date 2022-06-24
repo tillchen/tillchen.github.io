@@ -11,7 +11,7 @@
       * [Random Access Machine](#random-access-machine)
   * [Decidability](#decidability)
     * [Decidable Languages](#decidable-languages)
-    * [Undecidability of $A_{TM}$](#undecidability-of-math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmsubmiamimrowmitmimimmimrowmsubmrowannotation-encoding%22applicationx-tex%22atmannotationsemanticsmathatm%e2%80%8b)
+    * [Undecidability of $A_{TM}$](#undecidability-of-a_tm)
     * [A Turing-Unrecognizable Language](#a-turing-unrecognizable-language)
   * [Reducibility](#reducibility)
 * [Complexity Theory](#complexity-theory)
