@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Java - Tag - Tianyao Chen</title>
+        <title>Java - Tag - Tianyao (Till) Chen</title>
         <link>https://tillchen.com/tags/Java/</link>
-        <description>Java - Tag - Tianyao Chen</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Mon, 02 Nov 2020 19:23:08 &#43;0100</lastBuildDate><atom:link href="https://tillchen.com/tags/Java/" rel="self" type="application/rss+xml" /><item>
+        <description>Java - Tag - Tianyao (Till) Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Mon, 02 Nov 2020 19:23:08 &#43;0100</lastBuildDate><atom:link href="https://tillchen.com/tags/Java/" rel="self" type="application/rss+xml" /><item>
     <title>Modern Java Notes</title>
     <link>https://tillchen.com/posts/2020-11-02-Modern-Java-Notes/</link>
     <pubDate>Mon, 02 Nov 2020 19:23:08 &#43;0100</pubDate>

@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Version Control - Tag - Tianyao Chen</title>
+        <title>Version Control - Tag - Tianyao (Till) Chen</title>
         <link>https://tillchen.com/tags/Version-Control/</link>
-        <description>Version Control - Tag - Tianyao Chen</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Sat, 25 May 2019 00:00:00 &#43;0800</lastBuildDate><atom:link href="https://tillchen.com/tags/Version-Control/" rel="self" type="application/rss+xml" /><item>
+        <description>Version Control - Tag - Tianyao (Till) Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Sat, 25 May 2019 00:00:00 &#43;0800</lastBuildDate><atom:link href="https://tillchen.com/tags/Version-Control/" rel="self" type="application/rss+xml" /><item>
     <title>Git Tips</title>
     <link>https://tillchen.com/posts/2019-05-25-Git-Tips/</link>
     <pubDate>Sat, 25 May 2019 00:00:00 &#43;0800</pubDate>

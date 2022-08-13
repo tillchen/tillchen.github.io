@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>AI - Tag - Tianyao Chen</title>
+        <title>AI - Tag - Tianyao (Till) Chen</title>
         <link>https://tillchen.com/tags/AI/</link>
-        <description>AI - Tag - Tianyao Chen</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao Chen)</webMaster><lastBuildDate>Fri, 01 May 2020 09:25:01 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/AI/" rel="self" type="application/rss+xml" /><item>
+        <description>AI - Tag - Tianyao (Till) Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Fri, 01 May 2020 09:25:01 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/AI/" rel="self" type="application/rss+xml" /><item>
     <title>Machine Learning Notes</title>
     <link>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</link>
     <pubDate>Fri, 01 May 2020 09:25:01 &#43;0200</pubDate>
