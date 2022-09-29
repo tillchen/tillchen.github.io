@@ -31,7 +31,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Go Notes</title>
     <link>https://tillchen.com/posts/2020-02-17-Go-Notes/</link>
-    <pubDate>Mon, 17 Feb 2020 00:00:00 &#43;0800</pubDate>
+    <pubDate>Mon, 17 Feb 2020 00:00:00 -0800</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2020-02-17-Go-Notes/</guid>
     <description><![CDATA[Basics Data Structures Structs Errors and Failures Goroutines and Channels Testing  Basics   Hello World:
@@ -39,7 +39,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Kotlin Notes</title>
     <link>https://tillchen.com/posts/2019-09-04-Kotlin-Notes/</link>
-    <pubDate>Wed, 04 Sep 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 04 Sep 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-09-04-Kotlin-Notes/</guid>
     <description><![CDATA[Table of Contents  Table of Contents Basics Collections OOP Nulls and Exceptions Lambdas and Higher-Order Functions References  Basics   Kotlin requires one main per app:
@@ -48,7 +48,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Swift Notes</title>
     <link>https://tillchen.com/posts/2019-08-2-Swift-Notes/</link>
-    <pubDate>Fri, 02 Aug 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Fri, 02 Aug 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-08-2-Swift-Notes/</guid>
     <description><![CDATA[Basics OOP References  Basics   How to compile and run:
@@ -57,7 +57,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>SQL Notes</title>
     <link>https://tillchen.com/posts/2019-7-27-SQL-Notes/</link>
-    <pubDate>Sat, 27 Jul 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Sat, 27 Jul 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-7-27-SQL-Notes/</guid>
     <description><![CDATA[Basics SELECT DELETE UPDATE ALTER References  Basics   Create and use the database (MySQL as an example)
@@ -65,7 +65,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Bash Tips</title>
     <link>https://tillchen.com/posts/2019-7-24-Bash-Tips/</link>
-    <pubDate>Wed, 24 Jul 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 24 Jul 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-7-24-Bash-Tips/</guid>
     <description><![CDATA[Basics Writing Scripts Advanced Tricks Resources  Basics   cd alone goes to the home directory.
@@ -78,7 +78,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>JavaScript Notes</title>
     <link>https://tillchen.com/posts/2019-07-15-JavaScript-Notes/</link>
-    <pubDate>Mon, 15 Jul 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Mon, 15 Jul 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-07-15-JavaScript-Notes/</guid>
     <description><![CDATA[Basics Numbers Functions OOP DOM (Document Object Model) Handling events Pitfalls JSON Asynchronicity References  Basics   Variables:
@@ -90,7 +90,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Java Notes</title>
     <link>https://tillchen.com/posts/2019-06-05-Java-Notes/</link>
-    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-06-05-Java-Notes/</guid>
     <description><![CDATA[Basics Java Data Structures References and Garbage Collection Static Exceptions I/O Constructors Polymorphism References  Basics   SourceCode.java -&gt; Compile (javac source_code.java) -&gt; Java bytecode (SourceCode.class) -&gt;Run by the Java Virtual Machine (java SouceCode)

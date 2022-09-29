@@ -14,7 +14,7 @@
 </item><item>
     <title>iOS Development Notes</title>
     <link>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</link>
-    <pubDate>Tue, 13 Aug 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Tue, 13 Aug 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</guid>
     <description><![CDATA[Basics View Controller Lifecycle: MVC Architecture Project Organization References  Basics   Model-View-Controller is a design pattern in iOS.
@@ -23,7 +23,7 @@
 </item><item>
     <title>Android Development Notes</title>
     <link>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</link>
-    <pubDate>Wed, 10 Jul 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 10 Jul 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</guid>
     <description><![CDATA[Table of Contents  Table of Contents Basics App Resources Permissions Gradle Layout Activities Fragments Notifications Android Studio Tips Miscellaneous Resources  Basics   Layout is typically defined in XML, whereas activities are in Java class.

@@ -16,7 +16,7 @@ Method reference and lambdas   Java 8+ treats functions and lambdas as first-cla
 </item><item>
     <title>Java Notes</title>
     <link>https://tillchen.com/posts/2019-06-05-Java-Notes/</link>
-    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-06-05-Java-Notes/</guid>
     <description><![CDATA[Basics Java Data Structures References and Garbage Collection Static Exceptions I/O Constructors Polymorphism References  Basics   SourceCode.java -&gt; Compile (javac source_code.java) -&gt; Java bytecode (SourceCode.class) -&gt;Run by the Java Virtual Machine (java SouceCode)

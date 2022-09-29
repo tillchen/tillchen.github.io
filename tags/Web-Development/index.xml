@@ -4,10 +4,10 @@
         <link>https://tillchen.com/tags/Web-Development/</link>
         <description>Web Development - Tag - Tianyao (Till) Chen</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Sun, 09 Jun 2019 00:00:00 &#43;0800</lastBuildDate><atom:link href="https://tillchen.com/tags/Web-Development/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Sun, 09 Jun 2019 00:00:00 -0700</lastBuildDate><atom:link href="https://tillchen.com/tags/Web-Development/" rel="self" type="application/rss+xml" /><item>
     <title>Django Notes</title>
     <link>https://tillchen.com/posts/2019-06-09-Django-Notes/</link>
-    <pubDate>Sun, 09 Jun 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Sun, 09 Jun 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-06-09-Django-Notes/</guid>
     <description><![CDATA[Start the Django project (foo as the project name and bar as the app name) The admin site The Django shell (Control-d to exit) Making pages References  Start the Django project (foo as the project name and bar as the app name)   Create a virtual environment (where we can install packages and isolate them from all other packages): (venv is the virtual environment module.)

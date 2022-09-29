@@ -14,7 +14,7 @@
 </item><item>
     <title>Django Notes</title>
     <link>https://tillchen.com/posts/2019-06-09-Django-Notes/</link>
-    <pubDate>Sun, 09 Jun 2019 00:00:00 &#43;0800</pubDate>
+    <pubDate>Sun, 09 Jun 2019 00:00:00 -0700</pubDate>
     <author>Author</author>
     <guid>https://tillchen.com/posts/2019-06-09-Django-Notes/</guid>
     <description><![CDATA[Start the Django project (foo as the project name and bar as the app name) The admin site The Django shell (Control-d to exit) Making pages References  Start the Django project (foo as the project name and bar as the app name)   Create a virtual environment (where we can install packages and isolate them from all other packages): (venv is the virtual environment module.)
