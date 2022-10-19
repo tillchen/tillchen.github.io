@@ -8,94 +8,110 @@
     <title>Modern Java Notes</title>
     <link>https://tillchen.com/posts/2020-11-02-Modern-Java-Notes/</link>
     <pubDate>Mon, 02 Nov 2020 19:23:08 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2020-11-02-Modern-Java-Notes/</guid>
-    <description><![CDATA[Method reference and lambdas Streams Default methods Optional Miscellaneous References  Notes for the modern Java (Java 8+.)
-Method reference and lambdas   Java 8+ treats functions and lambdas as first-class citizens, which means we can pass functions around using method reference. Note that lambdas can only capture final variables in the same scope.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66  inventory.]]></description>
-</item><item>
+    <description><![CDATA[Method reference and lambdas Streams Default methods Optional Miscellaneous References Notes for the modern Java (Java 8+.)
+Method reference and lambdas Java 8+ treats functions and lambdas as first-class citizens, which means we can pass functions around using method reference. Note that lambdas can only capture final variables in the same scope.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 inventory.]]></description>
+</item>
+<item>
     <title>Python Advanced Tricks</title>
     <link>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</link>
     <pubDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</guid>
-    <description><![CDATA[Decorators  functools  cached_property lru_cache reduce   dataclasses  dataclass     Data Structures  Dictioaries  OrderedDict defaultdict ChainMap MappingProxyType   Arrays  array.array bytes bytearray   Records, Structs, and Data Transfer Objects  namedtuple SimpleNamespace   Sets and Multisets  frozenset Counter   Stacks  list deque LifoQueue   Queues  list deque queue.Queue multiprocessing.Queue   Priority Queues  list heapq queue.]]></description>
-</item><item>
+    <description><![CDATA[Decorators functools cached_property lru_cache reduce dataclasses dataclass Data Structures Dictioaries OrderedDict defaultdict ChainMap MappingProxyType Arrays array.array bytes bytearray Records, Structs, and Data Transfer Objects namedtuple SimpleNamespace Sets and Multisets frozenset Counter Stacks list deque LifoQueue Queues list deque queue.Queue multiprocessing.Queue Priority Queues list heapq queue.PriorityQueue Enums Enum IntEnum Functions Lambdas Classes and OOP Own Exceptions Shallow and Deep Copy Abstract Base Class Looping and Iteration Enumerate Iterators Generators Equality Itertools islice groupby permutations and combinations Miscellaneous stdin Binary conversion String Walrus operator Compare with zip Python advanced tricks.]]></description>
+</item>
+<item>
     <title>Dart Notes</title>
     <link>https://tillchen.com/posts/2020-06-13-Dart-Notes/</link>
     <pubDate>Sat, 13 Jun 2020 22:48:53 &#43;0200</pubDate>
-    <author>Author</author>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2020-06-13-Dart-Notes/</guid>
-    <description><![CDATA[Introduction Variables Built-in Types  Numbers Strings Booleans Lists Sets Maps Runes and Grapheme Clusters Symbols   Functions  Optional Parameters  Named Parameters Positional parameters   Anonymous Functions   Operators Exceptions Classes Enum Asynchrony Functional Programming References  Introduction   A basic Dart program:
-1 2 3 4 5 6 7 8  printInteger(int aNumber) { print(&#39;The number is $aNumber&#39;); } main() { var number = 42; printInteger(number); }     Everything that can be placed in a variable is an object.]]></description>
-</item><item>
+    <description><![CDATA[Introduction Variables Built-in Types Numbers Strings Booleans Lists Sets Maps Runes and Grapheme Clusters Symbols Functions Optional Parameters Named Parameters Positional parameters Anonymous Functions Operators Exceptions Classes Enum Asynchrony Functional Programming References Introduction A basic Dart program:
+1 2 3 4 5 6 7 8 printInteger(int aNumber) { print(&#39;The number is $aNumber&#39;); } main() { var number = 42; printInteger(number); } Everything that can be placed in a variable is an object.]]></description>
+</item>
+<item>
     <title>Go Notes</title>
     <link>https://tillchen.com/posts/2020-02-17-Go-Notes/</link>
-    <pubDate>Mon, 17 Feb 2020 00:00:00 -0800</pubDate>
-    <author>Author</author>
+    <pubDate>Mon, 17 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2020-02-17-Go-Notes/</guid>
-    <description><![CDATA[Basics Data Structures Structs Errors and Failures Goroutines and Channels Testing  Basics   Hello World:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  package main import ( &#34;fmt&#34; &#34;strings&#34; &#34;math/rand&#34; &#34;time&#34; &#34;github.com/headfirstgo/keyboard&#34; // use go get to download the package ) func main() { fmt.Println(&#34;Hello Go!&#34;) fmt.Println(strings.Title(&#34;head first go&#34;)) rand.Seed(time.Now().Unix()) fmt.Println(rand.Intn(100)) // 0 - 99 }     Use go fmt to format the code.]]></description>
-</item><item>
+    <description><![CDATA[Basics Data Structures Structs Errors and Failures Goroutines and Channels Testing Basics Hello World:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 package main import ( &#34;fmt&#34; &#34;strings&#34; &#34;math/rand&#34; &#34;time&#34; &#34;github.com/headfirstgo/keyboard&#34; // use go get to download the package ) func main() { fmt.Println(&#34;Hello Go!&#34;) fmt.Println(strings.Title(&#34;head first go&#34;)) rand.Seed(time.Now().Unix()) fmt.Println(rand.Intn(100)) // 0 - 99 } Use go fmt to format the code.]]></description>
+</item>
+<item>
     <title>Kotlin Notes</title>
     <link>https://tillchen.com/posts/2019-09-04-Kotlin-Notes/</link>
-    <pubDate>Wed, 04 Sep 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Wed, 04 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-09-04-Kotlin-Notes/</guid>
-    <description><![CDATA[Table of Contents  Table of Contents Basics Collections OOP Nulls and Exceptions Lambdas and Higher-Order Functions References  Basics   Kotlin requires one main per app:
-1 2 3  fun main(args: Array&lt;String&gt;) { // the args part can be omitted  println(&#34;Hello Kotlin!&#34;) }     Shorter if
-1 2  println(if (x &gt; y) &#34;x is greater&#34; else &#34;x is not greater&#34;) return if (x &gt; y) x else y     var vs val:]]></description>
-</item><item>
+    <description><![CDATA[Table of Contents Table of Contents Basics Collections OOP Nulls and Exceptions Lambdas and Higher-Order Functions References Basics Kotlin requires one main per app:
+1 2 3 fun main(args: Array&lt;String&gt;) { // the args part can be omitted println(&#34;Hello Kotlin!&#34;) } Shorter if
+1 2 println(if (x &gt; y) &#34;x is greater&#34; else &#34;x is not greater&#34;) return if (x &gt; y) x else y var vs val:
+When using var, we can assign another value to the variable.]]></description>
+</item>
+<item>
     <title>Swift Notes</title>
     <link>https://tillchen.com/posts/2019-08-2-Swift-Notes/</link>
-    <pubDate>Fri, 02 Aug 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Fri, 02 Aug 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-08-2-Swift-Notes/</guid>
-    <description><![CDATA[Basics OOP References  Basics   How to compile and run:
-1  swift hello_world.swift     No semicolons (though allowed) and no main functions. But semicolons must be used to write multiple statements in a single line.
-  Use let to make a constant and var to make a variable. (Use let whenever possible) Plus, multiple variables can be declared in one line: var x = 0, y = 0.]]></description>
-</item><item>
+    <description><![CDATA[Basics OOP References Basics How to compile and run:
+1 swift hello_world.swift No semicolons (though allowed) and no main functions. But semicolons must be used to write multiple statements in a single line.
+Use let to make a constant and var to make a variable. (Use let whenever possible) Plus, multiple variables can be declared in one line: var x = 0, y = 0.
+Types are inferred. If we need to make the type explicit, add the type after: (In practice, we rarely need to use the type annotations.]]></description>
+</item>
+<item>
     <title>SQL Notes</title>
     <link>https://tillchen.com/posts/2019-7-27-SQL-Notes/</link>
-    <pubDate>Sat, 27 Jul 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Sat, 27 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-7-27-SQL-Notes/</guid>
-    <description><![CDATA[Basics SELECT DELETE UPDATE ALTER References  Basics   Create and use the database (MySQL as an example)
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  CREATEDATABASEgregs_list;USEgregs_list;CREATETABLEdoughnut_list(doughnut_idINTNOTNULLAUTO_INCREMENT,doughnut_nameVARCHAR(10)DEFAULTNULL,doughnut_typeVARCHAR(8)DEFAULTNULL,PRIMARYKEY(doughnut_id));-- Variable Char, up to 10 and 8 chars. DESCdoughnut_list;-- Describe the table. -- DROP TABLE doughnut_list; -- Delete the table. INSERTINTOdoughnut_list(doughnut_name,doughnut_type)VALUES(&#39;hello&#39;,&#39;world&#39;);-- The order doesn&#39;t matter, but they must match SELECT*FROMdoughnut_list;-- Show the table. * means all columns.]]></description>
-</item><item>
+    <description><![CDATA[Basics SELECT DELETE UPDATE ALTER References Basics Create and use the database (MySQL as an example)
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 CREATE DATABASE gregs_list; USE gregs_list; CREATE TABLE doughnut_list ( doughnut_id INT NOT NULL AUTO_INCREMENT, doughnut_name VARCHAR(10) DEFAULT NULL, doughnut_type VARCHAR(8) DEFAULT NULL, PRIMARY KEY (doughnut_id) ); -- Variable Char, up to 10 and 8 chars. DESC doughnut_list; -- Describe the table.]]></description>
+</item>
+<item>
     <title>Bash Tips</title>
     <link>https://tillchen.com/posts/2019-7-24-Bash-Tips/</link>
-    <pubDate>Wed, 24 Jul 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Wed, 24 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-7-24-Bash-Tips/</guid>
-    <description><![CDATA[Basics Writing Scripts Advanced Tricks Resources  Basics   cd alone goes to the home directory.
-  ls -lt gives the long format and sorted by modification time.
-  file foo.txt gives the file type.
-  less foo.txt gives the content of the file.
-  We can double click a filename to copy it.
-  cp copies the files.
-  mv moves the files or renames the files.]]></description>
-</item><item>
+    <description><![CDATA[Basics Writing Scripts Advanced Tricks Resources Basics cd alone goes to the home directory.
+ls -lt gives the long format and sorted by modification time.
+file foo.txt gives the file type.
+less foo.txt gives the content of the file.
+We can double click a filename to copy it.
+cp copies the files.
+mv moves the files or renames the files.
+ln creates links.
+Use | to combine commands.
+Control A goes to the beginning.]]></description>
+</item>
+<item>
     <title>JavaScript Notes</title>
     <link>https://tillchen.com/posts/2019-07-15-JavaScript-Notes/</link>
-    <pubDate>Mon, 15 Jul 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Mon, 15 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-07-15-JavaScript-Notes/</guid>
-    <description><![CDATA[Basics Numbers Functions OOP DOM (Document Object Model) Handling events Pitfalls JSON Asynchronicity References  Basics   Variables:
-  Global variables live as long as the page.
-  If we forget to declare a variable before using it, it’ll always be global even if we first use it in a function.
-  let creates block-level variables.
-  const creates constants.
-  var is the traditional way of declaring variables.]]></description>
-</item><item>
+    <description><![CDATA[Basics Numbers Functions OOP DOM (Document Object Model) Handling events Pitfalls JSON Asynchronicity References Basics Variables:
+Global variables live as long as the page.
+If we forget to declare a variable before using it, it’ll always be global even if we first use it in a function.
+let creates block-level variables.
+const creates constants.
+var is the traditional way of declaring variables.
+1 2 3 4 5 6 7 // i visible here (undefined).]]></description>
+</item>
+<item>
     <title>Java Notes</title>
     <link>https://tillchen.com/posts/2019-06-05-Java-Notes/</link>
-    <pubDate>Wed, 05 Jun 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Wed, 05 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-06-05-Java-Notes/</guid>
-    <description><![CDATA[Basics Java Data Structures References and Garbage Collection Static Exceptions I/O Constructors Polymorphism References  Basics   SourceCode.java -&gt; Compile (javac source_code.java) -&gt; Java bytecode (SourceCode.class) -&gt;Run by the Java Virtual Machine (java SouceCode)
- Write once, run anywhere!
-   Every Java app must have at least one class and at least one main method (one main per app not per class.)
-1 2 3  public static void main (String[] args) { // code }     int rand = (int) (Math.]]></description>
-</item></channel>
+    <description><![CDATA[Basics Java Data Structures References and Garbage Collection Static Exceptions I/O Constructors Polymorphism References Basics SourceCode.java -&gt; Compile (javac source_code.java) -&gt; Java bytecode (SourceCode.class) -&gt;Run by the Java Virtual Machine (java SouceCode)
+Write once, run anywhere!
+Every Java app must have at least one class and at least one main method (one main per app not per class.)
+1 2 3 public static void main (String[] args) { // code } int rand = (int) (Math.]]></description>
+</item>
+</channel>
 </rss>

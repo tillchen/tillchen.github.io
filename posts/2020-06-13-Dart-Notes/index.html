@@ -4,13 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Dart Notes - Tianyao (Till) Chen</title><meta name="Description" content="Some notes for the Dart programming language."><meta property="og:title" content="Dart Notes" />
 <meta property="og:description" content="Some notes for the Dart programming language." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tillchen.com/posts/2020-06-13-Dart-Notes/" /><meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-13T22:48:53+02:00" />
-<meta property="article:modified_time" content="2020-06-13T22:48:53+02:00" />
+<meta property="article:modified_time" content="2020-06-13T22:48:53+02:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tillchen.com/images/avatar.jpg"/>
@@ -20,7 +19,9 @@
 <meta name="application-name" content="Tianyao (Till) Chen">
 <meta name="apple-mobile-web-app-title" content="Tianyao (Till) Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-06-13-Dart-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-06-16-Flutter-Notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2020-06-13-Dart-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-06-16-Flutter-Notes/" /><link rel="stylesheet" href="/css/style.min.cf6878db51c51b2d04ae155284a4403dbee8db33e16c066f954c95279c271fcd.css" integrity="sha256-z2h421HFGy0ErhVShKRAPb7o2zPhbAZvlUyVJ5wnH80="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -38,7 +39,7 @@
             },"description": "Some notes for the Dart programming language."
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -49,18 +50,17 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -77,41 +77,39 @@
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Dart Notes</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1735 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Dart Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="June 13, 2020">June 13, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1735 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -189,7 +187,7 @@
 <p>A basic Dart program:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -199,15 +197,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">printInteger</span><span class="p">(</span><span class="kt">int</span> <span class="n">aNumber</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;The number is </span><span class="si">$</span><span class="n">aNumber</span><span class="s1">&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">number</span> <span class="o">=</span> <span class="m">42</span><span class="p">;</span>
-    <span class="n">printInteger</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">printInteger</span><span class="p">(</span><span class="kt">int</span> <span class="n">aNumber</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;The number is </span><span class="si">$</span><span class="n">aNumber</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="n">number</span> <span class="o">=</span> <span class="m">42</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printInteger</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -232,13 +230,13 @@
 <p>The default value for uninitialized variables is <code>null</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">int</span> <span class="n">lineCount</span><span class="p">;</span>
-<span class="k">assert</span><span class="p">(</span><span class="n">lineCount</span> <span class="o">==</span> <span class="kc">null</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">lineCount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">assert</span><span class="p">(</span><span class="n">lineCount</span> <span class="o">==</span> <span class="kc">null</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -248,30 +246,30 @@
 <p>A <code>final</code> variable can be set only once. Use <code>final</code> if we don&rsquo;t know the value at compile time.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">final</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">;</span> <span class="c1">// Without a type annotation
-</span><span class="c1"></span><span class="kd">final</span> <span class="kt">String</span> <span class="n">nickname</span> <span class="o">=</span> <span class="s1">&#39;Bobby&#39;</span><span class="p">;</span> <span class="c1">// Or this
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Bob&#39;</span><span class="p">;</span> <span class="c1">// Without a type annotation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">final</span> <span class="kt">String</span> <span class="n">nickname</span> <span class="o">=</span> <span class="s1">&#39;Bobby&#39;</span><span class="p">;</span> <span class="c1">// Or this
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Use <code>const</code> for variables that are <strong>compile-time constants</strong>. If it&rsquo;s at the class level, make it <code>static const</code>. We can also use <code>const</code> for constant <em>values</em>. We can change the value of a non-final, non-const variable, even if it used to have a const value.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">foo</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[];</span>
-<span class="kd">final</span> <span class="n">bar</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[];</span>
-<span class="kd">const</span> <span class="n">baz</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// Equivalent to `const []`
-</span><span class="c1"></span><span class="n">foo</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span> <span class="c1">// Was const []
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">foo</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">bar</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="n">baz</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// Equivalent to `const []`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">foo</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span> <span class="c1">// Was const []
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -287,17 +285,17 @@
 <p>Conversion between a string and a number:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">int</span> <span class="n">one</span> <span class="o">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
-<span class="kt">double</span> <span class="n">onePointOne</span> <span class="o">=</span> <span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
-<span class="kt">String</span> <span class="n">oneAsString</span> <span class="o">=</span> <span class="m">1.</span><span class="n">toString</span><span class="p">();</span>
-<span class="kt">String</span> <span class="n">piAsString</span> <span class="o">=</span> <span class="m">3.14159</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">);</span> <span class="c1">// 3.14
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">one</span> <span class="o">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">onePointOne</span> <span class="o">=</span> <span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">String</span> <span class="n">oneAsString</span> <span class="o">=</span> <span class="m">1.</span><span class="n">toString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">String</span> <span class="n">piAsString</span> <span class="o">=</span> <span class="m">3.14159</span><span class="p">.</span><span class="n">toStringAsFixed</span><span class="p">(</span><span class="m">2</span><span class="p">);</span> <span class="c1">// 3.14
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -310,13 +308,13 @@
 <p>String interpolation: <code>${expression}</code>. If the expression is an identifier, we can skip <code>{}</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;string interpolation&#39;</span><span class="p">;</span>
-<span class="n">print</span><span class="p">(</span><span class="s1">&#39;Dart has </span><span class="si">$</span><span class="n">s</span><span class="s1">&#39;</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;string interpolation&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Dart has </span><span class="si">$</span><span class="n">s</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -332,13 +330,13 @@
 <p>Only <code>true</code> and <code>false</code> have the type <code>bool</code>, which means we have to check the values explicitly (unlike Python).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">fullName</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-<span class="k">assert</span><span class="p">(</span><span class="n">fullName</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">fullName</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">assert</span><span class="p">(</span><span class="n">fullName</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -348,41 +346,41 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
-<span class="k">assert</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="n">length</span> <span class="o">==</span> <span class="m">3</span><span class="p">);</span>
-<span class="kd">var</span> <span class="n">constantList</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
-<span class="c1">// constantList[1]  = 1; // Uncommenting this causes an error.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">assert</span><span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="n">length</span> <span class="o">==</span> <span class="m">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">constantList</span> <span class="o">=</span> <span class="kd">const</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// constantList[1]  = 1; // Uncommenting this causes an error.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Spread operator (<code>...</code>) and null-aware spread operator (<code>....?</code>) provide a concise way to insert all elements into a collection:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
-<span class="kd">var</span> <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="p">...</span><span class="n">list</span><span class="p">];</span> <span class="c1">// [0, 1, 2, 3]
-</span><span class="c1"></span><span class="kd">var</span> <span class="n">list3</span><span class="p">;</span>
-<span class="kd">var</span> <span class="n">list4</span> <span class="o">=</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="p">...</span><span class="o">?</span><span class="n">list3</span><span class="p">];</span> <span class="c1">// list3 might be null. Avoid exceptions.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="p">...</span><span class="n">list</span><span class="p">];</span> <span class="c1">// [0, 1, 2, 3]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="n">list3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">list4</span> <span class="o">=</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="p">...</span><span class="o">?</span><span class="n">list3</span><span class="p">];</span> <span class="c1">// list3 might be null. Avoid exceptions.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Collection if and collection for (similar to list comprehension in Python):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -395,33 +393,33 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">nav</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Home&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Furniture&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Plants&#39;</span><span class="p">,</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">promoActive</span><span class="p">)</span> <span class="s1">&#39;Outlet&#39;</span>
-<span class="p">];</span>
-<span class="kd">var</span> <span class="n">listOfInts</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
-<span class="kd">var</span> <span class="n">listOfStrings</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;#0&#39;</span><span class="p">,</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">listOfInts</span><span class="p">)</span> <span class="err">`#</span><span class="n">$i</span><span class="err">`</span>
-<span class="p">];</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">nav</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;Home&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;Furniture&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;Plants&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">promoActive</span><span class="p">)</span> <span class="s1">&#39;Outlet&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">listOfInts</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">listOfStrings</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;#0&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">i</span> <span class="k">in</span> <span class="n">listOfInts</span><span class="p">)</span> <span class="err">`#</span><span class="n">$i</span><span class="err">`</span>
+</span></span><span class="line"><span class="cl"><span class="p">];</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>forEach()</code> can replace a for loop; <code>where()</code> can be used to filter:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">candidates</span>
-    <span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">yearsOfExperience</span> <span class="o">&gt;=</span> <span class="m">5</span><span class="p">)</span>
-    <span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">interview</span><span class="p">());</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">candidates</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">where</span><span class="p">((</span><span class="n">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">yearsOfExperience</span> <span class="o">&gt;=</span> <span class="m">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">interview</span><span class="p">());</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -431,7 +429,7 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -440,14 +438,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">halogens</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fluorine&#39;</span><span class="p">,</span> <span class="s1">&#39;chlorine&#39;</span><span class="p">,</span> <span class="s1">&#39;bromine&#39;</span><span class="p">,</span> <span class="s1">&#39;iodine&#39;</span><span class="p">,</span> <span class="s1">&#39;astatine&#39;</span><span class="p">};</span>
-<span class="kd">var</span> <span class="n">names</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">{};</span> <span class="c1">// Empty set
-</span><span class="c1">// Set&lt;String&gt; names = {}; // Works too
-</span><span class="c1">// var names = {}; // Creates a map, not a set.
-</span><span class="c1"></span><span class="kd">var</span> <span class="n">elements</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">{};</span>
-<span class="n">elements</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;flourine&#39;</span><span class="p">);</span>
-<span class="n">elements</span><span class="p">.</span><span class="n">addAll</span><span class="p">(</span><span class="n">halogens</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">halogens</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fluorine&#39;</span><span class="p">,</span> <span class="s1">&#39;chlorine&#39;</span><span class="p">,</span> <span class="s1">&#39;bromine&#39;</span><span class="p">,</span> <span class="s1">&#39;iodine&#39;</span><span class="p">,</span> <span class="s1">&#39;astatine&#39;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">names</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">{};</span> <span class="c1">// Empty set
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Set&lt;String&gt; names = {}; // Works too
+</span></span></span><span class="line"><span class="cl"><span class="c1">// var names = {}; // Creates a map, not a set.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="n">elements</span> <span class="o">=</span> <span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;flourine&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">elements</span><span class="p">.</span><span class="n">addAll</span><span class="p">(</span><span class="n">halogens</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -457,7 +455,7 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -469,17 +467,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">nobleGases</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="m">2</span><span class="o">:</span> <span class="s1">&#39;helium&#39;</span><span class="p">,</span>
-    <span class="m">10</span><span class="o">:</span> <span class="s1">&#39;neon&#39;</span><span class="p">,</span>
-    <span class="m">18</span><span class="o">:</span> <span class="s1">&#39;argon&#39;</span>
-<span class="p">};</span>
-<span class="c1">// Or we can use the constructor
-</span><span class="c1"></span><span class="kd">var</span> <span class="n">nobleGases</span> <span class="o">=</span> <span class="n">Map</span><span class="p">();</span> <span class="c1">// The new keyword is optional
-</span><span class="c1"></span><span class="n">nobleGases</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;helium&#39;</span><span class="p">;</span>
-<span class="n">nobleGases</span><span class="p">[</span><span class="m">10</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;neon&#39;</span><span class="p">;</span>
-<span class="n">nobleGases</span><span class="p">[</span><span class="m">18</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;argon&#39;</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">nobleGases</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="m">2</span><span class="o">:</span> <span class="s1">&#39;helium&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="m">10</span><span class="o">:</span> <span class="s1">&#39;neon&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="m">18</span><span class="o">:</span> <span class="s1">&#39;argon&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Or we can use the constructor
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="n">nobleGases</span> <span class="o">=</span> <span class="n">Map</span><span class="p">();</span> <span class="c1">// The new keyword is optional
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">nobleGases</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;helium&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nobleGases</span><span class="p">[</span><span class="m">10</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;neon&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nobleGases</span><span class="p">[</span><span class="m">18</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;argon&#39;</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -495,17 +493,17 @@
 <p>Because a Dart string is a sequence of UTF-16 code units, the usual way to express a code point is <code>\uXXXX</code>, where XXXX is a 4-digit hexadecimal value. For more or less than 4 hex digits, place the value in curly brackets.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">import</span> <span class="s1">&#39;package:characters/characters.dart&#39;</span><span class="p">;</span>
-
-<span class="kd">var</span> <span class="n">hi</span> <span class="o">=</span> <span class="s1">&#39;Hi 🇩🇰&#39;</span><span class="p">;</span>
-<span class="n">print</span><span class="p">(</span><span class="s1">&#39;The las character: </span><span class="si">${</span><span class="n">hi</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="k">import</span> <span class="s1">&#39;package:characters/characters.dart&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">hi</span> <span class="o">=</span> <span class="s1">&#39;Hi 🇩🇰&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="s1">&#39;The las character: </span><span class="si">${</span><span class="n">hi</span><span class="p">.</span><span class="n">characters</span><span class="p">.</span><span class="n">last</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -515,13 +513,13 @@
 <p>A <code>Symbol</code> object represents an operator or identifier declared in a Dart program. We might never need to use symbols, but they&rsquo;re invaluable for APIs that refer to identifiers by name, because minification changes identifier names but not identifier symbols.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="err">#</span><span class="n">radix</span>
-<span class="err">#</span><span class="n">bar</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="err">#</span><span class="n">radix</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="n">bar</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -534,7 +532,7 @@
 <p>Although Effective Dart recommends type annotations for public APIs, the function still works if you omit the types.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -545,31 +543,31 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">bool</span> <span class="n">isNoble</span><span class="p">(</span><span class="kt">int</span> <span class="n">atomicNumber</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="c1">// Or the below
-</span><span class="c1"></span><span class="n">isNoble</span><span class="p">(</span><span class="n">atomicNumber</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="c1">// Or the arrow syntax
-</span><span class="c1"></span><span class="kt">bool</span> <span class="n">isNoble</span><span class="p">(</span><span class="kt">int</span> <span class="n">atomicNumber</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isNoble</span><span class="p">(</span><span class="kt">int</span> <span class="n">atomicNumber</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Or the below
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">isNoble</span><span class="p">(</span><span class="n">atomicNumber</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Or the arrow syntax
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">bool</span> <span class="n">isNoble</span><span class="p">(</span><span class="kt">int</span> <span class="n">atomicNumber</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">_nobleGases</span><span class="p">[</span><span class="n">atomicNumber</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>..</code> is a cascade, which enables us to perform multiple operations on the members of a single object:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-  <span class="p">..</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Click me!&#39;</span>
-  <span class="p">..</span><span class="n">onClick</span><span class="p">.</span><span class="n">listen</span><span class="p">(</span><span class="n">reverseText</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">..</span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Click me!&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">..</span><span class="n">onClick</span><span class="p">.</span><span class="n">listen</span><span class="p">(</span><span class="n">reverseText</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -586,26 +584,26 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">enableFlags</span><span class="p">({</span><span class="kt">bool</span> <span class="n">bold</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">hidden</span><span class="p">})</span> <span class="p">{...}</span>
-
-<span class="n">enableFlags</span><span class="p">(</span><span class="nl">bold:</span> <span class="kc">true</span><span class="p">,</span> <span class="nl">hidden:</span> <span class="kc">false</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">enableFlags</span><span class="p">({</span><span class="kt">bool</span> <span class="n">bold</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">hidden</span><span class="p">})</span> <span class="p">{...}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">enableFlags</span><span class="p">(</span><span class="nl">bold:</span> <span class="kc">true</span><span class="p">,</span> <span class="nl">hidden:</span> <span class="kc">false</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Although named parameters are a kind of optional parameter, we can used <code>@required</code> to make it mandatory:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">const</span> <span class="n">Scrollbar</span><span class="p">({</span><span class="n">Key</span> <span class="n">key</span><span class="p">,</span> <span class="err">@</span><span class="n">required</span> <span class="n">Widget</span> <span class="n">child</span><span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">const</span> <span class="n">Scrollbar</span><span class="p">({</span><span class="n">Key</span> <span class="n">key</span><span class="p">,</span> <span class="err">@</span><span class="kd">required</span> <span class="n">Widget</span> <span class="n">child</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -615,11 +613,11 @@
 <p>Wrapping a set of parameters in <code>[]</code> makes them optional positional:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">String</span> <span class="n">say</span><span class="p">(</span><span class="kt">String</span> <span class="n">from</span><span class="p">,</span> <span class="kt">String</span> <span class="n">msg</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span> <span class="n">device</span><span class="p">])</span> <span class="p">{...}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">String</span> <span class="n">say</span><span class="p">(</span><span class="kt">String</span> <span class="n">from</span><span class="p">,</span> <span class="kt">String</span> <span class="n">msg</span><span class="p">,</span> <span class="p">[</span><span class="kt">String</span> <span class="n">device</span><span class="p">])</span> <span class="p">{...}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -629,7 +627,7 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -638,14 +636,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;oranges&#39;</span><span class="p">];</span>
-<span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">item</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">list</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s1">: </span><span class="si">$</span><span class="n">item</span><span class="s1">&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="c1">// Or the arrow notation
-</span><span class="c1"></span><span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span>
-    <span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">list</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s1">: </span><span class="si">$</span><span class="n">item</span><span class="s1">&#39;</span><span class="p">));</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">var</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;oranges&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">item</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">list</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s1">: </span><span class="si">$</span><span class="n">item</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Or the arrow notation
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">list</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="si">}</span><span class="s1">: </span><span class="si">$</span><span class="n">item</span><span class="s1">&#39;</span><span class="p">));</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -677,7 +675,7 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -694,22 +692,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="k">throw</span> <span class="n">FormatException</span><span class="p">(</span><span class="s1">&#39;Expected at least 1 section&#39;</span><span class="p">);</span>
-<span class="k">try</span> <span class="p">{</span>
-    <span class="n">breadMoreLlamas</span><span class="p">();</span>
-<span class="p">}</span> <span class="n">on</span> <span class="n">OutOfLlamasException</span> <span class="p">{</span>
-    <span class="n">buyMoreLlamas</span><span class="p">();</span>
-<span class="p">}</span> <span class="n">on</span> <span class="n">Exception</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Unknown exception: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Stack trace </span><span class="si">$</span><span class="n">s</span><span class="s1">&#39;</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// handles all
-</span><span class="c1"></span>    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Something really unknown: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
-    <span class="n">rethrow</span><span class="p">;</span> <span class="c1">// Allow callers to see the exception.
-</span><span class="c1"></span><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-    <span class="c1">// Always executes.
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="k">throw</span> <span class="n">FormatException</span><span class="p">(</span><span class="s1">&#39;Expected at least 1 section&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">breadMoreLlamas</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">on</span> <span class="n">OutOfLlamasException</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buyMoreLlamas</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">on</span> <span class="n">Exception</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Unknown exception: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Stack trace </span><span class="si">$</span><span class="n">s</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// handles all
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;Something really unknown: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rethrow</span><span class="p">;</span> <span class="c1">// Allow callers to see the exception.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Always executes.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -722,51 +720,51 @@
 <p>Constructor syntactic sugar:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
-
-    <span class="n">Point</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Point</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Point</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Named constructors for extra clarity:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Point</span><span class="p">.</span><span class="n">origin</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">Point</span><span class="p">.</span><span class="n">origin</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Invoke the super constructor almost like in C++:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Employee</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">Map</span> <span class="n">data</span><span class="p">)</span> <span class="o">:</span> <span class="k">super</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">Employee</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">Map</span> <span class="n">data</span><span class="p">)</span> <span class="o">:</span> <span class="k">super</span><span class="p">.</span><span class="n">fromJson</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -776,7 +774,7 @@
 <p>Use <code>factory</code> for a constructor that doesn&rsquo;t always create a new instance of the class. It may return an instance from a cache or return an instance of a subtype.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -801,37 +799,37 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="p">{</span>
-  <span class="kd">factory</span> <span class="n">Shape</span><span class="p">(</span><span class="kt">String</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;circle&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;square&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
-    <span class="k">throw</span> <span class="s2">&#34;Can&#39;t create </span><span class="si">$</span><span class="n">type</span><span class="s2">.&#34;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
-  <span class="kd">final</span> <span class="kt">num</span> <span class="n">radius</span><span class="p">;</span>
-  <span class="n">Circle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">radius</span><span class="p">);</span>
-  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span> <span class="o">=&gt;</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="nc">Square</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
-  <span class="kd">final</span> <span class="kt">num</span> <span class="n">side</span><span class="p">;</span>
-  <span class="n">Square</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">side</span><span class="p">);</span>
-  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span> <span class="o">=&gt;</span> <span class="n">pow</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">final</span> <span class="n">circle</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">);</span>
-<span class="kd">final</span> <span class="n">square</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">factory</span> <span class="n">Shape</span><span class="p">(</span><span class="kt">String</span> <span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;circle&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;square&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="n">Square</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="s2">&#34;Can&#39;t create </span><span class="si">$</span><span class="n">type</span><span class="s2">.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="kt">num</span> <span class="n">radius</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Circle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">radius</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span> <span class="o">=&gt;</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Square</span> <span class="kd">implements</span> <span class="n">Shape</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="kt">num</span> <span class="n">side</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Square</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">side</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">num</span> <span class="kd">get</span> <span class="n">area</span> <span class="o">=&gt;</span> <span class="n">pow</span><span class="p">(</span><span class="n">side</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">circle</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="n">square</span> <span class="o">=</span> <span class="n">Shape</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Getters and setters:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -839,28 +837,28 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="c1">// We can define explicit getters and setters using get and set
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">_speed</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
-
-<span class="kd">get</span> <span class="n">speed</span> <span class="o">=&gt;</span> <span class="n">_speed</span><span class="p">;</span> <span class="c1">// Read-only
-</span><span class="c1"></span><span class="kt">double</span> <span class="kd">get</span> <span class="n">right</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">+</span> <span class="n">width</span><span class="p">;</span>
-<span class="kd">set</span> <span class="n">right</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">width</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="c1">// We can define explicit getters and setters using get and set
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">_speed</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">get</span> <span class="n">speed</span> <span class="o">=&gt;</span> <span class="n">_speed</span><span class="p">;</span> <span class="c1">// Read-only
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">double</span> <span class="kd">get</span> <span class="n">right</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">+</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">set</span> <span class="n">right</span><span class="p">(</span><span class="kt">double</span> <span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="n">width</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Abstract classes and methods:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractContainer</span> <span class="p">{</span>
-    <span class="kt">void</span> <span class="n">updateChildren</span><span class="p">();</span> <span class="c1">// Abstract method
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractContainer</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">updateChildren</span><span class="p">();</span> <span class="c1">// Abstract method
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -870,18 +868,18 @@
 <p>Liked in C++, operators can be overriden:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Vector</span> <span class="kd">operator</span> <span class="o">+</span><span class="p">(</span><span class="n">Vector</span> <span class="n">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Vector</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">Vector</span> <span class="kd">operator</span> <span class="o">+</span><span class="p">(</span><span class="n">Vector</span> <span class="n">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">Vector</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">v</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Mixins: a way of reusing a class&rsquo;s code in multiple class hierarchies. Use <code>with</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -890,14 +888,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kd">class</span> <span class="nc">Musician</span> <span class="kd">extends</span> <span class="n">Performer</span> <span class="kd">with</span> <span class="n">Musical</span> <span class="p">{</span>
-    <span class="p">...</span>
-<span class="p">}</span>
-<span class="c1">// To implement, declare no constructors
-</span><span class="c1"></span><span class="n">mixin</span> <span class="n">Musical</span> <span class="p">{</span> <span class="c1">// mixin Musical on Musician to restrict the types that can use the mixin
-</span><span class="c1"></span>    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Musician</span> <span class="kd">extends</span> <span class="n">Performer</span> <span class="kd">with</span> <span class="n">Musical</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// To implement, declare no constructors
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">mixin</span> <span class="n">Musical</span> <span class="p">{</span> <span class="c1">// mixin Musical on Musician to restrict the types that can use the mixin
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -907,17 +905,17 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">enum</span> <span class="n">Color</span> <span class="p">{</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">}</span>
-
-<span class="k">assert</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">.</span><span class="n">index</span> <span class="o">==</span> <span class="m">0</span><span class="p">);</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">values</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">enum</span> <span class="n">Color</span> <span class="p">{</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assert</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">.</span><span class="n">index</span> <span class="o">==</span> <span class="m">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">values</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -927,19 +925,19 @@
 <p>To use <code>await</code>, code must be in an <code>async</code> function:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="n">Future</span> <span class="n">checkVersion</span><span class="p">()</span> <span class="kd">async</span> <span class="p">{</span> <span class="c1">// It returns a Future object
-</span><span class="c1"></span>    <span class="kd">var</span> <span class="n">version</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">lookUpVersion</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="c1">// Future is then-able, so can always say
-</span><span class="c1"></span><span class="n">checkVersion</span><span class="p">().</span><span class="n">then</span><span class="p">((</span><span class="n">returnValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">foo</span><span class="p">());</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="n">Future</span> <span class="n">checkVersion</span><span class="p">()</span> <span class="kd">async</span> <span class="p">{</span> <span class="c1">// It returns a Future object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="n">version</span> <span class="o">=</span> <span class="kd">await</span> <span class="n">lookUpVersion</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Future is then-able, so can always say
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">checkVersion</span><span class="p">().</span><span class="n">then</span><span class="p">((</span><span class="n">returnValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">foo</span><span class="p">());</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -952,7 +950,7 @@
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -966,69 +964,67 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">String</span> <span class="n">scream</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">&#34;A</span><span class="si">${</span><span class="s1">&#39;a&#39;</span> <span class="o">*</span> <span class="n">length</span><span class="si">}</span><span class="s2">h!&#34;</span><span class="p">;</span>
-
-<span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">final</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">];</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">length</span> <span class="k">in</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">print</span><span class="p">(</span><span class="n">scream</span><span class="p">(</span><span class="n">length</span><span class="p">));</span>
-  <span class="p">}</span>
-  <span class="c1">// Is the same as
-</span><span class="c1"></span>  <span class="n">values</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">scream</span><span class="p">).</span><span class="n">forEach</span><span class="p">(</span><span class="n">print</span><span class="p">);</span>
-  <span class="c1">// More
-</span><span class="c1"></span>  <span class="n">values</span><span class="p">.</span><span class="n">skip</span><span class="p">(</span><span class="m">1</span><span class="p">).</span><span class="n">take</span><span class="p">(</span><span class="m">3</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="n">scream</span><span class="p">).</span><span class="n">forEach</span><span class="p">(</span><span class="n">print</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dart" data-lang="dart"><span class="line"><span class="cl"><span class="kt">String</span> <span class="n">scream</span><span class="p">(</span><span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">&#34;A</span><span class="si">${</span><span class="s1">&#39;a&#39;</span> <span class="o">*</span> <span class="n">length</span><span class="si">}</span><span class="s2">h!&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">final</span> <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">50</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="n">length</span> <span class="k">in</span> <span class="n">values</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">print</span><span class="p">(</span><span class="n">scream</span><span class="p">(</span><span class="n">length</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Is the same as
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">values</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">scream</span><span class="p">).</span><span class="n">forEach</span><span class="p">(</span><span class="n">print</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// More
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">values</span><span class="p">.</span><span class="n">skip</span><span class="p">(</span><span class="m">1</span><span class="p">).</span><span class="n">take</span><span class="p">(</span><span class="m">3</span><span class="p">).</span><span class="n">map</span><span class="p">(</span><span class="n">scream</span><span class="p">).</span><span class="n">forEach</span><span class="p">(</span><span class="n">print</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://dart.dev/guides/language/language-tour" target="_blank" rel="noopener noreffer">A tour of the Dart language</a></li>
+<li><a href="https://dart.dev/guides/language/language-tour" target="_blank" rel="noopener noreffer ">A tour of the Dart language</a></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
                 <span>Updated on June 13, 2020</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
+            </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/posts/2020-06-13-Dart-Notes/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2020-06-13-Dart-Notes/" data-title="Dart Notes"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/" class="prev" rel="prev" title="Secure and Dependable Systems Notes"><i class="fas fa-angle-left fa-fw"></i>Secure and Dependable Systems Notes</a>
-            <a href="/posts/2020-06-16-Flutter-Notes/" class="next" rel="next" title="Flutter Notes">Flutter Notes<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/2020-05-26-Secure-and-Dependable-Systems-Notes/" class="prev" rel="prev" title="Secure and Dependable Systems Notes"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Secure and Dependable Systems Notes</a>
+            <a href="/posts/2020-06-16-Flutter-Notes/" class="next" rel="next" title="Flutter Notes">Flutter Notes<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao (Till) Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao (Till) Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b0df51c2c57145081cc73960e9aa780e6f5f56d06cf4ef0f96da8ce1619d1e12.js" integrity="sha256-sN9RwsVxRQgcxzlg6ap4Dm9fVtBs9O8PltqM4WGdHhI="></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>

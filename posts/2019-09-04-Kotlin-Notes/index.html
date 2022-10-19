@@ -4,13 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Kotlin Notes - Tianyao (Till) Chen</title><meta name="Description" content="Some notes for Kotlin"><meta property="og:title" content="Kotlin Notes" />
 <meta property="og:description" content="Some notes for Kotlin" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" /><meta property="og:image" content="https://tillchen.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-09-04T00:00:00-07:00" />
-<meta property="article:modified_time" content="2019-09-04T00:00:00-07:00" />
+<meta property="article:published_time" content="2019-09-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-04T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tillchen.com/images/avatar.jpg"/>
@@ -20,7 +19,9 @@
 <meta name="application-name" content="Tianyao (Till) Chen">
 <meta name="apple-mobile-web-app-title" content="Tianyao (Till) Chen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-02-17-Go-Notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" /><link rel="prev" href="https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/" /><link rel="next" href="https://tillchen.com/posts/2020-02-17-Go-Notes/" /><link rel="stylesheet" href="/css/style.min.cf6878db51c51b2d04ae155284a4403dbee8db33e16c066f954c95279c271fcd.css" integrity="sha256-z2h421HFGy0ErhVShKRAPb7o2zPhbAZvlUyVJ5wnH80="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -30,7 +31,7 @@
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
         },"genre": "posts","keywords": "Programming Languages","wordcount":  1610 ,
-        "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00-07:00","dateModified": "2019-09-04T00:00:00-07:00","publisher": {
+        "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+00:00","dateModified": "2019-09-04T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
                 "@type": "Person",
@@ -38,7 +39,7 @@
             },"description": "Some notes for Kotlin"
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -49,18 +50,17 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> Blog </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
         </div>
     </div>
 </header><header class="mobile" id="header-mobile">
@@ -77,41 +77,39 @@
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Blog</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Kotlin Notes</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1610 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kotlin Notes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1610 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -140,28 +138,28 @@
 <p>Kotlin requires one <code>main</code> per app:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span> <span class="c1">// the args part can be omitted
-</span><span class="c1"></span>    <span class="n">println</span><span class="p">(</span><span class="s2">&#34;Hello Kotlin!&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span> <span class="c1">// the args part can be omitted
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">println</span><span class="p">(</span><span class="s2">&#34;Hello Kotlin!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Shorter <code>if</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">println</span><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="s2">&#34;x is greater&#34;</span> <span class="k">else</span> <span class="s2">&#34;x is not greater&#34;</span><span class="p">)</span>
-<span class="k">return</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="n">x</span> <span class="k">else</span> <span class="n">y</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">println</span><span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="s2">&#34;x is greater&#34;</span> <span class="k">else</span> <span class="s2">&#34;x is not greater&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span><span class="p">)</span> <span class="n">x</span> <span class="k">else</span> <span class="n">y</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -178,35 +176,35 @@
 <p>Similar to Swift, we can specify the type:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">var</span> <span class="py">z</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">6</span>
-<span class="k">var</span> <span class="py">x</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="n">z</span><span class="p">.</span><span class="n">toLong</span><span class="p">()</span> <span class="c1">// similarly, toFloat(), to Byte(), etc.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">z</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">6</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">x</span><span class="p">:</span> <span class="n">Long</span> <span class="p">=</span> <span class="n">z</span><span class="p">.</span><span class="n">toLong</span><span class="p">()</span> <span class="c1">// similarly, toFloat(), to Byte(), etc.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Arrays:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">var</span> <span class="py">myArray</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="k">var</span> <span class="py">myLength</span> <span class="p">=</span> <span class="n">myArray</span><span class="p">.</span><span class="n">size</span>
-<span class="k">var</span> <span class="py">explicitArray</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">myArray</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">myLength</span> <span class="p">=</span> <span class="n">myArray</span><span class="p">.</span><span class="n">size</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">explicitArray</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Strings:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -218,24 +216,24 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">42</span>
-<span class="k">var</span> <span class="py">myString</span> <span class="p">=</span> <span class="s2">&#34;x is </span><span class="si">$x</span><span class="s2">&#34;</span>
-<span class="c1">// When accessing a property or function of a object, use ${}
-</span><span class="c1"></span><span class="k">var</span> <span class="py">myArray</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="k">var</span> <span class="py">arraySize</span> <span class="p">=</span> <span class="s2">&#34;The size if </span><span class="si">${myArray.size}</span><span class="s2">&#34;</span>
-<span class="k">var</span> <span class="py">firstItem</span> <span class="p">=</span> <span class="s2">&#34;The first item is </span><span class="si">${myArray[0]}</span><span class="s2">&#34;</span>
-<span class="s2">&#34;12.345-6.A&#34;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">,</span> <span class="s2">&#34;-&#34;</span><span class="p">)</span>  <span class="c1">// splits at both . and -
-</span><span class="c1">// We don&#39;t need to escape for triple quote strings for regular expressions.
-</span><span class="c1"></span><span class="k">val</span> <span class="py">regex</span> <span class="p">=</span> <span class="s">&#34;&#34;&#34;(.+)/(.+)\.(.+)&#34;&#34;&#34;</span><span class="p">.</span><span class="n">toRegex</span><span class="p">()</span>
-<span class="c1">// We can also use triple quotes for multiline strings like in Python.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">42</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">myString</span> <span class="p">=</span> <span class="s2">&#34;x is </span><span class="si">$x</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// When accessing a property or function of a object, use ${}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">var</span> <span class="py">myArray</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">arraySize</span> <span class="p">=</span> <span class="s2">&#34;The size if </span><span class="si">${myArray.size}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">firstItem</span> <span class="p">=</span> <span class="s2">&#34;The first item is </span><span class="si">${myArray[0]}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;12.345-6.A&#34;</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">,</span> <span class="s2">&#34;-&#34;</span><span class="p">)</span>  <span class="c1">// splits at both . and -
+</span></span></span><span class="line"><span class="cl"><span class="c1">// We don&#39;t need to escape for triple quote strings for regular expressions.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">regex</span> <span class="p">=</span> <span class="s">&#34;&#34;&#34;(.+)/(.+)\.(.+)&#34;&#34;&#34;</span><span class="p">.</span><span class="n">toRegex</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// We can also use triple quotes for multiline strings like in Python.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Functions;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -251,58 +249,58 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="c1">// We can have default values like in Python.
-</span><span class="c1"></span><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span> <span class="c1">// Unit means no return value, or just omit it.
-</span><span class="c1"></span>    <span class="c1">// And Nothing means the function never returns.
-</span><span class="c1"></span>    <span class="c1">// stuff
-</span><span class="c1"></span>    <span class="k">return</span> <span class="m">1</span>
-<span class="p">}</span>
-
-<span class="k">var</span> <span class="py">result</span> <span class="p">=</span> <span class="n">foo</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-
-<span class="k">fun</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span> <span class="c1">// also works
-</span><span class="c1"></span>
-<span class="k">fun</span> <span class="nf">listOf</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">(</span><span class="k">vararg</span> <span class="n">values</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span><span class="o">..</span><span class="p">.}</span>  <span class="c1">// vararg makes it variadic.
-</span><span class="c1">// And we need to explicitly unpack the array when passing:
-</span><span class="c1"></span><span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;args:&#34;</span><span class="p">,</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="c1">// We can have default values like in Python.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span> <span class="c1">// Unit means no return value, or just omit it.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// And Nothing means the function never returns.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// stuff
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">result</span> <span class="p">=</span> <span class="n">foo</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span> <span class="c1">// also works
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">listOf</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">(</span><span class="k">vararg</span> <span class="n">values</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span><span class="o">..</span><span class="p">.}</span>  <span class="c1">// vararg makes it variadic.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// And we need to explicitly unpack the array when passing:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;args:&#34;</span><span class="p">,</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Loops:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// end inclusive
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1</span> <span class="n">until</span> <span class="m">100</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// not end inclusive
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">15</span> <span class="n">downTo</span> <span class="m">1</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// end inclusive
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">items</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// end inclusive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1</span> <span class="n">until</span> <span class="m">100</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// not end inclusive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">15</span> <span class="n">downTo</span> <span class="m">1</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">// end inclusive
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">items</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Input:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">userInput</span> <span class="p">=</span> <span class="n">readLine</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">userInput</span> <span class="p">=</span> <span class="n">readLine</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>when</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -313,16 +311,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="m">0</span> <span class="o">-&gt;</span> <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s 0&#34;</span><span class="p">)</span>
-    <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="o">-&gt;</span> <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s 1 or 2&#34;</span><span class="p">)</span>
-    <span class="k">else</span> <span class="o">-&gt;</span> <span class="p">{</span>
-        <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s not 0.&#34;</span><span class="p">)</span>
-        <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s not 1 nor 2.&#34;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="c1">// We can also use when without the argument, then each case needs to be a Boolean.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="m">0</span> <span class="o">-&gt;</span> <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s 0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="m">1</span><span class="p">,</span> <span class="m">2</span> <span class="o">-&gt;</span> <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s 1 or 2&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="o">-&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s not 0.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">println</span><span class="p">(</span><span class="s2">&#34;It&#39;s not 1 nor 2.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// We can also use when without the argument, then each case needs to be a Boolean.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -350,11 +348,11 @@
 <p>Like <code>enumerate()</code> in Python, we have <code>.withIndex()</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{</span><span class="o">..</span><span class="p">.}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{</span><span class="o">..</span><span class="p">.}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -364,7 +362,7 @@
 <p>Example class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -375,23 +373,23 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">var</span> <span class="py">weight</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="k">val</span> <span class="py">breed</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;default&#34;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="py">temperament</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-    <span class="c1">// All properties must be initialized.
-</span><span class="c1"></span>    <span class="c1">// Or:
-</span><span class="c1"></span>    <span class="c1">// lateinit var temperament = String
-</span><span class="c1"></span>    <span class="k">fun</span> <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">println</span><span class="p">(</span><span class="s2">&#34;Woof!&#34;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">var</span> <span class="py">weight</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="k">val</span> <span class="py">breed</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;default&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">var</span> <span class="py">temperament</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// All properties must be initialized.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Or:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// lateinit var temperament = String
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">fun</span> <span class="nf">bark</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">println</span><span class="p">(</span><span class="s2">&#34;Woof!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Custom getters and setters:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -401,34 +399,34 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="o">..</span><span class="p">.</span>
-<span class="k">val</span> <span class="py">weightInKgs</span><span class="p">:</span> <span class="n">Double</span>
-    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">weight</span> <span class="p">/</span> <span class="m">2.2</span>
-<span class="k">var</span> <span class="py">weight</span> <span class="p">=</span> <span class="n">weightParam</span>
-    <span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="k">field</span> <span class="p">=</span> <span class="n">value</span> <span class="c1">// field is a keyword
-</span><span class="c1"></span>    <span class="p">}</span>
-<span class="o">..</span><span class="p">.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">weightInKgs</span><span class="p">:</span> <span class="n">Double</span>
+</span></span><span class="line"><span class="cl">    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">weight</span> <span class="p">/</span> <span class="m">2.2</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">weight</span> <span class="p">=</span> <span class="n">weightParam</span>
+</span></span><span class="line"><span class="cl">    <span class="k">set</span><span class="p">(</span><span class="k">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="k">value</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="k">field</span> <span class="p">=</span> <span class="k">value</span> <span class="c1">// field is a keyword
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">..</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>In fact, the complier adds getters and setters automatically:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">var</span> <span class="py">myProperty</span><span class="p">:</span> <span class="n">String</span>
-    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">field</span>
-    <span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">field</span> <span class="p">=</span> <span class="n">value</span>
-    <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">myProperty</span><span class="p">:</span> <span class="n">String</span>
+</span></span><span class="line"><span class="cl">    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">field</span>
+</span></span><span class="line"><span class="cl">    <span class="k">set</span><span class="p">(</span><span class="k">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">field</span> <span class="p">=</span> <span class="k">value</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -459,19 +457,19 @@
 <p>For <code>data</code> objects, we have destructuring declaration:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="err">(</span><span class="py">title</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span> <span class="p">=</span> <span class="n">r</span>
-<span class="c1">// is equivalent to
-</span><span class="c1"></span><span class="k">val</span> <span class="py">title</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">component1</span>
-<span class="k">val</span> <span class="py">number</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">component2</span>
-<span class="c1">// And this can be used to return multiple values from a function, or we can use Pair.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="err">(</span><span class="py">title</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span> <span class="p">=</span> <span class="n">r</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// is equivalent to
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">title</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">component1</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">number</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">component2</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// And this can be used to return multiple values from a function, or we can use Pair.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -481,18 +479,18 @@
 <p>Secondary constructors:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">constructor</span><span class="p">(</span><span class="n">foo</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{}</span> <span class="c1">// Calls the primary constructor.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">constructor</span><span class="p">(</span><span class="n">foo</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span> <span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{}</span> <span class="c1">// Calls the primary constructor.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>enum</code> class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -504,17 +502,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="p">{</span>
-    <span class="n">RED</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">,</span> <span class="n">BLUE</span>
-<span class="p">}</span>
-
-<span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">Color</span><span class="p">)</span> <span class="p">=</span>  <span class="c1">// Returns the value directly.
-</span><span class="c1"></span>    <span class="k">when</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Color</span><span class="p">.</span><span class="n">RED</span> <span class="o">-&gt;</span> <span class="m">1</span>
-        <span class="n">Color</span><span class="p">.</span><span class="n">YELLOW</span> <span class="o">-&gt;</span> <span class="m">2</span>
-        <span class="n">Color</span><span class="p">.</span><span class="n">BLUE</span> <span class="o">-&gt;</span> <span class="m">3</span>
-    <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RED</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">,</span> <span class="n">BLUE</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">Color</span><span class="p">)</span> <span class="p">=</span>  <span class="c1">// Returns the value directly.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">when</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Color</span><span class="p">.</span><span class="n">RED</span> <span class="o">-&gt;</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Color</span><span class="p">.</span><span class="n">YELLOW</span> <span class="o">-&gt;</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Color</span><span class="p">.</span><span class="n">BLUE</span> <span class="o">-&gt;</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -524,19 +522,19 @@
 <p>Operator overloading:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">data</span> <span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">plus</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span> <span class="n">Point</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">plus</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">Point</span><span class="p">):</span> <span class="n">Point</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">+</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -552,26 +550,26 @@
 <p>Like optional binding in Swift, use <code>let</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">w</span><span class="o">?.</span><span class="n">let</span> <span class="p">{</span>
-    <span class="c1">// executed when w is not null
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">w</span><span class="o">?.</span><span class="n">let</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// executed when w is not null
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>The Elvis operator <code>?:</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">w</span><span class="o">?.</span><span class="n">hunger</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span> <span class="c1">// if null, return -1
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">w</span><span class="o">?.</span><span class="n">hunger</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span> <span class="c1">// if null, return -1
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -581,7 +579,7 @@
 <p>Like Java, the same <code>try catch finally</code> block for exception handling. And the same <code>throw</code>. But we ca use <code>try</code> as an expression, which returns the value to the variable:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -589,24 +587,24 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">number</span> <span class="p">=</span> <span class="k">try</span> <span class="p">{</span>
-    <span class="n">Integer</span><span class="p">.</span><span class="n">parseInt</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">readLine</span><span class="p">())</span>
-<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">NumberFormatException</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span>  <span class="c1">// Or null if we want the flow to continue.
-</span><span class="c1"></span><span class="p">}</span>
-<span class="n">println</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">number</span> <span class="p">=</span> <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Integer</span><span class="p">.</span><span class="n">parseInt</span><span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">readLine</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">NumberFormatException</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>  <span class="c1">// Or null if we want the flow to continue.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">println</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>as?</code> is the conditional cast, which returns <code>null</code> is the casting is not possible:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">foo</span> <span class="p">=</span> <span class="n">bar</span> <span class="k">as</span><span class="p">?</span> <span class="n">Person</span> <span class="o">?:</span> <span class="k">return</span> <span class="k">false</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">foo</span> <span class="p">=</span> <span class="n">bar</span> <span class="k">as</span><span class="p">?</span> <span class="n">Person</span> <span class="o">?:</span> <span class="k">return</span> <span class="k">false</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -619,17 +617,17 @@
 <p>We can assign a lambda to a variable:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">addFive</span><span class="p">:</span> <span class="p">(</span><span class="n">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Int</span> <span class="p">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">5</span><span class="p">}</span>
-<span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">addFive</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1">// 6
-</span><span class="c1">// or
-</span><span class="c1"></span><span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">addFive</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">addFive</span><span class="p">:</span> <span class="p">(</span><span class="n">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Int</span> <span class="p">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">5</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">addFive</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1">// 6
+</span></span></span><span class="line"><span class="cl"><span class="c1">// or
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">addFive</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -639,17 +637,17 @@
 <p>Lambdas can also be passed to functions.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">convert</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span> <span class="n">converter</span><span class="p">:</span> <span class="p">(</span><span class="n">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Double</span><span class="p">)</span> <span class="p">:</span> <span class="n">Double</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">converter</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="n">println</span><span class="p">(</span><span class="n">convert</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">Double</span> <span class="o">-&gt;</span> <span class="n">c</span> <span class="p">*</span> <span class="m">1.8</span> <span class="p">+</span> <span class="m">32</span><span class="p">}))</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">convert</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span> <span class="n">converter</span><span class="p">:</span> <span class="p">(</span><span class="n">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Double</span><span class="p">)</span> <span class="p">:</span> <span class="n">Double</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">converter</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">println</span><span class="p">(</span><span class="n">convert</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">Double</span> <span class="o">-&gt;</span> <span class="n">c</span> <span class="p">*</span> <span class="m">1.8</span> <span class="p">+</span> <span class="m">32</span><span class="p">}))</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -680,18 +678,18 @@
 <p><code>all</code> and <code>any</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">listOf</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="m">27</span><span class="p">),</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="m">31</span><span class="p">)).</span><span class="n">all</span> <span class="p">{</span><span class="k">it</span><span class="p">.</span><span class="n">age</span> <span class="p">&lt;</span> <span class="m">28</span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">listOf</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="m">27</span><span class="p">),</span> <span class="n">Person</span><span class="p">(</span><span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="m">31</span><span class="p">)).</span><span class="n">all</span> <span class="p">{</span><span class="k">it</span><span class="p">.</span><span class="n">age</span> <span class="p">&lt;</span> <span class="m">28</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>flatMap {}</code> and <code>flatten()</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -701,39 +699,39 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">val</span> <span class="py">books</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">Book</span><span class="p">(</span><span class="s2">&#34;Thursday Next&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;Jasper Fforde&#34;</span><span class="p">)),</span>
-                    <span class="n">Book</span><span class="p">(</span><span class="s2">&#34;Mort&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;Terry Pratchett&#34;</span><span class="p">)),</span>
-                    <span class="n">Book</span><span class="p">(</span><span class="s2">&#34;Good Omens&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;Terry Pratchett&#34;</span><span class="p">,</span><span class="s2">&#34;Neil Gaiman&#34;</span><span class="p">)))</span>
-
-<span class="n">println</span><span class="p">(</span><span class="n">books</span><span class="p">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="k">it</span><span class="p">.</span><span class="n">authors</span> <span class="p">}.</span><span class="n">toSet</span><span class="p">())</span>
-<span class="c1">// [Jasper Fforde, Terry Pratchett, Neil Gaiman]
-</span><span class="c1">// Or use .flatten() when we don&#39;t do any transformation:
-</span><span class="c1"></span><span class="n">listOfLists</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">books</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">Book</span><span class="p">(</span><span class="s2">&#34;Thursday Next&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;Jasper Fforde&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">Book</span><span class="p">(</span><span class="s2">&#34;Mort&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;Terry Pratchett&#34;</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">Book</span><span class="p">(</span><span class="s2">&#34;Good Omens&#34;</span><span class="p">,</span> <span class="n">listOf</span><span class="p">(</span><span class="s2">&#34;Terry Pratchett&#34;</span><span class="p">,</span><span class="s2">&#34;Neil Gaiman&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">println</span><span class="p">(</span><span class="n">books</span><span class="p">.</span><span class="n">flatMap</span> <span class="p">{</span> <span class="k">it</span><span class="p">.</span><span class="n">authors</span> <span class="p">}.</span><span class="n">toSet</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// [Jasper Fforde, Terry Pratchett, Neil Gaiman]
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Or use .flatten() when we don&#39;t do any transformation:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">listOfLists</span><span class="p">.</span><span class="n">flatten</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>Like a Python generator or Java stream, Kotlin also has the lazy sequence:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">people</span><span class="p">.</span><span class="n">asSequence</span><span class="p">()</span>
-    <span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">Person</span><span class="o">::</span><span class="n">name</span><span class="p">)</span>
-    <span class="p">.</span><span class="n">filter</span> <span class="p">{</span><span class="k">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">)}</span>
-    <span class="p">.</span><span class="n">toList</span><span class="p">()</span>  <span class="c1">// Converts the sequence back.
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">people</span><span class="p">.</span><span class="n">asSequence</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">Person</span><span class="o">::</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">filter</span> <span class="p">{</span><span class="k">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="n">toList</span><span class="p">()</span>  <span class="c1">// Converts the sequence back.
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>For SAM (Single Abstract Method) interface, we can pass a lambda instead of implementing a class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -752,74 +750,72 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">interface</span> <span class="n">IntPredicate</span> <span class="p">{</span>
-    <span class="k">fun</span> <span class="nf">accept</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Boolean</span>
-<span class="p">}</span>
-
-<span class="k">val</span> <span class="py">isEven</span> <span class="p">=</span> <span class="n">IntPredicate</span> <span class="p">{</span><span class="k">it</span> <span class="p">%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span><span class="p">}</span>
-<span class="c1">// Instead of
-</span><span class="c1"></span><span class="k">val</span> <span class="py">isEven</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">IntPredicate</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">accpet</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">i</span> <span class="p">%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="m">8</span><span class="p">))</span>
-<span class="c1">// Another example:
-</span><span class="c1"></span><span class="n">button</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="o">-&gt;</span>
-    <span class="o">..</span><span class="p">.</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">interface</span> <span class="n">IntPredicate</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fun</span> <span class="nf">accept</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Boolean</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">isEven</span> <span class="p">=</span> <span class="n">IntPredicate</span> <span class="p">{</span><span class="k">it</span> <span class="p">%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Instead of
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">isEven</span> <span class="p">=</span> <span class="k">object</span> <span class="err">: </span><span class="nc">IntPredicate</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">accpet</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">i</span> <span class="p">%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">println</span><span class="p">(</span><span class="n">isEven</span><span class="p">.</span><span class="n">accept</span><span class="p">(</span><span class="m">8</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Another example:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">button</span><span class="p">.</span><span class="n">setOnClickListener</span> <span class="p">{</span> <span class="n">view</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.amazon.com/Head-First-Kotlin-Brain-Friendly-Guide/dp/1491996692/ref=sr_1_1?keywords=head&#43;first&#43;kotlin&amp;qid=1567580813&amp;s=gateway&amp;sr=8-1" target="_blank" rel="noopener noreffer">Head First Kotlin: A Brain-Friendly Guide</a></li>
+<li><a href="https://www.amazon.com/Head-First-Kotlin-Brain-Friendly-Guide/dp/1491996692/ref=sr_1_1?keywords=head&#43;first&#43;kotlin&amp;qid=1567580813&amp;s=gateway&amp;sr=8-1" target="_blank" rel="noopener noreffer ">Head First Kotlin: A Brain-Friendly Guide</a></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
                 <span>Updated on September 4, 2019</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
+            </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/posts/2019-09-04-Kotlin-Notes/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes" data-hashtags="Programming Languages"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-hashtag="Programming Languages"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://tillchen.com/posts/2019-09-04-Kotlin-Notes/" data-title="Kotlin Notes"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/Programming-Languages/">Programming Languages</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/2019-08-13-iOS-Development-Notes/" class="prev" rel="prev" title="iOS Development Notes"><i class="fas fa-angle-left fa-fw"></i>iOS Development Notes</a>
-            <a href="/posts/2020-02-17-Go-Notes/" class="next" rel="next" title="Go Notes">Go Notes<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/2019-08-13-iOS-Development-Notes/" class="prev" rel="prev" title="iOS Development Notes"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>iOS Development Notes</a>
+            <a href="/posts/2020-02-17-Go-Notes/" class="next" rel="next" title="Go Notes">Go Notes<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao (Till) Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao (Till) Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.e5845681ecd26aaf715f65c6b871e241c1d37b95960d5a258126a27d481ae306.js" integrity="sha256-5YRWgezSaq9xX2XGuHHiQcHTe5WWDVolgSaifUga4wY="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://tillchen.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.b0df51c2c57145081cc73960e9aa780e6f5f56d06cf4ef0f96da8ce1619d1e12.js" integrity="sha256-sN9RwsVxRQgcxzlg6ap4Dm9fVtBs9O8PltqM4WGdHhI="></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-139593886-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-139593886-1" async></script></body>

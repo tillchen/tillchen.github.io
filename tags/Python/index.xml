@@ -8,20 +8,23 @@
     <title>Python Advanced Tricks</title>
     <link>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</link>
     <pubDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</pubDate>
-    <author>Author</author>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2020-11-02-Python-Advanced-Tricks/</guid>
-    <description><![CDATA[Decorators  functools  cached_property lru_cache reduce   dataclasses  dataclass     Data Structures  Dictioaries  OrderedDict defaultdict ChainMap MappingProxyType   Arrays  array.array bytes bytearray   Records, Structs, and Data Transfer Objects  namedtuple SimpleNamespace   Sets and Multisets  frozenset Counter   Stacks  list deque LifoQueue   Queues  list deque queue.Queue multiprocessing.Queue   Priority Queues  list heapq queue.]]></description>
-</item><item>
+    <description><![CDATA[Decorators functools cached_property lru_cache reduce dataclasses dataclass Data Structures Dictioaries OrderedDict defaultdict ChainMap MappingProxyType Arrays array.array bytes bytearray Records, Structs, and Data Transfer Objects namedtuple SimpleNamespace Sets and Multisets frozenset Counter Stacks list deque LifoQueue Queues list deque queue.Queue multiprocessing.Queue Priority Queues list heapq queue.PriorityQueue Enums Enum IntEnum Functions Lambdas Classes and OOP Own Exceptions Shallow and Deep Copy Abstract Base Class Looping and Iteration Enumerate Iterators Generators Equality Itertools islice groupby permutations and combinations Miscellaneous stdin Binary conversion String Walrus operator Compare with zip Python advanced tricks.]]></description>
+</item>
+<item>
     <title>Python Notes</title>
     <link>https://tillchen.com/posts/2019-05-12-Python-Notes/</link>
-    <pubDate>Sun, 12 May 2019 00:00:00 -0700</pubDate>
-    <author>Author</author>
+    <pubDate>Sun, 12 May 2019 00:00:00 &#43;0000</pubDate>
+    <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-05-12-Python-Notes/</guid>
-    <description><![CDATA[Basics Strings Numbers Lists Tuples Dictionaries Sets Input Functions OOP Random Files Exceptions Testing Install Packages PEP8 Virtual Environments Decorators Generators Miscellaneous References  Basics   If-elif-else
-  dir(random) prints all the attributes of the random module.
-  help(random.randint) gives the help.
-  Everything in Python is an object. Python is object-based.
-  type() gives the type of the object.
-  bool() returns False if it&rsquo;s False/0/empty/None; it returns True if it&rsquo;s not empty.]]></description>
-</item></channel>
+    <description><![CDATA[Basics Strings Numbers Lists Tuples Dictionaries Sets Input Functions OOP Random Files Exceptions Testing Install Packages PEP8 Virtual Environments Decorators Generators Miscellaneous References Basics If-elif-else
+dir(random) prints all the attributes of the random module.
+help(random.randint) gives the help.
+Everything in Python is an object. Python is object-based.
+type() gives the type of the object.
+bool() returns False if it&rsquo;s False/0/empty/None; it returns True if it&rsquo;s not empty.
+Generator is surrounded by parentheses: (it produces one item at a time, unlike listcomp that produces all data at once).]]></description>
+</item>
+</channel>
 </rss>
