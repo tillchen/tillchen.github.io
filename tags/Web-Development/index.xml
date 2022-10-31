@@ -4,7 +4,17 @@
         <link>https://tillchen.com/tags/Web-Development/</link>
         <description>Web Development - Tag - Tianyao (Till) Chen</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Sun, 09 Jun 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tillchen.com/tags/Web-Development/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Mon, 31 Oct 2022 10:57:10 -0700</lastBuildDate><atom:link href="https://tillchen.com/tags/Web-Development/" rel="self" type="application/rss+xml" /><item>
+    <title>2022 10 31 TypeScript Notes</title>
+    <link>https://tillchen.com/posts/2022-10-31-TypeScript-Notes/</link>
+    <pubDate>Mon, 31 Oct 2022 10:57:10 -0700</pubDate>
+    <author>Tianyao (Till) Chen</author>
+    <guid>https://tillchen.com/posts/2022-10-31-TypeScript-Notes/</guid>
+    <description><![CDATA[Basics Basics tsc -init generates tsconfig.json and now tsc will compile all the files in the directory and subdirectories.
+Arrays.
+1 2 const pets: string[] = [&#39;cats&#39;, &#39;dogs&#39;] // can only hold strings now. const weirdArray: any[] = [&#39;cats&#39;, 42] // can hold any type. Tuples are just arrays with a specific number of elements of specific types. There are no enforcements in JS, but it&rsquo;s all enforced in TS.]]></description>
+</item>
+<item>
     <title>Django Notes</title>
     <link>https://tillchen.com/posts/2019-06-09-Django-Notes/</link>
     <pubDate>Sun, 09 Jun 2019 00:00:00 &#43;0000</pubDate>
