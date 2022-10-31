@@ -79,13 +79,13 @@
 
 1. We get ES6 features out-of-the-box when using TypeScript.
 
-2. Arrow functions and default parameters:
+2. Arrow functions and default parameters.
 
     ```ts
     const addNums = (a: number, b: number = 10): number => a + b
     ```
 
-3. Spread, rest, and optional arguments:
+3. Spread, rest, and optional arguments.
 
     ```ts
     const addNums = (a?: number, b?: number): number => a + b // optional arguments
@@ -98,3 +98,16 @@
     const nums: number[] = [5, 6]
     addNums(...nums)
     ```
+
+4. Destructuring (objects and arrays).
+
+    ```ts
+    const person = {
+        firstName: 'Mike', lastName: 'White', age: 42
+    }
+    const {firstName, lastName, age} = person
+    const a = ['abc', 11, 'wow']
+    const [x, y, z] = a
+    [foo, bar] = [bar, foo] // swaps the values
+    ```
+
