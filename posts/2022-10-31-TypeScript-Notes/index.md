@@ -1,4 +1,4 @@
-# 2022 10 31 TypeScript Notes
+# TypeScript Notes
 
 
 * [Basics](#basics)
