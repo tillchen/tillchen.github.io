@@ -55,3 +55,22 @@
 
 8. `void` is typically used only when the function returns no value.
 
+9. Type alias.
+
+    ```ts
+    type Person = {
+        firstName: string, lastName: string, age: number
+    }
+    const person1: Person = {
+        firstName: 'Mike', lastName: 'White', age: 42
+    }
+    ```
+
+10. Union types.
+
+    ```ts
+    let foo: number | string;
+    foo = 42
+    foo = '42'
+    ```
+
