@@ -76,6 +76,13 @@
     foo = '42'
     ```
 
+11. Use third-party libraries with the `@types` type declaration file.
+
+    ```ts
+    npm install foo
+    npm install --save-dev @types/foo
+    ```
+
 ## ES6
 
 1. We get ES6 features out-of-the-box when using TypeScript.
