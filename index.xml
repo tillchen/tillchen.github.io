@@ -12,7 +12,7 @@
     <pubDate>Mon, 31 Oct 2022 10:57:10 -0700</pubDate>
     <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2022-10-31-TypeScript-Notes/</guid>
-    <description><![CDATA[Basics ES6 OOP Basics tsc -init generates tsconfig.json and now tsc will compile all the files in the directory and subdirectories.
+    <description><![CDATA[Basics ES6 OOP Debugging Basics tsc -init generates tsconfig.json and now tsc will compile all the files in the directory and subdirectories.
 Arrays.
 1 2 const pets: string[] = [&#39;cats&#39;, &#39;dogs&#39;] // can only hold strings now. const weirdArray: any[] = [&#39;cats&#39;, 42] // can hold any type. Tuples are just arrays with a specific number of elements of specific types. There are no enforcements in JS, but it&rsquo;s all enforced in TS.]]></description>
 </item>
