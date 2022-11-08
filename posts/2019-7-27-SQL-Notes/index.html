@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  553 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  611 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/","datePublished": "2019-07-27T00:00:00+00:00","dateModified": "2019-07-27T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;553 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;611 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -251,6 +251,31 @@
 <li>
 <p>Use <code>/</code> for division and <code>DIV</code> for integer division. Use <code>%</code> or <code>MOD</code> for modulo.</p>
 </li>
+<li>
+<p><code>LEFT</code>, <code>DATE_FORMAT</code>, and <code>ROUND</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- LEFT for string prefixes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="k">LEFT</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="k">LEFT</span><span class="p">(</span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">initials</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">foo</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="n">invoice_date</span><span class="p">,</span><span class="w"> </span><span class="n">DATE_FORMAT</span><span class="p">(</span><span class="n">invoice_date</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;%m/%d/%y&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;MM/DD/YY&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">DATE_FORMAT</span><span class="p">(</span><span class="n">invoice_date</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;%e-%b-%Y&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;DD-Mon-YYYY&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">invoices</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">invoice_date</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Round to the nearest integer
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ROUND</span><span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Round to one decimal place
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ROUND</span><span class="p">(</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="delete">DELETE</h2>
 <ol>
