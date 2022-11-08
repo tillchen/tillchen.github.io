@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  611 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  649 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/","datePublished": "2019-07-27T00:00:00+00:00","dateModified": "2019-07-27T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,8 +104,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;611 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;649 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -207,7 +207,7 @@
 <h2 id="select">SELECT</h2>
 <ol>
 <li>
-<p><code>&lt;&gt;</code> means not equal.</p>
+<p>Both <code>&lt;&gt;</code> and <code>!=</code> mean not equal.</p>
 </li>
 <li>
 <p>Use <code>IS NULL</code> to select null ones: <code>WHERE doughnut_name IS NULL;</code>.</p>
@@ -243,7 +243,7 @@
 </div>
 </div></li>
 <li>
-<p><code>LIMIT 100</code> limits the number of rows to 100.</p>
+<p><code>LIMIT 100</code> limits the number of rows to 100. <code>LIMIT 2, 3</code> gets 3 rows that start with the third row (rows are also 0-index based).</p>
 </li>
 <li>
 <p>We can also use <code>AS</code> like <code>SELECT invoice - payment - credit AS balance_due</code> and <code>SELECT CONCAT(first_name, ' ', last_name) AS full_name</code>. Simple alias are also possible <code>SELECT foo AS bar</code>.</p>
@@ -276,6 +276,12 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
+<li>
+<p><code>SELECT DISTINCT foo</code> eliminates duplicates.</p>
+</li>
+<li>
+<p><code>LIKE '%foo'</code> matches zero or more chars and  <code>LIKE '-foo'</code> matches one char.</p>
+</li>
 </ol>
 <h2 id="delete">DELETE</h2>
 <ol>
