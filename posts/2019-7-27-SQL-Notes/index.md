@@ -39,6 +39,8 @@
 
 3. `\'` or `''` to insert data with the single quote.
 
+4. Single line comments: `--`; multi-line comments: `/**/`
+
 ## SELECT
 
 1. `<>` means not equal.
