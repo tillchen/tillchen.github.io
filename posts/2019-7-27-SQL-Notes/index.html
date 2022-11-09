@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  649 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  650 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/","datePublished": "2019-07-27T00:00:00+00:00","dateModified": "2019-07-27T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;649 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;650 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -237,8 +237,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">Orders</span><span class="p">.</span><span class="n">OrderID</span><span class="p">,</span><span class="w"> </span><span class="n">Customers</span><span class="p">.</span><span class="n">CustomerName</span><span class="p">,</span><span class="w"> </span><span class="n">Orders</span><span class="p">.</span><span class="n">OrderDate</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">Orders</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Orders</span><span class="p">.</span><span class="n">CustomerID</span><span class="o">=</span><span class="n">Customers</span><span class="p">.</span><span class="n">CustomerID</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">Orders</span><span class="w"> </span><span class="n">o</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w"> </span><span class="n">Customers</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">CustomerID</span><span class="o">=</span><span class="k">c</span><span class="p">.</span><span class="n">CustomerID</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
