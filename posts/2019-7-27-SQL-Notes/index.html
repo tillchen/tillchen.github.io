@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  862 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  921 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-7-27-SQL-Notes\/","datePublished": "2019-07-27T00:00:00+00:00","dateModified": "2019-07-27T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;862 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="July 27, 2019">July 27, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;921 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -226,6 +226,17 @@
 <li>
 <p><code>CHAR(9)</code> is tab, <code>CHAR(10)</code> is line feed, <code>CHAR(13)</code> is carriage return. <code>CHAR(13, 10)</code> is CRLF.</p>
 </li>
+<li>
+<p>An index speeds up the queries by letting the DB go directly to a row instead of doing a full scan. MySQL creates indexes for primary keys, foreign keys, and unique keys by default. Avoid creating indexes on columns that are updated frequently as it slows down the insert, update, and delete.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">invoice_date_index</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">invoices</span><span class="w"> </span><span class="p">(</span><span class="n">invoice_date</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="select">SELECT</h2>
 <ol>
