@@ -54,6 +54,10 @@
     show tables;
     ```
 
+6. We can `INSERT` `DEFAULT` and `NULL` as well.
+
+7. `INSERT INTO foo SELECT * FROM bar` is also possible.
+
 ## SELECT
 
 1. Both `<>` and `!=` mean not equal.
