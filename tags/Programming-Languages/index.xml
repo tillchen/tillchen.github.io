@@ -78,7 +78,7 @@ Types are inferred. If we need to make the type explicit, add the type after: (I
     <pubDate>Sat, 27 Jul 2019 00:00:00 &#43;0000</pubDate>
     <author>Tianyao (Till) Chen</author>
     <guid>https://tillchen.com/posts/2019-7-27-SQL-Notes/</guid>
-    <description><![CDATA[Basics SELECT DELETE UPDATE ALTER References Basics Create and use the database (MySQL as an example)
+    <description><![CDATA[Basics SELECT DELETE UPDATE ALTER Summary Queries References Basics Create and use the database (MySQL as an example)
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 CREATE DATABASE gregs_list; USE gregs_list; CREATE TABLE doughnut_list ( doughnut_id INT NOT NULL AUTO_INCREMENT, doughnut_name VARCHAR(10) DEFAULT NULL, doughnut_type VARCHAR(8) DEFAULT NULL, PRIMARY KEY (doughnut_id), FOREIGN KEY (doughnut_type) REFERENCES foo(doughnut_type) ); -- Variable Char, up to 10 and 8 chars.]]></description>
 </item>
 <item>

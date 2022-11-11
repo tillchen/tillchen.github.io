@@ -6,6 +6,7 @@
 * [DELETE](#delete)
 * [UPDATE](#update)
 * [ALTER](#alter)
+* [Summary Queries](#summary-queries)
 * [References](#references)
 
 ## Basics
@@ -180,6 +181,10 @@
 5. `ALTER TABLE doughnut_list MODIFY COLUMN foo VARCHAR(10);` changes the data type. We can also do `FIRST` or `LAST`.
 
 6. `ALTER TABLE doughnut_list DROP COLUMN foo;` deletes a column.
+
+## Summary Queries
+
+1. `AVG()`, `SUM()`, `MIN()`, `MAX()`, `COUNT()` are aggregate functions.
 
 ## References
 
