@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1650 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1714 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+00:00","dateModified": "2019-09-04T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,8 +104,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1650 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1714 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -339,8 +339,30 @@
 <p><code>mapOf(0 to 'a', 1 to 'b', 2 to 'c')</code> <code>for ((key, value) in mMap)</code>. (<code>to</code> actually creates a <code>Pair&lt;K, V&gt;</code>).</p>
 </li>
 <li>
-<p>Add <code>out</code> (<code>&lt;out E&gt;</code>) to make the generics covariant (use a subtype instead of a supertype) - achieving polymorphism. Add <code>in</code> to make it contravariant - the opposite of covariance.</p>
-</li>
+<p>Add <code>out</code> (<code>&lt;out T&gt;</code>) to make the generics covariant (use a subtype when a supertype is expected) - achieving polymorphism (like <code>&lt;? extends E&gt;</code> in Java). Add <code>in</code> to make it contravariant - the opposite of covariance (use a supertype when a subtype is expected) (like <code>&lt;? super E&gt;</code> in Java). Producer (read-only) out, consumer in (write-only).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kt" data-lang="kt"><span class="line"><span class="cl"><span class="k">fun</span> <span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;</span> <span class="nf">copy</span><span class="p">(</span><span class="n">src</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">T</span><span class="p">&gt;,</span> <span class="n">dst</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="k">in</span> <span class="n">T</span><span class="p">&gt;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dst</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">src</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">dst</span> <span class="p">=</span> <span class="n">mutableListOf</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl"><span class="n">copy</span><span class="p">&lt;</span><span class="n">Number</span><span class="p">&gt;(</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>We can use <code>in</code> to check existence just like in Python.</p>
 </li>
