@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1610 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1641 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+00:00","dateModified": "2019-09-04T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1610 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1641 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -666,8 +666,24 @@
 <p><code>forEach {}</code>: <code>groceries.forEach {println(it.name)}</code></p>
 </li>
 <li>
-<p>Closure means that a lambda can access any local variable that it captures.</p>
-</li>
+<p>Closure means that a lambda can access any local variable that it captures (the variables declared in the outer scope).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kt" data-lang="kt"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">sum</span> <span class="p">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">ints</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="k">it</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">}.</span><span class="n">forEach</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// sum is captured
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">sum</span> <span class="o">+=</span> <span class="k">it</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p><code>groupBy {}</code> returns a <code>Map&lt;Key, List&gt;</code> (Key depends on the key&rsquo;s type).</p>
 </li>
@@ -806,7 +822,7 @@
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao (Till) Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tillchen.com" target="_blank">Tianyao (Till) Chen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
