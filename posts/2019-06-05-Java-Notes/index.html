@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-06-05-Java-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages, Java","wordcount":  1250 ,
+        },"genre": "posts","keywords": "Programming Languages, Java","wordcount":  1371 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-06-05-Java-Notes\/","datePublished": "2019-06-05T00:00:00+00:00","dateModified": "2019-06-05T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,8 +104,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="June 5, 2019">June 5, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1250 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="June 5, 2019">June 5, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1371 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -256,12 +256,14 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.*</span>
 </span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 </span></span><span class="line"><span class="cl">        <span class="n">A</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;hello&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">A</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;world&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Size is: &#34;</span> <span class="o">+</span> <span class="n">A</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
@@ -272,7 +274,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Empty? &#34;</span> <span class="o">+</span> <span class="n">A</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">());</span>
 </span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">myStringList</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&#34;apple&#34;</span><span class="o">,</span> <span class="s">&#34;banana&#34;</span><span class="o">,</span> <span class="s">&#34;cherry&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="s">&#34;, &#34;</span><span class="o">,</span> <span class="n">myStringList</span><span class="o">);</span> <span class="c1">// double quotes
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">A</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">A</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="s">&#34;new one&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -349,7 +353,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">put</span><span class="o">(</span><span class="sc">&#39;I&#39;</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">        <span class="n">put</span><span class="o">(</span><span class="sc">&#39;V&#39;</span><span class="o">,</span> <span class="n">5</span><span class="o">);</span>
@@ -387,6 +391,47 @@
 <li>
 <p>A <code>TreeMap</code> is a binary search tree (<code>SortedMap</code>) implementation. It&rsquo;s naturally sorted by keys. <code>SortedMap&lt;Integer, String&gt; sm = new TreeMap&lt;Integer, String&gt;();</code></p>
 </li>
+</ul>
+</li>
+<li>
+<p>Stack:</p>
+<ul>
+<li>Initialization: <code>Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();</code></li>
+<li>Common Methods:
+<ul>
+<li>push(element): Adds an element to the top.</li>
+<li>pop(): Removes and returns the top element.</li>
+<li>peek(): Returns the top element without removal.</li>
+<li>isEmpty(): Checks if the stack is empty.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Queue (Interface in Java, often realized using LinkedList):</p>
+<ul>
+<li>Initialization: <code>Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();</code></li>
+<li>Common Methods:
+<ul>
+<li>offer(element): Adds an element to the end.</li>
+<li>poll(): Removes and returns the front element.</li>
+<li>peek(): Returns the front element without removal.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>PriorityQueue (Binary min heap):</p>
+<ul>
+<li>Initialization: <code>PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;();</code></li>
+<li>Common Methods:
+<ul>
+<li>offer(element): Adds an element.</li>
+<li>poll(): Removes and returns the smallest element.</li>
+<li>peek(): Returns the smallest element without removal</li>
+</ul>
+</li>
+<li>Max heap: <code>PriorityQueue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;&gt;((x, y) -&gt; y - x);</code></li>
 </ul>
 </li>
 </ol>

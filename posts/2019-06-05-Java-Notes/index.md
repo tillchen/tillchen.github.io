@@ -73,7 +73,7 @@
     import java.util.*
     class Foo {
         public static void main(String[] args) {
-            List<String> A = new ArrayList<String>();
+            List<String> A = new ArrayList<>();
             A.add("hello");
             A.add("world");
             System.out.println("Size is: " + A.size());
@@ -84,6 +84,8 @@
             System.out.println("Empty? " + A.isEmpty());
             List<String> myStringList = Arrays.asList("apple", "banana", "cherry");
             String result = String.join(", ", myStringList); // double quotes
+            A.get(0);
+            A.set(0, "new one")
         }
     }
     ```
@@ -121,7 +123,7 @@
     * Initialize a map:
 
         ```java
-        Map<Character, Integer> map = new HashMap<Character, Integer>() {
+        Map<Character, Integer> map = new HashMap<>() {
             {
                 put('I', 1);
                 put('V', 5);
@@ -145,6 +147,32 @@
     * `map.containsKey();`
 
     * A `TreeMap` is a binary search tree (`SortedMap`) implementation. It's naturally sorted by keys. `SortedMap<Integer, String> sm = new TreeMap<Integer, String>();`
+
+8. Stack:
+
+    * Initialization: `Stack<Integer> stack = new Stack<>();`
+    * Common Methods:
+        * push(element): Adds an element to the top.
+        * pop(): Removes and returns the top element.
+        * peek(): Returns the top element without removal.
+        * isEmpty(): Checks if the stack is empty.
+
+9. Queue (Interface in Java, often realized using LinkedList):
+
+    * Initialization: `Queue<Integer> queue = new LinkedList<>();`
+    * Common Methods:
+        * offer(element): Adds an element to the end.
+        * poll(): Removes and returns the front element.
+        * peek(): Returns the front element without removal.
+
+10. PriorityQueue (Binary min heap):
+
+    * Initialization: `PriorityQueue<Integer> pq = new PriorityQueue<>();`
+    * Common Methods:
+        * offer(element): Adds an element.
+        * poll(): Removes and returns the smallest element.
+        * peek(): Returns the smallest element without removal
+    * Max heap: `PriorityQueue<Integer> maxHeap = new PriorityQueue<>((x, y) -> y - x);`
 
 ## References and Garbage Collection
 
