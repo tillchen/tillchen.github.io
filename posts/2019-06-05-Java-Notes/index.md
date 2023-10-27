@@ -65,6 +65,8 @@
 
 12. `Integer.MAX_VALUE` and `Integer.MIN_VALUE`.
 
+13. `Character.toLowerCase()` and `Character.isLetterOrDigit()`.
+
 ## Java Data Structures
 
 1. ArrayList: (inside the java.util (utility) class) (for primitive types, Java 5 and above enabled autoboxing: `ArrayList<Integer>`)
@@ -123,13 +125,11 @@
     * Initialize a map:
 
         ```java
-        Map<Character, Integer> map = new HashMap<>() {
-            {
-                put('I', 1);
-                put('V', 5);
-                put('X', 10);
-            }
-        };
+        Map<Character, Integer> map = new HashMap<>() {{
+            put('I', 1);
+            put('V', 5);
+            put('X', 10);
+        }};
         ```
 
     * `for (int i : map.keySet());` or
