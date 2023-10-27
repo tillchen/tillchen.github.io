@@ -146,6 +146,8 @@
 
     * `map.containsKey();`
 
+    * `map.values()`;
+
     * A `TreeMap` is a binary search tree (`SortedMap`) implementation. It's naturally sorted by keys. `SortedMap<Integer, String> sm = new TreeMap<Integer, String>();`
 
 8. Stack:
@@ -173,6 +175,8 @@
         * poll(): Removes and returns the smallest element.
         * peek(): Returns the smallest element without removal
     * Max heap: `PriorityQueue<Integer> maxHeap = new PriorityQueue<>((x, y) -> y - x);`
+
+11. Ternary operator: `x = y == z ? y : z`;
 
 ## References and Garbage Collection
 
