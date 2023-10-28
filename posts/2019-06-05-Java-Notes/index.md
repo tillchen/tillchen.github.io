@@ -94,7 +94,7 @@
     }
     ```
 
-2. `Arrays.asList(foo)` and `.toArray(new int[0])`
+2. `Arrays.asList(foo)` converts arrays to lists and `.toArray(new int[0])` converts lists to arrays (new int[0]) is the type hint.
 
 3. `Comparator`:
 
@@ -112,7 +112,7 @@
 4. When using an interface, we usually use implementations like: `List<T> = new ArrayList<T>()`, `Queue<T> = new LinkedList<T>()`
 
 5. Array:
-   * `int[] array = new int[]{1,2,3};`
+   * `int[] array = new int[] {1,2,3};` (Can NOT specify the dimension here.)
 
    * Arrays static methods: `binarySearch(A, 42)`, `copyOf(A)`, `sort(A)`.
 
