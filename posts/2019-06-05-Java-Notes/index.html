@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-06-05-Java-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages, Java","wordcount":  1466 ,
+        },"genre": "posts","keywords": "Programming Languages, Java","wordcount":  1502 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-06-05-Java-Notes\/","datePublished": "2019-06-05T00:00:00+00:00","dateModified": "2019-06-05T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Tianyao (Till) Chen"},"author": {
@@ -104,8 +104,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Java Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Tianyao (Till) Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="June 5, 2019">June 5, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1466 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="June 5, 2019">June 5, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1502 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -333,6 +333,23 @@
 <li>
 <p>2D array <code>int[][] grid = new int[10][10]</code>;</p>
 </li>
+<li>
+<p>Array of lists:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span> <span class="n">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">[</span><span class="n">10</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">foo</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="o">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 </li>
 <li>
@@ -345,7 +362,7 @@
 <p><code>if (string == null || string.isEmpty())</code></p>
 </li>
 <li>
-<p>StringBuilder: <code>String reversed = new StringBuilder(s).reverse().toString()</code>, <code>.trim()</code> (removes leading and trailing spaces)</p>
+<p>StringBuilder: <code>String reversed = new StringBuilder(s).reverse().toString()</code>, <code>.trim()</code> (removes leading and trailing spaces). <code>append()</code> and <code>deleteCharAt()</code>.</p>
 </li>
 </ul>
 </li>
@@ -447,6 +464,9 @@
 </li>
 <li>
 <p>Ternary operator: <code>x = y == z ? y : z</code>;</p>
+</li>
+<li>
+<p>ceiling is <code>Math.ceil((double) x / y)</code>;</p>
 </li>
 </ol>
 <h2 id="references-and-garbage-collection">References and Garbage Collection</h2>
