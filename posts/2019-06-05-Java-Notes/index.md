@@ -89,7 +89,8 @@
             List<String> myStringList = Arrays.asList("apple", "banana", "cherry");
             String result = String.join(", ", myStringList); // double quotes
             A.get(0);
-            A.set(0, "new one")
+            A.set(0, "new one");
+            A.addAll(B); // concatenate all from B
         }
     }
     ```
