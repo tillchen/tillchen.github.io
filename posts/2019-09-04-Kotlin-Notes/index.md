@@ -160,7 +160,7 @@
         var temperament: String = ""
         // All properties must be initialized.
         // Or:
-        // lateinit var temperament = String
+        // lateinit var temperament: String
         fun bark() {
             println("Woof!")
         }
