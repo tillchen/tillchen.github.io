@@ -879,6 +879,7 @@ s = '121211'
 print(s.count('1'))
 print('1'.isnumeric())
 '1a'.isalnum()
+'a'.isalpha()
 ```
 
 ```sh
@@ -890,6 +891,7 @@ print('1'.isnumeric())
 
 
     4
+    True
     True
     True
 ```
