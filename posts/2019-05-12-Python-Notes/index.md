@@ -321,9 +321,9 @@
 
     ```python
     class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
     ```
 
 2. Default value:
