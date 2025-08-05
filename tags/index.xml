@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Till Chen</title>
+        <link>https://tillchen.com/tags/</link>
+        <description>Tags - Tag - Till Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Till Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Till Chen)</webMaster><lastBuildDate>Mon, 31 Oct 2022 10:57:10 -0700</lastBuildDate><atom:link href="https://tillchen.com/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Programming Languages</title>
+    <link>https://tillchen.com/tags/Programming-Languages/</link>
+    <pubDate>Mon, 31 Oct 2022 10:57:10 -0700</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Programming-Languages/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>TypeScript</title>
+    <link>https://tillchen.com/tags/TypeScript/</link>
+    <pubDate>Mon, 31 Oct 2022 10:57:10 -0700</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/TypeScript/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Web Development</title>
+    <link>https://tillchen.com/tags/Web-Development/</link>
+    <pubDate>Mon, 31 Oct 2022 10:57:10 -0700</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Web-Development/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Java</title>
+    <link>https://tillchen.com/tags/Java/</link>
+    <pubDate>Mon, 02 Nov 2020 19:23:08 &#43;0100</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Python</title>
+    <link>https://tillchen.com/tags/Python/</link>
+    <pubDate>Mon, 02 Nov 2020 17:45:00 &#43;0100</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Python/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Frameworks</title>
+    <link>https://tillchen.com/tags/Frameworks/</link>
+    <pubDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Frameworks/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Mobile Development</title>
+    <link>https://tillchen.com/tags/Mobile-Development/</link>
+    <pubDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Mobile-Development/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Computer Science</title>
+    <link>https://tillchen.com/tags/Computer-Science/</link>
+    <pubDate>Tue, 26 May 2020 16:11:13 &#43;0200</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Computer-Science/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Software Engineering</title>
+    <link>https://tillchen.com/tags/Software-Engineering/</link>
+    <pubDate>Thu, 21 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/Software-Engineering/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>AI</title>
+    <link>https://tillchen.com/tags/AI/</link>
+    <pubDate>Fri, 01 May 2020 09:25:01 &#43;0200</pubDate>
+    <author>Till Chen</author>
+    <guid>https://tillchen.com/tags/AI/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

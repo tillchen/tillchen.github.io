@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>AI - Tag - Tianyao (Till) Chen</title>
+        <title>AI - Tag - Till Chen</title>
         <link>https://tillchen.com/tags/AI/</link>
-        <description>AI - Tag - Tianyao (Till) Chen</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Fri, 01 May 2020 09:25:01 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/AI/" rel="self" type="application/rss+xml" /><item>
+        <description>AI - Tag - Till Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Till Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Till Chen)</webMaster><lastBuildDate>Fri, 01 May 2020 09:25:01 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/AI/" rel="self" type="application/rss+xml" /><item>
     <title>Machine Learning Notes</title>
     <link>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</link>
     <pubDate>Fri, 01 May 2020 09:25:01 &#43;0200</pubDate>
-    <author>Tianyao (Till) Chen</author>
+    <author>Till Chen</author>
     <guid>https://tillchen.com/posts/2020-05-01-Machine-Learning-Notes/</guid>
     <description><![CDATA[Introduction Types of Learning Supervised learning Unsupervised learning Semi-supervised learning Reinforcement learning Notations and Definitions Statistical Decision Theory Fundamental Algorithms Linear Regression Logistic Regression Decision Tree Learning Support Vector Machine Dealing With Noise Dealing with Inherent Non-Linearity (Kernels) k-Nearest Neighbors (kNN) Anatomy of a Learning Algorithm Building blocks Gradient Descent Particularities Basic Practice Feature Engineering One-Hot Encoding (Categorical -&gt; Numerical) Binning (Bucketing) (Numerical -&gt; Categorical) Normalization Standardization (Z-score Normalization) Dealing with Missing Features Learning Algorithm Selection Three Sets Underfitting and Overfitting Regularization Shrinkage: Ridge Regression Model Performance Assessment Confusion Matrix Precision/Recall Accuracy Cost-Sensitive Accuracy Area under the ROC Curve (AUC) Hyperparameter Tuning Training Error Generalization/Test Error Validation Set Error Estimation Cross-Validation Neural Networks and Deep Learning Neural Networks Multilayer Perceptron (Vanilla Neural Network) Feed-Forward Neural Network Architecture Deep Learning Convolutional Neural Network Recurrent Neural Network Problems and Solutions Basis Expansions Regression with Gaussian Kernel Kernel Regression Classification Linear Discriminant Analysis Ensemble Learning Boosting and Bagging Random Forest Unsupervised Learning Density Estimation Clustering K-Means Dimensionality Reduction Principal Component Analysis (PCA) References Introduction This post is about some basic machine learning concepts.]]></description>
 </item>

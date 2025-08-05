@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - Till Chen</title>
+        <link>https://tillchen.com/categories/</link>
+        <description>Categories - Category - Till Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Till Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Till Chen)</webMaster><atom:link href="https://tillchen.com/categories/" rel="self" type="application/rss+xml" /></channel>
+</rss>

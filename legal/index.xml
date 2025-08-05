@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Legals on Tianyao (Till) Chen</title>
+    <title>Legals on Till Chen</title>
     <link>https://tillchen.com/legal/</link>
-    <description>Recent content in Legals on Tianyao (Till) Chen</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Legals on Till Chen</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
-    <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><atom:link href="https://tillchen.com/legal/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>tillchen417@gmail.com (Till Chen)</managingEditor>
+    <webMaster>tillchen417@gmail.com (Till Chen)</webMaster>
+    <atom:link href="https://tillchen.com/legal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://tillchen.com/legal/crypto_fear_and_greed_index_with_widgets/privacy_policy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>tillchen417@gmail.com (Tianyao (Till) Chen)</author>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>tillchen417@gmail.com (Till Chen)</author>
       <guid>https://tillchen.com/legal/crypto_fear_and_greed_index_with_widgets/privacy_policy/</guid>
-      <description>Privacy Policy
-Tianyao Chen built the Crypto Fear &amp;amp; Greed Index - With Widgets app as a Freemium app. This SERVICE is provided by Tianyao Chen at no cost and is intended for use as is.
-This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
-If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
+      <description>Privacy Policy&#xA;Tianyao Chen built the Crypto Fear &amp;amp; Greed Index - With Widgets app as a Freemium app. This SERVICE is provided by Tianyao Chen at no cost and is intended for use as is.&#xA;This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.&#xA;If you choose to use my Service, then you agree to the collection and use of information in relation to this policy.</description>
     </item>
-    
   </channel>
 </rss>

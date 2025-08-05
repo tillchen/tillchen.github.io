@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Mobile Development - Tag - Tianyao (Till) Chen</title>
+        <title>Mobile Development - Tag - Till Chen</title>
         <link>https://tillchen.com/tags/Mobile-Development/</link>
-        <description>Mobile Development - Tag - Tianyao (Till) Chen</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Tianyao (Till) Chen)</managingEditor>
-            <webMaster>tillchen417@gmail.com (Tianyao (Till) Chen)</webMaster><lastBuildDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Mobile-Development/" rel="self" type="application/rss+xml" /><item>
+        <description>Mobile Development - Tag - Till Chen</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>tillchen417@gmail.com (Till Chen)</managingEditor>
+            <webMaster>tillchen417@gmail.com (Till Chen)</webMaster><lastBuildDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</lastBuildDate><atom:link href="https://tillchen.com/tags/Mobile-Development/" rel="self" type="application/rss+xml" /><item>
     <title>Flutter Notes</title>
     <link>https://tillchen.com/posts/2020-06-16-Flutter-Notes/</link>
     <pubDate>Tue, 16 Jun 2020 21:49:50 &#43;0200</pubDate>
-    <author>Tianyao (Till) Chen</author>
+    <author>Till Chen</author>
     <guid>https://tillchen.com/posts/2020-06-16-Flutter-Notes/</guid>
     <description><![CDATA[Introduction Declarative UI Why How Views The equivalent of a view in Flutter How to update widgets Intents The equivalent of an Intent in Flutter How to handle incoming intents from external apps The equivalent of startActivityForResult() Project structure and resources Image files Strings Layouts Equivalent of a LinearLayout Flexible widget Expanded widget SizedBox widget Spacer widget Equivalent of a RelativeLayout Equivalent of a ScrollView Gesture detection and touch event handling Equivalent of onClick Other gestures ListView and adapters Equivalent of ListView Which item is clicked Update ListView dynamically Text Form input Equivalent of a hint Show validation errors Databases and local storage Shared Preferences SQLite Notifications Widget Lifecycles References Introduction This post is assuming that the reader has Android development background.]]></description>
 </item>
@@ -16,7 +16,7 @@
     <title>iOS Development Notes</title>
     <link>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</link>
     <pubDate>Tue, 13 Aug 2019 00:00:00 &#43;0000</pubDate>
-    <author>Tianyao (Till) Chen</author>
+    <author>Till Chen</author>
     <guid>https://tillchen.com/posts/2019-08-13-iOS-Development-Notes/</guid>
     <description><![CDATA[Basics View Controller Lifecycle: MVC Architecture Project Organization References Basics Model-View-Controller is a design pattern in iOS.
 Unlike in Android Studio, the Interface Builder is not a graphical representation of code. A storyboard file is an archive of object instances.
@@ -27,7 +27,7 @@ Actions: @IBAction func showNextQuestion(_ sender: UIButton) {} (Right click the
     <title>Android Development Notes</title>
     <link>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</link>
     <pubDate>Wed, 10 Jul 2019 00:00:00 &#43;0000</pubDate>
-    <author>Tianyao (Till) Chen</author>
+    <author>Till Chen</author>
     <guid>https://tillchen.com/posts/2019-07-10-Android-Development-Notes/</guid>
     <description><![CDATA[Table of Contents Table of Contents Basics App Resources Permissions Gradle Layout Activities Fragments Notifications Android Studio Tips Miscellaneous Resources Basics Layout is typically defined in XML, whereas activities are in Java class.
 The Android operating system is a multi-user Linux system in which each app is a different user.
