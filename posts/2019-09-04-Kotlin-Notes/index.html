@@ -34,7 +34,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  1778 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  1853 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+00:00","dateModified": "2019-09-04T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Till Chen"},"author": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Till Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1778 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1853 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -410,13 +410,52 @@
 <p>We can use <code>in</code> to check existence just like in Python.</p>
 </li>
 <li>
-<p>Like <code>enumerate()</code> in Python, we have <code>.withIndex()</code>:</p>
+<p>Like <code>enumerate()</code> in Python, we have <code>.withIndex()</code> or we can use <code>.forEachIndex {i, num -&gt;}</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{</span><span class="o">..</span><span class="p">.}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="p">.</span><span class="n">forEachIndexed</span><span class="p">{</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">..</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Sorting</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kt" data-lang="kt"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">arr</span> <span class="p">=</span> <span class="n">intArrayOf</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">.</span><span class="n">sortByDescending</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">.</span><span class="n">sortWith</span><span class="p">(</span><span class="n">compareBy</span><span class="p">({</span> <span class="k">it</span> <span class="p">%</span> <span class="m">2</span><span class="p">},</span> <span class="p">{</span> <span class="k">it</span> <span class="p">}))</span> <span class="c1">// Primary key and secondary key
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">sorted</span> <span class="p">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">sorted</span><span class="p">()</span> <span class="c1">// sortedBy(), sortedDescending()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">intervals</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">intArrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">intArrayOf</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">intArrayOf</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">intervals</span><span class="p">.</span><span class="n">sortWith</span><span class="p">(</span><span class="n">compareBy</span><span class="p">({</span> <span class="k">it</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">},</span> <span class="p">{</span> <span class="k">it</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">}))</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div></li>
