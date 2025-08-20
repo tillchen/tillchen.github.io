@@ -70,6 +70,10 @@
     // We can also use triple quotes for multiline strings like in Python.
 
     val sortedString = myString.toCharArray().sorted().joinToString("")
+    //
+    .isLetterOrDigit()
+    //
+    .lowercaseChar()
     ```
 
 8. Functions;
@@ -128,6 +132,10 @@
     ```sh
     kotlinc main.kt -include-runtime -d main.jar && java -jar main.jar "optional args"
     ```
+
+14. `minOf()` `maxOf()` are similar to Python `min()` `max()`.
+
+15. `Int.MAX_VALUE` `Int.MIN_VALUE`
 
 ## Collections
 
