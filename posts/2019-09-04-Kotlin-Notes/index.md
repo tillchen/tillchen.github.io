@@ -215,7 +215,7 @@
     minHeap.add(1)
     maxHeap.add(2)
     minHeap.peek()
-    minHeap.poll()
+    minHeap.poll() // removes the element
     ```
 
 ## OOP
@@ -306,7 +306,7 @@
         }
     ```
 
-16. Everything is `public` by default. We also have `private`, `protected`, and `internal` (for a module).
+16. Everything is `public` by default. We also have `private`, `protected`, and `internal` (for a module). `class Foo(private val bar: Int)` makes bar private. `class Foo(bar: Int)` makes bar just a param instead of a publicly accesible property.
 
 17. Operator overloading:
 
