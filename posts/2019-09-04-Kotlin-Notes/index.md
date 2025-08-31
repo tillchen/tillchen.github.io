@@ -235,6 +235,8 @@
     queue.removeLast()
     ```
 
+10. Kotlin list to array is `toTypedArray()` instead of `toArray()`.
+
 ## OOP
 
 1. Example class:
