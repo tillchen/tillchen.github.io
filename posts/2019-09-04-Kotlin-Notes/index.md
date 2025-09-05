@@ -148,7 +148,7 @@
 
 2. `listOf()`, `mutableListOf()`. `mList.set(1, "foo")`, `.shuffle()`, `.last()`, `.max()`.
 
-3. `mapOf(0 to 'a', 1 to 'b', 2 to 'c')` `for ((key, value) in mMap)`. (`to` actually creates a `Pair<K, V>`).
+3. `mapOf(0 to 'a', 1 to 'b', 2 to 'c')` `for ((key, value) in mMap)`. (`to` actually creates a `Pair<K, V>`, pair.first, pair.second).
 
     ```kt
     # TwoSum
