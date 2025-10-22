@@ -34,7 +34,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  2193 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  2214 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+00:00","dateModified": "2019-09-04T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Till Chen"},"author": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Till Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2193 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2214 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -856,13 +856,17 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">addFive</span><span class="p">:</span> <span class="p">(</span><span class="n">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Int</span> <span class="p">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="m">5</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">addFive</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1">// 6
 </span></span></span><span class="line"><span class="cl"><span class="c1">// or
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">addFive</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">addition</span><span class="p">:</span> <span class="p">(</span><span class="n">Int</span><span class="p">,</span> <span class="n">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Int</span> <span class="p">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="n">y</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">println</span><span class="p">(</span><span class="n">addition</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span> <span class="c1">// 5
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
