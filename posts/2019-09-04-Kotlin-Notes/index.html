@@ -34,7 +34,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/"
-        },"genre": "posts","keywords": "Programming Languages","wordcount":  2214 ,
+        },"genre": "posts","keywords": "Programming Languages","wordcount":  2261 ,
         "url": "https:\/\/tillchen.com\/posts\/2019-09-04-Kotlin-Notes\/","datePublished": "2019-09-04T00:00:00+00:00","dateModified": "2019-09-04T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Till Chen"},"author": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kotlin Notes</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tillchen.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Till Chen</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2214 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="September 4, 2019">September 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2261 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -590,6 +590,23 @@
 <li>
 <p>Kotlin list to array <code>Array&lt;&gt;</code> is <code>toTypedArray()</code> instead of <code>toArray()</code>. Otherwise it&rsquo;s <code>toIntArray()</code> for <code>IntArray</code>.</p>
 </li>
+<li>
+<p><code>.zip()</code> and <code>.unzip()</code> for lists in Kotlin (similar to Python)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kt" data-lang="kt"><span class="line"><span class="cl"><span class="k">val</span> <span class="py">list1</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">list2</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;b&#39;</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">zipped</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Pair</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">Char</span><span class="p">&gt;&gt;</span> <span class="p">=</span> <span class="n">list1</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span> <span class="c1">// [1 to a, 2 to b, 3 to c]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">val</span> <span class="err">(</span><span class="py">nums</span><span class="p">,</span> <span class="n">chars</span><span class="p">)</span> <span class="p">=</span> <span class="n">zipped</span><span class="p">.</span><span class="n">unzip</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <h2 id="oop">OOP</h2>
 <ol>
