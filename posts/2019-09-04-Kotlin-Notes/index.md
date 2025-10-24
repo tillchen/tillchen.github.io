@@ -253,7 +253,7 @@
 
 10. Kotlin list to array `Array<>` is `toTypedArray()` instead of `toArray()`. Otherwise it's `toIntArray()` for `IntArray`.
 
-11. `.zip()` and `.unzip()` for lists in Kotlin (similar to Python)
+11. `.zip()` and `.unzip()` for lists in Kotlin (similar to Python).
 
     ```kt
     val list1 = listOf(1, 2, 3)
